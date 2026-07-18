@@ -22,21 +22,21 @@
         "outputs/founderbench-baseline-analysis.md"
       ],
       "commands": [
-        "python -m moneybench.release regenerate"
+        "python -m founderbench.release regenerate"
       ],
       "paper_use": "Shows the simulator works, is nontrivial, and separates policies with different business-decision capabilities.",
       "evidence": [
         {
           "path": "outputs/founderbench-baseline-raw.json",
           "exists": true,
-          "bytes": 342072,
-          "sha256": "63b23e18802e4a05d5875d04453ea6ace80b9cbf0e3652e4f3945758c7c5f140"
+          "bytes": 342129,
+          "sha256": "47494e318c4134e055d116de87e196faff0da7fc7275eff20107826b91b4f72c"
         },
         {
           "path": "outputs/founderbench-baseline-leaderboard.json",
           "exists": true,
           "bytes": 2653,
-          "sha256": "978f0637f4188746f420331439eac9461182b7f4dde8156e4da132a1570c5efa"
+          "sha256": "26aefe1109d7ff5ab0874a1019ee9f5e8e962482b0063184cfc08b9838ddb854"
         },
         {
           "path": "outputs/founderbench-baseline-analysis.md",
@@ -58,7 +58,7 @@
         "outputs/founderbench-ablation-report.md"
       ],
       "commands": [
-        "python -m moneybench.ablation --raw ..\\..\\outputs\\founderbench-baseline-raw.json --output ..\\..\\outputs\\founderbench-ablation-report.md"
+        "python -m founderbench.ablation --raw ..\\..\\outputs\\founderbench-baseline-raw.json --output ..\\..\\outputs\\founderbench-ablation-report.md"
       ],
       "paper_use": "Explains which capabilities move the benchmark score and where task-family conditioning matters.",
       "evidence": [
@@ -83,7 +83,7 @@
         "outputs/founderbench-action-ablation.json"
       ],
       "commands": [
-        "python -m moneybench.action_ablation --json-output ..\\..\\outputs\\founderbench-action-ablation.json --markdown-output ..\\..\\outputs\\founderbench-action-ablation.md"
+        "python -m founderbench.action_ablation --json-output ..\\..\\outputs\\founderbench-action-ablation.json --markdown-output ..\\..\\outputs\\founderbench-action-ablation.md"
       ],
       "paper_use": "Shows that the expanded action space affects outcomes rather than serving as unused interface decoration.",
       "evidence": [
@@ -96,8 +96,8 @@
         {
           "path": "outputs/founderbench-action-ablation.json",
           "exists": true,
-          "bytes": 643534,
-          "sha256": "bb90c0b9199d8d912228d288f737cce4756bc7c0f503302e00e05172fe54d1d1"
+          "bytes": 643481,
+          "sha256": "b34601a8f91528cde4cd89d3d7b8db69c3e4f733b8b25093ad52437faba77657"
         }
       ],
       "status": "complete",
@@ -114,15 +114,15 @@
         "outputs/founderbench-random-repeats.md"
       ],
       "commands": [
-        "python -m moneybench.repeats --policy random --seeds 0,1,2,3,4 --json-output ..\\..\\outputs\\founderbench-random-repeats.json --markdown-output ..\\..\\outputs\\founderbench-random-repeats.md"
+        "python -m founderbench.repeats --policy random --seeds 0,1,2,3,4 --json-output ..\\..\\outputs\\founderbench-random-repeats.json --markdown-output ..\\..\\outputs\\founderbench-random-repeats.md"
       ],
       "paper_use": "Provides a sanity check for stochastic variance and interval reporting.",
       "evidence": [
         {
           "path": "outputs/founderbench-random-repeats.json",
           "exists": true,
-          "bytes": 454450,
-          "sha256": "f3c6ff11ff00d2323bcd9d4e6250ec86e0eb68bd238f66301b32123df148fce7"
+          "bytes": 454423,
+          "sha256": "7380ff99f27c182feb0cd0c986352e67df8401a1cb3b83340953daa8157769db"
         },
         {
           "path": "outputs/founderbench-random-repeats.md",
@@ -145,7 +145,7 @@
         "outputs/founderbench-qualitative-traces.md"
       ],
       "commands": [
-        "python -m moneybench.qualitative --raw ..\\..\\outputs\\founderbench-baseline-raw.json --json-output ..\\..\\outputs\\founderbench-qualitative-traces.json --markdown-output ..\\..\\outputs\\founderbench-qualitative-traces.md"
+        "python -m founderbench.qualitative --raw ..\\..\\outputs\\founderbench-baseline-raw.json --json-output ..\\..\\outputs\\founderbench-qualitative-traces.json --markdown-output ..\\..\\outputs\\founderbench-qualitative-traces.md"
       ],
       "paper_use": "Supports failure analysis and shows that scores come from executable simulator trajectories.",
       "evidence": [
@@ -175,8 +175,8 @@
         "outputs/founderbench-deepseek-submission-report.md"
       ],
       "commands": [
-        "python -m moneybench.resumable_runner --policy deepseek --output ..\\..\\outputs\\founderbench-deepseek.json --resume",
-        "python -m moneybench.submission --input ..\\..\\outputs\\founderbench-deepseek.json --report ..\\..\\outputs\\founderbench-deepseek-submission-report.md"
+        "python -m founderbench.resumable_runner --policy deepseek --output ..\\..\\outputs\\founderbench-deepseek.json --resume",
+        "python -m founderbench.submission --input ..\\..\\outputs\\founderbench-deepseek.json --report ..\\..\\outputs\\founderbench-deepseek-submission-report.md"
       ],
       "paper_use": "Provides a representative hosted LLM baseline.",
       "evidence": [
@@ -205,8 +205,8 @@
         "outputs/founderbench-deepseek-sc-k3-submission-report.md"
       ],
       "commands": [
-        "python -m moneybench.resumable_runner --policy deepseek_sc --output ..\\..\\outputs\\founderbench-deepseek-sc-k3.json --resume",
-        "python -m moneybench.submission --input ..\\..\\outputs\\founderbench-deepseek-sc-k3.json --report ..\\..\\outputs\\founderbench-deepseek-sc-k3-submission-report.md"
+        "python -m founderbench.resumable_runner --policy deepseek_sc --output ..\\..\\outputs\\founderbench-deepseek-sc-k3.json --resume",
+        "python -m founderbench.submission --input ..\\..\\outputs\\founderbench-deepseek-sc-k3.json --report ..\\..\\outputs\\founderbench-deepseek-sc-k3-submission-report.md"
       ],
       "paper_use": "Tests whether sampling-based self-consistency improves business decision quality.",
       "evidence": [
@@ -235,8 +235,8 @@
         "outputs/founderbench-anthropic-submission-report.md"
       ],
       "commands": [
-        "python -m moneybench.resumable_runner --policy anthropic --output ..\\..\\outputs\\founderbench-anthropic.json --resume",
-        "python -m moneybench.submission --input ..\\..\\outputs\\founderbench-anthropic.json --report ..\\..\\outputs\\founderbench-anthropic-submission-report.md"
+        "python -m founderbench.resumable_runner --policy anthropic --output ..\\..\\outputs\\founderbench-anthropic.json --resume",
+        "python -m founderbench.submission --input ..\\..\\outputs\\founderbench-anthropic.json --report ..\\..\\outputs\\founderbench-anthropic-submission-report.md"
       ],
       "paper_use": "Adds a second hosted LLM family for model differentiation.",
       "evidence": [
@@ -265,8 +265,8 @@
         "outputs/founderbench-gemini-submission-report.md"
       ],
       "commands": [
-        "python -m moneybench.resumable_runner --policy gemini --output ..\\..\\outputs\\founderbench-gemini.json --resume",
-        "python -m moneybench.submission --input ..\\..\\outputs\\founderbench-gemini.json --report ..\\..\\outputs\\founderbench-gemini-submission-report.md"
+        "python -m founderbench.resumable_runner --policy gemini --output ..\\..\\outputs\\founderbench-gemini.json --resume",
+        "python -m founderbench.submission --input ..\\..\\outputs\\founderbench-gemini.json --report ..\\..\\outputs\\founderbench-gemini-submission-report.md"
       ],
       "paper_use": "Adds a third hosted LLM family for model differentiation.",
       "evidence": [
@@ -295,9 +295,9 @@
         "outputs/founderbench-local-open-model-submission-report.md"
       ],
       "commands": [
-        "python -m moneybench.local_model health --output ..\\..\\outputs\\local-health.json",
-        "python -m moneybench.resumable_runner --policy llm --output ..\\..\\outputs\\founderbench-local-open-model.json --resume --audit",
-        "python -m moneybench.submission --input ..\\..\\outputs\\founderbench-local-open-model.json --report ..\\..\\outputs\\founderbench-local-open-model-submission-report.md"
+        "python -m founderbench.local_model health --output ..\\..\\outputs\\local-health.json",
+        "python -m founderbench.resumable_runner --policy llm --output ..\\..\\outputs\\founderbench-local-open-model.json --resume --audit",
+        "python -m founderbench.submission --input ..\\..\\outputs\\founderbench-local-open-model.json --report ..\\..\\outputs\\founderbench-local-open-model-submission-report.md"
       ],
       "paper_use": "Makes the comparison accessible beyond closed hosted APIs.",
       "evidence": [
@@ -327,7 +327,7 @@
         "outputs/founderbench-gemini-audit.json"
       ],
       "commands": [
-        "python -m moneybench.resumable_runner --policy <provider> --output ..\\..\\outputs\\<provider>-audit.json --resume --audit"
+        "python -m founderbench.resumable_runner --policy <provider> --output ..\\..\\outputs\\<provider>-audit.json --resume --audit"
       ],
       "paper_use": "Allows qualitative analysis of provider failures without exposing secrets.",
       "completion_rule": "any",

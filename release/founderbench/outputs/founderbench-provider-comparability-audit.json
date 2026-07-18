@@ -7,7 +7,7 @@
     "task_count": 50,
     "prompt_version": "founderbench-task-agent",
     "prompt_template_sha256": "21cfb19c6ce46b4f74d6d92dc994fca10237b86e166e5b886b5220bb4da15e8b",
-    "protocol_sha256": "da7872937d1f3dfc0ed055921c3b7e7f00169b8d66bd01779da130f282bf52cb",
+    "protocol_sha256": "a2f5a2b7f20fe49854b426d8cb4f747a92b8245eb71df5f84fdeaece9618b0a6",
     "max_actions_per_week": 4,
     "minimum_repeats_for_stochastic_claims": 3,
     "cost_usage_fields": [

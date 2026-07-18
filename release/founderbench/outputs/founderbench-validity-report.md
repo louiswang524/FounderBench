@@ -31,7 +31,7 @@ This generated report states known threats to validity, current mitigations, art
 
 The simulator uses hand-designed demand, churn, reputation, risk, and cash dynamics rather than real startup markets.
 
-- `work/moneybench/moneybench/env.py`: present
+- `work/founderbench/founderbench/env.py`: present
 - `outputs/founderbench-score-rubric.md`: present
 - `outputs/founderbench-market-catalog.md`: present
 - `outputs/founderbench-simulator-invariant-audit.md`: present
@@ -68,14 +68,14 @@ Hosted LLM scores may depend on prompt wording, decoding settings, and stochasti
 
 - `outputs/founderbench-random-repeats.md`: present
 - `outputs/founderbench-reproduction-guide.md`: present
-- `work/moneybench/moneybench/repeats.py`: present
+- `work/founderbench/founderbench/repeats.py`: present
 
 ### adapter_and_format_failures
 
 A model can fail because of malformed JSON or provider errors rather than poor business decisions.
 
-- `work/moneybench/moneybench/provider_adapter.py`: present
-- `work/moneybench/moneybench/submission.py`: present
+- `work/founderbench/founderbench/provider_adapter.py`: present
+- `work/founderbench/founderbench/submission.py`: present
 - `outputs/founderbench-provider-contract-audit.md`: present
 - `outputs/founderbench-submission-validation.md`: present
 

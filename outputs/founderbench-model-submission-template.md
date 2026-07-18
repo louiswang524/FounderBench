@@ -62,7 +62,7 @@ split_policy: public_dev + public_test
 ## Recommended Command
 
 ```powershell
-python -m moneybench.resumable_runner --policy deepseek --output outputs/provider-run.json --resume
+python -m founderbench.resumable_runner --policy deepseek --output outputs/provider-run.json --resume
 ```
 
 For local/open-source OpenAI-compatible servers:
@@ -70,14 +70,14 @@ For local/open-source OpenAI-compatible servers:
 ```powershell
 $env:OPENAI_COMPAT_BASE_URL="http://localhost:8000/v1"
 $env:OPENAI_COMPAT_MODEL="Qwen/Qwen2.5-7B-Instruct"
-python -m moneybench.local_model health --output outputs/local-health.json
-python -m moneybench.resumable_runner --policy llm --output outputs/local-open-model-run.json --resume --audit
+python -m founderbench.local_model health --output outputs/local-health.json
+python -m founderbench.resumable_runner --policy llm --output outputs/local-open-model-run.json --resume --audit
 ```
 
 For redacted provider-call records:
 
 ```powershell
-python -m moneybench.resumable_runner --policy deepseek --output outputs/provider-run-audit.json --resume --audit
+python -m founderbench.resumable_runner --policy deepseek --output outputs/provider-run-audit.json --resume --audit
 ```
 
 Set provider price assumptions through:
@@ -92,7 +92,7 @@ $env:MODEL_OUTPUT_COST_PER_MILLION="0.00"
 Before reporting a model result, validate the raw run JSON:
 
 ```powershell
-python -m moneybench.submission --input outputs/provider-run.json --report outputs/provider-run-submission-report.md
+python -m founderbench.submission --input outputs/provider-run.json --report outputs/provider-run-submission-report.md
 ```
 
 The validator checks that the run covers all 50 current tasks, includes both public splits, preserves task-level scores, reports required diagnostics, and keeps provider-error category counts consistent with total provider errors. For repeated-sampling or self-consistency studies, submit a JSON list of run objects or `{ "runs": [...] }`; the generated report will include repeated-run confidence intervals.

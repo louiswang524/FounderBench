@@ -51,8 +51,8 @@ Evidence:
 - Rationale: Action semantics catalog documents 13 structured actions.
 
 Evidence:
-- `work/moneybench/moneybench/env.py`: present
-- `work/moneybench/moneybench/schema.py`: present
+- `work/founderbench/founderbench/env.py`: present
+- `work/founderbench/founderbench/schema.py`: present
 - `outputs/founderbench-action-semantics.md`: present
 - `outputs/founderbench-market-catalog.md`: present
 - `outputs/founderbench-action-ablation.md`: present
@@ -123,8 +123,8 @@ Missing evidence:
 - Rationale: Documentation, reproduction, audit, and schema artifacts are present.
 
 Evidence:
-- `work/moneybench/README.md`: present
-- `work/moneybench/SPEC.md`: present
+- `work/founderbench/README.md`: present
+- `work/founderbench/SPEC.md`: present
 - `outputs/founderbench-reproduction-guide.md`: present
 - `outputs/founderbench-reviewer-index.md`: present
 - `outputs/founderbench-reproducibility-manifest.md`: present
@@ -159,13 +159,13 @@ Evidence:
 - Rationale: License/citation metadata is not public-release ready.
 
 Evidence:
-- `work/moneybench/LICENSE`: missing
-- `work/moneybench/CITATION.cff`: present
+- `work/founderbench/LICENSE`: missing
+- `work/founderbench/CITATION.cff`: present
 - `outputs/founderbench-license-readiness.md`: present
 - `outputs/founderbench-release-metadata-checklist.md`: present
 
 Missing evidence:
-- `work/moneybench/LICENSE`
+- `work/founderbench/LICENSE`
 
 ## Validation
 

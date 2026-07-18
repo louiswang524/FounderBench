@@ -39,8 +39,8 @@ Run DeepSeek on the complete 50-task current release suite with submission valid
 - Missing `outputs/founderbench-deepseek-submission-report.md`
 
 Commands:
-- `python -m moneybench.resumable_runner --policy deepseek --output ..\..\outputs\founderbench-deepseek.json --resume`
-- `python -m moneybench.submission --input ..\..\outputs\founderbench-deepseek.json --report ..\..\outputs\founderbench-deepseek-submission-report.md`
+- `python -m founderbench.resumable_runner --policy deepseek --output ..\..\outputs\founderbench-deepseek.json --resume`
+- `python -m founderbench.submission --input ..\..\outputs\founderbench-deepseek.json --report ..\..\outputs\founderbench-deepseek-submission-report.md`
 
 ### anthropic_hosted_baseline
 
@@ -50,8 +50,8 @@ Run Claude/Anthropic on the complete 50-task current release suite with submissi
 - Missing `outputs/founderbench-anthropic-submission-report.md`
 
 Commands:
-- `python -m moneybench.resumable_runner --policy anthropic --output ..\..\outputs\founderbench-anthropic.json --resume`
-- `python -m moneybench.submission --input ..\..\outputs\founderbench-anthropic.json --report ..\..\outputs\founderbench-anthropic-submission-report.md`
+- `python -m founderbench.resumable_runner --policy anthropic --output ..\..\outputs\founderbench-anthropic.json --resume`
+- `python -m founderbench.submission --input ..\..\outputs\founderbench-anthropic.json --report ..\..\outputs\founderbench-anthropic-submission-report.md`
 
 ### gemini_hosted_baseline
 
@@ -61,8 +61,8 @@ Run Gemini on the complete 50-task current release suite with submission validat
 - Missing `outputs/founderbench-gemini-submission-report.md`
 
 Commands:
-- `python -m moneybench.resumable_runner --policy gemini --output ..\..\outputs\founderbench-gemini.json --resume`
-- `python -m moneybench.submission --input ..\..\outputs\founderbench-gemini.json --report ..\..\outputs\founderbench-gemini-submission-report.md`
+- `python -m founderbench.resumable_runner --policy gemini --output ..\..\outputs\founderbench-gemini.json --resume`
+- `python -m founderbench.submission --input ..\..\outputs\founderbench-gemini.json --report ..\..\outputs\founderbench-gemini-submission-report.md`
 
 ### local_open_source_baseline
 
@@ -72,9 +72,9 @@ Run at least one local/open-source model via the OpenAI-compatible protocol and 
 - Missing `outputs/founderbench-local-open-model-submission-report.md`
 
 Commands:
-- `python -m moneybench.local_model health --output ..\..\outputs\local-health.json`
-- `python -m moneybench.resumable_runner --policy llm --output ..\..\outputs\founderbench-local-open-model.json --resume --audit`
-- `python -m moneybench.submission --input ..\..\outputs\founderbench-local-open-model.json --report ..\..\outputs\founderbench-local-open-model-submission-report.md`
+- `python -m founderbench.local_model health --output ..\..\outputs\local-health.json`
+- `python -m founderbench.resumable_runner --policy llm --output ..\..\outputs\founderbench-local-open-model.json --resume --audit`
+- `python -m founderbench.submission --input ..\..\outputs\founderbench-local-open-model.json --report ..\..\outputs\founderbench-local-open-model-submission-report.md`
 
 ### hosted_llm_audit_traces
 
@@ -85,7 +85,7 @@ Collect redacted audit traces for representative hosted LLM runs.
 - Missing `outputs/founderbench-gemini-audit.json`
 
 Commands:
-- `python -m moneybench.resumable_runner --policy <provider> --output ..\..\outputs\<provider>-audit.json --resume --audit`
+- `python -m founderbench.resumable_runner --policy <provider> --output ..\..\outputs\<provider>-audit.json --resume --audit`
 
 ### private_holdout_execution
 

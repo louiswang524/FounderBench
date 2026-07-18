@@ -13,10 +13,10 @@
       "status_rationale": "The deterministic artifact path has tests, smoke checks, determinism audit, and bundle integrity, but independent hosted-run logs remain absent.",
       "evidence": [
         {
-          "path": "work/moneybench/tests/test_moneybench.py",
+          "path": "work/founderbench/tests/test_founderbench.py",
           "exists": true,
-          "bytes": 69223,
-          "sha256": "8e16f84660a0053508573e65b18e6b81ff20db7907b2bc1bfebf11ded157f66f"
+          "bytes": 69401,
+          "sha256": "6a7746edb26433c1aa494e4e234ec449b141b4d4fbc316f34c8ec6da811d1e04"
         },
         {
           "path": "outputs/founderbench-determinism-audit.md",
@@ -27,8 +27,8 @@
         {
           "path": "outputs/founderbench-reviewer-smoke.md",
           "exists": true,
-          "bytes": 1315,
-          "sha256": "7614c5cdf39ebcc2c3eb227769118222eb7e9ddb3b62ccddeadf1570cefadba5"
+          "bytes": 1325,
+          "sha256": "a227d44925f2e1c8d0f5996dcaaa754240151cd3acc17f5feae449a116980a18"
         },
         {
           "path": "release/founderbench/BUNDLE-INTEGRITY.md",
@@ -85,8 +85,8 @@
         {
           "path": "outputs/founderbench-baseline-raw.json",
           "exists": true,
-          "bytes": 342072,
-          "sha256": "63b23e18802e4a05d5875d04453ea6ace80b9cbf0e3652e4f3945758c7c5f140"
+          "bytes": 342129,
+          "sha256": "47494e318c4134e055d116de87e196faff0da7fc7275eff20107826b91b4f72c"
         },
         {
           "path": "outputs/founderbench-paper-tables.md",
@@ -103,8 +103,8 @@
         {
           "path": "outputs/founderbench-claim-evidence.md",
           "exists": true,
-          "bytes": 5750,
-          "sha256": "22640a523cfce8e61afe806938e0247f6ace629ea8b9e516d5be23860fd9a7ce"
+          "bytes": 5768,
+          "sha256": "49d96418f8d5d2da9697d42878cbf688da0aca516331ac3e30175e14d36f3a27"
         }
       ],
       "required_response": "Only report deterministic baseline numbers generated from raw output; keep hosted/local LLM result claims excluded until validated provider run files exist."
@@ -132,14 +132,14 @@
         {
           "path": "outputs/founderbench-private-holdout-evaluator-protocol.md",
           "exists": true,
-          "bytes": 2163,
-          "sha256": "cc495a0ce9ace32bf8dd9fa7763013d367d8401c34649cfaa3f1f029a65e262f"
+          "bytes": 2167,
+          "sha256": "1be58e5d51d0e9cb5ab38f7481b56d924667fda1a22f6718e3c1833a1d65b8f9"
         },
         {
           "path": "outputs/founderbench-reviewer-risk-audit.md",
           "exists": true,
-          "bytes": 9847,
-          "sha256": "852be3312720871302cedb0d06dcf231d1e9e5bb09b667a30ff95ce226efb62a"
+          "bytes": 9851,
+          "sha256": "45d45caf5c78e9ca462be15643aaa90bb2ea51e4e97b9add254ea194e0d70b90"
         }
       ],
       "required_response": "Use private holdout execution and model submissions before interpreting high public-suite scores as robust agent ability."
@@ -155,20 +155,20 @@
         {
           "path": "outputs/founderbench-claim-evidence.md",
           "exists": true,
-          "bytes": 5750,
-          "sha256": "22640a523cfce8e61afe806938e0247f6ace629ea8b9e516d5be23860fd9a7ce"
+          "bytes": 5768,
+          "sha256": "49d96418f8d5d2da9697d42878cbf688da0aca516331ac3e30175e14d36f3a27"
         },
         {
           "path": "outputs/founderbench-paper-evidence-map.md",
           "exists": true,
-          "bytes": 8112,
-          "sha256": "dcdce617d8c230c19731018a0f3c434fad1d9c9e3eca4f3795a762e34ea906d6"
+          "bytes": 8114,
+          "sha256": "3b68f9a27005b150c26bd69d1a823ebeab26235e8e963fc454589168699403f0"
         },
         {
           "path": "outputs/founderbench-validity-report.md",
           "exists": true,
-          "bytes": 5808,
-          "sha256": "35eac7492acaeee2527dff4a35e1265a6b90351b9dc784092604e9f6fd3f19ee"
+          "bytes": 5824,
+          "sha256": "2068448c3953ac99b3ff495c87031d52e74af272d69d4d27952036ef1d9cc9b5"
         }
       ],
       "required_response": "Do not frame surprising heuristic/provider behavior as a substantive insight unless raw logs, ablations, and independent reruns support it."
@@ -182,10 +182,10 @@
       "status_rationale": "The submission gate is not_ready; planned provider runs remain labeled as missing or planned in generated artifacts.",
       "evidence": [
         {
-          "path": "work/moneybench/SPEC.md",
+          "path": "work/founderbench/SPEC.md",
           "exists": true,
-          "bytes": 9629,
-          "sha256": "0236f89c81a33c55d8f369f93ebea444607db4ece6b31607e404b2c47ef77fd0"
+          "bytes": 9639,
+          "sha256": "c26af0b2a378b2b854b726114d27bb65d0e59d799d4d3865d22d70d2b3424410"
         },
         {
           "path": "outputs/founderbench-task-manifest.json",
@@ -202,8 +202,8 @@
         {
           "path": "outputs/founderbench-experiment-matrix.md",
           "exists": true,
-          "bytes": 5398,
-          "sha256": "80c7bf6983a1c7ff540188df1e385fbb662e2605ab2343db624b9a4bac54783e"
+          "bytes": 5418,
+          "sha256": "50b45c7cb7d87ea7c046eefa0f8c5470e499a170008dc6de40501760ca7f44cc"
         },
         {
           "path": "outputs/founderbench-provider-run-status.md",
@@ -225,8 +225,8 @@
         {
           "path": "outputs/founderbench-validity-report.md",
           "exists": true,
-          "bytes": 5808,
-          "sha256": "35eac7492acaeee2527dff4a35e1265a6b90351b9dc784092604e9f6fd3f19ee"
+          "bytes": 5824,
+          "sha256": "2068448c3953ac99b3ff495c87031d52e74af272d69d4d27952036ef1d9cc9b5"
         },
         {
           "path": "outputs/founderbench-human-calibration-protocol.md",
@@ -243,8 +243,8 @@
         {
           "path": "outputs/founderbench-submission-manifest.md",
           "exists": true,
-          "bytes": 5822,
-          "sha256": "e8fe52c8de6c04100356939cc466f9c1351c76f8588c395eaf912f784bf79456"
+          "bytes": 5856,
+          "sha256": "0fffd906ada5d38eb239d4dbfa68896999ba9f3a34d31d9adbb51f958a584574"
         }
       ],
       "required_response": "Use conservative benchmark framing until human/expert calibration and hidden holdout evidence justify broader claims."

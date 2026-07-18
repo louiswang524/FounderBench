@@ -37,7 +37,7 @@ Submission gate: `not_ready`
 - Required response: Keep deterministic replay, bundle integrity, and full test validation in the release loop; add independent hosted-run logs before model-result claims.
 
 Evidence:
-- `work/moneybench/tests/test_moneybench.py`: present
+- `work/founderbench/tests/test_founderbench.py`: present
 - `outputs/founderbench-determinism-audit.md`: present
 - `outputs/founderbench-reviewer-smoke.md`: present
 - `release/founderbench/BUNDLE-INTEGRITY.md`: present
@@ -106,7 +106,7 @@ Evidence:
 - Required response: Keep planned experiments explicitly labeled as planned or missing, and update Methods only after generated artifacts prove execution.
 
 Evidence:
-- `work/moneybench/SPEC.md`: present
+- `work/founderbench/SPEC.md`: present
 - `outputs/founderbench-task-manifest.json`: present
 - `outputs/founderbench-action-semantics.md`: present
 - `outputs/founderbench-experiment-matrix.md`: present

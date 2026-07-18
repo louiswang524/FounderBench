@@ -29,26 +29,26 @@ This generated manifest is a compact reviewer-facing map of what the current sub
 | outputs/founderbench-benchmark-card.md | yes | 6843 |
 | outputs/founderbench-task-manifest.json | yes | 33747 |
 | outputs/founderbench-task-coverage.md | yes | 3566 |
-| outputs/founderbench-metrics-and-evaluation.md | yes | 7625 |
+| outputs/founderbench-metrics-and-evaluation.md | yes | 7627 |
 | outputs/founderbench-baseline-analysis.md | yes | 4380 |
 | outputs/founderbench-model-comparison.md | yes | 5638 |
 | outputs/founderbench-paper-tables.md | yes | 5625 |
-| outputs/founderbench-validity-report.md | yes | 5808 |
-| outputs/founderbench-claim-evidence.md | yes | 5750 |
-| outputs/founderbench-submission-gate.md | yes | 1494 |
-| outputs/founderbench-completion-audit.md | yes | 8168 |
-| outputs/founderbench-reviewer-index.md | yes | 20469 |
-| release/founderbench/SHA256SUMS.json | yes | 40818 |
+| outputs/founderbench-validity-report.md | yes | 5824 |
+| outputs/founderbench-claim-evidence.md | yes | 5768 |
+| outputs/founderbench-submission-gate.md | yes | 1498 |
+| outputs/founderbench-completion-audit.md | yes | 8186 |
+| outputs/founderbench-reviewer-index.md | yes | 20506 |
+| release/founderbench/SHA256SUMS.json | yes | 40996 |
 | release/founderbench/BUNDLE-INTEGRITY.md | yes | 662 |
 
 ## Supported Claims
 
 | Claim | Permitted Wording | Evidence |
 | --- | --- | --- |
-| controlled_startup_operator_benchmark | FounderBench evaluates structured startup-like operating decisions in a controlled simulator. | `work/moneybench/moneybench/env.py`, `work/moneybench/SPEC.md`, `outputs/founderbench-benchmark-card.md` |
+| controlled_startup_operator_benchmark | FounderBench evaluates structured startup-like operating decisions in a controlled simulator. | `work/founderbench/founderbench/env.py`, `work/founderbench/SPEC.md`, `outputs/founderbench-benchmark-card.md` |
 | expanded_50_task_suite | The benchmark contains 50 fixed public tasks across 10 balanced task families. | `outputs/founderbench-task-manifest.json`, `outputs/founderbench-task-coverage.md` |
-| structured_action_space | The simulator executes only structured actions; rationale is retained for auditability but not scored directly. | `work/moneybench/moneybench/schema.py`, `work/moneybench/moneybench/task_runner.py`, `outputs/founderbench-task-coverage.md` |
-| bounded_normalized_metrics | Each task returns a bounded 0-100 score; tasks are solved at score >= 70. | `outputs/founderbench-metrics-and-evaluation.md`, `outputs/founderbench-score-rubric.md`, `work/moneybench/moneybench/tasks.py` |
+| structured_action_space | The simulator executes only structured actions; rationale is retained for auditability but not scored directly. | `work/founderbench/founderbench/schema.py`, `work/founderbench/founderbench/task_runner.py`, `outputs/founderbench-task-coverage.md` |
+| bounded_normalized_metrics | Each task returns a bounded 0-100 score; tasks are solved at score >= 70. | `outputs/founderbench-metrics-and-evaluation.md`, `outputs/founderbench-score-rubric.md`, `work/founderbench/founderbench/tasks.py` |
 | deterministic_baseline_spread | Deterministic baselines show a wide spread from random to task-aware heuristic on the public current suite. | `outputs/founderbench-baseline-leaderboard.json`, `outputs/founderbench-baseline-analysis.md`, `outputs/founderbench-paper-tables.md` |
 | capability_ladder_ablation | The deterministic policy ladder is a calibration ablation, not a model architecture ablation. | `outputs/founderbench-ablation-report.md`, `outputs/founderbench-paper-tables.md` |
 
@@ -64,9 +64,9 @@ This generated manifest is a compact reviewer-facing map of what the current sub
 
 | Purpose | Working Directory | Command |
 | --- | --- | --- |
-| Regenerate generated artifacts | work/moneybench | `python -m moneybench.release regenerate` |
-| Validate generated artifacts and tests | work/moneybench | `python -m moneybench.release validate` |
-| Build supplementary release bundle | work/moneybench | `python -m moneybench.release bundle` |
+| Regenerate generated artifacts | work/founderbench | `python -m founderbench.release regenerate` |
+| Validate generated artifacts and tests | work/founderbench | `python -m founderbench.release validate` |
+| Build supplementary release bundle | work/founderbench | `python -m founderbench.release bundle` |
 
 ## Remaining Work
 
@@ -75,7 +75,7 @@ This generated manifest is a compact reviewer-facing map of what the current sub
 | required_experiments | 6 required experiment groups are missing. | `outputs/founderbench-experiment-matrix.md` |
 | provider_run_readiness | Only 0/12 provider configurations are ready. | `outputs/founderbench-provider-readiness.md` |
 | claim_evidence_alignment | 3 stronger claims remain unsupported by current evidence. | `outputs/founderbench-claim-evidence.md` |
-| license_and_citation | License/citation metadata is not public-release ready. | `outputs/founderbench-license-readiness.md`, `work/moneybench/CITATION.cff`, `work/moneybench/LICENSE-TODO.md` |
+| license_and_citation | License/citation metadata is not public-release ready. | `outputs/founderbench-license-readiness.md`, `work/founderbench/CITATION.cff`, `work/founderbench/LICENSE-TODO.md` |
 
 ## Validation
 

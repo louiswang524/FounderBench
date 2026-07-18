@@ -21,14 +21,14 @@ noisy market signals, operational constraints, and explicit risk penalties?
 - submission validator, repeated-run bundler, audit reports, benchmark card, datasheet, and paper draft
 - private-holdout blueprint and evaluator protocol
 
-The Python package is still named `moneybench` internally for compatibility, but the benchmark and public task IDs are FounderBench.
+The Python package is still named `founderbench` internally for compatibility, but the benchmark and public task IDs are FounderBench.
 
 ## Repository Layout
 
 ```text
 .
-├── work/moneybench/          # Source package, tests, benchmark spec
-│   ├── moneybench/           # Simulator, tasks, provider adapters, validators
+├── work/founderbench/          # Source package, tests, benchmark spec
+│   ├── founderbench/           # Simulator, tasks, provider adapters, validators
 │   └── tests/                # Unit and artifact validation tests
 ├── outputs/                  # Generated current release benchmark artifacts
 ├── release/                  # Supplementary release bundle with checksums
@@ -45,8 +45,8 @@ cd FounderBench
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -e .
-python -m unittest discover -s work/moneybench/tests -v
-python -m moneybench.release validate
+python -m unittest discover -s work/founderbench/tests -v
+python -m founderbench.release validate
 ```
 
 On Windows PowerShell:
@@ -55,8 +55,8 @@ On Windows PowerShell:
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -e .
-python -m unittest discover -s work\moneybench\tests -v
-python -m moneybench.release validate
+python -m unittest discover -s work\founderbench\tests -v
+python -m founderbench.release validate
 ```
 
 ## Run a Built-In Baseline
@@ -64,21 +64,21 @@ python -m moneybench.release validate
 Run one public task:
 
 ```bash
-python -m moneybench.task_cli --policy task_heuristic --task FND-001 --trace
+python -m founderbench.task_cli --policy task_heuristic --task FND-001 --trace
 ```
 
 Run all 50 tasks for a deterministic baseline:
 
 ```bash
-python -m moneybench.task_cli --policy heuristic
+python -m founderbench.task_cli --policy heuristic
 ```
 
 Regenerate all core artifacts:
 
 ```bash
-python -m moneybench.release regenerate
-python -m moneybench.release validate
-python -m moneybench.release bundle
+python -m founderbench.release regenerate
+python -m founderbench.release validate
+python -m founderbench.release bundle
 ```
 
 ## Run an LLM Provider
@@ -87,12 +87,12 @@ Set the relevant API key as an environment variable. Do not put keys in code or 
 
 ```bash
 export DEEPSEEK_API_KEY="..."
-python -m moneybench.resumable_runner \
+python -m founderbench.resumable_runner \
   --policy deepseek \
   --output outputs/founderbench-deepseek.json \
   --resume \
   --audit
-python -m moneybench.submission \
+python -m founderbench.submission \
   --input outputs/founderbench-deepseek.json \
   --report outputs/founderbench-deepseek-submission-report.md
 ```
@@ -116,8 +116,8 @@ For local/open-source models:
 ```bash
 export OPENAI_COMPAT_BASE_URL="http://localhost:8000/v1"
 export OPENAI_COMPAT_MODEL="Qwen/Qwen2.5-7B-Instruct"
-python -m moneybench.local_model health --output outputs/local-health.json
-python -m moneybench.resumable_runner --policy llm --output outputs/local-open-model.json --resume --audit
+python -m founderbench.local_model health --output outputs/local-health.json
+python -m founderbench.resumable_runner --policy llm --output outputs/local-open-model.json --resume --audit
 ```
 
 ## Submission Format
@@ -125,7 +125,7 @@ python -m moneybench.resumable_runner --policy llm --output outputs/local-open-m
 A valid model submission must cover all 50 public task IDs, include task-level scores and diagnostics, and pass:
 
 ```bash
-python -m moneybench.submission --input outputs/provider-run.json --report outputs/provider-run-report.md
+python -m founderbench.submission --input outputs/provider-run.json --report outputs/provider-run-report.md
 ```
 
 See [docs/SUBMISSIONS.md](docs/SUBMISSIONS.md) and [outputs/founderbench-model-submission-schema.md](outputs/founderbench-model-submission-schema.md).
@@ -146,4 +146,4 @@ FounderBench is a synthetic controlled simulator. Do not claim that a score prov
 
 ## License And Citation
 
-A final open-source license has not been selected yet. Before publishing the GitHub repository publicly, choose a license and replace the placeholder citation metadata in [work/moneybench/CITATION.cff](work/moneybench/CITATION.cff).
+A final open-source license has not been selected yet. Before publishing the GitHub repository publicly, choose a license and replace the placeholder citation metadata in [work/founderbench/CITATION.cff](work/founderbench/CITATION.cff).

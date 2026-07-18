@@ -25,7 +25,7 @@ Status: `public_leaderboard_policy_ready_private_leaderboard_not_executed`
 
 ## Acceptance Rules
 
-- Submission must pass `python -m moneybench.submission` with exactly 50 public task results unless it is an evaluator-host private report.
+- Submission must pass `python -m founderbench.submission` with exactly 50 public task results unless it is an evaluator-host private report.
 - Run JSON must report benchmark_version 0.3.0, both public splits, required diagnostics, provider-error categories, and run_seed when used for repeated runs.
 - Provider errors, invalid actions, bankruptcies, over-budget decisions, and timeouts remain in the denominator.
 - Hosted/local provider rows are excluded until the raw run and submission report both exist and validate.

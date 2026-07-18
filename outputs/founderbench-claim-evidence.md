@@ -32,8 +32,8 @@ This generated report maps major paper/benchmark-card claims to current evidence
 FounderBench is a controlled benchmark for evaluating startup-operator agents under bounded resources.
 
 Evidence:
-- `work/moneybench/moneybench/env.py`: present
-- `work/moneybench/SPEC.md`: present
+- `work/founderbench/founderbench/env.py`: present
+- `work/founderbench/SPEC.md`: present
 - `outputs/founderbench-benchmark-card.md`: present
 
 ### expanded_50_task_suite
@@ -49,8 +49,8 @@ Evidence:
 Agents are evaluated through a structured 13-action business interface, and free-form rationale does not directly affect score.
 
 Evidence:
-- `work/moneybench/moneybench/schema.py`: present
-- `work/moneybench/moneybench/task_runner.py`: present
+- `work/founderbench/founderbench/schema.py`: present
+- `work/founderbench/founderbench/task_runner.py`: present
 - `outputs/founderbench-task-coverage.md`: present
 
 ### bounded_normalized_metrics
@@ -60,7 +60,7 @@ Task scores are bounded from 0 to 100 with a solve threshold of 70 and family-sp
 Evidence:
 - `outputs/founderbench-metrics-and-evaluation.md`: present
 - `outputs/founderbench-score-rubric.md`: present
-- `work/moneybench/moneybench/tasks.py`: present
+- `work/founderbench/founderbench/tasks.py`: present
 
 ### deterministic_baseline_spread
 

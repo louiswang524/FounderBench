@@ -40,7 +40,7 @@ Status: `contract_validated_no_provider_results_claimed`
 - This audit does not unlock hosted/local LLM comparison claims.
 - Malformed provider outputs remain counted as benchmark outcomes through diagnostics.
 - Evaluator code must not manually repair invalid model outputs outside the adapter/parser contract; fallback actions must remain diagnostic-counted.
-- Provider submissions still require complete 50-task JSON outputs and moneybench.submission validation.
+- Provider submissions still require complete 50-task JSON outputs and founderbench.submission validation.
 
 ## Validation
 

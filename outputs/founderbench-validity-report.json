@@ -17,7 +17,7 @@
       "threat": "The simulator uses hand-designed demand, churn, reputation, risk, and cash dynamics rather than real startup markets.",
       "current_mitigation": "Frame the benchmark as a controlled decision environment, not a real-market proxy; expose simulator code, score rubrics, market catalog, a human-calibration protocol, and a task-revision ledger for calibration issues.",
       "evidence_paths": [
-        "work/moneybench/moneybench/env.py",
+        "work/founderbench/founderbench/env.py",
         "outputs/founderbench-score-rubric.md",
         "outputs/founderbench-market-catalog.md",
         "outputs/founderbench-simulator-invariant-audit.md",
@@ -28,7 +28,7 @@
       "remaining_work": "Execute expert review or human-founder calibration to assess whether task incentives match startup judgment.",
       "evidence": [
         {
-          "path": "work/moneybench/moneybench/env.py",
+          "path": "work/founderbench/founderbench/env.py",
           "exists": true
         },
         {
@@ -146,7 +146,7 @@
       "evidence_paths": [
         "outputs/founderbench-random-repeats.md",
         "outputs/founderbench-reproduction-guide.md",
-        "work/moneybench/moneybench/repeats.py"
+        "work/founderbench/founderbench/repeats.py"
       ],
       "remaining_work": "Report repeated prompt-sample intervals for hosted LLM submissions and freeze prompt versions.",
       "evidence": [
@@ -159,7 +159,7 @@
           "exists": true
         },
         {
-          "path": "work/moneybench/moneybench/repeats.py",
+          "path": "work/founderbench/founderbench/repeats.py",
           "exists": true
         }
       ],
@@ -172,19 +172,19 @@
       "threat": "A model can fail because of malformed JSON or provider errors rather than poor business decisions.",
       "current_mitigation": "Count provider errors, parse categories, invalid actions, and over-budget decisions as diagnostics rather than discarding runs.",
       "evidence_paths": [
-        "work/moneybench/moneybench/provider_adapter.py",
-        "work/moneybench/moneybench/submission.py",
+        "work/founderbench/founderbench/provider_adapter.py",
+        "work/founderbench/founderbench/submission.py",
         "outputs/founderbench-provider-contract-audit.md",
         "outputs/founderbench-submission-validation.md"
       ],
       "remaining_work": "Include redacted hosted audit traces for representative provider successes and failures.",
       "evidence": [
         {
-          "path": "work/moneybench/moneybench/provider_adapter.py",
+          "path": "work/founderbench/founderbench/provider_adapter.py",
           "exists": true
         },
         {
-          "path": "work/moneybench/moneybench/submission.py",
+          "path": "work/founderbench/founderbench/submission.py",
           "exists": true
         },
         {

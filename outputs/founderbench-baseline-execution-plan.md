@@ -28,7 +28,7 @@ Execution plan for paper-grade hosted and local/open-source LLM baseline runs.
 - Use the canonical prompt protocol and structured action schema for every provider.
 - Run every required model on the same 50 current task ids.
 - Separate required frontier/commercial coverage from recommended broader ecosystem coverage so missing optional APIs do not block core reproducibility.
-- Validate every output with moneybench.submission before including it in leaderboard claims.
+- Validate every output with founderbench.submission before including it in leaderboard claims.
 - Do not drop failed tasks, malformed outputs, provider errors, bankruptcies, or over-budget decisions.
 - Report provider model ids, prompt/protocol hashes, latency, token usage when available, and estimated cost.
 - Use the pre-specified paired task-level statistical protocol for model comparisons.
@@ -37,7 +37,7 @@ Execution plan for paper-grade hosted and local/open-source LLM baseline runs.
 
 - `single_run_claims`: Allowed only as preliminary baseline rows when clearly labeled single-run.
 - `stochastic_claims`: Require at least 3 repeats or an explicit limitation statement; record each repeat with a distinct resumable-runner --seed value.
-- `bundle_protocol`: Combine repeated seed outputs with moneybench.submission_bundle and report the generated submission report before stochastic confidence claims.
+- `bundle_protocol`: Combine repeated seed outputs with founderbench.submission_bundle and report the generated submission report before stochastic confidence claims.
 - `self_consistency`: DeepSeek self-consistency uses k=3 as a separate ablation, not a replacement for the naive baseline.
 
 ## Audit Policy
@@ -49,7 +49,7 @@ Execution plan for paper-grade hosted and local/open-source LLM baseline runs.
 ## Acceptance Criteria
 
 - Each required run produces a JSON output with exactly 50 task results.
-- Each required run passes moneybench.submission validation.
+- Each required run passes founderbench.submission validation.
 - Provider-error categories are reported even when zero.
 - At least three provider configurations are ready before the submission gate can pass provider readiness.
 - Claim-evidence report remains conservative until all LLM comparison evidence exists.
@@ -78,12 +78,12 @@ Execution plan for paper-grade hosted and local/open-source LLM baseline runs.
 Primary OpenAI/GPT hosted baseline, matching the frontier-provider style used by YC-Bench-like comparisons.
 
 ```powershell
-python -m moneybench.resumable_runner --policy openai --output outputs/founderbench-openai.json --resume --seed 0
-python -m moneybench.submission --input outputs/founderbench-openai.json --report outputs/founderbench-openai-submission-report.md
-python -m moneybench.resumable_runner --policy openai --output outputs/founderbench-openai-audit.json --resume --seed 0 --audit
-python -m moneybench.submission --input outputs/founderbench-openai-audit.json --report outputs/founderbench-openai-audit-submission-report.md
-python -m moneybench.submission_bundle --input outputs/founderbench-openai-seed0.json --input outputs/founderbench-openai-seed1.json --input outputs/founderbench-openai-seed2.json --output outputs/founderbench-openai-repeats.json --report outputs/founderbench-openai-repeats-submission-report.md
-python -m moneybench.submission --input outputs/founderbench-openai-repeats.json --report outputs/founderbench-openai-repeats-submission-report.md
+python -m founderbench.resumable_runner --policy openai --output outputs/founderbench-openai.json --resume --seed 0
+python -m founderbench.submission --input outputs/founderbench-openai.json --report outputs/founderbench-openai-submission-report.md
+python -m founderbench.resumable_runner --policy openai --output outputs/founderbench-openai-audit.json --resume --seed 0 --audit
+python -m founderbench.submission --input outputs/founderbench-openai-audit.json --report outputs/founderbench-openai-audit-submission-report.md
+python -m founderbench.submission_bundle --input outputs/founderbench-openai-seed0.json --input outputs/founderbench-openai-seed1.json --input outputs/founderbench-openai-seed2.json --output outputs/founderbench-openai-repeats.json --report outputs/founderbench-openai-repeats-submission-report.md
+python -m founderbench.submission --input outputs/founderbench-openai-repeats.json --report outputs/founderbench-openai-repeats-submission-report.md
 ```
 
 ### deepseek_single
@@ -91,12 +91,12 @@ python -m moneybench.submission --input outputs/founderbench-openai-repeats.json
 Primary DeepSeek hosted baseline.
 
 ```powershell
-python -m moneybench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek.json --resume --seed 0
-python -m moneybench.submission --input outputs/founderbench-deepseek.json --report outputs/founderbench-deepseek-submission-report.md
-python -m moneybench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek-audit.json --resume --seed 0 --audit
-python -m moneybench.submission --input outputs/founderbench-deepseek-audit.json --report outputs/founderbench-deepseek-audit-submission-report.md
-python -m moneybench.submission_bundle --input outputs/founderbench-deepseek-seed0.json --input outputs/founderbench-deepseek-seed1.json --input outputs/founderbench-deepseek-seed2.json --output outputs/founderbench-deepseek-repeats.json --report outputs/founderbench-deepseek-repeats-submission-report.md
-python -m moneybench.submission --input outputs/founderbench-deepseek-repeats.json --report outputs/founderbench-deepseek-repeats-submission-report.md
+python -m founderbench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek.json --resume --seed 0
+python -m founderbench.submission --input outputs/founderbench-deepseek.json --report outputs/founderbench-deepseek-submission-report.md
+python -m founderbench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek-audit.json --resume --seed 0 --audit
+python -m founderbench.submission --input outputs/founderbench-deepseek-audit.json --report outputs/founderbench-deepseek-audit-submission-report.md
+python -m founderbench.submission_bundle --input outputs/founderbench-deepseek-seed0.json --input outputs/founderbench-deepseek-seed1.json --input outputs/founderbench-deepseek-seed2.json --output outputs/founderbench-deepseek-repeats.json --report outputs/founderbench-deepseek-repeats-submission-report.md
+python -m founderbench.submission --input outputs/founderbench-deepseek-repeats.json --report outputs/founderbench-deepseek-repeats-submission-report.md
 ```
 
 ### deepseek_sc_k3
@@ -104,12 +104,12 @@ python -m moneybench.submission --input outputs/founderbench-deepseek-repeats.js
 Self-consistency k=3 ablation for DeepSeek.
 
 ```powershell
-python -m moneybench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3.json --resume --seed 0
-python -m moneybench.submission --input outputs/founderbench-deepseek-sc-k3.json --report outputs/founderbench-deepseek-sc-k3-submission-report.md
-python -m moneybench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-audit.json --resume --seed 0 --audit
-python -m moneybench.submission --input outputs/founderbench-deepseek-sc-k3-audit.json --report outputs/founderbench-deepseek-sc-k3-audit-submission-report.md
-python -m moneybench.submission_bundle --input outputs/founderbench-deepseek-sc-k3-seed0.json --input outputs/founderbench-deepseek-sc-k3-seed1.json --input outputs/founderbench-deepseek-sc-k3-seed2.json --output outputs/founderbench-deepseek-sc-k3-repeats.json --report outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md
-python -m moneybench.submission --input outputs/founderbench-deepseek-sc-k3-repeats.json --report outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md
+python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3.json --resume --seed 0
+python -m founderbench.submission --input outputs/founderbench-deepseek-sc-k3.json --report outputs/founderbench-deepseek-sc-k3-submission-report.md
+python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-audit.json --resume --seed 0 --audit
+python -m founderbench.submission --input outputs/founderbench-deepseek-sc-k3-audit.json --report outputs/founderbench-deepseek-sc-k3-audit-submission-report.md
+python -m founderbench.submission_bundle --input outputs/founderbench-deepseek-sc-k3-seed0.json --input outputs/founderbench-deepseek-sc-k3-seed1.json --input outputs/founderbench-deepseek-sc-k3-seed2.json --output outputs/founderbench-deepseek-sc-k3-repeats.json --report outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md
+python -m founderbench.submission --input outputs/founderbench-deepseek-sc-k3-repeats.json --report outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md
 ```
 
 ### anthropic_single
@@ -117,12 +117,12 @@ python -m moneybench.submission --input outputs/founderbench-deepseek-sc-k3-repe
 Primary Claude/Anthropic hosted baseline.
 
 ```powershell
-python -m moneybench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic.json --resume --seed 0
-python -m moneybench.submission --input outputs/founderbench-anthropic.json --report outputs/founderbench-anthropic-submission-report.md
-python -m moneybench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic-audit.json --resume --seed 0 --audit
-python -m moneybench.submission --input outputs/founderbench-anthropic-audit.json --report outputs/founderbench-anthropic-audit-submission-report.md
-python -m moneybench.submission_bundle --input outputs/founderbench-anthropic-seed0.json --input outputs/founderbench-anthropic-seed1.json --input outputs/founderbench-anthropic-seed2.json --output outputs/founderbench-anthropic-repeats.json --report outputs/founderbench-anthropic-repeats-submission-report.md
-python -m moneybench.submission --input outputs/founderbench-anthropic-repeats.json --report outputs/founderbench-anthropic-repeats-submission-report.md
+python -m founderbench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic.json --resume --seed 0
+python -m founderbench.submission --input outputs/founderbench-anthropic.json --report outputs/founderbench-anthropic-submission-report.md
+python -m founderbench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic-audit.json --resume --seed 0 --audit
+python -m founderbench.submission --input outputs/founderbench-anthropic-audit.json --report outputs/founderbench-anthropic-audit-submission-report.md
+python -m founderbench.submission_bundle --input outputs/founderbench-anthropic-seed0.json --input outputs/founderbench-anthropic-seed1.json --input outputs/founderbench-anthropic-seed2.json --output outputs/founderbench-anthropic-repeats.json --report outputs/founderbench-anthropic-repeats-submission-report.md
+python -m founderbench.submission --input outputs/founderbench-anthropic-repeats.json --report outputs/founderbench-anthropic-repeats-submission-report.md
 ```
 
 ### gemini_single
@@ -130,12 +130,12 @@ python -m moneybench.submission --input outputs/founderbench-anthropic-repeats.j
 Primary Gemini hosted baseline.
 
 ```powershell
-python -m moneybench.resumable_runner --policy gemini --output outputs/founderbench-gemini.json --resume --seed 0
-python -m moneybench.submission --input outputs/founderbench-gemini.json --report outputs/founderbench-gemini-submission-report.md
-python -m moneybench.resumable_runner --policy gemini --output outputs/founderbench-gemini-audit.json --resume --seed 0 --audit
-python -m moneybench.submission --input outputs/founderbench-gemini-audit.json --report outputs/founderbench-gemini-audit-submission-report.md
-python -m moneybench.submission_bundle --input outputs/founderbench-gemini-seed0.json --input outputs/founderbench-gemini-seed1.json --input outputs/founderbench-gemini-seed2.json --output outputs/founderbench-gemini-repeats.json --report outputs/founderbench-gemini-repeats-submission-report.md
-python -m moneybench.submission --input outputs/founderbench-gemini-repeats.json --report outputs/founderbench-gemini-repeats-submission-report.md
+python -m founderbench.resumable_runner --policy gemini --output outputs/founderbench-gemini.json --resume --seed 0
+python -m founderbench.submission --input outputs/founderbench-gemini.json --report outputs/founderbench-gemini-submission-report.md
+python -m founderbench.resumable_runner --policy gemini --output outputs/founderbench-gemini-audit.json --resume --seed 0 --audit
+python -m founderbench.submission --input outputs/founderbench-gemini-audit.json --report outputs/founderbench-gemini-audit-submission-report.md
+python -m founderbench.submission_bundle --input outputs/founderbench-gemini-seed0.json --input outputs/founderbench-gemini-seed1.json --input outputs/founderbench-gemini-seed2.json --output outputs/founderbench-gemini-repeats.json --report outputs/founderbench-gemini-repeats-submission-report.md
+python -m founderbench.submission --input outputs/founderbench-gemini-repeats.json --report outputs/founderbench-gemini-repeats-submission-report.md
 ```
 
 ### kimi_single
@@ -143,12 +143,12 @@ python -m moneybench.submission --input outputs/founderbench-gemini-repeats.json
 Primary Moonshot Kimi hosted/open-weight-family baseline.
 
 ```powershell
-python -m moneybench.resumable_runner --policy kimi --output outputs/founderbench-kimi.json --resume --seed 0
-python -m moneybench.submission --input outputs/founderbench-kimi.json --report outputs/founderbench-kimi-submission-report.md
-python -m moneybench.resumable_runner --policy kimi --output outputs/founderbench-kimi-audit.json --resume --seed 0 --audit
-python -m moneybench.submission --input outputs/founderbench-kimi-audit.json --report outputs/founderbench-kimi-audit-submission-report.md
-python -m moneybench.submission_bundle --input outputs/founderbench-kimi-seed0.json --input outputs/founderbench-kimi-seed1.json --input outputs/founderbench-kimi-seed2.json --output outputs/founderbench-kimi-repeats.json --report outputs/founderbench-kimi-repeats-submission-report.md
-python -m moneybench.submission --input outputs/founderbench-kimi-repeats.json --report outputs/founderbench-kimi-repeats-submission-report.md
+python -m founderbench.resumable_runner --policy kimi --output outputs/founderbench-kimi.json --resume --seed 0
+python -m founderbench.submission --input outputs/founderbench-kimi.json --report outputs/founderbench-kimi-submission-report.md
+python -m founderbench.resumable_runner --policy kimi --output outputs/founderbench-kimi-audit.json --resume --seed 0 --audit
+python -m founderbench.submission --input outputs/founderbench-kimi-audit.json --report outputs/founderbench-kimi-audit-submission-report.md
+python -m founderbench.submission_bundle --input outputs/founderbench-kimi-seed0.json --input outputs/founderbench-kimi-seed1.json --input outputs/founderbench-kimi-seed2.json --output outputs/founderbench-kimi-repeats.json --report outputs/founderbench-kimi-repeats-submission-report.md
+python -m founderbench.submission --input outputs/founderbench-kimi-repeats.json --report outputs/founderbench-kimi-repeats-submission-report.md
 ```
 
 ### qwen_single
@@ -156,12 +156,12 @@ python -m moneybench.submission --input outputs/founderbench-kimi-repeats.json -
 Primary Alibaba Qwen hosted/open-weight-family baseline.
 
 ```powershell
-python -m moneybench.resumable_runner --policy qwen --output outputs/founderbench-qwen.json --resume --seed 0
-python -m moneybench.submission --input outputs/founderbench-qwen.json --report outputs/founderbench-qwen-submission-report.md
-python -m moneybench.resumable_runner --policy qwen --output outputs/founderbench-qwen-audit.json --resume --seed 0 --audit
-python -m moneybench.submission --input outputs/founderbench-qwen-audit.json --report outputs/founderbench-qwen-audit-submission-report.md
-python -m moneybench.submission_bundle --input outputs/founderbench-qwen-seed0.json --input outputs/founderbench-qwen-seed1.json --input outputs/founderbench-qwen-seed2.json --output outputs/founderbench-qwen-repeats.json --report outputs/founderbench-qwen-repeats-submission-report.md
-python -m moneybench.submission --input outputs/founderbench-qwen-repeats.json --report outputs/founderbench-qwen-repeats-submission-report.md
+python -m founderbench.resumable_runner --policy qwen --output outputs/founderbench-qwen.json --resume --seed 0
+python -m founderbench.submission --input outputs/founderbench-qwen.json --report outputs/founderbench-qwen-submission-report.md
+python -m founderbench.resumable_runner --policy qwen --output outputs/founderbench-qwen-audit.json --resume --seed 0 --audit
+python -m founderbench.submission --input outputs/founderbench-qwen-audit.json --report outputs/founderbench-qwen-audit-submission-report.md
+python -m founderbench.submission_bundle --input outputs/founderbench-qwen-seed0.json --input outputs/founderbench-qwen-seed1.json --input outputs/founderbench-qwen-seed2.json --output outputs/founderbench-qwen-repeats.json --report outputs/founderbench-qwen-repeats-submission-report.md
+python -m founderbench.submission --input outputs/founderbench-qwen-repeats.json --report outputs/founderbench-qwen-repeats-submission-report.md
 ```
 
 ### mistral_single
@@ -169,12 +169,12 @@ python -m moneybench.submission --input outputs/founderbench-qwen-repeats.json -
 Mistral hosted baseline for broader non-US provider coverage.
 
 ```powershell
-python -m moneybench.resumable_runner --policy mistral --output outputs/founderbench-mistral.json --resume --seed 0
-python -m moneybench.submission --input outputs/founderbench-mistral.json --report outputs/founderbench-mistral-submission-report.md
-python -m moneybench.resumable_runner --policy mistral --output outputs/founderbench-mistral-audit.json --resume --seed 0 --audit
-python -m moneybench.submission --input outputs/founderbench-mistral-audit.json --report outputs/founderbench-mistral-audit-submission-report.md
-python -m moneybench.submission_bundle --input outputs/founderbench-mistral-seed0.json --input outputs/founderbench-mistral-seed1.json --input outputs/founderbench-mistral-seed2.json --output outputs/founderbench-mistral-repeats.json --report outputs/founderbench-mistral-repeats-submission-report.md
-python -m moneybench.submission --input outputs/founderbench-mistral-repeats.json --report outputs/founderbench-mistral-repeats-submission-report.md
+python -m founderbench.resumable_runner --policy mistral --output outputs/founderbench-mistral.json --resume --seed 0
+python -m founderbench.submission --input outputs/founderbench-mistral.json --report outputs/founderbench-mistral-submission-report.md
+python -m founderbench.resumable_runner --policy mistral --output outputs/founderbench-mistral-audit.json --resume --seed 0 --audit
+python -m founderbench.submission --input outputs/founderbench-mistral-audit.json --report outputs/founderbench-mistral-audit-submission-report.md
+python -m founderbench.submission_bundle --input outputs/founderbench-mistral-seed0.json --input outputs/founderbench-mistral-seed1.json --input outputs/founderbench-mistral-seed2.json --output outputs/founderbench-mistral-repeats.json --report outputs/founderbench-mistral-repeats-submission-report.md
+python -m founderbench.submission --input outputs/founderbench-mistral-repeats.json --report outputs/founderbench-mistral-repeats-submission-report.md
 ```
 
 ### glm_single
@@ -182,12 +182,12 @@ python -m moneybench.submission --input outputs/founderbench-mistral-repeats.jso
 Z.ai GLM hosted baseline for additional China-developed model coverage.
 
 ```powershell
-python -m moneybench.resumable_runner --policy glm --output outputs/founderbench-glm.json --resume --seed 0
-python -m moneybench.submission --input outputs/founderbench-glm.json --report outputs/founderbench-glm-submission-report.md
-python -m moneybench.resumable_runner --policy glm --output outputs/founderbench-glm-audit.json --resume --seed 0 --audit
-python -m moneybench.submission --input outputs/founderbench-glm-audit.json --report outputs/founderbench-glm-audit-submission-report.md
-python -m moneybench.submission_bundle --input outputs/founderbench-glm-seed0.json --input outputs/founderbench-glm-seed1.json --input outputs/founderbench-glm-seed2.json --output outputs/founderbench-glm-repeats.json --report outputs/founderbench-glm-repeats-submission-report.md
-python -m moneybench.submission --input outputs/founderbench-glm-repeats.json --report outputs/founderbench-glm-repeats-submission-report.md
+python -m founderbench.resumable_runner --policy glm --output outputs/founderbench-glm.json --resume --seed 0
+python -m founderbench.submission --input outputs/founderbench-glm.json --report outputs/founderbench-glm-submission-report.md
+python -m founderbench.resumable_runner --policy glm --output outputs/founderbench-glm-audit.json --resume --seed 0 --audit
+python -m founderbench.submission --input outputs/founderbench-glm-audit.json --report outputs/founderbench-glm-audit-submission-report.md
+python -m founderbench.submission_bundle --input outputs/founderbench-glm-seed0.json --input outputs/founderbench-glm-seed1.json --input outputs/founderbench-glm-seed2.json --output outputs/founderbench-glm-repeats.json --report outputs/founderbench-glm-repeats-submission-report.md
+python -m founderbench.submission --input outputs/founderbench-glm-repeats.json --report outputs/founderbench-glm-repeats-submission-report.md
 ```
 
 ### xai_single
@@ -195,12 +195,12 @@ python -m moneybench.submission --input outputs/founderbench-glm-repeats.json --
 xAI/Grok hosted baseline for another frontier closed-model family.
 
 ```powershell
-python -m moneybench.resumable_runner --policy xai --output outputs/founderbench-xai.json --resume --seed 0
-python -m moneybench.submission --input outputs/founderbench-xai.json --report outputs/founderbench-xai-submission-report.md
-python -m moneybench.resumable_runner --policy xai --output outputs/founderbench-xai-audit.json --resume --seed 0 --audit
-python -m moneybench.submission --input outputs/founderbench-xai-audit.json --report outputs/founderbench-xai-audit-submission-report.md
-python -m moneybench.submission_bundle --input outputs/founderbench-xai-seed0.json --input outputs/founderbench-xai-seed1.json --input outputs/founderbench-xai-seed2.json --output outputs/founderbench-xai-repeats.json --report outputs/founderbench-xai-repeats-submission-report.md
-python -m moneybench.submission --input outputs/founderbench-xai-repeats.json --report outputs/founderbench-xai-repeats-submission-report.md
+python -m founderbench.resumable_runner --policy xai --output outputs/founderbench-xai.json --resume --seed 0
+python -m founderbench.submission --input outputs/founderbench-xai.json --report outputs/founderbench-xai-submission-report.md
+python -m founderbench.resumable_runner --policy xai --output outputs/founderbench-xai-audit.json --resume --seed 0 --audit
+python -m founderbench.submission --input outputs/founderbench-xai-audit.json --report outputs/founderbench-xai-audit-submission-report.md
+python -m founderbench.submission_bundle --input outputs/founderbench-xai-seed0.json --input outputs/founderbench-xai-seed1.json --input outputs/founderbench-xai-seed2.json --output outputs/founderbench-xai-repeats.json --report outputs/founderbench-xai-repeats-submission-report.md
+python -m founderbench.submission --input outputs/founderbench-xai-repeats.json --report outputs/founderbench-xai-repeats-submission-report.md
 ```
 
 ### llama_endpoint_single
@@ -208,12 +208,12 @@ python -m moneybench.submission --input outputs/founderbench-xai-repeats.json --
 Llama/open-weight endpoint baseline, runnable through any OpenAI-compatible serving provider.
 
 ```powershell
-python -m moneybench.resumable_runner --policy llama --output outputs/founderbench-llama.json --resume --seed 0
-python -m moneybench.submission --input outputs/founderbench-llama.json --report outputs/founderbench-llama-submission-report.md
-python -m moneybench.resumable_runner --policy llama --output outputs/founderbench-llama-audit.json --resume --seed 0 --audit
-python -m moneybench.submission --input outputs/founderbench-llama-audit.json --report outputs/founderbench-llama-audit-submission-report.md
-python -m moneybench.submission_bundle --input outputs/founderbench-llama-seed0.json --input outputs/founderbench-llama-seed1.json --input outputs/founderbench-llama-seed2.json --output outputs/founderbench-llama-repeats.json --report outputs/founderbench-llama-repeats-submission-report.md
-python -m moneybench.submission --input outputs/founderbench-llama-repeats.json --report outputs/founderbench-llama-repeats-submission-report.md
+python -m founderbench.resumable_runner --policy llama --output outputs/founderbench-llama.json --resume --seed 0
+python -m founderbench.submission --input outputs/founderbench-llama.json --report outputs/founderbench-llama-submission-report.md
+python -m founderbench.resumable_runner --policy llama --output outputs/founderbench-llama-audit.json --resume --seed 0 --audit
+python -m founderbench.submission --input outputs/founderbench-llama-audit.json --report outputs/founderbench-llama-audit-submission-report.md
+python -m founderbench.submission_bundle --input outputs/founderbench-llama-seed0.json --input outputs/founderbench-llama-seed1.json --input outputs/founderbench-llama-seed2.json --output outputs/founderbench-llama-repeats.json --report outputs/founderbench-llama-repeats-submission-report.md
+python -m founderbench.submission --input outputs/founderbench-llama-repeats.json --report outputs/founderbench-llama-repeats-submission-report.md
 ```
 
 ### local_open_model_single
@@ -221,12 +221,12 @@ python -m moneybench.submission --input outputs/founderbench-llama-repeats.json 
 Primary local/open-source baseline through an OpenAI-compatible server.
 
 ```powershell
-python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model.json --resume --seed 0
-python -m moneybench.submission --input outputs/founderbench-local-open-model.json --report outputs/founderbench-local-open-model-submission-report.md
-python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model-audit.json --resume --seed 0 --audit
-python -m moneybench.submission --input outputs/founderbench-local-open-model-audit.json --report outputs/founderbench-local-open-model-audit-submission-report.md
-python -m moneybench.submission_bundle --input outputs/founderbench-local-open-model-seed0.json --input outputs/founderbench-local-open-model-seed1.json --input outputs/founderbench-local-open-model-seed2.json --output outputs/founderbench-local-open-model-repeats.json --report outputs/founderbench-local-open-model-repeats-submission-report.md
-python -m moneybench.submission --input outputs/founderbench-local-open-model-repeats.json --report outputs/founderbench-local-open-model-repeats-submission-report.md
+python -m founderbench.resumable_runner --policy llm --output outputs/founderbench-local-open-model.json --resume --seed 0
+python -m founderbench.submission --input outputs/founderbench-local-open-model.json --report outputs/founderbench-local-open-model-submission-report.md
+python -m founderbench.resumable_runner --policy llm --output outputs/founderbench-local-open-model-audit.json --resume --seed 0 --audit
+python -m founderbench.submission --input outputs/founderbench-local-open-model-audit.json --report outputs/founderbench-local-open-model-audit-submission-report.md
+python -m founderbench.submission_bundle --input outputs/founderbench-local-open-model-seed0.json --input outputs/founderbench-local-open-model-seed1.json --input outputs/founderbench-local-open-model-seed2.json --output outputs/founderbench-local-open-model-repeats.json --report outputs/founderbench-local-open-model-repeats-submission-report.md
+python -m founderbench.submission --input outputs/founderbench-local-open-model-repeats.json --report outputs/founderbench-local-open-model-repeats-submission-report.md
 ```
 
 ## Validation

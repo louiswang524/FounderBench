@@ -5,7 +5,7 @@ This bundle contains code, fixed task manifest, baseline outputs, analysis table
 Run validation from the original workspace with:
 
 ```powershell
-python -m moneybench.release validate
+python -m founderbench.release validate
 ```
 
 This release does not yet include hosted LLM current release baselines or a private hidden holdout.

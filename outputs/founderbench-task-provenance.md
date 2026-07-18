@@ -18,7 +18,7 @@ Task curation and provenance record for the fixed current release public suite.
 
 | Field | Value |
 | --- | --- |
-| source | Hand-designed synthetic startup templates encoded in work/moneybench/moneybench/tasks.py. |
+| source | Hand-designed synthetic startup templates encoded in work/founderbench/founderbench/tasks.py. |
 | template_count | 10 |
 | variants_per_template | 5 |
 | public_split_rule | FND-001..FND-030 are public_dev; FND-031..FND-050 are public_test. |

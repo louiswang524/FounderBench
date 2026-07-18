@@ -37,7 +37,7 @@
     "Use the canonical prompt protocol and structured action schema for every provider.",
     "Run every required model on the same 50 current task ids.",
     "Separate required frontier/commercial coverage from recommended broader ecosystem coverage so missing optional APIs do not block core reproducibility.",
-    "Validate every output with moneybench.submission before including it in leaderboard claims.",
+    "Validate every output with founderbench.submission before including it in leaderboard claims.",
     "Do not drop failed tasks, malformed outputs, provider errors, bankruptcies, or over-budget decisions.",
     "Report provider model ids, prompt/protocol hashes, latency, token usage when available, and estimated cost.",
     "Use the pre-specified paired task-level statistical protocol for model comparisons."
@@ -45,7 +45,7 @@
   "repetition_policy": {
     "single_run_claims": "Allowed only as preliminary baseline rows when clearly labeled single-run.",
     "stochastic_claims": "Require at least 3 repeats or an explicit limitation statement; record each repeat with a distinct resumable-runner --seed value.",
-    "bundle_protocol": "Combine repeated seed outputs with moneybench.submission_bundle and report the generated submission report before stochastic confidence claims.",
+    "bundle_protocol": "Combine repeated seed outputs with founderbench.submission_bundle and report the generated submission report before stochastic confidence claims.",
     "self_consistency": "DeepSeek self-consistency uses k=3 as a separate ablation, not a replacement for the naive baseline."
   },
   "audit_policy": {
@@ -55,7 +55,7 @@
   },
   "acceptance_criteria": [
     "Each required run produces a JSON output with exactly 50 task results.",
-    "Each required run passes moneybench.submission validation.",
+    "Each required run passes founderbench.submission validation.",
     "Provider-error categories are reported even when zero.",
     "At least three provider configurations are ready before the submission gate can pass provider readiness.",
     "Claim-evidence report remains conservative until all LLM comparison evidence exists."
@@ -75,10 +75,10 @@
       "api_key_env": "OPENAI_API_KEY",
       "base_url_env": "OPENAI_BASE_URL",
       "default_model": "gpt-4.1-mini",
-      "run_command": "python -m moneybench.resumable_runner --policy openai --output outputs/founderbench-openai.json --resume --seed 0",
-      "audit_command": "python -m moneybench.resumable_runner --policy openai --output outputs/founderbench-openai-audit.json --resume --seed 0 --audit",
-      "validation_command": "python -m moneybench.submission --input outputs/founderbench-openai.json --report outputs/founderbench-openai-submission-report.md",
-      "audit_validation_command": "python -m moneybench.submission --input outputs/founderbench-openai-audit.json --report outputs/founderbench-openai-audit-submission-report.md",
+      "run_command": "python -m founderbench.resumable_runner --policy openai --output outputs/founderbench-openai.json --resume --seed 0",
+      "audit_command": "python -m founderbench.resumable_runner --policy openai --output outputs/founderbench-openai-audit.json --resume --seed 0 --audit",
+      "validation_command": "python -m founderbench.submission --input outputs/founderbench-openai.json --report outputs/founderbench-openai-submission-report.md",
+      "audit_validation_command": "python -m founderbench.submission --input outputs/founderbench-openai-audit.json --report outputs/founderbench-openai-audit-submission-report.md",
       "submission_report": "outputs/founderbench-openai-submission-report.md",
       "audit_submission_report": "outputs/founderbench-openai-audit-submission-report.md",
       "repeat_outputs": [
@@ -88,8 +88,8 @@
       ],
       "repeat_bundle_output": "outputs/founderbench-openai-repeats.json",
       "repeat_bundle_report": "outputs/founderbench-openai-repeats-submission-report.md",
-      "repeat_bundle_command": "python -m moneybench.submission_bundle --input outputs/founderbench-openai-seed0.json --input outputs/founderbench-openai-seed1.json --input outputs/founderbench-openai-seed2.json --output outputs/founderbench-openai-repeats.json --report outputs/founderbench-openai-repeats-submission-report.md",
-      "repeat_validation_command": "python -m moneybench.submission --input outputs/founderbench-openai-repeats.json --report outputs/founderbench-openai-repeats-submission-report.md"
+      "repeat_bundle_command": "python -m founderbench.submission_bundle --input outputs/founderbench-openai-seed0.json --input outputs/founderbench-openai-seed1.json --input outputs/founderbench-openai-seed2.json --output outputs/founderbench-openai-repeats.json --report outputs/founderbench-openai-repeats-submission-report.md",
+      "repeat_validation_command": "python -m founderbench.submission --input outputs/founderbench-openai-repeats.json --report outputs/founderbench-openai-repeats-submission-report.md"
     },
     {
       "id": "deepseek_single",
@@ -105,10 +105,10 @@
       "api_key_env": "DEEPSEEK_API_KEY",
       "base_url_env": "",
       "default_model": "deepseek-chat",
-      "run_command": "python -m moneybench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek.json --resume --seed 0",
-      "audit_command": "python -m moneybench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek-audit.json --resume --seed 0 --audit",
-      "validation_command": "python -m moneybench.submission --input outputs/founderbench-deepseek.json --report outputs/founderbench-deepseek-submission-report.md",
-      "audit_validation_command": "python -m moneybench.submission --input outputs/founderbench-deepseek-audit.json --report outputs/founderbench-deepseek-audit-submission-report.md",
+      "run_command": "python -m founderbench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek.json --resume --seed 0",
+      "audit_command": "python -m founderbench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek-audit.json --resume --seed 0 --audit",
+      "validation_command": "python -m founderbench.submission --input outputs/founderbench-deepseek.json --report outputs/founderbench-deepseek-submission-report.md",
+      "audit_validation_command": "python -m founderbench.submission --input outputs/founderbench-deepseek-audit.json --report outputs/founderbench-deepseek-audit-submission-report.md",
       "submission_report": "outputs/founderbench-deepseek-submission-report.md",
       "audit_submission_report": "outputs/founderbench-deepseek-audit-submission-report.md",
       "repeat_outputs": [
@@ -118,8 +118,8 @@
       ],
       "repeat_bundle_output": "outputs/founderbench-deepseek-repeats.json",
       "repeat_bundle_report": "outputs/founderbench-deepseek-repeats-submission-report.md",
-      "repeat_bundle_command": "python -m moneybench.submission_bundle --input outputs/founderbench-deepseek-seed0.json --input outputs/founderbench-deepseek-seed1.json --input outputs/founderbench-deepseek-seed2.json --output outputs/founderbench-deepseek-repeats.json --report outputs/founderbench-deepseek-repeats-submission-report.md",
-      "repeat_validation_command": "python -m moneybench.submission --input outputs/founderbench-deepseek-repeats.json --report outputs/founderbench-deepseek-repeats-submission-report.md"
+      "repeat_bundle_command": "python -m founderbench.submission_bundle --input outputs/founderbench-deepseek-seed0.json --input outputs/founderbench-deepseek-seed1.json --input outputs/founderbench-deepseek-seed2.json --output outputs/founderbench-deepseek-repeats.json --report outputs/founderbench-deepseek-repeats-submission-report.md",
+      "repeat_validation_command": "python -m founderbench.submission --input outputs/founderbench-deepseek-repeats.json --report outputs/founderbench-deepseek-repeats-submission-report.md"
     },
     {
       "id": "deepseek_sc_k3",
@@ -135,10 +135,10 @@
       "api_key_env": "DEEPSEEK_API_KEY",
       "base_url_env": "",
       "default_model": "deepseek-chat",
-      "run_command": "python -m moneybench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3.json --resume --seed 0",
-      "audit_command": "python -m moneybench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-audit.json --resume --seed 0 --audit",
-      "validation_command": "python -m moneybench.submission --input outputs/founderbench-deepseek-sc-k3.json --report outputs/founderbench-deepseek-sc-k3-submission-report.md",
-      "audit_validation_command": "python -m moneybench.submission --input outputs/founderbench-deepseek-sc-k3-audit.json --report outputs/founderbench-deepseek-sc-k3-audit-submission-report.md",
+      "run_command": "python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3.json --resume --seed 0",
+      "audit_command": "python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-audit.json --resume --seed 0 --audit",
+      "validation_command": "python -m founderbench.submission --input outputs/founderbench-deepseek-sc-k3.json --report outputs/founderbench-deepseek-sc-k3-submission-report.md",
+      "audit_validation_command": "python -m founderbench.submission --input outputs/founderbench-deepseek-sc-k3-audit.json --report outputs/founderbench-deepseek-sc-k3-audit-submission-report.md",
       "submission_report": "outputs/founderbench-deepseek-sc-k3-submission-report.md",
       "audit_submission_report": "outputs/founderbench-deepseek-sc-k3-audit-submission-report.md",
       "repeat_outputs": [
@@ -148,8 +148,8 @@
       ],
       "repeat_bundle_output": "outputs/founderbench-deepseek-sc-k3-repeats.json",
       "repeat_bundle_report": "outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md",
-      "repeat_bundle_command": "python -m moneybench.submission_bundle --input outputs/founderbench-deepseek-sc-k3-seed0.json --input outputs/founderbench-deepseek-sc-k3-seed1.json --input outputs/founderbench-deepseek-sc-k3-seed2.json --output outputs/founderbench-deepseek-sc-k3-repeats.json --report outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md",
-      "repeat_validation_command": "python -m moneybench.submission --input outputs/founderbench-deepseek-sc-k3-repeats.json --report outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md"
+      "repeat_bundle_command": "python -m founderbench.submission_bundle --input outputs/founderbench-deepseek-sc-k3-seed0.json --input outputs/founderbench-deepseek-sc-k3-seed1.json --input outputs/founderbench-deepseek-sc-k3-seed2.json --output outputs/founderbench-deepseek-sc-k3-repeats.json --report outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md",
+      "repeat_validation_command": "python -m founderbench.submission --input outputs/founderbench-deepseek-sc-k3-repeats.json --report outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md"
     },
     {
       "id": "anthropic_single",
@@ -165,10 +165,10 @@
       "api_key_env": "ANTHROPIC_API_KEY",
       "base_url_env": "",
       "default_model": "claude-sonnet-4-5",
-      "run_command": "python -m moneybench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic.json --resume --seed 0",
-      "audit_command": "python -m moneybench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic-audit.json --resume --seed 0 --audit",
-      "validation_command": "python -m moneybench.submission --input outputs/founderbench-anthropic.json --report outputs/founderbench-anthropic-submission-report.md",
-      "audit_validation_command": "python -m moneybench.submission --input outputs/founderbench-anthropic-audit.json --report outputs/founderbench-anthropic-audit-submission-report.md",
+      "run_command": "python -m founderbench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic.json --resume --seed 0",
+      "audit_command": "python -m founderbench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic-audit.json --resume --seed 0 --audit",
+      "validation_command": "python -m founderbench.submission --input outputs/founderbench-anthropic.json --report outputs/founderbench-anthropic-submission-report.md",
+      "audit_validation_command": "python -m founderbench.submission --input outputs/founderbench-anthropic-audit.json --report outputs/founderbench-anthropic-audit-submission-report.md",
       "submission_report": "outputs/founderbench-anthropic-submission-report.md",
       "audit_submission_report": "outputs/founderbench-anthropic-audit-submission-report.md",
       "repeat_outputs": [
@@ -178,8 +178,8 @@
       ],
       "repeat_bundle_output": "outputs/founderbench-anthropic-repeats.json",
       "repeat_bundle_report": "outputs/founderbench-anthropic-repeats-submission-report.md",
-      "repeat_bundle_command": "python -m moneybench.submission_bundle --input outputs/founderbench-anthropic-seed0.json --input outputs/founderbench-anthropic-seed1.json --input outputs/founderbench-anthropic-seed2.json --output outputs/founderbench-anthropic-repeats.json --report outputs/founderbench-anthropic-repeats-submission-report.md",
-      "repeat_validation_command": "python -m moneybench.submission --input outputs/founderbench-anthropic-repeats.json --report outputs/founderbench-anthropic-repeats-submission-report.md"
+      "repeat_bundle_command": "python -m founderbench.submission_bundle --input outputs/founderbench-anthropic-seed0.json --input outputs/founderbench-anthropic-seed1.json --input outputs/founderbench-anthropic-seed2.json --output outputs/founderbench-anthropic-repeats.json --report outputs/founderbench-anthropic-repeats-submission-report.md",
+      "repeat_validation_command": "python -m founderbench.submission --input outputs/founderbench-anthropic-repeats.json --report outputs/founderbench-anthropic-repeats-submission-report.md"
     },
     {
       "id": "gemini_single",
@@ -195,10 +195,10 @@
       "api_key_env": "GEMINI_API_KEY",
       "base_url_env": "",
       "default_model": "gemini-2.5-flash",
-      "run_command": "python -m moneybench.resumable_runner --policy gemini --output outputs/founderbench-gemini.json --resume --seed 0",
-      "audit_command": "python -m moneybench.resumable_runner --policy gemini --output outputs/founderbench-gemini-audit.json --resume --seed 0 --audit",
-      "validation_command": "python -m moneybench.submission --input outputs/founderbench-gemini.json --report outputs/founderbench-gemini-submission-report.md",
-      "audit_validation_command": "python -m moneybench.submission --input outputs/founderbench-gemini-audit.json --report outputs/founderbench-gemini-audit-submission-report.md",
+      "run_command": "python -m founderbench.resumable_runner --policy gemini --output outputs/founderbench-gemini.json --resume --seed 0",
+      "audit_command": "python -m founderbench.resumable_runner --policy gemini --output outputs/founderbench-gemini-audit.json --resume --seed 0 --audit",
+      "validation_command": "python -m founderbench.submission --input outputs/founderbench-gemini.json --report outputs/founderbench-gemini-submission-report.md",
+      "audit_validation_command": "python -m founderbench.submission --input outputs/founderbench-gemini-audit.json --report outputs/founderbench-gemini-audit-submission-report.md",
       "submission_report": "outputs/founderbench-gemini-submission-report.md",
       "audit_submission_report": "outputs/founderbench-gemini-audit-submission-report.md",
       "repeat_outputs": [
@@ -208,8 +208,8 @@
       ],
       "repeat_bundle_output": "outputs/founderbench-gemini-repeats.json",
       "repeat_bundle_report": "outputs/founderbench-gemini-repeats-submission-report.md",
-      "repeat_bundle_command": "python -m moneybench.submission_bundle --input outputs/founderbench-gemini-seed0.json --input outputs/founderbench-gemini-seed1.json --input outputs/founderbench-gemini-seed2.json --output outputs/founderbench-gemini-repeats.json --report outputs/founderbench-gemini-repeats-submission-report.md",
-      "repeat_validation_command": "python -m moneybench.submission --input outputs/founderbench-gemini-repeats.json --report outputs/founderbench-gemini-repeats-submission-report.md"
+      "repeat_bundle_command": "python -m founderbench.submission_bundle --input outputs/founderbench-gemini-seed0.json --input outputs/founderbench-gemini-seed1.json --input outputs/founderbench-gemini-seed2.json --output outputs/founderbench-gemini-repeats.json --report outputs/founderbench-gemini-repeats-submission-report.md",
+      "repeat_validation_command": "python -m founderbench.submission --input outputs/founderbench-gemini-repeats.json --report outputs/founderbench-gemini-repeats-submission-report.md"
     },
     {
       "id": "kimi_single",
@@ -225,10 +225,10 @@
       "api_key_env": "KIMI_API_KEY",
       "base_url_env": "KIMI_BASE_URL",
       "default_model": "kimi-latest",
-      "run_command": "python -m moneybench.resumable_runner --policy kimi --output outputs/founderbench-kimi.json --resume --seed 0",
-      "audit_command": "python -m moneybench.resumable_runner --policy kimi --output outputs/founderbench-kimi-audit.json --resume --seed 0 --audit",
-      "validation_command": "python -m moneybench.submission --input outputs/founderbench-kimi.json --report outputs/founderbench-kimi-submission-report.md",
-      "audit_validation_command": "python -m moneybench.submission --input outputs/founderbench-kimi-audit.json --report outputs/founderbench-kimi-audit-submission-report.md",
+      "run_command": "python -m founderbench.resumable_runner --policy kimi --output outputs/founderbench-kimi.json --resume --seed 0",
+      "audit_command": "python -m founderbench.resumable_runner --policy kimi --output outputs/founderbench-kimi-audit.json --resume --seed 0 --audit",
+      "validation_command": "python -m founderbench.submission --input outputs/founderbench-kimi.json --report outputs/founderbench-kimi-submission-report.md",
+      "audit_validation_command": "python -m founderbench.submission --input outputs/founderbench-kimi-audit.json --report outputs/founderbench-kimi-audit-submission-report.md",
       "submission_report": "outputs/founderbench-kimi-submission-report.md",
       "audit_submission_report": "outputs/founderbench-kimi-audit-submission-report.md",
       "repeat_outputs": [
@@ -238,8 +238,8 @@
       ],
       "repeat_bundle_output": "outputs/founderbench-kimi-repeats.json",
       "repeat_bundle_report": "outputs/founderbench-kimi-repeats-submission-report.md",
-      "repeat_bundle_command": "python -m moneybench.submission_bundle --input outputs/founderbench-kimi-seed0.json --input outputs/founderbench-kimi-seed1.json --input outputs/founderbench-kimi-seed2.json --output outputs/founderbench-kimi-repeats.json --report outputs/founderbench-kimi-repeats-submission-report.md",
-      "repeat_validation_command": "python -m moneybench.submission --input outputs/founderbench-kimi-repeats.json --report outputs/founderbench-kimi-repeats-submission-report.md"
+      "repeat_bundle_command": "python -m founderbench.submission_bundle --input outputs/founderbench-kimi-seed0.json --input outputs/founderbench-kimi-seed1.json --input outputs/founderbench-kimi-seed2.json --output outputs/founderbench-kimi-repeats.json --report outputs/founderbench-kimi-repeats-submission-report.md",
+      "repeat_validation_command": "python -m founderbench.submission --input outputs/founderbench-kimi-repeats.json --report outputs/founderbench-kimi-repeats-submission-report.md"
     },
     {
       "id": "qwen_single",
@@ -255,10 +255,10 @@
       "api_key_env": "QWEN_API_KEY",
       "base_url_env": "QWEN_BASE_URL",
       "default_model": "qwen-plus",
-      "run_command": "python -m moneybench.resumable_runner --policy qwen --output outputs/founderbench-qwen.json --resume --seed 0",
-      "audit_command": "python -m moneybench.resumable_runner --policy qwen --output outputs/founderbench-qwen-audit.json --resume --seed 0 --audit",
-      "validation_command": "python -m moneybench.submission --input outputs/founderbench-qwen.json --report outputs/founderbench-qwen-submission-report.md",
-      "audit_validation_command": "python -m moneybench.submission --input outputs/founderbench-qwen-audit.json --report outputs/founderbench-qwen-audit-submission-report.md",
+      "run_command": "python -m founderbench.resumable_runner --policy qwen --output outputs/founderbench-qwen.json --resume --seed 0",
+      "audit_command": "python -m founderbench.resumable_runner --policy qwen --output outputs/founderbench-qwen-audit.json --resume --seed 0 --audit",
+      "validation_command": "python -m founderbench.submission --input outputs/founderbench-qwen.json --report outputs/founderbench-qwen-submission-report.md",
+      "audit_validation_command": "python -m founderbench.submission --input outputs/founderbench-qwen-audit.json --report outputs/founderbench-qwen-audit-submission-report.md",
       "submission_report": "outputs/founderbench-qwen-submission-report.md",
       "audit_submission_report": "outputs/founderbench-qwen-audit-submission-report.md",
       "repeat_outputs": [
@@ -268,8 +268,8 @@
       ],
       "repeat_bundle_output": "outputs/founderbench-qwen-repeats.json",
       "repeat_bundle_report": "outputs/founderbench-qwen-repeats-submission-report.md",
-      "repeat_bundle_command": "python -m moneybench.submission_bundle --input outputs/founderbench-qwen-seed0.json --input outputs/founderbench-qwen-seed1.json --input outputs/founderbench-qwen-seed2.json --output outputs/founderbench-qwen-repeats.json --report outputs/founderbench-qwen-repeats-submission-report.md",
-      "repeat_validation_command": "python -m moneybench.submission --input outputs/founderbench-qwen-repeats.json --report outputs/founderbench-qwen-repeats-submission-report.md"
+      "repeat_bundle_command": "python -m founderbench.submission_bundle --input outputs/founderbench-qwen-seed0.json --input outputs/founderbench-qwen-seed1.json --input outputs/founderbench-qwen-seed2.json --output outputs/founderbench-qwen-repeats.json --report outputs/founderbench-qwen-repeats-submission-report.md",
+      "repeat_validation_command": "python -m founderbench.submission --input outputs/founderbench-qwen-repeats.json --report outputs/founderbench-qwen-repeats-submission-report.md"
     },
     {
       "id": "mistral_single",
@@ -285,10 +285,10 @@
       "api_key_env": "MISTRAL_API_KEY",
       "base_url_env": "MISTRAL_BASE_URL",
       "default_model": "mistral-large-latest",
-      "run_command": "python -m moneybench.resumable_runner --policy mistral --output outputs/founderbench-mistral.json --resume --seed 0",
-      "audit_command": "python -m moneybench.resumable_runner --policy mistral --output outputs/founderbench-mistral-audit.json --resume --seed 0 --audit",
-      "validation_command": "python -m moneybench.submission --input outputs/founderbench-mistral.json --report outputs/founderbench-mistral-submission-report.md",
-      "audit_validation_command": "python -m moneybench.submission --input outputs/founderbench-mistral-audit.json --report outputs/founderbench-mistral-audit-submission-report.md",
+      "run_command": "python -m founderbench.resumable_runner --policy mistral --output outputs/founderbench-mistral.json --resume --seed 0",
+      "audit_command": "python -m founderbench.resumable_runner --policy mistral --output outputs/founderbench-mistral-audit.json --resume --seed 0 --audit",
+      "validation_command": "python -m founderbench.submission --input outputs/founderbench-mistral.json --report outputs/founderbench-mistral-submission-report.md",
+      "audit_validation_command": "python -m founderbench.submission --input outputs/founderbench-mistral-audit.json --report outputs/founderbench-mistral-audit-submission-report.md",
       "submission_report": "outputs/founderbench-mistral-submission-report.md",
       "audit_submission_report": "outputs/founderbench-mistral-audit-submission-report.md",
       "repeat_outputs": [
@@ -298,8 +298,8 @@
       ],
       "repeat_bundle_output": "outputs/founderbench-mistral-repeats.json",
       "repeat_bundle_report": "outputs/founderbench-mistral-repeats-submission-report.md",
-      "repeat_bundle_command": "python -m moneybench.submission_bundle --input outputs/founderbench-mistral-seed0.json --input outputs/founderbench-mistral-seed1.json --input outputs/founderbench-mistral-seed2.json --output outputs/founderbench-mistral-repeats.json --report outputs/founderbench-mistral-repeats-submission-report.md",
-      "repeat_validation_command": "python -m moneybench.submission --input outputs/founderbench-mistral-repeats.json --report outputs/founderbench-mistral-repeats-submission-report.md"
+      "repeat_bundle_command": "python -m founderbench.submission_bundle --input outputs/founderbench-mistral-seed0.json --input outputs/founderbench-mistral-seed1.json --input outputs/founderbench-mistral-seed2.json --output outputs/founderbench-mistral-repeats.json --report outputs/founderbench-mistral-repeats-submission-report.md",
+      "repeat_validation_command": "python -m founderbench.submission --input outputs/founderbench-mistral-repeats.json --report outputs/founderbench-mistral-repeats-submission-report.md"
     },
     {
       "id": "glm_single",
@@ -315,10 +315,10 @@
       "api_key_env": "GLM_API_KEY",
       "base_url_env": "GLM_BASE_URL",
       "default_model": "glm-4-plus",
-      "run_command": "python -m moneybench.resumable_runner --policy glm --output outputs/founderbench-glm.json --resume --seed 0",
-      "audit_command": "python -m moneybench.resumable_runner --policy glm --output outputs/founderbench-glm-audit.json --resume --seed 0 --audit",
-      "validation_command": "python -m moneybench.submission --input outputs/founderbench-glm.json --report outputs/founderbench-glm-submission-report.md",
-      "audit_validation_command": "python -m moneybench.submission --input outputs/founderbench-glm-audit.json --report outputs/founderbench-glm-audit-submission-report.md",
+      "run_command": "python -m founderbench.resumable_runner --policy glm --output outputs/founderbench-glm.json --resume --seed 0",
+      "audit_command": "python -m founderbench.resumable_runner --policy glm --output outputs/founderbench-glm-audit.json --resume --seed 0 --audit",
+      "validation_command": "python -m founderbench.submission --input outputs/founderbench-glm.json --report outputs/founderbench-glm-submission-report.md",
+      "audit_validation_command": "python -m founderbench.submission --input outputs/founderbench-glm-audit.json --report outputs/founderbench-glm-audit-submission-report.md",
       "submission_report": "outputs/founderbench-glm-submission-report.md",
       "audit_submission_report": "outputs/founderbench-glm-audit-submission-report.md",
       "repeat_outputs": [
@@ -328,8 +328,8 @@
       ],
       "repeat_bundle_output": "outputs/founderbench-glm-repeats.json",
       "repeat_bundle_report": "outputs/founderbench-glm-repeats-submission-report.md",
-      "repeat_bundle_command": "python -m moneybench.submission_bundle --input outputs/founderbench-glm-seed0.json --input outputs/founderbench-glm-seed1.json --input outputs/founderbench-glm-seed2.json --output outputs/founderbench-glm-repeats.json --report outputs/founderbench-glm-repeats-submission-report.md",
-      "repeat_validation_command": "python -m moneybench.submission --input outputs/founderbench-glm-repeats.json --report outputs/founderbench-glm-repeats-submission-report.md"
+      "repeat_bundle_command": "python -m founderbench.submission_bundle --input outputs/founderbench-glm-seed0.json --input outputs/founderbench-glm-seed1.json --input outputs/founderbench-glm-seed2.json --output outputs/founderbench-glm-repeats.json --report outputs/founderbench-glm-repeats-submission-report.md",
+      "repeat_validation_command": "python -m founderbench.submission --input outputs/founderbench-glm-repeats.json --report outputs/founderbench-glm-repeats-submission-report.md"
     },
     {
       "id": "xai_single",
@@ -345,10 +345,10 @@
       "api_key_env": "XAI_API_KEY",
       "base_url_env": "XAI_BASE_URL",
       "default_model": "grok-3-mini",
-      "run_command": "python -m moneybench.resumable_runner --policy xai --output outputs/founderbench-xai.json --resume --seed 0",
-      "audit_command": "python -m moneybench.resumable_runner --policy xai --output outputs/founderbench-xai-audit.json --resume --seed 0 --audit",
-      "validation_command": "python -m moneybench.submission --input outputs/founderbench-xai.json --report outputs/founderbench-xai-submission-report.md",
-      "audit_validation_command": "python -m moneybench.submission --input outputs/founderbench-xai-audit.json --report outputs/founderbench-xai-audit-submission-report.md",
+      "run_command": "python -m founderbench.resumable_runner --policy xai --output outputs/founderbench-xai.json --resume --seed 0",
+      "audit_command": "python -m founderbench.resumable_runner --policy xai --output outputs/founderbench-xai-audit.json --resume --seed 0 --audit",
+      "validation_command": "python -m founderbench.submission --input outputs/founderbench-xai.json --report outputs/founderbench-xai-submission-report.md",
+      "audit_validation_command": "python -m founderbench.submission --input outputs/founderbench-xai-audit.json --report outputs/founderbench-xai-audit-submission-report.md",
       "submission_report": "outputs/founderbench-xai-submission-report.md",
       "audit_submission_report": "outputs/founderbench-xai-audit-submission-report.md",
       "repeat_outputs": [
@@ -358,8 +358,8 @@
       ],
       "repeat_bundle_output": "outputs/founderbench-xai-repeats.json",
       "repeat_bundle_report": "outputs/founderbench-xai-repeats-submission-report.md",
-      "repeat_bundle_command": "python -m moneybench.submission_bundle --input outputs/founderbench-xai-seed0.json --input outputs/founderbench-xai-seed1.json --input outputs/founderbench-xai-seed2.json --output outputs/founderbench-xai-repeats.json --report outputs/founderbench-xai-repeats-submission-report.md",
-      "repeat_validation_command": "python -m moneybench.submission --input outputs/founderbench-xai-repeats.json --report outputs/founderbench-xai-repeats-submission-report.md"
+      "repeat_bundle_command": "python -m founderbench.submission_bundle --input outputs/founderbench-xai-seed0.json --input outputs/founderbench-xai-seed1.json --input outputs/founderbench-xai-seed2.json --output outputs/founderbench-xai-repeats.json --report outputs/founderbench-xai-repeats-submission-report.md",
+      "repeat_validation_command": "python -m founderbench.submission --input outputs/founderbench-xai-repeats.json --report outputs/founderbench-xai-repeats-submission-report.md"
     },
     {
       "id": "llama_endpoint_single",
@@ -375,10 +375,10 @@
       "api_key_env": "LLAMA_API_KEY",
       "base_url_env": "LLAMA_BASE_URL",
       "default_model": "meta-llama/Llama-3.1-70B-Instruct",
-      "run_command": "python -m moneybench.resumable_runner --policy llama --output outputs/founderbench-llama.json --resume --seed 0",
-      "audit_command": "python -m moneybench.resumable_runner --policy llama --output outputs/founderbench-llama-audit.json --resume --seed 0 --audit",
-      "validation_command": "python -m moneybench.submission --input outputs/founderbench-llama.json --report outputs/founderbench-llama-submission-report.md",
-      "audit_validation_command": "python -m moneybench.submission --input outputs/founderbench-llama-audit.json --report outputs/founderbench-llama-audit-submission-report.md",
+      "run_command": "python -m founderbench.resumable_runner --policy llama --output outputs/founderbench-llama.json --resume --seed 0",
+      "audit_command": "python -m founderbench.resumable_runner --policy llama --output outputs/founderbench-llama-audit.json --resume --seed 0 --audit",
+      "validation_command": "python -m founderbench.submission --input outputs/founderbench-llama.json --report outputs/founderbench-llama-submission-report.md",
+      "audit_validation_command": "python -m founderbench.submission --input outputs/founderbench-llama-audit.json --report outputs/founderbench-llama-audit-submission-report.md",
       "submission_report": "outputs/founderbench-llama-submission-report.md",
       "audit_submission_report": "outputs/founderbench-llama-audit-submission-report.md",
       "repeat_outputs": [
@@ -388,8 +388,8 @@
       ],
       "repeat_bundle_output": "outputs/founderbench-llama-repeats.json",
       "repeat_bundle_report": "outputs/founderbench-llama-repeats-submission-report.md",
-      "repeat_bundle_command": "python -m moneybench.submission_bundle --input outputs/founderbench-llama-seed0.json --input outputs/founderbench-llama-seed1.json --input outputs/founderbench-llama-seed2.json --output outputs/founderbench-llama-repeats.json --report outputs/founderbench-llama-repeats-submission-report.md",
-      "repeat_validation_command": "python -m moneybench.submission --input outputs/founderbench-llama-repeats.json --report outputs/founderbench-llama-repeats-submission-report.md"
+      "repeat_bundle_command": "python -m founderbench.submission_bundle --input outputs/founderbench-llama-seed0.json --input outputs/founderbench-llama-seed1.json --input outputs/founderbench-llama-seed2.json --output outputs/founderbench-llama-repeats.json --report outputs/founderbench-llama-repeats-submission-report.md",
+      "repeat_validation_command": "python -m founderbench.submission --input outputs/founderbench-llama-repeats.json --report outputs/founderbench-llama-repeats-submission-report.md"
     },
     {
       "id": "local_open_model_single",
@@ -405,10 +405,10 @@
       "api_key_env": "OPENAI_COMPAT_API_KEY",
       "base_url_env": "OPENAI_COMPAT_BASE_URL",
       "default_model": "Qwen/Qwen2.5-7B-Instruct",
-      "run_command": "python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model.json --resume --seed 0",
-      "audit_command": "python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model-audit.json --resume --seed 0 --audit",
-      "validation_command": "python -m moneybench.submission --input outputs/founderbench-local-open-model.json --report outputs/founderbench-local-open-model-submission-report.md",
-      "audit_validation_command": "python -m moneybench.submission --input outputs/founderbench-local-open-model-audit.json --report outputs/founderbench-local-open-model-audit-submission-report.md",
+      "run_command": "python -m founderbench.resumable_runner --policy llm --output outputs/founderbench-local-open-model.json --resume --seed 0",
+      "audit_command": "python -m founderbench.resumable_runner --policy llm --output outputs/founderbench-local-open-model-audit.json --resume --seed 0 --audit",
+      "validation_command": "python -m founderbench.submission --input outputs/founderbench-local-open-model.json --report outputs/founderbench-local-open-model-submission-report.md",
+      "audit_validation_command": "python -m founderbench.submission --input outputs/founderbench-local-open-model-audit.json --report outputs/founderbench-local-open-model-audit-submission-report.md",
       "submission_report": "outputs/founderbench-local-open-model-submission-report.md",
       "audit_submission_report": "outputs/founderbench-local-open-model-audit-submission-report.md",
       "repeat_outputs": [
@@ -418,8 +418,8 @@
       ],
       "repeat_bundle_output": "outputs/founderbench-local-open-model-repeats.json",
       "repeat_bundle_report": "outputs/founderbench-local-open-model-repeats-submission-report.md",
-      "repeat_bundle_command": "python -m moneybench.submission_bundle --input outputs/founderbench-local-open-model-seed0.json --input outputs/founderbench-local-open-model-seed1.json --input outputs/founderbench-local-open-model-seed2.json --output outputs/founderbench-local-open-model-repeats.json --report outputs/founderbench-local-open-model-repeats-submission-report.md",
-      "repeat_validation_command": "python -m moneybench.submission --input outputs/founderbench-local-open-model-repeats.json --report outputs/founderbench-local-open-model-repeats-submission-report.md"
+      "repeat_bundle_command": "python -m founderbench.submission_bundle --input outputs/founderbench-local-open-model-seed0.json --input outputs/founderbench-local-open-model-seed1.json --input outputs/founderbench-local-open-model-seed2.json --output outputs/founderbench-local-open-model-repeats.json --report outputs/founderbench-local-open-model-repeats-submission-report.md",
+      "repeat_validation_command": "python -m founderbench.submission --input outputs/founderbench-local-open-model-repeats.json --report outputs/founderbench-local-open-model-repeats-submission-report.md"
     }
   ],
   "summary": {

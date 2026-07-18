@@ -3,14 +3,14 @@
 Version: 0.3.0
 Prompt version: `founderbench-task-agent`
 Prompt template SHA-256: `21cfb19c6ce46b4f74d6d92dc994fca10237b86e166e5b886b5220bb4da15e8b`
-Protocol SHA-256: `da7872937d1f3dfc0ed055921c3b7e7f00169b8d66bd01779da130f282bf52cb`
+Protocol SHA-256: `a2f5a2b7f20fe49854b426d8cb4f747a92b8245eb71df5f84fdeaece9618b0a6`
 
 ## Contract
 
 - Task count: 50
 - Maximum actions per week: 4
 - Response format: JSON object only with required keys `rationale` and `actions`.
-- Parser: `moneybench.provider_adapter.parse_provider_response`.
+- Parser: `founderbench.provider_adapter.parse_provider_response`.
 
 ## Action Vocabulary
 
@@ -46,7 +46,7 @@ Protocol SHA-256: `da7872937d1f3dfc0ed055921c3b7e7f00169b8d66bd01779da130f282bf5
 
 - Record prompt_sha256 for every provider call.
 - Record raw_response_redacted, parse/error category, token usage, estimated cost, and latency when available.
-- Validate each complete suite with python -m moneybench.submission before comparing scores.
+- Validate each complete suite with python -m founderbench.submission before comparing scores.
 
 ## Anti-Gaming Controls
 

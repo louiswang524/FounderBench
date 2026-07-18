@@ -29,7 +29,11 @@ outputs/*v0.2*
 outputs/*-results.json
 outputs/*-runlog.md
 outputs/*-trace.json
-outputs/moneybench-*
+outputs/founderbench-baseline-results.json
+outputs/founderbench-benchmark-proposal.md
+outputs/founderbench-demo-trace.json
+outputs/founderbench-demo.html
+outputs/founderbench-mvp-report.md
 outputs/no-human-company.html
 outputs/founderbench-3provider-experiment-report.md
 outputs/founderbench-submission-readiness.md

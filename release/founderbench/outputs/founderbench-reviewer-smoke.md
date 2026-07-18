@@ -17,17 +17,17 @@ Status: `pass`
 ## Quick Commands
 
 ```powershell
-python -m moneybench.reviewer_smoke --json-output ..\..\outputs\founderbench-reviewer-smoke.json --markdown-output ..\..\outputs\founderbench-reviewer-smoke.md
-python -m moneybench.task_cli --policy task_heuristic --task FND-001
-python -m moneybench.submission --input ..\..\outputs\founderbench-baseline-raw.json --report ..\..\outputs\founderbench-submission-validation.md
+python -m founderbench.reviewer_smoke --json-output ..\..\outputs\founderbench-reviewer-smoke.json --markdown-output ..\..\outputs\founderbench-reviewer-smoke.md
+python -m founderbench.task_cli --policy task_heuristic --task FND-001
+python -m founderbench.submission --input ..\..\outputs\founderbench-baseline-raw.json --report ..\..\outputs\founderbench-submission-validation.md
 ```
 
 ## Full Validation
 
 ```powershell
 python -m unittest discover -s tests -v
-python -m moneybench.release validate
-python -m moneybench.release bundle
+python -m founderbench.release validate
+python -m founderbench.release bundle
 ```
 
 ## Validation

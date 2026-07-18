@@ -42,8 +42,8 @@ Separate startup-judgment validity from benchmark-interface validity while keepi
 1. Confirm ethics/IRB requirements, compensation, recruitment source, and conflict-disclosure policy before contacting participants.
 2. Give each participant the task cards, action semantics, score rubric, and blank JSON response template.
 3. Ask participants to complete all required sampled tasks and optionally mark any scenario they skip because of confidentiality overlap.
-4. Validate each returned JSON response with `moneybench.human_calibration_schema.validate_submission` before analysis.
-5. Run `python -m moneybench.human_calibration_analysis --input <submission.json> --json-output <analysis.json> --markdown-output <analysis.md>` after real submissions are collected.
+4. Validate each returned JSON response with `founderbench.human_calibration_schema.validate_submission` before analysis.
+5. Run `python -m founderbench.human_calibration_analysis --input <submission.json> --json-output <analysis.json> --markdown-output <analysis.md>` after real submissions are collected.
 6. Update the claim-evidence report, validity report, paper draft, and task revisions only after executed calibration has passed validation.
 
 ## Review Questions

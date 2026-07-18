@@ -77,8 +77,8 @@
       "status": "fail",
       "evidence": [
         "outputs/founderbench-license-readiness.md",
-        "work/moneybench/CITATION.cff",
-        "work/moneybench/LICENSE-TODO.md"
+        "work/founderbench/CITATION.cff",
+        "work/founderbench/LICENSE-TODO.md"
       ],
       "blocker": "License/citation metadata is not public-release ready."
     }

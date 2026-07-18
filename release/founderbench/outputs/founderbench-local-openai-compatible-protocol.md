@@ -11,16 +11,16 @@ This protocol runs a local or open-source model through an OpenAI-compatible `/v
 ## Commands
 
 ```powershell
-python -m moneybench.local_model protocol --output outputs/founderbench-local-openai-compatible-protocol.json
+python -m founderbench.local_model protocol --output outputs/founderbench-local-openai-compatible-protocol.json
 ```
 ```powershell
-python -m moneybench.local_model health --output outputs/local-health.json
+python -m founderbench.local_model health --output outputs/local-health.json
 ```
 ```powershell
-python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model.json --resume --audit
+python -m founderbench.resumable_runner --policy llm --output outputs/founderbench-local-open-model.json --resume --audit
 ```
 ```powershell
-python -m moneybench.submission --input outputs/founderbench-local-open-model.json --report outputs/founderbench-local-open-model-submission-report.md
+python -m founderbench.submission --input outputs/founderbench-local-open-model.json --report outputs/founderbench-local-open-model-submission-report.md
 ```
 
 ## Reporting Requirements

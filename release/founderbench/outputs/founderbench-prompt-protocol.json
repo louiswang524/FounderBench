@@ -33,7 +33,7 @@
       "price",
       "message_quality"
     ],
-    "parser": "moneybench.provider_adapter.parse_provider_response"
+    "parser": "founderbench.provider_adapter.parse_provider_response"
   },
   "prompt_template": {
     "benchmark": "FounderBench",
@@ -192,12 +192,12 @@
   "run_trace_requirements": [
     "Record prompt_sha256 for every provider call.",
     "Record raw_response_redacted, parse/error category, token usage, estimated cost, and latency when available.",
-    "Validate each complete suite with python -m moneybench.submission before comparing scores."
+    "Validate each complete suite with python -m founderbench.submission before comparing scores."
   ],
   "anti_gaming_controls": [
     "Models receive only the current task observation and allowed actions.",
     "The simulator executes structured actions only; natural-language business claims do not affect score.",
     "Public runs report prompt hashes, while hidden-holdout evaluation withholds private task definitions."
   ],
-  "protocol_sha256": "da7872937d1f3dfc0ed055921c3b7e7f00169b8d66bd01779da130f282bf52cb"
+  "protocol_sha256": "a2f5a2b7f20fe49854b426d8cb4f747a92b8245eb71df5f84fdeaece9618b0a6"
 }

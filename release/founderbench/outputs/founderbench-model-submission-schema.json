@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://FounderBench.local/schemas/model-submission.schema.json",
   "title": "FounderBench Model Submission",
-  "description": "Machine-readable schema for raw model run submissions. The authoritative validator remains python -m moneybench.submission, which also checks task-id set equality and diagnostic consistency.",
+  "description": "Machine-readable schema for raw model run submissions. The authoritative validator remains python -m founderbench.submission, which also checks task-id set equality and diagnostic consistency.",
   "benchmark": "FounderBench",
   "version": "0.3.0",
   "accepted_payload_shapes": [
@@ -736,5 +736,5 @@
       }
     }
   },
-  "validator_command": "python -m moneybench.submission --input outputs/provider-run.json --report outputs/provider-run-submission-report.md"
+  "validator_command": "python -m founderbench.submission --input outputs/provider-run.json --report outputs/provider-run-submission-report.md"
 }

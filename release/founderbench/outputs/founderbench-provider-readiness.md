@@ -24,95 +24,95 @@ Ready providers: 0/12
 ### OpenAI GPT
 
 ```powershell
-python -m moneybench.resumable_runner --policy openai --output outputs/founderbench-openai.json --resume
-python -m moneybench.resumable_runner --policy openai --output outputs/founderbench-openai-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-openai.json --report outputs/founderbench-openai-submission-report.md
+python -m founderbench.resumable_runner --policy openai --output outputs/founderbench-openai.json --resume
+python -m founderbench.resumable_runner --policy openai --output outputs/founderbench-openai-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-openai.json --report outputs/founderbench-openai-submission-report.md
 ```
 
 ### DeepSeek
 
 ```powershell
-python -m moneybench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek.json --resume
-python -m moneybench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-deepseek.json --report outputs/founderbench-deepseek-submission-report.md
+python -m founderbench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek.json --resume
+python -m founderbench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-deepseek.json --report outputs/founderbench-deepseek-submission-report.md
 ```
 
 ### DeepSeek self-consistency
 
 ```powershell
-python -m moneybench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3.json --resume
-python -m moneybench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-deepseek-sc-k3.json --report outputs/founderbench-deepseek-sc-k3-submission-report.md
+python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3.json --resume
+python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-deepseek-sc-k3.json --report outputs/founderbench-deepseek-sc-k3-submission-report.md
 ```
 
 ### Anthropic Claude
 
 ```powershell
-python -m moneybench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic.json --resume
-python -m moneybench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-anthropic.json --report outputs/founderbench-anthropic-submission-report.md
+python -m founderbench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic.json --resume
+python -m founderbench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-anthropic.json --report outputs/founderbench-anthropic-submission-report.md
 ```
 
 ### Google Gemini
 
 ```powershell
-python -m moneybench.resumable_runner --policy gemini --output outputs/founderbench-gemini.json --resume
-python -m moneybench.resumable_runner --policy gemini --output outputs/founderbench-gemini-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-gemini.json --report outputs/founderbench-gemini-submission-report.md
+python -m founderbench.resumable_runner --policy gemini --output outputs/founderbench-gemini.json --resume
+python -m founderbench.resumable_runner --policy gemini --output outputs/founderbench-gemini-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-gemini.json --report outputs/founderbench-gemini-submission-report.md
 ```
 
 ### Moonshot Kimi
 
 ```powershell
-python -m moneybench.resumable_runner --policy kimi --output outputs/founderbench-kimi.json --resume
-python -m moneybench.resumable_runner --policy kimi --output outputs/founderbench-kimi-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-kimi.json --report outputs/founderbench-kimi-submission-report.md
+python -m founderbench.resumable_runner --policy kimi --output outputs/founderbench-kimi.json --resume
+python -m founderbench.resumable_runner --policy kimi --output outputs/founderbench-kimi-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-kimi.json --report outputs/founderbench-kimi-submission-report.md
 ```
 
 ### Alibaba Qwen
 
 ```powershell
-python -m moneybench.resumable_runner --policy qwen --output outputs/founderbench-qwen.json --resume
-python -m moneybench.resumable_runner --policy qwen --output outputs/founderbench-qwen-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-qwen.json --report outputs/founderbench-qwen-submission-report.md
+python -m founderbench.resumable_runner --policy qwen --output outputs/founderbench-qwen.json --resume
+python -m founderbench.resumable_runner --policy qwen --output outputs/founderbench-qwen-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-qwen.json --report outputs/founderbench-qwen-submission-report.md
 ```
 
 ### Mistral
 
 ```powershell
-python -m moneybench.resumable_runner --policy mistral --output outputs/founderbench-mistral.json --resume
-python -m moneybench.resumable_runner --policy mistral --output outputs/founderbench-mistral-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-mistral.json --report outputs/founderbench-mistral-submission-report.md
+python -m founderbench.resumable_runner --policy mistral --output outputs/founderbench-mistral.json --resume
+python -m founderbench.resumable_runner --policy mistral --output outputs/founderbench-mistral-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-mistral.json --report outputs/founderbench-mistral-submission-report.md
 ```
 
 ### Z.ai GLM
 
 ```powershell
-python -m moneybench.resumable_runner --policy glm --output outputs/founderbench-glm.json --resume
-python -m moneybench.resumable_runner --policy glm --output outputs/founderbench-glm-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-glm.json --report outputs/founderbench-glm-submission-report.md
+python -m founderbench.resumable_runner --policy glm --output outputs/founderbench-glm.json --resume
+python -m founderbench.resumable_runner --policy glm --output outputs/founderbench-glm-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-glm.json --report outputs/founderbench-glm-submission-report.md
 ```
 
 ### xAI Grok
 
 ```powershell
-python -m moneybench.resumable_runner --policy xai --output outputs/founderbench-xai.json --resume
-python -m moneybench.resumable_runner --policy xai --output outputs/founderbench-xai-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-xai.json --report outputs/founderbench-xai-submission-report.md
+python -m founderbench.resumable_runner --policy xai --output outputs/founderbench-xai.json --resume
+python -m founderbench.resumable_runner --policy xai --output outputs/founderbench-xai-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-xai.json --report outputs/founderbench-xai-submission-report.md
 ```
 
 ### Llama/Open-weight endpoint
 
 ```powershell
-python -m moneybench.resumable_runner --policy llama --output outputs/founderbench-llama.json --resume
-python -m moneybench.resumable_runner --policy llama --output outputs/founderbench-llama-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-llama.json --report outputs/founderbench-llama-submission-report.md
+python -m founderbench.resumable_runner --policy llama --output outputs/founderbench-llama.json --resume
+python -m founderbench.resumable_runner --policy llama --output outputs/founderbench-llama-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-llama.json --report outputs/founderbench-llama-submission-report.md
 ```
 
 ### Local/OpenAI-compatible
 
 ```powershell
-python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model.json --resume
-python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-local-open-model.json --report outputs/founderbench-local-open-model-submission-report.md
+python -m founderbench.resumable_runner --policy llm --output outputs/founderbench-local-open-model.json --resume
+python -m founderbench.resumable_runner --policy llm --output outputs/founderbench-local-open-model-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-local-open-model.json --report outputs/founderbench-local-open-model-submission-report.md
 ```

@@ -8,10 +8,10 @@ Status: `owner_action_required`
 
 | ID | Decision | Examples | Target Files |
 | --- | --- | --- | --- |
-| license_choice | Select a public release license. | MIT, Apache-2.0, BSD-3-Clause | work/moneybench/LICENSE |
-| author_metadata | Replace placeholder author metadata in CITATION.cff. | Personal author names, Organization plus maintainers | work/moneybench/CITATION.cff |
-| repository_url | Add public repository URL to CITATION.cff. | https://github.com/<owner>/<repo> | work/moneybench/CITATION.cff |
-| citation_license_field | Set the CITATION.cff license field to the selected license identifier. | MIT, Apache-2.0, BSD-3-Clause | work/moneybench/CITATION.cff |
+| license_choice | Select a public release license. | MIT, Apache-2.0, BSD-3-Clause | work/founderbench/LICENSE |
+| author_metadata | Replace placeholder author metadata in CITATION.cff. | Personal author names, Organization plus maintainers | work/founderbench/CITATION.cff |
+| repository_url | Add public repository URL to CITATION.cff. | https://github.com/<owner>/<repo> | work/founderbench/CITATION.cff |
+| citation_license_field | Set the CITATION.cff license field to the selected license identifier. | MIT, Apache-2.0, BSD-3-Clause | work/founderbench/CITATION.cff |
 
 ## Common License Options
 
@@ -45,20 +45,20 @@ Status: `owner_action_required`
 
 ## Finalization Steps
 
-1. Choose one license identifier and add the corresponding full LICENSE text to work/moneybench/LICENSE.
-2. Use work/moneybench/LICENSE.template only as a guide; it is not a substitute for the final LICENSE file.
-3. Replace placeholder author metadata in work/moneybench/CITATION.cff.
-4. Use work/moneybench/CITATION.cff.template only as a guide; it is not a substitute for finalized citation metadata.
+1. Choose one license identifier and add the corresponding full LICENSE text to work/founderbench/LICENSE.
+2. Use work/founderbench/LICENSE.template only as a guide; it is not a substitute for the final LICENSE file.
+3. Replace placeholder author metadata in work/founderbench/CITATION.cff.
+4. Use work/founderbench/CITATION.cff.template only as a guide; it is not a substitute for finalized citation metadata.
 5. Replace repository-code with the public repository URL.
 6. Set the CITATION.cff license field to the selected SPDX identifier.
 7. Remove or update LICENSE-TODO.md so it no longer states that no public release license has been selected.
-8. Run python -m moneybench.release regenerate and python -m moneybench.release validate.
+8. Run python -m founderbench.release regenerate and python -m founderbench.release validate.
 
 ## Guardrails
 
 - This artifact does not select a license or author list for the owner.
 - Template files are intentionally non-final and must not be treated as release metadata.
-- Do not publish the package as open source until work/moneybench/LICENSE exists and CITATION.cff placeholders are replaced.
+- Do not publish the package as open source until work/founderbench/LICENSE exists and CITATION.cff placeholders are replaced.
 - If code and documentation/data use different licenses, state both clearly in README and CITATION metadata.
 
 ## Validation

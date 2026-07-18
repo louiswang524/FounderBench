@@ -57,8 +57,8 @@ Submission gate status: `not_ready`
   - `outputs/founderbench-deepseek-submission-report.md`
 - Commands:
 ```powershell
-python -m moneybench.resumable_runner --policy deepseek --output ..\..\outputs\founderbench-deepseek.json --resume
-python -m moneybench.submission --input ..\..\outputs\founderbench-deepseek.json --report ..\..\outputs\founderbench-deepseek-submission-report.md
+python -m founderbench.resumable_runner --policy deepseek --output ..\..\outputs\founderbench-deepseek.json --resume
+python -m founderbench.submission --input ..\..\outputs\founderbench-deepseek.json --report ..\..\outputs\founderbench-deepseek-submission-report.md
 ```
 
 ### complete_anthropic_hosted_baseline
@@ -71,8 +71,8 @@ python -m moneybench.submission --input ..\..\outputs\founderbench-deepseek.json
   - `outputs/founderbench-anthropic-submission-report.md`
 - Commands:
 ```powershell
-python -m moneybench.resumable_runner --policy anthropic --output ..\..\outputs\founderbench-anthropic.json --resume
-python -m moneybench.submission --input ..\..\outputs\founderbench-anthropic.json --report ..\..\outputs\founderbench-anthropic-submission-report.md
+python -m founderbench.resumable_runner --policy anthropic --output ..\..\outputs\founderbench-anthropic.json --resume
+python -m founderbench.submission --input ..\..\outputs\founderbench-anthropic.json --report ..\..\outputs\founderbench-anthropic-submission-report.md
 ```
 
 ### complete_gemini_hosted_baseline
@@ -85,8 +85,8 @@ python -m moneybench.submission --input ..\..\outputs\founderbench-anthropic.jso
   - `outputs/founderbench-gemini-submission-report.md`
 - Commands:
 ```powershell
-python -m moneybench.resumable_runner --policy gemini --output ..\..\outputs\founderbench-gemini.json --resume
-python -m moneybench.submission --input ..\..\outputs\founderbench-gemini.json --report ..\..\outputs\founderbench-gemini-submission-report.md
+python -m founderbench.resumable_runner --policy gemini --output ..\..\outputs\founderbench-gemini.json --resume
+python -m founderbench.submission --input ..\..\outputs\founderbench-gemini.json --report ..\..\outputs\founderbench-gemini-submission-report.md
 ```
 
 ### complete_local_open_source_baseline
@@ -99,9 +99,9 @@ python -m moneybench.submission --input ..\..\outputs\founderbench-gemini.json -
   - `outputs/founderbench-local-open-model-submission-report.md`
 - Commands:
 ```powershell
-python -m moneybench.local_model health --output ..\..\outputs\local-health.json
-python -m moneybench.resumable_runner --policy llm --output ..\..\outputs\founderbench-local-open-model.json --resume --audit
-python -m moneybench.submission --input ..\..\outputs\founderbench-local-open-model.json --report ..\..\outputs\founderbench-local-open-model-submission-report.md
+python -m founderbench.local_model health --output ..\..\outputs\local-health.json
+python -m founderbench.resumable_runner --policy llm --output ..\..\outputs\founderbench-local-open-model.json --resume --audit
+python -m founderbench.submission --input ..\..\outputs\founderbench-local-open-model.json --report ..\..\outputs\founderbench-local-open-model-submission-report.md
 ```
 
 ### complete_hosted_llm_audit_traces
@@ -115,7 +115,7 @@ python -m moneybench.submission --input ..\..\outputs\founderbench-local-open-mo
   - `outputs/founderbench-gemini-audit.json`
 - Commands:
 ```powershell
-python -m moneybench.resumable_runner --policy <provider> --output ..\..\outputs\<provider>-audit.json --resume --audit
+python -m founderbench.resumable_runner --policy <provider> --output ..\..\outputs\<provider>-audit.json --resume --audit
 ```
 
 ### complete_private_holdout_execution
@@ -139,9 +139,9 @@ Follow outputs/founderbench-private-holdout-evaluator-protocol.md on evaluator h
   - `OPENAI_API_KEY`
 - Commands:
 ```powershell
-python -m moneybench.resumable_runner --policy openai --output outputs/founderbench-openai.json --resume
-python -m moneybench.resumable_runner --policy openai --output outputs/founderbench-openai-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-openai.json --report outputs/founderbench-openai-submission-report.md
+python -m founderbench.resumable_runner --policy openai --output outputs/founderbench-openai.json --resume
+python -m founderbench.resumable_runner --policy openai --output outputs/founderbench-openai-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-openai.json --report outputs/founderbench-openai-submission-report.md
 ```
 
 ### configure_deepseek
@@ -153,9 +153,9 @@ python -m moneybench.submission --input outputs/founderbench-openai.json --repor
   - `DEEPSEEK_API_KEY`
 - Commands:
 ```powershell
-python -m moneybench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek.json --resume
-python -m moneybench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-deepseek.json --report outputs/founderbench-deepseek-submission-report.md
+python -m founderbench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek.json --resume
+python -m founderbench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-deepseek.json --report outputs/founderbench-deepseek-submission-report.md
 ```
 
 ### configure_deepseek_sc
@@ -167,9 +167,9 @@ python -m moneybench.submission --input outputs/founderbench-deepseek.json --rep
   - `DEEPSEEK_API_KEY`
 - Commands:
 ```powershell
-python -m moneybench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3.json --resume
-python -m moneybench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-deepseek-sc-k3.json --report outputs/founderbench-deepseek-sc-k3-submission-report.md
+python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3.json --resume
+python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-deepseek-sc-k3.json --report outputs/founderbench-deepseek-sc-k3-submission-report.md
 ```
 
 ### configure_anthropic
@@ -181,9 +181,9 @@ python -m moneybench.submission --input outputs/founderbench-deepseek-sc-k3.json
   - `ANTHROPIC_API_KEY`
 - Commands:
 ```powershell
-python -m moneybench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic.json --resume
-python -m moneybench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-anthropic.json --report outputs/founderbench-anthropic-submission-report.md
+python -m founderbench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic.json --resume
+python -m founderbench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-anthropic.json --report outputs/founderbench-anthropic-submission-report.md
 ```
 
 ### configure_gemini
@@ -195,9 +195,9 @@ python -m moneybench.submission --input outputs/founderbench-anthropic.json --re
   - `GEMINI_API_KEY`
 - Commands:
 ```powershell
-python -m moneybench.resumable_runner --policy gemini --output outputs/founderbench-gemini.json --resume
-python -m moneybench.resumable_runner --policy gemini --output outputs/founderbench-gemini-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-gemini.json --report outputs/founderbench-gemini-submission-report.md
+python -m founderbench.resumable_runner --policy gemini --output outputs/founderbench-gemini.json --resume
+python -m founderbench.resumable_runner --policy gemini --output outputs/founderbench-gemini-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-gemini.json --report outputs/founderbench-gemini-submission-report.md
 ```
 
 ### configure_kimi
@@ -209,9 +209,9 @@ python -m moneybench.submission --input outputs/founderbench-gemini.json --repor
   - `KIMI_API_KEY`
 - Commands:
 ```powershell
-python -m moneybench.resumable_runner --policy kimi --output outputs/founderbench-kimi.json --resume
-python -m moneybench.resumable_runner --policy kimi --output outputs/founderbench-kimi-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-kimi.json --report outputs/founderbench-kimi-submission-report.md
+python -m founderbench.resumable_runner --policy kimi --output outputs/founderbench-kimi.json --resume
+python -m founderbench.resumable_runner --policy kimi --output outputs/founderbench-kimi-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-kimi.json --report outputs/founderbench-kimi-submission-report.md
 ```
 
 ### configure_qwen
@@ -223,9 +223,9 @@ python -m moneybench.submission --input outputs/founderbench-kimi.json --report 
   - `QWEN_API_KEY`
 - Commands:
 ```powershell
-python -m moneybench.resumable_runner --policy qwen --output outputs/founderbench-qwen.json --resume
-python -m moneybench.resumable_runner --policy qwen --output outputs/founderbench-qwen-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-qwen.json --report outputs/founderbench-qwen-submission-report.md
+python -m founderbench.resumable_runner --policy qwen --output outputs/founderbench-qwen.json --resume
+python -m founderbench.resumable_runner --policy qwen --output outputs/founderbench-qwen-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-qwen.json --report outputs/founderbench-qwen-submission-report.md
 ```
 
 ### configure_mistral
@@ -237,9 +237,9 @@ python -m moneybench.submission --input outputs/founderbench-qwen.json --report 
   - `MISTRAL_API_KEY`
 - Commands:
 ```powershell
-python -m moneybench.resumable_runner --policy mistral --output outputs/founderbench-mistral.json --resume
-python -m moneybench.resumable_runner --policy mistral --output outputs/founderbench-mistral-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-mistral.json --report outputs/founderbench-mistral-submission-report.md
+python -m founderbench.resumable_runner --policy mistral --output outputs/founderbench-mistral.json --resume
+python -m founderbench.resumable_runner --policy mistral --output outputs/founderbench-mistral-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-mistral.json --report outputs/founderbench-mistral-submission-report.md
 ```
 
 ### configure_glm
@@ -251,9 +251,9 @@ python -m moneybench.submission --input outputs/founderbench-mistral.json --repo
   - `GLM_API_KEY`
 - Commands:
 ```powershell
-python -m moneybench.resumable_runner --policy glm --output outputs/founderbench-glm.json --resume
-python -m moneybench.resumable_runner --policy glm --output outputs/founderbench-glm-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-glm.json --report outputs/founderbench-glm-submission-report.md
+python -m founderbench.resumable_runner --policy glm --output outputs/founderbench-glm.json --resume
+python -m founderbench.resumable_runner --policy glm --output outputs/founderbench-glm-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-glm.json --report outputs/founderbench-glm-submission-report.md
 ```
 
 ### configure_xai
@@ -265,9 +265,9 @@ python -m moneybench.submission --input outputs/founderbench-glm.json --report o
   - `XAI_API_KEY`
 - Commands:
 ```powershell
-python -m moneybench.resumable_runner --policy xai --output outputs/founderbench-xai.json --resume
-python -m moneybench.resumable_runner --policy xai --output outputs/founderbench-xai-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-xai.json --report outputs/founderbench-xai-submission-report.md
+python -m founderbench.resumable_runner --policy xai --output outputs/founderbench-xai.json --resume
+python -m founderbench.resumable_runner --policy xai --output outputs/founderbench-xai-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-xai.json --report outputs/founderbench-xai-submission-report.md
 ```
 
 ### configure_llama
@@ -278,9 +278,9 @@ python -m moneybench.submission --input outputs/founderbench-xai.json --report o
 - Missing inputs/outputs:
 - Commands:
 ```powershell
-python -m moneybench.resumable_runner --policy llama --output outputs/founderbench-llama.json --resume
-python -m moneybench.resumable_runner --policy llama --output outputs/founderbench-llama-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-llama.json --report outputs/founderbench-llama-submission-report.md
+python -m founderbench.resumable_runner --policy llama --output outputs/founderbench-llama.json --resume
+python -m founderbench.resumable_runner --policy llama --output outputs/founderbench-llama-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-llama.json --report outputs/founderbench-llama-submission-report.md
 ```
 
 ### configure_llm
@@ -291,9 +291,9 @@ python -m moneybench.submission --input outputs/founderbench-llama.json --report
 - Missing inputs/outputs:
 - Commands:
 ```powershell
-python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model.json --resume
-python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model-audit.json --resume --audit
-python -m moneybench.submission --input outputs/founderbench-local-open-model.json --report outputs/founderbench-local-open-model-submission-report.md
+python -m founderbench.resumable_runner --policy llm --output outputs/founderbench-local-open-model.json --resume
+python -m founderbench.resumable_runner --policy llm --output outputs/founderbench-local-open-model-audit.json --resume --audit
+python -m founderbench.submission --input outputs/founderbench-local-open-model.json --report outputs/founderbench-local-open-model-submission-report.md
 ```
 
 ### support_claim_hosted_llm_comparison
@@ -329,11 +329,11 @@ python -m moneybench.submission --input outputs/founderbench-local-open-model.js
 - Owner: `project_owner`
 - Claim impact: External users need explicit reuse, modification, and redistribution terms.
 - Missing inputs/outputs:
-  - `work/moneybench/LICENSE`
+  - `work/founderbench/LICENSE`
 - Commands:
 ```powershell
-python -m moneybench.release regenerate
-python -m moneybench.release validate
+python -m founderbench.release regenerate
+python -m founderbench.release validate
 ```
 
 ### finalize_author_metadata
@@ -342,11 +342,11 @@ python -m moneybench.release validate
 - Owner: `project_owner`
 - Claim impact: Citation metadata must identify artifact authors before public release.
 - Missing inputs/outputs:
-  - `work/moneybench/CITATION.cff`
+  - `work/founderbench/CITATION.cff`
 - Commands:
 ```powershell
-python -m moneybench.release regenerate
-python -m moneybench.release validate
+python -m founderbench.release regenerate
+python -m founderbench.release validate
 ```
 
 ### finalize_repository_url
@@ -355,11 +355,11 @@ python -m moneybench.release validate
 - Owner: `project_owner`
 - Claim impact: Reviewers and users need a stable source-code location.
 - Missing inputs/outputs:
-  - `work/moneybench/CITATION.cff`
+  - `work/founderbench/CITATION.cff`
 - Commands:
 ```powershell
-python -m moneybench.release regenerate
-python -m moneybench.release validate
+python -m founderbench.release regenerate
+python -m founderbench.release validate
 ```
 
 ### finalize_citation_license_field
@@ -368,11 +368,11 @@ python -m moneybench.release validate
 - Owner: `project_owner`
 - Claim impact: Citation tooling expects machine-readable license metadata.
 - Missing inputs/outputs:
-  - `work/moneybench/CITATION.cff`
+  - `work/founderbench/CITATION.cff`
 - Commands:
 ```powershell
-python -m moneybench.release regenerate
-python -m moneybench.release validate
+python -m founderbench.release regenerate
+python -m founderbench.release validate
 ```
 
 ## Validation

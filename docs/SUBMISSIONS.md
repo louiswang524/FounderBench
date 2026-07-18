@@ -1,6 +1,6 @@
 # Model Submissions
 
-FounderBench submissions are JSON files produced by `moneybench.resumable_runner` or by an external agent that follows the same schema.
+FounderBench submissions are JSON files produced by `founderbench.resumable_runner` or by an external agent that follows the same schema.
 
 ## Required Contract
 
@@ -17,14 +17,14 @@ A valid public submission must include:
 Validate before reporting:
 
 ```bash
-python -m moneybench.submission --input outputs/provider-run.json --report outputs/provider-run-report.md
+python -m founderbench.submission --input outputs/provider-run.json --report outputs/provider-run-report.md
 ```
 
 ## Hosted Provider Run
 
 ```bash
 export DEEPSEEK_API_KEY="..."
-python -m moneybench.resumable_runner \
+python -m founderbench.resumable_runner \
   --policy deepseek \
   --output outputs/founderbench-deepseek.json \
   --resume \
@@ -38,11 +38,11 @@ Audit mode records prompt hashes, redacted responses, token usage when available
 Run separate seeds, then bundle them:
 
 ```bash
-python -m moneybench.resumable_runner --policy deepseek --output outputs/deepseek-seed0.json --resume --seed 0
-python -m moneybench.resumable_runner --policy deepseek --output outputs/deepseek-seed1.json --resume --seed 1
-python -m moneybench.resumable_runner --policy deepseek --output outputs/deepseek-seed2.json --resume --seed 2
+python -m founderbench.resumable_runner --policy deepseek --output outputs/deepseek-seed0.json --resume --seed 0
+python -m founderbench.resumable_runner --policy deepseek --output outputs/deepseek-seed1.json --resume --seed 1
+python -m founderbench.resumable_runner --policy deepseek --output outputs/deepseek-seed2.json --resume --seed 2
 
-python -m moneybench.submission_bundle \
+python -m founderbench.submission_bundle \
   --input outputs/deepseek-seed0.json \
   --input outputs/deepseek-seed1.json \
   --input outputs/deepseek-seed2.json \
@@ -57,18 +57,18 @@ Serve the model behind an OpenAI-compatible chat-completions endpoint:
 ```bash
 export OPENAI_COMPAT_BASE_URL="http://localhost:8000/v1"
 export OPENAI_COMPAT_MODEL="Qwen/Qwen2.5-7B-Instruct"
-python -m moneybench.local_model health --output outputs/local-health.json
-python -m moneybench.resumable_runner --policy llm --output outputs/local-open-model.json --resume --audit
+python -m founderbench.local_model health --output outputs/local-health.json
+python -m founderbench.resumable_runner --policy llm --output outputs/local-open-model.json --resume --audit
 ```
 
 Named OpenAI-compatible hosted policies are also available for broader model-family coverage:
 
 ```bash
 export KIMI_API_KEY="..."
-python -m moneybench.resumable_runner --policy kimi --output outputs/founderbench-kimi.json --resume --audit
+python -m founderbench.resumable_runner --policy kimi --output outputs/founderbench-kimi.json --resume --audit
 
 export QWEN_API_KEY="..."
-python -m moneybench.resumable_runner --policy qwen --output outputs/founderbench-qwen.json --resume --audit
+python -m founderbench.resumable_runner --policy qwen --output outputs/founderbench-qwen.json --resume --audit
 ```
 
 FounderBench also defines `openai`, `mistral`, `glm`, `xai`, and `llama` policies. Each uses provider-specific `*_API_KEY`, `*_MODEL`, and when needed `*_BASE_URL` variables; see `.env.example` and `outputs/founderbench-provider-readiness.md`.

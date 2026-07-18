@@ -39,7 +39,7 @@ Evidence:
 - `outputs/founderbench-benchmark-card.md`: present
 - `outputs/founderbench-datasheet.md`: present
 - `outputs/founderbench-responsible-use.md`: present
-- `work/moneybench/SPEC.md`: present
+- `work/founderbench/SPEC.md`: present
 - `outputs/founderbench-claim-evidence.md`: present
 
 Claim-evidence ids:

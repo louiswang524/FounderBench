@@ -20,8 +20,8 @@ This protocol describes how an independent evaluator can instantiate a hidden Fo
 
 ## Evaluation Steps
 
-1. Validate the submitted public-run JSON with moneybench.submission.
-2. Generate and run private episodes with python -m moneybench.private_holdout_evaluator on the evaluator host.
+1. Validate the submitted public-run JSON with founderbench.submission.
+2. Generate and run private episodes with python -m founderbench.private_holdout_evaluator on the evaluator host.
 3. Run the submitted model on private tasks using the same action schema and diagnostics.
 4. Reject or flag runs that manually repair invalid model outputs outside the adapter.
 5. Report private aggregate score, solve rate, diagnostics, provider-error taxonomy, token/cost metadata, and selected redacted traces.

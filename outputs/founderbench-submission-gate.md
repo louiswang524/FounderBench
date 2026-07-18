@@ -26,7 +26,7 @@ Final status: `not_ready`
 | required_experiments | fail | `outputs/founderbench-experiment-matrix.md` | 6 required experiment groups are missing. |
 | provider_run_readiness | fail | `outputs/founderbench-provider-readiness.md` | Only 0/12 provider configurations are ready. |
 | claim_evidence_alignment | fail | `outputs/founderbench-claim-evidence.md` | 3 stronger claims remain unsupported by current evidence. |
-| license_and_citation | fail | `outputs/founderbench-license-readiness.md`, `work/moneybench/CITATION.cff`, `work/moneybench/LICENSE-TODO.md` | License/citation metadata is not public-release ready. |
+| license_and_citation | fail | `outputs/founderbench-license-readiness.md`, `work/founderbench/CITATION.cff`, `work/founderbench/LICENSE-TODO.md` | License/citation metadata is not public-release ready. |
 
 ## Validation
 

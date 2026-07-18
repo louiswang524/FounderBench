@@ -14,7 +14,7 @@
         "BSD-3-Clause"
       ],
       "target_files": [
-        "work/moneybench/LICENSE"
+        "work/founderbench/LICENSE"
       ]
     },
     {
@@ -26,7 +26,7 @@
         "Organization plus maintainers"
       ],
       "target_files": [
-        "work/moneybench/CITATION.cff"
+        "work/founderbench/CITATION.cff"
       ]
     },
     {
@@ -37,7 +37,7 @@
         "https://github.com/<owner>/<repo>"
       ],
       "target_files": [
-        "work/moneybench/CITATION.cff"
+        "work/founderbench/CITATION.cff"
       ]
     },
     {
@@ -50,7 +50,7 @@
         "BSD-3-Clause"
       ],
       "target_files": [
-        "work/moneybench/CITATION.cff"
+        "work/founderbench/CITATION.cff"
       ]
     }
   ],
@@ -93,19 +93,19 @@
     "license": "<SPDX license id selected by project owner>"
   },
   "finalization_steps": [
-    "Choose one license identifier and add the corresponding full LICENSE text to work/moneybench/LICENSE.",
-    "Use work/moneybench/LICENSE.template only as a guide; it is not a substitute for the final LICENSE file.",
-    "Replace placeholder author metadata in work/moneybench/CITATION.cff.",
-    "Use work/moneybench/CITATION.cff.template only as a guide; it is not a substitute for finalized citation metadata.",
+    "Choose one license identifier and add the corresponding full LICENSE text to work/founderbench/LICENSE.",
+    "Use work/founderbench/LICENSE.template only as a guide; it is not a substitute for the final LICENSE file.",
+    "Replace placeholder author metadata in work/founderbench/CITATION.cff.",
+    "Use work/founderbench/CITATION.cff.template only as a guide; it is not a substitute for finalized citation metadata.",
     "Replace repository-code with the public repository URL.",
     "Set the CITATION.cff license field to the selected SPDX identifier.",
     "Remove or update LICENSE-TODO.md so it no longer states that no public release license has been selected.",
-    "Run python -m moneybench.release regenerate and python -m moneybench.release validate."
+    "Run python -m founderbench.release regenerate and python -m founderbench.release validate."
   ],
   "guardrails": [
     "This artifact does not select a license or author list for the owner.",
     "Template files are intentionally non-final and must not be treated as release metadata.",
-    "Do not publish the package as open source until work/moneybench/LICENSE exists and CITATION.cff placeholders are replaced.",
+    "Do not publish the package as open source until work/founderbench/LICENSE exists and CITATION.cff placeholders are replaced.",
     "If code and documentation/data use different licenses, state both clearly in README and CITATION metadata."
   ]
 }

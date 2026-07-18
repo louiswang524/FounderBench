@@ -75,8 +75,8 @@
     "Confirm ethics/IRB requirements, compensation, recruitment source, and conflict-disclosure policy before contacting participants.",
     "Give each participant the task cards, action semantics, score rubric, and blank JSON response template.",
     "Ask participants to complete all required sampled tasks and optionally mark any scenario they skip because of confidentiality overlap.",
-    "Validate each returned JSON response with `moneybench.human_calibration_schema.validate_submission` before analysis.",
-    "Run `python -m moneybench.human_calibration_analysis --input <submission.json> --json-output <analysis.json> --markdown-output <analysis.md>` after real submissions are collected.",
+    "Validate each returned JSON response with `founderbench.human_calibration_schema.validate_submission` before analysis.",
+    "Run `python -m founderbench.human_calibration_analysis --input <submission.json> --json-output <analysis.json> --markdown-output <analysis.md>` after real submissions are collected.",
     "Update the claim-evidence report, validity report, paper draft, and task revisions only after executed calibration has passed validation."
   ],
   "review_questions": [

@@ -11,7 +11,7 @@ requires-python = ">=3.10"
 authors = [
   { name = "FounderBench contributors" }
 ]
-license = { text = "License not selected yet. See work/moneybench/LICENSE-TODO.md." }
+license = { text = "License not selected yet. See work/founderbench/LICENSE-TODO.md." }
 keywords = ["llm", "agents", "benchmark", "startup", "evaluation", "simulator"]
 classifiers = [
   "Programming Language :: Python :: 3",
@@ -26,15 +26,15 @@ Repository = "https://github.com/louiswang524/FounderBench"
 Issues = "https://github.com/louiswang524/FounderBench/issues"
 
 [project.scripts]
-founderbench-release = "moneybench.release:main"
-founderbench-task = "moneybench.task_cli:main"
-founderbench-runner = "moneybench.resumable_runner:main"
-founderbench-local-model = "moneybench.local_model:main"
+founderbench-release = "founderbench.release:main"
+founderbench-task = "founderbench.task_cli:main"
+founderbench-runner = "founderbench.resumable_runner:main"
+founderbench-local-model = "founderbench.local_model:main"
 
 [tool.setuptools]
-package-dir = { "" = "work/moneybench" }
+package-dir = { "" = "work/founderbench" }
 
 [tool.setuptools.packages.find]
-where = ["work/moneybench"]
-include = ["moneybench*"]
+where = ["work/founderbench"]
+include = ["founderbench*"]
 

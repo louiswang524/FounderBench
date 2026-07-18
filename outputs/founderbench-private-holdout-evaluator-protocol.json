@@ -15,8 +15,8 @@
     "Do not publish private initial states, seeds, score thresholds, or hidden templates before the cycle closes."
   ],
   "evaluation_steps": [
-    "Validate the submitted public-run JSON with moneybench.submission.",
-    "Generate and run private episodes with python -m moneybench.private_holdout_evaluator on the evaluator host.",
+    "Validate the submitted public-run JSON with founderbench.submission.",
+    "Generate and run private episodes with python -m founderbench.private_holdout_evaluator on the evaluator host.",
     "Run the submitted model on private tasks using the same action schema and diagnostics.",
     "Reject or flag runs that manually repair invalid model outputs outside the adapter.",
     "Report private aggregate score, solve rate, diagnostics, provider-error taxonomy, token/cost metadata, and selected redacted traces.",

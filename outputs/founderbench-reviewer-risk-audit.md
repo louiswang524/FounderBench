@@ -103,7 +103,7 @@ Evidence:
 - `outputs/founderbench-private-holdout-evaluator-protocol.md`: present
 - `outputs/founderbench-private-holdout-smoke.md`: present
 - `outputs/founderbench-contamination-leakage-audit.md`: present
-- `work/moneybench/moneybench/private_holdout_evaluator.py`: present
+- `work/founderbench/founderbench/private_holdout_evaluator.py`: present
 - `outputs/founderbench-submission-gate.md`: present
 
 ### heuristic_overfitting_or_hand_coding

@@ -14,49 +14,49 @@
     {
       "id": "citation_file_exists",
       "status": "pass",
-      "path": "work/moneybench/CITATION.cff",
+      "path": "work/founderbench/CITATION.cff",
       "detail": "CITATION.cff is present."
     },
     {
       "id": "citation_author_placeholder",
       "status": "incomplete",
-      "path": "work/moneybench/CITATION.cff",
+      "path": "work/founderbench/CITATION.cff",
       "detail": "Author metadata must be finalized."
     },
     {
       "id": "citation_repository_placeholder",
       "status": "pass",
-      "path": "work/moneybench/CITATION.cff",
+      "path": "work/founderbench/CITATION.cff",
       "detail": "Repository URL must be finalized."
     },
     {
       "id": "citation_license_placeholder",
       "status": "incomplete",
-      "path": "work/moneybench/CITATION.cff",
+      "path": "work/founderbench/CITATION.cff",
       "detail": "License metadata must match the selected release license."
     },
     {
       "id": "license_file_exists",
       "status": "missing",
-      "path": "work/moneybench/LICENSE",
+      "path": "work/founderbench/LICENSE",
       "detail": "A final LICENSE file should exist for public release."
     },
     {
       "id": "license_template_exists",
       "status": "pass",
-      "path": "work/moneybench/LICENSE.template",
+      "path": "work/founderbench/LICENSE.template",
       "detail": "A non-final license template should help the owner create the final LICENSE file."
     },
     {
       "id": "citation_template_exists",
       "status": "pass",
-      "path": "work/moneybench/CITATION.cff.template",
+      "path": "work/founderbench/CITATION.cff.template",
       "detail": "A non-final citation template should help the owner replace placeholders safely."
     },
     {
       "id": "license_todo_present",
       "status": "incomplete",
-      "path": "work/moneybench/LICENSE-TODO.md",
+      "path": "work/founderbench/LICENSE-TODO.md",
       "detail": "LICENSE-TODO.md documents the unresolved owner decision."
     }
   ],
@@ -71,7 +71,7 @@
         "BSD-3-Clause"
       ],
       "target_files": [
-        "work/moneybench/LICENSE"
+        "work/founderbench/LICENSE"
       ]
     },
     {
@@ -83,7 +83,7 @@
         "Organization plus maintainers"
       ],
       "target_files": [
-        "work/moneybench/CITATION.cff"
+        "work/founderbench/CITATION.cff"
       ]
     },
     {
@@ -94,7 +94,7 @@
         "https://github.com/<owner>/<repo>"
       ],
       "target_files": [
-        "work/moneybench/CITATION.cff"
+        "work/founderbench/CITATION.cff"
       ]
     },
     {
@@ -107,7 +107,7 @@
         "BSD-3-Clause"
       ],
       "target_files": [
-        "work/moneybench/CITATION.cff"
+        "work/founderbench/CITATION.cff"
       ]
     }
   ]

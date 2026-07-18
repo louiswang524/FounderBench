@@ -43,8 +43,8 @@
     {
       "path": "outputs/founderbench-metrics-and-evaluation.md",
       "exists": true,
-      "bytes": 7625,
-      "sha256": "f0973a0c7629c1736943255ead269b5b5cc0ffa57c5af1d580c75f44d7799c2b"
+      "bytes": 7627,
+      "sha256": "a103a3a57af9c0dabcbfef316a55508bf9dec5b151bbab01cd4e930aed3ec112"
     },
     {
       "path": "outputs/founderbench-baseline-analysis.md",
@@ -67,38 +67,38 @@
     {
       "path": "outputs/founderbench-validity-report.md",
       "exists": true,
-      "bytes": 5808,
-      "sha256": "35eac7492acaeee2527dff4a35e1265a6b90351b9dc784092604e9f6fd3f19ee"
+      "bytes": 5824,
+      "sha256": "2068448c3953ac99b3ff495c87031d52e74af272d69d4d27952036ef1d9cc9b5"
     },
     {
       "path": "outputs/founderbench-claim-evidence.md",
       "exists": true,
-      "bytes": 5750,
-      "sha256": "22640a523cfce8e61afe806938e0247f6ace629ea8b9e516d5be23860fd9a7ce"
+      "bytes": 5768,
+      "sha256": "49d96418f8d5d2da9697d42878cbf688da0aca516331ac3e30175e14d36f3a27"
     },
     {
       "path": "outputs/founderbench-submission-gate.md",
       "exists": true,
-      "bytes": 1494,
-      "sha256": "0e9e821f41c3542c12fe0189a3a6edd4bf03b5630743be86db256c3afcce65d5"
+      "bytes": 1498,
+      "sha256": "f6361dfb5a722df3a18b475bc42d1a8673eb275bdec2f9689997ab6c88083c16"
     },
     {
       "path": "outputs/founderbench-completion-audit.md",
       "exists": true,
-      "bytes": 8168,
-      "sha256": "85a6dad002c53eade8f7b91b240d9c6ceb48fc3f39b6f9ad29898bd1e6532627"
+      "bytes": 8186,
+      "sha256": "b3278e061f5014cff61f0f0ae3a517bb5d183fb563110e32a0c2d21e3a416e8b"
     },
     {
       "path": "outputs/founderbench-reviewer-index.md",
       "exists": true,
-      "bytes": 20469,
-      "sha256": "5d2eff30515cec617ddfc43dbe8b1f48ccb9cf95b9eb3952cce785ec531d8ff1"
+      "bytes": 20506,
+      "sha256": "0251c053ce649fb180da9376502a28dfab1c66f3d06ef5840c6c8902c9b4985f"
     },
     {
       "path": "release/founderbench/SHA256SUMS.json",
       "exists": true,
-      "bytes": 40818,
-      "sha256": "d0a04d982cf82fe169f2561911b2b7a8a129beb7b5b20398f22ec0be67202fce"
+      "bytes": 40996,
+      "sha256": "d57c14ee6460db3de027c0fbaac552462a8aac4d32cae75d4224dfb277e9c2e0"
     },
     {
       "path": "release/founderbench/BUNDLE-INTEGRITY.md",
@@ -113,8 +113,8 @@
       "status": "supported",
       "permitted_wording": "FounderBench evaluates structured startup-like operating decisions in a controlled simulator.",
       "evidence_paths": [
-        "work/moneybench/moneybench/env.py",
-        "work/moneybench/SPEC.md",
+        "work/founderbench/founderbench/env.py",
+        "work/founderbench/SPEC.md",
         "outputs/founderbench-benchmark-card.md"
       ]
     },
@@ -132,8 +132,8 @@
       "status": "supported",
       "permitted_wording": "The simulator executes only structured actions; rationale is retained for auditability but not scored directly.",
       "evidence_paths": [
-        "work/moneybench/moneybench/schema.py",
-        "work/moneybench/moneybench/task_runner.py",
+        "work/founderbench/founderbench/schema.py",
+        "work/founderbench/founderbench/task_runner.py",
         "outputs/founderbench-task-coverage.md"
       ]
     },
@@ -144,7 +144,7 @@
       "evidence_paths": [
         "outputs/founderbench-metrics-and-evaluation.md",
         "outputs/founderbench-score-rubric.md",
-        "work/moneybench/moneybench/tasks.py"
+        "work/founderbench/founderbench/tasks.py"
       ]
     },
     {
@@ -202,18 +202,18 @@
   "reproduction_commands": [
     {
       "purpose": "Regenerate generated artifacts",
-      "cwd": "work/moneybench",
-      "command": "python -m moneybench.release regenerate"
+      "cwd": "work/founderbench",
+      "command": "python -m founderbench.release regenerate"
     },
     {
       "purpose": "Validate generated artifacts and tests",
-      "cwd": "work/moneybench",
-      "command": "python -m moneybench.release validate"
+      "cwd": "work/founderbench",
+      "command": "python -m founderbench.release validate"
     },
     {
       "purpose": "Build supplementary release bundle",
-      "cwd": "work/moneybench",
-      "command": "python -m moneybench.release bundle"
+      "cwd": "work/founderbench",
+      "command": "python -m founderbench.release bundle"
     }
   ],
   "remaining_work": [
@@ -243,8 +243,8 @@
       "blocker": "License/citation metadata is not public-release ready.",
       "evidence": [
         "outputs/founderbench-license-readiness.md",
-        "work/moneybench/CITATION.cff",
-        "work/moneybench/LICENSE-TODO.md"
+        "work/founderbench/CITATION.cff",
+        "work/founderbench/LICENSE-TODO.md"
       ]
     }
   ],

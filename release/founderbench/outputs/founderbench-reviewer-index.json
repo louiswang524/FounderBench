@@ -3,7 +3,7 @@
   "version": "0.3.0",
   "purpose": "Reviewer-facing map of the supplementary material, generated from current workspace files.",
   "start_here": [
-    "work/moneybench/README.md",
+    "work/founderbench/README.md",
     "outputs/founderbench-benchmark-card.md",
     "outputs/founderbench-datasheet.md",
     "outputs/founderbench-responsible-use.md",
@@ -54,50 +54,50 @@
     {
       "purpose": "Run tests",
       "command": "python -m unittest discover -s tests -v",
-      "cwd": "work/moneybench"
+      "cwd": "work/founderbench"
     },
     {
       "purpose": "Regenerate generated artifacts",
-      "command": "python -m moneybench.release regenerate",
-      "cwd": "work/moneybench"
+      "command": "python -m founderbench.release regenerate",
+      "cwd": "work/founderbench"
     },
     {
       "purpose": "Validate generated artifacts and tests",
-      "command": "python -m moneybench.release validate",
-      "cwd": "work/moneybench"
+      "command": "python -m founderbench.release validate",
+      "cwd": "work/founderbench"
     },
     {
       "purpose": "Build supplementary bundle",
-      "command": "python -m moneybench.release bundle",
-      "cwd": "work/moneybench"
+      "command": "python -m founderbench.release bundle",
+      "cwd": "work/founderbench"
     },
     {
       "purpose": "Validate a model submission",
-      "command": "python -m moneybench.submission --input ..\\..\\outputs\\provider-run.json --report ..\\..\\outputs\\provider-run-submission-report.md",
-      "cwd": "work/moneybench"
+      "command": "python -m founderbench.submission --input ..\\..\\outputs\\provider-run.json --report ..\\..\\outputs\\provider-run-submission-report.md",
+      "cwd": "work/founderbench"
     },
     {
       "purpose": "Combine repeated model runs",
-      "command": "python -m moneybench.submission_bundle --input ..\\..\\outputs\\provider-seed0.json --input ..\\..\\outputs\\provider-seed1.json --output ..\\..\\outputs\\provider-repeats.json --report ..\\..\\outputs\\provider-repeats-submission-report.md",
-      "cwd": "work/moneybench"
+      "command": "python -m founderbench.submission_bundle --input ..\\..\\outputs\\provider-seed0.json --input ..\\..\\outputs\\provider-seed1.json --output ..\\..\\outputs\\provider-repeats.json --report ..\\..\\outputs\\provider-repeats-submission-report.md",
+      "cwd": "work/founderbench"
     }
   ],
   "artifacts": [
     {
-      "path": "work/moneybench/README.md",
+      "path": "work/founderbench/README.md",
       "role": "Start here for installation, task families, action space, and run commands.",
       "category": "orientation",
       "exists": true,
-      "bytes": 20647,
-      "sha256": "f83dc5011ddd82a1573f9624b72690ad28bd0c5bb6f877dc6e3596ba554f2aac"
+      "bytes": 20771,
+      "sha256": "84804177a87b199bd7533bc671c4754ba5da3ef8f39434bc205ac88193eb1c08"
     },
     {
-      "path": "work/moneybench/SPEC.md",
+      "path": "work/founderbench/SPEC.md",
       "role": "Formal simulator and benchmark specification.",
       "category": "orientation",
       "exists": true,
-      "bytes": 9629,
-      "sha256": "0236f89c81a33c55d8f369f93ebea444607db4ece6b31607e404b2c47ef77fd0"
+      "bytes": 9639,
+      "sha256": "c26af0b2a378b2b854b726114d27bb65d0e59d799d4d3865d22d70d2b3424410"
     },
     {
       "path": "outputs/founderbench-action-semantics.md",
@@ -160,8 +160,8 @@
       "role": "Task curation and provenance record documenting templates, seed rules, setup sources, score sources, and synthetic-data status.",
       "category": "data",
       "exists": true,
-      "bytes": 3763,
-      "sha256": "af572f0dc9ce61731a5c72a4d79a15fb7a7301096689d3edad36d5cbd4b67237"
+      "bytes": 3767,
+      "sha256": "f0b2376044e91a9b3055543ffcc0c18c31c3c08f0390118b53684b782ce6fced"
     },
     {
       "path": "outputs/founderbench-task-cards.md",
@@ -176,8 +176,8 @@
       "role": "Primary score, solve criteria, diagnostic metrics, penalties, and comparison protocol.",
       "category": "metrics",
       "exists": true,
-      "bytes": 7625,
-      "sha256": "f0973a0c7629c1736943255ead269b5b5cc0ffa57c5af1d580c75f44d7799c2b"
+      "bytes": 7627,
+      "sha256": "a103a3a57af9c0dabcbfef316a55508bf9dec5b151bbab01cd4e930aed3ec112"
     },
     {
       "path": "outputs/founderbench-score-rubric.md",
@@ -209,15 +209,15 @@
       "category": "baseline_evidence",
       "exists": true,
       "bytes": 2653,
-      "sha256": "978f0637f4188746f420331439eac9461182b7f4dde8156e4da132a1570c5efa"
+      "sha256": "26aefe1109d7ff5ab0874a1019ee9f5e8e962482b0063184cfc08b9838ddb854"
     },
     {
       "path": "outputs/founderbench-leaderboard-policy.md",
       "role": "Leaderboard/reporting policy defining public, repeated-run, and future private-holdout tiers plus acceptance and rejection rules.",
       "category": "metrics",
       "exists": true,
-      "bytes": 3514,
-      "sha256": "d42a4e1e418e8a0b778a0186d93d79415a4e1930826f70aca7f2c17771475757"
+      "bytes": 3516,
+      "sha256": "ed8ff2dafcb7e5d96248b6bf6612f90602bbb23e2ee9a009b0f258056612e007"
     },
     {
       "path": "outputs/founderbench-leaderboard-stability.md",
@@ -232,8 +232,8 @@
       "role": "Task-level raw baseline results for random, conservative, heuristic, and task-aware heuristic policies.",
       "category": "baseline_evidence",
       "exists": true,
-      "bytes": 342072,
-      "sha256": "63b23e18802e4a05d5875d04453ea6ace80b9cbf0e3652e4f3945758c7c5f140"
+      "bytes": 342129,
+      "sha256": "47494e318c4134e055d116de87e196faff0da7fc7275eff20107826b91b4f72c"
     },
     {
       "path": "outputs/founderbench-baseline-analysis.md",
@@ -272,8 +272,8 @@
       "role": "Section-by-section paper evidence crosswalk linking draft claims to supporting artifacts and excluded claims.",
       "category": "paper",
       "exists": true,
-      "bytes": 8112,
-      "sha256": "dcdce617d8c230c19731018a0f3c434fad1d9c9e3eca4f3795a762e34ea906d6"
+      "bytes": 8114,
+      "sha256": "3b68f9a27005b150c26bd69d1a823ebeab26235e8e963fc454589168699403f0"
     },
     {
       "path": "outputs/founderbench-model-comparison.md",
@@ -360,8 +360,8 @@
       "role": "Paper-facing ledger of completed and missing baselines, ablations, uncertainty checks, audit traces, and holdout evidence.",
       "category": "publication_readiness",
       "exists": true,
-      "bytes": 5398,
-      "sha256": "80c7bf6983a1c7ff540188df1e385fbb662e2605ab2343db624b9a4bac54783e"
+      "bytes": 5418,
+      "sha256": "50b45c7cb7d87ea7c046eefa0f8c5470e499a170008dc6de40501760ca7f44cc"
     },
     {
       "path": "outputs/founderbench-random-repeats.md",
@@ -384,24 +384,24 @@
       "role": "End-to-end instructions for regenerating artifacts and validating submissions.",
       "category": "reproducibility",
       "exists": true,
-      "bytes": 7259,
-      "sha256": "d4e14983452e17086d8a2c8ccbf99e9e6f725b254a6590c7122df3001bff5f32"
+      "bytes": 7323,
+      "sha256": "7bfe452d0ba421eabfd40447a26fe576f0185ba7786f2d9007ea0310691ef703"
     },
     {
       "path": "outputs/founderbench-reviewer-smoke.md",
       "role": "Fast reviewer smoke report checking task loading, one deterministic task execution, and included baseline submission validation.",
       "category": "reproducibility",
       "exists": true,
-      "bytes": 1315,
-      "sha256": "7614c5cdf39ebcc2c3eb227769118222eb7e9ddb3b62ccddeadf1570cefadba5"
+      "bytes": 1325,
+      "sha256": "a227d44925f2e1c8d0f5996dcaaa754240151cd3acc17f5feae449a116980a18"
     },
     {
       "path": "outputs/founderbench-environment-report.md",
       "role": "Runtime and dependency report with Python version, import classification, import checks, and provider/local-model dependency notes.",
       "category": "reproducibility",
       "exists": true,
-      "bytes": 2189,
-      "sha256": "9035ff5406d5bd6f836ca5d22b29c52c295ea5ff29b96fc98d850eebab4e03ee"
+      "bytes": 2203,
+      "sha256": "db5598c4becdc8b60f4350a0f06e6eeafecc91cdacf110ee076a79a6f85fc5b0"
     },
     {
       "path": "outputs/founderbench-simulator-invariant-audit.md",
@@ -416,8 +416,8 @@
       "role": "Source/output hashes, environment metadata, and reproduction commands for the current workspace.",
       "category": "reproducibility",
       "exists": true,
-      "bytes": 24575,
-      "sha256": "da6fc51bad976cbfbd1f63b0c73e19fa3cbc91084674793e4c2fc70561d835fb"
+      "bytes": 24841,
+      "sha256": "0b07204bdc9208403416147417d4818c61978070f11e8dfaf2e77dac7e9db89b"
     },
     {
       "path": "outputs/founderbench-determinism-audit.md",
@@ -432,8 +432,8 @@
       "role": "Threats-to-validity matrix with mitigations, evidence paths, and remaining work.",
       "category": "documentation",
       "exists": true,
-      "bytes": 5808,
-      "sha256": "35eac7492acaeee2527dff4a35e1265a6b90351b9dc784092604e9f6fd3f19ee"
+      "bytes": 5824,
+      "sha256": "2068448c3953ac99b3ff495c87031d52e74af272d69d4d27952036ef1d9cc9b5"
     },
     {
       "path": "outputs/founderbench-human-calibration-protocol.md",
@@ -472,40 +472,40 @@
       "role": "Recruitment and operator packet for executing expert/human-founder calibration while preserving not-executed claim guardrails.",
       "category": "documentation",
       "exists": true,
-      "bytes": 4904,
-      "sha256": "1cc7b5b3b7f564ddb7c1a64910ead67624d11eb8ffdd646bac1ce9fcf55a9c03"
+      "bytes": 4908,
+      "sha256": "55166b5cf79652180929da47bf44d96105f9ce5e330752f9e66a8a26d06b8bd2"
     },
     {
       "path": "outputs/founderbench-claim-evidence.md",
       "role": "Claim-evidence guardrail for supported, qualified, and unsupported paper wording.",
       "category": "documentation",
       "exists": true,
-      "bytes": 5750,
-      "sha256": "22640a523cfce8e61afe806938e0247f6ace629ea8b9e516d5be23860fd9a7ce"
+      "bytes": 5768,
+      "sha256": "49d96418f8d5d2da9697d42878cbf688da0aca516331ac3e30175e14d36f3a27"
     },
     {
       "path": "outputs/founderbench-model-submission-template.md",
       "role": "Template for future model providers reporting a run.",
       "category": "submission",
       "exists": true,
-      "bytes": 4352,
-      "sha256": "25ccd7d3a25c702b16065543a9b200f07dd42b00aa364a145ef69c4a6cf68f23"
+      "bytes": 4362,
+      "sha256": "3c983e0e0ec91b8d11221ac90afe845f73ac1833bd5df583c0f6085ede654913"
     },
     {
       "path": "outputs/founderbench-model-submission-schema.md",
       "role": "Machine-readable submission schema companion documenting accepted run payloads, required diagnostics, and authoritative validation command.",
       "category": "submission",
       "exists": true,
-      "bytes": 1512,
-      "sha256": "2de298cf1b7e03be276f624a36a890341e0755a00e8f70e8f4d7f7854ef4ade9"
+      "bytes": 1516,
+      "sha256": "e2b422c7d307b7deb90c9e9b1c4bb1b44ffdf1b2364c3eaf347d651a55fd024f"
     },
     {
       "path": "outputs/founderbench-submission-bundle-protocol.md",
       "role": "Protocol and CLI helper for combining repeated provider/model seed runs into one validated submission bundle.",
       "category": "submission",
       "exists": true,
-      "bytes": 1521,
-      "sha256": "270d73e01f303b7eaf9502c9b2ec02bea9bf657615453326eb5a6063e7aefc71"
+      "bytes": 1529,
+      "sha256": "ae10be4c4dbe4d4370bc5490bbd4838b8ebb630b6294a8c60b074fa27880031d"
     },
     {
       "path": "outputs/founderbench-submission-validation.md",
@@ -520,8 +520,8 @@
       "role": "Environment readiness matrix and exact commands for hosted/local provider runs.",
       "category": "provider_runs",
       "exists": true,
-      "bytes": 7260,
-      "sha256": "5a0aa96eff6f20c2f19a292cf8039d494713fcdbbbc2b87bb031edecd97671c9"
+      "bytes": 7332,
+      "sha256": "29689ae4d5b95397c317e55526dd22e94a62c5b94397862b8d6b2c5000d38bea"
     },
     {
       "path": "outputs/founderbench-cost-accounting.md",
@@ -536,16 +536,16 @@
       "role": "Paper-grade hosted/local baseline execution plan with fairness controls, repeats, audit policy, commands, and acceptance criteria.",
       "category": "provider_runs",
       "exists": true,
-      "bytes": 18654,
-      "sha256": "1f621eeebc36dd0e2a64cc0b7645c098f48abaa448b3bd1b5f2cb9c894d40621"
+      "bytes": 18804,
+      "sha256": "53f2243a40c5bef1623e7188f4798cb54d104b028e6afa86799037ff57b1ca28"
     },
     {
       "path": "outputs/founderbench-experiment-runbook.md",
       "role": "Operator runbook for executing missing hosted/local model baselines, audits, repeat bundles, and post-run claim-gate updates.",
       "category": "provider_runs",
       "exists": true,
-      "bytes": 26100,
-      "sha256": "1e46b8838aa4cc8690a06cb9efbc7485d0af1685e0a8a80b64fe898d314fbf78"
+      "bytes": 26306,
+      "sha256": "73b635c75479a8b0846d19d108dc9365c43ea3d39d22ecd6aec1cd3c83c523a1"
     },
     {
       "path": "outputs/founderbench-provider-run-status.md",
@@ -561,15 +561,15 @@
       "category": "provider_runs",
       "exists": true,
       "bytes": 4317,
-      "sha256": "17d7ace2473e03696485c1f688224bbc951279dbee2aa9cab812d3f8d1ce3cb2"
+      "sha256": "df63651b77decacd178cf22e656ad8b5e5a6b2e226c111c026f6883fcea84e0b"
     },
     {
       "path": "outputs/founderbench-provider-contract-audit.md",
       "role": "Provider-output contract audit checking parser error taxonomy and simulator diagnostics without claiming hosted/local LLM result evidence.",
       "category": "provider_runs",
       "exists": true,
-      "bytes": 2165,
-      "sha256": "e49002ca67a018004037ce87f06accc6fa77fea8118cad051b96739d7bdafcfd"
+      "bytes": 2167,
+      "sha256": "08f62db81f7fd6671226379e7656946f28e0f58ec68ff15189e6d0d5ea93fae5"
     },
     {
       "path": "outputs/founderbench-contamination-leakage-audit.md",
@@ -584,27 +584,27 @@
       "role": "Canonical LLM prompt contract, provider message wrappers, action vocabulary, and prompt/protocol hashes.",
       "category": "provider_runs",
       "exists": true,
-      "bytes": 5413,
-      "sha256": "7f9434fa613ecdaf1280840f89d425d3d95d0570c247b42df9034789b620271f"
+      "bytes": 5417,
+      "sha256": "cfbefee0f0357f6b19e8ae5b32fdaccfd54fbab6e9e0f0319766d942c4ff7738"
     },
     {
       "path": "outputs/founderbench-license-readiness.md",
       "role": "License and citation metadata readiness checks plus owner decisions required before public release.",
       "category": "publication_readiness",
       "exists": true,
-      "bytes": 2406,
-      "sha256": "111f8bf8d906e06a6c32e1882620c62c4afe057b26c664338ea784a0913d2986"
+      "bytes": 2430,
+      "sha256": "fa4733d818834b0ee9dc80f2b8f2b9e06a20a335a0b5fd4c73b037f904b180ec"
     },
     {
       "path": "outputs/founderbench-release-metadata-checklist.md",
       "role": "Owner-facing release metadata checklist with license option matrix, CITATION template, and finalization steps.",
       "category": "publication_readiness",
       "exists": true,
-      "bytes": 3569,
-      "sha256": "936a71ec8a2cf9ad5e6887b9932c8779dd1e4dc8185e8e5836523e17ae4d70e5"
+      "bytes": 3591,
+      "sha256": "a85aaa07a9bfb8b4e690d742758583e00c4c129cf2676298a61297a34a0c4df9"
     },
     {
-      "path": "work/moneybench/LICENSE.template",
+      "path": "work/founderbench/LICENSE.template",
       "role": "Non-final owner-facing template for creating the required public LICENSE file.",
       "category": "publication_readiness",
       "exists": true,
@@ -612,7 +612,7 @@
       "sha256": "07f71722a4e11a880dcd2ca24d74e75e35d6b9099f3e242257e5140f20cb3d25"
     },
     {
-      "path": "work/moneybench/CITATION.cff.template",
+      "path": "work/founderbench/CITATION.cff.template",
       "role": "Non-final owner-facing CITATION.cff template with placeholders for authors, repository URL, and selected license.",
       "category": "publication_readiness",
       "exists": true,
@@ -624,40 +624,40 @@
       "role": "Top-level go/no-go submission gate combining publication, experiment, provider, claim, and license readiness.",
       "category": "publication_readiness",
       "exists": true,
-      "bytes": 1494,
-      "sha256": "0e9e821f41c3542c12fe0189a3a6edd4bf03b5630743be86db256c3afcce65d5"
+      "bytes": 1498,
+      "sha256": "f6361dfb5a722df3a18b475bc42d1a8673eb275bdec2f9689997ab6c88083c16"
     },
     {
       "path": "outputs/founderbench-submission-manifest.md",
       "role": "Compact reviewer-facing manifest of included evidence, supported claims, excluded claims, reproduction commands, and remaining gate blockers.",
       "category": "publication_readiness",
       "exists": true,
-      "bytes": 5822,
-      "sha256": "e8fe52c8de6c04100356939cc466f9c1351c76f8588c395eaf912f784bf79456"
+      "bytes": 5856,
+      "sha256": "0fffd906ada5d38eb239d4dbfa68896999ba9f3a34d31d9adbb51f958a584574"
     },
     {
       "path": "outputs/founderbench-completion-audit.md",
       "role": "Goal-level completion audit mapping the active publishable-benchmark objective to current evidence and unresolved blockers.",
       "category": "publication_readiness",
       "exists": true,
-      "bytes": 8168,
-      "sha256": "85a6dad002c53eade8f7b91b240d9c6ceb48fc3f39b6f9ad29898bd1e6532627"
+      "bytes": 8186,
+      "sha256": "b3278e061f5014cff61f0f0ae3a517bb5d183fb563110e32a0c2d21e3a416e8b"
     },
     {
       "path": "outputs/founderbench-reviewer-risk-audit.md",
       "role": "Pre-submission reviewer-risk audit listing likely reviewer objections, current evidence, open risks, and required responses.",
       "category": "publication_readiness",
       "exists": true,
-      "bytes": 9847,
-      "sha256": "852be3312720871302cedb0d06dcf231d1e9e5bb09b667a30ff95ce226efb62a"
+      "bytes": 9851,
+      "sha256": "45d45caf5c78e9ca462be15643aaa90bb2ea51e4e97b9add254ea194e0d70b90"
     },
     {
       "path": "outputs/founderbench-failure-mode-audit.md",
       "role": "AI research failure-mode audit covering code bugs, citation hallucination, result hallucination, shortcut reliance, bug-as-insight, methodology fabrication, and frame-lock.",
       "category": "publication_readiness",
       "exists": true,
-      "bytes": 8550,
-      "sha256": "3588f67aba207edfbd95625df3bdf85e3fd5a058eb4c2d8be54daac1ac6ec170"
+      "bytes": 8556,
+      "sha256": "f099c21a47a4d31342fda00dd827129b286174491cd8fdfec01fd3bb19efb1d3"
     },
     {
       "path": "outputs/founderbench-paper-claim-lint.md",
@@ -672,24 +672,24 @@
       "role": "Concrete action plan mapping each failing submission gate to owners, commands, expected outputs, and claim impact.",
       "category": "publication_readiness",
       "exists": true,
-      "bytes": 18068,
-      "sha256": "0eed45f8fd0756dd6ece890926c2efae298550056a0f2175712b3e9937dd073a"
+      "bytes": 18184,
+      "sha256": "43c29d7a28ac57d7490fe406d57be044ceaf8907ebe3a8f0fcad14b01424d1b6"
     },
     {
       "path": "outputs/founderbench-local-openai-compatible-protocol.md",
       "role": "Protocol for running local open-source models through an OpenAI-compatible endpoint.",
       "category": "provider_runs",
       "exists": true,
-      "bytes": 1163,
-      "sha256": "1c71bc5503566baaca1a4725eafb796dbba9e139848cbbe9b547b8afb8abe469"
+      "bytes": 1171,
+      "sha256": "cf2638124ec98db5e0ca076a42fef4883d7caca9f325092ce07579a06d5cd3f0"
     },
     {
       "path": "outputs/founderbench-private-holdout-evaluator-protocol.md",
       "role": "Evaluator-host protocol for secret-seeded hidden task execution, aggregate reporting, and anti-gaming controls.",
       "category": "anti_gaming",
       "exists": true,
-      "bytes": 2163,
-      "sha256": "cc495a0ce9ace32bf8dd9fa7763013d367d8401c34649cfaa3f1f029a65e262f"
+      "bytes": 2167,
+      "sha256": "1be58e5d51d0e9cb5ab38f7481b56d924667fda1a22f6718e3c1833a1d65b8f9"
     },
     {
       "path": "outputs/founderbench-private-holdout-smoke.md",
@@ -700,7 +700,7 @@
       "sha256": "70cccafccdb0f764ba5010dd450794d0e789c126ae60dbc394d99b6e9dde10fb"
     },
     {
-      "path": "work/moneybench/moneybench/private_holdout_evaluator.py",
+      "path": "work/founderbench/founderbench/private_holdout_evaluator.py",
       "role": "Executable private-holdout evaluator harness that generates secret-selected private episodes in memory and emits aggregate-only reports by default.",
       "category": "anti_gaming",
       "exists": true,
@@ -712,8 +712,8 @@
       "role": "Submission-readiness matrix mapping benchmark requirements to concrete evidence and blockers.",
       "category": "publication_readiness",
       "exists": true,
-      "bytes": 15247,
-      "sha256": "e1be0660aa147a6c582c8c492df3d2701c55d6805abfd8c98214d4c9c0abb33c"
+      "bytes": 15331,
+      "sha256": "f7b282c7035d28dbbcd3e8ac14c6493486e26a408e62f5033d75c6c4ab73ae03"
     },
     {
       "path": "outputs/founderbench-paper-draft.md",
@@ -744,8 +744,8 @@
       "role": "Release-bundle checksum manifest for integrity verification.",
       "category": "release",
       "exists": true,
-      "bytes": 40824,
-      "sha256": "eb766e1b9fb186f3f7cc3ec693d64224ad61c5d648fb1c599548f8702c6443ea"
+      "bytes": 40996,
+      "sha256": "9997653d15783fec77a85717723226197e670ed0ec641ef8d2b90d04dc482593"
     },
     {
       "path": "release/founderbench/BUNDLE-INTEGRITY.md",

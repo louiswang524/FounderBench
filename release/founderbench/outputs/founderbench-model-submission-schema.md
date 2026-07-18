@@ -1,6 +1,6 @@
 # FounderBench Model Submission Schema
 
-Machine-readable schema for raw model run submissions. The authoritative validator remains python -m moneybench.submission, which also checks task-id set equality and diagnostic consistency.
+Machine-readable schema for raw model run submissions. The authoritative validator remains python -m founderbench.submission, which also checks task-id set equality and diagnostic consistency.
 
 ## Accepted Payload Shapes
 
@@ -48,7 +48,7 @@ Machine-readable schema for raw model run submissions. The authoritative validat
 
 ## Authoritative Validation
 
-`python -m moneybench.submission --input outputs/provider-run.json --report outputs/provider-run-submission-report.md`
+`python -m founderbench.submission --input outputs/provider-run.json --report outputs/provider-run-submission-report.md`
 
 The JSON schema documents field shape. The Python validator additionally checks exact task-id coverage, split summaries, score typing, diagnostic consistency, and repeated-run payloads.
 

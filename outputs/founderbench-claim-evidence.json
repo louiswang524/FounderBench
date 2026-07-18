@@ -16,17 +16,17 @@
       "permitted_wording": "FounderBench evaluates structured startup-like operating decisions in a controlled simulator.",
       "avoid_wording": "FounderBench measures real-world startup success.",
       "evidence_paths": [
-        "work/moneybench/moneybench/env.py",
-        "work/moneybench/SPEC.md",
+        "work/founderbench/founderbench/env.py",
+        "work/founderbench/SPEC.md",
         "outputs/founderbench-benchmark-card.md"
       ],
       "evidence": [
         {
-          "path": "work/moneybench/moneybench/env.py",
+          "path": "work/founderbench/founderbench/env.py",
           "exists": true
         },
         {
-          "path": "work/moneybench/SPEC.md",
+          "path": "work/founderbench/SPEC.md",
           "exists": true
         },
         {
@@ -69,17 +69,17 @@
       "permitted_wording": "The simulator executes only structured actions; rationale is retained for auditability but not scored directly.",
       "avoid_wording": "Models can earn score through persuasive business prose.",
       "evidence_paths": [
-        "work/moneybench/moneybench/schema.py",
-        "work/moneybench/moneybench/task_runner.py",
+        "work/founderbench/founderbench/schema.py",
+        "work/founderbench/founderbench/task_runner.py",
         "outputs/founderbench-task-coverage.md"
       ],
       "evidence": [
         {
-          "path": "work/moneybench/moneybench/schema.py",
+          "path": "work/founderbench/founderbench/schema.py",
           "exists": true
         },
         {
-          "path": "work/moneybench/moneybench/task_runner.py",
+          "path": "work/founderbench/founderbench/task_runner.py",
           "exists": true
         },
         {
@@ -100,7 +100,7 @@
       "evidence_paths": [
         "outputs/founderbench-metrics-and-evaluation.md",
         "outputs/founderbench-score-rubric.md",
-        "work/moneybench/moneybench/tasks.py"
+        "work/founderbench/founderbench/tasks.py"
       ],
       "evidence": [
         {
@@ -112,7 +112,7 @@
           "exists": true
         },
         {
-          "path": "work/moneybench/moneybench/tasks.py",
+          "path": "work/founderbench/founderbench/tasks.py",
           "exists": true
         }
       ],

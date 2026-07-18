@@ -62,7 +62,7 @@ For fixed-suite baseline analysis, FounderBench reports nonparametric 95% bootst
 For stochastic policies or hosted LLM submissions, FounderBench supports repeated-run reports over multiple seeds or repeated model samples:
 
 ```powershell
-python -m moneybench.repeats --policy random --seeds 0,1,2,3,4 --json-output outputs/repeats.json --markdown-output outputs/repeats.md
+python -m founderbench.repeats --policy random --seeds 0,1,2,3,4 --json-output outputs/repeats.json --markdown-output outputs/repeats.md
 ```
 
 The current release package includes a five-seed random-policy calibration. Across seeds 0..4, random averages 34.72 task score with 95% repeated-run interval [33.09, 36.34], and 0.11 solve rate with interval [0.08, 0.14]. Hosted LLM results should report analogous repeated prompt-sample intervals in addition to task-mix intervals.

@@ -10,13 +10,13 @@ Runtime and dependency report for the current release supplementary artifact.
 | python_executable | C:\Users\louis\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\python.exe |
 | platform | Windows-11-10.0.26200-SP0 |
 | machine | AMD64 |
-| working_directory | C:\Users\louis\Documents\Codex\2026-07-14\use\work\moneybench |
+| working_directory | C:\Users\louis\Documents\Codex\2026-07-14\use\work\founderbench |
 
 ## Dependency Policy
 
 | Field | Value |
 | --- | --- |
-| core_benchmark_dependencies | Python standard library plus the local moneybench package. |
+| core_benchmark_dependencies | Python standard library plus the local founderbench package. |
 | hosted_provider_runs | Use stdlib urllib/json plus provider API keys in environment variables. |
 | local_open_source_runs | Require a separately managed OpenAI-compatible inference server; the benchmark client itself does not vendor that server. |
 | recommended_python | 3.11+ |
@@ -46,12 +46,12 @@ Runtime and dependency report for the current release supplementary artifact.
 | collections | stdlib |
 | copy | stdlib |
 | dataclasses | stdlib |
+| founderbench | local_package |
 | hashlib | stdlib |
 | hmac | stdlib |
 | importlib | stdlib |
 | json | stdlib |
 | math | stdlib |
-| moneybench | local_package |
 | os | stdlib |
 | pathlib | stdlib |
 | platform | stdlib |
@@ -69,12 +69,12 @@ Runtime and dependency report for the current release supplementary artifact.
 
 | Module | OK | Error |
 | --- | --- | --- |
-| moneybench | True |  |
-| moneybench.release | True |  |
-| moneybench.task_runner | True |  |
+| founderbench | True |  |
+| founderbench.release | True |  |
+| founderbench.task_runner | True |  |
 
 ## Validation
 
 Status: PASS
 
-The core benchmark package imports only Python standard-library modules plus the local `moneybench` package.
+The core benchmark package imports only Python standard-library modules plus the local `founderbench` package.
