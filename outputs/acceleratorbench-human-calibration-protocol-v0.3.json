@@ -1,0 +1,101 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Protocol for expert or human-founder calibration of the synthetic startup-agent task suite.",
+  "status": "protocol_only_not_executed",
+  "research_questions": [
+    "Do task incentives match expert startup-operator judgment?",
+    "Do score components reward decisions that experts consider sensible under the stated constraints?",
+    "Which task families are too easy, too hard, or underspecified for human operators?",
+    "How should model scores be interpreted relative to human/expert action rankings?"
+  ],
+  "participant_groups": [
+    {
+      "group": "startup operators",
+      "target_n": "5-10",
+      "eligibility": "Founders, operators, or accelerator mentors with experience evaluating early-stage startup decisions.",
+      "role": "Rate scenario realism, action quality, and scoring alignment."
+    },
+    {
+      "group": "technical agent researchers",
+      "target_n": "3-5",
+      "eligibility": "Researchers or engineers familiar with LLM agent evaluation and tool-use benchmarks.",
+      "role": "Rate benchmark clarity, action interface coverage, and anti-gaming risks."
+    }
+  ],
+  "task_sampling": {
+    "strategy": "stratified_by_family",
+    "minimum_tasks": 20,
+    "recommended_tasks": 30,
+    "coverage_rule": "Sample at least two tasks from each of the 10 task families; include public_dev and public_test tasks.",
+    "materials": [
+      "task card",
+      "market catalog entry",
+      "action semantics",
+      "score rubric",
+      "representative baseline trace when available"
+    ]
+  },
+  "review_instrument": [
+    {
+      "item": "scenario_realism",
+      "scale": "1-5 Likert",
+      "prompt": "The startup situation is plausible enough for evaluating business-decision quality."
+    },
+    {
+      "item": "action_coverage",
+      "scale": "1-5 Likert",
+      "prompt": "The available structured actions cover the main reasonable moves in this scenario."
+    },
+    {
+      "item": "score_alignment",
+      "scale": "1-5 Likert",
+      "prompt": "The scoring rubric rewards decisions I would consider operationally sound."
+    },
+    {
+      "item": "difficulty",
+      "scale": "too_easy / appropriate / too_hard / ambiguous",
+      "prompt": "The task difficulty is appropriate for differentiating agents."
+    },
+    {
+      "item": "best_action_ranking",
+      "scale": "ranked list",
+      "prompt": "Rank the top three actions or action sequences you would recommend."
+    },
+    {
+      "item": "gaming_risk",
+      "scale": "free text",
+      "prompt": "Describe any way a model could exploit the task without making a sensible business decision."
+    }
+  ],
+  "analysis_plan": [
+    "Report mean and distribution of scenario_realism, action_coverage, and score_alignment by task family.",
+    "Flag tasks with mean score_alignment below 3.5 or more than 30% ambiguous difficulty labels.",
+    "Compute agreement between expert top-action rankings and high-scoring baseline/model trajectories.",
+    "Qualitatively summarize gaming risks and convert accepted issues into task or rubric revisions.",
+    "Keep expert calibration separate from the official leaderboard until the protocol has been executed."
+  ],
+  "reporting_fields": [
+    "participant_count_by_group",
+    "task_ids_reviewed",
+    "family_coverage",
+    "mean_scenario_realism",
+    "mean_action_coverage",
+    "mean_score_alignment",
+    "difficulty_distribution",
+    "flagged_tasks",
+    "recommended_revisions",
+    "limitations"
+  ],
+  "claim_guardrails": [
+    "Before execution, describe this only as a proposed calibration protocol.",
+    "Do not claim that FounderBench is validated against human startup judgment until results are collected.",
+    "Even after execution, treat expert agreement as construct-validity evidence, not proof of real-world startup success prediction."
+  ],
+  "ethics_and_privacy": [
+    "Do not collect confidential company details or private customer data.",
+    "Allow participants to skip scenarios that overlap with nonpublic work.",
+    "Report aggregate ratings and anonymized free-text themes.",
+    "Record compensation, recruitment source, and conflicts of interest in the final study report."
+  ]
+}

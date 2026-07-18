@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Local environments and secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets/
+
+# Local run scratch files
+outputs/tmp-*
+outputs/local-*
+outputs/*-raw-audit.json
+outputs/*-provider-debug*
+outputs/*audit-smoke*
+outputs/*v0.2*
+outputs/*-results.json
+outputs/*-runlog.md
+outputs/*-trace.json
+outputs/moneybench-*
+outputs/no-human-company.html
+outputs/acceleratorbench-3provider-experiment-report.md
+outputs/acceleratorbench-submission-readiness.md
+outputs/acceleratorbench-task-suite-report.md
+outputs/acceleratorbench-v0.3-progress-report.md
+release/tmp-*
+work/node_modules/
+work/package.json
+work/pnpm-lock.yaml
+work/smoke-test.cjs
+work/smoke-test.ps1
+work/no-human-company-script.js
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

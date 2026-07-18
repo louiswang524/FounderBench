@@ -1,0 +1,323 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Deterministic simulator invariant audit for state bounds, diagnostic sanity, and task score bounds. This is not a substitute for domain validation.",
+  "status": "simulator_invariants_validated_for_stress_scenarios",
+  "scenarios": [
+    {
+      "id": "hold_position",
+      "seed": 101,
+      "steps_executed": 3,
+      "passed": true,
+      "problems": [],
+      "final_summary": {
+        "seed": 101,
+        "weeks": 3,
+        "cash": 10000.0,
+        "score": 10273.42,
+        "reputation": 0.55,
+        "offers": 0,
+        "customers": 0,
+        "cumulative_revenue": 0.0,
+        "cumulative_cost": 0.0,
+        "cumulative_api_cost": 1.05,
+        "funding_raised": 0.0,
+        "risk_penalty": 0.0,
+        "bankrupt": false
+      },
+      "steps": [
+        {
+          "step": 1,
+          "actions": [
+            "do_nothing"
+          ],
+          "cash": 10000.0,
+          "reputation": 0.55,
+          "offers": 0,
+          "customers": 0,
+          "risk_penalty": 0.0,
+          "bankrupt": false
+        },
+        {
+          "step": 2,
+          "actions": [
+            "do_nothing"
+          ],
+          "cash": 10000.0,
+          "reputation": 0.55,
+          "offers": 0,
+          "customers": 0,
+          "risk_penalty": 0.0,
+          "bankrupt": false
+        },
+        {
+          "step": 3,
+          "actions": [
+            "do_nothing"
+          ],
+          "cash": 10000.0,
+          "reputation": 0.55,
+          "offers": 0,
+          "customers": 0,
+          "risk_penalty": 0.0,
+          "bankrupt": false
+        }
+      ]
+    },
+    {
+      "id": "build_and_support",
+      "seed": 102,
+      "steps_executed": 4,
+      "passed": true,
+      "problems": [],
+      "final_summary": {
+        "seed": 102,
+        "weeks": 4,
+        "cash": 5630.0,
+        "score": 5914.21,
+        "reputation": 0.574,
+        "offers": 1,
+        "customers": 0,
+        "cumulative_revenue": 0.0,
+        "cumulative_cost": 4370.0,
+        "cumulative_api_cost": 1.75,
+        "funding_raised": 0.0,
+        "risk_penalty": 0.0,
+        "bankrupt": false
+      },
+      "steps": [
+        {
+          "step": 1,
+          "actions": [
+            "research_market"
+          ],
+          "cash": 9880.0,
+          "reputation": 0.55,
+          "offers": 0,
+          "customers": 0,
+          "risk_penalty": 0.0,
+          "bankrupt": false
+        },
+        {
+          "step": 2,
+          "actions": [
+            "build_offer"
+          ],
+          "cash": 7680.0,
+          "reputation": 0.55,
+          "offers": 1,
+          "customers": 0,
+          "risk_penalty": 0.0,
+          "bankrupt": false
+        },
+        {
+          "step": 3,
+          "actions": [
+            "run_campaign",
+            "support_customers"
+          ],
+          "cash": 6430.0,
+          "reputation": 0.574,
+          "offers": 1,
+          "customers": 0,
+          "risk_penalty": 0.0,
+          "bankrupt": false
+        },
+        {
+          "step": 4,
+          "actions": [
+            "improve_offer"
+          ],
+          "cash": 5630.0,
+          "reputation": 0.574,
+          "offers": 1,
+          "customers": 0,
+          "risk_penalty": 0.0,
+          "bankrupt": false
+        }
+      ]
+    },
+    {
+      "id": "unknown_targets_are_risky",
+      "seed": 103,
+      "steps_executed": 3,
+      "passed": true,
+      "problems": [],
+      "final_summary": {
+        "seed": 103,
+        "weeks": 3,
+        "cash": 8300.0,
+        "score": 6977.43,
+        "reputation": 0.398,
+        "offers": 0,
+        "customers": 0,
+        "cumulative_revenue": 0.0,
+        "cumulative_cost": 1700.0,
+        "cumulative_api_cost": 1.05,
+        "funding_raised": 0.0,
+        "risk_penalty": 760.0,
+        "bankrupt": false
+      },
+      "steps": [
+        {
+          "step": 1,
+          "actions": [
+            "research_market"
+          ],
+          "cash": 9700.0,
+          "reputation": 0.506,
+          "offers": 0,
+          "customers": 0,
+          "risk_penalty": 220.0,
+          "bankrupt": false
+        },
+        {
+          "step": 2,
+          "actions": [
+            "run_campaign"
+          ],
+          "cash": 9000.0,
+          "reputation": 0.454,
+          "offers": 0,
+          "customers": 0,
+          "risk_penalty": 260.0,
+          "bankrupt": false
+        },
+        {
+          "step": 3,
+          "actions": [
+            "pivot_market"
+          ],
+          "cash": 8300.0,
+          "reputation": 0.398,
+          "offers": 0,
+          "customers": 0,
+          "risk_penalty": 280.0,
+          "bankrupt": false
+        }
+      ]
+    },
+    {
+      "id": "overbudget_bankruptcy_path",
+      "seed": 104,
+      "steps_executed": 1,
+      "passed": true,
+      "problems": [],
+      "final_summary": {
+        "seed": 104,
+        "weeks": 1,
+        "cash": -15000.0,
+        "score": -20670.53,
+        "reputation": 0.46,
+        "offers": 1,
+        "customers": 0,
+        "cumulative_revenue": 0.0,
+        "cumulative_cost": 25000.0,
+        "cumulative_api_cost": 0.35,
+        "funding_raised": 0.0,
+        "risk_penalty": 450.0,
+        "bankrupt": true
+      },
+      "steps": [
+        {
+          "step": 1,
+          "actions": [
+            "build_offer"
+          ],
+          "cash": -15000.0,
+          "reputation": 0.46,
+          "offers": 1,
+          "customers": 0,
+          "risk_penalty": 2450.0,
+          "bankrupt": true
+        }
+      ]
+    },
+    {
+      "id": "runway_cost_cut_path",
+      "seed": 105,
+      "steps_executed": 3,
+      "passed": true,
+      "problems": [],
+      "final_summary": {
+        "seed": 105,
+        "weeks": 3,
+        "cash": 8230.0,
+        "score": 8513.42,
+        "reputation": 0.57,
+        "offers": 1,
+        "customers": 0,
+        "cumulative_revenue": 0.0,
+        "cumulative_cost": 1770.0,
+        "cumulative_api_cost": 1.05,
+        "funding_raised": 0.0,
+        "risk_penalty": 0.0,
+        "bankrupt": false
+      },
+      "steps": [
+        {
+          "step": 1,
+          "actions": [
+            "build_offer"
+          ],
+          "cash": 8200.0,
+          "reputation": 0.55,
+          "offers": 1,
+          "customers": 0,
+          "risk_penalty": 0.0,
+          "bankrupt": false
+        },
+        {
+          "step": 2,
+          "actions": [
+            "cut_cost"
+          ],
+          "cash": 8480.0,
+          "reputation": 0.55,
+          "offers": 1,
+          "customers": 0,
+          "risk_penalty": 0.0,
+          "bankrupt": false
+        },
+        {
+          "step": 3,
+          "actions": [
+            "support_customers"
+          ],
+          "cash": 8230.0,
+          "reputation": 0.57,
+          "offers": 1,
+          "customers": 0,
+          "risk_penalty": 0.0,
+          "bankrupt": false
+        }
+      ]
+    }
+  ],
+  "task_score_check": {
+    "policy": "conservative",
+    "tasks": 50,
+    "min_score": 19.1,
+    "max_score": 96.19,
+    "all_scores_bounded": true,
+    "pass_flags_match_threshold": true
+  },
+  "invariants_checked": [
+    "week advances monotonically until bankruptcy/done",
+    "cash and profit remain finite",
+    "reputation remains in [0, 1]",
+    "agent capacity and cumulative revenue/API cost/funding/risk remain nonnegative",
+    "offer customers and age remain nonnegative",
+    "offer quality and awareness remain in [0, 1]",
+    "task scores remain in [0, 100] and pass flags match the 70-point threshold"
+  ],
+  "claim_guardrail": "This audit checks simulator mechanics and task-score bounds only; it does not validate real-world startup dynamics or unlock hosted/local LLM result claims.",
+  "summary": {
+    "scenarios": 5,
+    "scenarios_passed": 5,
+    "scenario_steps": 14,
+    "task_score_policy": "conservative",
+    "task_scores_bounded": true,
+    "pass_flags_match_threshold": true
+  }
+}

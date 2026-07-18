@@ -1,0 +1,379 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Paper-facing experiment matrix for required baselines, ablations, uncertainty checks, audit traces, and holdout evidence.",
+  "summary": {
+    "experiments": 12,
+    "complete": 5,
+    "partial": 0,
+    "missing": 7,
+    "required_missing": 6
+  },
+  "experiments": [
+    {
+      "id": "deterministic_rule_baselines",
+      "section": "core_baselines",
+      "priority": "required",
+      "status_if_present": "complete",
+      "description": "Run random, conservative, heuristic, and task-aware heuristic policies on all 50 public v0.3.0 tasks.",
+      "evidence_paths": [
+        "outputs/acceleratorbench-baseline-raw-v0.3.json",
+        "outputs/acceleratorbench-baseline-leaderboard-v0.3.json",
+        "outputs/acceleratorbench-baseline-analysis-v0.3.md"
+      ],
+      "commands": [
+        "python -m moneybench.release regenerate"
+      ],
+      "paper_use": "Shows the simulator works, is nontrivial, and separates policies with different business-decision capabilities.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-baseline-raw-v0.3.json",
+          "exists": true,
+          "bytes": 342102,
+          "sha256": "10c54bd61e3967dc740713e46e6dcddf9c5317938b45368049ead871d7aa3ea1"
+        },
+        {
+          "path": "outputs/acceleratorbench-baseline-leaderboard-v0.3.json",
+          "exists": true,
+          "bytes": 2653,
+          "sha256": "87620032604cb4588b43e3c3a8cd035dfe4e0c06866ac004a22943b7134a39c6"
+        },
+        {
+          "path": "outputs/acceleratorbench-baseline-analysis-v0.3.md",
+          "exists": true,
+          "bytes": 4385,
+          "sha256": "ecd832b81f60c951978f8af3f38f6076ac87b96a343daaee1bbf2226444eabfc"
+        }
+      ],
+      "status": "complete",
+      "missing_paths": []
+    },
+    {
+      "id": "capability_ladder_ablation",
+      "section": "ablations",
+      "priority": "required",
+      "status_if_present": "complete",
+      "description": "Compare random -> conservative -> heuristic -> task-aware heuristic to isolate decision capabilities.",
+      "evidence_paths": [
+        "outputs/acceleratorbench-ablation-report-v0.3.md"
+      ],
+      "commands": [
+        "python -m moneybench.ablation --raw ..\\..\\outputs\\acceleratorbench-baseline-raw-v0.3.json --output ..\\..\\outputs\\acceleratorbench-ablation-report-v0.3.md"
+      ],
+      "paper_use": "Explains which capabilities move the benchmark score and where task-family conditioning matters.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-ablation-report-v0.3.md",
+          "exists": true,
+          "bytes": 2449,
+          "sha256": "4efa8d30bf1176a465518beb7049cdfe3293ec91de586e50e24ac2cdea5bcc9a"
+        }
+      ],
+      "status": "complete",
+      "missing_paths": []
+    },
+    {
+      "id": "action_space_ablation",
+      "section": "ablations",
+      "priority": "required",
+      "status_if_present": "complete",
+      "description": "Disable major action groups in the task-aware heuristic and measure score drops over all 50 tasks.",
+      "evidence_paths": [
+        "outputs/acceleratorbench-action-ablation-v0.3.md",
+        "outputs/acceleratorbench-action-ablation-v0.3.json"
+      ],
+      "commands": [
+        "python -m moneybench.action_ablation --json-output ..\\..\\outputs\\acceleratorbench-action-ablation-v0.3.json --markdown-output ..\\..\\outputs\\acceleratorbench-action-ablation-v0.3.md"
+      ],
+      "paper_use": "Shows that the expanded action space affects outcomes rather than serving as unused interface decoration.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-action-ablation-v0.3.md",
+          "exists": true,
+          "bytes": 2377,
+          "sha256": "4cc42bb8b9e0288b70d2a77a84895c8fbfdbbe18a672f6c26675120f37accb35"
+        },
+        {
+          "path": "outputs/acceleratorbench-action-ablation-v0.3.json",
+          "exists": true,
+          "bytes": 643744,
+          "sha256": "6f375d36be89bbcf5e6c9233dcdd51ff708293943ba2c5a672d5f072c7052e29"
+        }
+      ],
+      "status": "complete",
+      "missing_paths": []
+    },
+    {
+      "id": "random_repeated_seed_calibration",
+      "section": "uncertainty",
+      "priority": "required",
+      "status_if_present": "complete",
+      "description": "Repeat stochastic random-policy runs over multiple seeds and report across-run intervals.",
+      "evidence_paths": [
+        "outputs/acceleratorbench-random-repeats-v0.3.json",
+        "outputs/acceleratorbench-random-repeats-v0.3.md"
+      ],
+      "commands": [
+        "python -m moneybench.repeats --policy random --seeds 0,1,2,3,4 --json-output ..\\..\\outputs\\acceleratorbench-random-repeats-v0.3.json --markdown-output ..\\..\\outputs\\acceleratorbench-random-repeats-v0.3.md"
+      ],
+      "paper_use": "Provides a sanity check for stochastic variance and interval reporting.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-random-repeats-v0.3.json",
+          "exists": true,
+          "bytes": 454405,
+          "sha256": "2a0ea9e6802cc3475ae8a311a8d06886c050366deae75d1fad19db7d0be0d69d"
+        },
+        {
+          "path": "outputs/acceleratorbench-random-repeats-v0.3.md",
+          "exists": true,
+          "bytes": 800,
+          "sha256": "8064e1fbaea3bdc388c750c91af89a2bc7c3ce5798e9b1213cd061de0b342127"
+        }
+      ],
+      "status": "complete",
+      "missing_paths": []
+    },
+    {
+      "id": "qualitative_trace_analysis",
+      "section": "qualitative",
+      "priority": "required",
+      "status_if_present": "complete",
+      "description": "Select representative deterministic success and failure traces for explaining benchmark behavior.",
+      "evidence_paths": [
+        "outputs/acceleratorbench-qualitative-traces-v0.3.json",
+        "outputs/acceleratorbench-qualitative-traces-v0.3.md"
+      ],
+      "commands": [
+        "python -m moneybench.qualitative --raw ..\\..\\outputs\\acceleratorbench-baseline-raw-v0.3.json --json-output ..\\..\\outputs\\acceleratorbench-qualitative-traces-v0.3.json --markdown-output ..\\..\\outputs\\acceleratorbench-qualitative-traces-v0.3.md"
+      ],
+      "paper_use": "Supports failure analysis and shows that scores come from executable simulator trajectories.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-qualitative-traces-v0.3.json",
+          "exists": true,
+          "bytes": 27325,
+          "sha256": "de99aa22c05e020fd0f4d2e47f175860c247e16c9aad5e36814d0e08d36c23e1"
+        },
+        {
+          "path": "outputs/acceleratorbench-qualitative-traces-v0.3.md",
+          "exists": true,
+          "bytes": 5234,
+          "sha256": "03166c1fb171991363c2b5cd2e61e195926938f6aae2d53e5e7baeb28a730739"
+        }
+      ],
+      "status": "complete",
+      "missing_paths": []
+    },
+    {
+      "id": "deepseek_hosted_baseline",
+      "section": "hosted_llm_baselines",
+      "priority": "required",
+      "description": "Run DeepSeek on the complete 50-task v0.3.0 suite with submission validation.",
+      "evidence_paths": [
+        "outputs/acceleratorbench-deepseek-v0.3.json",
+        "outputs/acceleratorbench-deepseek-v0.3-submission-report.md"
+      ],
+      "commands": [
+        "python -m moneybench.resumable_runner --policy deepseek --output ..\\..\\outputs\\acceleratorbench-deepseek-v0.3.json --resume",
+        "python -m moneybench.submission --input ..\\..\\outputs\\acceleratorbench-deepseek-v0.3.json --report ..\\..\\outputs\\acceleratorbench-deepseek-v0.3-submission-report.md"
+      ],
+      "paper_use": "Provides a representative hosted LLM baseline.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-deepseek-v0.3.json",
+          "exists": false
+        },
+        {
+          "path": "outputs/acceleratorbench-deepseek-v0.3-submission-report.md",
+          "exists": false
+        }
+      ],
+      "status": "missing",
+      "missing_paths": [
+        "outputs/acceleratorbench-deepseek-v0.3.json",
+        "outputs/acceleratorbench-deepseek-v0.3-submission-report.md"
+      ]
+    },
+    {
+      "id": "deepseek_self_consistency_k3",
+      "section": "hosted_llm_ablations",
+      "priority": "recommended",
+      "description": "Run DeepSeek self-consistency with k=3 on the complete 50-task v0.3.0 suite.",
+      "evidence_paths": [
+        "outputs/acceleratorbench-deepseek-sc-k3-v0.3.json",
+        "outputs/acceleratorbench-deepseek-sc-k3-v0.3-submission-report.md"
+      ],
+      "commands": [
+        "python -m moneybench.resumable_runner --policy deepseek_sc --output ..\\..\\outputs\\acceleratorbench-deepseek-sc-k3-v0.3.json --resume",
+        "python -m moneybench.submission --input ..\\..\\outputs\\acceleratorbench-deepseek-sc-k3-v0.3.json --report ..\\..\\outputs\\acceleratorbench-deepseek-sc-k3-v0.3-submission-report.md"
+      ],
+      "paper_use": "Tests whether sampling-based self-consistency improves business decision quality.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-deepseek-sc-k3-v0.3.json",
+          "exists": false
+        },
+        {
+          "path": "outputs/acceleratorbench-deepseek-sc-k3-v0.3-submission-report.md",
+          "exists": false
+        }
+      ],
+      "status": "missing",
+      "missing_paths": [
+        "outputs/acceleratorbench-deepseek-sc-k3-v0.3.json",
+        "outputs/acceleratorbench-deepseek-sc-k3-v0.3-submission-report.md"
+      ]
+    },
+    {
+      "id": "anthropic_hosted_baseline",
+      "section": "hosted_llm_baselines",
+      "priority": "required",
+      "description": "Run Claude/Anthropic on the complete 50-task v0.3.0 suite with submission validation.",
+      "evidence_paths": [
+        "outputs/acceleratorbench-anthropic-v0.3.json",
+        "outputs/acceleratorbench-anthropic-v0.3-submission-report.md"
+      ],
+      "commands": [
+        "python -m moneybench.resumable_runner --policy anthropic --output ..\\..\\outputs\\acceleratorbench-anthropic-v0.3.json --resume",
+        "python -m moneybench.submission --input ..\\..\\outputs\\acceleratorbench-anthropic-v0.3.json --report ..\\..\\outputs\\acceleratorbench-anthropic-v0.3-submission-report.md"
+      ],
+      "paper_use": "Adds a second hosted LLM family for model differentiation.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-anthropic-v0.3.json",
+          "exists": false
+        },
+        {
+          "path": "outputs/acceleratorbench-anthropic-v0.3-submission-report.md",
+          "exists": false
+        }
+      ],
+      "status": "missing",
+      "missing_paths": [
+        "outputs/acceleratorbench-anthropic-v0.3.json",
+        "outputs/acceleratorbench-anthropic-v0.3-submission-report.md"
+      ]
+    },
+    {
+      "id": "gemini_hosted_baseline",
+      "section": "hosted_llm_baselines",
+      "priority": "required",
+      "description": "Run Gemini on the complete 50-task v0.3.0 suite with submission validation.",
+      "evidence_paths": [
+        "outputs/acceleratorbench-gemini-v0.3.json",
+        "outputs/acceleratorbench-gemini-v0.3-submission-report.md"
+      ],
+      "commands": [
+        "python -m moneybench.resumable_runner --policy gemini --output ..\\..\\outputs\\acceleratorbench-gemini-v0.3.json --resume",
+        "python -m moneybench.submission --input ..\\..\\outputs\\acceleratorbench-gemini-v0.3.json --report ..\\..\\outputs\\acceleratorbench-gemini-v0.3-submission-report.md"
+      ],
+      "paper_use": "Adds a third hosted LLM family for model differentiation.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-gemini-v0.3.json",
+          "exists": false
+        },
+        {
+          "path": "outputs/acceleratorbench-gemini-v0.3-submission-report.md",
+          "exists": false
+        }
+      ],
+      "status": "missing",
+      "missing_paths": [
+        "outputs/acceleratorbench-gemini-v0.3.json",
+        "outputs/acceleratorbench-gemini-v0.3-submission-report.md"
+      ]
+    },
+    {
+      "id": "local_open_source_baseline",
+      "section": "open_source_baselines",
+      "priority": "required",
+      "description": "Run at least one local/open-source model via the OpenAI-compatible protocol and validate the submission.",
+      "evidence_paths": [
+        "outputs/acceleratorbench-local-open-model-v0.3.json",
+        "outputs/acceleratorbench-local-open-model-v0.3-submission-report.md"
+      ],
+      "commands": [
+        "python -m moneybench.local_model health --output ..\\..\\outputs\\local-health.json",
+        "python -m moneybench.resumable_runner --policy llm --output ..\\..\\outputs\\acceleratorbench-local-open-model-v0.3.json --resume --audit",
+        "python -m moneybench.submission --input ..\\..\\outputs\\acceleratorbench-local-open-model-v0.3.json --report ..\\..\\outputs\\acceleratorbench-local-open-model-v0.3-submission-report.md"
+      ],
+      "paper_use": "Makes the comparison accessible beyond closed hosted APIs.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-local-open-model-v0.3.json",
+          "exists": false
+        },
+        {
+          "path": "outputs/acceleratorbench-local-open-model-v0.3-submission-report.md",
+          "exists": false
+        }
+      ],
+      "status": "missing",
+      "missing_paths": [
+        "outputs/acceleratorbench-local-open-model-v0.3.json",
+        "outputs/acceleratorbench-local-open-model-v0.3-submission-report.md"
+      ]
+    },
+    {
+      "id": "hosted_llm_audit_traces",
+      "section": "auditability",
+      "priority": "required",
+      "description": "Collect redacted audit traces for representative hosted LLM runs.",
+      "evidence_paths": [
+        "outputs/acceleratorbench-deepseek-v0.3-audit.json",
+        "outputs/acceleratorbench-anthropic-v0.3-audit.json",
+        "outputs/acceleratorbench-gemini-v0.3-audit.json"
+      ],
+      "commands": [
+        "python -m moneybench.resumable_runner --policy <provider> --output ..\\..\\outputs\\<provider>-audit.json --resume --audit"
+      ],
+      "paper_use": "Allows qualitative analysis of provider failures without exposing secrets.",
+      "completion_rule": "any",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-deepseek-v0.3-audit.json",
+          "exists": false
+        },
+        {
+          "path": "outputs/acceleratorbench-anthropic-v0.3-audit.json",
+          "exists": false
+        },
+        {
+          "path": "outputs/acceleratorbench-gemini-v0.3-audit.json",
+          "exists": false
+        }
+      ],
+      "status": "missing",
+      "missing_paths": [
+        "outputs/acceleratorbench-deepseek-v0.3-audit.json",
+        "outputs/acceleratorbench-anthropic-v0.3-audit.json",
+        "outputs/acceleratorbench-gemini-v0.3-audit.json"
+      ]
+    },
+    {
+      "id": "private_holdout_execution",
+      "section": "anti_gaming",
+      "priority": "required_for_final_submission",
+      "description": "Execute the private holdout protocol on an evaluator-controlled host and report aggregate fields only.",
+      "evidence_paths": [
+        "outputs/acceleratorbench-private-holdout-results-v0.3.json"
+      ],
+      "commands": [
+        "Follow outputs/acceleratorbench-private-holdout-evaluator-protocol-v0.3.md on evaluator host."
+      ],
+      "paper_use": "Prevents optimization against visible public tasks and supports leaderboard credibility.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-private-holdout-results-v0.3.json",
+          "exists": false
+        }
+      ],
+      "status": "missing",
+      "missing_paths": [
+        "outputs/acceleratorbench-private-holdout-results-v0.3.json"
+      ]
+    }
+  ]
+}

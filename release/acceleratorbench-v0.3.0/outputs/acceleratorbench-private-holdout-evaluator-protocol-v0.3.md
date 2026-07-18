@@ -1,0 +1,48 @@
+# FounderBench Private Holdout Evaluator Protocol
+
+Benchmark version: `0.3.0`
+Holdout protocol version: `0.1`
+
+This protocol describes how an independent evaluator can instantiate a hidden FounderBench suite without publishing private task definitions.
+
+## Required Inputs
+
+- Frozen public release bundle with SHA256SUMS.json.
+- Evaluator-held FounderBench_HOLDOUT_SECRET.
+- Private task definitions generated in memory or stored outside the public repository.
+- Submitted model adapter or provider configuration.
+
+## Pre-Submission Commitments
+
+- Publish the public blueprint.
+- Publish the HMAC/SHA-256 fingerprint manifest generated from the evaluator secret.
+- Do not publish private initial states, seeds, score thresholds, or hidden templates before the cycle closes.
+
+## Evaluation Steps
+
+1. Validate the submitted public-run JSON with moneybench.submission.
+2. Generate and run private episodes with python -m moneybench.private_holdout_evaluator on the evaluator host.
+3. Run the submitted model on private tasks using the same action schema and diagnostics.
+4. Reject or flag runs that manually repair invalid model outputs outside the adapter.
+5. Report private aggregate score, solve rate, diagnostics, provider-error taxonomy, token/cost metadata, and selected redacted traces.
+6. Archive private raw results and the evaluator secret commitment for post-cycle audit.
+
+## Public Report Fields
+
+- `model/provider/version`
+- `private_tasks`
+- `private_solved`
+- `private_solve_rate`
+- `private_average_task_score`
+- `private_provider_errors`
+- `private_invalid_actions`
+- `private_over_budget_decisions`
+- `private_estimated_provider_cost_usd`
+- `fingerprint_manifest_sha256`
+
+## Anti-Gaming Notes
+
+- Public test tasks are visible and must not be called a hidden holdout.
+- Private task definitions should be generated, stored, and executed only on evaluator-controlled infrastructure.
+- Public reports from the evaluator should include only aggregate private fields unless the benchmark cycle has closed.
+- The evaluator should rotate the secret or release an expired holdout after each benchmark cycle.

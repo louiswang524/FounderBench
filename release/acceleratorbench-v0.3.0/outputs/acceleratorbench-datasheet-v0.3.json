@@ -1,0 +1,139 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Datasheet-style disclosure for benchmark/dataset submission review.",
+  "status": "documentation_complete_external_evidence_still_missing",
+  "artifact_summary": {
+    "public_tasks": 50,
+    "task_families": 10,
+    "structured_actions": 13,
+    "simulated_markets": 8,
+    "contains_real_company_data": false,
+    "contains_human_subject_data": false,
+    "public_test_hidden": false,
+    "official_private_leaderboard_included": false
+  },
+  "sections": [
+    {
+      "id": "motivation",
+      "title": "Motivation",
+      "entries": [
+        {
+          "question": "Why was the benchmark created?",
+          "answer": "To evaluate whether LLM agents can make repeated startup-like operating decisions under bounded resources, noisy market information, and risk penalties."
+        },
+        {
+          "question": "What is the primary evaluation unit?",
+          "answer": "A fixed simulated startup episode with initial state, task objective, structured action space, horizon, seed, and bounded 0-100 score."
+        },
+        {
+          "question": "What should the benchmark not be used to claim?",
+          "answer": "It should not be used to claim real-world startup success prediction, autonomous-company deployability, or hidden-suite leaderboard performance without additional evidence."
+        }
+      ]
+    },
+    {
+      "id": "composition",
+      "title": "Composition",
+      "entries": [
+        {
+          "question": "What does v0.3.0 contain?",
+          "answer": "50 public tasks across 10 task families, a deterministic simulator, an 8-market catalog, 13 structured actions, non-LLM baselines, provider adapters, validation tooling, and generated reviewer artifacts."
+        },
+        {
+          "question": "What are the public splits?",
+          "answer": "FND-001..FND-030 are public_dev; FND-031..FND-050 are public_test. Both splits are released and visible."
+        },
+        {
+          "question": "Does v0.3.0 include private task definitions?",
+          "answer": "No. It includes a private-holdout blueprint, evaluator protocol, harness, and smoke report, but no official private leaderboard or hidden task definitions."
+        },
+        {
+          "question": "Does the artifact contain personal data, real company data, or human-subject data?",
+          "answer": "No. v0.3.0 tasks are synthetic and template-generated; no real company records or human-subject source data are included."
+        }
+      ]
+    },
+    {
+      "id": "collection_and_curation",
+      "title": "Collection and Curation",
+      "entries": [
+        {
+          "question": "How were tasks created?",
+          "answer": "Tasks were generated from 10 hand-designed synthetic templates with 5 public variants each, fixed seeds, setup functions, and task-family scoring functions."
+        },
+        {
+          "question": "How are scoring rules documented?",
+          "answer": "The score rubric, task cards, task provenance report, task coverage report, metric-sensitivity report, and simulator invariant audit document score components, bounds, and validation checks."
+        },
+        {
+          "question": "Can public tasks be revised after model runs?",
+          "answer": "Official task definitions should not be changed for a reported result without incrementing the benchmark version and regenerating affected claims."
+        }
+      ]
+    },
+    {
+      "id": "uses",
+      "title": "Uses",
+      "entries": [
+        {
+          "question": "What uses are intended?",
+          "answer": "Research on LLM agents, sequential decision-making, structured action policies, cost-aware model comparison, and startup-operator simulation."
+        },
+        {
+          "question": "What uses are out of scope?",
+          "answer": "Real-money trading, investment advice, company governance automation, legal/financial due diligence, or claims that a model can safely run a real company without human oversight."
+        },
+        {
+          "question": "How should public scores be reported?",
+          "answer": "Public scores should name the version, task count, split visibility, prompt/protocol version, model identifier, run seed, diagnostics, and whether results are single-run or repeated."
+        }
+      ]
+    },
+    {
+      "id": "distribution_and_access",
+      "title": "Distribution and Access",
+      "entries": [
+        {
+          "question": "What files should be distributed?",
+          "answer": "The release bundle, source package, task manifest/cards, generated reports, validation scripts, checksum manifest, and reproduction guide."
+        },
+        {
+          "question": "What metadata remains owner-dependent?",
+          "answer": "Final public LICENSE and citation metadata are not owner-finalized in the current workspace and remain a publication blocker."
+        },
+        {
+          "question": "How are secrets handled?",
+          "answer": "Provider keys and private-holdout secrets are environment variables only; generated artifacts record variable names, redacted traces, hashes, and aggregate diagnostics but not secret values."
+        }
+      ]
+    },
+    {
+      "id": "maintenance",
+      "title": "Maintenance",
+      "entries": [
+        {
+          "question": "How should future versions be maintained?",
+          "answer": "Version task/rubric changes, keep public and private evaluation cycles separate, rotate private holdout secrets after each cycle, and preserve old release bundles for reproducibility."
+        },
+        {
+          "question": "How are issues tracked?",
+          "answer": "Use the task revision ledger for calibration, provider-trace, holdout, and reviewer issues; do not silently edit reported tasks or rubrics."
+        },
+        {
+          "question": "What evidence is still needed for a final paper?",
+          "answer": "Validated hosted/local LLM baselines, executed evaluator-host private holdout, executed human/expert calibration, and final owner-selected license/citation metadata."
+        }
+      ]
+    }
+  ],
+  "evidence_paths": [
+    "outputs/acceleratorbench-benchmark-card.md",
+    "outputs/acceleratorbench-task-provenance-v0.3.md",
+    "outputs/acceleratorbench-task-coverage-v0.3.md",
+    "outputs/acceleratorbench-contamination-leakage-audit-v0.3.md",
+    "outputs/acceleratorbench-simulator-invariant-audit-v0.3.md",
+    "outputs/acceleratorbench-license-readiness-v0.3.md",
+    "outputs/acceleratorbench-completion-audit-v0.3.md"
+  ]
+}

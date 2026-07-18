@@ -1,0 +1,1998 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "task_count": 50,
+  "summary": {
+    "families": 10,
+    "tasks_per_family_min": 5,
+    "tasks_per_family_max": 5,
+    "public_dev_tasks": 30,
+    "public_test_tasks": 20,
+    "action_types_available": 13,
+    "expected_action_types": 13,
+    "missing_allowed_actions": [],
+    "weeks_min": 7,
+    "weeks_max": 14,
+    "weeks_mean": 9.5,
+    "pass_threshold_min": 70.0,
+    "pass_threshold_max": 70.0
+  },
+  "family_counts": {
+    "Market selection": 5,
+    "First revenue": 5,
+    "Retention improvement": 5,
+    "Churn shock recovery": 5,
+    "Demo Day traction": 5,
+    "Pricing": 5,
+    "Runway preservation": 5,
+    "Pivot decision": 5,
+    "Fundraising": 5,
+    "Channel expansion": 5
+  },
+  "split_counts": {
+    "public_dev": 30,
+    "public_test": 20
+  },
+  "allowed_action_counts": {
+    "build_offer": 50,
+    "change_price": 50,
+    "cut_cost": 50,
+    "do_nothing": 50,
+    "hire_agent": 50,
+    "improve_offer": 50,
+    "interview_customers": 50,
+    "partner_channel": 50,
+    "pivot_market": 50,
+    "raise_funding": 50,
+    "research_market": 50,
+    "run_campaign": 50,
+    "support_customers": 50
+  },
+  "expected_action_counts": {
+    "build_offer": 10,
+    "change_price": 10,
+    "cut_cost": 5,
+    "do_nothing": 5,
+    "hire_agent": 10,
+    "improve_offer": 15,
+    "interview_customers": 10,
+    "partner_channel": 5,
+    "pivot_market": 5,
+    "raise_funding": 10,
+    "research_market": 10,
+    "run_campaign": 25,
+    "support_customers": 20
+  },
+  "families": [
+    {
+      "family": "Market selection",
+      "task_count": 5,
+      "splits": {
+        "public_dev": 5
+      },
+      "task_ids": [
+        "FND-001",
+        "FND-002",
+        "FND-003",
+        "FND-004",
+        "FND-005"
+      ],
+      "expected_actions": [
+        "build_offer",
+        "research_market"
+      ],
+      "capabilities": [
+        "market research",
+        "opportunity selection",
+        "early commitment under uncertainty"
+      ]
+    },
+    {
+      "family": "First revenue",
+      "task_count": 5,
+      "splits": {
+        "public_dev": 5
+      },
+      "task_ids": [
+        "FND-006",
+        "FND-007",
+        "FND-008",
+        "FND-009",
+        "FND-010"
+      ],
+      "expected_actions": [
+        "build_offer",
+        "change_price",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "offer building",
+        "campaign execution",
+        "cash-efficient customer acquisition"
+      ]
+    },
+    {
+      "family": "Retention improvement",
+      "task_count": 5,
+      "splits": {
+        "public_dev": 5
+      },
+      "task_ids": [
+        "FND-011",
+        "FND-012",
+        "FND-013",
+        "FND-014",
+        "FND-015"
+      ],
+      "expected_actions": [
+        "improve_offer",
+        "support_customers"
+      ],
+      "capabilities": [
+        "product quality improvement",
+        "support",
+        "churn prevention"
+      ]
+    },
+    {
+      "family": "Churn shock recovery",
+      "task_count": 5,
+      "splits": {
+        "public_dev": 5
+      },
+      "task_ids": [
+        "FND-016",
+        "FND-017",
+        "FND-018",
+        "FND-019",
+        "FND-020"
+      ],
+      "expected_actions": [
+        "hire_agent",
+        "improve_offer",
+        "support_customers"
+      ],
+      "capabilities": [
+        "triage after customer loss",
+        "support scaling",
+        "reputation recovery"
+      ]
+    },
+    {
+      "family": "Demo Day traction",
+      "task_count": 5,
+      "splits": {
+        "public_dev": 5
+      },
+      "task_ids": [
+        "FND-021",
+        "FND-022",
+        "FND-023",
+        "FND-024",
+        "FND-025"
+      ],
+      "expected_actions": [
+        "improve_offer",
+        "raise_funding",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "traction building",
+        "growth pacing",
+        "credible fundraising preparation"
+      ]
+    },
+    {
+      "family": "Pricing",
+      "task_count": 5,
+      "splits": {
+        "public_dev": 5
+      },
+      "task_ids": [
+        "FND-026",
+        "FND-027",
+        "FND-028",
+        "FND-029",
+        "FND-030"
+      ],
+      "expected_actions": [
+        "change_price",
+        "interview_customers",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "price correction",
+        "willingness-to-pay inference",
+        "revenue/customer tradeoff"
+      ]
+    },
+    {
+      "family": "Runway preservation",
+      "task_count": 5,
+      "splits": {
+        "public_test": 5
+      },
+      "task_ids": [
+        "FND-031",
+        "FND-032",
+        "FND-033",
+        "FND-034",
+        "FND-035"
+      ],
+      "expected_actions": [
+        "cut_cost",
+        "do_nothing",
+        "support_customers"
+      ],
+      "capabilities": [
+        "cost control",
+        "survival under limited cash",
+        "tradeoff-aware operations"
+      ]
+    },
+    {
+      "family": "Pivot decision",
+      "task_count": 5,
+      "splits": {
+        "public_test": 5
+      },
+      "task_ids": [
+        "FND-036",
+        "FND-037",
+        "FND-038",
+        "FND-039",
+        "FND-040"
+      ],
+      "expected_actions": [
+        "interview_customers",
+        "pivot_market",
+        "research_market"
+      ],
+      "capabilities": [
+        "recognizing stalled markets",
+        "customer discovery",
+        "market switching"
+      ]
+    },
+    {
+      "family": "Fundraising",
+      "task_count": 5,
+      "splits": {
+        "public_test": 5
+      },
+      "task_ids": [
+        "FND-041",
+        "FND-042",
+        "FND-043",
+        "FND-044",
+        "FND-045"
+      ],
+      "expected_actions": [
+        "raise_funding",
+        "run_campaign",
+        "support_customers"
+      ],
+      "capabilities": [
+        "capital raising",
+        "traction signaling",
+        "reputation and risk management"
+      ]
+    },
+    {
+      "family": "Channel expansion",
+      "task_count": 5,
+      "splits": {
+        "public_test": 5
+      },
+      "task_ids": [
+        "FND-046",
+        "FND-047",
+        "FND-048",
+        "FND-049",
+        "FND-050"
+      ],
+      "expected_actions": [
+        "hire_agent",
+        "partner_channel",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "partnerships",
+        "scaling working offers",
+        "channel-risk control"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "FND-001",
+      "name": "Select a viable market v1",
+      "family": "Market selection",
+      "split": "public_dev",
+      "seed": 11,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "build_offer",
+        "research_market"
+      ],
+      "capabilities": [
+        "market research",
+        "opportunity selection",
+        "early commitment under uncertainty"
+      ]
+    },
+    {
+      "task_id": "FND-002",
+      "name": "Select a viable market v2",
+      "family": "Market selection",
+      "split": "public_dev",
+      "seed": 41,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "build_offer",
+        "research_market"
+      ],
+      "capabilities": [
+        "market research",
+        "opportunity selection",
+        "early commitment under uncertainty"
+      ]
+    },
+    {
+      "task_id": "FND-003",
+      "name": "Select a viable market v3",
+      "family": "Market selection",
+      "split": "public_dev",
+      "seed": 43,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "build_offer",
+        "research_market"
+      ],
+      "capabilities": [
+        "market research",
+        "opportunity selection",
+        "early commitment under uncertainty"
+      ]
+    },
+    {
+      "task_id": "FND-004",
+      "name": "Select a viable market v4",
+      "family": "Market selection",
+      "split": "public_dev",
+      "seed": 47,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "build_offer",
+        "research_market"
+      ],
+      "capabilities": [
+        "market research",
+        "opportunity selection",
+        "early commitment under uncertainty"
+      ]
+    },
+    {
+      "task_id": "FND-005",
+      "name": "Select a viable market v5",
+      "family": "Market selection",
+      "split": "public_dev",
+      "seed": 53,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "build_offer",
+        "research_market"
+      ],
+      "capabilities": [
+        "market research",
+        "opportunity selection",
+        "early commitment under uncertainty"
+      ]
+    },
+    {
+      "task_id": "FND-006",
+      "name": "Reach first revenue v1",
+      "family": "First revenue",
+      "split": "public_dev",
+      "seed": 7,
+      "weeks": 14,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "build_offer",
+        "change_price",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "offer building",
+        "campaign execution",
+        "cash-efficient customer acquisition"
+      ]
+    },
+    {
+      "task_id": "FND-007",
+      "name": "Reach first revenue v2",
+      "family": "First revenue",
+      "split": "public_dev",
+      "seed": 59,
+      "weeks": 14,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "build_offer",
+        "change_price",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "offer building",
+        "campaign execution",
+        "cash-efficient customer acquisition"
+      ]
+    },
+    {
+      "task_id": "FND-008",
+      "name": "Reach first revenue v3",
+      "family": "First revenue",
+      "split": "public_dev",
+      "seed": 61,
+      "weeks": 14,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "build_offer",
+        "change_price",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "offer building",
+        "campaign execution",
+        "cash-efficient customer acquisition"
+      ]
+    },
+    {
+      "task_id": "FND-009",
+      "name": "Reach first revenue v4",
+      "family": "First revenue",
+      "split": "public_dev",
+      "seed": 67,
+      "weeks": 14,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "build_offer",
+        "change_price",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "offer building",
+        "campaign execution",
+        "cash-efficient customer acquisition"
+      ]
+    },
+    {
+      "task_id": "FND-010",
+      "name": "Reach first revenue v5",
+      "family": "First revenue",
+      "split": "public_dev",
+      "seed": 71,
+      "weeks": 14,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "build_offer",
+        "change_price",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "offer building",
+        "campaign execution",
+        "cash-efficient customer acquisition"
+      ]
+    },
+    {
+      "task_id": "FND-011",
+      "name": "Improve retention v1",
+      "family": "Retention improvement",
+      "split": "public_dev",
+      "seed": 30,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "improve_offer",
+        "support_customers"
+      ],
+      "capabilities": [
+        "product quality improvement",
+        "support",
+        "churn prevention"
+      ]
+    },
+    {
+      "task_id": "FND-012",
+      "name": "Improve retention v2",
+      "family": "Retention improvement",
+      "split": "public_dev",
+      "seed": 31,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "improve_offer",
+        "support_customers"
+      ],
+      "capabilities": [
+        "product quality improvement",
+        "support",
+        "churn prevention"
+      ]
+    },
+    {
+      "task_id": "FND-013",
+      "name": "Improve retention v3",
+      "family": "Retention improvement",
+      "split": "public_dev",
+      "seed": 32,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "improve_offer",
+        "support_customers"
+      ],
+      "capabilities": [
+        "product quality improvement",
+        "support",
+        "churn prevention"
+      ]
+    },
+    {
+      "task_id": "FND-014",
+      "name": "Improve retention v4",
+      "family": "Retention improvement",
+      "split": "public_dev",
+      "seed": 33,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "improve_offer",
+        "support_customers"
+      ],
+      "capabilities": [
+        "product quality improvement",
+        "support",
+        "churn prevention"
+      ]
+    },
+    {
+      "task_id": "FND-015",
+      "name": "Improve retention v5",
+      "family": "Retention improvement",
+      "split": "public_dev",
+      "seed": 34,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "improve_offer",
+        "support_customers"
+      ],
+      "capabilities": [
+        "product quality improvement",
+        "support",
+        "churn prevention"
+      ]
+    },
+    {
+      "task_id": "FND-016",
+      "name": "Survive churn shock v1",
+      "family": "Churn shock recovery",
+      "split": "public_dev",
+      "seed": 39,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "hire_agent",
+        "improve_offer",
+        "support_customers"
+      ],
+      "capabilities": [
+        "triage after customer loss",
+        "support scaling",
+        "reputation recovery"
+      ]
+    },
+    {
+      "task_id": "FND-017",
+      "name": "Survive churn shock v2",
+      "family": "Churn shock recovery",
+      "split": "public_dev",
+      "seed": 40,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "hire_agent",
+        "improve_offer",
+        "support_customers"
+      ],
+      "capabilities": [
+        "triage after customer loss",
+        "support scaling",
+        "reputation recovery"
+      ]
+    },
+    {
+      "task_id": "FND-018",
+      "name": "Survive churn shock v3",
+      "family": "Churn shock recovery",
+      "split": "public_dev",
+      "seed": 41,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "hire_agent",
+        "improve_offer",
+        "support_customers"
+      ],
+      "capabilities": [
+        "triage after customer loss",
+        "support scaling",
+        "reputation recovery"
+      ]
+    },
+    {
+      "task_id": "FND-019",
+      "name": "Survive churn shock v4",
+      "family": "Churn shock recovery",
+      "split": "public_dev",
+      "seed": 42,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "hire_agent",
+        "improve_offer",
+        "support_customers"
+      ],
+      "capabilities": [
+        "triage after customer loss",
+        "support scaling",
+        "reputation recovery"
+      ]
+    },
+    {
+      "task_id": "FND-020",
+      "name": "Survive churn shock v5",
+      "family": "Churn shock recovery",
+      "split": "public_dev",
+      "seed": 43,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "hire_agent",
+        "improve_offer",
+        "support_customers"
+      ],
+      "capabilities": [
+        "triage after customer loss",
+        "support scaling",
+        "reputation recovery"
+      ]
+    },
+    {
+      "task_id": "FND-021",
+      "name": "Prepare Demo Day traction v1",
+      "family": "Demo Day traction",
+      "split": "public_dev",
+      "seed": 52,
+      "weeks": 12,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "improve_offer",
+        "raise_funding",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "traction building",
+        "growth pacing",
+        "credible fundraising preparation"
+      ]
+    },
+    {
+      "task_id": "FND-022",
+      "name": "Prepare Demo Day traction v2",
+      "family": "Demo Day traction",
+      "split": "public_dev",
+      "seed": 53,
+      "weeks": 12,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "improve_offer",
+        "raise_funding",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "traction building",
+        "growth pacing",
+        "credible fundraising preparation"
+      ]
+    },
+    {
+      "task_id": "FND-023",
+      "name": "Prepare Demo Day traction v3",
+      "family": "Demo Day traction",
+      "split": "public_dev",
+      "seed": 54,
+      "weeks": 12,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "improve_offer",
+        "raise_funding",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "traction building",
+        "growth pacing",
+        "credible fundraising preparation"
+      ]
+    },
+    {
+      "task_id": "FND-024",
+      "name": "Prepare Demo Day traction v4",
+      "family": "Demo Day traction",
+      "split": "public_dev",
+      "seed": 55,
+      "weeks": 12,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "improve_offer",
+        "raise_funding",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "traction building",
+        "growth pacing",
+        "credible fundraising preparation"
+      ]
+    },
+    {
+      "task_id": "FND-025",
+      "name": "Prepare Demo Day traction v5",
+      "family": "Demo Day traction",
+      "split": "public_dev",
+      "seed": 56,
+      "weeks": 12,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "improve_offer",
+        "raise_funding",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "traction building",
+        "growth pacing",
+        "credible fundraising preparation"
+      ]
+    },
+    {
+      "task_id": "FND-026",
+      "name": "Find sustainable pricing v1",
+      "family": "Pricing",
+      "split": "public_dev",
+      "seed": 63,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "change_price",
+        "interview_customers",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "price correction",
+        "willingness-to-pay inference",
+        "revenue/customer tradeoff"
+      ]
+    },
+    {
+      "task_id": "FND-027",
+      "name": "Find sustainable pricing v2",
+      "family": "Pricing",
+      "split": "public_dev",
+      "seed": 64,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "change_price",
+        "interview_customers",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "price correction",
+        "willingness-to-pay inference",
+        "revenue/customer tradeoff"
+      ]
+    },
+    {
+      "task_id": "FND-028",
+      "name": "Find sustainable pricing v3",
+      "family": "Pricing",
+      "split": "public_dev",
+      "seed": 65,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "change_price",
+        "interview_customers",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "price correction",
+        "willingness-to-pay inference",
+        "revenue/customer tradeoff"
+      ]
+    },
+    {
+      "task_id": "FND-029",
+      "name": "Find sustainable pricing v4",
+      "family": "Pricing",
+      "split": "public_dev",
+      "seed": 66,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "change_price",
+        "interview_customers",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "price correction",
+        "willingness-to-pay inference",
+        "revenue/customer tradeoff"
+      ]
+    },
+    {
+      "task_id": "FND-030",
+      "name": "Find sustainable pricing v5",
+      "family": "Pricing",
+      "split": "public_dev",
+      "seed": 67,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "change_price",
+        "interview_customers",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "price correction",
+        "willingness-to-pay inference",
+        "revenue/customer tradeoff"
+      ]
+    },
+    {
+      "task_id": "FND-031",
+      "name": "Preserve runway v1",
+      "family": "Runway preservation",
+      "split": "public_test",
+      "seed": 72,
+      "weeks": 7,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "cut_cost",
+        "do_nothing",
+        "support_customers"
+      ],
+      "capabilities": [
+        "cost control",
+        "survival under limited cash",
+        "tradeoff-aware operations"
+      ]
+    },
+    {
+      "task_id": "FND-032",
+      "name": "Preserve runway v2",
+      "family": "Runway preservation",
+      "split": "public_test",
+      "seed": 73,
+      "weeks": 7,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "cut_cost",
+        "do_nothing",
+        "support_customers"
+      ],
+      "capabilities": [
+        "cost control",
+        "survival under limited cash",
+        "tradeoff-aware operations"
+      ]
+    },
+    {
+      "task_id": "FND-033",
+      "name": "Preserve runway v3",
+      "family": "Runway preservation",
+      "split": "public_test",
+      "seed": 74,
+      "weeks": 7,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "cut_cost",
+        "do_nothing",
+        "support_customers"
+      ],
+      "capabilities": [
+        "cost control",
+        "survival under limited cash",
+        "tradeoff-aware operations"
+      ]
+    },
+    {
+      "task_id": "FND-034",
+      "name": "Preserve runway v4",
+      "family": "Runway preservation",
+      "split": "public_test",
+      "seed": 75,
+      "weeks": 7,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "cut_cost",
+        "do_nothing",
+        "support_customers"
+      ],
+      "capabilities": [
+        "cost control",
+        "survival under limited cash",
+        "tradeoff-aware operations"
+      ]
+    },
+    {
+      "task_id": "FND-035",
+      "name": "Preserve runway v5",
+      "family": "Runway preservation",
+      "split": "public_test",
+      "seed": 76,
+      "weeks": 7,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "cut_cost",
+        "do_nothing",
+        "support_customers"
+      ],
+      "capabilities": [
+        "cost control",
+        "survival under limited cash",
+        "tradeoff-aware operations"
+      ]
+    },
+    {
+      "task_id": "FND-036",
+      "name": "Decide whether to pivot v1",
+      "family": "Pivot decision",
+      "split": "public_test",
+      "seed": 79,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "interview_customers",
+        "pivot_market",
+        "research_market"
+      ],
+      "capabilities": [
+        "recognizing stalled markets",
+        "customer discovery",
+        "market switching"
+      ]
+    },
+    {
+      "task_id": "FND-037",
+      "name": "Decide whether to pivot v2",
+      "family": "Pivot decision",
+      "split": "public_test",
+      "seed": 80,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "interview_customers",
+        "pivot_market",
+        "research_market"
+      ],
+      "capabilities": [
+        "recognizing stalled markets",
+        "customer discovery",
+        "market switching"
+      ]
+    },
+    {
+      "task_id": "FND-038",
+      "name": "Decide whether to pivot v3",
+      "family": "Pivot decision",
+      "split": "public_test",
+      "seed": 81,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "interview_customers",
+        "pivot_market",
+        "research_market"
+      ],
+      "capabilities": [
+        "recognizing stalled markets",
+        "customer discovery",
+        "market switching"
+      ]
+    },
+    {
+      "task_id": "FND-039",
+      "name": "Decide whether to pivot v4",
+      "family": "Pivot decision",
+      "split": "public_test",
+      "seed": 82,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "interview_customers",
+        "pivot_market",
+        "research_market"
+      ],
+      "capabilities": [
+        "recognizing stalled markets",
+        "customer discovery",
+        "market switching"
+      ]
+    },
+    {
+      "task_id": "FND-040",
+      "name": "Decide whether to pivot v5",
+      "family": "Pivot decision",
+      "split": "public_test",
+      "seed": 83,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "interview_customers",
+        "pivot_market",
+        "research_market"
+      ],
+      "capabilities": [
+        "recognizing stalled markets",
+        "customer discovery",
+        "market switching"
+      ]
+    },
+    {
+      "task_id": "FND-041",
+      "name": "Raise a credible seed round v1",
+      "family": "Fundraising",
+      "split": "public_test",
+      "seed": 88,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "raise_funding",
+        "run_campaign",
+        "support_customers"
+      ],
+      "capabilities": [
+        "capital raising",
+        "traction signaling",
+        "reputation and risk management"
+      ]
+    },
+    {
+      "task_id": "FND-042",
+      "name": "Raise a credible seed round v2",
+      "family": "Fundraising",
+      "split": "public_test",
+      "seed": 89,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "raise_funding",
+        "run_campaign",
+        "support_customers"
+      ],
+      "capabilities": [
+        "capital raising",
+        "traction signaling",
+        "reputation and risk management"
+      ]
+    },
+    {
+      "task_id": "FND-043",
+      "name": "Raise a credible seed round v3",
+      "family": "Fundraising",
+      "split": "public_test",
+      "seed": 90,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "raise_funding",
+        "run_campaign",
+        "support_customers"
+      ],
+      "capabilities": [
+        "capital raising",
+        "traction signaling",
+        "reputation and risk management"
+      ]
+    },
+    {
+      "task_id": "FND-044",
+      "name": "Raise a credible seed round v4",
+      "family": "Fundraising",
+      "split": "public_test",
+      "seed": 91,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "raise_funding",
+        "run_campaign",
+        "support_customers"
+      ],
+      "capabilities": [
+        "capital raising",
+        "traction signaling",
+        "reputation and risk management"
+      ]
+    },
+    {
+      "task_id": "FND-045",
+      "name": "Raise a credible seed round v5",
+      "family": "Fundraising",
+      "split": "public_test",
+      "seed": 92,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "raise_funding",
+        "run_campaign",
+        "support_customers"
+      ],
+      "capabilities": [
+        "capital raising",
+        "traction signaling",
+        "reputation and risk management"
+      ]
+    },
+    {
+      "task_id": "FND-046",
+      "name": "Scale acquisition channel v1",
+      "family": "Channel expansion",
+      "split": "public_test",
+      "seed": 99,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "hire_agent",
+        "partner_channel",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "partnerships",
+        "scaling working offers",
+        "channel-risk control"
+      ]
+    },
+    {
+      "task_id": "FND-047",
+      "name": "Scale acquisition channel v2",
+      "family": "Channel expansion",
+      "split": "public_test",
+      "seed": 100,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "hire_agent",
+        "partner_channel",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "partnerships",
+        "scaling working offers",
+        "channel-risk control"
+      ]
+    },
+    {
+      "task_id": "FND-048",
+      "name": "Scale acquisition channel v3",
+      "family": "Channel expansion",
+      "split": "public_test",
+      "seed": 101,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "hire_agent",
+        "partner_channel",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "partnerships",
+        "scaling working offers",
+        "channel-risk control"
+      ]
+    },
+    {
+      "task_id": "FND-049",
+      "name": "Scale acquisition channel v4",
+      "family": "Channel expansion",
+      "split": "public_test",
+      "seed": 102,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "hire_agent",
+        "partner_channel",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "partnerships",
+        "scaling working offers",
+        "channel-risk control"
+      ]
+    },
+    {
+      "task_id": "FND-050",
+      "name": "Scale acquisition channel v5",
+      "family": "Channel expansion",
+      "split": "public_test",
+      "seed": 103,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "allowed_actions": [
+        "build_offer",
+        "change_price",
+        "cut_cost",
+        "do_nothing",
+        "hire_agent",
+        "improve_offer",
+        "interview_customers",
+        "partner_channel",
+        "pivot_market",
+        "raise_funding",
+        "research_market",
+        "run_campaign",
+        "support_customers"
+      ],
+      "expected_actions": [
+        "hire_agent",
+        "partner_channel",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "partnerships",
+        "scaling working offers",
+        "channel-risk control"
+      ]
+    }
+  ]
+}

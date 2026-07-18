@@ -1,0 +1,233 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Provider-run status report for v0.3 paper evidence, generated from planned hosted/local baseline paths and submission validation.",
+  "planned_runs": [
+    {
+      "id": "deepseek_single",
+      "policy": "deepseek",
+      "priority": "required",
+      "model_family": "hosted",
+      "output": "outputs/acceleratorbench-deepseek-v0.3.json",
+      "submission_report": "outputs/acceleratorbench-deepseek-v0.3-submission-report.md",
+      "audit_output": "outputs/acceleratorbench-deepseek-v0.3-audit.json",
+      "exists": false,
+      "submission_report_exists": false,
+      "audit_exists": false,
+      "audit_submission_report_exists": false,
+      "repeat_bundle_output": "outputs/acceleratorbench-deepseek-v0.3-repeats.json",
+      "repeat_bundle_report": "outputs/acceleratorbench-deepseek-v0.3-repeats-submission-report.md",
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "repeat_outputs": [
+        "outputs/acceleratorbench-deepseek-v0.3-seed0.json",
+        "outputs/acceleratorbench-deepseek-v0.3-seed1.json",
+        "outputs/acceleratorbench-deepseek-v0.3-seed2.json"
+      ],
+      "repeat_outputs_present": 0,
+      "evidence_kind": "",
+      "status": "missing",
+      "runs": 0,
+      "tasks": 0,
+      "problems": [
+        "Missing outputs/acceleratorbench-deepseek-v0.3.json or outputs/acceleratorbench-deepseek-v0.3-repeats.json"
+      ]
+    },
+    {
+      "id": "deepseek_sc_k3",
+      "policy": "deepseek_sc",
+      "priority": "recommended",
+      "model_family": "hosted",
+      "output": "outputs/acceleratorbench-deepseek-sc-k3-v0.3.json",
+      "submission_report": "outputs/acceleratorbench-deepseek-sc-k3-v0.3-submission-report.md",
+      "audit_output": "outputs/acceleratorbench-deepseek-sc-k3-v0.3-audit.json",
+      "exists": false,
+      "submission_report_exists": false,
+      "audit_exists": false,
+      "audit_submission_report_exists": false,
+      "repeat_bundle_output": "outputs/acceleratorbench-deepseek-sc-k3-v0.3-repeats.json",
+      "repeat_bundle_report": "outputs/acceleratorbench-deepseek-sc-k3-v0.3-repeats-submission-report.md",
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "repeat_outputs": [
+        "outputs/acceleratorbench-deepseek-sc-k3-v0.3-seed0.json",
+        "outputs/acceleratorbench-deepseek-sc-k3-v0.3-seed1.json",
+        "outputs/acceleratorbench-deepseek-sc-k3-v0.3-seed2.json"
+      ],
+      "repeat_outputs_present": 0,
+      "evidence_kind": "",
+      "status": "missing",
+      "runs": 0,
+      "tasks": 0,
+      "problems": [
+        "Missing outputs/acceleratorbench-deepseek-sc-k3-v0.3.json or outputs/acceleratorbench-deepseek-sc-k3-v0.3-repeats.json"
+      ]
+    },
+    {
+      "id": "anthropic_single",
+      "policy": "anthropic",
+      "priority": "required",
+      "model_family": "hosted",
+      "output": "outputs/acceleratorbench-anthropic-v0.3.json",
+      "submission_report": "outputs/acceleratorbench-anthropic-v0.3-submission-report.md",
+      "audit_output": "outputs/acceleratorbench-anthropic-v0.3-audit.json",
+      "exists": false,
+      "submission_report_exists": false,
+      "audit_exists": false,
+      "audit_submission_report_exists": false,
+      "repeat_bundle_output": "outputs/acceleratorbench-anthropic-v0.3-repeats.json",
+      "repeat_bundle_report": "outputs/acceleratorbench-anthropic-v0.3-repeats-submission-report.md",
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "repeat_outputs": [
+        "outputs/acceleratorbench-anthropic-v0.3-seed0.json",
+        "outputs/acceleratorbench-anthropic-v0.3-seed1.json",
+        "outputs/acceleratorbench-anthropic-v0.3-seed2.json"
+      ],
+      "repeat_outputs_present": 0,
+      "evidence_kind": "",
+      "status": "missing",
+      "runs": 0,
+      "tasks": 0,
+      "problems": [
+        "Missing outputs/acceleratorbench-anthropic-v0.3.json or outputs/acceleratorbench-anthropic-v0.3-repeats.json"
+      ]
+    },
+    {
+      "id": "gemini_single",
+      "policy": "gemini",
+      "priority": "required",
+      "model_family": "hosted",
+      "output": "outputs/acceleratorbench-gemini-v0.3.json",
+      "submission_report": "outputs/acceleratorbench-gemini-v0.3-submission-report.md",
+      "audit_output": "outputs/acceleratorbench-gemini-v0.3-audit.json",
+      "exists": false,
+      "submission_report_exists": false,
+      "audit_exists": false,
+      "audit_submission_report_exists": false,
+      "repeat_bundle_output": "outputs/acceleratorbench-gemini-v0.3-repeats.json",
+      "repeat_bundle_report": "outputs/acceleratorbench-gemini-v0.3-repeats-submission-report.md",
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "repeat_outputs": [
+        "outputs/acceleratorbench-gemini-v0.3-seed0.json",
+        "outputs/acceleratorbench-gemini-v0.3-seed1.json",
+        "outputs/acceleratorbench-gemini-v0.3-seed2.json"
+      ],
+      "repeat_outputs_present": 0,
+      "evidence_kind": "",
+      "status": "missing",
+      "runs": 0,
+      "tasks": 0,
+      "problems": [
+        "Missing outputs/acceleratorbench-gemini-v0.3.json or outputs/acceleratorbench-gemini-v0.3-repeats.json"
+      ]
+    },
+    {
+      "id": "local_open_model_single",
+      "policy": "llm",
+      "priority": "required",
+      "model_family": "local_open_source",
+      "output": "outputs/acceleratorbench-local-open-model-v0.3.json",
+      "submission_report": "outputs/acceleratorbench-local-open-model-v0.3-submission-report.md",
+      "audit_output": "outputs/acceleratorbench-local-open-model-v0.3-audit.json",
+      "exists": false,
+      "submission_report_exists": false,
+      "audit_exists": false,
+      "audit_submission_report_exists": false,
+      "repeat_bundle_output": "outputs/acceleratorbench-local-open-model-v0.3-repeats.json",
+      "repeat_bundle_report": "outputs/acceleratorbench-local-open-model-v0.3-repeats-submission-report.md",
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "repeat_outputs": [
+        "outputs/acceleratorbench-local-open-model-v0.3-seed0.json",
+        "outputs/acceleratorbench-local-open-model-v0.3-seed1.json",
+        "outputs/acceleratorbench-local-open-model-v0.3-seed2.json"
+      ],
+      "repeat_outputs_present": 0,
+      "evidence_kind": "",
+      "status": "missing",
+      "runs": 0,
+      "tasks": 0,
+      "problems": [
+        "Missing outputs/acceleratorbench-local-open-model-v0.3.json or outputs/acceleratorbench-local-open-model-v0.3-repeats.json"
+      ]
+    }
+  ],
+  "excluded_provider_like_files": [
+    {
+      "path": "outputs/acceleratorbench-anthropic-results.json",
+      "bytes": 5068,
+      "reason_excluded": "Not a planned v0.3 provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims."
+    },
+    {
+      "path": "outputs/acceleratorbench-deepseek-acc006-trace.json",
+      "bytes": 48767,
+      "reason_excluded": "Not a planned v0.3 provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims."
+    },
+    {
+      "path": "outputs/acceleratorbench-deepseek-chat-sc-k3-v0.2-report.md",
+      "bytes": 1519,
+      "reason_excluded": "Not a planned v0.3 provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims."
+    },
+    {
+      "path": "outputs/acceleratorbench-deepseek-chat-sc-k3-v0.2.json",
+      "bytes": 24944,
+      "reason_excluded": "Not a planned v0.3 provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims."
+    },
+    {
+      "path": "outputs/acceleratorbench-deepseek-chat-v0.2-runlog.md",
+      "bytes": 849,
+      "reason_excluded": "Not a planned v0.3 provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims."
+    },
+    {
+      "path": "outputs/acceleratorbench-deepseek-results.json",
+      "bytes": 5069,
+      "reason_excluded": "Not a planned v0.3 provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims."
+    },
+    {
+      "path": "outputs/acceleratorbench-deepseek-v0.2-check.md",
+      "bytes": 2119,
+      "reason_excluded": "Not a planned v0.3 provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims."
+    },
+    {
+      "path": "outputs/acceleratorbench-deepseek-v0.2-results.json",
+      "bytes": 24936,
+      "reason_excluded": "Not a planned v0.3 provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims."
+    },
+    {
+      "path": "outputs/acceleratorbench-deepseek-v4-pro-v0.2-resumable.json",
+      "bytes": 24966,
+      "reason_excluded": "Not a planned v0.3 provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims."
+    },
+    {
+      "path": "outputs/acceleratorbench-deepseek-v4-pro-v0.2-runlog.md",
+      "bytes": 1141,
+      "reason_excluded": "Not a planned v0.3 provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims."
+    },
+    {
+      "path": "outputs/acceleratorbench-gemini-acc001-trace.json",
+      "bytes": 42196,
+      "reason_excluded": "Not a planned v0.3 provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims."
+    },
+    {
+      "path": "outputs/acceleratorbench-gemini-results.json",
+      "bytes": 5038,
+      "reason_excluded": "Not a planned v0.3 provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims."
+    }
+  ],
+  "summary": {
+    "planned_runs": 5,
+    "valid_runs": 0,
+    "invalid_runs": 0,
+    "missing_runs": 5,
+    "required_runs": 4,
+    "required_valid": 0,
+    "required_missing_or_invalid": 4,
+    "audit_outputs_present": 0,
+    "repeat_bundles_present": 0,
+    "repeat_outputs_present": 0,
+    "excluded_provider_like_files": 12,
+    "ready_for_llm_claims": false
+  }
+}

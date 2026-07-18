@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "founderbench"
+version = "0.3.0"
+description = "A controlled benchmark for evaluating LLM agents as startup operators under bounded resources."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "FounderBench contributors" }
+]
+license = { text = "License not selected yet. See work/moneybench/LICENSE-TODO.md." }
+keywords = ["llm", "agents", "benchmark", "startup", "evaluation", "simulator"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/<owner>/<repo>"
+Repository = "https://github.com/<owner>/<repo>"
+Issues = "https://github.com/<owner>/<repo>/issues"
+
+[project.scripts]
+founderbench-release = "moneybench.release:main"
+founderbench-task = "moneybench.task_cli:main"
+founderbench-runner = "moneybench.resumable_runner:main"
+founderbench-local-model = "moneybench.local_model:main"
+
+[tool.setuptools]
+package-dir = { "" = "work/moneybench" }
+
+[tool.setuptools.packages.find]
+where = ["work/moneybench"]
+include = ["moneybench*"]
+

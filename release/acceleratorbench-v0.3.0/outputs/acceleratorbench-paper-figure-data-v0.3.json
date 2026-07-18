@@ -1,0 +1,564 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Paper figure data generated from validated v0.3 result artifacts.",
+  "source_artifacts": [
+    "outputs/acceleratorbench-paper-tables-v0.3.json",
+    "outputs/acceleratorbench-action-ablation-v0.3.json",
+    "outputs/acceleratorbench-difficulty-calibration-v0.3.json",
+    "outputs/acceleratorbench-metric-sensitivity-v0.3.json"
+  ],
+  "figures": [
+    {
+      "id": "leaderboard_bar",
+      "caption": "Average task score and solved tasks for deterministic baselines and validated provider submissions.",
+      "recommended_encoding": "bar chart with policies on x-axis and average_task_score on y-axis; solved tasks as labels.",
+      "data": [
+        {
+          "policy": "task_heuristic",
+          "tasks": 50,
+          "solved": 37,
+          "solve_rate": 0.74,
+          "average_task_score": 80.9,
+          "public_dev_score": 81.73,
+          "public_test_score": 79.66,
+          "over_budget_decisions": 5,
+          "provider_errors": 0
+        },
+        {
+          "policy": "heuristic",
+          "tasks": 50,
+          "solved": 19,
+          "solve_rate": 0.38,
+          "average_task_score": 61.01,
+          "public_dev_score": 65.1,
+          "public_test_score": 54.87,
+          "over_budget_decisions": 0,
+          "provider_errors": 0
+        },
+        {
+          "policy": "conservative",
+          "tasks": 50,
+          "solved": 13,
+          "solve_rate": 0.26,
+          "average_task_score": 54.04,
+          "public_dev_score": 55.31,
+          "public_test_score": 52.13,
+          "over_budget_decisions": 0,
+          "provider_errors": 0
+        },
+        {
+          "policy": "random",
+          "tasks": 50,
+          "solved": 4,
+          "solve_rate": 0.08,
+          "average_task_score": 33.3,
+          "public_dev_score": 26.11,
+          "public_test_score": 44.07,
+          "over_budget_decisions": 15,
+          "provider_errors": 0
+        }
+      ]
+    },
+    {
+      "id": "family_heatmap",
+      "caption": "Family-level solved count and average score by policy.",
+      "recommended_encoding": "heatmap with task family by policy, colored by average_score and annotated with solved/tasks.",
+      "data": [
+        {
+          "family": "Market selection",
+          "policy": "task_heuristic",
+          "solved": 2,
+          "tasks": 5,
+          "average_score": 59.8
+        },
+        {
+          "family": "Market selection",
+          "policy": "heuristic",
+          "solved": 2,
+          "tasks": 5,
+          "average_score": 61.1
+        },
+        {
+          "family": "Market selection",
+          "policy": "conservative",
+          "solved": 2,
+          "tasks": 5,
+          "average_score": 63.2
+        },
+        {
+          "family": "Market selection",
+          "policy": "random",
+          "solved": 0,
+          "tasks": 5,
+          "average_score": 31.6
+        },
+        {
+          "family": "First revenue",
+          "policy": "task_heuristic",
+          "solved": 2,
+          "tasks": 5,
+          "average_score": 69.2
+        },
+        {
+          "family": "First revenue",
+          "policy": "heuristic",
+          "solved": 2,
+          "tasks": 5,
+          "average_score": 65.7
+        },
+        {
+          "family": "First revenue",
+          "policy": "conservative",
+          "solved": 1,
+          "tasks": 5,
+          "average_score": 45.3
+        },
+        {
+          "family": "First revenue",
+          "policy": "random",
+          "solved": 0,
+          "tasks": 5,
+          "average_score": 20.4
+        },
+        {
+          "family": "Retention improvement",
+          "policy": "task_heuristic",
+          "solved": 5,
+          "tasks": 5,
+          "average_score": 95.8
+        },
+        {
+          "family": "Retention improvement",
+          "policy": "heuristic",
+          "solved": 2,
+          "tasks": 5,
+          "average_score": 63.5
+        },
+        {
+          "family": "Retention improvement",
+          "policy": "conservative",
+          "solved": 0,
+          "tasks": 5,
+          "average_score": 47.5
+        },
+        {
+          "family": "Retention improvement",
+          "policy": "random",
+          "solved": 0,
+          "tasks": 5,
+          "average_score": 10.4
+        },
+        {
+          "family": "Churn shock recovery",
+          "policy": "task_heuristic",
+          "solved": 5,
+          "tasks": 5,
+          "average_score": 91.2
+        },
+        {
+          "family": "Churn shock recovery",
+          "policy": "heuristic",
+          "solved": 1,
+          "tasks": 5,
+          "average_score": 48.1
+        },
+        {
+          "family": "Churn shock recovery",
+          "policy": "conservative",
+          "solved": 0,
+          "tasks": 5,
+          "average_score": 38.3
+        },
+        {
+          "family": "Churn shock recovery",
+          "policy": "random",
+          "solved": 0,
+          "tasks": 5,
+          "average_score": 34.3
+        },
+        {
+          "family": "Demo Day traction",
+          "policy": "task_heuristic",
+          "solved": 4,
+          "tasks": 5,
+          "average_score": 88.8
+        },
+        {
+          "family": "Demo Day traction",
+          "policy": "heuristic",
+          "solved": 3,
+          "tasks": 5,
+          "average_score": 67.0
+        },
+        {
+          "family": "Demo Day traction",
+          "policy": "conservative",
+          "solved": 2,
+          "tasks": 5,
+          "average_score": 60.3
+        },
+        {
+          "family": "Demo Day traction",
+          "policy": "random",
+          "solved": 0,
+          "tasks": 5,
+          "average_score": 20.2
+        },
+        {
+          "family": "Pricing",
+          "policy": "task_heuristic",
+          "solved": 5,
+          "tasks": 5,
+          "average_score": 85.6
+        },
+        {
+          "family": "Pricing",
+          "policy": "heuristic",
+          "solved": 4,
+          "tasks": 5,
+          "average_score": 85.2
+        },
+        {
+          "family": "Pricing",
+          "policy": "conservative",
+          "solved": 3,
+          "tasks": 5,
+          "average_score": 77.3
+        },
+        {
+          "family": "Pricing",
+          "policy": "random",
+          "solved": 0,
+          "tasks": 5,
+          "average_score": 39.7
+        },
+        {
+          "family": "Runway preservation",
+          "policy": "task_heuristic",
+          "solved": 5,
+          "tasks": 5,
+          "average_score": 95.6
+        },
+        {
+          "family": "Runway preservation",
+          "policy": "heuristic",
+          "solved": 5,
+          "tasks": 5,
+          "average_score": 82.5
+        },
+        {
+          "family": "Runway preservation",
+          "policy": "conservative",
+          "solved": 5,
+          "tasks": 5,
+          "average_score": 79.1
+        },
+        {
+          "family": "Runway preservation",
+          "policy": "random",
+          "solved": 2,
+          "tasks": 5,
+          "average_score": 68.3
+        },
+        {
+          "family": "Pivot decision",
+          "policy": "task_heuristic",
+          "solved": 2,
+          "tasks": 5,
+          "average_score": 65.5
+        },
+        {
+          "family": "Pivot decision",
+          "policy": "heuristic",
+          "solved": 0,
+          "tasks": 5,
+          "average_score": 26.8
+        },
+        {
+          "family": "Pivot decision",
+          "policy": "conservative",
+          "solved": 0,
+          "tasks": 5,
+          "average_score": 23.9
+        },
+        {
+          "family": "Pivot decision",
+          "policy": "random",
+          "solved": 0,
+          "tasks": 5,
+          "average_score": 11.7
+        },
+        {
+          "family": "Fundraising",
+          "policy": "task_heuristic",
+          "solved": 5,
+          "tasks": 5,
+          "average_score": 99.6
+        },
+        {
+          "family": "Fundraising",
+          "policy": "heuristic",
+          "solved": 0,
+          "tasks": 5,
+          "average_score": 68.0
+        },
+        {
+          "family": "Fundraising",
+          "policy": "conservative",
+          "solved": 0,
+          "tasks": 5,
+          "average_score": 68.0
+        },
+        {
+          "family": "Fundraising",
+          "policy": "random",
+          "solved": 2,
+          "tasks": 5,
+          "average_score": 72.6
+        },
+        {
+          "family": "Channel expansion",
+          "policy": "task_heuristic",
+          "solved": 2,
+          "tasks": 5,
+          "average_score": 58.0
+        },
+        {
+          "family": "Channel expansion",
+          "policy": "heuristic",
+          "solved": 0,
+          "tasks": 5,
+          "average_score": 42.1
+        },
+        {
+          "family": "Channel expansion",
+          "policy": "conservative",
+          "solved": 0,
+          "tasks": 5,
+          "average_score": 37.6
+        },
+        {
+          "family": "Channel expansion",
+          "policy": "random",
+          "solved": 0,
+          "tasks": 5,
+          "average_score": 23.7
+        }
+      ]
+    },
+    {
+      "id": "action_ablation_drop",
+      "caption": "Mean score drop when disabling major action groups in the task-aware heuristic.",
+      "recommended_encoding": "horizontal bar chart with confidence intervals.",
+      "data": [
+        {
+          "ablation_id": "no_discovery",
+          "blocked_actions": [
+            "research_market",
+            "interview_customers"
+          ],
+          "mean_score_drop": 3.61,
+          "drop_ci_low": -1.08,
+          "drop_ci_high": 8.6,
+          "solved_drop": 2
+        },
+        {
+          "ablation_id": "no_growth",
+          "blocked_actions": [
+            "run_campaign",
+            "partner_channel"
+          ],
+          "mean_score_drop": 11.1,
+          "drop_ci_low": 6.49,
+          "drop_ci_high": 15.93,
+          "solved_drop": 8
+        },
+        {
+          "ablation_id": "no_quality_support_capacity",
+          "blocked_actions": [
+            "improve_offer",
+            "support_customers",
+            "hire_agent"
+          ],
+          "mean_score_drop": 19.41,
+          "drop_ci_low": 13.43,
+          "drop_ci_high": 25.99,
+          "solved_drop": 15
+        },
+        {
+          "ablation_id": "no_pricing",
+          "blocked_actions": [
+            "change_price"
+          ],
+          "mean_score_drop": 5.01,
+          "drop_ci_low": 2.04,
+          "drop_ci_high": 8.45,
+          "solved_drop": 7
+        },
+        {
+          "ablation_id": "no_runway_funding",
+          "blocked_actions": [
+            "cut_cost",
+            "raise_funding"
+          ],
+          "mean_score_drop": 3.16,
+          "drop_ci_low": 0.64,
+          "drop_ci_high": 5.72,
+          "solved_drop": 5
+        },
+        {
+          "ablation_id": "no_pivot",
+          "blocked_actions": [
+            "pivot_market"
+          ],
+          "mean_score_drop": 0.99,
+          "drop_ci_low": -0.46,
+          "drop_ci_high": 2.85,
+          "solved_drop": 2
+        }
+      ]
+    },
+    {
+      "id": "difficulty_band_counts",
+      "caption": "Number of public tasks by deterministic-baseline difficulty band.",
+      "recommended_encoding": "ordered bar chart.",
+      "data": [
+        {
+          "band": "easy",
+          "task_count": 10
+        },
+        {
+          "band": "hard",
+          "task_count": 19
+        },
+        {
+          "band": "medium",
+          "task_count": 8
+        },
+        {
+          "band": "saturated",
+          "task_count": 2
+        },
+        {
+          "band": "unsolved_by_baselines",
+          "task_count": 11
+        }
+      ]
+    },
+    {
+      "id": "metric_sensitivity_rankings",
+      "caption": "Metric sensitivity rankings compared with the official average task score.",
+      "recommended_encoding": "table or slope chart showing ranking changes across metrics.",
+      "data": [
+        {
+          "metric": "average_task_score",
+          "leader": "task_heuristic",
+          "spearman_with_primary": 1.0,
+          "ranking": [
+            "task_heuristic",
+            "heuristic",
+            "conservative",
+            "random"
+          ]
+        },
+        {
+          "metric": "solve_rate",
+          "leader": "task_heuristic",
+          "spearman_with_primary": 1.0,
+          "ranking": [
+            "task_heuristic",
+            "heuristic",
+            "conservative",
+            "random"
+          ]
+        },
+        {
+          "metric": "median_task_score",
+          "leader": "task_heuristic",
+          "spearman_with_primary": 1.0,
+          "ranking": [
+            "task_heuristic",
+            "heuristic",
+            "conservative",
+            "random"
+          ]
+        },
+        {
+          "metric": "task_normalized_business_score",
+          "leader": "task_heuristic",
+          "spearman_with_primary": 0.4,
+          "ranking": [
+            "task_heuristic",
+            "conservative",
+            "random",
+            "heuristic"
+          ]
+        },
+        {
+          "metric": "average_final_cash",
+          "leader": "random",
+          "spearman_with_primary": -0.4,
+          "ranking": [
+            "random",
+            "task_heuristic",
+            "conservative",
+            "heuristic"
+          ]
+        },
+        {
+          "metric": "average_cumulative_revenue",
+          "leader": "task_heuristic",
+          "spearman_with_primary": 0.4,
+          "ranking": [
+            "task_heuristic",
+            "random",
+            "heuristic",
+            "conservative"
+          ]
+        },
+        {
+          "metric": "survival_rate",
+          "leader": "conservative",
+          "spearman_with_primary": 0.2,
+          "ranking": [
+            "conservative",
+            "heuristic",
+            "task_heuristic",
+            "random"
+          ]
+        },
+        {
+          "metric": "low_risk_score",
+          "leader": "conservative",
+          "spearman_with_primary": 0.2,
+          "ranking": [
+            "conservative",
+            "heuristic",
+            "task_heuristic",
+            "random"
+          ]
+        },
+        {
+          "metric": "revenue_efficiency",
+          "leader": "conservative",
+          "spearman_with_primary": 0.2,
+          "ranking": [
+            "conservative",
+            "heuristic",
+            "task_heuristic",
+            "random"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "figures": 5,
+    "leaderboard_policies": 4,
+    "family_heatmap_cells": 40,
+    "action_ablation_rows": 6,
+    "difficulty_bands": 5,
+    "metric_rankings": 9
+  }
+}

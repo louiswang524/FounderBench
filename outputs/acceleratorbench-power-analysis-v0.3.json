@@ -1,0 +1,94 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Power and resolution analysis for the fixed public task suite before hosted/local LLM results are added.",
+  "source_file": "outputs\\acceleratorbench-baseline-raw-v0.3.json",
+  "method": {
+    "paired_gap_variance_source": "All pairwise deterministic-baseline task-score gaps on the 50 public v0.3.0 tasks.",
+    "alpha": 0.05,
+    "target_power": 0.8,
+    "approximation": "Normal paired-mean approximation: MDE = (1.96 + 0.84) * sd(paired gaps) / sqrt(n).",
+    "paired_gap_sd": 34.1838
+  },
+  "summary": {
+    "public_tasks": 50,
+    "policies_used_for_variance": 4,
+    "paired_gap_observations": 300,
+    "minimum_detectable_score_gap_50_tasks": 13.54,
+    "observed_comparisons_above_50_task_mde": 3,
+    "claim": "The public suite has coarse resolution for small model differences; repeated runs and private-holdout expansion should be reported for close hosted-model comparisons."
+  },
+  "mde_by_task_count": [
+    {
+      "task_episodes": 20,
+      "minimum_detectable_score_gap": 21.4,
+      "interpretation": "Approximate 80% power for a paired two-sided 0.05 test under the deterministic-baseline observed paired-gap variance."
+    },
+    {
+      "task_episodes": 30,
+      "minimum_detectable_score_gap": 17.48,
+      "interpretation": "Approximate 80% power for a paired two-sided 0.05 test under the deterministic-baseline observed paired-gap variance."
+    },
+    {
+      "task_episodes": 50,
+      "minimum_detectable_score_gap": 13.54,
+      "interpretation": "Approximate 80% power for a paired two-sided 0.05 test under the deterministic-baseline observed paired-gap variance."
+    },
+    {
+      "task_episodes": 75,
+      "minimum_detectable_score_gap": 11.05,
+      "interpretation": "Approximate 80% power for a paired two-sided 0.05 test under the deterministic-baseline observed paired-gap variance."
+    },
+    {
+      "task_episodes": 100,
+      "minimum_detectable_score_gap": 9.57,
+      "interpretation": "Approximate 80% power for a paired two-sided 0.05 test under the deterministic-baseline observed paired-gap variance."
+    }
+  ],
+  "observed_deterministic_gaps": [
+    {
+      "comparison": "task_heuristic - heuristic",
+      "tasks": 50,
+      "mean_score_gap": 19.9,
+      "score_gap_bootstrap_ci": [
+        13.8,
+        26.19
+      ],
+      "cohen_dz": 0.8848,
+      "above_50_task_mde": true
+    },
+    {
+      "comparison": "task_heuristic - conservative",
+      "tasks": 50,
+      "mean_score_gap": 26.87,
+      "score_gap_bootstrap_ci": [
+        21.67,
+        32.45
+      ],
+      "cohen_dz": 1.3433,
+      "above_50_task_mde": true
+    },
+    {
+      "comparison": "task_heuristic - random",
+      "tasks": 50,
+      "mean_score_gap": 47.61,
+      "score_gap_bootstrap_ci": [
+        40.24,
+        54.64
+      ],
+      "cohen_dz": 1.892,
+      "above_50_task_mde": true
+    }
+  ],
+  "solve_rate_resolution": {
+    "task_episodes": 50,
+    "minimum_detectable_solve_rate_gap": 0.198,
+    "assumption": "Conservative normal approximation with Bernoulli variance p(1-p)=0.25; paired binary tests may need less or more evidence depending on discordance."
+  },
+  "claim_guardrails": [
+    "Do not interpret non-significant close hosted-model gaps as model equivalence without a pre-specified equivalence margin.",
+    "Do not claim the 50-task public suite can reliably detect small score gaps near the MDE boundary.",
+    "Use repeated-run bundles for stochastic policies and report run-level intervals separately from task-level paired intervals.",
+    "Use the private-holdout protocol for final leaderboard credibility rather than increasing public-task tuning pressure."
+  ]
+}

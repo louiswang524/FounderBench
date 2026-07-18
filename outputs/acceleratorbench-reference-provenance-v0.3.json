@@ -1,0 +1,67 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "verified_date": "2026-07-15",
+  "entries": [
+    {
+      "key": "yao2023react",
+      "source": "https://arxiv.org/bibtex/2210.03629",
+      "status": "verified_from_primary_or_project_source"
+    },
+    {
+      "key": "schick2023toolformer",
+      "source": "https://arxiv.org/bibtex/2302.04761",
+      "status": "verified_from_primary_or_project_source"
+    },
+    {
+      "key": "wang2023voyager",
+      "source": "https://arxiv.org/bibtex/2305.16291",
+      "status": "verified_from_primary_or_project_source"
+    },
+    {
+      "key": "liu2025agentbench",
+      "source": "https://arxiv.org/bibtex/2308.03688",
+      "status": "verified_from_primary_or_project_source"
+    },
+    {
+      "key": "mialon2023gaia",
+      "source": "https://arxiv.org/bibtex/2311.12983",
+      "status": "verified_from_primary_or_project_source"
+    },
+    {
+      "key": "jimenez2024swebench",
+      "source": "https://arxiv.org/bibtex/2310.06770",
+      "status": "verified_from_primary_or_project_source"
+    },
+    {
+      "key": "zhou2024webarena",
+      "source": "https://arxiv.org/bibtex/2307.13854",
+      "status": "verified_from_primary_or_project_source"
+    },
+    {
+      "key": "yao2024taubench",
+      "source": "https://arxiv.org/bibtex/2406.12045",
+      "status": "verified_from_primary_or_project_source"
+    },
+    {
+      "key": "xu2025theagentcompany",
+      "source": "https://arxiv.org/bibtex/2412.14161",
+      "status": "verified_from_primary_or_project_source"
+    },
+    {
+      "key": "drouin2024workarena",
+      "source": "https://servicenow.github.io/WorkArena/",
+      "status": "verified_from_primary_or_project_source"
+    },
+    {
+      "key": "liu2026econwebarena",
+      "source": "https://arxiv.org/bibtex/2506.08136",
+      "status": "verified_from_primary_or_project_source"
+    },
+    {
+      "key": "han2026enterprisearena",
+      "source": "https://arxiv.org/bibtex/2603.23638",
+      "status": "verified_from_primary_or_project_source"
+    }
+  ]
+}

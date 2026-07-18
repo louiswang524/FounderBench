@@ -1,0 +1,258 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Compact submission manifest for reviewers: included evidence, excluded claims, reproduction commands, and readiness status.",
+  "readiness": {
+    "submission_gate": "not_ready",
+    "completion_claim": "not_complete",
+    "ready_for_publication": false,
+    "failed_gates": [
+      "required_experiments",
+      "provider_run_readiness",
+      "claim_evidence_alignment",
+      "license_and_citation"
+    ],
+    "required_experiments_missing": 6
+  },
+  "included_evidence_summary": {
+    "task_suite": "50 fixed public v0.3.0 startup tasks across 10 families.",
+    "simulator": "Deterministic seeded startup simulator with 13 structured business actions and an 8-market catalog.",
+    "metrics": "Bounded 0-100 task score, solve rate, diagnostics, sensitivity analysis, paired statistics, and pre-specified comparison protocol.",
+    "baselines": "Random, conservative, heuristic, and task-aware heuristic baselines on all 50 tasks with ablations.",
+    "reproducibility": "Reviewer smoke test, reproducibility manifest, determinism audit, release checksum manifest, and bundle integrity report."
+  },
+  "core_review_files": [
+    {
+      "path": "outputs/acceleratorbench-benchmark-card.md",
+      "exists": true,
+      "bytes": 6684,
+      "sha256": "c03ca503bcfcdcedf0abe47726d42190f67364c82a9a96e7e2bc41ca22b505aa"
+    },
+    {
+      "path": "outputs/acceleratorbench-task-manifest-v0.3.json",
+      "exists": true,
+      "bytes": 33738,
+      "sha256": "32ff27d0692326fe86e49438d51bbc1be7031aa9a2876d470b5d884abaab49bc"
+    },
+    {
+      "path": "outputs/acceleratorbench-task-coverage-v0.3.md",
+      "exists": true,
+      "bytes": 3571,
+      "sha256": "27fd5f52d8d38ff6a691713b23a04871b6d55afb04818afe9848f576376aba11"
+    },
+    {
+      "path": "outputs/acceleratorbench-metrics-and-evaluation.md",
+      "exists": true,
+      "bytes": 7358,
+      "sha256": "687f091cec2ad31f3f4b8b79848896fce5688df7d43e759c30d494c457145235"
+    },
+    {
+      "path": "outputs/acceleratorbench-baseline-analysis-v0.3.md",
+      "exists": true,
+      "bytes": 4385,
+      "sha256": "ecd832b81f60c951978f8af3f38f6076ac87b96a343daaee1bbf2226444eabfc"
+    },
+    {
+      "path": "outputs/acceleratorbench-model-comparison-v0.3.md",
+      "exists": true,
+      "bytes": 4618,
+      "sha256": "c1cb5142fcbcc0d402acfcdb524ab3ea8910e839b5adecf106e88ef3f66609fc"
+    },
+    {
+      "path": "outputs/acceleratorbench-paper-tables-v0.3.md",
+      "exists": true,
+      "bytes": 4587,
+      "sha256": "7e212cf813b94e6567bb176f876c60e0112553c766e2516b1490b3adb215c203"
+    },
+    {
+      "path": "outputs/acceleratorbench-validity-report-v0.3.md",
+      "exists": true,
+      "bytes": 5998,
+      "sha256": "2045c2728b57d0be1d65874b9646c052edd6cba3e541c5eb75eabbaad1a94bce"
+    },
+    {
+      "path": "outputs/acceleratorbench-claim-evidence-v0.3.md",
+      "exists": true,
+      "bytes": 5856,
+      "sha256": "2bf24817bac016d0ecf82a5a9e7157a3bafcb9f20f1cdcddd8652b5359cc67e7"
+    },
+    {
+      "path": "outputs/acceleratorbench-submission-gate-v0.3.md",
+      "exists": true,
+      "bytes": 1553,
+      "sha256": "8d4321ec2a986ffb18e3df8b499814ad574cce750ab6fb667ffe12efa9b92fa5"
+    },
+    {
+      "path": "outputs/acceleratorbench-completion-audit-v0.3.md",
+      "exists": true,
+      "bytes": 8627,
+      "sha256": "48e2bd72722e08734c3d7d4d60bbf11732e1bd018b53c1c4e124e9d0d7477120"
+    },
+    {
+      "path": "outputs/acceleratorbench-reviewer-index-v0.3.md",
+      "exists": true,
+      "bytes": 21562,
+      "sha256": "8fdc7f92d26bb42aadbd17765165afb1948205e4c9fe1aa1a59d7bd280fad230"
+    },
+    {
+      "path": "release/acceleratorbench-v0.3.0/SHA256SUMS.json",
+      "exists": true,
+      "bytes": 42106,
+      "sha256": "b0ce99c551079b97390f3bae7c8fa44e56bee5fdf99c23565cf2cd02f5794b36"
+    },
+    {
+      "path": "release/acceleratorbench-v0.3.0/BUNDLE-INTEGRITY.md",
+      "exists": true,
+      "bytes": 673,
+      "sha256": "2e027b78530db62263508d57e5443a78390921553839f14c64333d1f75b3ec2a"
+    }
+  ],
+  "supported_claims": [
+    {
+      "id": "controlled_startup_operator_benchmark",
+      "status": "supported",
+      "permitted_wording": "FounderBench evaluates structured startup-like operating decisions in a controlled simulator.",
+      "evidence_paths": [
+        "work/moneybench/moneybench/env.py",
+        "work/moneybench/SPEC.md",
+        "outputs/acceleratorbench-benchmark-card.md"
+      ]
+    },
+    {
+      "id": "expanded_50_task_suite",
+      "status": "supported",
+      "permitted_wording": "v0.3.0 contains 50 fixed public tasks across 10 balanced task families.",
+      "evidence_paths": [
+        "outputs/acceleratorbench-task-manifest-v0.3.json",
+        "outputs/acceleratorbench-task-coverage-v0.3.md"
+      ]
+    },
+    {
+      "id": "structured_action_space",
+      "status": "supported",
+      "permitted_wording": "The simulator executes only structured actions; rationale is retained for auditability but not scored directly.",
+      "evidence_paths": [
+        "work/moneybench/moneybench/schema.py",
+        "work/moneybench/moneybench/task_runner.py",
+        "outputs/acceleratorbench-task-coverage-v0.3.md"
+      ]
+    },
+    {
+      "id": "bounded_normalized_metrics",
+      "status": "supported",
+      "permitted_wording": "Each task returns a bounded 0-100 score; tasks are solved at score >= 70.",
+      "evidence_paths": [
+        "outputs/acceleratorbench-metrics-and-evaluation.md",
+        "outputs/acceleratorbench-score-rubric-v0.3.md",
+        "work/moneybench/moneybench/tasks.py"
+      ]
+    },
+    {
+      "id": "deterministic_baseline_spread",
+      "status": "supported",
+      "permitted_wording": "Deterministic baselines show a wide spread from random to task-aware heuristic on the public v0.3 suite.",
+      "evidence_paths": [
+        "outputs/acceleratorbench-baseline-leaderboard-v0.3.json",
+        "outputs/acceleratorbench-baseline-analysis-v0.3.md",
+        "outputs/acceleratorbench-paper-tables-v0.3.md"
+      ]
+    },
+    {
+      "id": "capability_ladder_ablation",
+      "status": "supported",
+      "permitted_wording": "The deterministic policy ladder is a calibration ablation, not a model architecture ablation.",
+      "evidence_paths": [
+        "outputs/acceleratorbench-ablation-report-v0.3.md",
+        "outputs/acceleratorbench-paper-tables-v0.3.md"
+      ]
+    }
+  ],
+  "excluded_or_not_yet_supported_claims": [
+    {
+      "id": "hosted_llm_comparison",
+      "status": "unsupported_currently",
+      "current_wording": "Provider adapters and experiment protocols are included; hosted v0.3 LLM results remain to be run.",
+      "avoid_wording": "DeepSeek, Claude, and Gemini have been fully compared on v0.3.0.",
+      "missing_evidence": [
+        "outputs/acceleratorbench-deepseek-v0.3.json",
+        "outputs/acceleratorbench-anthropic-v0.3.json",
+        "outputs/acceleratorbench-gemini-v0.3.json"
+      ]
+    },
+    {
+      "id": "private_holdout_available",
+      "status": "unsupported_currently",
+      "current_wording": "v0.3.0 includes a private-holdout blueprint and evaluator protocol, not executed hidden results.",
+      "avoid_wording": "The reported v0.3 leaderboard is hidden or private.",
+      "missing_evidence": [
+        "outputs/acceleratorbench-private-holdout-results-v0.3.json"
+      ]
+    },
+    {
+      "id": "real_world_startup_prediction",
+      "status": "unsupported_currently",
+      "current_wording": "FounderBench is a synthetic controlled environment for studying startup-relevant decisions.",
+      "avoid_wording": "High benchmark score means a model can run a successful real company.",
+      "missing_evidence": [
+        "executed human/expert validation study",
+        "real-world outcome correlation study"
+      ]
+    }
+  ],
+  "reproduction_commands": [
+    {
+      "purpose": "Regenerate generated artifacts",
+      "cwd": "work/moneybench",
+      "command": "python -m moneybench.release regenerate"
+    },
+    {
+      "purpose": "Validate generated artifacts and tests",
+      "cwd": "work/moneybench",
+      "command": "python -m moneybench.release validate"
+    },
+    {
+      "purpose": "Build supplementary release bundle",
+      "cwd": "work/moneybench",
+      "command": "python -m moneybench.release bundle"
+    }
+  ],
+  "remaining_work": [
+    {
+      "gate": "required_experiments",
+      "blocker": "6 required experiment groups are missing.",
+      "evidence": [
+        "outputs/acceleratorbench-experiment-matrix-v0.3.md"
+      ]
+    },
+    {
+      "gate": "provider_run_readiness",
+      "blocker": "Only 0/5 provider configurations are ready.",
+      "evidence": [
+        "outputs/acceleratorbench-provider-readiness-v0.3.md"
+      ]
+    },
+    {
+      "gate": "claim_evidence_alignment",
+      "blocker": "3 stronger claims remain unsupported by current evidence.",
+      "evidence": [
+        "outputs/acceleratorbench-claim-evidence-v0.3.md"
+      ]
+    },
+    {
+      "gate": "license_and_citation",
+      "blocker": "License/citation metadata is not public-release ready.",
+      "evidence": [
+        "outputs/acceleratorbench-license-readiness-v0.3.md",
+        "work/moneybench/CITATION.cff",
+        "work/moneybench/LICENSE-TODO.md"
+      ]
+    }
+  ],
+  "summary": {
+    "core_review_files": 14,
+    "core_review_files_present": 14,
+    "supported_claims": 6,
+    "excluded_or_not_yet_supported_claims": 3,
+    "failed_gates": 4
+  }
+}

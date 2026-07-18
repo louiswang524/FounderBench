@@ -1,0 +1,86 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Leaderboard and model-reporting policy for public submissions, repeated runs, and future private holdout evaluation.",
+  "status": "public_leaderboard_policy_ready_private_leaderboard_not_executed",
+  "leaderboard_tiers": [
+    {
+      "tier": "public_open",
+      "status": "active_for_v0.3",
+      "eligible_inputs": "Validated 50-task public_dev/public_test submissions.",
+      "ranking_metric": "average_task_score",
+      "secondary_ordering": [
+        "solve_rate",
+        "provider_errors ascending",
+        "invalid_actions ascending",
+        "estimated_provider_cost_usd when available"
+      ],
+      "claim_scope": "Visible public benchmark score; not hidden, private, or contamination-free."
+    },
+    {
+      "tier": "public_repeated",
+      "status": "supported_when_repeat_bundle_validates",
+      "eligible_inputs": "Validated repeated-run bundle with unique policy/run_seed identities.",
+      "ranking_metric": "mean average_task_score across submitted runs",
+      "secondary_ordering": [
+        "mean solve_rate",
+        "score confidence interval",
+        "diagnostic failure rates"
+      ],
+      "claim_scope": "Stochastic public-run estimate; still visible public tasks."
+    },
+    {
+      "tier": "private_holdout",
+      "status": "protocol_only_not_executed_v0.3",
+      "eligible_inputs": "Evaluator-hosted aggregate private report generated from secret-held private tasks.",
+      "ranking_metric": "private_average_task_score",
+      "secondary_ordering": [
+        "private_solve_rate",
+        "private_provider_errors ascending",
+        "private_invalid_actions ascending"
+      ],
+      "claim_scope": "Hidden-suite score only after official evaluator execution; no such leaderboard is included in v0.3.0."
+    }
+  ],
+  "acceptance_rules": [
+    "Submission must pass `python -m moneybench.submission` with exactly 50 public task results unless it is an evaluator-host private report.",
+    "Run JSON must report benchmark_version 0.3.0, both public splits, required diagnostics, provider-error categories, and run_seed when used for repeated runs.",
+    "Provider errors, invalid actions, bankruptcies, over-budget decisions, and timeouts remain in the denominator.",
+    "Hosted/local provider rows are excluded until the raw run and submission report both exist and validate.",
+    "Self-consistency or reflection variants must be reported as separate ablations unless pre-registered as the primary policy.",
+    "Model submitters must disclose prompt/agent tuning on public tasks and whether the submitted model was trained or fine-tuned on released tasks."
+  ],
+  "rejection_rules": [
+    "Missing or extra public task ids.",
+    "Manual repair of model outputs outside the adapter/parser contract.",
+    "Dropped failed tasks or omitted provider-error diagnostics.",
+    "Duplicate policy/run_seed identities in a repeated-run bundle.",
+    "Unredacted secrets in public audit traces.",
+    "Claims that public_test is hidden, private, unseen, or contamination-free."
+  ],
+  "reporting_fields": [
+    "model/provider/name and version",
+    "policy id and adapter commit/source state",
+    "prompt/protocol version and hashes",
+    "task count and split visibility",
+    "run_seed or repeated-run bundle summary",
+    "average_task_score, solved, solve_rate, and family/split summaries",
+    "provider errors, invalid actions, over-budget decisions, timeouts, and parser categories",
+    "token usage and estimated provider cost when available",
+    "audit trace availability and redaction status"
+  ],
+  "claim_guardrails": [
+    "Do not merge public and private results into one leaderboard without labeling tiers.",
+    "Do not treat task-aware heuristic rows as LLM-agent baselines.",
+    "Do not use public leaderboard rows to claim hidden-suite robustness.",
+    "Do not rank missing or invalid provider submissions."
+  ],
+  "summary": {
+    "tiers": 3,
+    "public_tier_active": true,
+    "private_leaderboard_included": false,
+    "acceptance_rules": 6,
+    "rejection_rules": 6,
+    "reporting_fields": 9
+  }
+}

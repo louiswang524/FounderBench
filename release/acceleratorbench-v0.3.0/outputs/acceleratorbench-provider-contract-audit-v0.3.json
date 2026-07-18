@@ -1,0 +1,102 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Provider-output contract audit for hosted/local LLM submissions. This is a dry-run parser and simulator-diagnostic check, not LLM baseline evidence.",
+  "status": "contract_validated_no_provider_results_claimed",
+  "parser_cases": [
+    {
+      "id": "valid_minimal_do_nothing",
+      "expected": "pass",
+      "observed": "pass",
+      "passed": true,
+      "parsed_actions": 1
+    },
+    {
+      "id": "invalid_json",
+      "expected": "invalid_json",
+      "observed": "invalid_json",
+      "passed": true,
+      "parsed_actions": 0
+    },
+    {
+      "id": "invalid_root",
+      "expected": "invalid_response_root",
+      "observed": "invalid_response_root",
+      "passed": true,
+      "parsed_actions": 0
+    },
+    {
+      "id": "missing_actions",
+      "expected": "missing_actions",
+      "observed": "missing_actions",
+      "passed": true,
+      "parsed_actions": 0
+    },
+    {
+      "id": "invalid_actions_type",
+      "expected": "invalid_actions_type",
+      "observed": "invalid_actions_type",
+      "passed": true,
+      "parsed_actions": 0
+    },
+    {
+      "id": "invalid_action_schema",
+      "expected": "invalid_action_schema",
+      "observed": "invalid_action_schema",
+      "passed": true,
+      "parsed_actions": 0
+    },
+    {
+      "id": "missing_action_type",
+      "expected": "missing_action_type",
+      "observed": "missing_action_type",
+      "passed": true,
+      "parsed_actions": 0
+    },
+    {
+      "id": "invalid_numeric_field",
+      "expected": "invalid_numeric_field",
+      "observed": "invalid_numeric_field",
+      "passed": true,
+      "parsed_actions": 0
+    }
+  ],
+  "simulator_checks": [
+    {
+      "id": "malformed_provider_output_counted",
+      "expected": "provider_errors_positive",
+      "observed": 10,
+      "passed": true
+    },
+    {
+      "id": "error_category_preserved",
+      "expected": "missing_actions",
+      "observed": {
+        "missing_actions": 10
+      },
+      "passed": true
+    },
+    {
+      "id": "malformed_output_fallback_is_diagnostic_counted",
+      "expected": "provider_error_for_each_fallback_step",
+      "observed": {
+        "invalid_actions": 0,
+        "total_actions": 10
+      },
+      "passed": true
+    }
+  ],
+  "claim_guardrails": [
+    "This audit does not unlock hosted/local LLM comparison claims.",
+    "Malformed provider outputs remain counted as benchmark outcomes through diagnostics.",
+    "Evaluator code must not manually repair invalid model outputs outside the adapter/parser contract; fallback actions must remain diagnostic-counted.",
+    "Provider submissions still require complete 50-task JSON outputs and moneybench.submission validation."
+  ],
+  "summary": {
+    "parser_cases": 8,
+    "parser_cases_passed": 8,
+    "simulator_checks": 3,
+    "simulator_checks_passed": 3,
+    "llm_baseline_evidence": false
+  }
+}

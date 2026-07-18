@@ -1,0 +1,433 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "score_bounds": {
+    "min": 0,
+    "max": 100
+  },
+  "pass_threshold": 70,
+  "normalization": "Each family score is composed from bounded positive components, subtracts explicit penalties where applicable, and is clamped to [0, 100].",
+  "families": [
+    {
+      "family": "Market selection",
+      "positive_weight_total": 100.0,
+      "positive_components": [
+        {
+          "name": "researched markets",
+          "weight": 25,
+          "description": "Credit for inspecting enough noisy market options."
+        },
+        {
+          "name": "viable market selected",
+          "weight": 55,
+          "description": "Credit for committing to a market with favorable demand/competition/support properties."
+        },
+        {
+          "name": "cash preservation",
+          "weight": 20,
+          "description": "Credit for retaining enough runway after exploration."
+        }
+      ],
+      "penalties": [],
+      "primary_metrics": [
+        "researched_markets",
+        "chose_good_market",
+        "cash"
+      ]
+    },
+    {
+      "family": "First revenue",
+      "positive_weight_total": 100.0,
+      "positive_components": [
+        {
+          "name": "active customers",
+          "weight": 45,
+          "description": "Credit for converting initial paying customers."
+        },
+        {
+          "name": "weekly revenue",
+          "weight": 25,
+          "description": "Credit for producing early revenue inside the horizon."
+        },
+        {
+          "name": "cash preservation",
+          "weight": 20,
+          "description": "Credit for avoiding excessive spend."
+        },
+        {
+          "name": "reputation",
+          "weight": 10,
+          "description": "Credit for maintaining trust while selling."
+        }
+      ],
+      "penalties": [],
+      "primary_metrics": [
+        "customers",
+        "max_weekly_revenue",
+        "cash",
+        "reputation"
+      ]
+    },
+    {
+      "family": "Retention improvement",
+      "positive_weight_total": 100.0,
+      "positive_components": [
+        {
+          "name": "offer quality",
+          "weight": 35,
+          "description": "Credit for improving the weak product."
+        },
+        {
+          "name": "reputation",
+          "weight": 25,
+          "description": "Credit for customer trust and support quality."
+        },
+        {
+          "name": "active customers",
+          "weight": 20,
+          "description": "Credit for keeping enough customers."
+        },
+        {
+          "name": "low churn",
+          "weight": 20,
+          "description": "Credit for avoiding churn events."
+        }
+      ],
+      "penalties": [
+        {
+          "name": "extra offers",
+          "weight_or_rule": 12,
+          "description": "Penalty for distracting additional products."
+        },
+        {
+          "name": "risk penalty",
+          "weight_or_rule": "risk / 40",
+          "description": "Penalty for unsafe or wasteful behavior."
+        }
+      ],
+      "primary_metrics": [
+        "customers",
+        "quality",
+        "reputation",
+        "churned",
+        "extra_offers"
+      ]
+    },
+    {
+      "family": "Churn shock recovery",
+      "positive_weight_total": 100.0,
+      "positive_components": [
+        {
+          "name": "active customers",
+          "weight": 25,
+          "description": "Credit for preserving the customer base."
+        },
+        {
+          "name": "reputation recovery",
+          "weight": 30,
+          "description": "Credit for restoring customer trust."
+        },
+        {
+          "name": "agent capacity",
+          "weight": 25,
+          "description": "Credit for adding operational capacity when support load is high."
+        },
+        {
+          "name": "low churn",
+          "weight": 20,
+          "description": "Credit for limiting additional churn."
+        }
+      ],
+      "penalties": [
+        {
+          "name": "extra offers",
+          "weight_or_rule": 10,
+          "description": "Penalty for launching distracting extra products during recovery."
+        },
+        {
+          "name": "risk penalty",
+          "weight_or_rule": "risk / 40",
+          "description": "Penalty for unsafe or wasteful behavior."
+        }
+      ],
+      "primary_metrics": [
+        "customers",
+        "reputation",
+        "agent_capacity",
+        "churned",
+        "extra_offers"
+      ]
+    },
+    {
+      "family": "Demo Day traction",
+      "positive_weight_total": 100.0,
+      "positive_components": [
+        {
+          "name": "recurring revenue",
+          "weight": 25,
+          "description": "Credit for building revenue traction."
+        },
+        {
+          "name": "active customers",
+          "weight": 25,
+          "description": "Credit for customer base size."
+        },
+        {
+          "name": "customer growth",
+          "weight": 25,
+          "description": "Credit for adding customers during the episode."
+        },
+        {
+          "name": "cash preservation",
+          "weight": 15,
+          "description": "Credit for keeping runway for post-demo operation."
+        },
+        {
+          "name": "reputation",
+          "weight": 10,
+          "description": "Credit for credible company quality."
+        }
+      ],
+      "penalties": [
+        {
+          "name": "risk penalty",
+          "weight_or_rule": "risk / 50",
+          "description": "Penalty for unsafe growth attempts."
+        }
+      ],
+      "primary_metrics": [
+        "customers",
+        "recurring_revenue",
+        "growth",
+        "cash",
+        "reputation"
+      ]
+    },
+    {
+      "family": "Pricing",
+      "positive_weight_total": 100.0,
+      "positive_components": [
+        {
+          "name": "target price band",
+          "weight": 30,
+          "description": "Credit for moving price into a sustainable band."
+        },
+        {
+          "name": "recurring revenue",
+          "weight": 30,
+          "description": "Credit for monetization after pricing changes."
+        },
+        {
+          "name": "customer growth",
+          "weight": 20,
+          "description": "Credit for preserving demand."
+        },
+        {
+          "name": "cash preservation",
+          "weight": 15,
+          "description": "Credit for maintaining runway."
+        },
+        {
+          "name": "reputation",
+          "weight": 5,
+          "description": "Credit for avoiding customer trust damage."
+        }
+      ],
+      "penalties": [
+        {
+          "name": "risk penalty",
+          "weight_or_rule": "risk / 45",
+          "description": "Penalty for unsafe pricing or operational actions."
+        }
+      ],
+      "primary_metrics": [
+        "price",
+        "in_band",
+        "recurring_revenue",
+        "growth",
+        "cash",
+        "reputation"
+      ]
+    },
+    {
+      "family": "Runway preservation",
+      "positive_weight_total": 100.0,
+      "positive_components": [
+        {
+          "name": "cash preservation",
+          "weight": 35,
+          "description": "Credit for extending runway."
+        },
+        {
+          "name": "customer floor",
+          "weight": 20,
+          "description": "Credit for not destroying the customer base."
+        },
+        {
+          "name": "recurring revenue",
+          "weight": 15,
+          "description": "Credit for maintaining revenue while preserving cash."
+        },
+        {
+          "name": "reputation",
+          "weight": 15,
+          "description": "Credit for avoiding customer trust loss."
+        },
+        {
+          "name": "explicit runway actions",
+          "weight": 15,
+          "description": "Credit for actions such as cost cuts, support, or price correction."
+        }
+      ],
+      "penalties": [],
+      "primary_metrics": [
+        "cash",
+        "customers",
+        "recurring_revenue",
+        "reputation",
+        "runway_actions"
+      ]
+    },
+    {
+      "family": "Pivot decision",
+      "positive_weight_total": 100.0,
+      "positive_components": [
+        {
+          "name": "target market selected",
+          "weight": 35,
+          "description": "Credit for recognizing and moving to a viable market."
+        },
+        {
+          "name": "active customers",
+          "weight": 25,
+          "description": "Credit for rebuilding demand after pivot."
+        },
+        {
+          "name": "recurring revenue",
+          "weight": 20,
+          "description": "Credit for monetizing the new direction."
+        },
+        {
+          "name": "cash preservation",
+          "weight": 15,
+          "description": "Credit for retaining enough runway."
+        },
+        {
+          "name": "reputation",
+          "weight": 5,
+          "description": "Credit for preserving trust through the pivot."
+        }
+      ],
+      "penalties": [
+        {
+          "name": "excess pivots",
+          "weight_or_rule": 10,
+          "description": "Penalty for repeated unfocused pivots."
+        }
+      ],
+      "primary_metrics": [
+        "chose_target",
+        "customers",
+        "recurring_revenue",
+        "cash",
+        "reputation",
+        "pivots"
+      ]
+    },
+    {
+      "family": "Fundraising",
+      "positive_weight_total": 100.0,
+      "positive_components": [
+        {
+          "name": "funding raised",
+          "weight": 30,
+          "description": "Credit for successfully raising capital."
+        },
+        {
+          "name": "cash position",
+          "weight": 20,
+          "description": "Credit for ending with runway."
+        },
+        {
+          "name": "recurring revenue",
+          "weight": 25,
+          "description": "Credit for credible traction."
+        },
+        {
+          "name": "reputation",
+          "weight": 15,
+          "description": "Credit for trust and founder/company quality."
+        },
+        {
+          "name": "active customers",
+          "weight": 10,
+          "description": "Credit for customer proof."
+        }
+      ],
+      "penalties": [
+        {
+          "name": "funding cap",
+          "weight_or_rule": "score <= 68 without funding",
+          "description": "Caps score below solve threshold if no funding is raised."
+        },
+        {
+          "name": "risk penalty",
+          "weight_or_rule": "risk / 45",
+          "description": "Penalty for unsafe fundraising attempts."
+        }
+      ],
+      "primary_metrics": [
+        "funding_raised",
+        "cash",
+        "recurring_revenue",
+        "reputation",
+        "customers"
+      ]
+    },
+    {
+      "family": "Channel expansion",
+      "positive_weight_total": 100.0,
+      "positive_components": [
+        {
+          "name": "active customers",
+          "weight": 30,
+          "description": "Credit for expanding the customer base."
+        },
+        {
+          "name": "recurring revenue",
+          "weight": 25,
+          "description": "Credit for monetizing expansion."
+        },
+        {
+          "name": "customer growth",
+          "weight": 25,
+          "description": "Credit for new customer acquisition."
+        },
+        {
+          "name": "cash preservation",
+          "weight": 15,
+          "description": "Credit for efficient scaling."
+        },
+        {
+          "name": "reputation",
+          "weight": 5,
+          "description": "Credit for preserving quality while scaling."
+        }
+      ],
+      "penalties": [
+        {
+          "name": "risk penalty",
+          "weight_or_rule": "risk / 45",
+          "description": "Penalty for unsafe channel expansion."
+        }
+      ],
+      "primary_metrics": [
+        "customers",
+        "recurring_revenue",
+        "growth",
+        "cash",
+        "reputation"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Analyzer for executed expert/human-founder calibration responses.",
+  "status": "no_submissions_found",
+  "input_files": [],
+  "participant_count": 0,
+  "participant_count_by_group": {},
+  "task_ids_reviewed": [],
+  "family_coverage": {},
+  "summary": {
+    "mean_scenario_realism": null,
+    "mean_action_coverage": null,
+    "mean_score_alignment": null,
+    "flagged_tasks": 0,
+    "recommended_revisions": 0
+  },
+  "task_rows": [],
+  "family_rows": [],
+  "difficulty_distribution": {},
+  "top_action_counts": {},
+  "flagged_tasks": [],
+  "recommended_revisions": [],
+  "claim_guardrails": [
+    "No executed expert/human-founder calibration submissions were found.",
+    "Do not cite this as human validation evidence until the status is executed."
+  ],
+  "invalid_submissions": []
+}

@@ -1,0 +1,254 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Scoring consistency audit over all included deterministic raw task results.",
+  "source_file": "outputs\\acceleratorbench-baseline-raw-v0.3.json",
+  "score_contract": {
+    "score_min": 0,
+    "score_max": 100,
+    "pass_threshold": 70,
+    "pass_rule": "passed is true iff score >= pass_threshold",
+    "metric_payload_rule": "Each task score must include non-empty numeric, bool, or string categorical metrics."
+  },
+  "summary": {
+    "runs": 4,
+    "task_results_checked": 200,
+    "expected_task_results": 200,
+    "score_rows_with_problems": 0,
+    "families_checked": 10,
+    "splits_checked": 2,
+    "all_family_counts_valid": true,
+    "all_split_counts_valid": true,
+    "mean_score": 57.31,
+    "passes": 73
+  },
+  "family_rows": [
+    {
+      "family": "Market selection",
+      "positive_weight_total": 100.0,
+      "policy_task_counts": {
+        "conservative": 5,
+        "heuristic": 5,
+        "random": 5,
+        "task_heuristic": 5
+      },
+      "all_policies_have_5_tasks": true,
+      "primary_metrics": [
+        "researched_markets",
+        "chose_good_market",
+        "cash"
+      ]
+    },
+    {
+      "family": "First revenue",
+      "positive_weight_total": 100.0,
+      "policy_task_counts": {
+        "conservative": 5,
+        "heuristic": 5,
+        "random": 5,
+        "task_heuristic": 5
+      },
+      "all_policies_have_5_tasks": true,
+      "primary_metrics": [
+        "customers",
+        "max_weekly_revenue",
+        "cash",
+        "reputation"
+      ]
+    },
+    {
+      "family": "Retention improvement",
+      "positive_weight_total": 100.0,
+      "policy_task_counts": {
+        "conservative": 5,
+        "heuristic": 5,
+        "random": 5,
+        "task_heuristic": 5
+      },
+      "all_policies_have_5_tasks": true,
+      "primary_metrics": [
+        "customers",
+        "quality",
+        "reputation",
+        "churned",
+        "extra_offers"
+      ]
+    },
+    {
+      "family": "Churn shock recovery",
+      "positive_weight_total": 100.0,
+      "policy_task_counts": {
+        "conservative": 5,
+        "heuristic": 5,
+        "random": 5,
+        "task_heuristic": 5
+      },
+      "all_policies_have_5_tasks": true,
+      "primary_metrics": [
+        "customers",
+        "reputation",
+        "agent_capacity",
+        "churned",
+        "extra_offers"
+      ]
+    },
+    {
+      "family": "Demo Day traction",
+      "positive_weight_total": 100.0,
+      "policy_task_counts": {
+        "conservative": 5,
+        "heuristic": 5,
+        "random": 5,
+        "task_heuristic": 5
+      },
+      "all_policies_have_5_tasks": true,
+      "primary_metrics": [
+        "customers",
+        "recurring_revenue",
+        "growth",
+        "cash",
+        "reputation"
+      ]
+    },
+    {
+      "family": "Pricing",
+      "positive_weight_total": 100.0,
+      "policy_task_counts": {
+        "conservative": 5,
+        "heuristic": 5,
+        "random": 5,
+        "task_heuristic": 5
+      },
+      "all_policies_have_5_tasks": true,
+      "primary_metrics": [
+        "price",
+        "in_band",
+        "recurring_revenue",
+        "growth",
+        "cash",
+        "reputation"
+      ]
+    },
+    {
+      "family": "Runway preservation",
+      "positive_weight_total": 100.0,
+      "policy_task_counts": {
+        "conservative": 5,
+        "heuristic": 5,
+        "random": 5,
+        "task_heuristic": 5
+      },
+      "all_policies_have_5_tasks": true,
+      "primary_metrics": [
+        "cash",
+        "customers",
+        "recurring_revenue",
+        "reputation",
+        "runway_actions"
+      ]
+    },
+    {
+      "family": "Pivot decision",
+      "positive_weight_total": 100.0,
+      "policy_task_counts": {
+        "conservative": 5,
+        "heuristic": 5,
+        "random": 5,
+        "task_heuristic": 5
+      },
+      "all_policies_have_5_tasks": true,
+      "primary_metrics": [
+        "chose_target",
+        "customers",
+        "recurring_revenue",
+        "cash",
+        "reputation",
+        "pivots"
+      ]
+    },
+    {
+      "family": "Fundraising",
+      "positive_weight_total": 100.0,
+      "policy_task_counts": {
+        "conservative": 5,
+        "heuristic": 5,
+        "random": 5,
+        "task_heuristic": 5
+      },
+      "all_policies_have_5_tasks": true,
+      "primary_metrics": [
+        "funding_raised",
+        "cash",
+        "recurring_revenue",
+        "reputation",
+        "customers"
+      ]
+    },
+    {
+      "family": "Channel expansion",
+      "positive_weight_total": 100.0,
+      "policy_task_counts": {
+        "conservative": 5,
+        "heuristic": 5,
+        "random": 5,
+        "task_heuristic": 5
+      },
+      "all_policies_have_5_tasks": true,
+      "primary_metrics": [
+        "customers",
+        "recurring_revenue",
+        "growth",
+        "cash",
+        "reputation"
+      ]
+    }
+  ],
+  "split_rows": [
+    {
+      "split": "public_dev",
+      "expected_tasks_per_policy": 30,
+      "policy_task_counts": {
+        "conservative": 30,
+        "heuristic": 30,
+        "random": 30,
+        "task_heuristic": 30
+      },
+      "all_policies_match_expected": true
+    },
+    {
+      "split": "public_test",
+      "expected_tasks_per_policy": 20,
+      "policy_task_counts": {
+        "conservative": 20,
+        "heuristic": 20,
+        "random": 20,
+        "task_heuristic": 20
+      },
+      "all_policies_match_expected": true
+    }
+  ],
+  "metric_key_counts": {
+    "agent_capacity": 20,
+    "cash": 160,
+    "chose_good_market": 20,
+    "chose_target_market": 20,
+    "churned": 40,
+    "customers": 160,
+    "extra_offers": 60,
+    "funding_raised": 20,
+    "growth": 60,
+    "in_target_band": 20,
+    "market_id": 20,
+    "max_weekly_revenue": 20,
+    "price": 20,
+    "quality": 20,
+    "recurring_revenue": 120,
+    "reputation": 140,
+    "researched_markets": 20,
+    "risk_penalty": 20,
+    "runway_actions": 20
+  },
+  "failed_rows": [],
+  "problems": [],
+  "claim_guardrail": "This audit checks the consistency of generated score objects and rubric coverage; it does not validate that rubric weights are the correct model of real startup success."
+}

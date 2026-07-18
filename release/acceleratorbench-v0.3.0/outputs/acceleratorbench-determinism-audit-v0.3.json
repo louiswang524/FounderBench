@@ -1,0 +1,80 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Replay audit showing included deterministic baselines reproduce stable task outcomes from fixed seeds.",
+  "scope": {
+    "policies": [
+      "random",
+      "conservative",
+      "heuristic",
+      "task_heuristic"
+    ],
+    "seed": 0,
+    "runs_per_policy": 2,
+    "excluded_fields": [
+      "decision_latency_s"
+    ],
+    "exclusion_rationale": "Wall-clock decision latency is environment-dependent and excluded from stable-result hashing."
+  },
+  "rows": [
+    {
+      "policy": "random",
+      "seed": 0,
+      "tasks": 50,
+      "first_hash": "c0fe61bb322ed0ff0497fc83f4614c2674349f486a9b8d0a1e015ece759e982a",
+      "second_hash": "c0fe61bb322ed0ff0497fc83f4614c2674349f486a9b8d0a1e015ece759e982a",
+      "stable_match": true,
+      "score_match": true,
+      "solved_match": true,
+      "excluded_fields": [
+        "decision_latency_s"
+      ]
+    },
+    {
+      "policy": "conservative",
+      "seed": 0,
+      "tasks": 50,
+      "first_hash": "764bf94c852b546155391da13e0f6649c8be55ee1cf8f02766c82152e4055d21",
+      "second_hash": "764bf94c852b546155391da13e0f6649c8be55ee1cf8f02766c82152e4055d21",
+      "stable_match": true,
+      "score_match": true,
+      "solved_match": true,
+      "excluded_fields": [
+        "decision_latency_s"
+      ]
+    },
+    {
+      "policy": "heuristic",
+      "seed": 0,
+      "tasks": 50,
+      "first_hash": "39bb7136c47532781d8bcbe1c07fb4175e472c854b112a369bda405fb336de86",
+      "second_hash": "39bb7136c47532781d8bcbe1c07fb4175e472c854b112a369bda405fb336de86",
+      "stable_match": true,
+      "score_match": true,
+      "solved_match": true,
+      "excluded_fields": [
+        "decision_latency_s"
+      ]
+    },
+    {
+      "policy": "task_heuristic",
+      "seed": 0,
+      "tasks": 50,
+      "first_hash": "b7d006ee63f806303ca0ba89020804bd5545f6921b3cd8503fd98881fa27db69",
+      "second_hash": "b7d006ee63f806303ca0ba89020804bd5545f6921b3cd8503fd98881fa27db69",
+      "stable_match": true,
+      "score_match": true,
+      "solved_match": true,
+      "excluded_fields": [
+        "decision_latency_s"
+      ]
+    }
+  ],
+  "summary": {
+    "policies": 4,
+    "stable_matches": 4,
+    "score_matches": 4,
+    "solved_matches": 4,
+    "all_stable": true
+  }
+}

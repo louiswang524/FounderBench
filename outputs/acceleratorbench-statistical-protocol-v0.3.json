@@ -1,0 +1,72 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Pre-specified statistical comparison protocol for deterministic and hosted/local LLM submissions.",
+  "primary_endpoint": {
+    "metric": "average_task_score",
+    "unit": "fixed task episode",
+    "definition": "Mean bounded 0-100 task score over the 50-task suite.",
+    "rationale": "Normalizes heterogeneous startup situations while preserving task-specific business objectives."
+  },
+  "secondary_endpoints": [
+    {
+      "metric": "solve_rate",
+      "definition": "Fraction of tasks with task_score >= 70.",
+      "use": "Interpretable success-rate companion to average score."
+    },
+    {
+      "metric": "public_dev_vs_public_test",
+      "definition": "Report average score and solve rate separately for FND-001..FND-030 and FND-031..FND-050.",
+      "use": "Detect split imbalance and possible overfitting to development tasks."
+    },
+    {
+      "metric": "family_breakdown",
+      "definition": "Report solved/5 and average score for each of the 10 task families.",
+      "use": "Identify capability profile rather than only aggregate score."
+    },
+    {
+      "metric": "diagnostics",
+      "definition": "Provider errors, invalid actions, over-budget decisions, latency, token use, and estimated cost.",
+      "use": "Distinguish business-decision failure from interface or API failure."
+    }
+  ],
+  "single_run_comparison": {
+    "paired_unit": "task id",
+    "score_gap": "model_a_score_i - model_b_score_i",
+    "interval": "Nonparametric bootstrap 95% CI over paired task gaps.",
+    "hypothesis_test": "Two-sided random sign-flip permutation test over paired task gaps.",
+    "effect_size": "Cohen dz over paired task gaps.",
+    "win_loss_tie": "Count tasks where model_a score is greater than, less than, or equal to model_b."
+  },
+  "repeated_sampling_comparison": {
+    "when_required": "Required for stochastic decoding studies, self-consistency ablations, reflection/multi-agent variants, or when reporting sampling variance.",
+    "minimum_repeats_recommended": 3,
+    "preferred_repeats": 5,
+    "aggregation": "Report per-run average score and solve rate, then bootstrap across submitted runs for repeated-sampling intervals.",
+    "paired_repeated_option": "When multiple models use identical repeat indices, compare matched repeat means with paired intervals."
+  },
+  "multiple_comparisons": {
+    "default_family": "All pairwise model comparisons reported in the main leaderboard.",
+    "adjustment": "Holm-Bonferroni adjustment over primary endpoint p-values.",
+    "reporting": "Report both raw and adjusted p-values; do not hide non-significant comparisons."
+  },
+  "required_reporting_fields": [
+    "model/provider snapshot",
+    "prompt_version",
+    "policy/agent method",
+    "temperature and decoding settings",
+    "task count and missing task ids if any",
+    "average_task_score and solve_rate",
+    "public_dev and public_test summaries",
+    "family breakdown",
+    "diagnostics and provider_error_categories",
+    "token/cost assumptions",
+    "redacted audit traces for representative success/failure cases"
+  ],
+  "claim_rules": [
+    "Do not claim one model is better unless the comparison covers all 50 tasks or the claim is explicitly scoped.",
+    "Do not compare raw money, final cash, or revenue as primary outcomes across tasks; use them as diagnostics.",
+    "Treat provider errors, invalid JSON, and invalid actions as benchmark outcomes, not discarded trials.",
+    "For hidden-holdout claims, report only evaluator-approved aggregate fields."
+  ]
+}

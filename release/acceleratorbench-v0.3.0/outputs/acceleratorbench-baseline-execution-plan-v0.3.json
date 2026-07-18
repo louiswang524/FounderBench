@@ -1,0 +1,209 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Execution plan for paper-grade hosted and local/open-source LLM baseline runs.",
+  "scope": {
+    "task_count": 50,
+    "splits": [
+      "public_dev",
+      "public_test"
+    ],
+    "primary_endpoint": "average_task_score",
+    "secondary_endpoints": [
+      "solved",
+      "solve_rate",
+      "shutdown_rate",
+      "invalid_actions",
+      "over_budget_decisions",
+      "provider_errors",
+      "decision_latency_s",
+      "simulated_api_cost"
+    ]
+  },
+  "fairness_controls": [
+    "Use the canonical prompt protocol and structured action schema for every provider.",
+    "Run every required model on the same 50 v0.3.0 task ids.",
+    "Validate every output with moneybench.submission before including it in leaderboard claims.",
+    "Do not drop failed tasks, malformed outputs, provider errors, bankruptcies, or over-budget decisions.",
+    "Report provider model ids, prompt/protocol hashes, latency, token usage when available, and estimated cost.",
+    "Use the pre-specified paired task-level statistical protocol for model comparisons."
+  ],
+  "repetition_policy": {
+    "single_run_claims": "Allowed only as preliminary baseline rows when clearly labeled single-run.",
+    "stochastic_claims": "Require at least 3 repeats or an explicit limitation statement; record each repeat with a distinct resumable-runner --seed value.",
+    "bundle_protocol": "Combine repeated seed outputs with moneybench.submission_bundle and report the generated submission report before stochastic confidence claims.",
+    "self_consistency": "DeepSeek self-consistency uses k=3 as a separate ablation, not a replacement for the naive baseline."
+  },
+  "audit_policy": {
+    "required_audit_traces": "Collect redacted audit runs for at least one hosted provider before qualitative LLM failure analysis.",
+    "redaction": "Audit artifacts must retain prompt hashes and diagnostics while removing raw secret values.",
+    "sharing": "Inspect audit files manually before public release because model responses may contain accidental sensitive text."
+  },
+  "acceptance_criteria": [
+    "Each required run produces a JSON output with exactly 50 task results.",
+    "Each required run passes moneybench.submission validation.",
+    "Provider-error categories are reported even when zero.",
+    "At least three provider configurations are ready before the submission gate can pass provider readiness.",
+    "Claim-evidence report remains conservative until all LLM comparison evidence exists."
+  ],
+  "runs": [
+    {
+      "id": "deepseek_single",
+      "policy": "deepseek",
+      "model_family": "hosted",
+      "priority": "required",
+      "repeat_index": 1,
+      "output": "outputs/acceleratorbench-deepseek-v0.3.json",
+      "audit_output": "outputs/acceleratorbench-deepseek-v0.3-audit.json",
+      "purpose": "Primary DeepSeek hosted baseline.",
+      "task_count": 50,
+      "model_env": "DEEPSEEK_MODEL",
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "base_url_env": "",
+      "default_model": "deepseek-chat",
+      "run_command": "python -m moneybench.resumable_runner --policy deepseek --output outputs/acceleratorbench-deepseek-v0.3.json --resume --seed 0",
+      "audit_command": "python -m moneybench.resumable_runner --policy deepseek --output outputs/acceleratorbench-deepseek-v0.3-audit.json --resume --seed 0 --audit",
+      "validation_command": "python -m moneybench.submission --input outputs/acceleratorbench-deepseek-v0.3.json --report outputs/acceleratorbench-deepseek-v0.3-submission-report.md",
+      "audit_validation_command": "python -m moneybench.submission --input outputs/acceleratorbench-deepseek-v0.3-audit.json --report outputs/acceleratorbench-deepseek-v0.3-audit-submission-report.md",
+      "submission_report": "outputs/acceleratorbench-deepseek-v0.3-submission-report.md",
+      "audit_submission_report": "outputs/acceleratorbench-deepseek-v0.3-audit-submission-report.md",
+      "repeat_outputs": [
+        "outputs/acceleratorbench-deepseek-v0.3-seed0.json",
+        "outputs/acceleratorbench-deepseek-v0.3-seed1.json",
+        "outputs/acceleratorbench-deepseek-v0.3-seed2.json"
+      ],
+      "repeat_bundle_output": "outputs/acceleratorbench-deepseek-v0.3-repeats.json",
+      "repeat_bundle_report": "outputs/acceleratorbench-deepseek-v0.3-repeats-submission-report.md",
+      "repeat_bundle_command": "python -m moneybench.submission_bundle --input outputs/acceleratorbench-deepseek-v0.3-seed0.json --input outputs/acceleratorbench-deepseek-v0.3-seed1.json --input outputs/acceleratorbench-deepseek-v0.3-seed2.json --output outputs/acceleratorbench-deepseek-v0.3-repeats.json --report outputs/acceleratorbench-deepseek-v0.3-repeats-submission-report.md",
+      "repeat_validation_command": "python -m moneybench.submission --input outputs/acceleratorbench-deepseek-v0.3-repeats.json --report outputs/acceleratorbench-deepseek-v0.3-repeats-submission-report.md"
+    },
+    {
+      "id": "deepseek_sc_k3",
+      "policy": "deepseek_sc",
+      "model_family": "hosted",
+      "priority": "recommended",
+      "repeat_index": 1,
+      "output": "outputs/acceleratorbench-deepseek-sc-k3-v0.3.json",
+      "audit_output": "outputs/acceleratorbench-deepseek-sc-k3-v0.3-audit.json",
+      "purpose": "Self-consistency k=3 ablation for DeepSeek.",
+      "task_count": 50,
+      "model_env": "DEEPSEEK_MODEL",
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "base_url_env": "",
+      "default_model": "deepseek-chat",
+      "run_command": "python -m moneybench.resumable_runner --policy deepseek_sc --output outputs/acceleratorbench-deepseek-sc-k3-v0.3.json --resume --seed 0",
+      "audit_command": "python -m moneybench.resumable_runner --policy deepseek_sc --output outputs/acceleratorbench-deepseek-sc-k3-v0.3-audit.json --resume --seed 0 --audit",
+      "validation_command": "python -m moneybench.submission --input outputs/acceleratorbench-deepseek-sc-k3-v0.3.json --report outputs/acceleratorbench-deepseek-sc-k3-v0.3-submission-report.md",
+      "audit_validation_command": "python -m moneybench.submission --input outputs/acceleratorbench-deepseek-sc-k3-v0.3-audit.json --report outputs/acceleratorbench-deepseek-sc-k3-v0.3-audit-submission-report.md",
+      "submission_report": "outputs/acceleratorbench-deepseek-sc-k3-v0.3-submission-report.md",
+      "audit_submission_report": "outputs/acceleratorbench-deepseek-sc-k3-v0.3-audit-submission-report.md",
+      "repeat_outputs": [
+        "outputs/acceleratorbench-deepseek-sc-k3-v0.3-seed0.json",
+        "outputs/acceleratorbench-deepseek-sc-k3-v0.3-seed1.json",
+        "outputs/acceleratorbench-deepseek-sc-k3-v0.3-seed2.json"
+      ],
+      "repeat_bundle_output": "outputs/acceleratorbench-deepseek-sc-k3-v0.3-repeats.json",
+      "repeat_bundle_report": "outputs/acceleratorbench-deepseek-sc-k3-v0.3-repeats-submission-report.md",
+      "repeat_bundle_command": "python -m moneybench.submission_bundle --input outputs/acceleratorbench-deepseek-sc-k3-v0.3-seed0.json --input outputs/acceleratorbench-deepseek-sc-k3-v0.3-seed1.json --input outputs/acceleratorbench-deepseek-sc-k3-v0.3-seed2.json --output outputs/acceleratorbench-deepseek-sc-k3-v0.3-repeats.json --report outputs/acceleratorbench-deepseek-sc-k3-v0.3-repeats-submission-report.md",
+      "repeat_validation_command": "python -m moneybench.submission --input outputs/acceleratorbench-deepseek-sc-k3-v0.3-repeats.json --report outputs/acceleratorbench-deepseek-sc-k3-v0.3-repeats-submission-report.md"
+    },
+    {
+      "id": "anthropic_single",
+      "policy": "anthropic",
+      "model_family": "hosted",
+      "priority": "required",
+      "repeat_index": 1,
+      "output": "outputs/acceleratorbench-anthropic-v0.3.json",
+      "audit_output": "outputs/acceleratorbench-anthropic-v0.3-audit.json",
+      "purpose": "Primary Claude/Anthropic hosted baseline.",
+      "task_count": 50,
+      "model_env": "ANTHROPIC_MODEL",
+      "api_key_env": "ANTHROPIC_API_KEY",
+      "base_url_env": "",
+      "default_model": "claude-sonnet-4-5",
+      "run_command": "python -m moneybench.resumable_runner --policy anthropic --output outputs/acceleratorbench-anthropic-v0.3.json --resume --seed 0",
+      "audit_command": "python -m moneybench.resumable_runner --policy anthropic --output outputs/acceleratorbench-anthropic-v0.3-audit.json --resume --seed 0 --audit",
+      "validation_command": "python -m moneybench.submission --input outputs/acceleratorbench-anthropic-v0.3.json --report outputs/acceleratorbench-anthropic-v0.3-submission-report.md",
+      "audit_validation_command": "python -m moneybench.submission --input outputs/acceleratorbench-anthropic-v0.3-audit.json --report outputs/acceleratorbench-anthropic-v0.3-audit-submission-report.md",
+      "submission_report": "outputs/acceleratorbench-anthropic-v0.3-submission-report.md",
+      "audit_submission_report": "outputs/acceleratorbench-anthropic-v0.3-audit-submission-report.md",
+      "repeat_outputs": [
+        "outputs/acceleratorbench-anthropic-v0.3-seed0.json",
+        "outputs/acceleratorbench-anthropic-v0.3-seed1.json",
+        "outputs/acceleratorbench-anthropic-v0.3-seed2.json"
+      ],
+      "repeat_bundle_output": "outputs/acceleratorbench-anthropic-v0.3-repeats.json",
+      "repeat_bundle_report": "outputs/acceleratorbench-anthropic-v0.3-repeats-submission-report.md",
+      "repeat_bundle_command": "python -m moneybench.submission_bundle --input outputs/acceleratorbench-anthropic-v0.3-seed0.json --input outputs/acceleratorbench-anthropic-v0.3-seed1.json --input outputs/acceleratorbench-anthropic-v0.3-seed2.json --output outputs/acceleratorbench-anthropic-v0.3-repeats.json --report outputs/acceleratorbench-anthropic-v0.3-repeats-submission-report.md",
+      "repeat_validation_command": "python -m moneybench.submission --input outputs/acceleratorbench-anthropic-v0.3-repeats.json --report outputs/acceleratorbench-anthropic-v0.3-repeats-submission-report.md"
+    },
+    {
+      "id": "gemini_single",
+      "policy": "gemini",
+      "model_family": "hosted",
+      "priority": "required",
+      "repeat_index": 1,
+      "output": "outputs/acceleratorbench-gemini-v0.3.json",
+      "audit_output": "outputs/acceleratorbench-gemini-v0.3-audit.json",
+      "purpose": "Primary Gemini hosted baseline.",
+      "task_count": 50,
+      "model_env": "GEMINI_MODEL",
+      "api_key_env": "GEMINI_API_KEY",
+      "base_url_env": "",
+      "default_model": "gemini-2.5-flash",
+      "run_command": "python -m moneybench.resumable_runner --policy gemini --output outputs/acceleratorbench-gemini-v0.3.json --resume --seed 0",
+      "audit_command": "python -m moneybench.resumable_runner --policy gemini --output outputs/acceleratorbench-gemini-v0.3-audit.json --resume --seed 0 --audit",
+      "validation_command": "python -m moneybench.submission --input outputs/acceleratorbench-gemini-v0.3.json --report outputs/acceleratorbench-gemini-v0.3-submission-report.md",
+      "audit_validation_command": "python -m moneybench.submission --input outputs/acceleratorbench-gemini-v0.3-audit.json --report outputs/acceleratorbench-gemini-v0.3-audit-submission-report.md",
+      "submission_report": "outputs/acceleratorbench-gemini-v0.3-submission-report.md",
+      "audit_submission_report": "outputs/acceleratorbench-gemini-v0.3-audit-submission-report.md",
+      "repeat_outputs": [
+        "outputs/acceleratorbench-gemini-v0.3-seed0.json",
+        "outputs/acceleratorbench-gemini-v0.3-seed1.json",
+        "outputs/acceleratorbench-gemini-v0.3-seed2.json"
+      ],
+      "repeat_bundle_output": "outputs/acceleratorbench-gemini-v0.3-repeats.json",
+      "repeat_bundle_report": "outputs/acceleratorbench-gemini-v0.3-repeats-submission-report.md",
+      "repeat_bundle_command": "python -m moneybench.submission_bundle --input outputs/acceleratorbench-gemini-v0.3-seed0.json --input outputs/acceleratorbench-gemini-v0.3-seed1.json --input outputs/acceleratorbench-gemini-v0.3-seed2.json --output outputs/acceleratorbench-gemini-v0.3-repeats.json --report outputs/acceleratorbench-gemini-v0.3-repeats-submission-report.md",
+      "repeat_validation_command": "python -m moneybench.submission --input outputs/acceleratorbench-gemini-v0.3-repeats.json --report outputs/acceleratorbench-gemini-v0.3-repeats-submission-report.md"
+    },
+    {
+      "id": "local_open_model_single",
+      "policy": "llm",
+      "model_family": "local_open_source",
+      "priority": "required",
+      "repeat_index": 1,
+      "output": "outputs/acceleratorbench-local-open-model-v0.3.json",
+      "audit_output": "outputs/acceleratorbench-local-open-model-v0.3-audit.json",
+      "purpose": "Primary local/open-source baseline through an OpenAI-compatible server.",
+      "task_count": 50,
+      "model_env": "OPENAI_COMPAT_MODEL",
+      "api_key_env": "OPENAI_COMPAT_API_KEY",
+      "base_url_env": "OPENAI_COMPAT_BASE_URL",
+      "default_model": "Qwen/Qwen2.5-7B-Instruct",
+      "run_command": "python -m moneybench.resumable_runner --policy llm --output outputs/acceleratorbench-local-open-model-v0.3.json --resume --seed 0",
+      "audit_command": "python -m moneybench.resumable_runner --policy llm --output outputs/acceleratorbench-local-open-model-v0.3-audit.json --resume --seed 0 --audit",
+      "validation_command": "python -m moneybench.submission --input outputs/acceleratorbench-local-open-model-v0.3.json --report outputs/acceleratorbench-local-open-model-v0.3-submission-report.md",
+      "audit_validation_command": "python -m moneybench.submission --input outputs/acceleratorbench-local-open-model-v0.3-audit.json --report outputs/acceleratorbench-local-open-model-v0.3-audit-submission-report.md",
+      "submission_report": "outputs/acceleratorbench-local-open-model-v0.3-submission-report.md",
+      "audit_submission_report": "outputs/acceleratorbench-local-open-model-v0.3-audit-submission-report.md",
+      "repeat_outputs": [
+        "outputs/acceleratorbench-local-open-model-v0.3-seed0.json",
+        "outputs/acceleratorbench-local-open-model-v0.3-seed1.json",
+        "outputs/acceleratorbench-local-open-model-v0.3-seed2.json"
+      ],
+      "repeat_bundle_output": "outputs/acceleratorbench-local-open-model-v0.3-repeats.json",
+      "repeat_bundle_report": "outputs/acceleratorbench-local-open-model-v0.3-repeats-submission-report.md",
+      "repeat_bundle_command": "python -m moneybench.submission_bundle --input outputs/acceleratorbench-local-open-model-v0.3-seed0.json --input outputs/acceleratorbench-local-open-model-v0.3-seed1.json --input outputs/acceleratorbench-local-open-model-v0.3-seed2.json --output outputs/acceleratorbench-local-open-model-v0.3-repeats.json --report outputs/acceleratorbench-local-open-model-v0.3-repeats-submission-report.md",
+      "repeat_validation_command": "python -m moneybench.submission --input outputs/acceleratorbench-local-open-model-v0.3-repeats.json --report outputs/acceleratorbench-local-open-model-v0.3-repeats-submission-report.md"
+    }
+  ],
+  "summary": {
+    "planned_runs": 5,
+    "required_runs": 4,
+    "recommended_runs": 1,
+    "hosted_runs": 4,
+    "local_open_source_runs": 1,
+    "minimum_repeats_for_stochastic_claims": 3
+  }
+}

@@ -1,0 +1,312 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Pre-submission reviewer-risk audit. This is not peer review; it is a deterministic stress test of likely reviewer objections against current evidence.",
+  "submission_gate": "not_ready",
+  "risks": [
+    {
+      "id": "missing_llm_baselines",
+      "reviewer_lens": "methodology",
+      "severity": "critical",
+      "status": "open_external",
+      "status_rationale": "6 required experiment groups are still missing.",
+      "likely_objection": "The benchmark is intended to evaluate LLM startup agents, but the current artifact only contains deterministic rule baselines.",
+      "required_response": "Run and validate the required hosted/local LLM baselines, then update paper tables, claim gates, and model-comparison artifacts before making model-performance claims.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-experiment-matrix-v0.3.md",
+          "exists": true,
+          "bytes": 5601,
+          "sha256": "ae75bd3284e1ec98fbc16d3f2249695653e2fefa611ee767b738ed1133b6a08e"
+        },
+        {
+          "path": "outputs/acceleratorbench-provider-run-status-v0.3.md",
+          "exists": true,
+          "bytes": 4463,
+          "sha256": "51c5db340d4ecc118e44288cb6187115480ba1baccdae419a5af6f462da67052"
+        },
+        {
+          "path": "outputs/acceleratorbench-experiment-runbook-v0.3.md",
+          "exists": true,
+          "bytes": 15964,
+          "sha256": "6dff4e5e038567df73c9d8f75d68b58bf69c2b51321c6f8d40754a38665b640e"
+        },
+        {
+          "path": "outputs/acceleratorbench-model-comparison-v0.3.md",
+          "exists": true,
+          "bytes": 4618,
+          "sha256": "c1cb5142fcbcc0d402acfcdb524ab3ea8910e839b5adecf106e88ef3f66609fc"
+        }
+      ]
+    },
+    {
+      "id": "synthetic_validity",
+      "reviewer_lens": "domain",
+      "severity": "major",
+      "status": "mitigated_not_closed",
+      "status_rationale": "Threats and task provenance are documented, but external calibration remains missing.",
+      "likely_objection": "A synthetic startup simulator may not measure real startup skill or real company outcomes.",
+      "required_response": "Frame the benchmark as a controlled decision benchmark, avoid real-world success claims, and collect expert/human-founder calibration evidence.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-validity-report-v0.3.md",
+          "exists": true,
+          "bytes": 5998,
+          "sha256": "2045c2728b57d0be1d65874b9646c052edd6cba3e541c5eb75eabbaad1a94bce"
+        },
+        {
+          "path": "outputs/acceleratorbench-task-provenance-v0.3.md",
+          "exists": true,
+          "bytes": 3741,
+          "sha256": "d6547da9d61ac6329bda90b9e649a9d445864d734b659f822836eabd2de5e1b0"
+        },
+        {
+          "path": "outputs/acceleratorbench-benchmark-card.md",
+          "exists": true,
+          "bytes": 6684,
+          "sha256": "c03ca503bcfcdcedf0abe47726d42190f67364c82a9a96e7e2bc41ca22b505aa"
+        },
+        {
+          "path": "outputs/acceleratorbench-human-calibration-protocol-v0.3.md",
+          "exists": true,
+          "bytes": 3808,
+          "sha256": "5f967093de83e301a26a9ed76cbad20484238665a0958fd96743ca4851d002d3"
+        }
+      ]
+    },
+    {
+      "id": "overclaiming_real_world_success",
+      "reviewer_lens": "editorial",
+      "severity": "critical",
+      "status": "mitigated_by_claim_guardrail",
+      "status_rationale": "Claim-evidence and paper-evidence artifacts explicitly exclude real-world success prediction.",
+      "likely_objection": "The paper could overstate that high simulator profit predicts real startup profitability or durable company success.",
+      "required_response": "Keep the supported wording narrow: FounderBench evaluates controlled startup-like operating decisions, not real-world startup prediction.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-claim-evidence-v0.3.md",
+          "exists": true,
+          "bytes": 5856,
+          "sha256": "2bf24817bac016d0ecf82a5a9e7157a3bafcb9f20f1cdcddd8652b5359cc67e7"
+        },
+        {
+          "path": "outputs/acceleratorbench-paper-evidence-map-v0.3.md",
+          "exists": true,
+          "bytes": 8562,
+          "sha256": "0b21293b5ec274885202891606283470456cd0641b791396f17226cdf7b53312"
+        },
+        {
+          "path": "outputs/acceleratorbench-submission-manifest-v0.3.md",
+          "exists": true,
+          "bytes": 6050,
+          "sha256": "ef2772c8fc363f2c654cf4934300ca29d67da53e59bd4267e546be72e23429e4"
+        }
+      ]
+    },
+    {
+      "id": "hidden_holdout_not_executed",
+      "reviewer_lens": "anti_gaming",
+      "severity": "major",
+      "status": "open_external",
+      "status_rationale": "The private-holdout protocol and smoke report exist, but no evaluator-hosted official aggregate result is included.",
+      "likely_objection": "Public tasks and deterministic scoring can invite benchmark gaming without an executed private holdout.",
+      "required_response": "Have an evaluator run secret-seeded private tasks and report aggregate-only holdout results for submitted models.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-private-holdout-evaluator-protocol-v0.3.md",
+          "exists": true,
+          "bytes": 2163,
+          "sha256": "cc495a0ce9ace32bf8dd9fa7763013d367d8401c34649cfaa3f1f029a65e262f"
+        },
+        {
+          "path": "outputs/acceleratorbench-private-holdout-smoke-v0.3.md",
+          "exists": true,
+          "bytes": 1339,
+          "sha256": "d55d7ad9421812069a8d7915ab5d1a7109bd4a8d5f5b2ddd4d3c73787cebb2bb"
+        },
+        {
+          "path": "outputs/acceleratorbench-contamination-leakage-audit-v0.3.md",
+          "exists": true,
+          "bytes": 4302,
+          "sha256": "befbf22a0d50df9a8ee3498b547f24c14198af8cd0b732b67ffea37e559a2cd1"
+        },
+        {
+          "path": "work/moneybench/moneybench/private_holdout_evaluator.py",
+          "exists": true,
+          "bytes": 7766,
+          "sha256": "24a1c1579cd8d992545031140ef3352945afa3377f3e15d7fbbc4c63384f3f5b"
+        },
+        {
+          "path": "outputs/acceleratorbench-submission-gate-v0.3.md",
+          "exists": true,
+          "bytes": 1553,
+          "sha256": "8d4321ec2a986ffb18e3df8b499814ad574cce750ab6fb667ffe12efa9b92fa5"
+        }
+      ]
+    },
+    {
+      "id": "heuristic_overfitting_or_hand_coding",
+      "reviewer_lens": "methodology",
+      "severity": "major",
+      "status": "partially_mitigated",
+      "status_rationale": "Ablations and task provenance expose heuristic behavior, but LLM and holdout evidence are still needed.",
+      "likely_objection": "Strong task-aware heuristics may encode benchmark-specific rules, making them look better than naive LLM calls.",
+      "required_response": "Report task-aware heuristic results as calibration ceilings, not agent baselines, and compare against validated LLM runs plus hidden holdout results.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-ablation-report-v0.3.md",
+          "exists": true,
+          "bytes": 2449,
+          "sha256": "4efa8d30bf1176a465518beb7049cdfe3293ec91de586e50e24ac2cdea5bcc9a"
+        },
+        {
+          "path": "outputs/acceleratorbench-action-ablation-v0.3.md",
+          "exists": true,
+          "bytes": 2377,
+          "sha256": "4cc42bb8b9e0288b70d2a77a84895c8fbfdbbe18a672f6c26675120f37accb35"
+        },
+        {
+          "path": "outputs/acceleratorbench-difficulty-calibration-v0.3.md",
+          "exists": true,
+          "bytes": 5571,
+          "sha256": "331508f082c8d4d5dca4f0ba1710a076e3c409312877269085c20c513374f84e"
+        },
+        {
+          "path": "outputs/acceleratorbench-task-provenance-v0.3.md",
+          "exists": true,
+          "bytes": 3741,
+          "sha256": "d6547da9d61ac6329bda90b9e649a9d445864d734b659f822836eabd2de5e1b0"
+        }
+      ]
+    },
+    {
+      "id": "license_metadata_missing",
+      "reviewer_lens": "reproducibility",
+      "severity": "administrative_major",
+      "status": "owner_action_required",
+      "status_rationale": "The submission gate still blocks on final license and citation metadata.",
+      "likely_objection": "The package is not publicly reusable until final LICENSE and citation metadata are chosen.",
+      "required_response": "The project owner must select and commit final license and citation metadata before public release or supplementary submission.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-license-readiness-v0.3.md",
+          "exists": true,
+          "bytes": 2417,
+          "sha256": "c24460c4d7df85384c45415347fa877c208f00fe9da6399eb09908f82848592a"
+        },
+        {
+          "path": "outputs/acceleratorbench-release-metadata-checklist-v0.3.md",
+          "exists": true,
+          "bytes": 3574,
+          "sha256": "fcb02b172149d4f721169b69748f167ee2011d07f71f31c03a81acbf147ac058"
+        },
+        {
+          "path": "outputs/acceleratorbench-submission-gate-v0.3.md",
+          "exists": true,
+          "bytes": 1553,
+          "sha256": "8d4321ec2a986ffb18e3df8b499814ad574cce750ab6fb667ffe12efa9b92fa5"
+        }
+      ]
+    },
+    {
+      "id": "provider_cost_reproducibility",
+      "reviewer_lens": "reproducibility",
+      "severity": "major",
+      "status": "planned_not_executed",
+      "status_rationale": "Cost and provider protocols exist; actual hosted/local runs must fill usage and cost fields.",
+      "likely_objection": "Hosted API results may be hard to reproduce without exact usage, retries, prices, and provider-error accounting.",
+      "required_response": "Record token usage, provider error categories, retry policy, model identifiers, and normalized costs for each validated provider run.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-cost-accounting-v0.3.md",
+          "exists": true,
+          "bytes": 2413,
+          "sha256": "35f618708b255d2d4bea64c8afa8270f160d7d304c9417e9fea5d1d6b6e214ee"
+        },
+        {
+          "path": "outputs/acceleratorbench-provider-readiness-v0.3.md",
+          "exists": true,
+          "bytes": 3332,
+          "sha256": "0fd3c902143f6716047852f01197cddce7720c9da4a3ca971ffd4372f73f2dc3"
+        },
+        {
+          "path": "outputs/acceleratorbench-prompt-protocol-v0.3.md",
+          "exists": true,
+          "bytes": 4536,
+          "sha256": "17e221f3e75b5bdfb925a752acab3fae1cb126b0cfbbbe8c60f7eabf42165d09"
+        },
+        {
+          "path": "outputs/acceleratorbench-provider-contract-audit-v0.3.md",
+          "exists": true,
+          "bytes": 2170,
+          "sha256": "8e5305862432f6c2ea2de31574e580946d0c2cf8116033c6cc46d1a5f444662a"
+        },
+        {
+          "path": "outputs/acceleratorbench-provider-run-status-v0.3.md",
+          "exists": true,
+          "bytes": 4463,
+          "sha256": "51c5db340d4ecc118e44288cb6187115480ba1baccdae419a5af6f462da67052"
+        }
+      ]
+    },
+    {
+      "id": "human_calibration_missing",
+      "reviewer_lens": "domain",
+      "severity": "major",
+      "status": "open_external",
+      "status_rationale": "Calibration protocol and analyzer exist, but the analysis records no included submissions.",
+      "likely_objection": "The benchmark has no included human-founder or expert calibration results showing task realism, score alignment, or gaming risks.",
+      "required_response": "Collect calibration submissions, run the analyzer, and report inter-rater concerns and task revisions before strong validity claims.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-human-calibration-protocol-v0.3.md",
+          "exists": true,
+          "bytes": 3808,
+          "sha256": "5f967093de83e301a26a9ed76cbad20484238665a0958fd96743ca4851d002d3"
+        },
+        {
+          "path": "outputs/acceleratorbench-human-calibration-schema-v0.3.md",
+          "exists": true,
+          "bytes": 2021,
+          "sha256": "0b9f14ebf77ed38db503f23c6b3d0e1298b46e338a03c6a2d2dfd21f7ffd764d"
+        },
+        {
+          "path": "outputs/acceleratorbench-human-calibration-analysis-v0.3.md",
+          "exists": true,
+          "bytes": 993,
+          "sha256": "80d8cb8417e932f7d908b0a750dd630000a68f2e44baab1cb7220ea098060b50"
+        },
+        {
+          "path": "outputs/acceleratorbench-human-calibration-packet-v0.3.md",
+          "exists": true,
+          "bytes": 4981,
+          "sha256": "6cd392a40061ae5473c4028ee91508d1a3bfec29654aad8ca70417b7a7a19b65"
+        },
+        {
+          "path": "outputs/acceleratorbench-validity-report-v0.3.md",
+          "exists": true,
+          "bytes": 5998,
+          "sha256": "2045c2728b57d0be1d65874b9646c052edd6cba3e541c5eb75eabbaad1a94bce"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "risks": 8,
+    "critical": 2,
+    "open_or_external": 5,
+    "severity_counts": {
+      "administrative_major": 1,
+      "critical": 2,
+      "major": 5
+    },
+    "status_counts": {
+      "mitigated_by_claim_guardrail": 1,
+      "mitigated_not_closed": 1,
+      "open_external": 3,
+      "owner_action_required": 1,
+      "partially_mitigated": 1,
+      "planned_not_executed": 1
+    }
+  }
+}

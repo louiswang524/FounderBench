@@ -1,0 +1,36 @@
+{
+  "benchmark": "FounderBench",
+  "benchmark_version": "0.3.0",
+  "holdout_protocol_version": "0.1",
+  "status": "proposal_for_private_evaluator",
+  "private_holdout_size": 20,
+  "family_distribution": {
+    "Market selection": 2,
+    "First revenue": 2,
+    "Retention improvement": 2,
+    "Churn shock recovery": 2,
+    "Demo Day traction": 2,
+    "Pricing": 2,
+    "Runway preservation": 2,
+    "Pivot decision": 2,
+    "Fundraising": 2,
+    "Channel expansion": 2
+  },
+  "public_release_policy": [
+    "Do not publish private task initial states, target markets, seeds, or score thresholds before the evaluation closes.",
+    "Publish task ids, family names, and post-evaluation aggregate metrics.",
+    "Release a SHA-256/HMAC fingerprint manifest before model submissions to commit to the hidden suite without revealing it."
+  ],
+  "generation_inputs": {
+    "required_secret_env": "FounderBench_HOLDOUT_SECRET",
+    "recommended_secret_length": "at least 32 random bytes encoded as text",
+    "determinism": "private task ids, seed material, and fingerprints are deterministic given the secret and protocol version"
+  },
+  "evaluation_protocol": [
+    "Freeze public code and public_dev/public_test tasks.",
+    "Generate private holdout fingerprints from a secret unavailable to model developers.",
+    "Run submitted models against private tasks on an evaluation host.",
+    "Return only aggregate private scores and selected redacted audit failures.",
+    "After the benchmark cycle, optionally release the private task definitions as an expired holdout and rotate the secret."
+  ]
+}

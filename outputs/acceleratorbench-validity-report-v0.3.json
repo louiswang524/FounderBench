@@ -1,0 +1,258 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Threats-to-validity and limitations matrix for benchmark paper review.",
+  "summary": {
+    "threats": 8,
+    "high_severity": 3,
+    "medium_severity": 4,
+    "low_severity": 1,
+    "evidence_complete": 8
+  },
+  "threats": [
+    {
+      "id": "synthetic_market_dynamics",
+      "category": "construct_validity",
+      "severity": "high",
+      "threat": "The simulator uses hand-designed demand, churn, reputation, risk, and cash dynamics rather than real startup markets.",
+      "current_mitigation": "Frame the benchmark as a controlled decision environment, not a real-market proxy; expose simulator code, score rubrics, market catalog, a human-calibration protocol, and a task-revision ledger for calibration issues.",
+      "evidence_paths": [
+        "work/moneybench/moneybench/env.py",
+        "outputs/acceleratorbench-score-rubric-v0.3.md",
+        "outputs/acceleratorbench-market-catalog-v0.3.md",
+        "outputs/acceleratorbench-simulator-invariant-audit-v0.3.md",
+        "outputs/acceleratorbench-human-calibration-protocol-v0.3.md",
+        "outputs/acceleratorbench-task-revision-ledger-v0.3.md",
+        "outputs/acceleratorbench-benchmark-card.md"
+      ],
+      "remaining_work": "Execute expert review or human-founder calibration to assess whether task incentives match startup judgment.",
+      "evidence": [
+        {
+          "path": "work/moneybench/moneybench/env.py",
+          "exists": true
+        },
+        {
+          "path": "outputs/acceleratorbench-score-rubric-v0.3.md",
+          "exists": true
+        },
+        {
+          "path": "outputs/acceleratorbench-market-catalog-v0.3.md",
+          "exists": true
+        },
+        {
+          "path": "outputs/acceleratorbench-simulator-invariant-audit-v0.3.md",
+          "exists": true
+        },
+        {
+          "path": "outputs/acceleratorbench-human-calibration-protocol-v0.3.md",
+          "exists": true
+        },
+        {
+          "path": "outputs/acceleratorbench-task-revision-ledger-v0.3.md",
+          "exists": true
+        },
+        {
+          "path": "outputs/acceleratorbench-benchmark-card.md",
+          "exists": true
+        }
+      ],
+      "evidence_complete": true
+    },
+    {
+      "id": "template_generated_tasks",
+      "category": "external_validity",
+      "severity": "medium",
+      "threat": "The 50 public tasks are generated from 10 templates rather than curated from real startup histories.",
+      "current_mitigation": "Report task-family coverage, split balance, seeds, horizons, and action coverage in generated artifacts.",
+      "evidence_paths": [
+        "outputs/acceleratorbench-task-manifest-v0.3.json",
+        "outputs/acceleratorbench-task-coverage-v0.3.md"
+      ],
+      "remaining_work": "Curate additional scenarios from public startup postmortems, accelerator cases, or expert-authored variants.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-task-manifest-v0.3.json",
+          "exists": true
+        },
+        {
+          "path": "outputs/acceleratorbench-task-coverage-v0.3.md",
+          "exists": true
+        }
+      ],
+      "evidence_complete": true
+    },
+    {
+      "id": "visible_public_test",
+      "category": "evaluation_validity",
+      "severity": "high",
+      "threat": "The public test split is visible, so agents or prompts can overfit to released tasks.",
+      "current_mitigation": "Label public_dev/public_test honestly and provide private-holdout blueprint plus evaluator protocol.",
+      "evidence_paths": [
+        "outputs/acceleratorbench-private-holdout-blueprint-v0.3.json",
+        "outputs/acceleratorbench-private-holdout-evaluator-protocol-v0.3.md",
+        "outputs/acceleratorbench-contamination-leakage-audit-v0.3.md"
+      ],
+      "remaining_work": "Instantiate hidden task definitions on an evaluator host and report hidden-suite scores.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-private-holdout-blueprint-v0.3.json",
+          "exists": true
+        },
+        {
+          "path": "outputs/acceleratorbench-private-holdout-evaluator-protocol-v0.3.md",
+          "exists": true
+        },
+        {
+          "path": "outputs/acceleratorbench-contamination-leakage-audit-v0.3.md",
+          "exists": true
+        }
+      ],
+      "evidence_complete": true
+    },
+    {
+      "id": "missing_llm_baselines",
+      "category": "empirical_validity",
+      "severity": "high",
+      "threat": "The current v0.3 paper evidence includes deterministic baselines but lacks complete hosted/local LLM baselines.",
+      "current_mitigation": "Provider adapters, readiness matrix, submission validator, and experiment matrix specify exact missing runs.",
+      "evidence_paths": [
+        "outputs/acceleratorbench-provider-readiness-v0.3.md",
+        "outputs/acceleratorbench-experiment-matrix-v0.3.md",
+        "outputs/acceleratorbench-model-submission-template.md"
+      ],
+      "remaining_work": "Run DeepSeek, Claude, Gemini, self-consistency, and at least one local open-source model on all 50 tasks.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-provider-readiness-v0.3.md",
+          "exists": true
+        },
+        {
+          "path": "outputs/acceleratorbench-experiment-matrix-v0.3.md",
+          "exists": true
+        },
+        {
+          "path": "outputs/acceleratorbench-model-submission-template.md",
+          "exists": true
+        }
+      ],
+      "evidence_complete": true
+    },
+    {
+      "id": "prompt_and_sampling_sensitivity",
+      "category": "reliability",
+      "severity": "medium",
+      "threat": "Hosted LLM scores may depend on prompt wording, decoding settings, and stochastic sampling.",
+      "current_mitigation": "Support repeated-run reports, raw task outputs, audit mode, and submission validation.",
+      "evidence_paths": [
+        "outputs/acceleratorbench-random-repeats-v0.3.md",
+        "outputs/acceleratorbench-reproduction-guide.md",
+        "work/moneybench/moneybench/repeats.py"
+      ],
+      "remaining_work": "Report repeated prompt-sample intervals for hosted LLM submissions and freeze prompt versions.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-random-repeats-v0.3.md",
+          "exists": true
+        },
+        {
+          "path": "outputs/acceleratorbench-reproduction-guide.md",
+          "exists": true
+        },
+        {
+          "path": "work/moneybench/moneybench/repeats.py",
+          "exists": true
+        }
+      ],
+      "evidence_complete": true
+    },
+    {
+      "id": "adapter_and_format_failures",
+      "category": "measurement_validity",
+      "severity": "medium",
+      "threat": "A model can fail because of malformed JSON or provider errors rather than poor business decisions.",
+      "current_mitigation": "Count provider errors, parse categories, invalid actions, and over-budget decisions as diagnostics rather than discarding runs.",
+      "evidence_paths": [
+        "work/moneybench/moneybench/provider_adapter.py",
+        "work/moneybench/moneybench/submission.py",
+        "outputs/acceleratorbench-provider-contract-audit-v0.3.md",
+        "outputs/acceleratorbench-submission-validation-v0.3.md"
+      ],
+      "remaining_work": "Include redacted hosted audit traces for representative provider successes and failures.",
+      "evidence": [
+        {
+          "path": "work/moneybench/moneybench/provider_adapter.py",
+          "exists": true
+        },
+        {
+          "path": "work/moneybench/moneybench/submission.py",
+          "exists": true
+        },
+        {
+          "path": "outputs/acceleratorbench-provider-contract-audit-v0.3.md",
+          "exists": true
+        },
+        {
+          "path": "outputs/acceleratorbench-submission-validation-v0.3.md",
+          "exists": true
+        }
+      ],
+      "evidence_complete": true
+    },
+    {
+      "id": "heuristic_ceiling_bias",
+      "category": "baseline_validity",
+      "severity": "medium",
+      "threat": "The task-aware heuristic may encode task-family knowledge that ordinary LLM agents do not receive.",
+      "current_mitigation": "Report it as a capability-ladder calibration baseline, not as an agent-realistic baseline.",
+      "evidence_paths": [
+        "outputs/acceleratorbench-ablation-report-v0.3.md",
+        "outputs/acceleratorbench-paper-tables-v0.3.md"
+      ],
+      "remaining_work": "Compare against prompt-only LLMs, self-consistency, and local open models to contextualize the heuristic ceiling.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-ablation-report-v0.3.md",
+          "exists": true
+        },
+        {
+          "path": "outputs/acceleratorbench-paper-tables-v0.3.md",
+          "exists": true
+        }
+      ],
+      "evidence_complete": true
+    },
+    {
+      "id": "missing_human_founder_baseline",
+      "category": "interpretability",
+      "severity": "low",
+      "threat": "Without a human or expert baseline, it is hard to interpret absolute scores as business judgment quality.",
+      "current_mitigation": "Use relative model/baseline comparisons, provide a human-calibration protocol and revision ledger, and avoid claiming real-world startup competence.",
+      "evidence_paths": [
+        "outputs/acceleratorbench-benchmark-card.md",
+        "outputs/acceleratorbench-human-calibration-protocol-v0.3.md",
+        "outputs/acceleratorbench-task-revision-ledger-v0.3.md",
+        "outputs/acceleratorbench-paper-draft-v0.1.md"
+      ],
+      "remaining_work": "Execute the protocol and collect small expert/human-founder pilot results or expert ranking of task actions.",
+      "evidence": [
+        {
+          "path": "outputs/acceleratorbench-benchmark-card.md",
+          "exists": true
+        },
+        {
+          "path": "outputs/acceleratorbench-human-calibration-protocol-v0.3.md",
+          "exists": true
+        },
+        {
+          "path": "outputs/acceleratorbench-task-revision-ledger-v0.3.md",
+          "exists": true
+        },
+        {
+          "path": "outputs/acceleratorbench-paper-draft-v0.1.md",
+          "exists": true
+        }
+      ],
+      "evidence_complete": true
+    }
+  ]
+}
