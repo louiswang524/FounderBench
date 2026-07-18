@@ -41,7 +41,7 @@ The Python package is still named `moneybench` internally for compatibility, but
 
 ```bash
 git clone https://github.com/louiswang524/FounderBench.git
-cd <repo>
+cd FounderBench
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -e .
@@ -141,4 +141,3 @@ FounderBench is a synthetic controlled simulator. Do not claim that a score prov
 ## License And Citation
 
 A final open-source license has not been selected yet. Before publishing the GitHub repository publicly, choose a license and replace the placeholder citation metadata in [work/moneybench/CITATION.cff](work/moneybench/CITATION.cff).
-
