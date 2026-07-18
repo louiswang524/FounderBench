@@ -321,6 +321,7 @@ def _request_json(url: str, payload: dict[str, Any] | None, headers: dict[str, s
     data = json.dumps(payload).encode("utf-8") if payload is not None else None
     attempts = int(os.environ.get("PROVIDER_MAX_RETRIES", "1") or 1)
     retry_sleep_s = float(os.environ.get("PROVIDER_RETRY_SLEEP_S", "10") or 10)
+    request_delay_s = float(os.environ.get("PROVIDER_REQUEST_DELAY_S", "0") or 0)
     for attempt in range(attempts):
         request = urllib.request.Request(
             url,
@@ -329,6 +330,8 @@ def _request_json(url: str, payload: dict[str, Any] | None, headers: dict[str, s
             method=method or ("POST" if payload is not None else "GET"),
         )
         try:
+            if request_delay_s > 0:
+                time.sleep(request_delay_s)
             with urllib.request.urlopen(request, timeout=timeout_s) as response:
                 return json.loads(response.read().decode("utf-8"))
         except urllib.error.HTTPError as exc:
