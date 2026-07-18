@@ -22,20 +22,20 @@
         {
           "path": "outputs/founderbench-provider-run-status.md",
           "exists": true,
-          "bytes": 4474,
-          "sha256": "a729b962a19fb29cc28d3220c669ad0cbf50003afd7bf211608d6360e2c332ab"
+          "bytes": 5626,
+          "sha256": "08e609ce192f0abc3cac731627a67ae5022e5026375ae90dad20290e5e2dfdfb"
         },
         {
           "path": "outputs/founderbench-experiment-runbook.md",
           "exists": true,
-          "bytes": 14798,
-          "sha256": "355d5b4b0f38d6c2203d47d71140901becf8ea69a117b6c0c29df8a05ecf34c7"
+          "bytes": 26100,
+          "sha256": "1e46b8838aa4cc8690a06cb9efbc7485d0af1685e0a8a80b64fe898d314fbf78"
         },
         {
           "path": "outputs/founderbench-model-comparison.md",
           "exists": true,
-          "bytes": 4523,
-          "sha256": "a5313b086efd8bd73639db5a14cd83ceca532b25f051b81dfd1ff27ad1955105"
+          "bytes": 5638,
+          "sha256": "27a48607f4bb20c4bcf47f9f44fa166081f5fe255786006562d2cb521a40d8da"
         }
       ]
     },
@@ -98,8 +98,8 @@
         {
           "path": "outputs/founderbench-submission-manifest.md",
           "exists": true,
-          "bytes": 5821,
-          "sha256": "9e2a9954199a835bfb9f8657575db3386a8106627f91983b2ee8599d441299c5"
+          "bytes": 5822,
+          "sha256": "e8fe52c8de6c04100356939cc466f9c1351c76f8588c395eaf912f784bf79456"
         }
       ]
     },
@@ -139,8 +139,8 @@
         {
           "path": "outputs/founderbench-submission-gate.md",
           "exists": true,
-          "bytes": 1492,
-          "sha256": "6927b208047e4273aa9d7beccd2317c90f02ee96ce766f04dae6ad5e693d8669"
+          "bytes": 1494,
+          "sha256": "0e9e821f41c3542c12fe0189a3a6edd4bf03b5630743be86db256c3afcce65d5"
         }
       ]
     },
@@ -203,8 +203,8 @@
         {
           "path": "outputs/founderbench-submission-gate.md",
           "exists": true,
-          "bytes": 1492,
-          "sha256": "6927b208047e4273aa9d7beccd2317c90f02ee96ce766f04dae6ad5e693d8669"
+          "bytes": 1494,
+          "sha256": "0e9e821f41c3542c12fe0189a3a6edd4bf03b5630743be86db256c3afcce65d5"
         }
       ]
     },
@@ -226,14 +226,14 @@
         {
           "path": "outputs/founderbench-provider-readiness.md",
           "exists": true,
-          "bytes": 3152,
-          "sha256": "1f05e3ccf1207b45d7f188cefa004e49a9443b3afc6481604afafdf4f5c5aac9"
+          "bytes": 7260,
+          "sha256": "5a0aa96eff6f20c2f19a292cf8039d494713fcdbbbc2b87bb031edecd97671c9"
         },
         {
           "path": "outputs/founderbench-prompt-protocol.md",
           "exists": true,
-          "bytes": 4526,
-          "sha256": "ebf43bfd6525a44762498dad220bf534222abf1b0f58a7de4463399d842ea1f0"
+          "bytes": 5413,
+          "sha256": "7f9434fa613ecdaf1280840f89d425d3d95d0570c247b42df9034789b620271f"
         },
         {
           "path": "outputs/founderbench-provider-contract-audit.md",
@@ -244,8 +244,8 @@
         {
           "path": "outputs/founderbench-provider-run-status.md",
           "exists": true,
-          "bytes": 4474,
-          "sha256": "a729b962a19fb29cc28d3220c669ad0cbf50003afd7bf211608d6360e2c332ab"
+          "bytes": 5626,
+          "sha256": "08e609ce192f0abc3cac731627a67ae5022e5026375ae90dad20290e5e2dfdfb"
         }
       ]
     },

@@ -19,7 +19,7 @@ FounderBench includes:
 - fixed 8-market simulator catalog
 - public development and public test splits
 - non-LLM baseline policies
-- hosted-provider adapters for DeepSeek, Anthropic, Gemini, and OpenAI-compatible local servers
+- hosted-provider adapters for OpenAI, DeepSeek, Anthropic, Gemini, Kimi/Moonshot, Qwen/Alibaba, Mistral, GLM/Z.ai, xAI, Llama/open-weight endpoints, and generic OpenAI-compatible local servers
 - canonical prompt protocol and prompt/protocol hashes for provider comparability
 - resumable provider runner
 - redacted audit mode for provider-call provenance
@@ -208,7 +208,14 @@ Provider policies:
 - `deepseek_sc`
 - `anthropic`
 - `gemini`
-- `llm` for OpenAI-compatible endpoints
+- `openai` for OpenAI/GPT models
+- `deepseek` and `deepseek_sc` for DeepSeek single-run and self-consistency baselines
+- `anthropic` for Claude
+- `gemini` for Gemini
+- `kimi` for Moonshot/Kimi OpenAI-compatible endpoints
+- `qwen` for Alibaba/Qwen OpenAI-compatible endpoints
+- `mistral`, `glm`, `xai`, and `llama` for optional broader provider/open-weight coverage
+- `llm` for generic OpenAI-compatible local/open-source endpoints
 
 ## Outputs
 

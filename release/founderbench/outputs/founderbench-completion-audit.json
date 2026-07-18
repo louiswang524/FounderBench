@@ -136,14 +136,14 @@
         {
           "path": "outputs/founderbench-baseline-raw.json",
           "exists": true,
-          "bytes": 342096,
-          "sha256": "ec31a2cd2c626eba0f279a2806355dfc1abec14bd210f79f6a95ca3b81e7730b"
+          "bytes": 342072,
+          "sha256": "63b23e18802e4a05d5875d04453ea6ace80b9cbf0e3652e4f3945758c7c5f140"
         },
         {
           "path": "outputs/founderbench-baseline-leaderboard.json",
           "exists": true,
           "bytes": 2653,
-          "sha256": "5a4cccccf4df13f6c9b90d8b1b95927bee1fd373e3419b73429b843bfcc1c4ed"
+          "sha256": "978f0637f4188746f420331439eac9461182b7f4dde8156e4da132a1570c5efa"
         },
         {
           "path": "outputs/founderbench-baseline-analysis.md",
@@ -177,7 +177,7 @@
       "goal_clause": "run representative LLM baselines",
       "completion_standard": "Required DeepSeek, Anthropic, Gemini, and local/open-source current release outputs exist and pass submission validation.",
       "status": "missing",
-      "rationale": "6 required experiment groups are missing and 0/5 providers are ready.",
+      "rationale": "6 required experiment groups are missing and 0/12 providers are ready.",
       "evidence": [
         {
           "path": "outputs/founderbench-deepseek.json",
@@ -214,14 +214,14 @@
         {
           "path": "outputs/founderbench-provider-run-status.md",
           "exists": true,
-          "bytes": 4474,
-          "sha256": "a729b962a19fb29cc28d3220c669ad0cbf50003afd7bf211608d6360e2c332ab"
+          "bytes": 5626,
+          "sha256": "08e609ce192f0abc3cac731627a67ae5022e5026375ae90dad20290e5e2dfdfb"
         },
         {
           "path": "outputs/founderbench-experiment-runbook.md",
           "exists": true,
-          "bytes": 14798,
-          "sha256": "355d5b4b0f38d6c2203d47d71140901becf8ea69a117b6c0c29df8a05ecf34c7"
+          "bytes": 26100,
+          "sha256": "1e46b8838aa4cc8690a06cb9efbc7485d0af1685e0a8a80b64fe898d314fbf78"
         }
       ],
       "missing_paths": [
@@ -245,14 +245,14 @@
         {
           "path": "work/moneybench/README.md",
           "exists": true,
-          "bytes": 20160,
-          "sha256": "b5c1bd5bb9a070688f866c9e6339df22b46a17295411eadc7222556464e0c227"
+          "bytes": 20647,
+          "sha256": "f83dc5011ddd82a1573f9624b72690ad28bd0c5bb6f877dc6e3596ba554f2aac"
         },
         {
           "path": "work/moneybench/SPEC.md",
           "exists": true,
-          "bytes": 9414,
-          "sha256": "ef964d25562ddb994a90085169d79cec6e336785233f2d32e3f769caa50aec89"
+          "bytes": 9629,
+          "sha256": "0236f89c81a33c55d8f369f93ebea444607db4ece6b31607e404b2c47ef77fd0"
         },
         {
           "path": "outputs/founderbench-reproduction-guide.md",
@@ -263,14 +263,14 @@
         {
           "path": "outputs/founderbench-reviewer-index.md",
           "exists": true,
-          "bytes": 20471,
-          "sha256": "2ce4bc2f265efa98201d7b4b5b3285c5cb8f3cc468a4cbf2d39ad076b8c62e99"
+          "bytes": 20469,
+          "sha256": "5d2eff30515cec617ddfc43dbe8b1f48ccb9cf95b9eb3952cce785ec531d8ff1"
         },
         {
           "path": "outputs/founderbench-reproducibility-manifest.md",
           "exists": true,
-          "bytes": 24544,
-          "sha256": "a03cb42fd8c30f99c7bf3c1c7dfd2c43ff72f7fff698c847431b9f54e50898f4"
+          "bytes": 24571,
+          "sha256": "74d8121784a4184dd2b8d29dae77417dd7e2b9e987813aebff03a8ac97b0bcb2"
         },
         {
           "path": "outputs/founderbench-environment-report.md",
@@ -321,8 +321,8 @@
         {
           "path": "outputs/founderbench-paper-tables.md",
           "exists": true,
-          "bytes": 4510,
-          "sha256": "6a40391f561000485c65044b34cbdb6e8921472e4e5f80dcf020c3fac3b163a0"
+          "bytes": 5625,
+          "sha256": "1d9d663b0cb630a9ef0dd7ea26b2e0664bee813ccd079a12e919021f8b0c92ae"
         },
         {
           "path": "outputs/founderbench-paper-figure-data.md",
@@ -345,14 +345,14 @@
         {
           "path": "outputs/founderbench-submission-gate.md",
           "exists": true,
-          "bytes": 1492,
-          "sha256": "6927b208047e4273aa9d7beccd2317c90f02ee96ce766f04dae6ad5e693d8669"
+          "bytes": 1494,
+          "sha256": "0e9e821f41c3542c12fe0189a3a6edd4bf03b5630743be86db256c3afcce65d5"
         },
         {
           "path": "release/founderbench/SHA256SUMS.json",
           "exists": true,
           "bytes": 40818,
-          "sha256": "63db7dd1c4044aa3cd8ea8b4a7260625ad259edbb07ed0eac47bbd856c3eb652"
+          "sha256": "d0a04d982cf82fe169f2561911b2b7a8a129beb7b5b20398f22ec0be67202fce"
         },
         {
           "path": "release/founderbench/BUNDLE-INTEGRITY.md",

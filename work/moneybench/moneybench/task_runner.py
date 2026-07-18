@@ -4,7 +4,20 @@ import time
 from dataclasses import asdict
 
 from .env import MoneyBenchEnv
-from .llm_policy import AnthropicTaskPolicy, DeepSeekSelfConsistencyTaskPolicy, DeepSeekTaskPolicy, GeminiTaskPolicy, OpenAICompatibleTaskPolicy
+from .llm_policy import (
+    AnthropicTaskPolicy,
+    DeepSeekSelfConsistencyTaskPolicy,
+    DeepSeekTaskPolicy,
+    GeminiTaskPolicy,
+    GLMTaskPolicy,
+    KimiTaskPolicy,
+    LlamaTaskPolicy,
+    MistralTaskPolicy,
+    OpenAICompatibleTaskPolicy,
+    OpenAIHostedTaskPolicy,
+    QwenTaskPolicy,
+    XAITaskPolicy,
+)
 from .policies import Policy, get_policy
 from .provider_adapter import classify_provider_exception
 from .schema import Action, StepResult
@@ -40,6 +53,13 @@ def run_task(task: StartupTask, policy: Policy, trace: bool = False, audit: bool
                     "DeepSeekSelfConsistencyTaskPolicy",
                     "AnthropicTaskPolicy",
                     "GeminiTaskPolicy",
+                    "OpenAIHostedTaskPolicy",
+                    "KimiTaskPolicy",
+                    "QwenTaskPolicy",
+                    "MistralTaskPolicy",
+                    "LlamaTaskPolicy",
+                    "GLMTaskPolicy",
+                    "XAITaskPolicy",
                 }:
                     actions = policy.act_task(task, observation)  # type: ignore[attr-defined]
                 else:
@@ -110,6 +130,8 @@ def run_task(task: StartupTask, policy: Policy, trace: bool = False, audit: bool
 def make_policy(policy_name: str, seed: int = 0) -> Policy:
     if policy_name == "llm":
         return OpenAICompatibleTaskPolicy()  # type: ignore[return-value]
+    if policy_name == "openai":
+        return OpenAIHostedTaskPolicy()  # type: ignore[return-value]
     if policy_name == "deepseek":
         return DeepSeekTaskPolicy()  # type: ignore[return-value]
     if policy_name == "deepseek_sc":
@@ -118,6 +140,18 @@ def make_policy(policy_name: str, seed: int = 0) -> Policy:
         return AnthropicTaskPolicy()  # type: ignore[return-value]
     if policy_name == "gemini":
         return GeminiTaskPolicy()  # type: ignore[return-value]
+    if policy_name == "kimi":
+        return KimiTaskPolicy()  # type: ignore[return-value]
+    if policy_name == "qwen":
+        return QwenTaskPolicy()  # type: ignore[return-value]
+    if policy_name == "mistral":
+        return MistralTaskPolicy()  # type: ignore[return-value]
+    if policy_name == "llama":
+        return LlamaTaskPolicy()  # type: ignore[return-value]
+    if policy_name == "glm":
+        return GLMTaskPolicy()  # type: ignore[return-value]
+    if policy_name == "xai":
+        return XAITaskPolicy()  # type: ignore[return-value]
     return get_policy(policy_name, seed=seed)
 
 

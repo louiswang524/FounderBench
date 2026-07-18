@@ -88,16 +88,16 @@
       "role": "Start here for installation, task families, action space, and run commands.",
       "category": "orientation",
       "exists": true,
-      "bytes": 20160,
-      "sha256": "b5c1bd5bb9a070688f866c9e6339df22b46a17295411eadc7222556464e0c227"
+      "bytes": 20647,
+      "sha256": "f83dc5011ddd82a1573f9624b72690ad28bd0c5bb6f877dc6e3596ba554f2aac"
     },
     {
       "path": "work/moneybench/SPEC.md",
       "role": "Formal simulator and benchmark specification.",
       "category": "orientation",
       "exists": true,
-      "bytes": 9414,
-      "sha256": "ef964d25562ddb994a90085169d79cec6e336785233f2d32e3f769caa50aec89"
+      "bytes": 9629,
+      "sha256": "0236f89c81a33c55d8f369f93ebea444607db4ece6b31607e404b2c47ef77fd0"
     },
     {
       "path": "outputs/founderbench-action-semantics.md",
@@ -209,7 +209,7 @@
       "category": "baseline_evidence",
       "exists": true,
       "bytes": 2653,
-      "sha256": "5a4cccccf4df13f6c9b90d8b1b95927bee1fd373e3419b73429b843bfcc1c4ed"
+      "sha256": "978f0637f4188746f420331439eac9461182b7f4dde8156e4da132a1570c5efa"
     },
     {
       "path": "outputs/founderbench-leaderboard-policy.md",
@@ -232,8 +232,8 @@
       "role": "Task-level raw baseline results for random, conservative, heuristic, and task-aware heuristic policies.",
       "category": "baseline_evidence",
       "exists": true,
-      "bytes": 342096,
-      "sha256": "ec31a2cd2c626eba0f279a2806355dfc1abec14bd210f79f6a95ca3b81e7730b"
+      "bytes": 342072,
+      "sha256": "63b23e18802e4a05d5875d04453ea6ace80b9cbf0e3652e4f3945758c7c5f140"
     },
     {
       "path": "outputs/founderbench-baseline-analysis.md",
@@ -256,8 +256,8 @@
       "role": "Paper-ready result tables generated from raw current release runs and validated provider availability.",
       "category": "baseline_evidence",
       "exists": true,
-      "bytes": 4510,
-      "sha256": "6a40391f561000485c65044b34cbdb6e8921472e4e5f80dcf020c3fac3b163a0"
+      "bytes": 5625,
+      "sha256": "1d9d663b0cb630a9ef0dd7ea26b2e0664bee813ccd079a12e919021f8b0c92ae"
     },
     {
       "path": "outputs/founderbench-paper-figure-data.md",
@@ -280,16 +280,16 @@
       "role": "Unified leaderboard/comparison report that automatically incorporates validated hosted/local provider runs and keeps missing provider evidence explicit.",
       "category": "baseline_evidence",
       "exists": true,
-      "bytes": 4523,
-      "sha256": "a5313b086efd8bd73639db5a14cd83ceca532b25f051b81dfd1ff27ad1955105"
+      "bytes": 5638,
+      "sha256": "27a48607f4bb20c4bcf47f9f44fa166081f5fe255786006562d2cb521a40d8da"
     },
     {
       "path": "outputs/founderbench-model-result-cards.md",
       "role": "Reviewer-facing result cards summarizing deterministic baselines and planned provider submissions with validation, diagnostics, cost fields, and claim eligibility.",
       "category": "baseline_evidence",
       "exists": true,
-      "bytes": 3069,
-      "sha256": "0c3ae2237ba83563aba56a9c9dc50bebbf64dffd372171a7e08a8d7b8dec6084"
+      "bytes": 4442,
+      "sha256": "67fabd55538b83418c57cb9e35b7db3405614ae436c3d45c9a47efd105c35322"
     },
     {
       "path": "outputs/founderbench-ablation-report.md",
@@ -416,8 +416,8 @@
       "role": "Source/output hashes, environment metadata, and reproduction commands for the current workspace.",
       "category": "reproducibility",
       "exists": true,
-      "bytes": 24571,
-      "sha256": "74d8121784a4184dd2b8d29dae77417dd7e2b9e987813aebff03a8ac97b0bcb2"
+      "bytes": 24575,
+      "sha256": "da6fc51bad976cbfbd1f63b0c73e19fa3cbc91084674793e4c2fc70561d835fb"
     },
     {
       "path": "outputs/founderbench-determinism-audit.md",
@@ -520,8 +520,8 @@
       "role": "Environment readiness matrix and exact commands for hosted/local provider runs.",
       "category": "provider_runs",
       "exists": true,
-      "bytes": 3152,
-      "sha256": "1f05e3ccf1207b45d7f188cefa004e49a9443b3afc6481604afafdf4f5c5aac9"
+      "bytes": 7260,
+      "sha256": "5a0aa96eff6f20c2f19a292cf8039d494713fcdbbbc2b87bb031edecd97671c9"
     },
     {
       "path": "outputs/founderbench-cost-accounting.md",
@@ -536,32 +536,32 @@
       "role": "Paper-grade hosted/local baseline execution plan with fairness controls, repeats, audit policy, commands, and acceptance criteria.",
       "category": "provider_runs",
       "exists": true,
-      "bytes": 9590,
-      "sha256": "6a6114790301af0ef000610e71faeed07255d1acbcfea68c1baea0efdccad29a"
+      "bytes": 18654,
+      "sha256": "1f621eeebc36dd0e2a64cc0b7645c098f48abaa448b3bd1b5f2cb9c894d40621"
     },
     {
       "path": "outputs/founderbench-experiment-runbook.md",
       "role": "Operator runbook for executing missing hosted/local model baselines, audits, repeat bundles, and post-run claim-gate updates.",
       "category": "provider_runs",
       "exists": true,
-      "bytes": 14798,
-      "sha256": "355d5b4b0f38d6c2203d47d71140901becf8ea69a117b6c0c29df8a05ecf34c7"
+      "bytes": 26100,
+      "sha256": "1e46b8838aa4cc8690a06cb9efbc7485d0af1685e0a8a80b64fe898d314fbf78"
     },
     {
       "path": "outputs/founderbench-provider-run-status.md",
       "role": "Generated status report for planned current release provider/local runs, validation reports, audit outputs, and excluded older provider-like files.",
       "category": "provider_runs",
       "exists": true,
-      "bytes": 4474,
-      "sha256": "a729b962a19fb29cc28d3220c669ad0cbf50003afd7bf211608d6360e2c332ab"
+      "bytes": 5626,
+      "sha256": "08e609ce192f0abc3cac731627a67ae5022e5026375ae90dad20290e5e2dfdfb"
     },
     {
       "path": "outputs/founderbench-provider-comparability-audit.md",
       "role": "Protocol comparability audit checking shared task count, prompt/action contract, validation commands, repeat policy, cost fields, and self-consistency ablation treatment.",
       "category": "provider_runs",
       "exists": true,
-      "bytes": 3246,
-      "sha256": "07d5e68f940a5d2ea53a1f142f2511d4c028fc152979d7c5f539f7ac54c69dbc"
+      "bytes": 4317,
+      "sha256": "17d7ace2473e03696485c1f688224bbc951279dbee2aa9cab812d3f8d1ce3cb2"
     },
     {
       "path": "outputs/founderbench-provider-contract-audit.md",
@@ -584,8 +584,8 @@
       "role": "Canonical LLM prompt contract, provider message wrappers, action vocabulary, and prompt/protocol hashes.",
       "category": "provider_runs",
       "exists": true,
-      "bytes": 4526,
-      "sha256": "ebf43bfd6525a44762498dad220bf534222abf1b0f58a7de4463399d842ea1f0"
+      "bytes": 5413,
+      "sha256": "7f9434fa613ecdaf1280840f89d425d3d95d0570c247b42df9034789b620271f"
     },
     {
       "path": "outputs/founderbench-license-readiness.md",
@@ -608,8 +608,8 @@
       "role": "Non-final owner-facing template for creating the required public LICENSE file.",
       "category": "publication_readiness",
       "exists": true,
-      "bytes": 475,
-      "sha256": "8f84386c7c53bd2edac1f378e7bbe01d83e7a2c05880ad699ffca18408962744"
+      "bytes": 466,
+      "sha256": "07f71722a4e11a880dcd2ca24d74e75e35d6b9099f3e242257e5140f20cb3d25"
     },
     {
       "path": "work/moneybench/CITATION.cff.template",
@@ -624,24 +624,24 @@
       "role": "Top-level go/no-go submission gate combining publication, experiment, provider, claim, and license readiness.",
       "category": "publication_readiness",
       "exists": true,
-      "bytes": 1492,
-      "sha256": "6927b208047e4273aa9d7beccd2317c90f02ee96ce766f04dae6ad5e693d8669"
+      "bytes": 1494,
+      "sha256": "0e9e821f41c3542c12fe0189a3a6edd4bf03b5630743be86db256c3afcce65d5"
     },
     {
       "path": "outputs/founderbench-submission-manifest.md",
       "role": "Compact reviewer-facing manifest of included evidence, supported claims, excluded claims, reproduction commands, and remaining gate blockers.",
       "category": "publication_readiness",
       "exists": true,
-      "bytes": 5821,
-      "sha256": "9e2a9954199a835bfb9f8657575db3386a8106627f91983b2ee8599d441299c5"
+      "bytes": 5822,
+      "sha256": "e8fe52c8de6c04100356939cc466f9c1351c76f8588c395eaf912f784bf79456"
     },
     {
       "path": "outputs/founderbench-completion-audit.md",
       "role": "Goal-level completion audit mapping the active publishable-benchmark objective to current evidence and unresolved blockers.",
       "category": "publication_readiness",
       "exists": true,
-      "bytes": 8166,
-      "sha256": "3e9db8cbc5f9c1ff271e81efabf3f184072ede879eefca19ca2d69e60ce9ea8d"
+      "bytes": 8168,
+      "sha256": "85a6dad002c53eade8f7b91b240d9c6ceb48fc3f39b6f9ad29898bd1e6532627"
     },
     {
       "path": "outputs/founderbench-reviewer-risk-audit.md",
@@ -672,8 +672,8 @@
       "role": "Concrete action plan mapping each failing submission gate to owners, commands, expected outputs, and claim impact.",
       "category": "publication_readiness",
       "exists": true,
-      "bytes": 12944,
-      "sha256": "c862c0508acbf7742a1f3eab9c1edf7e35069495d453266415d8a1ae1a07602a"
+      "bytes": 18068,
+      "sha256": "0eed45f8fd0756dd6ece890926c2efae298550056a0f2175712b3e9937dd073a"
     },
     {
       "path": "outputs/founderbench-local-openai-compatible-protocol.md",
@@ -712,8 +712,8 @@
       "role": "Submission-readiness matrix mapping benchmark requirements to concrete evidence and blockers.",
       "category": "publication_readiness",
       "exists": true,
-      "bytes": 15239,
-      "sha256": "9e0cdb20fbb6b15ee0d32d10f18811ac6d6dc999880e722cd6e936e3291481fc"
+      "bytes": 15247,
+      "sha256": "e1be0660aa147a6c582c8c492df3d2701c55d6805abfd8c98214d4c9c0abb33c"
     },
     {
       "path": "outputs/founderbench-paper-draft.md",
@@ -744,8 +744,8 @@
       "role": "Release-bundle checksum manifest for integrity verification.",
       "category": "release",
       "exists": true,
-      "bytes": 40818,
-      "sha256": "493b52516d8bfa8bd3b26369d06b36f4386a3615473859a9caa9ef56860512a0"
+      "bytes": 40824,
+      "sha256": "eb766e1b9fb186f3f7cc3ec693d64224ad61c5d648fb1c599548f8702c6443ea"
     },
     {
       "path": "release/founderbench/BUNDLE-INTEGRITY.md",

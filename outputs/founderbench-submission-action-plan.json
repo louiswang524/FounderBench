@@ -4,10 +4,10 @@
   "purpose": "Reviewer-facing action plan for clearing the remaining FounderBench submission gates.",
   "submission_gate_status": "not_ready",
   "summary": {
-    "steps": 18,
+    "steps": 25,
     "required_steps": 17,
     "owner_action_steps": 4,
-    "provider_environment_steps": 5,
+    "provider_environment_steps": 12,
     "claim_alignment_steps": 3,
     "ready_for_submission": false
   },
@@ -138,6 +138,26 @@
       "claim_impact": "Prevents optimization against visible public tasks and supports leaderboard credibility."
     },
     {
+      "id": "configure_openai",
+      "gate": "provider_run_readiness",
+      "owner": "evaluator",
+      "priority": "recommended",
+      "status": "blocked_on_environment",
+      "action": "Configure provider environment for OpenAI GPT.",
+      "missing_inputs": [
+        "OPENAI_API_KEY"
+      ],
+      "commands": [
+        "python -m moneybench.resumable_runner --policy openai --output outputs/founderbench-openai.json --resume",
+        "python -m moneybench.resumable_runner --policy openai --output outputs/founderbench-openai-audit.json --resume --audit",
+        "python -m moneybench.submission --input outputs/founderbench-openai.json --report outputs/founderbench-openai-submission-report.md"
+      ],
+      "expected_outputs": [
+        "outputs/founderbench-openai.json"
+      ],
+      "claim_impact": "Required before hosted/local LLM comparison claims can be made."
+    },
+    {
       "id": "configure_deepseek",
       "gate": "provider_run_readiness",
       "owner": "evaluator",
@@ -218,15 +238,131 @@
       "claim_impact": "Required before hosted/local LLM comparison claims can be made."
     },
     {
+      "id": "configure_kimi",
+      "gate": "provider_run_readiness",
+      "owner": "evaluator",
+      "priority": "recommended",
+      "status": "blocked_on_environment",
+      "action": "Configure provider environment for Moonshot Kimi.",
+      "missing_inputs": [
+        "KIMI_API_KEY"
+      ],
+      "commands": [
+        "python -m moneybench.resumable_runner --policy kimi --output outputs/founderbench-kimi.json --resume",
+        "python -m moneybench.resumable_runner --policy kimi --output outputs/founderbench-kimi-audit.json --resume --audit",
+        "python -m moneybench.submission --input outputs/founderbench-kimi.json --report outputs/founderbench-kimi-submission-report.md"
+      ],
+      "expected_outputs": [
+        "outputs/founderbench-kimi.json"
+      ],
+      "claim_impact": "Required before hosted/local LLM comparison claims can be made."
+    },
+    {
+      "id": "configure_qwen",
+      "gate": "provider_run_readiness",
+      "owner": "evaluator",
+      "priority": "recommended",
+      "status": "blocked_on_environment",
+      "action": "Configure provider environment for Alibaba Qwen.",
+      "missing_inputs": [
+        "QWEN_API_KEY"
+      ],
+      "commands": [
+        "python -m moneybench.resumable_runner --policy qwen --output outputs/founderbench-qwen.json --resume",
+        "python -m moneybench.resumable_runner --policy qwen --output outputs/founderbench-qwen-audit.json --resume --audit",
+        "python -m moneybench.submission --input outputs/founderbench-qwen.json --report outputs/founderbench-qwen-submission-report.md"
+      ],
+      "expected_outputs": [
+        "outputs/founderbench-qwen.json"
+      ],
+      "claim_impact": "Required before hosted/local LLM comparison claims can be made."
+    },
+    {
+      "id": "configure_mistral",
+      "gate": "provider_run_readiness",
+      "owner": "evaluator",
+      "priority": "recommended",
+      "status": "blocked_on_environment",
+      "action": "Configure provider environment for Mistral.",
+      "missing_inputs": [
+        "MISTRAL_API_KEY"
+      ],
+      "commands": [
+        "python -m moneybench.resumable_runner --policy mistral --output outputs/founderbench-mistral.json --resume",
+        "python -m moneybench.resumable_runner --policy mistral --output outputs/founderbench-mistral-audit.json --resume --audit",
+        "python -m moneybench.submission --input outputs/founderbench-mistral.json --report outputs/founderbench-mistral-submission-report.md"
+      ],
+      "expected_outputs": [
+        "outputs/founderbench-mistral.json"
+      ],
+      "claim_impact": "Required before hosted/local LLM comparison claims can be made."
+    },
+    {
+      "id": "configure_glm",
+      "gate": "provider_run_readiness",
+      "owner": "evaluator",
+      "priority": "recommended",
+      "status": "blocked_on_environment",
+      "action": "Configure provider environment for Z.ai GLM.",
+      "missing_inputs": [
+        "GLM_API_KEY"
+      ],
+      "commands": [
+        "python -m moneybench.resumable_runner --policy glm --output outputs/founderbench-glm.json --resume",
+        "python -m moneybench.resumable_runner --policy glm --output outputs/founderbench-glm-audit.json --resume --audit",
+        "python -m moneybench.submission --input outputs/founderbench-glm.json --report outputs/founderbench-glm-submission-report.md"
+      ],
+      "expected_outputs": [
+        "outputs/founderbench-glm.json"
+      ],
+      "claim_impact": "Required before hosted/local LLM comparison claims can be made."
+    },
+    {
+      "id": "configure_xai",
+      "gate": "provider_run_readiness",
+      "owner": "evaluator",
+      "priority": "recommended",
+      "status": "blocked_on_environment",
+      "action": "Configure provider environment for xAI Grok.",
+      "missing_inputs": [
+        "XAI_API_KEY"
+      ],
+      "commands": [
+        "python -m moneybench.resumable_runner --policy xai --output outputs/founderbench-xai.json --resume",
+        "python -m moneybench.resumable_runner --policy xai --output outputs/founderbench-xai-audit.json --resume --audit",
+        "python -m moneybench.submission --input outputs/founderbench-xai.json --report outputs/founderbench-xai-submission-report.md"
+      ],
+      "expected_outputs": [
+        "outputs/founderbench-xai.json"
+      ],
+      "claim_impact": "Required before hosted/local LLM comparison claims can be made."
+    },
+    {
+      "id": "configure_llama",
+      "gate": "provider_run_readiness",
+      "owner": "evaluator",
+      "priority": "recommended",
+      "status": "blocked_on_environment",
+      "action": "Configure provider environment for Llama/Open-weight endpoint.",
+      "missing_inputs": [],
+      "commands": [
+        "python -m moneybench.resumable_runner --policy llama --output outputs/founderbench-llama.json --resume",
+        "python -m moneybench.resumable_runner --policy llama --output outputs/founderbench-llama-audit.json --resume --audit",
+        "python -m moneybench.submission --input outputs/founderbench-llama.json --report outputs/founderbench-llama-submission-report.md"
+      ],
+      "expected_outputs": [
+        "outputs/founderbench-llama.json"
+      ],
+      "claim_impact": "Required before hosted/local LLM comparison claims can be made."
+    },
+    {
       "id": "configure_llm",
       "gate": "provider_run_readiness",
       "owner": "evaluator",
       "priority": "required",
       "status": "blocked_on_environment",
       "action": "Configure provider environment for Local/OpenAI-compatible.",
-      "missing_inputs": [
-        "OPENAI_COMPAT_BASE_URL"
-      ],
+      "missing_inputs": [],
       "commands": [
         "python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model.json --resume",
         "python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model-audit.json --resume --audit",
@@ -399,7 +535,7 @@
         "evidence": [
           "outputs/founderbench-provider-readiness.md"
         ],
-        "blocker": "Only 0/5 provider configurations are ready."
+        "blocker": "Only 0/12 provider configurations are ready."
       },
       {
         "id": "claim_evidence_alignment",

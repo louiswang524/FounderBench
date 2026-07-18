@@ -29,14 +29,14 @@
         {
           "path": "outputs/founderbench-baseline-raw.json",
           "exists": true,
-          "bytes": 342096,
-          "sha256": "ec31a2cd2c626eba0f279a2806355dfc1abec14bd210f79f6a95ca3b81e7730b"
+          "bytes": 342072,
+          "sha256": "63b23e18802e4a05d5875d04453ea6ace80b9cbf0e3652e4f3945758c7c5f140"
         },
         {
           "path": "outputs/founderbench-baseline-leaderboard.json",
           "exists": true,
           "bytes": 2653,
-          "sha256": "5a4cccccf4df13f6c9b90d8b1b95927bee1fd373e3419b73429b843bfcc1c4ed"
+          "sha256": "978f0637f4188746f420331439eac9461182b7f4dde8156e4da132a1570c5efa"
         },
         {
           "path": "outputs/founderbench-baseline-analysis.md",
@@ -96,8 +96,8 @@
         {
           "path": "outputs/founderbench-action-ablation.json",
           "exists": true,
-          "bytes": 643562,
-          "sha256": "730bc5d22f0fa9b3857408c44017802a9e318b9b4381db5d5a8f911a5b19ecf7"
+          "bytes": 643534,
+          "sha256": "bb90c0b9199d8d912228d288f737cce4756bc7c0f503302e00e05172fe54d1d1"
         }
       ],
       "status": "complete",
@@ -121,8 +121,8 @@
         {
           "path": "outputs/founderbench-random-repeats.json",
           "exists": true,
-          "bytes": 454611,
-          "sha256": "c664b0098e2350bf8ec22015fec75cc361e7c5121368a904c528e2423fc062ce"
+          "bytes": 454450,
+          "sha256": "f3c6ff11ff00d2323bcd9d4e6250ec86e0eb68bd238f66301b32123df148fce7"
         },
         {
           "path": "outputs/founderbench-random-repeats.md",
@@ -153,7 +153,7 @@
           "path": "outputs/founderbench-qualitative-traces.json",
           "exists": true,
           "bytes": 27313,
-          "sha256": "abf0feefb51f77db3d9c64cdf4e232140b899a391be13043bfd28dfb16f6bb1a"
+          "sha256": "871ab65a406d11780a483190e03511ce17adbd507e53f976f28427d531a57228"
         },
         {
           "path": "outputs/founderbench-qualitative-traces.md",

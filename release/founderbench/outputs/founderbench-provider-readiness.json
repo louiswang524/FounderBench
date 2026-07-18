@@ -4,6 +4,20 @@
   "note": "This report records whether required environment variables are configured. It never stores secret values.",
   "providers": [
     {
+      "provider": "OpenAI GPT",
+      "policy": "openai",
+      "model": "gpt-4.1-mini",
+      "ready_without_secrets_exposed": false,
+      "env_status": {
+        "OPENAI_API_KEY": "missing",
+        "OPENAI_MODEL": "default:gpt-4.1-mini",
+        "OPENAI_BASE_URL": "default:https://api.openai.com/v1"
+      },
+      "run_command": "python -m moneybench.resumable_runner --policy openai --output outputs/founderbench-openai.json --resume",
+      "audit_command": "python -m moneybench.resumable_runner --policy openai --output outputs/founderbench-openai-audit.json --resume --audit",
+      "validation_command": "python -m moneybench.submission --input outputs/founderbench-openai.json --report outputs/founderbench-openai-submission-report.md"
+    },
+    {
       "provider": "DeepSeek",
       "policy": "deepseek",
       "model": "deepseek-chat",
@@ -58,6 +72,99 @@
       "validation_command": "python -m moneybench.submission --input outputs/founderbench-gemini.json --report outputs/founderbench-gemini-submission-report.md"
     },
     {
+      "provider": "Moonshot Kimi",
+      "policy": "kimi",
+      "model": "kimi-latest",
+      "ready_without_secrets_exposed": false,
+      "env_status": {
+        "KIMI_API_KEY": "missing",
+        "KIMI_MODEL": "default:kimi-latest",
+        "MOONSHOT_API_KEY": "alias",
+        "MOONSHOT_MODEL": "alias",
+        "KIMI_BASE_URL": "default:https://api.moonshot.ai/v1",
+        "MOONSHOT_BASE_URL": "alias"
+      },
+      "run_command": "python -m moneybench.resumable_runner --policy kimi --output outputs/founderbench-kimi.json --resume",
+      "audit_command": "python -m moneybench.resumable_runner --policy kimi --output outputs/founderbench-kimi-audit.json --resume --audit",
+      "validation_command": "python -m moneybench.submission --input outputs/founderbench-kimi.json --report outputs/founderbench-kimi-submission-report.md"
+    },
+    {
+      "provider": "Alibaba Qwen",
+      "policy": "qwen",
+      "model": "qwen-plus",
+      "ready_without_secrets_exposed": false,
+      "env_status": {
+        "QWEN_API_KEY": "missing",
+        "QWEN_MODEL": "default:qwen-plus",
+        "DASHSCOPE_API_KEY": "alias",
+        "DASHSCOPE_MODEL": "alias",
+        "QWEN_BASE_URL": "default:https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "DASHSCOPE_BASE_URL": "alias"
+      },
+      "run_command": "python -m moneybench.resumable_runner --policy qwen --output outputs/founderbench-qwen.json --resume",
+      "audit_command": "python -m moneybench.resumable_runner --policy qwen --output outputs/founderbench-qwen-audit.json --resume --audit",
+      "validation_command": "python -m moneybench.submission --input outputs/founderbench-qwen.json --report outputs/founderbench-qwen-submission-report.md"
+    },
+    {
+      "provider": "Mistral",
+      "policy": "mistral",
+      "model": "mistral-large-latest",
+      "ready_without_secrets_exposed": false,
+      "env_status": {
+        "MISTRAL_API_KEY": "missing",
+        "MISTRAL_MODEL": "default:mistral-large-latest",
+        "MISTRAL_BASE_URL": "default:https://api.mistral.ai/v1"
+      },
+      "run_command": "python -m moneybench.resumable_runner --policy mistral --output outputs/founderbench-mistral.json --resume",
+      "audit_command": "python -m moneybench.resumable_runner --policy mistral --output outputs/founderbench-mistral-audit.json --resume --audit",
+      "validation_command": "python -m moneybench.submission --input outputs/founderbench-mistral.json --report outputs/founderbench-mistral-submission-report.md"
+    },
+    {
+      "provider": "Z.ai GLM",
+      "policy": "glm",
+      "model": "glm-4-plus",
+      "ready_without_secrets_exposed": false,
+      "env_status": {
+        "GLM_API_KEY": "missing",
+        "GLM_MODEL": "default:glm-4-plus",
+        "ZAI_API_KEY": "alias",
+        "ZAI_MODEL": "alias",
+        "GLM_BASE_URL": "default:https://open.bigmodel.cn/api/paas/v4",
+        "ZAI_BASE_URL": "alias"
+      },
+      "run_command": "python -m moneybench.resumable_runner --policy glm --output outputs/founderbench-glm.json --resume",
+      "audit_command": "python -m moneybench.resumable_runner --policy glm --output outputs/founderbench-glm-audit.json --resume --audit",
+      "validation_command": "python -m moneybench.submission --input outputs/founderbench-glm.json --report outputs/founderbench-glm-submission-report.md"
+    },
+    {
+      "provider": "xAI Grok",
+      "policy": "xai",
+      "model": "grok-3-mini",
+      "ready_without_secrets_exposed": false,
+      "env_status": {
+        "XAI_API_KEY": "missing",
+        "XAI_MODEL": "default:grok-3-mini",
+        "XAI_BASE_URL": "default:https://api.x.ai/v1"
+      },
+      "run_command": "python -m moneybench.resumable_runner --policy xai --output outputs/founderbench-xai.json --resume",
+      "audit_command": "python -m moneybench.resumable_runner --policy xai --output outputs/founderbench-xai-audit.json --resume --audit",
+      "validation_command": "python -m moneybench.submission --input outputs/founderbench-xai.json --report outputs/founderbench-xai-submission-report.md"
+    },
+    {
+      "provider": "Llama/Open-weight endpoint",
+      "policy": "llama",
+      "model": "meta-llama/Llama-3.1-70B-Instruct",
+      "ready_without_secrets_exposed": false,
+      "env_status": {
+        "LLAMA_API_KEY": "optional",
+        "LLAMA_MODEL": "default:meta-llama/Llama-3.1-70B-Instruct",
+        "LLAMA_BASE_URL": "default:"
+      },
+      "run_command": "python -m moneybench.resumable_runner --policy llama --output outputs/founderbench-llama.json --resume",
+      "audit_command": "python -m moneybench.resumable_runner --policy llama --output outputs/founderbench-llama-audit.json --resume --audit",
+      "validation_command": "python -m moneybench.submission --input outputs/founderbench-llama.json --report outputs/founderbench-llama-submission-report.md"
+    },
+    {
       "provider": "Local/OpenAI-compatible",
       "policy": "llm",
       "model": "Qwen/Qwen2.5-7B-Instruct",
@@ -65,7 +172,7 @@
       "env_status": {
         "OPENAI_COMPAT_API_KEY": "optional",
         "OPENAI_COMPAT_MODEL": "default:Qwen/Qwen2.5-7B-Instruct",
-        "OPENAI_COMPAT_BASE_URL": "missing"
+        "OPENAI_COMPAT_BASE_URL": "default:"
       },
       "run_command": "python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model.json --resume",
       "audit_command": "python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model-audit.json --resume --audit",
@@ -73,5 +180,5 @@
     }
   ],
   "ready_count": 0,
-  "provider_count": 5
+  "provider_count": 12
 }

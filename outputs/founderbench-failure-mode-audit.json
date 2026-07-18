@@ -15,8 +15,8 @@
         {
           "path": "work/moneybench/tests/test_moneybench.py",
           "exists": true,
-          "bytes": 68904,
-          "sha256": "bd6fced254d0676536fdc04b14c0a8308bb0ac2707660d4d38019946079bbfc6"
+          "bytes": 69223,
+          "sha256": "8e16f84660a0053508573e65b18e6b81ff20db7907b2bc1bfebf11ded157f66f"
         },
         {
           "path": "outputs/founderbench-determinism-audit.md",
@@ -85,20 +85,20 @@
         {
           "path": "outputs/founderbench-baseline-raw.json",
           "exists": true,
-          "bytes": 342096,
-          "sha256": "ec31a2cd2c626eba0f279a2806355dfc1abec14bd210f79f6a95ca3b81e7730b"
+          "bytes": 342072,
+          "sha256": "63b23e18802e4a05d5875d04453ea6ace80b9cbf0e3652e4f3945758c7c5f140"
         },
         {
           "path": "outputs/founderbench-paper-tables.md",
           "exists": true,
-          "bytes": 4510,
-          "sha256": "6a40391f561000485c65044b34cbdb6e8921472e4e5f80dcf020c3fac3b163a0"
+          "bytes": 5625,
+          "sha256": "1d9d663b0cb630a9ef0dd7ea26b2e0664bee813ccd079a12e919021f8b0c92ae"
         },
         {
           "path": "outputs/founderbench-model-comparison.md",
           "exists": true,
-          "bytes": 4523,
-          "sha256": "a5313b086efd8bd73639db5a14cd83ceca532b25f051b81dfd1ff27ad1955105"
+          "bytes": 5638,
+          "sha256": "27a48607f4bb20c4bcf47f9f44fa166081f5fe255786006562d2cb521a40d8da"
         },
         {
           "path": "outputs/founderbench-claim-evidence.md",
@@ -184,8 +184,8 @@
         {
           "path": "work/moneybench/SPEC.md",
           "exists": true,
-          "bytes": 9414,
-          "sha256": "ef964d25562ddb994a90085169d79cec6e336785233f2d32e3f769caa50aec89"
+          "bytes": 9629,
+          "sha256": "0236f89c81a33c55d8f369f93ebea444607db4ece6b31607e404b2c47ef77fd0"
         },
         {
           "path": "outputs/founderbench-task-manifest.json",
@@ -208,8 +208,8 @@
         {
           "path": "outputs/founderbench-provider-run-status.md",
           "exists": true,
-          "bytes": 4474,
-          "sha256": "a729b962a19fb29cc28d3220c669ad0cbf50003afd7bf211608d6360e2c332ab"
+          "bytes": 5626,
+          "sha256": "08e609ce192f0abc3cac731627a67ae5022e5026375ae90dad20290e5e2dfdfb"
         }
       ],
       "required_response": "Keep planned experiments explicitly labeled as planned or missing, and update Methods only after generated artifacts prove execution."
@@ -243,8 +243,8 @@
         {
           "path": "outputs/founderbench-submission-manifest.md",
           "exists": true,
-          "bytes": 5821,
-          "sha256": "9e2a9954199a835bfb9f8657575db3386a8106627f91983b2ee8599d441299c5"
+          "bytes": 5822,
+          "sha256": "e8fe52c8de6c04100356939cc466f9c1351c76f8588c395eaf912f784bf79456"
         }
       ],
       "required_response": "Use conservative benchmark framing until human/expert calibration and hidden holdout evidence justify broader claims."

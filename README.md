@@ -17,7 +17,7 @@ noisy market signals, operational constraints, and explicit risk penalties?
 - deterministic seeded simulator
 - public development and public test splits
 - deterministic baseline policies
-- hosted-provider adapters for DeepSeek, Anthropic, Gemini, and OpenAI-compatible local/open-source endpoints
+- hosted-provider adapters for OpenAI, DeepSeek, Anthropic, Gemini, Kimi/Moonshot, Qwen/Alibaba, Mistral, GLM/Z.ai, xAI, Llama/open-weight endpoints, and generic OpenAI-compatible local/open-source endpoints
 - submission validator, repeated-run bundler, audit reports, benchmark card, datasheet, and paper draft
 - private-holdout blueprint and evaluator protocol
 
@@ -99,11 +99,17 @@ python -m moneybench.submission \
 
 Supported provider policies:
 
-- `deepseek`
+- `openai` for OpenAI/GPT models
+- `deepseek` for a single DeepSeek run
 - `deepseek_sc` for DeepSeek self-consistency with `SC_K=3` by default
-- `anthropic`
-- `gemini`
+- `anthropic` for Claude
+- `gemini` for Gemini
+- `kimi` for Moonshot/Kimi OpenAI-compatible endpoints
+- `qwen` for Alibaba/Qwen OpenAI-compatible endpoints
+- `mistral`, `glm`, `xai`, and `llama` for optional broader provider/open-weight coverage
 - `llm` for OpenAI-compatible local/open-source endpoints
+
+The planned model roster follows the spirit of YC-Bench-style frontier comparisons while broadening coverage beyond Claude/Gemini/GPT to include major open-weight and China-developed model families.
 
 For local/open-source models:
 

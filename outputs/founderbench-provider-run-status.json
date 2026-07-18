@@ -4,6 +4,36 @@
   "purpose": "Provider-run status report for current release paper evidence, generated from planned hosted/local baseline paths and submission validation.",
   "planned_runs": [
     {
+      "id": "openai_single",
+      "policy": "openai",
+      "priority": "required",
+      "model_family": "hosted",
+      "output": "outputs/founderbench-openai.json",
+      "submission_report": "outputs/founderbench-openai-submission-report.md",
+      "audit_output": "outputs/founderbench-openai-audit.json",
+      "exists": false,
+      "submission_report_exists": false,
+      "audit_exists": false,
+      "audit_submission_report_exists": false,
+      "repeat_bundle_output": "outputs/founderbench-openai-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-openai-repeats-submission-report.md",
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "repeat_outputs": [
+        "outputs/founderbench-openai-seed0.json",
+        "outputs/founderbench-openai-seed1.json",
+        "outputs/founderbench-openai-seed2.json"
+      ],
+      "repeat_outputs_present": 0,
+      "evidence_kind": "",
+      "status": "missing",
+      "runs": 0,
+      "tasks": 0,
+      "problems": [
+        "Missing outputs/founderbench-openai.json or outputs/founderbench-openai-repeats.json"
+      ]
+    },
+    {
       "id": "deepseek_single",
       "policy": "deepseek",
       "priority": "required",
@@ -124,6 +154,186 @@
       ]
     },
     {
+      "id": "kimi_single",
+      "policy": "kimi",
+      "priority": "required",
+      "model_family": "hosted",
+      "output": "outputs/founderbench-kimi.json",
+      "submission_report": "outputs/founderbench-kimi-submission-report.md",
+      "audit_output": "outputs/founderbench-kimi-audit.json",
+      "exists": false,
+      "submission_report_exists": false,
+      "audit_exists": false,
+      "audit_submission_report_exists": false,
+      "repeat_bundle_output": "outputs/founderbench-kimi-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-kimi-repeats-submission-report.md",
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "repeat_outputs": [
+        "outputs/founderbench-kimi-seed0.json",
+        "outputs/founderbench-kimi-seed1.json",
+        "outputs/founderbench-kimi-seed2.json"
+      ],
+      "repeat_outputs_present": 0,
+      "evidence_kind": "",
+      "status": "missing",
+      "runs": 0,
+      "tasks": 0,
+      "problems": [
+        "Missing outputs/founderbench-kimi.json or outputs/founderbench-kimi-repeats.json"
+      ]
+    },
+    {
+      "id": "qwen_single",
+      "policy": "qwen",
+      "priority": "required",
+      "model_family": "hosted",
+      "output": "outputs/founderbench-qwen.json",
+      "submission_report": "outputs/founderbench-qwen-submission-report.md",
+      "audit_output": "outputs/founderbench-qwen-audit.json",
+      "exists": false,
+      "submission_report_exists": false,
+      "audit_exists": false,
+      "audit_submission_report_exists": false,
+      "repeat_bundle_output": "outputs/founderbench-qwen-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-qwen-repeats-submission-report.md",
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "repeat_outputs": [
+        "outputs/founderbench-qwen-seed0.json",
+        "outputs/founderbench-qwen-seed1.json",
+        "outputs/founderbench-qwen-seed2.json"
+      ],
+      "repeat_outputs_present": 0,
+      "evidence_kind": "",
+      "status": "missing",
+      "runs": 0,
+      "tasks": 0,
+      "problems": [
+        "Missing outputs/founderbench-qwen.json or outputs/founderbench-qwen-repeats.json"
+      ]
+    },
+    {
+      "id": "mistral_single",
+      "policy": "mistral",
+      "priority": "recommended",
+      "model_family": "hosted",
+      "output": "outputs/founderbench-mistral.json",
+      "submission_report": "outputs/founderbench-mistral-submission-report.md",
+      "audit_output": "outputs/founderbench-mistral-audit.json",
+      "exists": false,
+      "submission_report_exists": false,
+      "audit_exists": false,
+      "audit_submission_report_exists": false,
+      "repeat_bundle_output": "outputs/founderbench-mistral-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-mistral-repeats-submission-report.md",
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "repeat_outputs": [
+        "outputs/founderbench-mistral-seed0.json",
+        "outputs/founderbench-mistral-seed1.json",
+        "outputs/founderbench-mistral-seed2.json"
+      ],
+      "repeat_outputs_present": 0,
+      "evidence_kind": "",
+      "status": "missing",
+      "runs": 0,
+      "tasks": 0,
+      "problems": [
+        "Missing outputs/founderbench-mistral.json or outputs/founderbench-mistral-repeats.json"
+      ]
+    },
+    {
+      "id": "glm_single",
+      "policy": "glm",
+      "priority": "recommended",
+      "model_family": "hosted",
+      "output": "outputs/founderbench-glm.json",
+      "submission_report": "outputs/founderbench-glm-submission-report.md",
+      "audit_output": "outputs/founderbench-glm-audit.json",
+      "exists": false,
+      "submission_report_exists": false,
+      "audit_exists": false,
+      "audit_submission_report_exists": false,
+      "repeat_bundle_output": "outputs/founderbench-glm-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-glm-repeats-submission-report.md",
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "repeat_outputs": [
+        "outputs/founderbench-glm-seed0.json",
+        "outputs/founderbench-glm-seed1.json",
+        "outputs/founderbench-glm-seed2.json"
+      ],
+      "repeat_outputs_present": 0,
+      "evidence_kind": "",
+      "status": "missing",
+      "runs": 0,
+      "tasks": 0,
+      "problems": [
+        "Missing outputs/founderbench-glm.json or outputs/founderbench-glm-repeats.json"
+      ]
+    },
+    {
+      "id": "xai_single",
+      "policy": "xai",
+      "priority": "recommended",
+      "model_family": "hosted",
+      "output": "outputs/founderbench-xai.json",
+      "submission_report": "outputs/founderbench-xai-submission-report.md",
+      "audit_output": "outputs/founderbench-xai-audit.json",
+      "exists": false,
+      "submission_report_exists": false,
+      "audit_exists": false,
+      "audit_submission_report_exists": false,
+      "repeat_bundle_output": "outputs/founderbench-xai-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-xai-repeats-submission-report.md",
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "repeat_outputs": [
+        "outputs/founderbench-xai-seed0.json",
+        "outputs/founderbench-xai-seed1.json",
+        "outputs/founderbench-xai-seed2.json"
+      ],
+      "repeat_outputs_present": 0,
+      "evidence_kind": "",
+      "status": "missing",
+      "runs": 0,
+      "tasks": 0,
+      "problems": [
+        "Missing outputs/founderbench-xai.json or outputs/founderbench-xai-repeats.json"
+      ]
+    },
+    {
+      "id": "llama_endpoint_single",
+      "policy": "llama",
+      "priority": "recommended",
+      "model_family": "local_open_source",
+      "output": "outputs/founderbench-llama.json",
+      "submission_report": "outputs/founderbench-llama-submission-report.md",
+      "audit_output": "outputs/founderbench-llama-audit.json",
+      "exists": false,
+      "submission_report_exists": false,
+      "audit_exists": false,
+      "audit_submission_report_exists": false,
+      "repeat_bundle_output": "outputs/founderbench-llama-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-llama-repeats-submission-report.md",
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "repeat_outputs": [
+        "outputs/founderbench-llama-seed0.json",
+        "outputs/founderbench-llama-seed1.json",
+        "outputs/founderbench-llama-seed2.json"
+      ],
+      "repeat_outputs_present": 0,
+      "evidence_kind": "",
+      "status": "missing",
+      "runs": 0,
+      "tasks": 0,
+      "problems": [
+        "Missing outputs/founderbench-llama.json or outputs/founderbench-llama-repeats.json"
+      ]
+    },
+    {
       "id": "local_open_model_single",
       "policy": "llm",
       "priority": "required",
@@ -217,13 +427,13 @@
     }
   ],
   "summary": {
-    "planned_runs": 5,
+    "planned_runs": 12,
     "valid_runs": 0,
     "invalid_runs": 0,
-    "missing_runs": 5,
-    "required_runs": 4,
+    "missing_runs": 12,
+    "required_runs": 7,
     "required_valid": 0,
-    "required_missing_or_invalid": 4,
+    "required_missing_or_invalid": 7,
     "audit_outputs_present": 0,
     "repeat_bundles_present": 0,
     "repeat_outputs_present": 0,

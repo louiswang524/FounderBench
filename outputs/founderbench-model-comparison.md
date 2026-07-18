@@ -10,8 +10,8 @@ Unified model-comparison report that includes deterministic baselines and automa
 | valid_provider_runs | 0 |
 | valid_provider_policies | 0 |
 | valid_repeated_provider_bundles | 0 |
-| provider_candidates | 5 |
-| provider_missing_or_invalid | 5 |
+| provider_candidates | 12 |
+| provider_missing_or_invalid | 12 |
 | all_valid_runs | 4 |
 | paired_comparisons | 3 |
 | provider_paired_comparisons | 0 |
@@ -69,10 +69,17 @@ Each cell reports `solved/5 (average score)`.
 
 | ID | Policy | Family | Status | Runs | Evidence | Avg Score | Solve Rate | Problems |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| openai_hosted_baseline | openai | hosted_llm | missing | 0 |  |  |  | Missing outputs/founderbench-openai.json or outputs/founderbench-openai-repeats.json |
 | deepseek_hosted_baseline | deepseek | hosted_llm | missing | 0 |  |  |  | Missing outputs/founderbench-deepseek.json or outputs/founderbench-deepseek-repeats.json |
 | deepseek_self_consistency_k3 | deepseek_sc | hosted_llm_ablation | missing | 0 |  |  |  | Missing outputs/founderbench-deepseek-sc-k3.json or outputs/founderbench-deepseek-sc-k3-repeats.json |
 | anthropic_hosted_baseline | anthropic | hosted_llm | missing | 0 |  |  |  | Missing outputs/founderbench-anthropic.json or outputs/founderbench-anthropic-repeats.json |
 | gemini_hosted_baseline | gemini | hosted_llm | missing | 0 |  |  |  | Missing outputs/founderbench-gemini.json or outputs/founderbench-gemini-repeats.json |
+| kimi_hosted_baseline | kimi | hosted_llm | missing | 0 |  |  |  | Missing outputs/founderbench-kimi.json or outputs/founderbench-kimi-repeats.json |
+| qwen_hosted_baseline | qwen | hosted_llm | missing | 0 |  |  |  | Missing outputs/founderbench-qwen.json or outputs/founderbench-qwen-repeats.json |
+| mistral_hosted_baseline | mistral | hosted_llm_optional | missing | 0 |  |  |  | Missing outputs/founderbench-mistral.json or outputs/founderbench-mistral-repeats.json |
+| glm_hosted_baseline | glm | hosted_llm_optional | missing | 0 |  |  |  | Missing outputs/founderbench-glm.json or outputs/founderbench-glm-repeats.json |
+| xai_hosted_baseline | xai | hosted_llm_optional | missing | 0 |  |  |  | Missing outputs/founderbench-xai.json or outputs/founderbench-xai-repeats.json |
+| llama_open_weight_baseline | llama | open_weight | missing | 0 |  |  |  | Missing outputs/founderbench-llama.json or outputs/founderbench-llama-repeats.json |
 | local_open_source_baseline | llm | open_source | missing | 0 |  |  |  | Missing outputs/founderbench-local-open-model.json or outputs/founderbench-local-open-model-repeats.json |
 
 ## Claim Rules

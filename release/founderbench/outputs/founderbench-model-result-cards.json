@@ -5,16 +5,23 @@
   "source_files": {
     "deterministic_raw": "outputs\\founderbench-baseline-raw.json",
     "planned_provider_specs": [
+      "outputs/founderbench-openai.json",
       "outputs/founderbench-deepseek.json",
       "outputs/founderbench-deepseek-sc-k3.json",
       "outputs/founderbench-anthropic.json",
       "outputs/founderbench-gemini.json",
+      "outputs/founderbench-kimi.json",
+      "outputs/founderbench-qwen.json",
+      "outputs/founderbench-mistral.json",
+      "outputs/founderbench-glm.json",
+      "outputs/founderbench-xai.json",
+      "outputs/founderbench-llama.json",
       "outputs/founderbench-local-open-model.json"
     ]
   },
   "summary": {
     "deterministic_cards": 4,
-    "provider_candidate_cards": 5,
+    "provider_candidate_cards": 12,
     "valid_provider_cards": 0,
     "hosted_llm_claims_ready": false,
     "open_source_claim_ready": false
@@ -118,6 +125,23 @@
   "provider_cards": [
     {
       "card_type": "planned_provider_run",
+      "id": "openai_hosted_baseline",
+      "policy": "openai",
+      "family": "hosted_llm",
+      "status": "missing",
+      "claim_eligibility": "excluded_until_validated",
+      "evidence_path": "",
+      "evidence_kind": "",
+      "runs": 0,
+      "submission_report_exists": false,
+      "repeat_bundle_report_exists": false,
+      "validation_problems": [
+        "Missing outputs/founderbench-openai.json or outputs/founderbench-openai-repeats.json"
+      ],
+      "paper_use": "Excluded from model-performance claims until raw run or repeat bundle exists and the submission report passes."
+    },
+    {
+      "card_type": "planned_provider_run",
       "id": "deepseek_hosted_baseline",
       "policy": "deepseek",
       "family": "hosted_llm",
@@ -181,6 +205,108 @@
       "repeat_bundle_report_exists": false,
       "validation_problems": [
         "Missing outputs/founderbench-gemini.json or outputs/founderbench-gemini-repeats.json"
+      ],
+      "paper_use": "Excluded from model-performance claims until raw run or repeat bundle exists and the submission report passes."
+    },
+    {
+      "card_type": "planned_provider_run",
+      "id": "kimi_hosted_baseline",
+      "policy": "kimi",
+      "family": "hosted_llm",
+      "status": "missing",
+      "claim_eligibility": "excluded_until_validated",
+      "evidence_path": "",
+      "evidence_kind": "",
+      "runs": 0,
+      "submission_report_exists": false,
+      "repeat_bundle_report_exists": false,
+      "validation_problems": [
+        "Missing outputs/founderbench-kimi.json or outputs/founderbench-kimi-repeats.json"
+      ],
+      "paper_use": "Excluded from model-performance claims until raw run or repeat bundle exists and the submission report passes."
+    },
+    {
+      "card_type": "planned_provider_run",
+      "id": "qwen_hosted_baseline",
+      "policy": "qwen",
+      "family": "hosted_llm",
+      "status": "missing",
+      "claim_eligibility": "excluded_until_validated",
+      "evidence_path": "",
+      "evidence_kind": "",
+      "runs": 0,
+      "submission_report_exists": false,
+      "repeat_bundle_report_exists": false,
+      "validation_problems": [
+        "Missing outputs/founderbench-qwen.json or outputs/founderbench-qwen-repeats.json"
+      ],
+      "paper_use": "Excluded from model-performance claims until raw run or repeat bundle exists and the submission report passes."
+    },
+    {
+      "card_type": "planned_provider_run",
+      "id": "mistral_hosted_baseline",
+      "policy": "mistral",
+      "family": "hosted_llm_optional",
+      "status": "missing",
+      "claim_eligibility": "excluded_until_validated",
+      "evidence_path": "",
+      "evidence_kind": "",
+      "runs": 0,
+      "submission_report_exists": false,
+      "repeat_bundle_report_exists": false,
+      "validation_problems": [
+        "Missing outputs/founderbench-mistral.json or outputs/founderbench-mistral-repeats.json"
+      ],
+      "paper_use": "Excluded from model-performance claims until raw run or repeat bundle exists and the submission report passes."
+    },
+    {
+      "card_type": "planned_provider_run",
+      "id": "glm_hosted_baseline",
+      "policy": "glm",
+      "family": "hosted_llm_optional",
+      "status": "missing",
+      "claim_eligibility": "excluded_until_validated",
+      "evidence_path": "",
+      "evidence_kind": "",
+      "runs": 0,
+      "submission_report_exists": false,
+      "repeat_bundle_report_exists": false,
+      "validation_problems": [
+        "Missing outputs/founderbench-glm.json or outputs/founderbench-glm-repeats.json"
+      ],
+      "paper_use": "Excluded from model-performance claims until raw run or repeat bundle exists and the submission report passes."
+    },
+    {
+      "card_type": "planned_provider_run",
+      "id": "xai_hosted_baseline",
+      "policy": "xai",
+      "family": "hosted_llm_optional",
+      "status": "missing",
+      "claim_eligibility": "excluded_until_validated",
+      "evidence_path": "",
+      "evidence_kind": "",
+      "runs": 0,
+      "submission_report_exists": false,
+      "repeat_bundle_report_exists": false,
+      "validation_problems": [
+        "Missing outputs/founderbench-xai.json or outputs/founderbench-xai-repeats.json"
+      ],
+      "paper_use": "Excluded from model-performance claims until raw run or repeat bundle exists and the submission report passes."
+    },
+    {
+      "card_type": "planned_provider_run",
+      "id": "llama_open_weight_baseline",
+      "policy": "llama",
+      "family": "open_weight",
+      "status": "missing",
+      "claim_eligibility": "excluded_until_validated",
+      "evidence_path": "",
+      "evidence_kind": "",
+      "runs": 0,
+      "submission_report_exists": false,
+      "repeat_bundle_report_exists": false,
+      "validation_problems": [
+        "Missing outputs/founderbench-llama.json or outputs/founderbench-llama-repeats.json"
       ],
       "paper_use": "Excluded from model-performance claims until raw run or repeat bundle exists and the submission report passes."
     },

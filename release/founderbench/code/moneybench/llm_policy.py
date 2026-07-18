@@ -140,16 +140,25 @@ class OpenAICompatibleTaskPolicy(ProviderAuditMixin):
         model: str | None = None,
         temperature: float = 0.2,
         timeout_s: int = 60,
+        provider_name: str | None = None,
+        env_prefix: str = "OPENAI_COMPAT",
+        default_base_url: str | None = None,
+        default_model: str | None = None,
+        api_key_optional: bool = True,
     ):
-        self.base_url = (base_url or os.environ.get("OPENAI_COMPAT_BASE_URL") or "").rstrip("/")
-        self.api_key = api_key or os.environ.get("OPENAI_COMPAT_API_KEY") or os.environ.get("OPENAI_API_KEY")
-        self.model = model or os.environ.get("OPENAI_COMPAT_MODEL")
+        self.provider_name = provider_name or self.provider_name
+        self.env_prefix = env_prefix
+        self.base_url = (base_url or os.environ.get(f"{env_prefix}_BASE_URL") or default_base_url or "").rstrip("/")
+        self.api_key = api_key or os.environ.get(f"{env_prefix}_API_KEY") or (os.environ.get("OPENAI_API_KEY") if env_prefix == "OPENAI_COMPAT" else None)
+        self.model = model or os.environ.get(f"{env_prefix}_MODEL") or default_model
         self.temperature = temperature
         self.timeout_s = timeout_s
         if not self.base_url:
-            raise ValueError("Set OPENAI_COMPAT_BASE_URL, for example http://localhost:8000/v1")
+            raise ValueError(f"Set {env_prefix}_BASE_URL, for example http://localhost:8000/v1")
+        if not api_key_optional and not self.api_key:
+            raise ValueError(f"Set {env_prefix}_API_KEY.")
         if not self.model:
-            raise ValueError("Set OPENAI_COMPAT_MODEL, for example Qwen/Qwen2.5-14B-Instruct")
+            raise ValueError(f"Set {env_prefix}_MODEL, for example Qwen/Qwen2.5-14B-Instruct")
 
     def act_task(self, task: StartupTask, observation: Observation) -> list[Action]:
         self._reset_provider_calls()
@@ -186,6 +195,99 @@ class OpenAICompatibleTaskPolicy(ProviderAuditMixin):
 
     def _prompt(self, task: StartupTask, observation: Observation) -> str:
         return render_task_prompt(task, observation)
+
+
+class OpenAIHostedTaskPolicy(OpenAICompatibleTaskPolicy):
+    provider_name = "openai"
+
+    def __init__(self):
+        super().__init__(
+            provider_name="openai",
+            env_prefix="OPENAI",
+            default_base_url=os.environ.get("OPENAI_BASE_URL") or "https://api.openai.com/v1",
+            default_model="gpt-4.1-mini",
+            api_key_optional=False,
+        )
+
+
+class KimiTaskPolicy(OpenAICompatibleTaskPolicy):
+    provider_name = "kimi"
+
+    def __init__(self):
+        super().__init__(
+            provider_name="kimi",
+            env_prefix="KIMI",
+            default_base_url=os.environ.get("MOONSHOT_BASE_URL") or "https://api.moonshot.ai/v1",
+            default_model=os.environ.get("MOONSHOT_MODEL") or "kimi-latest",
+            api_key=os.environ.get("KIMI_API_KEY") or os.environ.get("MOONSHOT_API_KEY"),
+            api_key_optional=False,
+        )
+
+
+class QwenTaskPolicy(OpenAICompatibleTaskPolicy):
+    provider_name = "qwen"
+
+    def __init__(self):
+        super().__init__(
+            provider_name="qwen",
+            env_prefix="QWEN",
+            default_base_url=os.environ.get("DASHSCOPE_BASE_URL") or "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            default_model=os.environ.get("DASHSCOPE_MODEL") or "qwen-plus",
+            api_key=os.environ.get("QWEN_API_KEY") or os.environ.get("DASHSCOPE_API_KEY"),
+            api_key_optional=False,
+        )
+
+
+class MistralTaskPolicy(OpenAICompatibleTaskPolicy):
+    provider_name = "mistral"
+
+    def __init__(self):
+        super().__init__(
+            provider_name="mistral",
+            env_prefix="MISTRAL",
+            default_base_url="https://api.mistral.ai/v1",
+            default_model="mistral-large-latest",
+            api_key_optional=False,
+        )
+
+
+class LlamaTaskPolicy(OpenAICompatibleTaskPolicy):
+    provider_name = "llama"
+
+    def __init__(self):
+        super().__init__(
+            provider_name="llama",
+            env_prefix="LLAMA",
+            default_model="meta-llama/Llama-3.1-70B-Instruct",
+            api_key_optional=True,
+        )
+
+
+class GLMTaskPolicy(OpenAICompatibleTaskPolicy):
+    provider_name = "glm"
+
+    def __init__(self):
+        super().__init__(
+            provider_name="glm",
+            env_prefix="GLM",
+            default_base_url=os.environ.get("ZAI_BASE_URL") or "https://open.bigmodel.cn/api/paas/v4",
+            default_model=os.environ.get("ZAI_MODEL") or "glm-4-plus",
+            api_key=os.environ.get("GLM_API_KEY") or os.environ.get("ZAI_API_KEY"),
+            api_key_optional=False,
+        )
+
+
+class XAITaskPolicy(OpenAICompatibleTaskPolicy):
+    provider_name = "xai"
+
+    def __init__(self):
+        super().__init__(
+            provider_name="xai",
+            env_prefix="XAI",
+            default_base_url="https://api.x.ai/v1",
+            default_model="grok-3-mini",
+            api_key_optional=False,
+        )
 
 
 def _request_json(url: str, payload: dict[str, Any] | None, headers: dict[str, str], timeout_s: int = 60, method: str | None = None) -> dict[str, Any]:

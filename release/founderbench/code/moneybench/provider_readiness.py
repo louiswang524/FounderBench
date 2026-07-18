@@ -9,6 +9,17 @@ from typing import Any
 
 PROVIDERS: list[dict[str, Any]] = [
     {
+        "policy": "openai",
+        "provider": "OpenAI GPT",
+        "api_key_env": "OPENAI_API_KEY",
+        "model_env": "OPENAI_MODEL",
+        "base_url_env": "OPENAI_BASE_URL",
+        "default_base_url": "https://api.openai.com/v1",
+        "default_model": "gpt-4.1-mini",
+        "output": "outputs/founderbench-openai.json",
+        "audit_output": "outputs/founderbench-openai-audit.json",
+    },
+    {
         "policy": "deepseek",
         "provider": "DeepSeek",
         "api_key_env": "DEEPSEEK_API_KEY",
@@ -46,6 +57,81 @@ PROVIDERS: list[dict[str, Any]] = [
         "audit_output": "outputs/founderbench-gemini-audit.json",
     },
     {
+        "policy": "kimi",
+        "provider": "Moonshot Kimi",
+        "api_key_env": "KIMI_API_KEY",
+        "api_key_aliases": ["MOONSHOT_API_KEY"],
+        "model_env": "KIMI_MODEL",
+        "model_aliases": ["MOONSHOT_MODEL"],
+        "base_url_env": "KIMI_BASE_URL",
+        "base_url_aliases": ["MOONSHOT_BASE_URL"],
+        "default_base_url": "https://api.moonshot.ai/v1",
+        "default_model": "kimi-latest",
+        "output": "outputs/founderbench-kimi.json",
+        "audit_output": "outputs/founderbench-kimi-audit.json",
+    },
+    {
+        "policy": "qwen",
+        "provider": "Alibaba Qwen",
+        "api_key_env": "QWEN_API_KEY",
+        "api_key_aliases": ["DASHSCOPE_API_KEY"],
+        "model_env": "QWEN_MODEL",
+        "model_aliases": ["DASHSCOPE_MODEL"],
+        "base_url_env": "QWEN_BASE_URL",
+        "base_url_aliases": ["DASHSCOPE_BASE_URL"],
+        "default_base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "default_model": "qwen-plus",
+        "output": "outputs/founderbench-qwen.json",
+        "audit_output": "outputs/founderbench-qwen-audit.json",
+    },
+    {
+        "policy": "mistral",
+        "provider": "Mistral",
+        "api_key_env": "MISTRAL_API_KEY",
+        "model_env": "MISTRAL_MODEL",
+        "base_url_env": "MISTRAL_BASE_URL",
+        "default_base_url": "https://api.mistral.ai/v1",
+        "default_model": "mistral-large-latest",
+        "output": "outputs/founderbench-mistral.json",
+        "audit_output": "outputs/founderbench-mistral-audit.json",
+    },
+    {
+        "policy": "glm",
+        "provider": "Z.ai GLM",
+        "api_key_env": "GLM_API_KEY",
+        "api_key_aliases": ["ZAI_API_KEY"],
+        "model_env": "GLM_MODEL",
+        "model_aliases": ["ZAI_MODEL"],
+        "base_url_env": "GLM_BASE_URL",
+        "base_url_aliases": ["ZAI_BASE_URL"],
+        "default_base_url": "https://open.bigmodel.cn/api/paas/v4",
+        "default_model": "glm-4-plus",
+        "output": "outputs/founderbench-glm.json",
+        "audit_output": "outputs/founderbench-glm-audit.json",
+    },
+    {
+        "policy": "xai",
+        "provider": "xAI Grok",
+        "api_key_env": "XAI_API_KEY",
+        "model_env": "XAI_MODEL",
+        "base_url_env": "XAI_BASE_URL",
+        "default_base_url": "https://api.x.ai/v1",
+        "default_model": "grok-3-mini",
+        "output": "outputs/founderbench-xai.json",
+        "audit_output": "outputs/founderbench-xai-audit.json",
+    },
+    {
+        "policy": "llama",
+        "provider": "Llama/Open-weight endpoint",
+        "api_key_env": "LLAMA_API_KEY",
+        "model_env": "LLAMA_MODEL",
+        "base_url_env": "LLAMA_BASE_URL",
+        "default_model": "meta-llama/Llama-3.1-70B-Instruct",
+        "output": "outputs/founderbench-llama.json",
+        "audit_output": "outputs/founderbench-llama-audit.json",
+        "api_key_optional": True,
+    },
+    {
         "policy": "llm",
         "provider": "Local/OpenAI-compatible",
         "api_key_env": "OPENAI_COMPAT_API_KEY",
@@ -63,21 +149,42 @@ def _is_set(name: str) -> bool:
     return bool(os.environ.get(name))
 
 
+def _any_env_set(names: list[str]) -> bool:
+    return any(_is_set(name) for name in names)
+
+
+def _configured_or_default(provider: dict[str, Any], key: str, aliases_key: str, default_key: str) -> str:
+    names = [provider[key], *provider.get(aliases_key, [])]
+    for name in names:
+        value = os.environ.get(name)
+        if value:
+            return value
+    return provider.get(default_key, "")
+
+
 def readiness_matrix() -> dict[str, Any]:
     rows = []
     for provider in PROVIDERS:
-        api_key_ready = provider.get("api_key_optional", False) or _is_set(provider["api_key_env"])
+        api_key_names = [provider["api_key_env"], *provider.get("api_key_aliases", [])]
+        api_key_ready = provider.get("api_key_optional", False) or _any_env_set(api_key_names)
         base_url_ready = True
         if provider.get("base_url_env"):
-            base_url_ready = _is_set(provider["base_url_env"])
-        model = os.environ.get(provider["model_env"]) or provider["default_model"]
+            base_url_names = [provider["base_url_env"], *provider.get("base_url_aliases", [])]
+            base_url_ready = _any_env_set(base_url_names) or bool(provider.get("default_base_url"))
+        model = _configured_or_default(provider, "model_env", "model_aliases", "default_model")
         ready = api_key_ready and base_url_ready
         env_status = {
             provider["api_key_env"]: "set" if _is_set(provider["api_key_env"]) else ("optional" if provider.get("api_key_optional") else "missing"),
             provider["model_env"]: "set" if _is_set(provider["model_env"]) else f"default:{provider['default_model']}",
         }
+        for alias in provider.get("api_key_aliases", []):
+            env_status[alias] = "set" if _is_set(alias) else "alias"
+        for alias in provider.get("model_aliases", []):
+            env_status[alias] = "set" if _is_set(alias) else "alias"
         if provider.get("base_url_env"):
-            env_status[provider["base_url_env"]] = "set" if _is_set(provider["base_url_env"]) else "missing"
+            env_status[provider["base_url_env"]] = "set" if _is_set(provider["base_url_env"]) else f"default:{provider.get('default_base_url', '')}"
+            for alias in provider.get("base_url_aliases", []):
+                env_status[alias] = "set" if _is_set(alias) else "alias"
         for key, default in provider.get("extra_env", {}).items():
             env_status[key] = "set" if _is_set(key) else f"default:{default}"
         rows.append(

@@ -8,10 +8,10 @@ Submission gate status: `not_ready`
 
 | Metric | Value |
 | --- | --- |
-| steps | 18 |
+| steps | 25 |
 | required_steps | 17 |
 | owner_action_steps | 4 |
-| provider_environment_steps | 5 |
+| provider_environment_steps | 12 |
 | claim_alignment_steps | 3 |
 | ready_for_submission | False |
 
@@ -25,10 +25,17 @@ Submission gate status: `not_ready`
 | complete_local_open_source_baseline | required_experiments | evaluator | required | missing | Run at least one local/open-source model via the OpenAI-compatible protocol and validate the submission. |
 | complete_hosted_llm_audit_traces | required_experiments | evaluator | required | missing | Collect redacted audit traces for representative hosted LLM runs. |
 | complete_private_holdout_execution | required_experiments | evaluator | required_for_final_submission | missing | Execute the private holdout protocol on an evaluator-controlled host and report aggregate fields only. |
+| configure_openai | provider_run_readiness | evaluator | recommended | blocked_on_environment | Configure provider environment for OpenAI GPT. |
 | configure_deepseek | provider_run_readiness | evaluator | required | blocked_on_environment | Configure provider environment for DeepSeek. |
 | configure_deepseek_sc | provider_run_readiness | evaluator | recommended | blocked_on_environment | Configure provider environment for DeepSeek self-consistency. |
 | configure_anthropic | provider_run_readiness | evaluator | required | blocked_on_environment | Configure provider environment for Anthropic Claude. |
 | configure_gemini | provider_run_readiness | evaluator | required | blocked_on_environment | Configure provider environment for Google Gemini. |
+| configure_kimi | provider_run_readiness | evaluator | recommended | blocked_on_environment | Configure provider environment for Moonshot Kimi. |
+| configure_qwen | provider_run_readiness | evaluator | recommended | blocked_on_environment | Configure provider environment for Alibaba Qwen. |
+| configure_mistral | provider_run_readiness | evaluator | recommended | blocked_on_environment | Configure provider environment for Mistral. |
+| configure_glm | provider_run_readiness | evaluator | recommended | blocked_on_environment | Configure provider environment for Z.ai GLM. |
+| configure_xai | provider_run_readiness | evaluator | recommended | blocked_on_environment | Configure provider environment for xAI Grok. |
+| configure_llama | provider_run_readiness | evaluator | recommended | blocked_on_environment | Configure provider environment for Llama/Open-weight endpoint. |
 | configure_llm | provider_run_readiness | evaluator | required | blocked_on_environment | Configure provider environment for Local/OpenAI-compatible. |
 | support_claim_hosted_llm_comparison | claim_evidence_alignment | paper_author | required_for_stronger_claim | unsupported_currently | Either collect evidence for `hosted_llm_comparison` or keep paper wording conservative. |
 | support_claim_private_holdout_available | claim_evidence_alignment | paper_author | required_for_stronger_claim | unsupported_currently | Either collect evidence for `private_holdout_available` or keep paper wording conservative. |
@@ -123,6 +130,20 @@ python -m moneybench.resumable_runner --policy <provider> --output ..\..\outputs
 Follow outputs/founderbench-private-holdout-evaluator-protocol.md on evaluator host.
 ```
 
+### configure_openai
+
+- Gate: `provider_run_readiness`
+- Owner: `evaluator`
+- Claim impact: Required before hosted/local LLM comparison claims can be made.
+- Missing inputs/outputs:
+  - `OPENAI_API_KEY`
+- Commands:
+```powershell
+python -m moneybench.resumable_runner --policy openai --output outputs/founderbench-openai.json --resume
+python -m moneybench.resumable_runner --policy openai --output outputs/founderbench-openai-audit.json --resume --audit
+python -m moneybench.submission --input outputs/founderbench-openai.json --report outputs/founderbench-openai-submission-report.md
+```
+
 ### configure_deepseek
 
 - Gate: `provider_run_readiness`
@@ -179,13 +200,95 @@ python -m moneybench.resumable_runner --policy gemini --output outputs/founderbe
 python -m moneybench.submission --input outputs/founderbench-gemini.json --report outputs/founderbench-gemini-submission-report.md
 ```
 
+### configure_kimi
+
+- Gate: `provider_run_readiness`
+- Owner: `evaluator`
+- Claim impact: Required before hosted/local LLM comparison claims can be made.
+- Missing inputs/outputs:
+  - `KIMI_API_KEY`
+- Commands:
+```powershell
+python -m moneybench.resumable_runner --policy kimi --output outputs/founderbench-kimi.json --resume
+python -m moneybench.resumable_runner --policy kimi --output outputs/founderbench-kimi-audit.json --resume --audit
+python -m moneybench.submission --input outputs/founderbench-kimi.json --report outputs/founderbench-kimi-submission-report.md
+```
+
+### configure_qwen
+
+- Gate: `provider_run_readiness`
+- Owner: `evaluator`
+- Claim impact: Required before hosted/local LLM comparison claims can be made.
+- Missing inputs/outputs:
+  - `QWEN_API_KEY`
+- Commands:
+```powershell
+python -m moneybench.resumable_runner --policy qwen --output outputs/founderbench-qwen.json --resume
+python -m moneybench.resumable_runner --policy qwen --output outputs/founderbench-qwen-audit.json --resume --audit
+python -m moneybench.submission --input outputs/founderbench-qwen.json --report outputs/founderbench-qwen-submission-report.md
+```
+
+### configure_mistral
+
+- Gate: `provider_run_readiness`
+- Owner: `evaluator`
+- Claim impact: Required before hosted/local LLM comparison claims can be made.
+- Missing inputs/outputs:
+  - `MISTRAL_API_KEY`
+- Commands:
+```powershell
+python -m moneybench.resumable_runner --policy mistral --output outputs/founderbench-mistral.json --resume
+python -m moneybench.resumable_runner --policy mistral --output outputs/founderbench-mistral-audit.json --resume --audit
+python -m moneybench.submission --input outputs/founderbench-mistral.json --report outputs/founderbench-mistral-submission-report.md
+```
+
+### configure_glm
+
+- Gate: `provider_run_readiness`
+- Owner: `evaluator`
+- Claim impact: Required before hosted/local LLM comparison claims can be made.
+- Missing inputs/outputs:
+  - `GLM_API_KEY`
+- Commands:
+```powershell
+python -m moneybench.resumable_runner --policy glm --output outputs/founderbench-glm.json --resume
+python -m moneybench.resumable_runner --policy glm --output outputs/founderbench-glm-audit.json --resume --audit
+python -m moneybench.submission --input outputs/founderbench-glm.json --report outputs/founderbench-glm-submission-report.md
+```
+
+### configure_xai
+
+- Gate: `provider_run_readiness`
+- Owner: `evaluator`
+- Claim impact: Required before hosted/local LLM comparison claims can be made.
+- Missing inputs/outputs:
+  - `XAI_API_KEY`
+- Commands:
+```powershell
+python -m moneybench.resumable_runner --policy xai --output outputs/founderbench-xai.json --resume
+python -m moneybench.resumable_runner --policy xai --output outputs/founderbench-xai-audit.json --resume --audit
+python -m moneybench.submission --input outputs/founderbench-xai.json --report outputs/founderbench-xai-submission-report.md
+```
+
+### configure_llama
+
+- Gate: `provider_run_readiness`
+- Owner: `evaluator`
+- Claim impact: Required before hosted/local LLM comparison claims can be made.
+- Missing inputs/outputs:
+- Commands:
+```powershell
+python -m moneybench.resumable_runner --policy llama --output outputs/founderbench-llama.json --resume
+python -m moneybench.resumable_runner --policy llama --output outputs/founderbench-llama-audit.json --resume --audit
+python -m moneybench.submission --input outputs/founderbench-llama.json --report outputs/founderbench-llama-submission-report.md
+```
+
 ### configure_llm
 
 - Gate: `provider_run_readiness`
 - Owner: `evaluator`
 - Claim impact: Required before hosted/local LLM comparison claims can be made.
 - Missing inputs/outputs:
-  - `OPENAI_COMPAT_BASE_URL`
 - Commands:
 ```powershell
 python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model.json --resume

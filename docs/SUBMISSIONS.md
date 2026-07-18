@@ -61,3 +61,15 @@ python -m moneybench.local_model health --output outputs/local-health.json
 python -m moneybench.resumable_runner --policy llm --output outputs/local-open-model.json --resume --audit
 ```
 
+Named OpenAI-compatible hosted policies are also available for broader model-family coverage:
+
+```bash
+export KIMI_API_KEY="..."
+python -m moneybench.resumable_runner --policy kimi --output outputs/founderbench-kimi.json --resume --audit
+
+export QWEN_API_KEY="..."
+python -m moneybench.resumable_runner --policy qwen --output outputs/founderbench-qwen.json --resume --audit
+```
+
+FounderBench also defines `openai`, `mistral`, `glm`, `xai`, and `llama` policies. Each uses provider-specific `*_API_KEY`, `*_MODEL`, and when needed `*_BASE_URL` variables; see `.env.example` and `outputs/founderbench-provider-readiness.md`.
+

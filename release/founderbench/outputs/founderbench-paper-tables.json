@@ -8,8 +8,8 @@
   "summary": {
     "deterministic_runs": 4,
     "valid_provider_runs": 0,
-    "provider_candidates": 5,
-    "provider_missing_or_invalid": 5,
+    "provider_candidates": 12,
+    "provider_missing_or_invalid": 12,
     "valid_provider_policies": 0,
     "valid_repeated_provider_bundles": 0
   },
@@ -303,6 +303,26 @@
   ],
   "provider_status": [
     {
+      "id": "openai_hosted_baseline",
+      "policy": "openai",
+      "path": "outputs/founderbench-openai.json",
+      "report": "outputs/founderbench-openai-submission-report.md",
+      "repeat_bundle_path": "outputs/founderbench-openai-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-openai-repeats-submission-report.md",
+      "family": "hosted_llm",
+      "status": "missing",
+      "exists": false,
+      "submission_report_exists": false,
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "evidence_path": "",
+      "evidence_kind": "",
+      "runs": 0,
+      "problems": [
+        "Missing outputs/founderbench-openai.json or outputs/founderbench-openai-repeats.json"
+      ]
+    },
+    {
       "id": "deepseek_hosted_baseline",
       "policy": "deepseek",
       "path": "outputs/founderbench-deepseek.json",
@@ -380,6 +400,126 @@
       "runs": 0,
       "problems": [
         "Missing outputs/founderbench-gemini.json or outputs/founderbench-gemini-repeats.json"
+      ]
+    },
+    {
+      "id": "kimi_hosted_baseline",
+      "policy": "kimi",
+      "path": "outputs/founderbench-kimi.json",
+      "report": "outputs/founderbench-kimi-submission-report.md",
+      "repeat_bundle_path": "outputs/founderbench-kimi-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-kimi-repeats-submission-report.md",
+      "family": "hosted_llm",
+      "status": "missing",
+      "exists": false,
+      "submission_report_exists": false,
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "evidence_path": "",
+      "evidence_kind": "",
+      "runs": 0,
+      "problems": [
+        "Missing outputs/founderbench-kimi.json or outputs/founderbench-kimi-repeats.json"
+      ]
+    },
+    {
+      "id": "qwen_hosted_baseline",
+      "policy": "qwen",
+      "path": "outputs/founderbench-qwen.json",
+      "report": "outputs/founderbench-qwen-submission-report.md",
+      "repeat_bundle_path": "outputs/founderbench-qwen-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-qwen-repeats-submission-report.md",
+      "family": "hosted_llm",
+      "status": "missing",
+      "exists": false,
+      "submission_report_exists": false,
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "evidence_path": "",
+      "evidence_kind": "",
+      "runs": 0,
+      "problems": [
+        "Missing outputs/founderbench-qwen.json or outputs/founderbench-qwen-repeats.json"
+      ]
+    },
+    {
+      "id": "mistral_hosted_baseline",
+      "policy": "mistral",
+      "path": "outputs/founderbench-mistral.json",
+      "report": "outputs/founderbench-mistral-submission-report.md",
+      "repeat_bundle_path": "outputs/founderbench-mistral-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-mistral-repeats-submission-report.md",
+      "family": "hosted_llm_optional",
+      "status": "missing",
+      "exists": false,
+      "submission_report_exists": false,
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "evidence_path": "",
+      "evidence_kind": "",
+      "runs": 0,
+      "problems": [
+        "Missing outputs/founderbench-mistral.json or outputs/founderbench-mistral-repeats.json"
+      ]
+    },
+    {
+      "id": "glm_hosted_baseline",
+      "policy": "glm",
+      "path": "outputs/founderbench-glm.json",
+      "report": "outputs/founderbench-glm-submission-report.md",
+      "repeat_bundle_path": "outputs/founderbench-glm-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-glm-repeats-submission-report.md",
+      "family": "hosted_llm_optional",
+      "status": "missing",
+      "exists": false,
+      "submission_report_exists": false,
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "evidence_path": "",
+      "evidence_kind": "",
+      "runs": 0,
+      "problems": [
+        "Missing outputs/founderbench-glm.json or outputs/founderbench-glm-repeats.json"
+      ]
+    },
+    {
+      "id": "xai_hosted_baseline",
+      "policy": "xai",
+      "path": "outputs/founderbench-xai.json",
+      "report": "outputs/founderbench-xai-submission-report.md",
+      "repeat_bundle_path": "outputs/founderbench-xai-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-xai-repeats-submission-report.md",
+      "family": "hosted_llm_optional",
+      "status": "missing",
+      "exists": false,
+      "submission_report_exists": false,
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "evidence_path": "",
+      "evidence_kind": "",
+      "runs": 0,
+      "problems": [
+        "Missing outputs/founderbench-xai.json or outputs/founderbench-xai-repeats.json"
+      ]
+    },
+    {
+      "id": "llama_open_weight_baseline",
+      "policy": "llama",
+      "path": "outputs/founderbench-llama.json",
+      "report": "outputs/founderbench-llama-submission-report.md",
+      "repeat_bundle_path": "outputs/founderbench-llama-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-llama-repeats-submission-report.md",
+      "family": "open_weight",
+      "status": "missing",
+      "exists": false,
+      "submission_report_exists": false,
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "evidence_path": "",
+      "evidence_kind": "",
+      "runs": 0,
+      "problems": [
+        "Missing outputs/founderbench-llama.json or outputs/founderbench-llama-repeats.json"
       ]
     },
     {

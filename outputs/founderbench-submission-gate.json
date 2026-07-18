@@ -21,7 +21,7 @@
     },
     "provider_readiness": {
       "ready_count": 0,
-      "provider_count": 5
+      "provider_count": 12
     },
     "claim_evidence": {
       "claims": 9,
@@ -62,7 +62,7 @@
       "evidence": [
         "outputs/founderbench-provider-readiness.md"
       ],
-      "blocker": "Only 0/5 provider configurations are ready."
+      "blocker": "Only 0/12 provider configurations are ready."
     },
     {
       "id": "claim_evidence_alignment",

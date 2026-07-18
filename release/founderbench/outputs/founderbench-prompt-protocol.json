@@ -81,6 +81,15 @@
   "prompt_template_sha256": "21cfb19c6ce46b4f74d6d92dc994fca10237b86e166e5b886b5220bb4da15e8b",
   "provider_message_wrappers": [
     {
+      "policy": "openai",
+      "provider": "OpenAI GPT",
+      "default_model": "gpt-4.1-mini",
+      "system_prompt_sha256": "f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91",
+      "user_prompt": "render_task_prompt(task, observation)",
+      "temperature": 0.2,
+      "self_consistency_k": 1
+    },
+    {
       "policy": "deepseek",
       "provider": "DeepSeek",
       "default_model": "deepseek-chat",
@@ -117,6 +126,60 @@
       "self_consistency_k": 1
     },
     {
+      "policy": "kimi",
+      "provider": "Moonshot Kimi",
+      "default_model": "kimi-latest",
+      "system_prompt_sha256": "f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91",
+      "user_prompt": "render_task_prompt(task, observation)",
+      "temperature": 0.2,
+      "self_consistency_k": 1
+    },
+    {
+      "policy": "qwen",
+      "provider": "Alibaba Qwen",
+      "default_model": "qwen-plus",
+      "system_prompt_sha256": "f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91",
+      "user_prompt": "render_task_prompt(task, observation)",
+      "temperature": 0.2,
+      "self_consistency_k": 1
+    },
+    {
+      "policy": "mistral",
+      "provider": "Mistral",
+      "default_model": "mistral-large-latest",
+      "system_prompt_sha256": "f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91",
+      "user_prompt": "render_task_prompt(task, observation)",
+      "temperature": 0.2,
+      "self_consistency_k": 1
+    },
+    {
+      "policy": "glm",
+      "provider": "Z.ai GLM",
+      "default_model": "glm-4-plus",
+      "system_prompt_sha256": "f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91",
+      "user_prompt": "render_task_prompt(task, observation)",
+      "temperature": 0.2,
+      "self_consistency_k": 1
+    },
+    {
+      "policy": "xai",
+      "provider": "xAI Grok",
+      "default_model": "grok-3-mini",
+      "system_prompt_sha256": "f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91",
+      "user_prompt": "render_task_prompt(task, observation)",
+      "temperature": 0.2,
+      "self_consistency_k": 1
+    },
+    {
+      "policy": "llama",
+      "provider": "Llama/Open-weight endpoint",
+      "default_model": "meta-llama/Llama-3.1-70B-Instruct",
+      "system_prompt_sha256": "f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91",
+      "user_prompt": "render_task_prompt(task, observation)",
+      "temperature": 0.2,
+      "self_consistency_k": 1
+    },
+    {
       "policy": "llm",
       "provider": "Local/OpenAI-compatible",
       "default_model": "Qwen/Qwen2.5-7B-Instruct",
@@ -136,5 +199,5 @@
     "The simulator executes structured actions only; natural-language business claims do not affect score.",
     "Public runs report prompt hashes, while hidden-holdout evaluation withholds private task definitions."
   ],
-  "protocol_sha256": "47e02c45953eac9b8a96b5d532d4ce8fd196d216d7acd07c602a08c6490e44b0"
+  "protocol_sha256": "da7872937d1f3dfc0ed055921c3b7e7f00169b8d66bd01779da130f282bf52cb"
 }

@@ -344,11 +344,14 @@ class MoneyBenchTests(unittest.TestCase):
         self.assertEqual(validate_baseline_execution_plan(payload), [])
         self.assertEqual(payload["scope"]["task_count"], 50)
         self.assertGreaterEqual(payload["summary"]["required_runs"], 4)
-        self.assertGreaterEqual(payload["summary"]["hosted_runs"], 3)
-        self.assertEqual(payload["summary"]["local_open_source_runs"], 1)
+        self.assertGreaterEqual(payload["summary"]["hosted_runs"], 8)
+        self.assertGreaterEqual(payload["summary"]["local_open_source_runs"], 1)
         policies = {row["policy"] for row in payload["runs"]}
+        self.assertIn("openai", policies)
         self.assertIn("deepseek", policies)
         self.assertIn("deepseek_sc", policies)
+        self.assertIn("kimi", policies)
+        self.assertIn("qwen", policies)
         self.assertIn("llm", policies)
         self.assertTrue(all("moneybench.submission" in row["validation_command"] for row in payload["runs"]))
 
@@ -366,11 +369,14 @@ class MoneyBenchTests(unittest.TestCase):
     def test_provider_run_status_tracks_planned_and_excluded_evidence(self):
         payload = build_provider_run_status()
         self.assertEqual(validate_provider_run_status(payload), [])
-        self.assertEqual(payload["summary"]["planned_runs"], 5)
-        self.assertEqual(payload["summary"]["required_runs"], 4)
+        self.assertGreaterEqual(payload["summary"]["planned_runs"], 12)
+        self.assertGreaterEqual(payload["summary"]["required_runs"], 7)
         self.assertFalse(payload["summary"]["ready_for_llm_claims"])
         ids = {row["id"] for row in payload["planned_runs"]}
+        self.assertIn("openai_single", ids)
         self.assertIn("deepseek_single", ids)
+        self.assertIn("kimi_single", ids)
+        self.assertIn("qwen_single", ids)
         self.assertIn("local_open_model_single", ids)
         self.assertTrue(all(row["status"] in {"missing", "invalid", "valid"} for row in payload["planned_runs"]))
 
@@ -378,8 +384,8 @@ class MoneyBenchTests(unittest.TestCase):
         payload = build_provider_comparability_audit()
         self.assertEqual(validate_provider_comparability_audit(payload), [])
         self.assertEqual(payload["status"], "protocol_comparability_ready_runs_missing")
-        self.assertEqual(payload["summary"]["planned_runs"], 5)
-        self.assertGreaterEqual(payload["summary"]["main_claim_comparable_required_runs"], 4)
+        self.assertGreaterEqual(payload["summary"]["planned_runs"], 12)
+        self.assertGreaterEqual(payload["summary"]["main_claim_comparable_required_runs"], 7)
         self.assertEqual(payload["summary"]["self_consistency_ablations"], 1)
         self.assertFalse(payload["summary"]["ready_for_hosted_llm_comparison"])
         deepseek_sc = [row for row in payload["run_rows"] if row["policy"] == "deepseek_sc"][0]
@@ -392,7 +398,8 @@ class MoneyBenchTests(unittest.TestCase):
         self.assertEqual(payload["task_count"], 50)
         self.assertEqual(len(payload["action_types"]), 13)
         self.assertEqual(payload["response_contract"]["required_keys"], ["rationale", "actions"])
-        self.assertEqual({row["policy"] for row in payload["provider_message_wrappers"]}, {"deepseek", "deepseek_sc", "anthropic", "gemini", "llm"})
+        policies = {row["policy"] for row in payload["provider_message_wrappers"]}
+        self.assertTrue({"openai", "deepseek", "deepseek_sc", "anthropic", "gemini", "kimi", "qwen", "llm"}.issubset(policies))
         self.assertNotIn("api03", str(payload))
         self.assertNotIn("AQ.", str(payload))
 
@@ -596,13 +603,13 @@ class MoneyBenchTests(unittest.TestCase):
         self.assertFalse(payload["summary"]["hosted_llm_claims_ready"])
         self.assertEqual(len(payload["leaderboard_rows"]), 4)
         self.assertGreaterEqual(payload["summary"]["paired_comparisons"], 3)
-        self.assertEqual(len(payload["provider_status"]), 5)
+        self.assertGreaterEqual(len(payload["provider_status"]), 12)
 
     def test_model_result_cards_keep_provider_claims_excluded_until_validated(self):
         payload = build_model_result_cards()
         self.assertEqual(validate_model_result_cards(payload), [])
         self.assertEqual(payload["summary"]["deterministic_cards"], 4)
-        self.assertEqual(payload["summary"]["provider_candidate_cards"], 5)
+        self.assertGreaterEqual(payload["summary"]["provider_candidate_cards"], 12)
         self.assertEqual(payload["summary"]["valid_provider_cards"], 0)
         self.assertFalse(payload["summary"]["hosted_llm_claims_ready"])
         self.assertTrue(all(card["status"] == "valid" for card in payload["deterministic_cards"]))

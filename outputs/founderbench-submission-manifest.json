@@ -55,14 +55,14 @@
     {
       "path": "outputs/founderbench-model-comparison.md",
       "exists": true,
-      "bytes": 4523,
-      "sha256": "a5313b086efd8bd73639db5a14cd83ceca532b25f051b81dfd1ff27ad1955105"
+      "bytes": 5638,
+      "sha256": "27a48607f4bb20c4bcf47f9f44fa166081f5fe255786006562d2cb521a40d8da"
     },
     {
       "path": "outputs/founderbench-paper-tables.md",
       "exists": true,
-      "bytes": 4510,
-      "sha256": "6a40391f561000485c65044b34cbdb6e8921472e4e5f80dcf020c3fac3b163a0"
+      "bytes": 5625,
+      "sha256": "1d9d663b0cb630a9ef0dd7ea26b2e0664bee813ccd079a12e919021f8b0c92ae"
     },
     {
       "path": "outputs/founderbench-validity-report.md",
@@ -79,26 +79,26 @@
     {
       "path": "outputs/founderbench-submission-gate.md",
       "exists": true,
-      "bytes": 1492,
-      "sha256": "6927b208047e4273aa9d7beccd2317c90f02ee96ce766f04dae6ad5e693d8669"
+      "bytes": 1494,
+      "sha256": "0e9e821f41c3542c12fe0189a3a6edd4bf03b5630743be86db256c3afcce65d5"
     },
     {
       "path": "outputs/founderbench-completion-audit.md",
       "exists": true,
-      "bytes": 8166,
-      "sha256": "3e9db8cbc5f9c1ff271e81efabf3f184072ede879eefca19ca2d69e60ce9ea8d"
+      "bytes": 8168,
+      "sha256": "85a6dad002c53eade8f7b91b240d9c6ceb48fc3f39b6f9ad29898bd1e6532627"
     },
     {
       "path": "outputs/founderbench-reviewer-index.md",
       "exists": true,
-      "bytes": 20471,
-      "sha256": "2ce4bc2f265efa98201d7b4b5b3285c5cb8f3cc468a4cbf2d39ad076b8c62e99"
+      "bytes": 20469,
+      "sha256": "5d2eff30515cec617ddfc43dbe8b1f48ccb9cf95b9eb3952cce785ec531d8ff1"
     },
     {
       "path": "release/founderbench/SHA256SUMS.json",
       "exists": true,
       "bytes": 40818,
-      "sha256": "63db7dd1c4044aa3cd8ea8b4a7260625ad259edbb07ed0eac47bbd856c3eb652"
+      "sha256": "d0a04d982cf82fe169f2561911b2b7a8a129beb7b5b20398f22ec0be67202fce"
     },
     {
       "path": "release/founderbench/BUNDLE-INTEGRITY.md",
@@ -226,7 +226,7 @@
     },
     {
       "gate": "provider_run_readiness",
-      "blocker": "Only 0/5 provider configurations are ready.",
+      "blocker": "Only 0/12 provider configurations are ready.",
       "evidence": [
         "outputs/founderbench-provider-readiness.md"
       ]

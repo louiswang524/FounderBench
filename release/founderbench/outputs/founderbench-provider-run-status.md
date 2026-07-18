@@ -6,13 +6,13 @@ Provider-run status report for current release paper evidence, generated from pl
 
 | Metric | Value |
 | --- | --- |
-| planned_runs | 5 |
+| planned_runs | 12 |
 | valid_runs | 0 |
 | invalid_runs | 0 |
-| missing_runs | 5 |
-| required_runs | 4 |
+| missing_runs | 12 |
+| required_runs | 7 |
 | required_valid | 0 |
-| required_missing_or_invalid | 4 |
+| required_missing_or_invalid | 7 |
 | audit_outputs_present | 0 |
 | repeat_bundles_present | 0 |
 | repeat_outputs_present | 0 |
@@ -23,10 +23,17 @@ Provider-run status report for current release paper evidence, generated from pl
 
 | ID | Policy | Priority | Status | Runs | Tasks | Evidence | Repeat Seeds | Report | Audit | Problems |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| openai_single | openai | required | missing | 0 | 0 |  | 0 | False | False | Missing outputs/founderbench-openai.json or outputs/founderbench-openai-repeats.json |
 | deepseek_single | deepseek | required | missing | 0 | 0 |  | 0 | False | False | Missing outputs/founderbench-deepseek.json or outputs/founderbench-deepseek-repeats.json |
 | deepseek_sc_k3 | deepseek_sc | recommended | missing | 0 | 0 |  | 0 | False | False | Missing outputs/founderbench-deepseek-sc-k3.json or outputs/founderbench-deepseek-sc-k3-repeats.json |
 | anthropic_single | anthropic | required | missing | 0 | 0 |  | 0 | False | False | Missing outputs/founderbench-anthropic.json or outputs/founderbench-anthropic-repeats.json |
 | gemini_single | gemini | required | missing | 0 | 0 |  | 0 | False | False | Missing outputs/founderbench-gemini.json or outputs/founderbench-gemini-repeats.json |
+| kimi_single | kimi | required | missing | 0 | 0 |  | 0 | False | False | Missing outputs/founderbench-kimi.json or outputs/founderbench-kimi-repeats.json |
+| qwen_single | qwen | required | missing | 0 | 0 |  | 0 | False | False | Missing outputs/founderbench-qwen.json or outputs/founderbench-qwen-repeats.json |
+| mistral_single | mistral | recommended | missing | 0 | 0 |  | 0 | False | False | Missing outputs/founderbench-mistral.json or outputs/founderbench-mistral-repeats.json |
+| glm_single | glm | recommended | missing | 0 | 0 |  | 0 | False | False | Missing outputs/founderbench-glm.json or outputs/founderbench-glm-repeats.json |
+| xai_single | xai | recommended | missing | 0 | 0 |  | 0 | False | False | Missing outputs/founderbench-xai.json or outputs/founderbench-xai-repeats.json |
+| llama_endpoint_single | llama | recommended | missing | 0 | 0 |  | 0 | False | False | Missing outputs/founderbench-llama.json or outputs/founderbench-llama-repeats.json |
 | local_open_model_single | llm | required | missing | 0 | 0 |  | 0 | False | False | Missing outputs/founderbench-local-open-model.json or outputs/founderbench-local-open-model-repeats.json |
 
 ## Excluded Provider-Like Files
