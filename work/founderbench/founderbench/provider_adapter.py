@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import urllib.error
 from abc import ABC, abstractmethod
 from json import JSONDecodeError
 
@@ -109,6 +110,8 @@ def parse_provider_response(text: str) -> list[Action]:
 def classify_provider_exception(exc: Exception) -> str:
     if isinstance(exc, ProviderResponseError):
         return exc.category
+    if isinstance(exc, urllib.error.HTTPError) and exc.code == 429:
+        return "provider_rate_limit"
     if isinstance(exc, TimeoutError):
         return "provider_timeout"
     if isinstance(exc, OSError):

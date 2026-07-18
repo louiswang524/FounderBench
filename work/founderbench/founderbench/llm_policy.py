@@ -4,6 +4,8 @@ import json
 import os
 import re
 import hashlib
+import time
+import urllib.error
 import urllib.request
 from dataclasses import asdict
 from typing import Any, get_args
@@ -170,6 +172,8 @@ class OpenAICompatibleTaskPolicy(ProviderAuditMixin):
         )
         self.temperature = temperature
         self.timeout_s = timeout_s
+        self.max_tokens = int(os.environ.get(f"{env_prefix}_MAX_TOKENS") or os.environ.get("PROVIDER_MAX_TOKENS", "900") or 900)
+        self.request_delay_s = float(os.environ.get(f"{env_prefix}_REQUEST_DELAY_S") or os.environ.get("PROVIDER_REQUEST_DELAY_S", "0") or 0)
         if not self.base_url:
             raise ValueError(f"Set {env_prefix}_BASE_URL, for example http://localhost:8000/v1")
         if not api_key_optional and not self.api_key:
@@ -180,9 +184,12 @@ class OpenAICompatibleTaskPolicy(ProviderAuditMixin):
     def act_task(self, task: StartupTask, observation: Observation) -> list[Action]:
         self._reset_provider_calls()
         prompt = self._prompt(task, observation)
+        if self.provider_name == "glm":
+            prompt = f"{prompt}\n\n/nothink"
         payload = {
             "model": self.model,
             "temperature": self.temperature,
+            "max_tokens": self.max_tokens,
             "messages": [
                 {
                     "role": "system",
@@ -191,6 +198,8 @@ class OpenAICompatibleTaskPolicy(ProviderAuditMixin):
                 {"role": "user", "content": prompt},
             ],
         }
+        if self.provider_name == "glm":
+            payload["thinking"] = {"type": "disabled"}
         data = json.dumps(payload).encode("utf-8")
         request = urllib.request.Request(
             f"{self.base_url}/chat/completions",
@@ -201,14 +210,15 @@ class OpenAICompatibleTaskPolicy(ProviderAuditMixin):
             },
             method="POST",
         )
-        import time
         started = time.perf_counter()
+        if self.request_delay_s > 0:
+            time.sleep(self.request_delay_s)
         with urllib.request.urlopen(request, timeout=self.timeout_s) as response:
             body = json.loads(response.read().decode("utf-8"))
         latency_s = time.perf_counter() - started
         content = body["choices"][0]["message"]["content"]
         self._record_provider_call(task=task, observation=observation, prompt=prompt, body=body, content=content, latency_s=latency_s)
-        return parse_provider_response(content)
+        return parse_provider_response(_extract_json_object(content))
 
     def _prompt(self, task: StartupTask, observation: Observation) -> str:
         return render_task_prompt(task, observation)
@@ -309,14 +319,23 @@ class XAITaskPolicy(OpenAICompatibleTaskPolicy):
 
 def _request_json(url: str, payload: dict[str, Any] | None, headers: dict[str, str], timeout_s: int = 60, method: str | None = None) -> dict[str, Any]:
     data = json.dumps(payload).encode("utf-8") if payload is not None else None
-    request = urllib.request.Request(
-        url,
-        data=data,
-        headers=headers,
-        method=method or ("POST" if payload is not None else "GET"),
-    )
-    with urllib.request.urlopen(request, timeout=timeout_s) as response:
-        return json.loads(response.read().decode("utf-8"))
+    attempts = int(os.environ.get("PROVIDER_MAX_RETRIES", "1") or 1)
+    retry_sleep_s = float(os.environ.get("PROVIDER_RETRY_SLEEP_S", "10") or 10)
+    for attempt in range(attempts):
+        request = urllib.request.Request(
+            url,
+            data=data,
+            headers=headers,
+            method=method or ("POST" if payload is not None else "GET"),
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=timeout_s) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except urllib.error.HTTPError as exc:
+            if exc.code != 429 or attempt == attempts - 1:
+                raise
+            time.sleep(retry_sleep_s * (attempt + 1))
+    raise RuntimeError("unreachable provider retry state")
 
 
 def _extract_json_object(text: str) -> str:
@@ -445,7 +464,7 @@ class GeminiTaskPolicy(BaseHostedTaskPolicy):
                         ],
                     }
                 ],
-                "generationConfig": {"temperature": 0.2, "maxOutputTokens": 1600},
+                "generationConfig": {"temperature": 0.2, "maxOutputTokens": 4096, "responseMimeType": "application/json"},
             },
             {"Content-Type": "application/json"},
             timeout_s=self.timeout_s,
