@@ -28,8 +28,8 @@
         {
           "path": "outputs/founderbench-experiment-runbook.md",
           "exists": true,
-          "bytes": 24358,
-          "sha256": "46d7f67a14272012de27e74be4859e63ff1c9ed2a824abf9037bebb2684a1da9"
+          "bytes": 24376,
+          "sha256": "d8b0fb499cf7bc9379355906f79b8b0d008522b4b73eb477c57fccaf57addef6"
         },
         {
           "path": "outputs/founderbench-model-comparison.md",
@@ -99,7 +99,7 @@
           "path": "outputs/founderbench-submission-manifest.md",
           "exists": true,
           "bytes": 5856,
-          "sha256": "bd0dab3cb0e30950113d573e9b3864c8e292cad7de276bed02d577c053c8af74"
+          "sha256": "b6e76438326ae4064e56bd37549d903b12635177e55eeb9663aba5dbde78e05b"
         }
       ]
     },
@@ -226,8 +226,8 @@
         {
           "path": "outputs/founderbench-provider-readiness.md",
           "exists": true,
-          "bytes": 6689,
-          "sha256": "2ad35aa635970b69d3d40ec064018e3060a578731d1530b4ff0781a1a0df8785"
+          "bytes": 6793,
+          "sha256": "fc53abfea9ad30aa02773447f7f5358b64a18e956f18161c67a0e15b677355d8"
         },
         {
           "path": "outputs/founderbench-prompt-protocol.md",

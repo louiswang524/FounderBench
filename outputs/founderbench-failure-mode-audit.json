@@ -68,8 +68,8 @@
         {
           "path": "outputs/founderbench-paper-draft.md",
           "exists": true,
-          "bytes": 27853,
-          "sha256": "4ff55274776eb64cb8890ec6abde3e316065daaab8296c1eddd19f21c85e2c25"
+          "bytes": 27807,
+          "sha256": "5e54834a4d68ec6d435bd8383d3420a22d7cb57ba5c648bc468fa5d273581913"
         }
       ],
       "required_response": "Before submission, run an external citation verification pass over all BibTeX entries and citation contexts."
@@ -85,8 +85,8 @@
         {
           "path": "outputs/founderbench-baseline-raw.json",
           "exists": true,
-          "bytes": 342117,
-          "sha256": "78e1e9797d34bf6ea0a0446a549667a707fdffd916c5a870bde1ea6546c99ec3"
+          "bytes": 342083,
+          "sha256": "c3cd633784859b1a96dfd894995edf677308653d6d4631b061462fc11b9bdf89"
         },
         {
           "path": "outputs/founderbench-paper-tables.md",
@@ -244,7 +244,7 @@
           "path": "outputs/founderbench-submission-manifest.md",
           "exists": true,
           "bytes": 5856,
-          "sha256": "bd0dab3cb0e30950113d573e9b3864c8e292cad7de276bed02d577c053c8af74"
+          "sha256": "b6e76438326ae4064e56bd37549d903b12635177e55eeb9663aba5dbde78e05b"
         }
       ],
       "required_response": "Use conservative benchmark framing until human/expert calibration and hidden holdout evidence justify broader claims."

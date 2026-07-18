@@ -103,9 +103,9 @@
       "provider": "Local/OpenAI-compatible",
       "policy": "llm",
       "priority": "required",
-      "api_key_env": "OPENAI_COMPAT_API_KEY",
-      "model_env": "OPENAI_COMPAT_MODEL",
-      "base_url_env": "OPENAI_COMPAT_BASE_URL",
+      "api_key_env": "FOUNDERBENCH_COMPAT_API_KEY",
+      "model_env": "FOUNDERBENCH_COMPAT_MODEL",
+      "base_url_env": "FOUNDERBENCH_COMPAT_BASE_URL",
       "default_model": "Qwen/Qwen2.5-7B-Instruct"
     }
   ],

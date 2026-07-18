@@ -117,11 +117,13 @@ The planned model roster follows the spirit of YC-Bench-style frontier compariso
 For local/open-source models:
 
 ```bash
-export OPENAI_COMPAT_BASE_URL="http://localhost:8000/v1"
-export OPENAI_COMPAT_MODEL="Qwen/Qwen2.5-7B-Instruct"
+export FOUNDERBENCH_COMPAT_BASE_URL="http://localhost:8000/v1"
+export FOUNDERBENCH_COMPAT_MODEL="Qwen/Qwen2.5-7B-Instruct"
 python -m founderbench.local_model health --output outputs/local-health.json
 python -m founderbench.resumable_runner --policy llm --output outputs/local-open-model.json --resume --audit
 ```
+
+`FOUNDERBENCH_COMPAT_BASE_URL` is the OpenAI-compatible `/v1` root. FounderBench posts benchmark decisions to `${FOUNDERBENCH_COMPAT_BASE_URL}/chat/completions`; the health command checks `${FOUNDERBENCH_COMPAT_BASE_URL}/models`.
 
 ## Submission Format
 

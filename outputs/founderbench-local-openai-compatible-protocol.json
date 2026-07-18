@@ -16,9 +16,19 @@
     "timeout_s": 60
   },
   "environment": {
-    "OPENAI_COMPAT_BASE_URL": "http://localhost:8000/v1",
-    "OPENAI_COMPAT_MODEL": "Qwen/Qwen2.5-7B-Instruct",
-    "OPENAI_COMPAT_API_KEY": "optional for local servers; do not commit real keys"
+    "FOUNDERBENCH_COMPAT_BASE_URL": "http://localhost:8000/v1",
+    "FOUNDERBENCH_COMPAT_MODEL": "Qwen/Qwen2.5-7B-Instruct",
+    "FOUNDERBENCH_COMPAT_API_KEY": "optional for local servers; do not commit real keys"
+  },
+  "legacy_aliases": {
+    "OPENAI_COMPAT_BASE_URL": "accepted as a legacy alias for FOUNDERBENCH_COMPAT_BASE_URL",
+    "OPENAI_COMPAT_MODEL": "accepted as a legacy alias for FOUNDERBENCH_COMPAT_MODEL",
+    "OPENAI_COMPAT_API_KEY": "accepted as a legacy alias for FOUNDERBENCH_COMPAT_API_KEY"
+  },
+  "url_usage": {
+    "base_url": "http://localhost:8000/v1",
+    "chat_completions_url": "http://localhost:8000/v1/chat/completions",
+    "models_url": "http://localhost:8000/v1/models"
   },
   "commands": [
     "python -m founderbench.local_model protocol --output outputs/founderbench-local-openai-compatible-protocol.json",

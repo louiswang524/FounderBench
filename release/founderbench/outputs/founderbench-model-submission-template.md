@@ -68,11 +68,13 @@ python -m founderbench.resumable_runner --policy deepseek --output outputs/provi
 For local/open-source OpenAI-compatible servers:
 
 ```powershell
-$env:OPENAI_COMPAT_BASE_URL="http://localhost:8000/v1"
-$env:OPENAI_COMPAT_MODEL="Qwen/Qwen2.5-7B-Instruct"
+$env:FOUNDERBENCH_COMPAT_BASE_URL="http://localhost:8000/v1"
+$env:FOUNDERBENCH_COMPAT_MODEL="Qwen/Qwen2.5-7B-Instruct"
 python -m founderbench.local_model health --output outputs/local-health.json
 python -m founderbench.resumable_runner --policy llm --output outputs/local-open-model-run.json --resume --audit
 ```
+
+The runner uses `${FOUNDERBENCH_COMPAT_BASE_URL}/chat/completions`; the health command uses `${FOUNDERBENCH_COMPAT_BASE_URL}/models`.
 
 For redacted provider-call records:
 

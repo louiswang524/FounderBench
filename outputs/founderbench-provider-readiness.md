@@ -16,7 +16,7 @@ Ready providers: 0/11
 | Z.ai GLM | `glm` | `glm-4-plus` | False | GLM_API_KEY=missing, GLM_MODEL=default:glm-4-plus, ZAI_API_KEY=alias, ZAI_MODEL=alias, GLM_BASE_URL=default:https://open.bigmodel.cn/api/paas/v4, ZAI_BASE_URL=alias |
 | xAI Grok | `xai` | `grok-3-mini` | False | XAI_API_KEY=missing, XAI_MODEL=default:grok-3-mini, XAI_BASE_URL=default:https://api.x.ai/v1 |
 | Llama/Open-weight endpoint | `llama` | `meta-llama/Llama-3.1-70B-Instruct` | False | LLAMA_API_KEY=optional, LLAMA_MODEL=default:meta-llama/Llama-3.1-70B-Instruct, LLAMA_BASE_URL=default: |
-| Local/OpenAI-compatible | `llm` | `Qwen/Qwen2.5-7B-Instruct` | False | OPENAI_COMPAT_API_KEY=optional, OPENAI_COMPAT_MODEL=default:Qwen/Qwen2.5-7B-Instruct, OPENAI_COMPAT_BASE_URL=default: |
+| Local/OpenAI-compatible | `llm` | `Qwen/Qwen2.5-7B-Instruct` | False | FOUNDERBENCH_COMPAT_API_KEY=optional, FOUNDERBENCH_COMPAT_MODEL=default:Qwen/Qwen2.5-7B-Instruct, OPENAI_COMPAT_API_KEY=alias, OPENAI_COMPAT_MODEL=alias, FOUNDERBENCH_COMPAT_BASE_URL=default:, OPENAI_COMPAT_BASE_URL=alias |
 
 ## Commands
 

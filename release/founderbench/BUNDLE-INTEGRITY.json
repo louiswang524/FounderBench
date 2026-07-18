@@ -319,20 +319,20 @@
     },
     {
       "path": "code/founderbench/llm_policy.py",
-      "expected_sha256": "e5e5014ae9ceda908b7d4a7cff6bc456f28dfc7e3505600cacfc3d1967421ab0",
-      "expected_bytes": 17847,
+      "expected_sha256": "d833247cd20680a164eaf203fe8807d11e2cbcd2e695362cd42690fa3c1a56b5",
+      "expected_bytes": 18353,
       "exists": true,
-      "actual_sha256": "e5e5014ae9ceda908b7d4a7cff6bc456f28dfc7e3505600cacfc3d1967421ab0",
-      "actual_bytes": 17847,
+      "actual_sha256": "d833247cd20680a164eaf203fe8807d11e2cbcd2e695362cd42690fa3c1a56b5",
+      "actual_bytes": 18353,
       "status": "pass"
     },
     {
       "path": "code/founderbench/local_model.py",
-      "expected_sha256": "2a54ee41b0462f49658919b06c155a8151e717e6f88da1b3ee8d15194f6ede1a",
-      "expected_bytes": 6088,
+      "expected_sha256": "c2192258bdab95991c8f8ff7217297390821b1a8373e28114b413d4edc59da09",
+      "expected_bytes": 7219,
       "exists": true,
-      "actual_sha256": "2a54ee41b0462f49658919b06c155a8151e717e6f88da1b3ee8d15194f6ede1a",
-      "actual_bytes": 6088,
+      "actual_sha256": "c2192258bdab95991c8f8ff7217297390821b1a8373e28114b413d4edc59da09",
+      "actual_bytes": 7219,
       "status": "pass"
     },
     {
@@ -481,11 +481,11 @@
     },
     {
       "path": "code/founderbench/provider_readiness.py",
-      "expected_sha256": "a7e86abe4ab74536ff14b8c5c43f64aaa7c7cc0782d39c2eec63da2a9653b426",
-      "expected_bytes": 10337,
+      "expected_sha256": "cb2008c121f722eda233189a78d24119ca5bb497c74dc8cb40826908ef3392a0",
+      "expected_bytes": 10508,
       "exists": true,
-      "actual_sha256": "a7e86abe4ab74536ff14b8c5c43f64aaa7c7cc0782d39c2eec63da2a9653b426",
-      "actual_bytes": 10337,
+      "actual_sha256": "cb2008c121f722eda233189a78d24119ca5bb497c74dc8cb40826908ef3392a0",
+      "actual_bytes": 10508,
       "status": "pass"
     },
     {
@@ -553,11 +553,11 @@
     },
     {
       "path": "code/founderbench/reproducibility_manifest.py",
-      "expected_sha256": "29848edeba3c696eebf1597454bf29d0c3a4536921f830741a13a7a8bc3a2428",
-      "expected_bytes": 17135,
+      "expected_sha256": "38a34ee414bcbcfa903d6f4c73655848f1297558128df3f9809f0b8df206c47c",
+      "expected_bytes": 17165,
       "exists": true,
-      "actual_sha256": "29848edeba3c696eebf1597454bf29d0c3a4536921f830741a13a7a8bc3a2428",
-      "actual_bytes": 17135,
+      "actual_sha256": "38a34ee414bcbcfa903d6f4c73655848f1297558128df3f9809f0b8df206c47c",
+      "actual_bytes": 17165,
       "status": "pass"
     },
     {
@@ -814,11 +814,11 @@
     },
     {
       "path": "code/README.md",
-      "expected_sha256": "06da718c6f2e15570dfc83d2d0dc965f8f6fc3e1ff2faaf4d3bf055f4dc4c55c",
-      "expected_bytes": 20687,
+      "expected_sha256": "e33581112e626d6d9ddbde84a0d16a7734cb8c867592888bbf484a3441480a9f",
+      "expected_bytes": 20930,
       "exists": true,
-      "actual_sha256": "06da718c6f2e15570dfc83d2d0dc965f8f6fc3e1ff2faaf4d3bf055f4dc4c55c",
-      "actual_bytes": 20687,
+      "actual_sha256": "e33581112e626d6d9ddbde84a0d16a7734cb8c867592888bbf484a3441480a9f",
+      "actual_bytes": 20930,
       "status": "pass"
     },
     {
@@ -850,11 +850,11 @@
     },
     {
       "path": "outputs/founderbench-action-ablation.json",
-      "expected_sha256": "2e39651c487af8ed2951ac24cc476bbf3c0f37bbbd37502cce41c5bc069aaea4",
-      "expected_bytes": 643468,
+      "expected_sha256": "0122ae9d8c41b52b6edd9b0fa787420204d1d71f42bb38d8ad602358678edbd7",
+      "expected_bytes": 643447,
       "exists": true,
-      "actual_sha256": "2e39651c487af8ed2951ac24cc476bbf3c0f37bbbd37502cce41c5bc069aaea4",
-      "actual_bytes": 643468,
+      "actual_sha256": "0122ae9d8c41b52b6edd9b0fa787420204d1d71f42bb38d8ad602358678edbd7",
+      "actual_bytes": 643447,
       "status": "pass"
     },
     {
@@ -895,11 +895,11 @@
     },
     {
       "path": "outputs/founderbench-baseline-execution-plan.json",
-      "expected_sha256": "03c7613901d4f6132ab7897d05fc1fe53e159f969c43626362cf07b3afb78b64",
-      "expected_bytes": 27938,
+      "expected_sha256": "ce0e59e6d1861c438865f9077403bdc5304842ab270a516738d6cc497121e4bc",
+      "expected_bytes": 27956,
       "exists": true,
-      "actual_sha256": "03c7613901d4f6132ab7897d05fc1fe53e159f969c43626362cf07b3afb78b64",
-      "actual_bytes": 27938,
+      "actual_sha256": "ce0e59e6d1861c438865f9077403bdc5304842ab270a516738d6cc497121e4bc",
+      "actual_bytes": 27956,
       "status": "pass"
     },
     {
@@ -913,20 +913,20 @@
     },
     {
       "path": "outputs/founderbench-baseline-leaderboard.json",
-      "expected_sha256": "72a8feb60588e6681ed8a71382b3fd9e4392c593f4a64f789a295d283c9f6adf",
-      "expected_bytes": 2653,
+      "expected_sha256": "b3ca327f9546ec5c7bcbd43e3547ab5e7001d397d52fe6efec1199cd33fd08ad",
+      "expected_bytes": 2652,
       "exists": true,
-      "actual_sha256": "72a8feb60588e6681ed8a71382b3fd9e4392c593f4a64f789a295d283c9f6adf",
-      "actual_bytes": 2653,
+      "actual_sha256": "b3ca327f9546ec5c7bcbd43e3547ab5e7001d397d52fe6efec1199cd33fd08ad",
+      "actual_bytes": 2652,
       "status": "pass"
     },
     {
       "path": "outputs/founderbench-baseline-raw.json",
-      "expected_sha256": "78e1e9797d34bf6ea0a0446a549667a707fdffd916c5a870bde1ea6546c99ec3",
-      "expected_bytes": 342117,
+      "expected_sha256": "c3cd633784859b1a96dfd894995edf677308653d6d4631b061462fc11b9bdf89",
+      "expected_bytes": 342083,
       "exists": true,
-      "actual_sha256": "78e1e9797d34bf6ea0a0446a549667a707fdffd916c5a870bde1ea6546c99ec3",
-      "actual_bytes": 342117,
+      "actual_sha256": "c3cd633784859b1a96dfd894995edf677308653d6d4631b061462fc11b9bdf89",
+      "actual_bytes": 342083,
       "status": "pass"
     },
     {
@@ -976,10 +976,10 @@
     },
     {
       "path": "outputs/founderbench-completion-audit.json",
-      "expected_sha256": "07d9da99e6c056077b668602e9374b7ae36dadb34b7d058502d0c23262f5ee4f",
+      "expected_sha256": "e79b4a29d3b728a087e99ff3adca7c2815a70d09deeea1c1083e4afc71ba1571",
       "expected_bytes": 15327,
       "exists": true,
-      "actual_sha256": "07d9da99e6c056077b668602e9374b7ae36dadb34b7d058502d0c23262f5ee4f",
+      "actual_sha256": "e79b4a29d3b728a087e99ff3adca7c2815a70d09deeea1c1083e4afc71ba1571",
       "actual_bytes": 15327,
       "status": "pass"
     },
@@ -1102,10 +1102,10 @@
     },
     {
       "path": "outputs/founderbench-experiment-matrix.json",
-      "expected_sha256": "d074b37822bb8084130967fa10f7ef88c8419c453b0974130bad72d2c209b45d",
+      "expected_sha256": "e3ece804740cfe6a049d7ce03f34df49d8dfc1fdfc9715760f206936d81ca7e8",
       "expected_bytes": 14076,
       "exists": true,
-      "actual_sha256": "d074b37822bb8084130967fa10f7ef88c8419c453b0974130bad72d2c209b45d",
+      "actual_sha256": "e3ece804740cfe6a049d7ce03f34df49d8dfc1fdfc9715760f206936d81ca7e8",
       "actual_bytes": 14076,
       "status": "pass"
     },
@@ -1120,28 +1120,28 @@
     },
     {
       "path": "outputs/founderbench-experiment-runbook.json",
-      "expected_sha256": "88bcbd1cf2d54e978e056ee579b3d3b404017a691199ca856df5a3d644aa4ed1",
-      "expected_bytes": 28926,
+      "expected_sha256": "504a8e8f5bc5797441ce5d94cb202896bf179e1a96ef02cd3753568f0a2ccbfa",
+      "expected_bytes": 28944,
       "exists": true,
-      "actual_sha256": "88bcbd1cf2d54e978e056ee579b3d3b404017a691199ca856df5a3d644aa4ed1",
-      "actual_bytes": 28926,
+      "actual_sha256": "504a8e8f5bc5797441ce5d94cb202896bf179e1a96ef02cd3753568f0a2ccbfa",
+      "actual_bytes": 28944,
       "status": "pass"
     },
     {
       "path": "outputs/founderbench-experiment-runbook.md",
-      "expected_sha256": "46d7f67a14272012de27e74be4859e63ff1c9ed2a824abf9037bebb2684a1da9",
-      "expected_bytes": 24358,
+      "expected_sha256": "d8b0fb499cf7bc9379355906f79b8b0d008522b4b73eb477c57fccaf57addef6",
+      "expected_bytes": 24376,
       "exists": true,
-      "actual_sha256": "46d7f67a14272012de27e74be4859e63ff1c9ed2a824abf9037bebb2684a1da9",
-      "actual_bytes": 24358,
+      "actual_sha256": "d8b0fb499cf7bc9379355906f79b8b0d008522b4b73eb477c57fccaf57addef6",
+      "actual_bytes": 24376,
       "status": "pass"
     },
     {
       "path": "outputs/founderbench-failure-mode-audit.json",
-      "expected_sha256": "8949b97b165abe0ec206a12b1e19e0ac2f05fdfd46ad19b9c6d3a5fdbda40086",
+      "expected_sha256": "02975473330bdab9f300c77fbdf1e6e703787cada481c0938472a946ecd91d45",
       "expected_bytes": 11463,
       "exists": true,
-      "actual_sha256": "8949b97b165abe0ec206a12b1e19e0ac2f05fdfd46ad19b9c6d3a5fdbda40086",
+      "actual_sha256": "02975473330bdab9f300c77fbdf1e6e703787cada481c0938472a946ecd91d45",
       "actual_bytes": 11463,
       "status": "pass"
     },
@@ -1291,20 +1291,20 @@
     },
     {
       "path": "outputs/founderbench-local-openai-compatible-protocol.json",
-      "expected_sha256": "36e94ab04e03269c89242c8818f47b5c293a5a38342a5e93064bb84004f29dae",
-      "expected_bytes": 1575,
+      "expected_sha256": "82e1daf0efd075ae7620476e43b1b889767fa40f59966f50d0e3eb5bc8cd20b4",
+      "expected_bytes": 2091,
       "exists": true,
-      "actual_sha256": "36e94ab04e03269c89242c8818f47b5c293a5a38342a5e93064bb84004f29dae",
-      "actual_bytes": 1575,
+      "actual_sha256": "82e1daf0efd075ae7620476e43b1b889767fa40f59966f50d0e3eb5bc8cd20b4",
+      "actual_bytes": 2091,
       "status": "pass"
     },
     {
       "path": "outputs/founderbench-local-openai-compatible-protocol.md",
-      "expected_sha256": "cf2638124ec98db5e0ca076a42fef4883d7caca9f325092ce07579a06d5cd3f0",
-      "expected_bytes": 1171,
+      "expected_sha256": "5f9d09d6eb4394a56cf931e8e32c515b6c15a3f13aa27febd3fc6475a21a1f7b",
+      "expected_bytes": 1477,
       "exists": true,
-      "actual_sha256": "cf2638124ec98db5e0ca076a42fef4883d7caca9f325092ce07579a06d5cd3f0",
-      "actual_bytes": 1171,
+      "actual_sha256": "5f9d09d6eb4394a56cf931e8e32c515b6c15a3f13aa27febd3fc6475a21a1f7b",
+      "actual_bytes": 1477,
       "status": "pass"
     },
     {
@@ -1408,11 +1408,11 @@
     },
     {
       "path": "outputs/founderbench-model-submission-template.md",
-      "expected_sha256": "7b49f72efccc2584c036e555bd4dbf017ab7023d2a8129fa05509efca969c295",
-      "expected_bytes": 4207,
+      "expected_sha256": "534e1d5ae0052ef5cfbe8bc8e3ab7be47b8f2712ee28a0c981cd8c353ad13304",
+      "expected_bytes": 4348,
       "exists": true,
-      "actual_sha256": "7b49f72efccc2584c036e555bd4dbf017ab7023d2a8129fa05509efca969c295",
-      "actual_bytes": 4207,
+      "actual_sha256": "534e1d5ae0052ef5cfbe8bc8e3ab7be47b8f2712ee28a0c981cd8c353ad13304",
+      "actual_bytes": 4348,
       "status": "pass"
     },
     {
@@ -1453,10 +1453,10 @@
     },
     {
       "path": "outputs/founderbench-paper-evidence-map.json",
-      "expected_sha256": "24b36efb77f896869f4a9336bffc66669ce8a4414c36153bb0fb470620575d0c",
+      "expected_sha256": "0ff354d6ac6941be01b3966338dd99e59dffa46a51ad8132fd10772a0004de97",
       "expected_bytes": 17081,
       "exists": true,
-      "actual_sha256": "24b36efb77f896869f4a9336bffc66669ce8a4414c36153bb0fb470620575d0c",
+      "actual_sha256": "0ff354d6ac6941be01b3966338dd99e59dffa46a51ad8132fd10772a0004de97",
       "actual_bytes": 17081,
       "status": "pass"
     },
@@ -1552,11 +1552,11 @@
     },
     {
       "path": "outputs/founderbench-private-holdout-smoke.json",
-      "expected_sha256": "47cbcc0d9df19965fc02f5a5557cd739d937ae66a4181ea7a549138bc727d7ab",
-      "expected_bytes": 1782,
+      "expected_sha256": "e75d90570c7ea3c59417903f44d0791e6eb2cadc34f9b3410e9e222014c773fa",
+      "expected_bytes": 1779,
       "exists": true,
-      "actual_sha256": "47cbcc0d9df19965fc02f5a5557cd739d937ae66a4181ea7a549138bc727d7ab",
-      "actual_bytes": 1782,
+      "actual_sha256": "e75d90570c7ea3c59417903f44d0791e6eb2cadc34f9b3410e9e222014c773fa",
+      "actual_bytes": 1779,
       "status": "pass"
     },
     {
@@ -1624,20 +1624,20 @@
     },
     {
       "path": "outputs/founderbench-provider-readiness.json",
-      "expected_sha256": "68e5c29cdc8b6ffbea57d2021c59607046e08288b4fb4da8e77a01b986b6b206",
-      "expected_bytes": 9082,
+      "expected_sha256": "6b34022993bb4e2698840fe3d41b2806054ae56ee09c5edcc28dd27cab69b597",
+      "expected_bytes": 9228,
       "exists": true,
-      "actual_sha256": "68e5c29cdc8b6ffbea57d2021c59607046e08288b4fb4da8e77a01b986b6b206",
-      "actual_bytes": 9082,
+      "actual_sha256": "6b34022993bb4e2698840fe3d41b2806054ae56ee09c5edcc28dd27cab69b597",
+      "actual_bytes": 9228,
       "status": "pass"
     },
     {
       "path": "outputs/founderbench-provider-readiness.md",
-      "expected_sha256": "2ad35aa635970b69d3d40ec064018e3060a578731d1530b4ff0781a1a0df8785",
-      "expected_bytes": 6689,
+      "expected_sha256": "fc53abfea9ad30aa02773447f7f5358b64a18e956f18161c67a0e15b677355d8",
+      "expected_bytes": 6793,
       "exists": true,
-      "actual_sha256": "2ad35aa635970b69d3d40ec064018e3060a578731d1530b4ff0781a1a0df8785",
-      "actual_bytes": 6689,
+      "actual_sha256": "fc53abfea9ad30aa02773447f7f5358b64a18e956f18161c67a0e15b677355d8",
+      "actual_bytes": 6793,
       "status": "pass"
     },
     {
@@ -1660,29 +1660,29 @@
     },
     {
       "path": "outputs/founderbench-publication-audit.json",
-      "expected_sha256": "a564e6ca97a0db23cb480288c03dbc1db086b20d50d95a03885a4f8fa8eefa9a",
+      "expected_sha256": "593a299b6d4da04f95274b17ac16f2c6f86f228b5897e9360e7da38d713c22ac",
       "expected_bytes": 44290,
       "exists": true,
-      "actual_sha256": "a564e6ca97a0db23cb480288c03dbc1db086b20d50d95a03885a4f8fa8eefa9a",
+      "actual_sha256": "593a299b6d4da04f95274b17ac16f2c6f86f228b5897e9360e7da38d713c22ac",
       "actual_bytes": 44290,
       "status": "pass"
     },
     {
       "path": "outputs/founderbench-publication-audit.md",
-      "expected_sha256": "be99929443a2d433e012b3aa9f19e18ad0aa6db962216f160d2217b1597ed541",
+      "expected_sha256": "cad6a9fe0a9b8d71b2939498ad5606049903c7a8418337c88435a9608fb5a9fe",
       "expected_bytes": 15329,
       "exists": true,
-      "actual_sha256": "be99929443a2d433e012b3aa9f19e18ad0aa6db962216f160d2217b1597ed541",
+      "actual_sha256": "cad6a9fe0a9b8d71b2939498ad5606049903c7a8418337c88435a9608fb5a9fe",
       "actual_bytes": 15329,
       "status": "pass"
     },
     {
       "path": "outputs/founderbench-qualitative-traces.json",
-      "expected_sha256": "2b8f9d2475f7cd4dc0b5fc7fbb7d10e33aeee3d1764432c321d4fa53b29aad25",
-      "expected_bytes": 27316,
+      "expected_sha256": "871ab65a406d11780a483190e03511ce17adbd507e53f976f28427d531a57228",
+      "expected_bytes": 27313,
       "exists": true,
-      "actual_sha256": "2b8f9d2475f7cd4dc0b5fc7fbb7d10e33aeee3d1764432c321d4fa53b29aad25",
-      "actual_bytes": 27316,
+      "actual_sha256": "871ab65a406d11780a483190e03511ce17adbd507e53f976f28427d531a57228",
+      "actual_bytes": 27313,
       "status": "pass"
     },
     {
@@ -1696,11 +1696,11 @@
     },
     {
       "path": "outputs/founderbench-random-repeats.json",
-      "expected_sha256": "88f1e702df899936b589ac2fb1c3750126ebb7f619f83f5db8947b5410001e3e",
-      "expected_bytes": 454477,
+      "expected_sha256": "9a7dfcb3cd6dff914de49ac5ec8ec0c2d3c6beeb9aeb01a6adc32c6fb840f847",
+      "expected_bytes": 454402,
       "exists": true,
-      "actual_sha256": "88f1e702df899936b589ac2fb1c3750126ebb7f619f83f5db8947b5410001e3e",
-      "actual_bytes": 454477,
+      "actual_sha256": "9a7dfcb3cd6dff914de49ac5ec8ec0c2d3c6beeb9aeb01a6adc32c6fb840f847",
+      "actual_bytes": 454402,
       "status": "pass"
     },
     {
@@ -1750,29 +1750,29 @@
     },
     {
       "path": "outputs/founderbench-reproducibility-manifest.json",
-      "expected_sha256": "5434f758305f4328bf0681ad5e1b7cd939047b02c0e6d3a338301db84a979c38",
-      "expected_bytes": 38540,
+      "expected_sha256": "6eb093c6091ace95fc14571e6ef4d16d234279d6d40b6409990eaca010be9fbf",
+      "expected_bytes": 38607,
       "exists": true,
-      "actual_sha256": "5434f758305f4328bf0681ad5e1b7cd939047b02c0e6d3a338301db84a979c38",
-      "actual_bytes": 38540,
+      "actual_sha256": "6eb093c6091ace95fc14571e6ef4d16d234279d6d40b6409990eaca010be9fbf",
+      "actual_bytes": 38607,
       "status": "pass"
     },
     {
       "path": "outputs/founderbench-reproducibility-manifest.md",
-      "expected_sha256": "c98d68ca33cb590f7489f6285a2a8ad0ef6a0736bc030025681f386c1d139a92",
+      "expected_sha256": "1b3dc7e23a7c8487bca6106fc4722405fd995e3de94aa8df5ff56b17f899627e",
       "expected_bytes": 24840,
       "exists": true,
-      "actual_sha256": "c98d68ca33cb590f7489f6285a2a8ad0ef6a0736bc030025681f386c1d139a92",
+      "actual_sha256": "1b3dc7e23a7c8487bca6106fc4722405fd995e3de94aa8df5ff56b17f899627e",
       "actual_bytes": 24840,
       "status": "pass"
     },
     {
       "path": "outputs/founderbench-reproduction-guide.md",
-      "expected_sha256": "7bfe452d0ba421eabfd40447a26fe576f0185ba7786f2d9007ea0310691ef703",
-      "expected_bytes": 7323,
+      "expected_sha256": "c890a64ac0c6a634e0bb7c7eb12630d7b0a61a68f73f820296ac4b58ad7caf06",
+      "expected_bytes": 7523,
       "exists": true,
-      "actual_sha256": "7bfe452d0ba421eabfd40447a26fe576f0185ba7786f2d9007ea0310691ef703",
-      "actual_bytes": 7323,
+      "actual_sha256": "c890a64ac0c6a634e0bb7c7eb12630d7b0a61a68f73f820296ac4b58ad7caf06",
+      "actual_bytes": 7523,
       "status": "pass"
     },
     {
@@ -1813,28 +1813,28 @@
     },
     {
       "path": "outputs/founderbench-reviewer-index.json",
-      "expected_sha256": "6369f540a1172390fe3195f22e5fd8a5332f06cea038919d4f35f95228ff206e",
+      "expected_sha256": "f35b25d2be697bde32f2e96725d34583340a35e5aeafb4ae5c6d93a20c53394c",
       "expected_bytes": 35692,
       "exists": true,
-      "actual_sha256": "6369f540a1172390fe3195f22e5fd8a5332f06cea038919d4f35f95228ff206e",
+      "actual_sha256": "f35b25d2be697bde32f2e96725d34583340a35e5aeafb4ae5c6d93a20c53394c",
       "actual_bytes": 35692,
       "status": "pass"
     },
     {
       "path": "outputs/founderbench-reviewer-index.md",
-      "expected_sha256": "b149ce4a4ca759806363d139328aafd5b48413ef239ca98c6234f7e2b1959496",
+      "expected_sha256": "4d5b833043c5596fc196bfd97373bb40df1daeeda296f8bc445b43f166847fb5",
       "expected_bytes": 20469,
       "exists": true,
-      "actual_sha256": "b149ce4a4ca759806363d139328aafd5b48413ef239ca98c6234f7e2b1959496",
+      "actual_sha256": "4d5b833043c5596fc196bfd97373bb40df1daeeda296f8bc445b43f166847fb5",
       "actual_bytes": 20469,
       "status": "pass"
     },
     {
       "path": "outputs/founderbench-reviewer-risk-audit.json",
-      "expected_sha256": "90a4489f34ca959a514ed321ac6cf621ab35e929639edff88604a145b93d1ce2",
+      "expected_sha256": "23b7861b8632016982f90d697e84d0bb870f68d4a7c2ceb20d55b46a759ef3a5",
       "expected_bytes": 13320,
       "exists": true,
-      "actual_sha256": "90a4489f34ca959a514ed321ac6cf621ab35e929639edff88604a145b93d1ce2",
+      "actual_sha256": "23b7861b8632016982f90d697e84d0bb870f68d4a7c2ceb20d55b46a759ef3a5",
       "actual_bytes": 13320,
       "status": "pass"
     },
@@ -1993,19 +1993,19 @@
     },
     {
       "path": "outputs/founderbench-submission-manifest.json",
-      "expected_sha256": "be722f8fda90ad77b1867f0fdc8a72c6a4738b35c8f55fadd02f498fc8e8a05f",
+      "expected_sha256": "d6a360d24a61e5abec3340d3c7ef8f4066aea2b26639d749561b8336cd8da244",
       "expected_bytes": 9530,
       "exists": true,
-      "actual_sha256": "be722f8fda90ad77b1867f0fdc8a72c6a4738b35c8f55fadd02f498fc8e8a05f",
+      "actual_sha256": "d6a360d24a61e5abec3340d3c7ef8f4066aea2b26639d749561b8336cd8da244",
       "actual_bytes": 9530,
       "status": "pass"
     },
     {
       "path": "outputs/founderbench-submission-manifest.md",
-      "expected_sha256": "bd0dab3cb0e30950113d573e9b3864c8e292cad7de276bed02d577c053c8af74",
+      "expected_sha256": "b6e76438326ae4064e56bd37549d903b12635177e55eeb9663aba5dbde78e05b",
       "expected_bytes": 5856,
       "exists": true,
-      "actual_sha256": "bd0dab3cb0e30950113d573e9b3864c8e292cad7de276bed02d577c053c8af74",
+      "actual_sha256": "b6e76438326ae4064e56bd37549d903b12635177e55eeb9663aba5dbde78e05b",
       "actual_bytes": 5856,
       "status": "pass"
     },

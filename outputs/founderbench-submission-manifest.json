@@ -91,14 +91,14 @@
     {
       "path": "outputs/founderbench-reviewer-index.md",
       "exists": true,
-      "bytes": 20506,
-      "sha256": "40edadcf8721fa3075f48d09a43f3ee4123567ff242045c76852db5bfba9a736"
+      "bytes": 20469,
+      "sha256": "58cd7cdec6b994c5780b0a64f57662bf8a883cf5de6ce53cdaba7f7351143a78"
     },
     {
       "path": "release/founderbench/SHA256SUMS.json",
       "exists": true,
-      "bytes": 40996,
-      "sha256": "e78614c7e5a39404ce5dad868a065fbafe5f698ff5c18a43a1622a0ed8c55408"
+      "bytes": 40995,
+      "sha256": "e60272d5b377e86664f41cd30ad512110ed92a28b7530a6f5eb1e9848d9ca7c1"
     },
     {
       "path": "release/founderbench/BUNDLE-INTEGRITY.md",

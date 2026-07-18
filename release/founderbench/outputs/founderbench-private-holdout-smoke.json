@@ -22,7 +22,7 @@
     "private_invalid_actions": 0,
     "private_over_budget_decisions": 0,
     "private_estimated_provider_cost_usd": 0.0,
-    "private_decision_latency_s": 0.0002,
+    "private_decision_latency_s": 0.0,
     "provider_error_categories": {},
     "fingerprint_manifest_sha256": "79ccf170547cfb8e1a7c9f181e2a3498fc29c3b76fd1ef1ea941bb2d88fb9047",
     "secret_values_recorded": false,

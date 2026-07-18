@@ -11,7 +11,7 @@ This generated manifest records the source/output hashes and reproduction comman
 | Platform | Windows-11-10.0.26200-SP0 |
 | Machine | AMD64 |
 | Working directory | C:\Users\louis\Documents\Codex\2026-07-14\use\work\founderbench |
-| Git commit | c5bde939e2970484ff4c2024f134ba63af044e04 |
+| Git commit | b7cd217866bda332762a940f2abc9ecef2e0a038 |
 | Secret values recorded | False |
 
 ## Commands
@@ -56,7 +56,7 @@ This generated manifest records the source/output hashes and reproduction comman
 | work/founderbench/founderbench/task_revision_ledger.py | True | 10220 | feb20a522e90a8c685f4c82cfb2ace89bdc989afeb2d3b3a5ac7ec1c40dc21c1 |
 | work/founderbench/founderbench/policies.py | True | 17055 | a3474fbf6de7c1b5da4d440ff90b1945504bf9a32148d80eea38ce6d9dfda223 |
 | work/founderbench/founderbench/difficulty_calibration.py | True | 12235 | c136f65d8600085765bccc579bc42ea4179b68922a21cfb08f9e677a46539253 |
-| work/founderbench/founderbench/llm_policy.py | True | 17847 | e5e5014ae9ceda908b7d4a7cff6bc456f28dfc7e3505600cacfc3d1967421ab0 |
+| work/founderbench/founderbench/llm_policy.py | True | 18353 | d833247cd20680a164eaf203fe8807d11e2cbcd2e695362cd42690fa3c1a56b5 |
 | work/founderbench/founderbench/metric_sensitivity.py | True | 11162 | de915f79dade6336b27a90327871f1e62352cd0d6c5dbe6dc2386fde0ce3ef9e |
 | work/founderbench/founderbench/model_comparison.py | True | 9212 | cfa33c2716e58daafe039f849486f26e4802efb1e2c57521d901e0d16e3e11dd |
 | work/founderbench/founderbench/model_result_cards.py | True | 11102 | 02608a7c5df3c7924db2ee6f1f99924399c06c2f49ba11e8a1a8df91663e90ed |
@@ -86,7 +86,7 @@ This generated manifest records the source/output hashes and reproduction comman
 | work/founderbench/founderbench/release.py | True | 30881 | b7cf6205e236017a273074dbde41fb42044b2a548cdf7ec707819abcb41b711f |
 | work/founderbench/founderbench/resumable_runner.py | True | 4750 | 3f061139fe9c550345488586106c576fcafad6e6da291457beef93507db914e5 |
 | work/founderbench/tests/test_founderbench.py | True | 69301 | e259b542649bf02202d98110d9a4f3c63dc4bd744201a1a906dacebf9ff29376 |
-| work/founderbench/README.md | True | 20687 | 06da718c6f2e15570dfc83d2d0dc965f8f6fc3e1ff2faaf4d3bf055f4dc4c55c |
+| work/founderbench/README.md | True | 20930 | e33581112e626d6d9ddbde84a0d16a7734cb8c867592888bbf484a3441480a9f |
 | work/founderbench/SPEC.md | True | 9647 | e9c2bc9ac95a9dc05174bdb4cd63d7a955bb6eaa18d044d8d61d662eedfcf314 |
 | work/founderbench/CITATION.cff | True | 554 | c89452bacf9e1273d9c4cb2fef691b1f6e95af6e9b96e3c316dcec398c44582c |
 | work/founderbench/CITATION.cff.template | True | 582 | 0f537b4c02dece317c61dcb1ea1a49470049450e45eae7ffac1ae5958e2f452d |
@@ -114,8 +114,8 @@ This generated manifest records the source/output hashes and reproduction comman
 | outputs/founderbench-scoring-consistency-audit.json | True | 6412 | b35980d1b503ed4bc9cb28eb64408f13c89cd10edf3b163ede8d5945f0efbdec |
 | outputs/founderbench-metric-sensitivity.md | True | 3113 | 8eccfaa7eb6d48d331e50540584969ed006e9a30ffb8559c21ebc98159004407 |
 | outputs/founderbench-metric-sensitivity.json | True | 5830 | 00fe5135a0d2b82caa0d8b9f67d92dbb13641688155e5f691f953299552c5f66 |
-| outputs/founderbench-baseline-raw.json | True | 342117 | 78e1e9797d34bf6ea0a0446a549667a707fdffd916c5a870bde1ea6546c99ec3 |
-| outputs/founderbench-baseline-leaderboard.json | True | 2653 | 72a8feb60588e6681ed8a71382b3fd9e4392c593f4a64f789a295d283c9f6adf |
+| outputs/founderbench-baseline-raw.json | True | 342083 | c3cd633784859b1a96dfd894995edf677308653d6d4631b061462fc11b9bdf89 |
+| outputs/founderbench-baseline-leaderboard.json | True | 2652 | b3ca327f9546ec5c7bcbd43e3547ab5e7001d397d52fe6efec1199cd33fd08ad |
 | outputs/founderbench-leaderboard-policy.md | True | 3389 | 8b4e662acee660b0c8854735f14216e7e43ea200444a4da68c7bd8e798cb5341 |
 | outputs/founderbench-leaderboard-policy.json | True | 4124 | 33eaf58ab0cf74f01b83e61a28c794e10fffa85d53e1aa53a1e2c64511a900d1 |
 | outputs/founderbench-leaderboard-stability.md | True | 3181 | dc9a94adb6cd36d440c85720757fff8ea8a174a97f0c697d6b124db16b081f7a |
@@ -127,7 +127,7 @@ This generated manifest records the source/output hashes and reproduction comman
 | outputs/founderbench-paper-figure-data.md | True | 1628 | 045386e39beec6bb40748ee699f81bdd780713ea7ce7d181f17cb722396fd130 |
 | outputs/founderbench-paper-figure-data.json | True | 15206 | 315f479ff4babf5b4ba8e69977615ee9a5748fac84f090944419331ce5985fc0 |
 | outputs/founderbench-paper-evidence-map.md | True | 8114 | 3b68f9a27005b150c26bd69d1a823ebeab26235e8e963fc454589168699403f0 |
-| outputs/founderbench-paper-evidence-map.json | True | 17081 | 24b36efb77f896869f4a9336bffc66669ce8a4414c36153bb0fb470620575d0c |
+| outputs/founderbench-paper-evidence-map.json | True | 17081 | 0ff354d6ac6941be01b3966338dd99e59dffa46a51ad8132fd10772a0004de97 |
 | outputs/founderbench-paper-claim-lint.md | True | 1530 | fda867ae783089d7b24915233e013da0e1093a814bc9164a9cd33e772ae6ec43 |
 | outputs/founderbench-paper-claim-lint.json | True | 1880 | d76476b488e2c8f2ceb2f1bd3338e89cc815e992057d56802127fe34c0f2be3c |
 | outputs/founderbench-citation-audit.md | True | 2651 | 46ab5552ddf6460b39f618f456334f09fdb7d233d437cc65c0a27889ce3b56f8 |
@@ -138,7 +138,7 @@ This generated manifest records the source/output hashes and reproduction comman
 | outputs/founderbench-model-result-cards.json | True | 12073 | a3f0fb2626a4451e1fb7c69427a6660e80a32be0ae7957754bbb4e993fd61e15 |
 | outputs/founderbench-ablation-report.md | True | 2444 | 7ca23db2ffa0ac21a917349eac06a9297147f28afb3cecd7d9ee008205c47fb2 |
 | outputs/founderbench-action-ablation.md | True | 2372 | f0439186b7f1ba3d7ef0fac8f6617ad03484ca54db16044bc58d212d3b9f45af |
-| outputs/founderbench-action-ablation.json | True | 643468 | 2e39651c487af8ed2951ac24cc476bbf3c0f37bbbd37502cce41c5bc069aaea4 |
+| outputs/founderbench-action-ablation.json | True | 643447 | 0122ae9d8c41b52b6edd9b0fa787420204d1d71f42bb38d8ad602358678edbd7 |
 | outputs/founderbench-paired-statistics.md | True | 2169 | 7fe7f9a94b1061d41f84344c828578a248c9207cfb2efbcae288c85f3511b686 |
 | outputs/founderbench-paired-statistics.json | True | 2706 | 95e88deb315a889c48d3490178fa3cb78689719d58a987e859944bc1d6a3a504 |
 | outputs/founderbench-power-analysis.md | True | 3049 | 4df606a39d60dc538ca4ae3e9c77c6e6602120b12dc597795814c598bf26a644 |
@@ -172,7 +172,7 @@ This generated manifest records the source/output hashes and reproduction comman
 | outputs/founderbench-human-calibration-packet.md | True | 4908 | 55166b5cf79652180929da47bf44d96105f9ce5e330752f9e66a8a26d06b8bd2 |
 | outputs/founderbench-human-calibration-packet.json | True | 5426 | 4147da5795bbaac281939f6d0ef419b1ce730f9dd9a26eba287812693c7fe78e |
 | outputs/founderbench-private-holdout-smoke.md | True | 1334 | 70cccafccdb0f764ba5010dd450794d0e789c126ae60dbc394d99b6e9dde10fb |
-| outputs/founderbench-private-holdout-smoke.json | True | 1782 | 47cbcc0d9df19965fc02f5a5557cd739d937ae66a4181ea7a549138bc727d7ab |
+| outputs/founderbench-private-holdout-smoke.json | True | 1779 | e75d90570c7ea3c59417903f44d0791e6eb2cadc34f9b3410e9e222014c773fa |
 | outputs/founderbench-model-submission-schema.md | True | 1516 | e2b422c7d307b7deb90c9e9b1c4bb1b44ffdf1b2364c3eaf347d651a55fd024f |
 | outputs/founderbench-model-submission-schema.json | True | 20298 | 9a2e120e44df432ba418e04143631a8d6bf6f9d16d3bc1010725c13e49ad4dd0 |
 | outputs/founderbench-submission-bundle-protocol.md | True | 1529 | ae10be4c4dbe4d4370bc5490bbd4838b8ebb630b6294a8c60b074fa27880031d |
@@ -183,22 +183,22 @@ This generated manifest records the source/output hashes and reproduction comman
 | outputs/founderbench-release-metadata-checklist.json | True | 4688 | a1071327fee72e92bfb6a5733a9cb60a24fd42749d088884f2aaa4b027b53e61 |
 | outputs/founderbench-cost-accounting.md | True | 2408 | cc38c163143b187b521b02b0c665f7574dc401138e409f5f8a8339a382e3158b |
 | outputs/founderbench-cost-accounting.json | True | 2530 | 6ab1b03b528830e7abe68bf6798fc1160d68647a486e0fb5f270210cb839b8f5 |
-| outputs/founderbench-submission-action-plan.md | True | 18184 | 43c29d7a28ac57d7490fe406d57be044ceaf8907ebe3a8f0fcad14b01424d1b6 |
-| outputs/founderbench-submission-action-plan.json | True | 24004 | d84d2c55bf7a8f1d276a9e5c0add6ef675a00716750aaa7eeb70a7a60bbc7317 |
+| outputs/founderbench-submission-action-plan.md | True | 16587 | db1a7cc198f47f1621f6a5af0fe284d193cde03f70ce311b414cef937345ec87 |
+| outputs/founderbench-submission-action-plan.json | True | 22067 | 13cd18b1807fcd4f39dc25aacbca5f866d2e4228b6d1abf3ddba23abcd25e740 |
 | outputs/founderbench-completion-audit.md | True | 8186 | 8df7acbe0b245983c11c031c74543c3b901edb4107d16d5dae0e1d8f821ad371 |
-| outputs/founderbench-completion-audit.json | True | 15327 | 07d9da99e6c056077b668602e9374b7ae36dadb34b7d058502d0c23262f5ee4f |
-| outputs/founderbench-submission-manifest.md | True | 5856 | bd0dab3cb0e30950113d573e9b3864c8e292cad7de276bed02d577c053c8af74 |
-| outputs/founderbench-submission-manifest.json | True | 9530 | be722f8fda90ad77b1867f0fdc8a72c6a4738b35c8f55fadd02f498fc8e8a05f |
+| outputs/founderbench-completion-audit.json | True | 15327 | e79b4a29d3b728a087e99ff3adca7c2815a70d09deeea1c1083e4afc71ba1571 |
+| outputs/founderbench-submission-manifest.md | True | 5856 | b6e76438326ae4064e56bd37549d903b12635177e55eeb9663aba5dbde78e05b |
+| outputs/founderbench-submission-manifest.json | True | 9530 | d6a360d24a61e5abec3340d3c7ef8f4066aea2b26639d749561b8336cd8da244 |
 | outputs/founderbench-reviewer-risk-audit.md | True | 9851 | 45d45caf5c78e9ca462be15643aaa90bb2ea51e4e97b9add254ea194e0d70b90 |
-| outputs/founderbench-reviewer-risk-audit.json | True | 13320 | 90a4489f34ca959a514ed321ac6cf621ab35e929639edff88604a145b93d1ce2 |
+| outputs/founderbench-reviewer-risk-audit.json | True | 13320 | 23b7861b8632016982f90d697e84d0bb870f68d4a7c2ceb20d55b46a759ef3a5 |
 | outputs/founderbench-responsible-use.md | True | 4057 | 46ed917985660e174c472a876b2c5eb3766a12dfb8e0b134efaa90efb6de2df9 |
 | outputs/founderbench-responsible-use.json | True | 4471 | f57ec74b118ce6bc6ca8269a9f412376770ee213a8ab5bad98ce3e344514c648 |
 | outputs/founderbench-failure-mode-audit.md | True | 8556 | f099c21a47a4d31342fda00dd827129b286174491cd8fdfec01fd3bb19efb1d3 |
-| outputs/founderbench-failure-mode-audit.json | True | 11463 | 8949b97b165abe0ec206a12b1e19e0ac2f05fdfd46ad19b9c6d3a5fdbda40086 |
+| outputs/founderbench-failure-mode-audit.json | True | 11463 | 02975473330bdab9f300c77fbdf1e6e703787cada481c0938472a946ecd91d45 |
 | outputs/founderbench-baseline-execution-plan.md | True | 17282 | 4bf1f6f99432b067c0292ab545a64c73fdf0060a2d0eb0f10eca6c8815823a41 |
-| outputs/founderbench-baseline-execution-plan.json | True | 27938 | 03c7613901d4f6132ab7897d05fc1fe53e159f969c43626362cf07b3afb78b64 |
-| outputs/founderbench-experiment-runbook.md | True | 24358 | 46d7f67a14272012de27e74be4859e63ff1c9ed2a824abf9037bebb2684a1da9 |
-| outputs/founderbench-experiment-runbook.json | True | 28926 | 88bcbd1cf2d54e978e056ee579b3d3b404017a691199ca856df5a3d644aa4ed1 |
+| outputs/founderbench-baseline-execution-plan.json | True | 27956 | ce0e59e6d1861c438865f9077403bdc5304842ab270a516738d6cc497121e4bc |
+| outputs/founderbench-experiment-runbook.md | True | 24376 | d8b0fb499cf7bc9379355906f79b8b0d008522b4b73eb477c57fccaf57addef6 |
+| outputs/founderbench-experiment-runbook.json | True | 28944 | 504a8e8f5bc5797441ce5d94cb202896bf179e1a96ef02cd3753568f0a2ccbfa |
 | outputs/founderbench-provider-run-status.md | True | 5434 | af8bb990d879fc13fb0a53628b59edc54758b77ff883608da3ea053dafc59167 |
 | outputs/founderbench-provider-run-status.json | True | 16984 | 69ec990f8352d5074d8a357f4659a0964a5303a75d983c63017f7ed30696ef38 |
 | outputs/founderbench-provider-comparability-audit.md | True | 3847 | 377f68db52d8f4b1c54350486c7e93401dddc2a673f681c40fcb6afb163ad9e8 |

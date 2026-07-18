@@ -155,9 +155,12 @@
       "model": "Qwen/Qwen2.5-7B-Instruct",
       "ready_without_secrets_exposed": false,
       "env_status": {
-        "OPENAI_COMPAT_API_KEY": "optional",
-        "OPENAI_COMPAT_MODEL": "default:Qwen/Qwen2.5-7B-Instruct",
-        "OPENAI_COMPAT_BASE_URL": "default:"
+        "FOUNDERBENCH_COMPAT_API_KEY": "optional",
+        "FOUNDERBENCH_COMPAT_MODEL": "default:Qwen/Qwen2.5-7B-Instruct",
+        "OPENAI_COMPAT_API_KEY": "alias",
+        "OPENAI_COMPAT_MODEL": "alias",
+        "FOUNDERBENCH_COMPAT_BASE_URL": "default:",
+        "OPENAI_COMPAT_BASE_URL": "alias"
       },
       "run_command": "python -m founderbench.resumable_runner --policy llm --output outputs/founderbench-local-open-model.json --resume",
       "audit_command": "python -m founderbench.resumable_runner --policy llm --output outputs/founderbench-local-open-model-audit.json --resume --audit",

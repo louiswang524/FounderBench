@@ -141,16 +141,33 @@ class OpenAICompatibleTaskPolicy(ProviderAuditMixin):
         temperature: float = 0.2,
         timeout_s: int = 60,
         provider_name: str | None = None,
-        env_prefix: str = "OPENAI_COMPAT",
+        env_prefix: str = "FOUNDERBENCH_COMPAT",
         default_base_url: str | None = None,
         default_model: str | None = None,
         api_key_optional: bool = True,
     ):
         self.provider_name = provider_name or self.provider_name
         self.env_prefix = env_prefix
-        self.base_url = (base_url or os.environ.get(f"{env_prefix}_BASE_URL") or default_base_url or "").rstrip("/")
-        self.api_key = api_key or os.environ.get(f"{env_prefix}_API_KEY") or (os.environ.get("OPENAI_API_KEY") if env_prefix == "OPENAI_COMPAT" else None)
-        self.model = model or os.environ.get(f"{env_prefix}_MODEL") or default_model
+        compat_alias = "OPENAI_COMPAT" if env_prefix == "FOUNDERBENCH_COMPAT" else ""
+        self.base_url = (
+            base_url
+            or os.environ.get(f"{env_prefix}_BASE_URL")
+            or (os.environ.get(f"{compat_alias}_BASE_URL") if compat_alias else None)
+            or default_base_url
+            or ""
+        ).rstrip("/")
+        self.api_key = (
+            api_key
+            or os.environ.get(f"{env_prefix}_API_KEY")
+            or (os.environ.get(f"{compat_alias}_API_KEY") if compat_alias else None)
+            or (os.environ.get("OPENAI_API_KEY") if env_prefix == "FOUNDERBENCH_COMPAT" else None)
+        )
+        self.model = (
+            model
+            or os.environ.get(f"{env_prefix}_MODEL")
+            or (os.environ.get(f"{compat_alias}_MODEL") if compat_alias else None)
+            or default_model
+        )
         self.temperature = temperature
         self.timeout_s = timeout_s
         if not self.base_url:

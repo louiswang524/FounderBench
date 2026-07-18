@@ -55,11 +55,13 @@ python -m founderbench.submission_bundle \
 Serve the model behind an OpenAI-compatible chat-completions endpoint:
 
 ```bash
-export OPENAI_COMPAT_BASE_URL="http://localhost:8000/v1"
-export OPENAI_COMPAT_MODEL="Qwen/Qwen2.5-7B-Instruct"
+export FOUNDERBENCH_COMPAT_BASE_URL="http://localhost:8000/v1"
+export FOUNDERBENCH_COMPAT_MODEL="Qwen/Qwen2.5-7B-Instruct"
 python -m founderbench.local_model health --output outputs/local-health.json
 python -m founderbench.resumable_runner --policy llm --output outputs/local-open-model.json --resume --audit
 ```
+
+The base URL should point to the server's OpenAI-compatible `/v1` root. The runner posts to `${FOUNDERBENCH_COMPAT_BASE_URL}/chat/completions`; the health check reads `${FOUNDERBENCH_COMPAT_BASE_URL}/models`.
 
 Named OpenAI-compatible hosted policies are also available for broader model-family coverage:
 

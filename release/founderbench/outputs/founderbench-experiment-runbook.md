@@ -34,7 +34,7 @@ Runnable experiment runbook for clearing the missing hosted/local baseline evide
 | Z.ai GLM | glm | recommended | GLM_API_KEY | GLM_MODEL | GLM_BASE_URL | glm-4-plus |
 | xAI Grok | xai | recommended | XAI_API_KEY | XAI_MODEL | XAI_BASE_URL | grok-3-mini |
 | Llama/Open-weight endpoint | llama | recommended | LLAMA_API_KEY | LLAMA_MODEL | LLAMA_BASE_URL | meta-llama/Llama-3.1-70B-Instruct |
-| Local/OpenAI-compatible | llm | required | OPENAI_COMPAT_API_KEY | OPENAI_COMPAT_MODEL | OPENAI_COMPAT_BASE_URL | Qwen/Qwen2.5-7B-Instruct |
+| Local/OpenAI-compatible | llm | required | FOUNDERBENCH_COMPAT_API_KEY | FOUNDERBENCH_COMPAT_MODEL | FOUNDERBENCH_COMPAT_BASE_URL | Qwen/Qwen2.5-7B-Instruct |
 
 ## Phase Overview
 

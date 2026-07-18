@@ -105,12 +105,14 @@ Long hosted-provider evaluations should use the resumable runner:
 Local models should be served through an OpenAI-compatible `/v1/chat/completions` endpoint such as vLLM, LM Studio, Ollama OpenAI-compatible mode, or another compatible server.
 
 ```powershell
-$env:OPENAI_COMPAT_BASE_URL = "http://localhost:8000/v1"
-$env:OPENAI_COMPAT_MODEL = "Qwen/Qwen2.5-7B-Instruct"
+$env:FOUNDERBENCH_COMPAT_BASE_URL = "http://localhost:8000/v1"
+$env:FOUNDERBENCH_COMPAT_MODEL = "Qwen/Qwen2.5-7B-Instruct"
 & "C:\Users\louis\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe" -m founderbench.local_model health --output ..\..\outputs\local-health.json
 & "C:\Users\louis\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe" -m founderbench.resumable_runner --policy llm --output ..\..\outputs\founderbench-local-open-model.json --resume --audit
 & "C:\Users\louis\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe" -m founderbench.submission --input ..\..\outputs\founderbench-local-open-model.json --report ..\..\outputs\founderbench-local-open-model-submission-report.md
 ```
+
+`FOUNDERBENCH_COMPAT_BASE_URL` is the `/v1` root. The runner posts to `$env:FOUNDERBENCH_COMPAT_BASE_URL/chat/completions`; the health command checks `$env:FOUNDERBENCH_COMPAT_BASE_URL/models`.
 
 The local/open-source protocol artifacts are:
 

@@ -4,9 +4,17 @@ This protocol runs a local or open-source model through an OpenAI-compatible `/v
 
 ## Environment
 
-- `OPENAI_COMPAT_BASE_URL`: `http://localhost:8000/v1`
-- `OPENAI_COMPAT_MODEL`: `Qwen/Qwen2.5-7B-Instruct`
-- `OPENAI_COMPAT_API_KEY`: `optional for local servers; do not commit real keys`
+- `FOUNDERBENCH_COMPAT_BASE_URL`: `http://localhost:8000/v1`
+- `FOUNDERBENCH_COMPAT_MODEL`: `Qwen/Qwen2.5-7B-Instruct`
+- `FOUNDERBENCH_COMPAT_API_KEY`: `optional for local servers; do not commit real keys`
+
+Legacy `OPENAI_COMPAT_*` names are still accepted as aliases, but `FOUNDERBENCH_COMPAT_*` is preferred.
+
+## URL Usage
+
+- Base URL: `http://localhost:8000/v1`
+- Chat completions: `http://localhost:8000/v1/chat/completions`
+- Models health check: `http://localhost:8000/v1/models`
 
 ## Commands
 

@@ -156,14 +156,14 @@
         {
           "path": "outputs/founderbench-baseline-raw.json",
           "exists": true,
-          "bytes": 342117,
-          "sha256": "78e1e9797d34bf6ea0a0446a549667a707fdffd916c5a870bde1ea6546c99ec3"
+          "bytes": 342083,
+          "sha256": "c3cd633784859b1a96dfd894995edf677308653d6d4631b061462fc11b9bdf89"
         },
         {
           "path": "outputs/founderbench-baseline-leaderboard.json",
           "exists": true,
-          "bytes": 2653,
-          "sha256": "72a8feb60588e6681ed8a71382b3fd9e4392c593f4a64f789a295d283c9f6adf"
+          "bytes": 2652,
+          "sha256": "b3ca327f9546ec5c7bcbd43e3547ab5e7001d397d52fe6efec1199cd33fd08ad"
         },
         {
           "path": "outputs/founderbench-leaderboard-policy.md",
@@ -262,8 +262,8 @@
         {
           "path": "outputs/founderbench-experiment-runbook.md",
           "exists": true,
-          "bytes": 24358,
-          "sha256": "46d7f67a14272012de27e74be4859e63ff1c9ed2a824abf9037bebb2684a1da9"
+          "bytes": 24376,
+          "sha256": "d8b0fb499cf7bc9379355906f79b8b0d008522b4b73eb477c57fccaf57addef6"
         },
         {
           "path": "outputs/founderbench-provider-run-status.md",
@@ -299,7 +299,7 @@
           "path": "outputs/founderbench-submission-manifest.md",
           "exists": true,
           "bytes": 5856,
-          "sha256": "bd0dab3cb0e30950113d573e9b3864c8e292cad7de276bed02d577c053c8af74"
+          "sha256": "b6e76438326ae4064e56bd37549d903b12635177e55eeb9663aba5dbde78e05b"
         }
       ],
       "claim_ids": [
@@ -315,14 +315,14 @@
         {
           "path": "outputs/founderbench-reproduction-guide.md",
           "exists": true,
-          "bytes": 7323,
-          "sha256": "7bfe452d0ba421eabfd40447a26fe576f0185ba7786f2d9007ea0310691ef703"
+          "bytes": 7523,
+          "sha256": "c890a64ac0c6a634e0bb7c7eb12630d7b0a61a68f73f820296ac4b58ad7caf06"
         },
         {
           "path": "outputs/founderbench-reproducibility-manifest.md",
           "exists": true,
-          "bytes": 24841,
-          "sha256": "0b07204bdc9208403416147417d4818c61978070f11e8dfaf2e77dac7e9db89b"
+          "bytes": 24840,
+          "sha256": "d1fc243cc8825cb8f2cfda6251d36636cc0b7d653c098501a0014fc5f3107e0f"
         },
         {
           "path": "outputs/founderbench-result-integrity-audit.md",

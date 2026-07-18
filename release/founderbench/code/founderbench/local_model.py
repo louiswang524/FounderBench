@@ -16,9 +16,9 @@ DEFAULT_MODEL = "Qwen/Qwen2.5-7B-Instruct"
 def local_config_from_env() -> dict[str, Any]:
     return {
         "endpoint_type": "local-openai-compatible",
-        "base_url": (os.environ.get("OPENAI_COMPAT_BASE_URL") or DEFAULT_BASE_URL).rstrip("/"),
-        "model": os.environ.get("OPENAI_COMPAT_MODEL") or DEFAULT_MODEL,
-        "api_key_configured": bool(os.environ.get("OPENAI_COMPAT_API_KEY") or os.environ.get("OPENAI_API_KEY")),
+        "base_url": (os.environ.get("FOUNDERBENCH_COMPAT_BASE_URL") or os.environ.get("OPENAI_COMPAT_BASE_URL") or DEFAULT_BASE_URL).rstrip("/"),
+        "model": os.environ.get("FOUNDERBENCH_COMPAT_MODEL") or os.environ.get("OPENAI_COMPAT_MODEL") or DEFAULT_MODEL,
+        "api_key_configured": bool(os.environ.get("FOUNDERBENCH_COMPAT_API_KEY") or os.environ.get("OPENAI_COMPAT_API_KEY") or os.environ.get("OPENAI_API_KEY")),
         "timeout_s": int(os.environ.get("PROVIDER_TIMEOUT_S", "60")),
     }
 
@@ -74,9 +74,19 @@ def protocol(config: dict[str, Any] | None = None) -> dict[str, Any]:
         ],
         "config": cfg,
         "environment": {
-            "OPENAI_COMPAT_BASE_URL": cfg["base_url"],
-            "OPENAI_COMPAT_MODEL": cfg["model"],
-            "OPENAI_COMPAT_API_KEY": "optional for local servers; do not commit real keys",
+            "FOUNDERBENCH_COMPAT_BASE_URL": cfg["base_url"],
+            "FOUNDERBENCH_COMPAT_MODEL": cfg["model"],
+            "FOUNDERBENCH_COMPAT_API_KEY": "optional for local servers; do not commit real keys",
+        },
+        "legacy_aliases": {
+            "OPENAI_COMPAT_BASE_URL": "accepted as a legacy alias for FOUNDERBENCH_COMPAT_BASE_URL",
+            "OPENAI_COMPAT_MODEL": "accepted as a legacy alias for FOUNDERBENCH_COMPAT_MODEL",
+            "OPENAI_COMPAT_API_KEY": "accepted as a legacy alias for FOUNDERBENCH_COMPAT_API_KEY",
+        },
+        "url_usage": {
+            "base_url": cfg["base_url"],
+            "chat_completions_url": f"{cfg['base_url'].rstrip('/')}/chat/completions",
+            "models_url": f"{cfg['base_url'].rstrip('/')}/models",
         },
         "commands": [
             "python -m founderbench.local_model protocol --output outputs/founderbench-local-openai-compatible-protocol.json",
@@ -111,6 +121,14 @@ def write_protocol(output: Path, config: dict[str, Any] | None = None) -> None:
             "## Environment",
             "",
             *[f"- `{key}`: `{value}`" for key, value in payload["environment"].items()],
+            "",
+            "Legacy `OPENAI_COMPAT_*` names are still accepted as aliases, but `FOUNDERBENCH_COMPAT_*` is preferred.",
+            "",
+            "## URL Usage",
+            "",
+            f"- Base URL: `{payload['url_usage']['base_url']}`",
+            f"- Chat completions: `{payload['url_usage']['chat_completions_url']}`",
+            f"- Models health check: `{payload['url_usage']['models_url']}`",
             "",
             "## Commands",
             "",

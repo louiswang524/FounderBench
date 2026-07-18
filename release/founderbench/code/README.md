@@ -151,11 +151,13 @@ The prompt contract used by hosted and local provider policies is documented in 
 For a local/open-source baseline, serve the model through an OpenAI-compatible endpoint and use the `llm` policy:
 
 ```powershell
-$env:OPENAI_COMPAT_BASE_URL = "http://localhost:8000/v1"
-$env:OPENAI_COMPAT_MODEL = "Qwen/Qwen2.5-7B-Instruct"
+$env:FOUNDERBENCH_COMPAT_BASE_URL = "http://localhost:8000/v1"
+$env:FOUNDERBENCH_COMPAT_MODEL = "Qwen/Qwen2.5-7B-Instruct"
 python -m founderbench.local_model health --output ..\..\outputs\local-health.json
 python -m founderbench.resumable_runner --policy llm --output ..\..\outputs\founderbench-local-open-model.json --resume --audit
 ```
+
+`FOUNDERBENCH_COMPAT_BASE_URL` should be the OpenAI-compatible `/v1` root. The benchmark posts model decisions to `${FOUNDERBENCH_COMPAT_BASE_URL}/chat/completions`; `local_model health` checks `${FOUNDERBENCH_COMPAT_BASE_URL}/models`.
 
 Validate provider submissions before reporting them:
 

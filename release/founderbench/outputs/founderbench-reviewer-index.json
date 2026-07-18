@@ -88,8 +88,8 @@
       "role": "Start here for installation, task families, action space, and run commands.",
       "category": "orientation",
       "exists": true,
-      "bytes": 20687,
-      "sha256": "06da718c6f2e15570dfc83d2d0dc965f8f6fc3e1ff2faaf4d3bf055f4dc4c55c"
+      "bytes": 20930,
+      "sha256": "e33581112e626d6d9ddbde84a0d16a7734cb8c867592888bbf484a3441480a9f"
     },
     {
       "path": "work/founderbench/SPEC.md",
@@ -208,8 +208,8 @@
       "role": "Machine-readable leaderboard for included non-LLM baselines.",
       "category": "baseline_evidence",
       "exists": true,
-      "bytes": 2653,
-      "sha256": "72a8feb60588e6681ed8a71382b3fd9e4392c593f4a64f789a295d283c9f6adf"
+      "bytes": 2652,
+      "sha256": "b3ca327f9546ec5c7bcbd43e3547ab5e7001d397d52fe6efec1199cd33fd08ad"
     },
     {
       "path": "outputs/founderbench-leaderboard-policy.md",
@@ -232,8 +232,8 @@
       "role": "Task-level raw baseline results for random, conservative, heuristic, and task-aware heuristic policies.",
       "category": "baseline_evidence",
       "exists": true,
-      "bytes": 342117,
-      "sha256": "78e1e9797d34bf6ea0a0446a549667a707fdffd916c5a870bde1ea6546c99ec3"
+      "bytes": 342083,
+      "sha256": "c3cd633784859b1a96dfd894995edf677308653d6d4631b061462fc11b9bdf89"
     },
     {
       "path": "outputs/founderbench-baseline-analysis.md",
@@ -384,8 +384,8 @@
       "role": "End-to-end instructions for regenerating artifacts and validating submissions.",
       "category": "reproducibility",
       "exists": true,
-      "bytes": 7323,
-      "sha256": "7bfe452d0ba421eabfd40447a26fe576f0185ba7786f2d9007ea0310691ef703"
+      "bytes": 7523,
+      "sha256": "c890a64ac0c6a634e0bb7c7eb12630d7b0a61a68f73f820296ac4b58ad7caf06"
     },
     {
       "path": "outputs/founderbench-reviewer-smoke.md",
@@ -417,7 +417,7 @@
       "category": "reproducibility",
       "exists": true,
       "bytes": 24840,
-      "sha256": "c98d68ca33cb590f7489f6285a2a8ad0ef6a0736bc030025681f386c1d139a92"
+      "sha256": "1b3dc7e23a7c8487bca6106fc4722405fd995e3de94aa8df5ff56b17f899627e"
     },
     {
       "path": "outputs/founderbench-determinism-audit.md",
@@ -488,8 +488,8 @@
       "role": "Template for future model providers reporting a run.",
       "category": "submission",
       "exists": true,
-      "bytes": 4207,
-      "sha256": "7b49f72efccc2584c036e555bd4dbf017ab7023d2a8129fa05509efca969c295"
+      "bytes": 4348,
+      "sha256": "534e1d5ae0052ef5cfbe8bc8e3ab7be47b8f2712ee28a0c981cd8c353ad13304"
     },
     {
       "path": "outputs/founderbench-model-submission-schema.md",
@@ -520,8 +520,8 @@
       "role": "Environment readiness matrix and exact commands for hosted/local provider runs.",
       "category": "provider_runs",
       "exists": true,
-      "bytes": 6689,
-      "sha256": "2ad35aa635970b69d3d40ec064018e3060a578731d1530b4ff0781a1a0df8785"
+      "bytes": 6793,
+      "sha256": "fc53abfea9ad30aa02773447f7f5358b64a18e956f18161c67a0e15b677355d8"
     },
     {
       "path": "outputs/founderbench-cost-accounting.md",
@@ -544,8 +544,8 @@
       "role": "Operator runbook for executing missing hosted/local model baselines, audits, repeat bundles, and post-run claim-gate updates.",
       "category": "provider_runs",
       "exists": true,
-      "bytes": 24358,
-      "sha256": "46d7f67a14272012de27e74be4859e63ff1c9ed2a824abf9037bebb2684a1da9"
+      "bytes": 24376,
+      "sha256": "d8b0fb499cf7bc9379355906f79b8b0d008522b4b73eb477c57fccaf57addef6"
     },
     {
       "path": "outputs/founderbench-provider-run-status.md",
@@ -633,7 +633,7 @@
       "category": "publication_readiness",
       "exists": true,
       "bytes": 5856,
-      "sha256": "bd0dab3cb0e30950113d573e9b3864c8e292cad7de276bed02d577c053c8af74"
+      "sha256": "b6e76438326ae4064e56bd37549d903b12635177e55eeb9663aba5dbde78e05b"
     },
     {
       "path": "outputs/founderbench-completion-audit.md",
@@ -680,8 +680,8 @@
       "role": "Protocol for running local open-source models through an OpenAI-compatible endpoint.",
       "category": "provider_runs",
       "exists": true,
-      "bytes": 1171,
-      "sha256": "cf2638124ec98db5e0ca076a42fef4883d7caca9f325092ce07579a06d5cd3f0"
+      "bytes": 1477,
+      "sha256": "5f9d09d6eb4394a56cf931e8e32c515b6c15a3f13aa27febd3fc6475a21a1f7b"
     },
     {
       "path": "outputs/founderbench-private-holdout-evaluator-protocol.md",
@@ -713,7 +713,7 @@
       "category": "publication_readiness",
       "exists": true,
       "bytes": 15329,
-      "sha256": "be99929443a2d433e012b3aa9f19e18ad0aa6db962216f160d2217b1597ed541"
+      "sha256": "cad6a9fe0a9b8d71b2939498ad5606049903c7a8418337c88435a9608fb5a9fe"
     },
     {
       "path": "outputs/founderbench-paper-draft.md",
@@ -745,7 +745,7 @@
       "category": "release",
       "exists": true,
       "bytes": 40995,
-      "sha256": "842bc1eebf7e4c0e188e7a1a7d1d4f108d4f74465bb611c953494fbe5337510f"
+      "sha256": "2660941670a2c7fbbbc999c682cfd8fb09593c4b052c2267c3b37283bb5fee26"
     },
     {
       "path": "release/founderbench/BUNDLE-INTEGRITY.md",

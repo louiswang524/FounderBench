@@ -66,7 +66,7 @@ This generated index is the suggested starting point for reviewing the supplemen
 
 | Category | Path | Present | Bytes | Review Purpose |
 | --- | --- | --- | --- | --- |
-| orientation | work/founderbench/README.md | yes | 20687 | Start here for installation, task families, action space, and run commands. |
+| orientation | work/founderbench/README.md | yes | 20930 | Start here for installation, task families, action space, and run commands. |
 | orientation | work/founderbench/SPEC.md | yes | 9647 | Formal simulator and benchmark specification. |
 | documentation | outputs/founderbench-action-semantics.md | yes | 8403 | Human-readable semantics for every structured action: required fields, costs, effects, risk triggers, and typical use cases. |
 | data | outputs/founderbench-market-catalog.md | yes | 5295 | Fixed simulated market catalog documenting all 8 market ids, demand/competition/WTP/support parameters, observation rules, and settlement rules. |
@@ -81,10 +81,10 @@ This generated index is the suggested starting point for reviewing the supplemen
 | metrics | outputs/founderbench-score-rubric.md | yes | 7092 | Family-level score components, penalty rules, bounds, and pass-threshold validation. |
 | metrics | outputs/founderbench-scoring-consistency-audit.md | yes | 3807 | Score-object consistency audit over all deterministic raw task results, including bounds, pass threshold, metrics payloads, family coverage, and split coverage. |
 | metrics | outputs/founderbench-metric-sensitivity.md | yes | 3113 | Sensitivity analysis comparing official bounded task score against normalized business, solve-rate, survival, revenue, cash, and risk diagnostics. |
-| baseline_evidence | outputs/founderbench-baseline-leaderboard.json | yes | 2653 | Machine-readable leaderboard for included non-LLM baselines. |
+| baseline_evidence | outputs/founderbench-baseline-leaderboard.json | yes | 2652 | Machine-readable leaderboard for included non-LLM baselines. |
 | metrics | outputs/founderbench-leaderboard-policy.md | yes | 3389 | Leaderboard/reporting policy defining public, repeated-run, and future private-holdout tiers plus acceptance and rejection rules. |
 | baseline_evidence | outputs/founderbench-leaderboard-stability.md | yes | 3181 | Leaderboard stability audit over deterministic baselines using split checks, leave-one-family-out checks, and bootstrap task-mix resampling. |
-| baseline_evidence | outputs/founderbench-baseline-raw.json | yes | 342117 | Task-level raw baseline results for random, conservative, heuristic, and task-aware heuristic policies. |
+| baseline_evidence | outputs/founderbench-baseline-raw.json | yes | 342083 | Task-level raw baseline results for random, conservative, heuristic, and task-aware heuristic policies. |
 | baseline_evidence | outputs/founderbench-baseline-analysis.md | yes | 4380 | Bootstrap intervals, split summaries, family scores, and policy comparisons. |
 | reproducibility | outputs/founderbench-result-integrity-audit.md | yes | 1582 | Raw-to-report integrity audit proving deterministic baseline rows in leaderboard, paper tables, and model comparison match raw task outputs. |
 | baseline_evidence | outputs/founderbench-paper-tables.md | yes | 5429 | Paper-ready result tables generated from raw current release runs and validated provider availability. |
@@ -103,7 +103,7 @@ This generated index is the suggested starting point for reviewing the supplemen
 | publication_readiness | outputs/founderbench-experiment-matrix.md | yes | 5249 | Paper-facing ledger of completed and missing baselines, ablations, uncertainty checks, audit traces, and holdout evidence. |
 | uncertainty | outputs/founderbench-random-repeats.md | yes | 795 | Repeated-seed calibration intervals for the stochastic random baseline. |
 | qualitative | outputs/founderbench-qualitative-traces.md | yes | 5229 | Representative deterministic success and failure traces for paper analysis. |
-| reproducibility | outputs/founderbench-reproduction-guide.md | yes | 7323 | End-to-end instructions for regenerating artifacts and validating submissions. |
+| reproducibility | outputs/founderbench-reproduction-guide.md | yes | 7523 | End-to-end instructions for regenerating artifacts and validating submissions. |
 | reproducibility | outputs/founderbench-reviewer-smoke.md | yes | 1325 | Fast reviewer smoke report checking task loading, one deterministic task execution, and included baseline submission validation. |
 | reproducibility | outputs/founderbench-environment-report.md | yes | 2203 | Runtime and dependency report with Python version, import classification, import checks, and provider/local-model dependency notes. |
 | reproducibility | outputs/founderbench-simulator-invariant-audit.md | yes | 1905 | Deterministic simulator stress audit checking state bounds, score bounds, and core environment invariants without claiming real-world validity. |
@@ -116,14 +116,14 @@ This generated index is the suggested starting point for reviewing the supplemen
 | documentation | outputs/founderbench-human-calibration-analysis.md | yes | 988 | Analyzer output for expert/human-founder calibration responses; currently records that no executed calibration submissions are included. |
 | documentation | outputs/founderbench-human-calibration-packet.md | yes | 4908 | Recruitment and operator packet for executing expert/human-founder calibration while preserving not-executed claim guardrails. |
 | documentation | outputs/founderbench-claim-evidence.md | yes | 5768 | Claim-evidence guardrail for supported, qualified, and unsupported paper wording. |
-| submission | outputs/founderbench-model-submission-template.md | yes | 4207 | Template for future model providers reporting a run. |
+| submission | outputs/founderbench-model-submission-template.md | yes | 4348 | Template for future model providers reporting a run. |
 | submission | outputs/founderbench-model-submission-schema.md | yes | 1516 | Machine-readable submission schema companion documenting accepted run payloads, required diagnostics, and authoritative validation command. |
 | submission | outputs/founderbench-submission-bundle-protocol.md | yes | 1529 | Protocol and CLI helper for combining repeated provider/model seed runs into one validated submission bundle. |
 | submission | outputs/founderbench-submission-validation.md | yes | 1431 | Validation report for the included complete baseline run. |
-| provider_runs | outputs/founderbench-provider-readiness.md | yes | 6689 | Environment readiness matrix and exact commands for hosted/local provider runs. |
+| provider_runs | outputs/founderbench-provider-readiness.md | yes | 6793 | Environment readiness matrix and exact commands for hosted/local provider runs. |
 | provider_runs | outputs/founderbench-cost-accounting.md | yes | 2408 | Provider token and cost-accounting protocol with usage normalization, price environment variables, formula, and reporting guardrails. |
 | provider_runs | outputs/founderbench-baseline-execution-plan.md | yes | 17282 | Paper-grade hosted/local baseline execution plan with fairness controls, repeats, audit policy, commands, and acceptance criteria. |
-| provider_runs | outputs/founderbench-experiment-runbook.md | yes | 24358 | Operator runbook for executing missing hosted/local model baselines, audits, repeat bundles, and post-run claim-gate updates. |
+| provider_runs | outputs/founderbench-experiment-runbook.md | yes | 24376 | Operator runbook for executing missing hosted/local model baselines, audits, repeat bundles, and post-run claim-gate updates. |
 | provider_runs | outputs/founderbench-provider-run-status.md | yes | 5434 | Generated status report for planned current release provider/local runs, validation reports, audit outputs, and excluded older provider-like files. |
 | provider_runs | outputs/founderbench-provider-comparability-audit.md | yes | 3847 | Protocol comparability audit checking shared task count, prompt/action contract, validation commands, repeat policy, and cost fields. |
 | provider_runs | outputs/founderbench-provider-contract-audit.md | yes | 2167 | Provider-output contract audit checking parser error taxonomy and simulator diagnostics without claiming hosted/local LLM result evidence. |
@@ -140,7 +140,7 @@ This generated index is the suggested starting point for reviewing the supplemen
 | publication_readiness | outputs/founderbench-failure-mode-audit.md | yes | 8556 | AI research failure-mode audit covering code bugs, citation hallucination, result hallucination, shortcut reliance, bug-as-insight, methodology fabrication, and frame-lock. |
 | publication_readiness | outputs/founderbench-paper-claim-lint.md | yes | 1530 | Text-level paper and benchmark-card lint checking required limitation disclosures and selected unsupported positive claim wording. |
 | publication_readiness | outputs/founderbench-submission-action-plan.md | yes | 17359 | Concrete action plan mapping each failing submission gate to owners, commands, expected outputs, and claim impact. |
-| provider_runs | outputs/founderbench-local-openai-compatible-protocol.md | yes | 1171 | Protocol for running local open-source models through an OpenAI-compatible endpoint. |
+| provider_runs | outputs/founderbench-local-openai-compatible-protocol.md | yes | 1477 | Protocol for running local open-source models through an OpenAI-compatible endpoint. |
 | anti_gaming | outputs/founderbench-private-holdout-evaluator-protocol.md | yes | 2167 | Evaluator-host protocol for secret-seeded hidden task execution, aggregate reporting, and anti-gaming controls. |
 | anti_gaming | outputs/founderbench-private-holdout-smoke.md | yes | 1334 | Aggregate-only smoke report proving the private-holdout evaluator harness runs without exposing hidden task definitions; not an official private leaderboard. |
 | anti_gaming | work/founderbench/founderbench/private_holdout_evaluator.py | yes | 7766 | Executable private-holdout evaluator harness that generates secret-selected private episodes in memory and emits aggregate-only reports by default. |

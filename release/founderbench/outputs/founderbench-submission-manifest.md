@@ -37,8 +37,8 @@ This generated manifest is a compact reviewer-facing map of what the current sub
 | outputs/founderbench-claim-evidence.md | yes | 5768 |
 | outputs/founderbench-submission-gate.md | yes | 1498 |
 | outputs/founderbench-completion-audit.md | yes | 8186 |
-| outputs/founderbench-reviewer-index.md | yes | 20506 |
-| release/founderbench/SHA256SUMS.json | yes | 40996 |
+| outputs/founderbench-reviewer-index.md | yes | 20469 |
+| release/founderbench/SHA256SUMS.json | yes | 40995 |
 | release/founderbench/BUNDLE-INTEGRITY.md | yes | 662 |
 
 ## Supported Claims
