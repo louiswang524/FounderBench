@@ -39,20 +39,24 @@ The Python package is still named `founderbench` internally for compatibility, b
 
 ## Quick Start
 
+Linux/macOS:
+
 ```bash
 git clone https://github.com/louiswang524/FounderBench.git
 cd FounderBench
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -e .
 python -m unittest discover -s work/founderbench/tests -v
 python -m founderbench.release validate
 ```
 
-On Windows PowerShell:
+Windows PowerShell:
 
 ```powershell
-python -m venv .venv
+git clone https://github.com/louiswang524/FounderBench.git
+cd FounderBench
+py -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -e .
 python -m unittest discover -s work\founderbench\tests -v
