@@ -7,6 +7,6 @@ authors:
 version: "0.3.0"
 date-released: "2026-07-15"
 abstract: "FounderBench is a controlled startup-agent benchmark for evaluating LLM agents on repeated business decisions under bounded resources."
-repository-code: "TODO: Add public repository URL"
+repository-code: "https://github.com/louiswang524/FounderBench"
 license: "TODO"
 

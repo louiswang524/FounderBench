@@ -40,7 +40,7 @@ The Python package is still named `moneybench` internally for compatibility, but
 ## Quick Start
 
 ```bash
-git clone https://github.com/<owner>/<repo>.git
+git clone https://github.com/louiswang524/FounderBench.git
 cd <repo>
 python -m venv .venv
 source .venv/bin/activate

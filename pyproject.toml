@@ -21,9 +21,9 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/<owner>/<repo>"
-Repository = "https://github.com/<owner>/<repo>"
-Issues = "https://github.com/<owner>/<repo>/issues"
+Homepage = "https://github.com/louiswang524/FounderBench"
+Repository = "https://github.com/louiswang524/FounderBench"
+Issues = "https://github.com/louiswang524/FounderBench/issues"
 
 [project.scripts]
 founderbench-release = "moneybench.release:main"
