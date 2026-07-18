@@ -11,7 +11,7 @@ Status: `protocol_comparability_ready_runs_missing`
 | task_count | 50 |
 | prompt_version | founderbench-task-agent |
 | prompt_template_sha256 | 21cfb19c6ce46b4f74d6d92dc994fca10237b86e166e5b886b5220bb4da15e8b |
-| protocol_sha256 | a2f5a2b7f20fe49854b426d8cb4f747a92b8245eb71df5f84fdeaece9618b0a6 |
+| protocol_sha256 | 67b5335c955d256ed530cb39928eef1c583a78604cbcfa906c97d1f05ea2cae5 |
 | max_actions_per_week | 4 |
 | minimum_repeats_for_stochastic_claims | 3 |
 | cost_usage_fields | ['provider_prompt_tokens', 'provider_completion_tokens', 'provider_total_tokens', 'estimated_provider_cost_usd'] |
@@ -21,7 +21,6 @@ Status: `protocol_comparability_ready_runs_missing`
 - Every planned provider/local run targets the same 50 current task ids.
 - Every provider uses the canonical structured-action prompt contract and parser.
 - Every planned run has a submission validation command and repeat-bundle command.
-- DeepSeek self-consistency k=3 is marked as a separate ablation, not a substitute for the naive baseline.
 - Cost comparison remains unavailable unless usage metadata and evaluator price assumptions are both recorded.
 - Provider rows remain excluded from model-performance claims until raw outputs and validation reports exist.
 
@@ -29,36 +28,33 @@ Status: `protocol_comparability_ready_runs_missing`
 
 | Metric | Value |
 | --- | --- |
-| planned_runs | 12 |
+| planned_runs | 11 |
 | main_claim_comparable_required_runs | 7 |
-| self_consistency_ablations | 1 |
 | valid_run_outputs | 0 |
 | required_missing_or_invalid | 7 |
-| claim_status_counts | {'eligible_after_valid_submission': 7, 'excluded_or_ablation_until_separately_reported': 5} |
+| claim_status_counts | {'eligible_after_valid_submission': 7, 'excluded_or_ablation_until_separately_reported': 4} |
 | ready_for_hosted_llm_comparison | False |
 
 ## Run Rows
 
-| ID | Policy | Family | Priority | Current Status | Tasks | Temp | SC k | Role | Main Comparable | Claim Status |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| openai_single | openai | hosted | required | missing | 50 | 0.2 | 1 | primary_or_local_baseline | True | eligible_after_valid_submission |
-| deepseek_single | deepseek | hosted | required | missing | 50 | 0.2 | 1 | primary_or_local_baseline | True | eligible_after_valid_submission |
-| deepseek_sc_k3 | deepseek_sc | hosted | recommended | missing | 50 | 0.7 | 3 | self_consistency_ablation | False | excluded_or_ablation_until_separately_reported |
-| anthropic_single | anthropic | hosted | required | missing | 50 | 0.2 | 1 | primary_or_local_baseline | True | eligible_after_valid_submission |
-| gemini_single | gemini | hosted | required | missing | 50 | 0.2 | 1 | primary_or_local_baseline | True | eligible_after_valid_submission |
-| kimi_single | kimi | hosted | required | missing | 50 | 0.2 | 1 | primary_or_local_baseline | True | eligible_after_valid_submission |
-| qwen_single | qwen | hosted | required | missing | 50 | 0.2 | 1 | primary_or_local_baseline | True | eligible_after_valid_submission |
-| mistral_single | mistral | hosted | recommended | missing | 50 | 0.2 | 1 | primary_or_local_baseline | False | excluded_or_ablation_until_separately_reported |
-| glm_single | glm | hosted | recommended | missing | 50 | 0.2 | 1 | primary_or_local_baseline | False | excluded_or_ablation_until_separately_reported |
-| xai_single | xai | hosted | recommended | missing | 50 | 0.2 | 1 | primary_or_local_baseline | False | excluded_or_ablation_until_separately_reported |
-| llama_endpoint_single | llama | local_open_source | recommended | missing | 50 | 0.2 | 1 | primary_or_local_baseline | False | excluded_or_ablation_until_separately_reported |
-| local_open_model_single | llm | local_open_source | required | missing | 50 | 0.2 | 1 | primary_or_local_baseline | True | eligible_after_valid_submission |
+| ID | Policy | Family | Priority | Current Status | Tasks | Temp | Role | Main Comparable | Claim Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| openai_single | openai | hosted | required | missing | 50 | 0.2 | primary_or_local_baseline | True | eligible_after_valid_submission |
+| deepseek_single | deepseek | hosted | required | missing | 50 | 0.2 | primary_or_local_baseline | True | eligible_after_valid_submission |
+| anthropic_single | anthropic | hosted | required | missing | 50 | 0.2 | primary_or_local_baseline | True | eligible_after_valid_submission |
+| gemini_single | gemini | hosted | required | missing | 50 | 0.2 | primary_or_local_baseline | True | eligible_after_valid_submission |
+| kimi_single | kimi | hosted | required | missing | 50 | 0.2 | primary_or_local_baseline | True | eligible_after_valid_submission |
+| qwen_single | qwen | hosted | required | missing | 50 | 0.2 | primary_or_local_baseline | True | eligible_after_valid_submission |
+| mistral_single | mistral | hosted | recommended | missing | 50 | 0.2 | primary_or_local_baseline | False | excluded_or_ablation_until_separately_reported |
+| glm_single | glm | hosted | recommended | missing | 50 | 0.2 | primary_or_local_baseline | False | excluded_or_ablation_until_separately_reported |
+| xai_single | xai | hosted | recommended | missing | 50 | 0.2 | primary_or_local_baseline | False | excluded_or_ablation_until_separately_reported |
+| llama_endpoint_single | llama | local_open_source | recommended | missing | 50 | 0.2 | primary_or_local_baseline | False | excluded_or_ablation_until_separately_reported |
+| local_open_model_single | llm | local_open_source | required | missing | 50 | 0.2 | primary_or_local_baseline | True | eligible_after_valid_submission |
 
 ## Claim Guardrails
 
 - This audit establishes protocol comparability, not completed hosted/local model evidence.
 - Single-run provider results are preliminary unless the statistical protocol and repeated-run policy allow stronger wording.
-- DeepSeek self-consistency k=3 is an ablation row and must not replace the naive DeepSeek baseline.
 - Missing or invalid provider outputs remain excluded from model-performance claims.
 
 ## Validation

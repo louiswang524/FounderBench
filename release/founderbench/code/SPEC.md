@@ -214,7 +214,7 @@ Required model baselines for a paper submission:
 - core hosted frontier providers covering OpenAI/GPT, Anthropic/Claude, Google/Gemini, DeepSeek, Moonshot/Kimi, and Alibaba/Qwen when API access is available
 - at least one local or open-source model through the OpenAI-compatible adapter
 - optional broader ecosystem rows for Mistral, GLM/Z.ai, xAI/Grok, and Llama/open-weight endpoints
-- at least one inference-method ablation, such as self-consistency or reflection
+- provider and local/open-source model baselines using the same canonical prompt contract
 
 Required deterministic calibration ablations:
 

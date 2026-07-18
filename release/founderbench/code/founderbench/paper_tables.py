@@ -35,15 +35,6 @@ PROVIDER_RUNS = [
         "family": "hosted_llm",
     },
     {
-        "id": "deepseek_self_consistency_k3",
-        "policy": "deepseek_sc",
-        "path": "outputs/founderbench-deepseek-sc-k3.json",
-        "report": "outputs/founderbench-deepseek-sc-k3-submission-report.md",
-        "repeat_bundle_path": "outputs/founderbench-deepseek-sc-k3-repeats.json",
-        "repeat_bundle_report": "outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md",
-        "family": "hosted_llm_ablation",
-    },
-    {
         "id": "anthropic_hosted_baseline",
         "policy": "anthropic",
         "path": "outputs/founderbench-anthropic.json",

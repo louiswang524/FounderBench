@@ -23,7 +23,7 @@ Completion claim: `not_complete`
 | simulator_and_action_space | complete | strengthen the controlled simulator and action space | Action semantics catalog documents 13 structured actions. |
 | normalized_business_metrics | complete | define rigorous normalized business metrics | Metric, rubric, sensitivity, and statistical-protocol artifacts are present. |
 | heuristic_baselines_and_ablations | complete | run representative heuristic baselines with ablations | Four deterministic baselines each report 50 tasks. |
-| representative_llm_baselines | missing | run representative LLM baselines | 6 required experiment groups are missing and 0/12 providers are ready. |
+| representative_llm_baselines | missing | run representative LLM baselines | 6 required experiment groups are missing and 0/11 providers are ready. |
 | documentation_and_accessibility | complete | document reproducibility and limitations | Documentation, reproduction, audit, and schema artifacts are present. |
 | benchmark_card_and_paper_artifacts | partial | prepare the benchmark card plus paper-ready experimental evidence | Paper artifacts are present, but 3 stronger claims remain unsupported. |
 | public_release_metadata | incomplete | publishable benchmark paper artifact | License/citation metadata is not public-release ready. |
@@ -91,7 +91,7 @@ Evidence:
 - Goal clause: run representative LLM baselines
 - Completion standard: Required DeepSeek, Anthropic, Gemini, and local/open-source current release outputs exist and pass submission validation.
 - Status: `missing`
-- Rationale: 6 required experiment groups are missing and 0/12 providers are ready.
+- Rationale: 6 required experiment groups are missing and 0/11 providers are ready.
 
 Evidence:
 - `outputs/founderbench-deepseek.json`: missing

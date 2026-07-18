@@ -162,7 +162,7 @@ The public release metadata is also not final. The package includes non-final li
 
 ## 9. Next Experiments
 
-The main empirical next step is to run representative hosted and local LLM baselines on all 50 tasks. The current experiment matrix requires DeepSeek, Claude, Gemini, self-consistency variants where appropriate, and at least one local open-source model through the OpenAI-compatible protocol. Each run should use audit mode and pass the submission validator before entering the model-comparison report.
+The main empirical next step is to run representative hosted and local LLM baselines on all 50 tasks. The current experiment matrix requires DeepSeek, Claude, Gemini, and at least one local open-source model through the OpenAI-compatible protocol. Each run should use audit mode and pass the submission validator before entering the model-comparison report.
 
 The second next step is external calibration. Expert or founder reviewers should complete the human-calibration packet, rate scenario realism and score alignment, identify gaming risks, and flag task or rubric revisions. Any resulting changes should be recorded in the task-revision ledger and should trigger a benchmark version increment when they affect official task definitions or scoring.
 

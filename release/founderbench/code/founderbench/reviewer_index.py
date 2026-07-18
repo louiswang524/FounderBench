@@ -309,7 +309,7 @@ ARTIFACTS: list[dict[str, Any]] = [
     },
     {
         "path": "outputs/founderbench-provider-comparability-audit.md",
-        "role": "Protocol comparability audit checking shared task count, prompt/action contract, validation commands, repeat policy, cost fields, and self-consistency ablation treatment.",
+        "role": "Protocol comparability audit checking shared task count, prompt/action contract, validation commands, repeat policy, and cost fields.",
         "category": "provider_runs",
     },
     {

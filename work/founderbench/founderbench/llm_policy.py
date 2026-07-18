@@ -361,61 +361,6 @@ class DeepSeekTaskPolicy(BaseHostedTaskPolicy):
         return parse_provider_response(_extract_json_object(content))
 
 
-class DeepSeekSelfConsistencyTaskPolicy(DeepSeekTaskPolicy):
-    """Sample k DeepSeek action plans and select a consensus candidate."""
-
-    def __init__(self, api_key: str | None = None, model: str | None = None, timeout_s: int = 60, k: int | None = None):
-        super().__init__(api_key=api_key, model=model, timeout_s=timeout_s, temperature=float(os.environ.get("SC_TEMPERATURE", "0.7")))
-        self.k = k or int(os.environ.get("SC_K", "3"))
-
-    def act_task(self, task: StartupTask, observation: Observation) -> list[Action]:
-        self._reset_provider_calls()
-        candidates = [self._sample_actions(task, observation, self.temperature) for _ in range(self.k)]
-        return self._select_candidate(task, observation, candidates)
-
-    def _select_candidate(self, task: StartupTask, observation: Observation, candidates: list[list[Action]]) -> list[Action]:
-        signatures = [self._signature(actions) for actions in candidates]
-        counts = {signature: signatures.count(signature) for signature in set(signatures)}
-        best_count = max(counts.values())
-        majority_indices = [i for i, signature in enumerate(signatures) if counts[signature] == best_count]
-        if best_count > 1:
-            return candidates[majority_indices[0]]
-        return min(candidates, key=lambda actions: self._risk_tie_break(task, observation, actions))
-
-    def _signature(self, actions: list[Action]) -> tuple[tuple[str, str | None, str | None], ...]:
-        return tuple((action.type, action.market_id, action.offer_id) for action in actions[:4])
-
-    def _risk_tie_break(self, task: StartupTask, observation: Observation, actions: list[Action]) -> float:
-        task_num = int(task.task_id.split("-")[1])
-        family = (task_num - 1) // 5
-        budget = sum(max(0.0, action.budget) for action in actions)
-        score = 0.0
-        if budget > observation.cash:
-            score += 10_000 + budget - observation.cash
-        if budget > observation.cash * 0.65:
-            score += 1_000 + budget - observation.cash * 0.65
-        if len(actions) > 4:
-            score += 500
-        useful_by_family = [
-            {"research_market", "build_offer"},
-            {"research_market", "build_offer", "run_campaign", "improve_offer"},
-            {"improve_offer", "support_customers"},
-            {"hire_agent", "support_customers", "improve_offer"},
-            {"improve_offer", "run_campaign", "support_customers", "hire_agent"},
-            {"change_price", "interview_customers", "run_campaign"},
-            {"cut_cost", "support_customers", "improve_offer"},
-            {"research_market", "pivot_market", "interview_customers", "partner_channel"},
-            {"raise_funding", "support_customers", "improve_offer"},
-            {"partner_channel", "run_campaign", "hire_agent", "improve_offer"},
-        ][family]
-        types = {action.type for action in actions}
-        if not types & useful_by_family:
-            score += 250
-        if types == {"do_nothing"}:
-            score += 200
-        return score + budget / 1000
-
-
 class AnthropicTaskPolicy(BaseHostedTaskPolicy):
     provider_name = "anthropic"
 

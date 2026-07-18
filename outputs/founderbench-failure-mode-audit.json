@@ -15,8 +15,8 @@
         {
           "path": "work/founderbench/tests/test_founderbench.py",
           "exists": true,
-          "bytes": 69401,
-          "sha256": "6a7746edb26433c1aa494e4e234ec449b141b4d4fbc316f34c8ec6da811d1e04"
+          "bytes": 69301,
+          "sha256": "e259b542649bf02202d98110d9a4f3c63dc4bd744201a1a906dacebf9ff29376"
         },
         {
           "path": "outputs/founderbench-determinism-audit.md",
@@ -85,20 +85,20 @@
         {
           "path": "outputs/founderbench-baseline-raw.json",
           "exists": true,
-          "bytes": 342129,
-          "sha256": "47494e318c4134e055d116de87e196faff0da7fc7275eff20107826b91b4f72c"
+          "bytes": 342117,
+          "sha256": "78e1e9797d34bf6ea0a0446a549667a707fdffd916c5a870bde1ea6546c99ec3"
         },
         {
           "path": "outputs/founderbench-paper-tables.md",
           "exists": true,
-          "bytes": 5625,
-          "sha256": "1d9d663b0cb630a9ef0dd7ea26b2e0664bee813ccd079a12e919021f8b0c92ae"
+          "bytes": 5429,
+          "sha256": "6ec602030fc3d9cb51c9e429df32bc14ee2d69d1601b4357df52817773d076f3"
         },
         {
           "path": "outputs/founderbench-model-comparison.md",
           "exists": true,
-          "bytes": 5638,
-          "sha256": "27a48607f4bb20c4bcf47f9f44fa166081f5fe255786006562d2cb521a40d8da"
+          "bytes": 5442,
+          "sha256": "4aac8e544739e821c9a079149f658f9e715b3b63bd5dadac9307a28d02150449"
         },
         {
           "path": "outputs/founderbench-claim-evidence.md",
@@ -167,8 +167,8 @@
         {
           "path": "outputs/founderbench-validity-report.md",
           "exists": true,
-          "bytes": 5824,
-          "sha256": "2068448c3953ac99b3ff495c87031d52e74af272d69d4d27952036ef1d9cc9b5"
+          "bytes": 5782,
+          "sha256": "33b6b4d793cfc73e81ffc1754a74b5e5dab0e513809f9140dcc098e25986d283"
         }
       ],
       "required_response": "Do not frame surprising heuristic/provider behavior as a substantive insight unless raw logs, ablations, and independent reruns support it."
@@ -184,8 +184,8 @@
         {
           "path": "work/founderbench/SPEC.md",
           "exists": true,
-          "bytes": 9639,
-          "sha256": "c26af0b2a378b2b854b726114d27bb65d0e59d799d4d3865d22d70d2b3424410"
+          "bytes": 9647,
+          "sha256": "e9c2bc9ac95a9dc05174bdb4cd63d7a955bb6eaa18d044d8d61d662eedfcf314"
         },
         {
           "path": "outputs/founderbench-task-manifest.json",
@@ -202,14 +202,14 @@
         {
           "path": "outputs/founderbench-experiment-matrix.md",
           "exists": true,
-          "bytes": 5418,
-          "sha256": "50b45c7cb7d87ea7c046eefa0f8c5470e499a170008dc6de40501760ca7f44cc"
+          "bytes": 5249,
+          "sha256": "924f78202a45f6b76351a6d1cbb6669805f4f0d6243fdf336822a5f4642eeb99"
         },
         {
           "path": "outputs/founderbench-provider-run-status.md",
           "exists": true,
-          "bytes": 5626,
-          "sha256": "08e609ce192f0abc3cac731627a67ae5022e5026375ae90dad20290e5e2dfdfb"
+          "bytes": 5434,
+          "sha256": "af8bb990d879fc13fb0a53628b59edc54758b77ff883608da3ea053dafc59167"
         }
       ],
       "required_response": "Keep planned experiments explicitly labeled as planned or missing, and update Methods only after generated artifacts prove execution."
@@ -225,8 +225,8 @@
         {
           "path": "outputs/founderbench-validity-report.md",
           "exists": true,
-          "bytes": 5824,
-          "sha256": "2068448c3953ac99b3ff495c87031d52e74af272d69d4d27952036ef1d9cc9b5"
+          "bytes": 5782,
+          "sha256": "33b6b4d793cfc73e81ffc1754a74b5e5dab0e513809f9140dcc098e25986d283"
         },
         {
           "path": "outputs/founderbench-human-calibration-protocol.md",
@@ -244,7 +244,7 @@
           "path": "outputs/founderbench-submission-manifest.md",
           "exists": true,
           "bytes": 5856,
-          "sha256": "0fffd906ada5d38eb239d4dbfa68896999ba9f3a34d31d9adbb51f958a584574"
+          "sha256": "bd0dab3cb0e30950113d573e9b3864c8e292cad7de276bed02d577c053c8af74"
         }
       ],
       "required_response": "Use conservative benchmark framing until human/expert calibration and hidden holdout evidence justify broader claims."

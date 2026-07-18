@@ -51,7 +51,7 @@ def build_audit() -> dict[str, Any]:
         "Do not call public_test hidden, unseen, secret, private, or contamination-free.",
         "Do not claim the benchmark is free from pretraining or post-release contamination; public tasks are intentionally visible.",
         "Do not treat the aggregate-only private holdout smoke report as an official hidden leaderboard.",
-        "Require model submitters to disclose prompt tuning, agent tuning, self-consistency selection, or training on public tasks.",
+        "Require model submitters to disclose prompt tuning, agent tuning, or training on public tasks.",
         "Use only evaluator-hosted private tasks for hidden-suite claims, and report aggregate private fields without private task definitions during an active cycle.",
     ]
     split_controls = [

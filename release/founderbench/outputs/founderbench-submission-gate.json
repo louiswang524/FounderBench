@@ -13,15 +13,15 @@
       "missing": 3
     },
     "experiment_matrix": {
-      "experiments": 12,
+      "experiments": 11,
       "complete": 5,
       "partial": 0,
-      "missing": 7,
+      "missing": 6,
       "required_missing": 6
     },
     "provider_readiness": {
       "ready_count": 0,
-      "provider_count": 12
+      "provider_count": 11
     },
     "claim_evidence": {
       "claims": 9,
@@ -62,7 +62,7 @@
       "evidence": [
         "outputs/founderbench-provider-readiness.md"
       ],
-      "blocker": "Only 0/12 provider configurations are ready."
+      "blocker": "Only 0/11 provider configurations are ready."
     },
     {
       "id": "claim_evidence_alignment",

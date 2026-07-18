@@ -31,9 +31,9 @@ This generated manifest is a compact reviewer-facing map of what the current sub
 | outputs/founderbench-task-coverage.md | yes | 3566 |
 | outputs/founderbench-metrics-and-evaluation.md | yes | 7627 |
 | outputs/founderbench-baseline-analysis.md | yes | 4380 |
-| outputs/founderbench-model-comparison.md | yes | 5638 |
-| outputs/founderbench-paper-tables.md | yes | 5625 |
-| outputs/founderbench-validity-report.md | yes | 5824 |
+| outputs/founderbench-model-comparison.md | yes | 5442 |
+| outputs/founderbench-paper-tables.md | yes | 5429 |
+| outputs/founderbench-validity-report.md | yes | 5782 |
 | outputs/founderbench-claim-evidence.md | yes | 5768 |
 | outputs/founderbench-submission-gate.md | yes | 1498 |
 | outputs/founderbench-completion-audit.md | yes | 8186 |
@@ -73,7 +73,7 @@ This generated manifest is a compact reviewer-facing map of what the current sub
 | Gate | Blocker | Evidence |
 | --- | --- | --- |
 | required_experiments | 6 required experiment groups are missing. | `outputs/founderbench-experiment-matrix.md` |
-| provider_run_readiness | Only 0/12 provider configurations are ready. | `outputs/founderbench-provider-readiness.md` |
+| provider_run_readiness | Only 0/11 provider configurations are ready. | `outputs/founderbench-provider-readiness.md` |
 | claim_evidence_alignment | 3 stronger claims remain unsupported by current evidence. | `outputs/founderbench-claim-evidence.md` |
 | license_and_citation | License/citation metadata is not public-release ready. | `outputs/founderbench-license-readiness.md`, `work/founderbench/CITATION.cff`, `work/founderbench/LICENSE-TODO.md` |
 

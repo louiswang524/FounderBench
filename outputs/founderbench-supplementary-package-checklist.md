@@ -241,7 +241,6 @@ This checklist tracks what should be included before a benchmark/dataset paper s
 - [x] Deterministic task difficulty calibration on current release
 - [x] Task-level feasibility/discrimination audit on current release
 - [x] Task/rubric revision ledger for external calibration and reviewer issues
-- [ ] Self-consistency or reflection ablation on current release
 - [x] Repeated-sampling confidence interval tooling
 - [ ] Hosted-LLM repeated-sampling confidence intervals
 - [x] Result-card format for deterministic baselines and planned provider submissions

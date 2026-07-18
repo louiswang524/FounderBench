@@ -45,8 +45,7 @@
   "repetition_policy": {
     "single_run_claims": "Allowed only as preliminary baseline rows when clearly labeled single-run.",
     "stochastic_claims": "Require at least 3 repeats or an explicit limitation statement; record each repeat with a distinct resumable-runner --seed value.",
-    "bundle_protocol": "Combine repeated seed outputs with founderbench.submission_bundle and report the generated submission report before stochastic confidence claims.",
-    "self_consistency": "DeepSeek self-consistency uses k=3 as a separate ablation, not a replacement for the naive baseline."
+    "bundle_protocol": "Combine repeated seed outputs with founderbench.submission_bundle and report the generated submission report before stochastic confidence claims."
   },
   "audit_policy": {
     "required_audit_traces": "Collect redacted audit runs for at least one hosted provider before qualitative LLM failure analysis.",
@@ -120,36 +119,6 @@
       "repeat_bundle_report": "outputs/founderbench-deepseek-repeats-submission-report.md",
       "repeat_bundle_command": "python -m founderbench.submission_bundle --input outputs/founderbench-deepseek-seed0.json --input outputs/founderbench-deepseek-seed1.json --input outputs/founderbench-deepseek-seed2.json --output outputs/founderbench-deepseek-repeats.json --report outputs/founderbench-deepseek-repeats-submission-report.md",
       "repeat_validation_command": "python -m founderbench.submission --input outputs/founderbench-deepseek-repeats.json --report outputs/founderbench-deepseek-repeats-submission-report.md"
-    },
-    {
-      "id": "deepseek_sc_k3",
-      "policy": "deepseek_sc",
-      "model_family": "hosted",
-      "priority": "recommended",
-      "repeat_index": 1,
-      "output": "outputs/founderbench-deepseek-sc-k3.json",
-      "audit_output": "outputs/founderbench-deepseek-sc-k3-audit.json",
-      "purpose": "Self-consistency k=3 ablation for DeepSeek.",
-      "task_count": 50,
-      "model_env": "DEEPSEEK_MODEL",
-      "api_key_env": "DEEPSEEK_API_KEY",
-      "base_url_env": "",
-      "default_model": "deepseek-chat",
-      "run_command": "python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3.json --resume --seed 0",
-      "audit_command": "python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-audit.json --resume --seed 0 --audit",
-      "validation_command": "python -m founderbench.submission --input outputs/founderbench-deepseek-sc-k3.json --report outputs/founderbench-deepseek-sc-k3-submission-report.md",
-      "audit_validation_command": "python -m founderbench.submission --input outputs/founderbench-deepseek-sc-k3-audit.json --report outputs/founderbench-deepseek-sc-k3-audit-submission-report.md",
-      "submission_report": "outputs/founderbench-deepseek-sc-k3-submission-report.md",
-      "audit_submission_report": "outputs/founderbench-deepseek-sc-k3-audit-submission-report.md",
-      "repeat_outputs": [
-        "outputs/founderbench-deepseek-sc-k3-seed0.json",
-        "outputs/founderbench-deepseek-sc-k3-seed1.json",
-        "outputs/founderbench-deepseek-sc-k3-seed2.json"
-      ],
-      "repeat_bundle_output": "outputs/founderbench-deepseek-sc-k3-repeats.json",
-      "repeat_bundle_report": "outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md",
-      "repeat_bundle_command": "python -m founderbench.submission_bundle --input outputs/founderbench-deepseek-sc-k3-seed0.json --input outputs/founderbench-deepseek-sc-k3-seed1.json --input outputs/founderbench-deepseek-sc-k3-seed2.json --output outputs/founderbench-deepseek-sc-k3-repeats.json --report outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md",
-      "repeat_validation_command": "python -m founderbench.submission --input outputs/founderbench-deepseek-sc-k3-repeats.json --report outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md"
     },
     {
       "id": "anthropic_single",
@@ -423,10 +392,10 @@
     }
   ],
   "summary": {
-    "planned_runs": 12,
+    "planned_runs": 11,
     "required_runs": 7,
-    "recommended_runs": 5,
-    "hosted_runs": 10,
+    "recommended_runs": 4,
+    "hosted_runs": 9,
     "local_open_source_runs": 2,
     "minimum_repeats_for_stochastic_claims": 3
   }

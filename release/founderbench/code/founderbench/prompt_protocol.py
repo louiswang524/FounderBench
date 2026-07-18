@@ -60,15 +60,14 @@ def build_protocol() -> dict[str, Any]:
     template = prompt_template()
     provider_wrappers = []
     for provider in PROVIDERS:
-        system_prompt = DEEPSEEK_SYSTEM_PROMPT if provider["policy"].startswith("deepseek") else SYSTEM_PROMPT
+        system_prompt = DEEPSEEK_SYSTEM_PROMPT if provider["policy"] == "deepseek" else SYSTEM_PROMPT
         wrapper = {
             "policy": provider["policy"],
             "provider": provider["provider"],
             "default_model": provider["default_model"],
             "system_prompt_sha256": hashlib.sha256(system_prompt.encode("utf-8")).hexdigest(),
             "user_prompt": "render_task_prompt(task, observation)",
-            "temperature": 0.7 if provider["policy"] == "deepseek_sc" else 0.2,
-            "self_consistency_k": 3 if provider["policy"] == "deepseek_sc" else 1,
+            "temperature": 0.2,
         }
         provider_wrappers.append(wrapper)
     protocol = {
@@ -155,14 +154,14 @@ def write_markdown(payload: dict[str, Any], output: Path) -> None:
             "",
             "## Provider Message Wrappers",
             "",
-            "| Provider | Policy | Default Model | Temperature | Self Consistency k | System Prompt Hash |",
-            "| --- | --- | --- | --- | --- | --- |",
+            "| Provider | Policy | Default Model | Temperature | System Prompt Hash |",
+            "| --- | --- | --- | --- | --- |",
         ]
     )
     for row in payload["provider_message_wrappers"]:
         lines.append(
             f"| {row['provider']} | `{row['policy']}` | `{row['default_model']}` | "
-            f"{row['temperature']} | {row['self_consistency_k']} | `{row['system_prompt_sha256']}` |"
+            f"{row['temperature']} | `{row['system_prompt_sha256']}` |"
         )
     lines.extend(
         [

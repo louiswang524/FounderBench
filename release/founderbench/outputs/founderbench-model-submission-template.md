@@ -14,7 +14,7 @@ provider: provider-name
 model: model-name
 model_version_or_snapshot: exact-version-if-available
 endpoint_type: hosted | local-openai-compatible | other
-agent_method: single-call | self-consistency | multi-agent | other
+agent_method: single-call | provider-adapter | other
 temperature: 0.2
 max_output_tokens: 900
 prompt_version: current release-default
@@ -95,7 +95,7 @@ Before reporting a model result, validate the raw run JSON:
 python -m founderbench.submission --input outputs/provider-run.json --report outputs/provider-run-submission-report.md
 ```
 
-The validator checks that the run covers all 50 current tasks, includes both public splits, preserves task-level scores, reports required diagnostics, and keeps provider-error category counts consistent with total provider errors. For repeated-sampling or self-consistency studies, submit a JSON list of run objects or `{ "runs": [...] }`; the generated report will include repeated-run confidence intervals.
+The validator checks that the run covers all 50 current tasks, includes both public splits, preserves task-level scores, reports required diagnostics, and keeps provider-error category counts consistent with total provider errors. For repeated-sampling studies, submit a JSON list of run objects or `{ "runs": [...] }`; the generated report will include repeated-run confidence intervals.
 
 ## Statistical Comparison Protocol
 
@@ -110,5 +110,4 @@ Submitted logs must not contain API keys or credentials. FounderBench audit mode
 - Do not discard failed tasks.
 - Report provider errors as benchmark outcomes.
 - Report invalid JSON/action failures instead of manually repairing them outside the adapter.
-- If self-consistency, reflection, or multi-agent debate is used, report the sample count and extra model-call cost.
 - If a local model is used, report hardware, inference server, quantization, and decoding settings.

@@ -6,10 +6,10 @@ Execution plan for paper-grade hosted and local/open-source LLM baseline runs.
 
 | Metric | Value |
 | --- | --- |
-| planned_runs | 12 |
+| planned_runs | 11 |
 | required_runs | 7 |
-| recommended_runs | 5 |
-| hosted_runs | 10 |
+| recommended_runs | 4 |
+| hosted_runs | 9 |
 | local_open_source_runs | 2 |
 | minimum_repeats_for_stochastic_claims | 3 |
 
@@ -38,7 +38,6 @@ Execution plan for paper-grade hosted and local/open-source LLM baseline runs.
 - `single_run_claims`: Allowed only as preliminary baseline rows when clearly labeled single-run.
 - `stochastic_claims`: Require at least 3 repeats or an explicit limitation statement; record each repeat with a distinct resumable-runner --seed value.
 - `bundle_protocol`: Combine repeated seed outputs with founderbench.submission_bundle and report the generated submission report before stochastic confidence claims.
-- `self_consistency`: DeepSeek self-consistency uses k=3 as a separate ablation, not a replacement for the naive baseline.
 
 ## Audit Policy
 
@@ -60,7 +59,6 @@ Execution plan for paper-grade hosted and local/open-source LLM baseline runs.
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | openai_single | openai | hosted | required | 50 | outputs/founderbench-openai.json | outputs/founderbench-openai-submission-report.md | outputs/founderbench-openai-repeats.json |
 | deepseek_single | deepseek | hosted | required | 50 | outputs/founderbench-deepseek.json | outputs/founderbench-deepseek-submission-report.md | outputs/founderbench-deepseek-repeats.json |
-| deepseek_sc_k3 | deepseek_sc | hosted | recommended | 50 | outputs/founderbench-deepseek-sc-k3.json | outputs/founderbench-deepseek-sc-k3-submission-report.md | outputs/founderbench-deepseek-sc-k3-repeats.json |
 | anthropic_single | anthropic | hosted | required | 50 | outputs/founderbench-anthropic.json | outputs/founderbench-anthropic-submission-report.md | outputs/founderbench-anthropic-repeats.json |
 | gemini_single | gemini | hosted | required | 50 | outputs/founderbench-gemini.json | outputs/founderbench-gemini-submission-report.md | outputs/founderbench-gemini-repeats.json |
 | kimi_single | kimi | hosted | required | 50 | outputs/founderbench-kimi.json | outputs/founderbench-kimi-submission-report.md | outputs/founderbench-kimi-repeats.json |
@@ -97,19 +95,6 @@ python -m founderbench.resumable_runner --policy deepseek --output outputs/found
 python -m founderbench.submission --input outputs/founderbench-deepseek-audit.json --report outputs/founderbench-deepseek-audit-submission-report.md
 python -m founderbench.submission_bundle --input outputs/founderbench-deepseek-seed0.json --input outputs/founderbench-deepseek-seed1.json --input outputs/founderbench-deepseek-seed2.json --output outputs/founderbench-deepseek-repeats.json --report outputs/founderbench-deepseek-repeats-submission-report.md
 python -m founderbench.submission --input outputs/founderbench-deepseek-repeats.json --report outputs/founderbench-deepseek-repeats-submission-report.md
-```
-
-### deepseek_sc_k3
-
-Self-consistency k=3 ablation for DeepSeek.
-
-```powershell
-python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3.json --resume --seed 0
-python -m founderbench.submission --input outputs/founderbench-deepseek-sc-k3.json --report outputs/founderbench-deepseek-sc-k3-submission-report.md
-python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-audit.json --resume --seed 0 --audit
-python -m founderbench.submission --input outputs/founderbench-deepseek-sc-k3-audit.json --report outputs/founderbench-deepseek-sc-k3-audit-submission-report.md
-python -m founderbench.submission_bundle --input outputs/founderbench-deepseek-sc-k3-seed0.json --input outputs/founderbench-deepseek-sc-k3-seed1.json --input outputs/founderbench-deepseek-sc-k3-seed2.json --output outputs/founderbench-deepseek-sc-k3-repeats.json --report outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md
-python -m founderbench.submission --input outputs/founderbench-deepseek-sc-k3-repeats.json --report outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md
 ```
 
 ### anthropic_single

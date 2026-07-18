@@ -8,8 +8,8 @@ These generated tables are intended for the paper results section. They are deri
 | --- | --- |
 | deterministic_runs | 4 |
 | valid_provider_runs | 0 |
-| provider_candidates | 12 |
-| provider_missing_or_invalid | 12 |
+| provider_candidates | 11 |
+| provider_missing_or_invalid | 11 |
 | valid_provider_policies | 0 |
 | valid_repeated_provider_bundles | 0 |
 
@@ -79,7 +79,6 @@ Each cell reports `solved/5 (average score)`. Valid policies included: `task_heu
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | openai_hosted_baseline | openai | hosted_llm | missing | 0 |  |  |  | Missing outputs/founderbench-openai.json or outputs/founderbench-openai-repeats.json |
 | deepseek_hosted_baseline | deepseek | hosted_llm | missing | 0 |  |  |  | Missing outputs/founderbench-deepseek.json or outputs/founderbench-deepseek-repeats.json |
-| deepseek_self_consistency_k3 | deepseek_sc | hosted_llm_ablation | missing | 0 |  |  |  | Missing outputs/founderbench-deepseek-sc-k3.json or outputs/founderbench-deepseek-sc-k3-repeats.json |
 | anthropic_hosted_baseline | anthropic | hosted_llm | missing | 0 |  |  |  | Missing outputs/founderbench-anthropic.json or outputs/founderbench-anthropic-repeats.json |
 | gemini_hosted_baseline | gemini | hosted_llm | missing | 0 |  |  |  | Missing outputs/founderbench-gemini.json or outputs/founderbench-gemini-repeats.json |
 | kimi_hosted_baseline | kimi | hosted_llm | missing | 0 |  |  |  | Missing outputs/founderbench-kimi.json or outputs/founderbench-kimi-repeats.json |

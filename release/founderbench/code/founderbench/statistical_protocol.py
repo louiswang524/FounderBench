@@ -53,7 +53,7 @@ def build_protocol() -> dict[str, Any]:
             "win_loss_tie": "Count tasks where model_a score is greater than, less than, or equal to model_b.",
         },
         "repeated_sampling_comparison": {
-            "when_required": "Required for stochastic decoding studies, self-consistency ablations, reflection/multi-agent variants, or when reporting sampling variance.",
+            "when_required": "Required for stochastic decoding studies or when reporting sampling variance.",
             "minimum_repeats_recommended": 3,
             "preferred_repeats": 5,
             "aggregation": "Report per-run average score and solve rate, then bootstrap across submitted runs for repeated-sampling intervals.",

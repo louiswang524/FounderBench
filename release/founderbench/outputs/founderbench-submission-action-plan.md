@@ -8,10 +8,10 @@ Submission gate status: `not_ready`
 
 | Metric | Value |
 | --- | --- |
-| steps | 25 |
+| steps | 24 |
 | required_steps | 17 |
 | owner_action_steps | 4 |
-| provider_environment_steps | 12 |
+| provider_environment_steps | 11 |
 | claim_alignment_steps | 3 |
 | ready_for_submission | False |
 
@@ -27,7 +27,6 @@ Submission gate status: `not_ready`
 | complete_private_holdout_execution | required_experiments | evaluator | required_for_final_submission | missing | Execute the private holdout protocol on an evaluator-controlled host and report aggregate fields only. |
 | configure_openai | provider_run_readiness | evaluator | recommended | blocked_on_environment | Configure provider environment for OpenAI GPT. |
 | configure_deepseek | provider_run_readiness | evaluator | required | blocked_on_environment | Configure provider environment for DeepSeek. |
-| configure_deepseek_sc | provider_run_readiness | evaluator | recommended | blocked_on_environment | Configure provider environment for DeepSeek self-consistency. |
 | configure_anthropic | provider_run_readiness | evaluator | required | blocked_on_environment | Configure provider environment for Anthropic Claude. |
 | configure_gemini | provider_run_readiness | evaluator | required | blocked_on_environment | Configure provider environment for Google Gemini. |
 | configure_kimi | provider_run_readiness | evaluator | recommended | blocked_on_environment | Configure provider environment for Moonshot Kimi. |
@@ -156,20 +155,6 @@ python -m founderbench.submission --input outputs/founderbench-openai.json --rep
 python -m founderbench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek.json --resume
 python -m founderbench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek-audit.json --resume --audit
 python -m founderbench.submission --input outputs/founderbench-deepseek.json --report outputs/founderbench-deepseek-submission-report.md
-```
-
-### configure_deepseek_sc
-
-- Gate: `provider_run_readiness`
-- Owner: `evaluator`
-- Claim impact: Required before hosted/local LLM comparison claims can be made.
-- Missing inputs/outputs:
-  - `DEEPSEEK_API_KEY`
-- Commands:
-```powershell
-python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3.json --resume
-python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-audit.json --resume --audit
-python -m founderbench.submission --input outputs/founderbench-deepseek-sc-k3.json --report outputs/founderbench-deepseek-sc-k3-submission-report.md
 ```
 
 ### configure_anthropic

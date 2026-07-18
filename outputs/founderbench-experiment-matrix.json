@@ -3,10 +3,10 @@
   "version": "0.3.0",
   "purpose": "Paper-facing experiment matrix for required baselines, ablations, uncertainty checks, audit traces, and holdout evidence.",
   "summary": {
-    "experiments": 12,
+    "experiments": 11,
     "complete": 5,
     "partial": 0,
-    "missing": 7,
+    "missing": 6,
     "required_missing": 6
   },
   "experiments": [
@@ -29,14 +29,14 @@
         {
           "path": "outputs/founderbench-baseline-raw.json",
           "exists": true,
-          "bytes": 342129,
-          "sha256": "47494e318c4134e055d116de87e196faff0da7fc7275eff20107826b91b4f72c"
+          "bytes": 342117,
+          "sha256": "78e1e9797d34bf6ea0a0446a549667a707fdffd916c5a870bde1ea6546c99ec3"
         },
         {
           "path": "outputs/founderbench-baseline-leaderboard.json",
           "exists": true,
           "bytes": 2653,
-          "sha256": "26aefe1109d7ff5ab0874a1019ee9f5e8e962482b0063184cfc08b9838ddb854"
+          "sha256": "72a8feb60588e6681ed8a71382b3fd9e4392c593f4a64f789a295d283c9f6adf"
         },
         {
           "path": "outputs/founderbench-baseline-analysis.md",
@@ -96,8 +96,8 @@
         {
           "path": "outputs/founderbench-action-ablation.json",
           "exists": true,
-          "bytes": 643481,
-          "sha256": "b34601a8f91528cde4cd89d3d7b8db69c3e4f733b8b25093ad52437faba77657"
+          "bytes": 643468,
+          "sha256": "2e39651c487af8ed2951ac24cc476bbf3c0f37bbbd37502cce41c5bc069aaea4"
         }
       ],
       "status": "complete",
@@ -121,8 +121,8 @@
         {
           "path": "outputs/founderbench-random-repeats.json",
           "exists": true,
-          "bytes": 454423,
-          "sha256": "7380ff99f27c182feb0cd0c986352e67df8401a1cb3b83340953daa8157769db"
+          "bytes": 454477,
+          "sha256": "88f1e702df899936b589ac2fb1c3750126ebb7f619f83f5db8947b5410001e3e"
         },
         {
           "path": "outputs/founderbench-random-repeats.md",
@@ -152,8 +152,8 @@
         {
           "path": "outputs/founderbench-qualitative-traces.json",
           "exists": true,
-          "bytes": 27313,
-          "sha256": "871ab65a406d11780a483190e03511ce17adbd507e53f976f28427d531a57228"
+          "bytes": 27316,
+          "sha256": "2b8f9d2475f7cd4dc0b5fc7fbb7d10e33aeee3d1764432c321d4fa53b29aad25"
         },
         {
           "path": "outputs/founderbench-qualitative-traces.md",
@@ -193,36 +193,6 @@
       "missing_paths": [
         "outputs/founderbench-deepseek.json",
         "outputs/founderbench-deepseek-submission-report.md"
-      ]
-    },
-    {
-      "id": "deepseek_self_consistency_k3",
-      "section": "hosted_llm_ablations",
-      "priority": "recommended",
-      "description": "Run DeepSeek self-consistency with k=3 on the complete 50-task current release suite.",
-      "evidence_paths": [
-        "outputs/founderbench-deepseek-sc-k3.json",
-        "outputs/founderbench-deepseek-sc-k3-submission-report.md"
-      ],
-      "commands": [
-        "python -m founderbench.resumable_runner --policy deepseek_sc --output ..\\..\\outputs\\founderbench-deepseek-sc-k3.json --resume",
-        "python -m founderbench.submission --input ..\\..\\outputs\\founderbench-deepseek-sc-k3.json --report ..\\..\\outputs\\founderbench-deepseek-sc-k3-submission-report.md"
-      ],
-      "paper_use": "Tests whether sampling-based self-consistency improves business decision quality.",
-      "evidence": [
-        {
-          "path": "outputs/founderbench-deepseek-sc-k3.json",
-          "exists": false
-        },
-        {
-          "path": "outputs/founderbench-deepseek-sc-k3-submission-report.md",
-          "exists": false
-        }
-      ],
-      "status": "missing",
-      "missing_paths": [
-        "outputs/founderbench-deepseek-sc-k3.json",
-        "outputs/founderbench-deepseek-sc-k3-submission-report.md"
       ]
     },
     {

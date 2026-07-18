@@ -35,7 +35,7 @@ Pre-specified statistical comparison protocol for deterministic and hosted/local
 
 | Item | Rule |
 | --- | --- |
-| when_required | Required for stochastic decoding studies, self-consistency ablations, reflection/multi-agent variants, or when reporting sampling variance. |
+| when_required | Required for stochastic decoding studies or when reporting sampling variance. |
 | minimum_repeats_recommended | 3 |
 | preferred_repeats | 5 |
 | aggregation | Report per-run average score and solve rate, then bootstrap across submitted runs for repeated-sampling intervals. |

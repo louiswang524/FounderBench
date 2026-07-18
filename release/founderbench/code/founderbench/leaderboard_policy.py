@@ -43,7 +43,6 @@ def build_policy() -> dict[str, Any]:
         "Run JSON must report benchmark_version 0.3.0, both public splits, required diagnostics, provider-error categories, and run_seed when used for repeated runs.",
         "Provider errors, invalid actions, bankruptcies, over-budget decisions, and timeouts remain in the denominator.",
         "Hosted/local provider rows are excluded until the raw run and submission report both exist and validate.",
-        "Self-consistency or reflection variants must be reported as separate ablations unless pre-registered as the primary policy.",
         "Model submitters must disclose prompt/agent tuning on public tasks and whether the submitted model was trained or fine-tuned on released tasks.",
     ]
     rejection_rules = [

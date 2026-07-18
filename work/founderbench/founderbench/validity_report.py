@@ -65,7 +65,7 @@ THREATS: list[dict[str, Any]] = [
             "outputs/founderbench-experiment-matrix.md",
             "outputs/founderbench-model-submission-template.md",
         ],
-        "remaining_work": "Run DeepSeek, Claude, Gemini, self-consistency, and at least one local open-source model on all 50 tasks.",
+        "remaining_work": "Run DeepSeek, Claude, Gemini, and at least one local open-source model on all 50 tasks.",
     },
     {
         "id": "prompt_and_sampling_sensitivity",
@@ -104,7 +104,7 @@ THREATS: list[dict[str, Any]] = [
             "outputs/founderbench-ablation-report.md",
             "outputs/founderbench-paper-tables.md",
         ],
-        "remaining_work": "Compare against prompt-only LLMs, self-consistency, and local open models to contextualize the heuristic ceiling.",
+        "remaining_work": "Compare against hosted LLMs and local open models to contextualize the heuristic ceiling.",
     },
     {
         "id": "missing_human_founder_baseline",

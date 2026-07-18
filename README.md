@@ -105,7 +105,6 @@ Supported provider policies:
 
 - `openai` for OpenAI/GPT models
 - `deepseek` for a single DeepSeek run
-- `deepseek_sc` for DeepSeek self-consistency with `SC_K=3` by default
 - `anthropic` for Claude
 - `gemini` for Gemini
 - `kimi` for Moonshot/Kimi OpenAI-compatible endpoints

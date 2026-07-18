@@ -6,7 +6,6 @@ from dataclasses import asdict
 from .env import FounderBenchEnv
 from .llm_policy import (
     AnthropicTaskPolicy,
-    DeepSeekSelfConsistencyTaskPolicy,
     DeepSeekTaskPolicy,
     GeminiTaskPolicy,
     GLMTaskPolicy,
@@ -50,7 +49,6 @@ def run_task(task: StartupTask, policy: Policy, trace: bool = False, audit: bool
                 if policy.__class__.__name__ in {
                     "OpenAICompatibleTaskPolicy",
                     "DeepSeekTaskPolicy",
-                    "DeepSeekSelfConsistencyTaskPolicy",
                     "AnthropicTaskPolicy",
                     "GeminiTaskPolicy",
                     "OpenAIHostedTaskPolicy",
@@ -134,8 +132,6 @@ def make_policy(policy_name: str, seed: int = 0) -> Policy:
         return OpenAIHostedTaskPolicy()  # type: ignore[return-value]
     if policy_name == "deepseek":
         return DeepSeekTaskPolicy()  # type: ignore[return-value]
-    if policy_name == "deepseek_sc":
-        return DeepSeekSelfConsistencyTaskPolicy()  # type: ignore[return-value]
     if policy_name == "anthropic":
         return AnthropicTaskPolicy()  # type: ignore[return-value]
     if policy_name == "gemini":

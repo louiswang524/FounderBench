@@ -46,7 +46,7 @@ def build_statement() -> dict[str, Any]:
     submission_disclosures = [
         "model/provider name, version, and access date when applicable",
         "prompt/protocol version and prompt hashes",
-        "decoding settings, self-consistency/reflection policy, and run_seed identities",
+        "decoding settings and run_seed identities",
         "adapter/parser version and whether any output was manually repaired",
         "provider-error categories, invalid-action counts, timeout handling, and omitted-task status",
         "token usage, latency, estimated cost, and redaction status of any released audit traces",

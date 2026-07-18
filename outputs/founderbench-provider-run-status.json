@@ -64,36 +64,6 @@
       ]
     },
     {
-      "id": "deepseek_sc_k3",
-      "policy": "deepseek_sc",
-      "priority": "recommended",
-      "model_family": "hosted",
-      "output": "outputs/founderbench-deepseek-sc-k3.json",
-      "submission_report": "outputs/founderbench-deepseek-sc-k3-submission-report.md",
-      "audit_output": "outputs/founderbench-deepseek-sc-k3-audit.json",
-      "exists": false,
-      "submission_report_exists": false,
-      "audit_exists": false,
-      "audit_submission_report_exists": false,
-      "repeat_bundle_output": "outputs/founderbench-deepseek-sc-k3-repeats.json",
-      "repeat_bundle_report": "outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md",
-      "repeat_bundle_exists": false,
-      "repeat_bundle_report_exists": false,
-      "repeat_outputs": [
-        "outputs/founderbench-deepseek-sc-k3-seed0.json",
-        "outputs/founderbench-deepseek-sc-k3-seed1.json",
-        "outputs/founderbench-deepseek-sc-k3-seed2.json"
-      ],
-      "repeat_outputs_present": 0,
-      "evidence_kind": "",
-      "status": "missing",
-      "runs": 0,
-      "tasks": 0,
-      "problems": [
-        "Missing outputs/founderbench-deepseek-sc-k3.json or outputs/founderbench-deepseek-sc-k3-repeats.json"
-      ]
-    },
-    {
       "id": "anthropic_single",
       "policy": "anthropic",
       "priority": "required",
@@ -427,10 +397,10 @@
     }
   ],
   "summary": {
-    "planned_runs": 12,
+    "planned_runs": 11,
     "valid_runs": 0,
     "invalid_runs": 0,
-    "missing_runs": 12,
+    "missing_runs": 11,
     "required_runs": 7,
     "required_valid": 0,
     "required_missing_or_invalid": 7,

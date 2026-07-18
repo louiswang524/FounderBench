@@ -6,10 +6,10 @@ Provider-run status report for current release paper evidence, generated from pl
 
 | Metric | Value |
 | --- | --- |
-| planned_runs | 12 |
+| planned_runs | 11 |
 | valid_runs | 0 |
 | invalid_runs | 0 |
-| missing_runs | 12 |
+| missing_runs | 11 |
 | required_runs | 7 |
 | required_valid | 0 |
 | required_missing_or_invalid | 7 |
@@ -25,7 +25,6 @@ Provider-run status report for current release paper evidence, generated from pl
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | openai_single | openai | required | missing | 0 | 0 |  | 0 | False | False | Missing outputs/founderbench-openai.json or outputs/founderbench-openai-repeats.json |
 | deepseek_single | deepseek | required | missing | 0 | 0 |  | 0 | False | False | Missing outputs/founderbench-deepseek.json or outputs/founderbench-deepseek-repeats.json |
-| deepseek_sc_k3 | deepseek_sc | recommended | missing | 0 | 0 |  | 0 | False | False | Missing outputs/founderbench-deepseek-sc-k3.json or outputs/founderbench-deepseek-sc-k3-repeats.json |
 | anthropic_single | anthropic | required | missing | 0 | 0 |  | 0 | False | False | Missing outputs/founderbench-anthropic.json or outputs/founderbench-anthropic-repeats.json |
 | gemini_single | gemini | required | missing | 0 | 0 |  | 0 | False | False | Missing outputs/founderbench-gemini.json or outputs/founderbench-gemini-repeats.json |
 | kimi_single | kimi | required | missing | 0 | 0 |  | 0 | False | False | Missing outputs/founderbench-kimi.json or outputs/founderbench-kimi-repeats.json |

@@ -91,21 +91,6 @@ EXPERIMENTS: list[dict[str, Any]] = [
         "paper_use": "Provides a representative hosted LLM baseline.",
     },
     {
-        "id": "deepseek_self_consistency_k3",
-        "section": "hosted_llm_ablations",
-        "priority": "recommended",
-        "description": "Run DeepSeek self-consistency with k=3 on the complete 50-task current release suite.",
-        "evidence_paths": [
-            "outputs/founderbench-deepseek-sc-k3.json",
-            "outputs/founderbench-deepseek-sc-k3-submission-report.md",
-        ],
-        "commands": [
-            "python -m founderbench.resumable_runner --policy deepseek_sc --output ..\\..\\outputs\\founderbench-deepseek-sc-k3.json --resume",
-            "python -m founderbench.submission --input ..\\..\\outputs\\founderbench-deepseek-sc-k3.json --report ..\\..\\outputs\\founderbench-deepseek-sc-k3-submission-report.md",
-        ],
-        "paper_use": "Tests whether sampling-based self-consistency improves business decision quality.",
-    },
-    {
         "id": "anthropic_hosted_baseline",
         "section": "hosted_llm_baselines",
         "priority": "required",

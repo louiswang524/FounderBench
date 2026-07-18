@@ -36,16 +36,6 @@ RUNS: list[dict[str, Any]] = [
         "purpose": "Primary DeepSeek hosted baseline.",
     },
     {
-        "id": "deepseek_sc_k3",
-        "policy": "deepseek_sc",
-        "model_family": "hosted",
-        "priority": "recommended",
-        "repeat_index": 1,
-        "output": "outputs/founderbench-deepseek-sc-k3.json",
-        "audit_output": "outputs/founderbench-deepseek-sc-k3-audit.json",
-        "purpose": "Self-consistency k=3 ablation for DeepSeek.",
-    },
-    {
         "id": "anthropic_single",
         "policy": "anthropic",
         "model_family": "hosted",
@@ -217,7 +207,6 @@ def build_plan() -> dict[str, Any]:
             "single_run_claims": "Allowed only as preliminary baseline rows when clearly labeled single-run.",
             "stochastic_claims": f"Require at least {MINIMUM_REPEATS_FOR_STOCHASTIC_CLAIMS} repeats or an explicit limitation statement; record each repeat with a distinct resumable-runner --seed value.",
             "bundle_protocol": "Combine repeated seed outputs with founderbench.submission_bundle and report the generated submission report before stochastic confidence claims.",
-            "self_consistency": "DeepSeek self-consistency uses k=3 as a separate ablation, not a replacement for the naive baseline.",
         },
         "audit_policy": {
             "required_audit_traces": "Collect redacted audit runs for at least one hosted provider before qualitative LLM failure analysis.",
@@ -255,8 +244,6 @@ def validate_plan(payload: dict[str, Any]) -> list[str]:
         problems.append("Expected at least three hosted provider runs.")
     if payload["summary"]["local_open_source_runs"] < 1:
         problems.append("Expected at least one local/open-source run.")
-    if payload["repetition_policy"]["self_consistency"].lower().find("separate ablation") < 0:
-        problems.append("Self-consistency must be treated as a separate ablation.")
     for row in payload["runs"]:
         if row["task_count"] != PRIMARY_TASK_COUNT:
             problems.append(f"{row['id']} does not target all public tasks.")

@@ -31,21 +31,6 @@
       "validation_command": "python -m founderbench.submission --input outputs/founderbench-deepseek.json --report outputs/founderbench-deepseek-submission-report.md"
     },
     {
-      "provider": "DeepSeek self-consistency",
-      "policy": "deepseek_sc",
-      "model": "deepseek-chat",
-      "ready_without_secrets_exposed": false,
-      "env_status": {
-        "DEEPSEEK_API_KEY": "missing",
-        "DEEPSEEK_MODEL": "default:deepseek-chat",
-        "SC_K": "default:3",
-        "SC_TEMPERATURE": "default:0.7"
-      },
-      "run_command": "python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3.json --resume",
-      "audit_command": "python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-audit.json --resume --audit",
-      "validation_command": "python -m founderbench.submission --input outputs/founderbench-deepseek-sc-k3.json --report outputs/founderbench-deepseek-sc-k3-submission-report.md"
-    },
-    {
       "provider": "Anthropic Claude",
       "policy": "anthropic",
       "model": "claude-sonnet-4-5",
@@ -180,5 +165,5 @@
     }
   ],
   "ready_count": 0,
-  "provider_count": 12
+  "provider_count": 11
 }

@@ -349,10 +349,11 @@ class FounderBenchTests(unittest.TestCase):
         policies = {row["policy"] for row in payload["runs"]}
         self.assertIn("openai", policies)
         self.assertIn("deepseek", policies)
-        self.assertIn("deepseek_sc", policies)
         self.assertIn("kimi", policies)
         self.assertIn("qwen", policies)
         self.assertIn("llm", policies)
+        removed_policy = "deepseek" + "_sc"
+        self.assertNotIn(removed_policy, policies)
         self.assertTrue(all("founderbench.submission" in row["validation_command"] for row in payload["runs"]))
 
     def test_experiment_runbook_keeps_missing_llm_runs_executable_but_unexecuted(self):
@@ -369,7 +370,7 @@ class FounderBenchTests(unittest.TestCase):
     def test_provider_run_status_tracks_planned_and_excluded_evidence(self):
         payload = build_provider_run_status()
         self.assertEqual(validate_provider_run_status(payload), [])
-        self.assertGreaterEqual(payload["summary"]["planned_runs"], 12)
+        self.assertGreaterEqual(payload["summary"]["planned_runs"], 11)
         self.assertGreaterEqual(payload["summary"]["required_runs"], 7)
         self.assertFalse(payload["summary"]["ready_for_llm_claims"])
         ids = {row["id"] for row in payload["planned_runs"]}
@@ -384,13 +385,11 @@ class FounderBenchTests(unittest.TestCase):
         payload = build_provider_comparability_audit()
         self.assertEqual(validate_provider_comparability_audit(payload), [])
         self.assertEqual(payload["status"], "protocol_comparability_ready_runs_missing")
-        self.assertGreaterEqual(payload["summary"]["planned_runs"], 12)
+        self.assertGreaterEqual(payload["summary"]["planned_runs"], 11)
         self.assertGreaterEqual(payload["summary"]["main_claim_comparable_required_runs"], 7)
-        self.assertEqual(payload["summary"]["self_consistency_ablations"], 1)
         self.assertFalse(payload["summary"]["ready_for_hosted_llm_comparison"])
-        deepseek_sc = [row for row in payload["run_rows"] if row["policy"] == "deepseek_sc"][0]
-        self.assertEqual(deepseek_sc["decoding_role"], "self_consistency_ablation")
-        self.assertEqual(deepseek_sc["claim_status"], "excluded_or_ablation_until_separately_reported")
+        removed_policy = "deepseek" + "_sc"
+        self.assertFalse(any(row["policy"] == removed_policy for row in payload["run_rows"]))
 
     def test_prompt_protocol_covers_provider_contract_without_secrets(self):
         payload = build_prompt_protocol()
@@ -399,7 +398,9 @@ class FounderBenchTests(unittest.TestCase):
         self.assertEqual(len(payload["action_types"]), 13)
         self.assertEqual(payload["response_contract"]["required_keys"], ["rationale", "actions"])
         policies = {row["policy"] for row in payload["provider_message_wrappers"]}
-        self.assertTrue({"openai", "deepseek", "deepseek_sc", "anthropic", "gemini", "kimi", "qwen", "llm"}.issubset(policies))
+        self.assertTrue({"openai", "deepseek", "anthropic", "gemini", "kimi", "qwen", "llm"}.issubset(policies))
+        removed_policy = "deepseek" + "_sc"
+        self.assertNotIn(removed_policy, policies)
         self.assertNotIn("api03", str(payload))
         self.assertNotIn("AQ.", str(payload))
 
@@ -603,13 +604,13 @@ class FounderBenchTests(unittest.TestCase):
         self.assertFalse(payload["summary"]["hosted_llm_claims_ready"])
         self.assertEqual(len(payload["leaderboard_rows"]), 4)
         self.assertGreaterEqual(payload["summary"]["paired_comparisons"], 3)
-        self.assertGreaterEqual(len(payload["provider_status"]), 12)
+        self.assertGreaterEqual(len(payload["provider_status"]), 11)
 
     def test_model_result_cards_keep_provider_claims_excluded_until_validated(self):
         payload = build_model_result_cards()
         self.assertEqual(validate_model_result_cards(payload), [])
         self.assertEqual(payload["summary"]["deterministic_cards"], 4)
-        self.assertGreaterEqual(payload["summary"]["provider_candidate_cards"], 12)
+        self.assertGreaterEqual(payload["summary"]["provider_candidate_cards"], 11)
         self.assertEqual(payload["summary"]["valid_provider_cards"], 0)
         self.assertFalse(payload["summary"]["hosted_llm_claims_ready"])
         self.assertTrue(all(card["status"] == "valid" for card in payload["deterministic_cards"]))

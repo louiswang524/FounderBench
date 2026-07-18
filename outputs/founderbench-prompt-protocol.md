@@ -3,7 +3,7 @@
 Version: 0.3.0
 Prompt version: `founderbench-task-agent`
 Prompt template SHA-256: `21cfb19c6ce46b4f74d6d92dc994fca10237b86e166e5b886b5220bb4da15e8b`
-Protocol SHA-256: `a2f5a2b7f20fe49854b426d8cb4f747a92b8245eb71df5f84fdeaece9618b0a6`
+Protocol SHA-256: `67b5335c955d256ed530cb39928eef1c583a78604cbcfa906c97d1f05ea2cae5`
 
 ## Contract
 
@@ -27,20 +27,19 @@ Protocol SHA-256: `a2f5a2b7f20fe49854b426d8cb4f747a92b8245eb71df5f84fdeaece9618b
 
 ## Provider Message Wrappers
 
-| Provider | Policy | Default Model | Temperature | Self Consistency k | System Prompt Hash |
-| --- | --- | --- | --- | --- | --- |
-| OpenAI GPT | `openai` | `gpt-4.1-mini` | 0.2 | 1 | `f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91` |
-| DeepSeek | `deepseek` | `deepseek-chat` | 0.2 | 1 | `4464f7e398df3b5cc605ce515c39babc9e643706adc3a1e47df256134a55a37a` |
-| DeepSeek self-consistency | `deepseek_sc` | `deepseek-chat` | 0.7 | 3 | `4464f7e398df3b5cc605ce515c39babc9e643706adc3a1e47df256134a55a37a` |
-| Anthropic Claude | `anthropic` | `claude-sonnet-4-5` | 0.2 | 1 | `f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91` |
-| Google Gemini | `gemini` | `gemini-2.5-flash` | 0.2 | 1 | `f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91` |
-| Moonshot Kimi | `kimi` | `kimi-latest` | 0.2 | 1 | `f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91` |
-| Alibaba Qwen | `qwen` | `qwen-plus` | 0.2 | 1 | `f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91` |
-| Mistral | `mistral` | `mistral-large-latest` | 0.2 | 1 | `f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91` |
-| Z.ai GLM | `glm` | `glm-4-plus` | 0.2 | 1 | `f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91` |
-| xAI Grok | `xai` | `grok-3-mini` | 0.2 | 1 | `f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91` |
-| Llama/Open-weight endpoint | `llama` | `meta-llama/Llama-3.1-70B-Instruct` | 0.2 | 1 | `f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91` |
-| Local/OpenAI-compatible | `llm` | `Qwen/Qwen2.5-7B-Instruct` | 0.2 | 1 | `f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91` |
+| Provider | Policy | Default Model | Temperature | System Prompt Hash |
+| --- | --- | --- | --- | --- |
+| OpenAI GPT | `openai` | `gpt-4.1-mini` | 0.2 | `f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91` |
+| DeepSeek | `deepseek` | `deepseek-chat` | 0.2 | `4464f7e398df3b5cc605ce515c39babc9e643706adc3a1e47df256134a55a37a` |
+| Anthropic Claude | `anthropic` | `claude-sonnet-4-5` | 0.2 | `f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91` |
+| Google Gemini | `gemini` | `gemini-2.5-flash` | 0.2 | `f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91` |
+| Moonshot Kimi | `kimi` | `kimi-latest` | 0.2 | `f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91` |
+| Alibaba Qwen | `qwen` | `qwen-plus` | 0.2 | `f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91` |
+| Mistral | `mistral` | `mistral-large-latest` | 0.2 | `f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91` |
+| Z.ai GLM | `glm` | `glm-4-plus` | 0.2 | `f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91` |
+| xAI Grok | `xai` | `grok-3-mini` | 0.2 | `f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91` |
+| Llama/Open-weight endpoint | `llama` | `meta-llama/Llama-3.1-70B-Instruct` | 0.2 | `f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91` |
+| Local/OpenAI-compatible | `llm` | `Qwen/Qwen2.5-7B-Instruct` | 0.2 | `f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91` |
 
 ## Run Trace Requirements
 

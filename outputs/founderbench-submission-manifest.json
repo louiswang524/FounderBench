@@ -55,20 +55,20 @@
     {
       "path": "outputs/founderbench-model-comparison.md",
       "exists": true,
-      "bytes": 5638,
-      "sha256": "27a48607f4bb20c4bcf47f9f44fa166081f5fe255786006562d2cb521a40d8da"
+      "bytes": 5442,
+      "sha256": "4aac8e544739e821c9a079149f658f9e715b3b63bd5dadac9307a28d02150449"
     },
     {
       "path": "outputs/founderbench-paper-tables.md",
       "exists": true,
-      "bytes": 5625,
-      "sha256": "1d9d663b0cb630a9ef0dd7ea26b2e0664bee813ccd079a12e919021f8b0c92ae"
+      "bytes": 5429,
+      "sha256": "6ec602030fc3d9cb51c9e429df32bc14ee2d69d1601b4357df52817773d076f3"
     },
     {
       "path": "outputs/founderbench-validity-report.md",
       "exists": true,
-      "bytes": 5824,
-      "sha256": "2068448c3953ac99b3ff495c87031d52e74af272d69d4d27952036ef1d9cc9b5"
+      "bytes": 5782,
+      "sha256": "33b6b4d793cfc73e81ffc1754a74b5e5dab0e513809f9140dcc098e25986d283"
     },
     {
       "path": "outputs/founderbench-claim-evidence.md",
@@ -80,25 +80,25 @@
       "path": "outputs/founderbench-submission-gate.md",
       "exists": true,
       "bytes": 1498,
-      "sha256": "f6361dfb5a722df3a18b475bc42d1a8673eb275bdec2f9689997ab6c88083c16"
+      "sha256": "92e14558994ebab26fbb15bfd70dfc9d5b3ea6a3dd1bfbae15974c13fe606172"
     },
     {
       "path": "outputs/founderbench-completion-audit.md",
       "exists": true,
       "bytes": 8186,
-      "sha256": "b3278e061f5014cff61f0f0ae3a517bb5d183fb563110e32a0c2d21e3a416e8b"
+      "sha256": "8df7acbe0b245983c11c031c74543c3b901edb4107d16d5dae0e1d8f821ad371"
     },
     {
       "path": "outputs/founderbench-reviewer-index.md",
       "exists": true,
       "bytes": 20506,
-      "sha256": "0251c053ce649fb180da9376502a28dfab1c66f3d06ef5840c6c8902c9b4985f"
+      "sha256": "40edadcf8721fa3075f48d09a43f3ee4123567ff242045c76852db5bfba9a736"
     },
     {
       "path": "release/founderbench/SHA256SUMS.json",
       "exists": true,
       "bytes": 40996,
-      "sha256": "d57c14ee6460db3de027c0fbaac552462a8aac4d32cae75d4224dfb277e9c2e0"
+      "sha256": "e78614c7e5a39404ce5dad868a065fbafe5f698ff5c18a43a1622a0ed8c55408"
     },
     {
       "path": "release/founderbench/BUNDLE-INTEGRITY.md",
@@ -226,7 +226,7 @@
     },
     {
       "gate": "provider_run_readiness",
-      "blocker": "Only 0/12 provider configurations are ready.",
+      "blocker": "Only 0/11 provider configurations are ready.",
       "evidence": [
         "outputs/founderbench-provider-readiness.md"
       ]

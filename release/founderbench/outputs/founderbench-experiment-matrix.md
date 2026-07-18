@@ -6,10 +6,10 @@ This generated matrix states which experiments are needed for a publishable benc
 
 | Metric | Value |
 | --- | --- |
-| experiments | 12 |
+| experiments | 11 |
 | complete | 5 |
 | partial | 0 |
-| missing | 7 |
+| missing | 6 |
 | required_missing | 6 |
 
 ## Experiment Ledger
@@ -22,7 +22,6 @@ This generated matrix states which experiments are needed for a publishable benc
 | random_repeated_seed_calibration | uncertainty | required | complete | 2 | Provides a sanity check for stochastic variance and interval reporting. |
 | qualitative_trace_analysis | qualitative | required | complete | 2 | Supports failure analysis and shows that scores come from executable simulator trajectories. |
 | deepseek_hosted_baseline | hosted_llm_baselines | required | missing | 0 | Provides a representative hosted LLM baseline. |
-| deepseek_self_consistency_k3 | hosted_llm_ablations | recommended | missing | 0 | Tests whether sampling-based self-consistency improves business decision quality. |
 | anthropic_hosted_baseline | hosted_llm_baselines | required | missing | 0 | Adds a second hosted LLM family for model differentiation. |
 | gemini_hosted_baseline | hosted_llm_baselines | required | missing | 0 | Adds a third hosted LLM family for model differentiation. |
 | local_open_source_baseline | open_source_baselines | required | missing | 0 | Makes the comparison accessible beyond closed hosted APIs. |

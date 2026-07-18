@@ -4,10 +4,10 @@
   "purpose": "Reviewer-facing action plan for clearing the remaining FounderBench submission gates.",
   "submission_gate_status": "not_ready",
   "summary": {
-    "steps": 25,
+    "steps": 24,
     "required_steps": 17,
     "owner_action_steps": 4,
-    "provider_environment_steps": 12,
+    "provider_environment_steps": 11,
     "claim_alignment_steps": 3,
     "ready_for_submission": false
   },
@@ -174,26 +174,6 @@
       ],
       "expected_outputs": [
         "outputs/founderbench-deepseek.json"
-      ],
-      "claim_impact": "Required before hosted/local LLM comparison claims can be made."
-    },
-    {
-      "id": "configure_deepseek_sc",
-      "gate": "provider_run_readiness",
-      "owner": "evaluator",
-      "priority": "recommended",
-      "status": "blocked_on_environment",
-      "action": "Configure provider environment for DeepSeek self-consistency.",
-      "missing_inputs": [
-        "DEEPSEEK_API_KEY"
-      ],
-      "commands": [
-        "python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3.json --resume",
-        "python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-audit.json --resume --audit",
-        "python -m founderbench.submission --input outputs/founderbench-deepseek-sc-k3.json --report outputs/founderbench-deepseek-sc-k3-submission-report.md"
-      ],
-      "expected_outputs": [
-        "outputs/founderbench-deepseek-sc-k3.json"
       ],
       "claim_impact": "Required before hosted/local LLM comparison claims can be made."
     },
@@ -535,7 +515,7 @@
         "evidence": [
           "outputs/founderbench-provider-readiness.md"
         ],
-        "blocker": "Only 0/12 provider configurations are ready."
+        "blocker": "Only 0/11 provider configurations are ready."
       },
       {
         "id": "claim_evidence_alignment",

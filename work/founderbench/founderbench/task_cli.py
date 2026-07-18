@@ -10,7 +10,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Run FounderBench fixed startup tasks.")
     parser.add_argument(
         "--policy",
-        choices=["random", "conservative", "heuristic", "task_heuristic", "llm", "deepseek", "deepseek_sc", "anthropic", "gemini"],
+        choices=["random", "conservative", "heuristic", "task_heuristic", "llm", "deepseek", "anthropic", "gemini"],
         default="task_heuristic",
     )
     parser.add_argument("--task", action="append", help="Run only a specific task id. Can be repeated.")

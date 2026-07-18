@@ -15,7 +15,7 @@ Runnable experiment runbook for clearing the missing hosted/local baseline evide
 
 | Metric | Value |
 | --- | --- |
-| providers | 12 |
+| providers | 11 |
 | phases | 6 |
 | required_single_run_evidence_files | 14 |
 | minimum_repeats_for_stochastic_claims | 3 |
@@ -26,7 +26,6 @@ Runnable experiment runbook for clearing the missing hosted/local baseline evide
 | --- | --- | --- | --- | --- | --- | --- |
 | OpenAI GPT | openai | recommended | OPENAI_API_KEY | OPENAI_MODEL | OPENAI_BASE_URL | gpt-4.1-mini |
 | DeepSeek | deepseek | required | DEEPSEEK_API_KEY | DEEPSEEK_MODEL |  | deepseek-chat |
-| DeepSeek self-consistency | deepseek_sc | recommended | DEEPSEEK_API_KEY | DEEPSEEK_MODEL |  | deepseek-chat |
 | Anthropic Claude | anthropic | required | ANTHROPIC_API_KEY | ANTHROPIC_MODEL |  | claude-sonnet-4-5 |
 | Google Gemini | gemini | required | GEMINI_API_KEY | GEMINI_MODEL |  | gemini-2.5-flash |
 | Moonshot Kimi | kimi | recommended | KIMI_API_KEY | KIMI_MODEL | KIMI_BASE_URL | kimi-latest |
@@ -45,7 +44,7 @@ Runnable experiment runbook for clearing the missing hosted/local baseline evide
 | single_required_runs | evaluator | Run each required hosted/local model once on the complete 50-task suite. | Every required single-run output exists and passes submission validation. |
 | audit_traces | evaluator | Collect redacted audit traces for hosted/local runs so qualitative failures can be inspected. | Audit outputs and their submission reports exist for required runs. |
 | repeat_bundles | evaluator | Run 3 seeds per provider before stochastic confidence claims. | Repeated seed files are combined into validated repeat bundles. |
-| recommended_ablation | evaluator | Run the recommended self-consistency ablation as a separate comparison, not as a replacement for the naive provider baseline. | Recommended ablation output exists and is clearly labeled in model-comparison artifacts. |
+| optional_provider_runs | evaluator | Run optional additional provider and open-weight baselines after the required comparison set is underway. | Optional provider outputs exist and are clearly separated from required comparison evidence. |
 | postprocess_and_claim_gate | paper_author | Regenerate paper tables, model comparison, provider status, claim evidence, and submission gate after runs are present. | Submission gate no longer reports missing required experiment evidence; claim wording is updated only where evidence supports it. |
 
 ## Phase Commands
@@ -151,11 +150,6 @@ python -m founderbench.resumable_runner --policy deepseek --output outputs/found
 python -m founderbench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek-seed2.json --resume --seed 2
 python -m founderbench.submission_bundle --input outputs/founderbench-deepseek-seed0.json --input outputs/founderbench-deepseek-seed1.json --input outputs/founderbench-deepseek-seed2.json --output outputs/founderbench-deepseek-repeats.json --report outputs/founderbench-deepseek-repeats-submission-report.md
 python -m founderbench.submission --input outputs/founderbench-deepseek-repeats.json --report outputs/founderbench-deepseek-repeats-submission-report.md
-python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-seed0.json --resume --seed 0
-python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-seed1.json --resume --seed 1
-python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-seed2.json --resume --seed 2
-python -m founderbench.submission_bundle --input outputs/founderbench-deepseek-sc-k3-seed0.json --input outputs/founderbench-deepseek-sc-k3-seed1.json --input outputs/founderbench-deepseek-sc-k3-seed2.json --output outputs/founderbench-deepseek-sc-k3-repeats.json --report outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md
-python -m founderbench.submission --input outputs/founderbench-deepseek-sc-k3-repeats.json --report outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md
 python -m founderbench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic-seed0.json --resume --seed 0
 python -m founderbench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic-seed1.json --resume --seed 1
 python -m founderbench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic-seed2.json --resume --seed 2
@@ -214,11 +208,6 @@ Expected outputs:
 - `outputs/founderbench-deepseek-seed2.json`
 - `outputs/founderbench-deepseek-repeats.json`
 - `outputs/founderbench-deepseek-repeats-submission-report.md`
-- `outputs/founderbench-deepseek-sc-k3-seed0.json`
-- `outputs/founderbench-deepseek-sc-k3-seed1.json`
-- `outputs/founderbench-deepseek-sc-k3-seed2.json`
-- `outputs/founderbench-deepseek-sc-k3-repeats.json`
-- `outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md`
 - `outputs/founderbench-anthropic-seed0.json`
 - `outputs/founderbench-anthropic-seed1.json`
 - `outputs/founderbench-anthropic-seed2.json`
@@ -265,13 +254,11 @@ Expected outputs:
 - `outputs/founderbench-local-open-model-repeats.json`
 - `outputs/founderbench-local-open-model-repeats-submission-report.md`
 
-### recommended_ablation
+### optional_provider_runs
 
-Entry condition: The matching naive provider baseline exists or is scheduled.
+Entry condition: Required runs are scheduled or complete and optional provider credentials are available.
 
 ```powershell
-python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3.json --resume --seed 0
-python -m founderbench.submission --input outputs/founderbench-deepseek-sc-k3.json --report outputs/founderbench-deepseek-sc-k3-submission-report.md
 python -m founderbench.resumable_runner --policy mistral --output outputs/founderbench-mistral.json --resume --seed 0
 python -m founderbench.submission --input outputs/founderbench-mistral.json --report outputs/founderbench-mistral-submission-report.md
 python -m founderbench.resumable_runner --policy glm --output outputs/founderbench-glm.json --resume --seed 0
@@ -283,8 +270,6 @@ python -m founderbench.submission --input outputs/founderbench-llama.json --repo
 ```
 
 Expected outputs:
-- `outputs/founderbench-deepseek-sc-k3.json`
-- `outputs/founderbench-deepseek-sc-k3-submission-report.md`
 - `outputs/founderbench-mistral.json`
 - `outputs/founderbench-mistral-submission-report.md`
 - `outputs/founderbench-glm.json`
@@ -327,11 +312,6 @@ Expected outputs:
 
 - Unlock condition: DeepSeek, Anthropic, Gemini, and local/open-source required runs validate on all 50 tasks.
 - Otherwise: Keep wording to planned/infrastructure-ready provider comparison.
-
-### self_consistency_improves_metrics
-
-- Unlock condition: Validated DeepSeek naive and DeepSeek self-consistency repeat bundles exist and are compared by the statistical protocol.
-- Otherwise: Describe self-consistency as a planned or preliminary ablation only.
 
 ### private_holdout_leaderboard
 

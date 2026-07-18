@@ -7,7 +7,6 @@
     "planned_provider_specs": [
       "outputs/founderbench-openai.json",
       "outputs/founderbench-deepseek.json",
-      "outputs/founderbench-deepseek-sc-k3.json",
       "outputs/founderbench-anthropic.json",
       "outputs/founderbench-gemini.json",
       "outputs/founderbench-kimi.json",
@@ -21,7 +20,7 @@
   },
   "summary": {
     "deterministic_cards": 4,
-    "provider_candidate_cards": 12,
+    "provider_candidate_cards": 11,
     "valid_provider_cards": 0,
     "hosted_llm_claims_ready": false,
     "open_source_claim_ready": false
@@ -154,23 +153,6 @@
       "repeat_bundle_report_exists": false,
       "validation_problems": [
         "Missing outputs/founderbench-deepseek.json or outputs/founderbench-deepseek-repeats.json"
-      ],
-      "paper_use": "Excluded from model-performance claims until raw run or repeat bundle exists and the submission report passes."
-    },
-    {
-      "card_type": "planned_provider_run",
-      "id": "deepseek_self_consistency_k3",
-      "policy": "deepseek_sc",
-      "family": "hosted_llm_ablation",
-      "status": "missing",
-      "claim_eligibility": "excluded_until_validated",
-      "evidence_path": "",
-      "evidence_kind": "",
-      "runs": 0,
-      "submission_report_exists": false,
-      "repeat_bundle_report_exists": false,
-      "validation_problems": [
-        "Missing outputs/founderbench-deepseek-sc-k3.json or outputs/founderbench-deepseek-sc-k3-repeats.json"
       ],
       "paper_use": "Excluded from model-performance claims until raw run or repeat bundle exists and the submission report passes."
     },

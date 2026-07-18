@@ -146,7 +146,7 @@ Audit logs include prompt hashes, redacted model responses, token usage when pro
 
 Provider cost estimates use token usage returned by provider APIs plus evaluator-configured `MODEL_INPUT_COST_PER_MILLION` and `MODEL_OUTPUT_COST_PER_MILLION` assumptions. The accounting protocol is generated at `outputs/founderbench-cost-accounting.md`.
 
-The prompt contract used by hosted and local provider policies is documented in `outputs/founderbench-prompt-protocol.md`. It fixes the action vocabulary, response schema, weekly action cap, provider message wrappers, self-consistency setting, and SHA-256 hashes needed to compare provider runs.
+The prompt contract used by hosted and local provider policies is documented in `outputs/founderbench-prompt-protocol.md`. It fixes the action vocabulary, response schema, weekly action cap, provider message wrappers, and SHA-256 hashes needed to compare provider runs.
 
 For a local/open-source baseline, serve the model through an OpenAI-compatible endpoint and use the `llm` policy:
 
@@ -205,11 +205,10 @@ Built-in non-LLM policies:
 Provider policies:
 
 - `deepseek`
-- `deepseek_sc`
 - `anthropic`
 - `gemini`
 - `openai` for OpenAI/GPT models
-- `deepseek` and `deepseek_sc` for DeepSeek single-run and self-consistency baselines
+- `deepseek` for the DeepSeek hosted baseline
 - `anthropic` for Claude
 - `gemini` for Gemini
 - `kimi` for Moonshot/Kimi OpenAI-compatible endpoints

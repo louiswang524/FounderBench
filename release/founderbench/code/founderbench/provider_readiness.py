@@ -29,16 +29,6 @@ PROVIDERS: list[dict[str, Any]] = [
         "audit_output": "outputs/founderbench-deepseek-audit.json",
     },
     {
-        "policy": "deepseek_sc",
-        "provider": "DeepSeek self-consistency",
-        "api_key_env": "DEEPSEEK_API_KEY",
-        "model_env": "DEEPSEEK_MODEL",
-        "default_model": "deepseek-chat",
-        "output": "outputs/founderbench-deepseek-sc-k3.json",
-        "audit_output": "outputs/founderbench-deepseek-sc-k3-audit.json",
-        "extra_env": {"SC_K": "3", "SC_TEMPERATURE": "0.7"},
-    },
-    {
         "policy": "anthropic",
         "provider": "Anthropic Claude",
         "api_key_env": "ANTHROPIC_API_KEY",

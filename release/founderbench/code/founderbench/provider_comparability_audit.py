@@ -28,14 +28,12 @@ def _run_row(run: dict[str, Any], wrapper: dict[str, Any], status: dict[str, Any
         len(run["repeat_outputs"]) == MINIMUM_REPEATS_FOR_STOCHASTIC_CLAIMS
         and "founderbench.submission_bundle" in run["repeat_bundle_command"]
     )
-    is_sc_ablation = run["policy"] == "deepseek_sc"
-    decoding_role = "self_consistency_ablation" if is_sc_ablation else "primary_or_local_baseline"
+    decoding_role = "primary_or_local_baseline"
     comparable_for_main_claim = (
         expected_task_count
         and canonical_prompt
         and has_validation
         and has_repeats
-        and not is_sc_ablation
         and run["priority"] == "required"
     )
     return {
@@ -48,7 +46,6 @@ def _run_row(run: dict[str, Any], wrapper: dict[str, Any], status: dict[str, Any
         "expected_task_count": expected_task_count,
         "prompt_version": wrapper.get("policy", ""),
         "temperature": wrapper.get("temperature"),
-        "self_consistency_k": wrapper.get("self_consistency_k"),
         "decoding_role": decoding_role,
         "canonical_prompt_contract": canonical_prompt,
         "validation_command_present": has_validation,
@@ -88,7 +85,6 @@ def build_audit() -> dict[str, Any]:
             "Every planned provider/local run targets the same 50 current task ids.",
             "Every provider uses the canonical structured-action prompt contract and parser.",
             "Every planned run has a submission validation command and repeat-bundle command.",
-            "DeepSeek self-consistency k=3 is marked as a separate ablation, not a substitute for the naive baseline.",
             "Cost comparison remains unavailable unless usage metadata and evaluator price assumptions are both recorded.",
             "Provider rows remain excluded from model-performance claims until raw outputs and validation reports exist.",
         ],
@@ -96,7 +92,6 @@ def build_audit() -> dict[str, Any]:
         "summary": {
             "planned_runs": len(run_rows),
             "main_claim_comparable_required_runs": sum(1 for row in run_rows if row["comparable_for_main_claim"]),
-            "self_consistency_ablations": sum(1 for row in run_rows if row["decoding_role"] == "self_consistency_ablation"),
             "valid_run_outputs": status["summary"]["valid_runs"],
             "required_missing_or_invalid": status["summary"]["required_missing_or_invalid"],
             "claim_status_counts": dict(sorted(claim_counts.items())),
@@ -105,7 +100,6 @@ def build_audit() -> dict[str, Any]:
         "claim_guardrails": [
             "This audit establishes protocol comparability, not completed hosted/local model evidence.",
             "Single-run provider results are preliminary unless the statistical protocol and repeated-run policy allow stronger wording.",
-            "DeepSeek self-consistency k=3 is an ablation row and must not replace the naive DeepSeek baseline.",
             "Missing or invalid provider outputs remain excluded from model-performance claims.",
         ],
     }
@@ -122,11 +116,9 @@ def validate_audit(payload: dict[str, Any]) -> list[str]:
     if payload["scope"]["minimum_repeats_for_stochastic_claims"] != MINIMUM_REPEATS_FOR_STOCHASTIC_CLAIMS:
         problems.append("Repeat policy does not match baseline execution plan.")
     if payload["summary"]["planned_runs"] < 5:
-        problems.append("Expected hosted/local planned runs plus self-consistency ablation.")
+        problems.append("Expected hosted/local planned runs.")
     if payload["summary"]["main_claim_comparable_required_runs"] < 4:
         problems.append("Expected at least four required main-claim-comparable planned runs.")
-    if payload["summary"]["self_consistency_ablations"] != 1:
-        problems.append("Expected exactly one self-consistency ablation row.")
     if payload["summary"]["valid_run_outputs"] == 0 and payload["summary"]["ready_for_hosted_llm_comparison"]:
         problems.append("Hosted LLM comparison cannot be ready without valid provider outputs.")
     for row in payload["run_rows"]:
@@ -136,8 +128,6 @@ def validate_audit(payload: dict[str, Any]) -> list[str]:
             problems.append(f"{row['id']} lacks canonical prompt contract.")
         if not row["validation_command_present"]:
             problems.append(f"{row['id']} lacks submission validation command.")
-        if row["policy"] == "deepseek_sc" and row["claim_status"] != "excluded_or_ablation_until_separately_reported":
-            problems.append("DeepSeek self-consistency must remain an ablation claim row.")
     if not any("not completed hosted/local model evidence" in item for item in payload["claim_guardrails"]):
         problems.append("Claim guardrails must distinguish protocol comparability from completed evidence.")
     return problems
@@ -154,7 +144,6 @@ def write_markdown(payload: dict[str, Any], output: Path) -> None:
             row["planned_status"],
             row["task_count"],
             row["temperature"],
-            row["self_consistency_k"],
             row["decoding_role"],
             row["comparable_for_main_claim"],
             row["claim_status"],
@@ -186,7 +175,7 @@ def write_markdown(payload: dict[str, Any], output: Path) -> None:
             "## Run Rows",
             "",
             markdown_table(
-                ["ID", "Policy", "Family", "Priority", "Current Status", "Tasks", "Temp", "SC k", "Role", "Main Comparable", "Claim Status"],
+                ["ID", "Policy", "Family", "Priority", "Current Status", "Tasks", "Temp", "Role", "Main Comparable", "Claim Status"],
                 run_rows,
             ),
             "",

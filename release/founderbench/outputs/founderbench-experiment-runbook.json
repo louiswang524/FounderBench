@@ -28,15 +28,6 @@
       "default_model": "deepseek-chat"
     },
     {
-      "provider": "DeepSeek self-consistency",
-      "policy": "deepseek_sc",
-      "priority": "recommended",
-      "api_key_env": "DEEPSEEK_API_KEY",
-      "model_env": "DEEPSEEK_MODEL",
-      "base_url_env": "",
-      "default_model": "deepseek-chat"
-    },
-    {
       "provider": "Anthropic Claude",
       "policy": "anthropic",
       "priority": "required",
@@ -228,11 +219,6 @@
         "python -m founderbench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek-seed2.json --resume --seed 2",
         "python -m founderbench.submission_bundle --input outputs/founderbench-deepseek-seed0.json --input outputs/founderbench-deepseek-seed1.json --input outputs/founderbench-deepseek-seed2.json --output outputs/founderbench-deepseek-repeats.json --report outputs/founderbench-deepseek-repeats-submission-report.md",
         "python -m founderbench.submission --input outputs/founderbench-deepseek-repeats.json --report outputs/founderbench-deepseek-repeats-submission-report.md",
-        "python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-seed0.json --resume --seed 0",
-        "python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-seed1.json --resume --seed 1",
-        "python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-seed2.json --resume --seed 2",
-        "python -m founderbench.submission_bundle --input outputs/founderbench-deepseek-sc-k3-seed0.json --input outputs/founderbench-deepseek-sc-k3-seed1.json --input outputs/founderbench-deepseek-sc-k3-seed2.json --output outputs/founderbench-deepseek-sc-k3-repeats.json --report outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md",
-        "python -m founderbench.submission --input outputs/founderbench-deepseek-sc-k3-repeats.json --report outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md",
         "python -m founderbench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic-seed0.json --resume --seed 0",
         "python -m founderbench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic-seed1.json --resume --seed 1",
         "python -m founderbench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic-seed2.json --resume --seed 2",
@@ -290,11 +276,6 @@
         "outputs/founderbench-deepseek-seed2.json",
         "outputs/founderbench-deepseek-repeats.json",
         "outputs/founderbench-deepseek-repeats-submission-report.md",
-        "outputs/founderbench-deepseek-sc-k3-seed0.json",
-        "outputs/founderbench-deepseek-sc-k3-seed1.json",
-        "outputs/founderbench-deepseek-sc-k3-seed2.json",
-        "outputs/founderbench-deepseek-sc-k3-repeats.json",
-        "outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md",
         "outputs/founderbench-anthropic-seed0.json",
         "outputs/founderbench-anthropic-seed1.json",
         "outputs/founderbench-anthropic-seed2.json",
@@ -343,14 +324,12 @@
       ]
     },
     {
-      "id": "recommended_ablation",
+      "id": "optional_provider_runs",
       "owner": "evaluator",
-      "purpose": "Run the recommended self-consistency ablation as a separate comparison, not as a replacement for the naive provider baseline.",
-      "entry_condition": "The matching naive provider baseline exists or is scheduled.",
-      "exit_condition": "Recommended ablation output exists and is clearly labeled in model-comparison artifacts.",
+      "purpose": "Run optional additional provider and open-weight baselines after the required comparison set is underway.",
+      "entry_condition": "Required runs are scheduled or complete and optional provider credentials are available.",
+      "exit_condition": "Optional provider outputs exist and are clearly separated from required comparison evidence.",
       "commands": [
-        "python -m founderbench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3.json --resume --seed 0",
-        "python -m founderbench.submission --input outputs/founderbench-deepseek-sc-k3.json --report outputs/founderbench-deepseek-sc-k3-submission-report.md",
         "python -m founderbench.resumable_runner --policy mistral --output outputs/founderbench-mistral.json --resume --seed 0",
         "python -m founderbench.submission --input outputs/founderbench-mistral.json --report outputs/founderbench-mistral-submission-report.md",
         "python -m founderbench.resumable_runner --policy glm --output outputs/founderbench-glm.json --resume --seed 0",
@@ -361,8 +340,6 @@
         "python -m founderbench.submission --input outputs/founderbench-llama.json --report outputs/founderbench-llama-submission-report.md"
       ],
       "outputs": [
-        "outputs/founderbench-deepseek-sc-k3.json",
-        "outputs/founderbench-deepseek-sc-k3-submission-report.md",
         "outputs/founderbench-mistral.json",
         "outputs/founderbench-mistral-submission-report.md",
         "outputs/founderbench-glm.json",
@@ -425,18 +402,13 @@
       "otherwise": "Keep wording to planned/infrastructure-ready provider comparison."
     },
     {
-      "claim": "self_consistency_improves_metrics",
-      "unlock_condition": "Validated DeepSeek naive and DeepSeek self-consistency repeat bundles exist and are compared by the statistical protocol.",
-      "otherwise": "Describe self-consistency as a planned or preliminary ablation only."
-    },
-    {
       "claim": "private_holdout_leaderboard",
       "unlock_condition": "Evaluator-controlled private holdout aggregate report exists.",
       "otherwise": "Describe only the private holdout protocol, not private holdout results."
     }
   ],
   "summary": {
-    "providers": 12,
+    "providers": 11,
     "phases": 6,
     "required_single_run_evidence_files": 14,
     "minimum_repeats_for_stochastic_claims": 3

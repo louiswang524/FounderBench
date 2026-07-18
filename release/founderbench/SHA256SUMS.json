@@ -36,8 +36,8 @@
   },
   {
     "path": "code/founderbench/baseline_execution_plan.py",
-    "sha256": "7eced1be7d4f268e9a537870fc0a5ddc00b3f196291c57ca74d327e25d928ff6",
-    "bytes": 16971
+    "sha256": "92caef065f31b3171d867ba3e65e3e902d4c70a2a4591d4a7b80f1d0a9095829",
+    "bytes": 16257
   },
   {
     "path": "code/founderbench/benchmark_datasheet.py",
@@ -71,8 +71,8 @@
   },
   {
     "path": "code/founderbench/contamination_leakage_audit.py",
-    "sha256": "04ecfa9a8e2dd5cc4945a25e0cf78529f2c15a86e1f36b26e9ec075b5a43dd10",
-    "bytes": 11061
+    "sha256": "d05532df97cc8a91f75fd4c21deebefe9b95d379a1f06e050c2d7548ce0bd8e8",
+    "bytes": 11032
   },
   {
     "path": "code/founderbench/cost_accounting.py",
@@ -101,13 +101,13 @@
   },
   {
     "path": "code/founderbench/experiment_matrix.py",
-    "sha256": "3ea0dd5de8e8f8c25ecd842cdbdcd60b3ec57e67cbd7fa696da85bf181e1ce19",
-    "bytes": 14626
+    "sha256": "5a7d7f6c51df6f583dafff7d38701b2e98e0fe93fd1b86cd44dc2cbca45954ec",
+    "bytes": 13724
   },
   {
     "path": "code/founderbench/experiment_runbook.py",
-    "sha256": "e0219172c6c12c5cbf7f0d28784f0e839e9e9fae0e24aaf1ea5c7a3a536bc478",
-    "bytes": 14463
+    "sha256": "b71aa9bef7a9815aca3ee27263802c846b7587bcb154f56f5541284a739f68f8",
+    "bytes": 14085
   },
   {
     "path": "code/founderbench/export_tasks.py",
@@ -156,8 +156,8 @@
   },
   {
     "path": "code/founderbench/leaderboard_policy.py",
-    "sha256": "4d2c37945edd2bb8e3930f039534961a59366f102e023263f310f0b7ca36c805",
-    "bytes": 9225
+    "sha256": "40023b483aa067918a42d103156273774f813ecfb592969539e90948fa8ebb1a",
+    "bytes": 9088
   },
   {
     "path": "code/founderbench/leaderboard_stability.py",
@@ -171,8 +171,8 @@
   },
   {
     "path": "code/founderbench/llm_policy.py",
-    "sha256": "648deb86c958563114db70ccf156e4e779b2bf85e2c84312cc6e0b88605a2b3a",
-    "bytes": 20973
+    "sha256": "e5e5014ae9ceda908b7d4a7cff6bc456f28dfc7e3505600cacfc3d1967421ab0",
+    "bytes": 17847
   },
   {
     "path": "code/founderbench/local_model.py",
@@ -221,8 +221,8 @@
   },
   {
     "path": "code/founderbench/paper_tables.py",
-    "sha256": "86a0f571fc370e395665a213b2c0822a67ce14a55633244ed0aa45a7e88afeac",
-    "bytes": 14717
+    "sha256": "80f6334611cef89f06a6fc15894dc71e5358d9b9cbf94dca35696c8e1c3e036c",
+    "bytes": 14251
   },
   {
     "path": "code/founderbench/policies.py",
@@ -241,8 +241,8 @@
   },
   {
     "path": "code/founderbench/prompt_protocol.py",
-    "sha256": "6ee0a4e042118fce724b6d8e0ec0923db56f1c03b34dc2fd404fc0108786da02",
-    "bytes": 8347
+    "sha256": "0d891d5febf59ed0cbddb0cf6866e78696d431aa02f325db01aa2ef0415981e9",
+    "bytes": 8150
   },
   {
     "path": "code/founderbench/provider_adapter.py",
@@ -251,8 +251,8 @@
   },
   {
     "path": "code/founderbench/provider_comparability_audit.py",
-    "sha256": "d31ec618a796ecad76cd2e0a523c13765a960d9aaad60065d224bad474302a8d",
-    "bytes": 11200
+    "sha256": "bff126997e913c951ce6f400d521e3a8c037c8a010b2204eddef772651b09280",
+    "bytes": 10173
   },
   {
     "path": "code/founderbench/provider_contract_audit.py",
@@ -261,8 +261,8 @@
   },
   {
     "path": "code/founderbench/provider_readiness.py",
-    "sha256": "8de95f69a4ad823b9e0db37dcf6daa763a6623dbad7191fa72a801a57a9def36",
-    "bytes": 10766
+    "sha256": "a7e86abe4ab74536ff14b8c5c43f64aaa7c7cc0782d39c2eec63da2a9653b426",
+    "bytes": 10337
   },
   {
     "path": "code/founderbench/provider_run_status.py",
@@ -306,8 +306,8 @@
   },
   {
     "path": "code/founderbench/responsible_use.py",
-    "sha256": "9528c90ae9b3ffaa9e4d0708a4f7e2d1bd0ea6ccef26b5f0527a5f4194319b33",
-    "bytes": 9449
+    "sha256": "a8a93fc55711924dbab436b8f5c6f407eae603bd5f1aabb65516358ac93a3865",
+    "bytes": 9411
   },
   {
     "path": "code/founderbench/result_integrity_audit.py",
@@ -321,8 +321,8 @@
   },
   {
     "path": "code/founderbench/reviewer_index.py",
-    "sha256": "aff150d116e1d690fd3b00e8ac0252d440ebb36afca35a6f4861659e950078fa",
-    "bytes": 30081
+    "sha256": "e2d9f3ddef2d50b567f25d55ad6e606c030311c786108212efade8a02cff0a74",
+    "bytes": 30043
   },
   {
     "path": "code/founderbench/reviewer_risk_audit.py",
@@ -356,8 +356,8 @@
   },
   {
     "path": "code/founderbench/statistical_protocol.py",
-    "sha256": "51b1294b70223b6f4751d48bc8aae5824263af8e30fd29262b6e9aaeeaf802f3",
-    "bytes": 8794
+    "sha256": "ae5e9eb463734e8d699fc5bbe94183f46d7f585e1055e113c11a5a0e888a91dd",
+    "bytes": 8731
   },
   {
     "path": "code/founderbench/submission.py",
@@ -396,8 +396,8 @@
   },
   {
     "path": "code/founderbench/task_cli.py",
-    "sha256": "1dd5536a1e8dc5faf7a34c156841bfca32f75e0ac740fded33b14a7a0c712191",
-    "bytes": 907
+    "sha256": "7849a8c4e4b8613d454b817f0e80cf5e7a874a8e6e34be1db127a5523a9a2402",
+    "bytes": 892
   },
   {
     "path": "code/founderbench/task_coverage.py",
@@ -421,8 +421,8 @@
   },
   {
     "path": "code/founderbench/task_runner.py",
-    "sha256": "66177476ad6617392c6d904eb9e2544cadc91455782db057a8e214528a413c35",
-    "bytes": 9758
+    "sha256": "557f4b9c42738b06ae0cc146364c5692d8c6e5dd917598626e807693b831d858",
+    "bytes": 9544
   },
   {
     "path": "code/founderbench/tasks.py",
@@ -431,8 +431,8 @@
   },
   {
     "path": "code/founderbench/validity_report.py",
-    "sha256": "aef9fd33056ade31c1bd1d8376ed73e1da83780e0dd7aeb81a91afd2d6f20742",
-    "bytes": 11268
+    "sha256": "328c2f609cb87965065fab6ba78898a92f39683824683862a3e24cf9235641cc",
+    "bytes": 11224
   },
   {
     "path": "code/LICENSE-TODO.md",
@@ -441,23 +441,23 @@
   },
   {
     "path": "code/LICENSE.template",
-    "sha256": "07f71722a4e11a880dcd2ca24d74e75e35d6b9099f3e242257e5140f20cb3d25",
-    "bytes": 466
+    "sha256": "8cc06a02dd899e20296dee91cff7285024691f09ca39c16a63be34f134c853f6",
+    "bytes": 468
   },
   {
     "path": "code/README.md",
-    "sha256": "84804177a87b199bd7533bc671c4754ba5da3ef8f39434bc205ac88193eb1c08",
-    "bytes": 20771
+    "sha256": "06da718c6f2e15570dfc83d2d0dc965f8f6fc3e1ff2faaf4d3bf055f4dc4c55c",
+    "bytes": 20687
   },
   {
     "path": "code/SPEC.md",
-    "sha256": "c26af0b2a378b2b854b726114d27bb65d0e59d799d4d3865d22d70d2b3424410",
-    "bytes": 9639
+    "sha256": "e9c2bc9ac95a9dc05174bdb4cd63d7a955bb6eaa18d044d8d61d662eedfcf314",
+    "bytes": 9647
   },
   {
     "path": "code/tests/test_founderbench.py",
-    "sha256": "6a7746edb26433c1aa494e4e234ec449b141b4d4fbc316f34c8ec6da811d1e04",
-    "bytes": 69401
+    "sha256": "e259b542649bf02202d98110d9a4f3c63dc4bd744201a1a906dacebf9ff29376",
+    "bytes": 69301
   },
   {
     "path": "outputs/founderbench-ablation-report.md",
@@ -466,8 +466,8 @@
   },
   {
     "path": "outputs/founderbench-action-ablation.json",
-    "sha256": "b34601a8f91528cde4cd89d3d7b8db69c3e4f733b8b25093ad52437faba77657",
-    "bytes": 643481
+    "sha256": "2e39651c487af8ed2951ac24cc476bbf3c0f37bbbd37502cce41c5bc069aaea4",
+    "bytes": 643468
   },
   {
     "path": "outputs/founderbench-action-ablation.md",
@@ -491,23 +491,23 @@
   },
   {
     "path": "outputs/founderbench-baseline-execution-plan.json",
-    "sha256": "7c3a4194cf1ed30d0ec791efacdd9ee3458c965c12f2579290cca73962eef750",
-    "bytes": 30474
+    "sha256": "03c7613901d4f6132ab7897d05fc1fe53e159f969c43626362cf07b3afb78b64",
+    "bytes": 27938
   },
   {
     "path": "outputs/founderbench-baseline-execution-plan.md",
-    "sha256": "53f2243a40c5bef1623e7188f4798cb54d104b028e6afa86799037ff57b1ca28",
-    "bytes": 18804
+    "sha256": "4bf1f6f99432b067c0292ab545a64c73fdf0060a2d0eb0f10eca6c8815823a41",
+    "bytes": 17282
   },
   {
     "path": "outputs/founderbench-baseline-leaderboard.json",
-    "sha256": "26aefe1109d7ff5ab0874a1019ee9f5e8e962482b0063184cfc08b9838ddb854",
+    "sha256": "72a8feb60588e6681ed8a71382b3fd9e4392c593f4a64f789a295d283c9f6adf",
     "bytes": 2653
   },
   {
     "path": "outputs/founderbench-baseline-raw.json",
-    "sha256": "47494e318c4134e055d116de87e196faff0da7fc7275eff20107826b91b4f72c",
-    "bytes": 342129
+    "sha256": "78e1e9797d34bf6ea0a0446a549667a707fdffd916c5a870bde1ea6546c99ec3",
+    "bytes": 342117
   },
   {
     "path": "outputs/founderbench-benchmark-card.md",
@@ -536,23 +536,23 @@
   },
   {
     "path": "outputs/founderbench-completion-audit.json",
-    "sha256": "d2548bd990b8c70b72a4dd24a8c42ce4554435bc40cd5a71195ebe3fbccb602a",
+    "sha256": "07d9da99e6c056077b668602e9374b7ae36dadb34b7d058502d0c23262f5ee4f",
     "bytes": 15327
   },
   {
     "path": "outputs/founderbench-completion-audit.md",
-    "sha256": "b3278e061f5014cff61f0f0ae3a517bb5d183fb563110e32a0c2d21e3a416e8b",
+    "sha256": "8df7acbe0b245983c11c031c74543c3b901edb4107d16d5dae0e1d8f821ad371",
     "bytes": 8186
   },
   {
     "path": "outputs/founderbench-contamination-leakage-audit.json",
-    "sha256": "f1bfe67f4de333c1a0d8001d5fba6ef0df17beb35b833bba9b1de3262be488de",
-    "bytes": 5037
+    "sha256": "939e1dfbd7eca71759a1850814deed82815da11efd8db9015cb39f9def63bac7",
+    "bytes": 5009
   },
   {
     "path": "outputs/founderbench-contamination-leakage-audit.md",
-    "sha256": "3aca44ef8e48a38d86b30ef560d52daf180223ce55a16c09b58fcc310a3ddb31",
-    "bytes": 4315
+    "sha256": "4c251a311a3d2c6ac61b3b296ec57ce2d57ae6697e49a6ea90c062b310f0235a",
+    "bytes": 4287
   },
   {
     "path": "outputs/founderbench-cost-accounting.json",
@@ -606,27 +606,27 @@
   },
   {
     "path": "outputs/founderbench-experiment-matrix.json",
-    "sha256": "0edda9bffcf649cb21f0f40100bc262bc4be5c698187ac1547bf38ae96c096df",
-    "bytes": 15392
+    "sha256": "d074b37822bb8084130967fa10f7ef88c8419c453b0974130bad72d2c209b45d",
+    "bytes": 14076
   },
   {
     "path": "outputs/founderbench-experiment-matrix.md",
-    "sha256": "50b45c7cb7d87ea7c046eefa0f8c5470e499a170008dc6de40501760ca7f44cc",
-    "bytes": 5418
+    "sha256": "924f78202a45f6b76351a6d1cbb6669805f4f0d6243fdf336822a5f4642eeb99",
+    "bytes": 5249
   },
   {
     "path": "outputs/founderbench-experiment-runbook.json",
-    "sha256": "034f22575d961aa5a48ca7280b97171fc758c79cf0194bb4c4286b551c406e8b",
-    "bytes": 31206
+    "sha256": "88bcbd1cf2d54e978e056ee579b3d3b404017a691199ca856df5a3d644aa4ed1",
+    "bytes": 28926
   },
   {
     "path": "outputs/founderbench-experiment-runbook.md",
-    "sha256": "73b635c75479a8b0846d19d108dc9365c43ea3d39d22ecd6aec1cd3c83c523a1",
-    "bytes": 26306
+    "sha256": "46d7f67a14272012de27e74be4859e63ff1c9ed2a824abf9037bebb2684a1da9",
+    "bytes": 24358
   },
   {
     "path": "outputs/founderbench-failure-mode-audit.json",
-    "sha256": "d060226a66cdcc48519d6c9990c0ca82e6abfe5993cd042e2bfaff298fff893f",
+    "sha256": "8949b97b165abe0ec206a12b1e19e0ac2f05fdfd46ad19b9c6d3a5fdbda40086",
     "bytes": 11463
   },
   {
@@ -681,13 +681,13 @@
   },
   {
     "path": "outputs/founderbench-leaderboard-policy.json",
-    "sha256": "14b99d8ce6f9b5a7cadbd0a5e11297dfc264e6a85bfe6e4eea40f2698bb23fe6",
-    "bytes": 4256
+    "sha256": "33eaf58ab0cf74f01b83e61a28c794e10fffa85d53e1aa53a1e2c64511a900d1",
+    "bytes": 4124
   },
   {
     "path": "outputs/founderbench-leaderboard-policy.md",
-    "sha256": "ed8ff2dafcb7e5d96248b6bf6612f90602bbb23e2ee9a009b0f258056612e007",
-    "bytes": 3516
+    "sha256": "8b4e662acee660b0c8854735f14216e7e43ea200444a4da68c7bd8e798cb5341",
+    "bytes": 3389
   },
   {
     "path": "outputs/founderbench-leaderboard-stability.json",
@@ -746,23 +746,23 @@
   },
   {
     "path": "outputs/founderbench-model-comparison.json",
-    "sha256": "97b8a3c6d095a6bd9a7e62883e260a985606b0954d3022d605757611e2fb9bb2",
-    "bytes": 15007
+    "sha256": "a6fa7a479d4bc440faa1547b0b6607223204cbb0e924e77cdfa121981171f386",
+    "bytes": 14115
   },
   {
     "path": "outputs/founderbench-model-comparison.md",
-    "sha256": "27a48607f4bb20c4bcf47f9f44fa166081f5fe255786006562d2cb521a40d8da",
-    "bytes": 5638
+    "sha256": "4aac8e544739e821c9a079149f658f9e715b3b63bd5dadac9307a28d02150449",
+    "bytes": 5442
   },
   {
     "path": "outputs/founderbench-model-result-cards.json",
-    "sha256": "56dfc316126d35a4be1fada3ce4d01730fd2f65d68287b668f76b7bf3f301e25",
-    "bytes": 12832
+    "sha256": "a3f0fb2626a4451e1fb7c69427a6660e80a32be0ae7957754bbb4e993fd61e15",
+    "bytes": 12073
   },
   {
     "path": "outputs/founderbench-model-result-cards.md",
-    "sha256": "67fabd55538b83418c57cb9e35b7db3405614ae436c3d45c9a47efd105c35322",
-    "bytes": 4442
+    "sha256": "2037d912af5c527631eeada3504ebe99502541e6ee7d18d421f08871945da343",
+    "bytes": 4209
   },
   {
     "path": "outputs/founderbench-model-submission-schema.json",
@@ -776,8 +776,8 @@
   },
   {
     "path": "outputs/founderbench-model-submission-template.md",
-    "sha256": "3c983e0e0ec91b8d11221ac90afe845f73ac1833bd5df583c0f6085ede654913",
-    "bytes": 4362
+    "sha256": "7b49f72efccc2584c036e555bd4dbf017ab7023d2a8129fa05509efca969c295",
+    "bytes": 4207
   },
   {
     "path": "outputs/founderbench-paired-statistics.json",
@@ -801,7 +801,7 @@
   },
   {
     "path": "outputs/founderbench-paper-evidence-map.json",
-    "sha256": "35148d48c611dfdea89e34ad28e3b6addfe78140103dfaa841f536512e7ac083",
+    "sha256": "24b36efb77f896869f4a9336bffc66669ce8a4414c36153bb0fb470620575d0c",
     "bytes": 17081
   },
   {
@@ -821,13 +821,13 @@
   },
   {
     "path": "outputs/founderbench-paper-tables.json",
-    "sha256": "8e4c2798dfa2300e3f72abdc980afd125b18b63939687f1fc9ff8f9b4c247755",
-    "bytes": 14317
+    "sha256": "847146ebb9b35384007cada9cb3a1ca28500d7e977c66e4226e46e3268ffc51d",
+    "bytes": 13476
   },
   {
     "path": "outputs/founderbench-paper-tables.md",
-    "sha256": "1d9d663b0cb630a9ef0dd7ea26b2e0664bee813ccd079a12e919021f8b0c92ae",
-    "bytes": 5625
+    "sha256": "6ec602030fc3d9cb51c9e429df32bc14ee2d69d1601b4357df52817773d076f3",
+    "bytes": 5429
   },
   {
     "path": "outputs/founderbench-power-analysis.json",
@@ -856,7 +856,7 @@
   },
   {
     "path": "outputs/founderbench-private-holdout-smoke.json",
-    "sha256": "48d1ce8ffdb28fcddfaa44eba4605c413d93827345bfccf0510f4763e5abf4b1",
+    "sha256": "47cbcc0d9df19965fc02f5a5557cd739d937ae66a4181ea7a549138bc727d7ab",
     "bytes": 1782
   },
   {
@@ -866,23 +866,23 @@
   },
   {
     "path": "outputs/founderbench-prompt-protocol.json",
-    "sha256": "ef85bd2194f28326b2763f17f4dde533bf9f2643272adc01ef0a5abf76f56048",
-    "bytes": 7838
+    "sha256": "ab4bfbc060c3888910d0c0dc6a5ff501e49c253990fdf2d16ebcfe54f610db07",
+    "bytes": 7130
   },
   {
     "path": "outputs/founderbench-prompt-protocol.md",
-    "sha256": "cfbefee0f0357f6b19e8ae5b32fdaccfd54fbab6e9e0f0319766d942c4ff7738",
-    "bytes": 5417
+    "sha256": "bcce485c9516a28432493c19e7c0c14dc94bb9674395f5d76555419f18b86721",
+    "bytes": 5202
   },
   {
     "path": "outputs/founderbench-provider-comparability-audit.json",
-    "sha256": "81d51ac436838b35a02b509cf505adfce4c5dc4bc2038b94c3de4e136debb2b3",
-    "bytes": 10947
+    "sha256": "4237a012e1e7882d389b5b47214f7ff07bd58ffa24555eeba3c5fd58d6621351",
+    "bytes": 9594
   },
   {
     "path": "outputs/founderbench-provider-comparability-audit.md",
-    "sha256": "df63651b77decacd178cf22e656ad8b5e5a6b2e226c111c026f6883fcea84e0b",
-    "bytes": 4317
+    "sha256": "377f68db52d8f4b1c54350486c7e93401dddc2a673f681c40fcb6afb163ad9e8",
+    "bytes": 3847
   },
   {
     "path": "outputs/founderbench-provider-contract-audit.json",
@@ -896,38 +896,38 @@
   },
   {
     "path": "outputs/founderbench-provider-readiness.json",
-    "sha256": "a650f0eca1036ad09bc813961433ed69b9169d19803ae48314892a4dab2a5323",
-    "bytes": 9939
+    "sha256": "68e5c29cdc8b6ffbea57d2021c59607046e08288b4fb4da8e77a01b986b6b206",
+    "bytes": 9082
   },
   {
     "path": "outputs/founderbench-provider-readiness.md",
-    "sha256": "29689ae4d5b95397c317e55526dd22e94a62c5b94397862b8d6b2c5000d38bea",
-    "bytes": 7332
+    "sha256": "2ad35aa635970b69d3d40ec064018e3060a578731d1530b4ff0781a1a0df8785",
+    "bytes": 6689
   },
   {
     "path": "outputs/founderbench-provider-run-status.json",
-    "sha256": "0dd3347c5ac88c6d593854983a889b539c8b8652e989dd4739057227fbfb378b",
-    "bytes": 18244
+    "sha256": "69ec990f8352d5074d8a357f4659a0964a5303a75d983c63017f7ed30696ef38",
+    "bytes": 16984
   },
   {
     "path": "outputs/founderbench-provider-run-status.md",
-    "sha256": "08e609ce192f0abc3cac731627a67ae5022e5026375ae90dad20290e5e2dfdfb",
-    "bytes": 5626
+    "sha256": "af8bb990d879fc13fb0a53628b59edc54758b77ff883608da3ea053dafc59167",
+    "bytes": 5434
   },
   {
     "path": "outputs/founderbench-publication-audit.json",
-    "sha256": "d2f6cde81e74c24879690835cc2ff8897d71bda08ee1ff897f3b8855bab3f37b",
-    "bytes": 44292
+    "sha256": "a564e6ca97a0db23cb480288c03dbc1db086b20d50d95a03885a4f8fa8eefa9a",
+    "bytes": 44290
   },
   {
     "path": "outputs/founderbench-publication-audit.md",
-    "sha256": "f7b282c7035d28dbbcd3e8ac14c6493486e26a408e62f5033d75c6c4ab73ae03",
-    "bytes": 15331
+    "sha256": "be99929443a2d433e012b3aa9f19e18ad0aa6db962216f160d2217b1597ed541",
+    "bytes": 15329
   },
   {
     "path": "outputs/founderbench-qualitative-traces.json",
-    "sha256": "871ab65a406d11780a483190e03511ce17adbd507e53f976f28427d531a57228",
-    "bytes": 27313
+    "sha256": "2b8f9d2475f7cd4dc0b5fc7fbb7d10e33aeee3d1764432c321d4fa53b29aad25",
+    "bytes": 27316
   },
   {
     "path": "outputs/founderbench-qualitative-traces.md",
@@ -936,8 +936,8 @@
   },
   {
     "path": "outputs/founderbench-random-repeats.json",
-    "sha256": "7380ff99f27c182feb0cd0c986352e67df8401a1cb3b83340953daa8157769db",
-    "bytes": 454423
+    "sha256": "88f1e702df899936b589ac2fb1c3750126ebb7f619f83f5db8947b5410001e3e",
+    "bytes": 454477
   },
   {
     "path": "outputs/founderbench-random-repeats.md",
@@ -966,13 +966,13 @@
   },
   {
     "path": "outputs/founderbench-reproducibility-manifest.json",
-    "sha256": "3b333efa27cbda96db2ead13ccfd13adda0b80dde85e81afea31299910304dff",
-    "bytes": 38541
+    "sha256": "5434f758305f4328bf0681ad5e1b7cd939047b02c0e6d3a338301db84a979c38",
+    "bytes": 38540
   },
   {
     "path": "outputs/founderbench-reproducibility-manifest.md",
-    "sha256": "0b07204bdc9208403416147417d4818c61978070f11e8dfaf2e77dac7e9db89b",
-    "bytes": 24841
+    "sha256": "c98d68ca33cb590f7489f6285a2a8ad0ef6a0736bc030025681f386c1d139a92",
+    "bytes": 24840
   },
   {
     "path": "outputs/founderbench-reproduction-guide.md",
@@ -981,13 +981,13 @@
   },
   {
     "path": "outputs/founderbench-responsible-use.json",
-    "sha256": "251eebc2d69a4287b0ce75c7d28f4f1fddfcf503a7f44c0552ab506066338a1e",
-    "bytes": 4508
+    "sha256": "f57ec74b118ce6bc6ca8269a9f412376770ee213a8ab5bad98ce3e344514c648",
+    "bytes": 4471
   },
   {
     "path": "outputs/founderbench-responsible-use.md",
-    "sha256": "d4d97a03a5f262f77857b2080e62283d0af9f80e0d0177dcc48bb13b72a553be",
-    "bytes": 4094
+    "sha256": "46ed917985660e174c472a876b2c5eb3766a12dfb8e0b134efaa90efb6de2df9",
+    "bytes": 4057
   },
   {
     "path": "outputs/founderbench-result-integrity-audit.json",
@@ -1001,17 +1001,17 @@
   },
   {
     "path": "outputs/founderbench-reviewer-index.json",
-    "sha256": "7d260ce8f89efdd1f476881a464e7bfe4fbbb4a0c6828fddcf4a5611af81399e",
-    "bytes": 35729
+    "sha256": "6369f540a1172390fe3195f22e5fd8a5332f06cea038919d4f35f95228ff206e",
+    "bytes": 35692
   },
   {
     "path": "outputs/founderbench-reviewer-index.md",
-    "sha256": "40edadcf8721fa3075f48d09a43f3ee4123567ff242045c76852db5bfba9a736",
-    "bytes": 20506
+    "sha256": "b149ce4a4ca759806363d139328aafd5b48413ef239ca98c6234f7e2b1959496",
+    "bytes": 20469
   },
   {
     "path": "outputs/founderbench-reviewer-risk-audit.json",
-    "sha256": "fc4e179c61bfb755698ad0a339139d47d1a102445e13fbc4e873b307e2ae1ddc",
+    "sha256": "90a4489f34ca959a514ed321ac6cf621ab35e929639edff88604a145b93d1ce2",
     "bytes": 13320
   },
   {
@@ -1061,23 +1061,23 @@
   },
   {
     "path": "outputs/founderbench-statistical-protocol.json",
-    "sha256": "0167f7c32c6584f277d6fbce6632d8aae6a87ea7d32bee0e4b01957a68cf1700",
-    "bytes": 3653
+    "sha256": "bdc7422f750759d670c4a814d36514cfb7a03b7f58c02e2c0fbb8ac8ddba8d31",
+    "bytes": 3591
   },
   {
     "path": "outputs/founderbench-statistical-protocol.md",
-    "sha256": "9b15ebead486d8885fa9c485cce4c64fe1192bef490200ea90e9edd982e2bb36",
-    "bytes": 3578
+    "sha256": "8e46bb2c4b7ea43bd159bdcfc12c356e2f456849ac3abf639e5dfa63308b9af2",
+    "bytes": 3516
   },
   {
     "path": "outputs/founderbench-submission-action-plan.json",
-    "sha256": "d84d2c55bf7a8f1d276a9e5c0add6ef675a00716750aaa7eeb70a7a60bbc7317",
-    "bytes": 24004
+    "sha256": "6e067a7071b97378d7eb8a6e6bed33ee6a90996f3207b66a90ca13110c7e42d2",
+    "bytes": 23008
   },
   {
     "path": "outputs/founderbench-submission-action-plan.md",
-    "sha256": "43c29d7a28ac57d7490fe406d57be044ceaf8907ebe3a8f0fcad14b01424d1b6",
-    "bytes": 18184
+    "sha256": "0f025974caef05314dcc520d4428771815539d94619f9b1bb3f35d135b984051",
+    "bytes": 17359
   },
   {
     "path": "outputs/founderbench-submission-bundle-protocol.json",
@@ -1091,22 +1091,22 @@
   },
   {
     "path": "outputs/founderbench-submission-gate.json",
-    "sha256": "3836576824f730c5f0f9309cdbe1268e7ef18a92cc64240a1e4e0c4b305eea43",
+    "sha256": "4043efa1fabd1b9ebabe83bb4a275f2fddc22b272080ff9dcfda4ded63b36bff",
     "bytes": 2223
   },
   {
     "path": "outputs/founderbench-submission-gate.md",
-    "sha256": "f6361dfb5a722df3a18b475bc42d1a8673eb275bdec2f9689997ab6c88083c16",
+    "sha256": "92e14558994ebab26fbb15bfd70dfc9d5b3ea6a3dd1bfbae15974c13fe606172",
     "bytes": 1498
   },
   {
     "path": "outputs/founderbench-submission-manifest.json",
-    "sha256": "0a06b071bbc9305169ab2330060f28a0ff08ec9c0af8343a635b9a1b3f6956b7",
+    "sha256": "be722f8fda90ad77b1867f0fdc8a72c6a4738b35c8f55fadd02f498fc8e8a05f",
     "bytes": 9530
   },
   {
     "path": "outputs/founderbench-submission-manifest.md",
-    "sha256": "0fffd906ada5d38eb239d4dbfa68896999ba9f3a34d31d9adbb51f958a584574",
+    "sha256": "bd0dab3cb0e30950113d573e9b3864c8e292cad7de276bed02d577c053c8af74",
     "bytes": 5856
   },
   {
@@ -1116,8 +1116,8 @@
   },
   {
     "path": "outputs/founderbench-supplementary-package-checklist.md",
-    "sha256": "12b4e52852e494c66e0d4bf4e34a64ddeb3ffb81f45178252e094e1dd25ed130",
-    "bytes": 12204
+    "sha256": "754ea4b094fc5295c35a39e62596467e833d2207a5948459f88db61a0f6de438",
+    "bytes": 12137
   },
   {
     "path": "outputs/founderbench-task-cards.json",
@@ -1176,18 +1176,18 @@
   },
   {
     "path": "outputs/founderbench-validity-report.json",
-    "sha256": "ca3f512f3902e96fba5e9d05bcfae956640955023a2c1a47c395663c04b478c4",
-    "bytes": 10172
+    "sha256": "65caa3295f22b495043188dcfff4b31c9a0b7c014cb769da8647a882816b782f",
+    "bytes": 10130
   },
   {
     "path": "outputs/founderbench-validity-report.md",
-    "sha256": "2068448c3953ac99b3ff495c87031d52e74af272d69d4d27952036ef1d9cc9b5",
-    "bytes": 5824
+    "sha256": "33b6b4d793cfc73e81ffc1754a74b5e5dab0e513809f9140dcc098e25986d283",
+    "bytes": 5782
   },
   {
     "path": "paper/founderbench-paper-draft.md",
-    "sha256": "4ff55274776eb64cb8890ec6abde3e316065daaab8296c1eddd19f21c85e2c25",
-    "bytes": 27853
+    "sha256": "5e54834a4d68ec6d435bd8383d3420a22d7cb57ba5c648bc468fa5d273581913",
+    "bytes": 27807
   },
   {
     "path": "paper/founderbench-related-work-notes.md",

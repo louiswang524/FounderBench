@@ -32,7 +32,7 @@ def _provider_rows() -> list[dict[str, Any]]:
 
 def _phase_rows(plan: dict[str, Any]) -> list[dict[str, Any]]:
     required_runs = [row for row in plan["runs"] if row["priority"] == "required"]
-    recommended_runs = [row for row in plan["runs"] if row["priority"] == "recommended"]
+    optional_runs = [row for row in plan["runs"] if row["priority"] == "recommended"]
     return [
         {
             "id": "preflight",
@@ -91,13 +91,13 @@ def _phase_rows(plan: dict[str, Any]) -> list[dict[str, Any]]:
             ],
         },
         {
-            "id": "recommended_ablation",
+            "id": "optional_provider_runs",
             "owner": "evaluator",
-            "purpose": "Run the recommended self-consistency ablation as a separate comparison, not as a replacement for the naive provider baseline.",
-            "entry_condition": "The matching naive provider baseline exists or is scheduled.",
-            "exit_condition": "Recommended ablation output exists and is clearly labeled in model-comparison artifacts.",
-            "commands": [command for row in recommended_runs for command in [row["run_command"], row["validation_command"]]],
-            "outputs": [path for row in recommended_runs for path in [row["output"], row["submission_report"]]],
+            "purpose": "Run optional additional provider and open-weight baselines after the required comparison set is underway.",
+            "entry_condition": "Required runs are scheduled or complete and optional provider credentials are available.",
+            "exit_condition": "Optional provider outputs exist and are clearly separated from required comparison evidence.",
+            "commands": [command for row in optional_runs for command in [row["run_command"], row["validation_command"]]],
+            "outputs": [path for row in optional_runs for path in [row["output"], row["submission_report"]]],
         },
         {
             "id": "postprocess_and_claim_gate",
@@ -154,11 +154,6 @@ def build_runbook() -> dict[str, Any]:
                 "otherwise": "Keep wording to planned/infrastructure-ready provider comparison.",
             },
             {
-                "claim": "self_consistency_improves_metrics",
-                "unlock_condition": "Validated DeepSeek naive and DeepSeek self-consistency repeat bundles exist and are compared by the statistical protocol.",
-                "otherwise": "Describe self-consistency as a planned or preliminary ablation only.",
-            },
-            {
                 "claim": "private_holdout_leaderboard",
                 "unlock_condition": "Evaluator-controlled private holdout aggregate report exists.",
                 "otherwise": "Describe only the private holdout protocol, not private holdout results.",
@@ -181,8 +176,8 @@ def validate_runbook(payload: dict[str, Any]) -> list[str]:
         problems.append("Runbook must not present planned experiments as executed.")
     if payload["summary"]["providers"] < 5:
         problems.append("Runbook should cover hosted providers plus local/open-source execution.")
-    if payload["summary"]["phases"] < 6:
-        problems.append("Runbook should include preflight, runs, audits, repeats, ablation, and postprocessing.")
+    if payload["summary"]["phases"] < 5:
+        problems.append("Runbook should include preflight, runs, audits, repeats, and postprocessing.")
     if payload["summary"]["required_single_run_evidence_files"] < 8:
         problems.append("Runbook should name required run outputs and submission reports.")
     phase_ids = {phase["id"] for phase in payload["phases"]}

@@ -7,7 +7,7 @@ Reviewer-facing result cards for deterministic baselines and planned provider su
 | Metric | Value |
 | --- | --- |
 | deterministic_cards | 4 |
-| provider_candidate_cards | 12 |
+| provider_candidate_cards | 11 |
 | valid_provider_cards | 0 |
 | hosted_llm_claims_ready | False |
 | open_source_claim_ready | False |
@@ -34,7 +34,6 @@ Reviewer-facing result cards for deterministic baselines and planned provider su
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | openai_hosted_baseline | openai | hosted_llm | missing | 0 |  | False | False | excluded_until_validated | Missing outputs/founderbench-openai.json or outputs/founderbench-openai-repeats.json |
 | deepseek_hosted_baseline | deepseek | hosted_llm | missing | 0 |  | False | False | excluded_until_validated | Missing outputs/founderbench-deepseek.json or outputs/founderbench-deepseek-repeats.json |
-| deepseek_self_consistency_k3 | deepseek_sc | hosted_llm_ablation | missing | 0 |  | False | False | excluded_until_validated | Missing outputs/founderbench-deepseek-sc-k3.json or outputs/founderbench-deepseek-sc-k3-repeats.json |
 | anthropic_hosted_baseline | anthropic | hosted_llm | missing | 0 |  | False | False | excluded_until_validated | Missing outputs/founderbench-anthropic.json or outputs/founderbench-anthropic-repeats.json |
 | gemini_hosted_baseline | gemini | hosted_llm | missing | 0 |  | False | False | excluded_until_validated | Missing outputs/founderbench-gemini.json or outputs/founderbench-gemini-repeats.json |
 | kimi_hosted_baseline | kimi | hosted_llm | missing | 0 |  | False | False | excluded_until_validated | Missing outputs/founderbench-kimi.json or outputs/founderbench-kimi-repeats.json |
