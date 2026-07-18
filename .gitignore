@@ -31,10 +31,10 @@ outputs/*-runlog.md
 outputs/*-trace.json
 outputs/moneybench-*
 outputs/no-human-company.html
-outputs/acceleratorbench-3provider-experiment-report.md
-outputs/acceleratorbench-submission-readiness.md
-outputs/acceleratorbench-task-suite-report.md
-outputs/acceleratorbench-v0.3-progress-report.md
+outputs/founderbench-3provider-experiment-report.md
+outputs/founderbench-submission-readiness.md
+outputs/founderbench-task-suite-report.md
+outputs/founderbench-progress-report.md
 release/tmp-*
 work/node_modules/
 work/package.json

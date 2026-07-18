@@ -1,0 +1,272 @@
+# FounderBench Supplementary Package Checklist
+
+This checklist tracks what should be included before a benchmark/dataset paper submission.
+
+## Required Code Artifacts
+
+- [x] Simulator code
+- [x] Task suite definitions
+- [x] Task-suite coverage and taxonomy report
+- [x] Task feasibility/discrimination audit generator
+- [x] Task/rubric revision ledger generator
+- [x] Task provenance and curation report
+- [x] Datasheet-style disclosure generator
+- [x] Responsible-use statement generator
+- [x] Human-readable task-card catalog generator
+- [x] Action-semantics catalog generator
+- [x] Market-catalog generator
+- [x] Policy interface
+- [x] Rule-based baselines
+- [x] Hosted-provider adapters
+- [x] OpenAI-compatible local-provider adapter
+- [x] Local/open-source baseline run protocol
+- [x] Canonical provider prompt protocol and hash manifest
+- [x] Task runner
+- [x] Resumable runner
+- [x] Leaderboard generator
+- [x] Leaderboard/reporting policy generator
+- [x] Leaderboard stability audit generator
+- [x] Analysis generator
+- [x] Raw-to-report result-integrity audit generator
+- [x] Paired statistical comparison generator
+- [x] Power/resolution analysis generator
+- [x] Difficulty calibration generator
+- [x] Scoring-rubric generator
+- [x] Scoring-consistency audit generator
+- [x] Metric-sensitivity generator
+- [x] Statistical comparison protocol generator
+- [x] Paper table generator
+- [x] Model result-card generator
+- [x] Paper figure-data generator
+- [x] Unified model-comparison report generator
+- [x] Model submission validator/report generator
+- [x] Model submission schema generator
+- [x] Repeated-run submission bundle helper/protocol
+- [x] Redacted audit mode
+- [x] Reproducibility manifest generator
+- [x] Reviewer smoke-test report generator
+- [x] Environment/dependency report generator
+- [x] Simulator invariant audit generator
+- [x] Deterministic replay audit generator
+- [x] Validity and limitations report generator
+- [x] Contamination/leakage audit generator
+- [x] Human/expert calibration protocol generator
+- [x] Human/expert calibration response schema/template generator
+- [x] Human/expert calibration analysis generator
+- [x] Human/expert calibration recruitment packet generator
+- [x] Claim-evidence guardrail generator
+- [x] Paper-claim lint generator
+- [x] License/citation readiness generator
+- [x] Release metadata checklist generator
+- [x] Non-final LICENSE/CITATION template files
+- [x] Top-level submission gate generator
+- [x] Submission action-plan generator
+- [x] Reviewer-risk audit generator
+- [x] AI research failure-mode audit generator
+- [x] Provider readiness matrix and command generator
+- [x] Provider comparability audit generator
+- [x] Provider contract audit generator
+- [x] Provider token/cost-accounting protocol generator
+- [x] Hosted/local baseline execution-plan generator
+- [x] Hosted/local experiment runbook generator
+- [x] Provider-run status/evidence classifier
+- [x] Provider parse-failure taxonomy
+- [x] Private holdout blueprint/fingerprint tooling
+- [x] Private holdout evaluator protocol
+- [x] Executable private holdout evaluator harness
+- [x] Aggregate-only private holdout smoke generator
+- [x] Publication-readiness audit generator
+- [x] Goal-level completion audit generator
+- [x] Paper experiment matrix generator
+- [x] Reviewer-facing supplementary index generator
+- [x] Supplementary bundle layout for release
+- [x] Supplementary bundle integrity verifier
+- [x] One-command validation script
+
+## Required Data Artifacts
+
+- [x] Task manifest current release
+- [x] Task coverage report
+- [x] Task feasibility/discrimination audit report
+- [x] Task/rubric revision ledger
+- [x] Task provenance report
+- [x] Datasheet-style disclosure
+- [x] Responsible-use statement
+- [x] Task-card catalog
+- [x] Action-semantics catalog
+- [x] Market catalog
+- [x] Baseline raw results
+- [x] Baseline leaderboard
+- [x] Leaderboard/reporting policy
+- [x] Leaderboard stability audit
+- [x] Baseline analysis tables
+- [x] Raw-to-report result-integrity audit
+- [x] Paper-ready result tables
+- [x] Model result-card report
+- [x] Paper figure data
+- [x] Unified model-comparison report
+- [x] Deterministic capability-ladder ablation report
+- [x] Deterministic action-space ablation report
+- [x] Paired statistical comparison report
+- [x] Power/resolution analysis report
+- [x] Deterministic difficulty calibration report
+- [x] Deterministic qualitative simulator traces
+- [x] Baseline submission-validation report
+- [x] Repeated-run submission bundle protocol
+- [x] Bootstrap task-mix confidence intervals for rule baselines
+- [x] Repeated-run random-policy calibration intervals
+- [x] Scoring rubric and component-weight report
+- [x] Scoring-consistency audit
+- [x] Metric-sensitivity report
+- [x] Statistical comparison protocol
+- [x] Source/output reproducibility manifest
+- [x] Reviewer smoke-test report
+- [x] Runtime environment and dependency report
+- [x] Simulator invariant audit report
+- [x] Deterministic replay audit
+- [x] Threats-to-validity and limitations report
+- [x] Contamination/leakage audit report
+- [x] Human/expert calibration protocol
+- [x] Human/expert calibration response schema/template
+- [x] Human/expert calibration analysis status report
+- [x] Human/expert calibration recruitment packet
+- [x] Claim-evidence guardrail report
+- [x] Paper-claim lint report
+- [x] License/citation readiness report
+- [x] Release metadata checklist
+- [x] Non-final LICENSE/CITATION template files
+- [x] Top-level submission gate report
+- [x] Submission action-plan report
+- [x] Reviewer-risk audit report
+- [x] AI research failure-mode audit report
+- [x] Local/open-source baseline protocol artifacts
+- [x] Provider prompt protocol artifacts
+- [x] Provider readiness report
+- [x] Provider comparability audit
+- [x] Provider contract audit report
+- [x] Provider token/cost-accounting protocol
+- [x] Hosted/local baseline execution plan
+- [x] Hosted/local experiment runbook
+- [x] Provider-run status report
+- [x] Goal-level completion audit report
+- [ ] Full hosted LLM baseline results
+- [ ] Local/open-source model baseline results
+- [ ] Representative redacted hosted-LLM audit traces
+- [x] Private holdout metadata and evaluator protocol
+- [x] Aggregate-only private holdout smoke report
+
+## Required Documentation
+
+- [x] Benchmark card
+- [x] Datasheet-style disclosure
+- [x] Responsible-use statement
+- [x] Task provenance report
+- [x] Task feasibility/discrimination audit report
+- [x] Task/rubric revision ledger
+- [x] Human-readable task-card catalog
+- [x] Action-semantics catalog
+- [x] Market catalog
+- [x] Metrics and evaluation protocol
+- [x] Leaderboard/reporting policy
+- [x] Leaderboard stability audit
+- [x] Provider prompt protocol
+- [x] Provider comparability audit
+- [x] Provider contract audit
+- [x] Provider token/cost-accounting protocol
+- [x] Hosted/local baseline execution plan
+- [x] Hosted/local experiment runbook
+- [x] Provider-run status report
+- [x] Difficulty calibration report
+- [x] Scoring rubric report
+- [x] Scoring-consistency audit
+- [x] Metric-sensitivity report
+- [x] Statistical comparison protocol
+- [x] Power/resolution analysis report
+- [x] Reproduction guide
+- [x] Reviewer smoke-test report
+- [x] Reproducibility manifest
+- [x] Raw-to-report result-integrity audit
+- [x] Runtime environment and dependency report
+- [x] Simulator invariant audit report
+- [x] Validity and limitations report
+- [x] Contamination/leakage audit report
+- [x] Human/expert calibration response schema/template
+- [x] Human/expert calibration analysis status report
+- [x] Human/expert calibration recruitment packet
+- [x] Claim-evidence report
+- [x] License/citation readiness report
+- [x] Release metadata checklist
+- [x] Top-level submission gate report
+- [x] Goal-level completion audit report
+- [x] Submission action-plan report
+- [x] Reviewer-risk audit report
+- [x] AI research failure-mode audit report
+- [x] Model submission template
+- [x] Model submission schema
+- [x] Repeated-run submission bundle protocol
+- [x] Model submission validation report
+- [x] Unified model-comparison report
+- [x] Model result-card report
+- [x] Publication audit report
+- [x] Paper experiment matrix
+- [x] Reviewer-facing supplementary index
+- [x] Private holdout smoke report
+- [x] Package README
+- [x] Specification
+- [x] Paper draft
+- [x] Verified related-work notes
+- [x] BibTeX reference file
+- [x] Reference provenance manifest
+- [x] Citation-context audit report
+- [ ] License file selected by project owner
+- [ ] Citation file with final author metadata
+- [x] Non-final LICENSE/CITATION templates for owner finalization
+- [x] Public release README with installation instructions
+- [x] Release-bundle integrity report
+
+## Paper Evidence Still Needed
+
+- [ ] DeepSeek current release baseline
+- [ ] Anthropic/Claude current release baseline
+- [ ] Gemini current release baseline
+- [ ] At least one local/open-source model baseline
+- [x] Operator runbook for executing the missing hosted/local baselines
+- [x] Deterministic policy capability ablation on current release
+- [x] Deterministic action-space ablation on current release
+- [x] Deterministic replay audit for included rule baselines
+- [x] Paired statistical comparison of deterministic baselines
+- [x] Leaderboard stability audit for deterministic baselines
+- [x] Raw-to-report integrity audit for deterministic baseline tables
+- [x] Public-suite power/resolution analysis for close model comparisons
+- [x] Deterministic task difficulty calibration on current release
+- [x] Task-level feasibility/discrimination audit on current release
+- [x] Task/rubric revision ledger for external calibration and reviewer issues
+- [ ] Self-consistency or reflection ablation on current release
+- [x] Repeated-sampling confidence interval tooling
+- [ ] Hosted-LLM repeated-sampling confidence intervals
+- [x] Result-card format for deterministic baselines and planned provider submissions
+- [x] Provider comparability audit for planned hosted/local runs
+- [x] Provider contract audit for parser and diagnostic handling
+- [x] Public-split contamination/leakage audit and claim guardrails
+- [x] Failure-case qualitative examples from deterministic simulator traces
+- [ ] Failure-case qualitative examples from hosted-LLM audit traces
+- [ ] Executed expert/human-founder calibration results
+- [x] Non-executed human/expert calibration recruitment packet
+- [x] Convert related-work links to BibTeX/provenance artifacts
+- [x] Local citation-context audit for paper references
+- [ ] Execute private holdout on evaluator host
+- [x] Smoke-test private holdout evaluator harness without official hidden leaderboard claims
+
+## Submission Risk Notes
+
+- The simulator is synthetic and should be framed as a controlled evaluation environment, not a real market proxy.
+- The public test split is visible and should not be described as a hidden holdout.
+- The private holdout smoke report proves evaluator execution only; it is not an official hidden-suite score.
+- Current baseline evidence is non-LLM only for current release.
+- The task-feasibility audit marks deterministic-unsolved tasks as needing external calibration rather than claiming all tasks are proven feasible.
+- The task-revision ledger is a change-control artifact, not evidence that open rows are already resolved.
+- The generated completion audit currently marks the overall goal `not_complete` until hosted/local LLM evidence and release metadata are finalized.
+- The LICENSE/CITATION templates are not final release metadata and should not be treated as clearing the license gate.
+- The reviewer-risk audit and AI research failure-mode audit should be cited when discussing open methodological risks and claim-blocking integrity checks.
+- The citation-context audit is a local consistency check; final submission should still run external citation-context spot checks against primary sources.
+- The paper should avoid implying affiliation with Y Combinator.

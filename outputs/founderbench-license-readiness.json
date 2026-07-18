@@ -1,0 +1,114 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "License and citation metadata readiness report for public benchmark release.",
+  "summary": {
+    "checks": 8,
+    "pass": 4,
+    "incomplete": 3,
+    "missing": 1,
+    "owner_decisions_required": 4,
+    "release_ready": false
+  },
+  "checks": [
+    {
+      "id": "citation_file_exists",
+      "status": "pass",
+      "path": "work/moneybench/CITATION.cff",
+      "detail": "CITATION.cff is present."
+    },
+    {
+      "id": "citation_author_placeholder",
+      "status": "incomplete",
+      "path": "work/moneybench/CITATION.cff",
+      "detail": "Author metadata must be finalized."
+    },
+    {
+      "id": "citation_repository_placeholder",
+      "status": "pass",
+      "path": "work/moneybench/CITATION.cff",
+      "detail": "Repository URL must be finalized."
+    },
+    {
+      "id": "citation_license_placeholder",
+      "status": "incomplete",
+      "path": "work/moneybench/CITATION.cff",
+      "detail": "License metadata must match the selected release license."
+    },
+    {
+      "id": "license_file_exists",
+      "status": "missing",
+      "path": "work/moneybench/LICENSE",
+      "detail": "A final LICENSE file should exist for public release."
+    },
+    {
+      "id": "license_template_exists",
+      "status": "pass",
+      "path": "work/moneybench/LICENSE.template",
+      "detail": "A non-final license template should help the owner create the final LICENSE file."
+    },
+    {
+      "id": "citation_template_exists",
+      "status": "pass",
+      "path": "work/moneybench/CITATION.cff.template",
+      "detail": "A non-final citation template should help the owner replace placeholders safely."
+    },
+    {
+      "id": "license_todo_present",
+      "status": "incomplete",
+      "path": "work/moneybench/LICENSE-TODO.md",
+      "detail": "LICENSE-TODO.md documents the unresolved owner decision."
+    }
+  ],
+  "required_decisions": [
+    {
+      "id": "license_choice",
+      "decision": "Select a public release license.",
+      "why_it_matters": "External users need explicit reuse, modification, and redistribution terms.",
+      "acceptable_examples": [
+        "MIT",
+        "Apache-2.0",
+        "BSD-3-Clause"
+      ],
+      "target_files": [
+        "work/moneybench/LICENSE"
+      ]
+    },
+    {
+      "id": "author_metadata",
+      "decision": "Replace placeholder author metadata in CITATION.cff.",
+      "why_it_matters": "Citation metadata must identify artifact authors before public release.",
+      "acceptable_examples": [
+        "Personal author names",
+        "Organization plus maintainers"
+      ],
+      "target_files": [
+        "work/moneybench/CITATION.cff"
+      ]
+    },
+    {
+      "id": "repository_url",
+      "decision": "Add public repository URL to CITATION.cff.",
+      "why_it_matters": "Reviewers and users need a stable source-code location.",
+      "acceptable_examples": [
+        "https://github.com/<owner>/<repo>"
+      ],
+      "target_files": [
+        "work/moneybench/CITATION.cff"
+      ]
+    },
+    {
+      "id": "citation_license_field",
+      "decision": "Set the CITATION.cff license field to the selected license identifier.",
+      "why_it_matters": "Citation tooling expects machine-readable license metadata.",
+      "acceptable_examples": [
+        "MIT",
+        "Apache-2.0",
+        "BSD-3-Clause"
+      ],
+      "target_files": [
+        "work/moneybench/CITATION.cff"
+      ]
+    }
+  ]
+}

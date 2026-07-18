@@ -1,0 +1,344 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Unified model-comparison report that includes deterministic baselines and automatically incorporates hosted/local provider runs only after submission validation passes.",
+  "source_files": {
+    "deterministic_raw": "outputs\\founderbench-baseline-raw.json",
+    "provider_candidates": [
+      "outputs/founderbench-deepseek.json",
+      "outputs/founderbench-deepseek-sc-k3.json",
+      "outputs/founderbench-anthropic.json",
+      "outputs/founderbench-gemini.json",
+      "outputs/founderbench-local-open-model.json"
+    ]
+  },
+  "summary": {
+    "deterministic_runs": 4,
+    "valid_provider_runs": 0,
+    "valid_provider_policies": 0,
+    "valid_repeated_provider_bundles": 0,
+    "provider_candidates": 5,
+    "provider_missing_or_invalid": 5,
+    "all_valid_runs": 4,
+    "paired_comparisons": 3,
+    "provider_paired_comparisons": 0,
+    "hosted_llm_claims_ready": false,
+    "open_source_claim_ready": false
+  },
+  "leaderboard_rows": [
+    [
+      "task_heuristic",
+      50,
+      37,
+      "0.74",
+      "80.90",
+      "81.73",
+      "79.66",
+      5,
+      0
+    ],
+    [
+      "heuristic",
+      50,
+      19,
+      "0.38",
+      "61.01",
+      "65.10",
+      "54.87",
+      0,
+      0
+    ],
+    [
+      "conservative",
+      50,
+      13,
+      "0.26",
+      "54.04",
+      "55.31",
+      "52.13",
+      0,
+      0
+    ],
+    [
+      "random",
+      50,
+      4,
+      "0.08",
+      "33.30",
+      "26.11",
+      "44.07",
+      15,
+      0
+    ]
+  ],
+  "confidence_interval_rows": [
+    [
+      "task_heuristic",
+      "80.90",
+      "[74.94, 86.42]",
+      "0.74",
+      "[0.62, 0.86]"
+    ],
+    [
+      "heuristic",
+      "61.01",
+      "[55.21, 66.94]",
+      "0.38",
+      "[0.26, 0.52]"
+    ],
+    [
+      "conservative",
+      "54.04",
+      "[48.20, 60.14]",
+      "0.26",
+      "[0.14, 0.38]"
+    ],
+    [
+      "random",
+      "33.30",
+      "[26.89, 40.60]",
+      "0.08",
+      "[0.02, 0.16]"
+    ]
+  ],
+  "family_rows": [
+    [
+      "Market selection",
+      "2/5 (59.8)",
+      "2/5 (61.1)",
+      "2/5 (63.2)",
+      "0/5 (31.6)"
+    ],
+    [
+      "First revenue",
+      "2/5 (69.2)",
+      "2/5 (65.7)",
+      "1/5 (45.3)",
+      "0/5 (20.4)"
+    ],
+    [
+      "Retention improvement",
+      "5/5 (95.8)",
+      "2/5 (63.5)",
+      "0/5 (47.5)",
+      "0/5 (10.4)"
+    ],
+    [
+      "Churn shock recovery",
+      "5/5 (91.2)",
+      "1/5 (48.1)",
+      "0/5 (38.3)",
+      "0/5 (34.3)"
+    ],
+    [
+      "Demo Day traction",
+      "4/5 (88.8)",
+      "3/5 (67.0)",
+      "2/5 (60.3)",
+      "0/5 (20.2)"
+    ],
+    [
+      "Pricing",
+      "5/5 (85.6)",
+      "4/5 (85.2)",
+      "3/5 (77.3)",
+      "0/5 (39.7)"
+    ],
+    [
+      "Runway preservation",
+      "5/5 (95.6)",
+      "5/5 (82.5)",
+      "5/5 (79.1)",
+      "2/5 (68.3)"
+    ],
+    [
+      "Pivot decision",
+      "2/5 (65.5)",
+      "0/5 (26.8)",
+      "0/5 (23.9)",
+      "0/5 (11.7)"
+    ],
+    [
+      "Fundraising",
+      "5/5 (99.6)",
+      "0/5 (68.0)",
+      "0/5 (68.0)",
+      "2/5 (72.6)"
+    ],
+    [
+      "Channel expansion",
+      "2/5 (58.0)",
+      "0/5 (42.1)",
+      "0/5 (37.6)",
+      "0/5 (23.7)"
+    ]
+  ],
+  "paired_comparisons": [
+    {
+      "comparison": "task_heuristic - heuristic",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "heuristic",
+      "tasks": 50,
+      "mean_score_gap": 19.9,
+      "score_gap_bootstrap_ci": [
+        13.8,
+        26.19
+      ],
+      "paired_permutation_p": 5e-05,
+      "cohen_dz": 0.8848,
+      "task_wins": 42,
+      "task_losses": 8,
+      "task_ties": 0,
+      "solve_gap": 0.36,
+      "solve_wins": 20,
+      "solve_losses": 2
+    },
+    {
+      "comparison": "task_heuristic - conservative",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "conservative",
+      "tasks": 50,
+      "mean_score_gap": 26.87,
+      "score_gap_bootstrap_ci": [
+        21.67,
+        32.45
+      ],
+      "paired_permutation_p": 5e-05,
+      "cohen_dz": 1.3433,
+      "task_wins": 43,
+      "task_losses": 7,
+      "task_ties": 0,
+      "solve_gap": 0.48,
+      "solve_wins": 24,
+      "solve_losses": 0
+    },
+    {
+      "comparison": "task_heuristic - random",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "random",
+      "tasks": 50,
+      "mean_score_gap": 47.61,
+      "score_gap_bootstrap_ci": [
+        40.24,
+        54.64
+      ],
+      "paired_permutation_p": 5e-05,
+      "cohen_dz": 1.892,
+      "task_wins": 49,
+      "task_losses": 1,
+      "task_ties": 0,
+      "solve_gap": 0.66,
+      "solve_wins": 33,
+      "solve_losses": 0
+    }
+  ],
+  "provider_paired_comparisons": [],
+  "provider_status": [
+    {
+      "id": "deepseek_hosted_baseline",
+      "policy": "deepseek",
+      "path": "outputs/founderbench-deepseek.json",
+      "report": "outputs/founderbench-deepseek-submission-report.md",
+      "repeat_bundle_path": "outputs/founderbench-deepseek-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-deepseek-repeats-submission-report.md",
+      "family": "hosted_llm",
+      "status": "missing",
+      "exists": false,
+      "submission_report_exists": false,
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "evidence_path": "",
+      "evidence_kind": "",
+      "runs": 0,
+      "problems": [
+        "Missing outputs/founderbench-deepseek.json or outputs/founderbench-deepseek-repeats.json"
+      ]
+    },
+    {
+      "id": "deepseek_self_consistency_k3",
+      "policy": "deepseek_sc",
+      "path": "outputs/founderbench-deepseek-sc-k3.json",
+      "report": "outputs/founderbench-deepseek-sc-k3-submission-report.md",
+      "repeat_bundle_path": "outputs/founderbench-deepseek-sc-k3-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md",
+      "family": "hosted_llm_ablation",
+      "status": "missing",
+      "exists": false,
+      "submission_report_exists": false,
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "evidence_path": "",
+      "evidence_kind": "",
+      "runs": 0,
+      "problems": [
+        "Missing outputs/founderbench-deepseek-sc-k3.json or outputs/founderbench-deepseek-sc-k3-repeats.json"
+      ]
+    },
+    {
+      "id": "anthropic_hosted_baseline",
+      "policy": "anthropic",
+      "path": "outputs/founderbench-anthropic.json",
+      "report": "outputs/founderbench-anthropic-submission-report.md",
+      "repeat_bundle_path": "outputs/founderbench-anthropic-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-anthropic-repeats-submission-report.md",
+      "family": "hosted_llm",
+      "status": "missing",
+      "exists": false,
+      "submission_report_exists": false,
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "evidence_path": "",
+      "evidence_kind": "",
+      "runs": 0,
+      "problems": [
+        "Missing outputs/founderbench-anthropic.json or outputs/founderbench-anthropic-repeats.json"
+      ]
+    },
+    {
+      "id": "gemini_hosted_baseline",
+      "policy": "gemini",
+      "path": "outputs/founderbench-gemini.json",
+      "report": "outputs/founderbench-gemini-submission-report.md",
+      "repeat_bundle_path": "outputs/founderbench-gemini-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-gemini-repeats-submission-report.md",
+      "family": "hosted_llm",
+      "status": "missing",
+      "exists": false,
+      "submission_report_exists": false,
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "evidence_path": "",
+      "evidence_kind": "",
+      "runs": 0,
+      "problems": [
+        "Missing outputs/founderbench-gemini.json or outputs/founderbench-gemini-repeats.json"
+      ]
+    },
+    {
+      "id": "local_open_source_baseline",
+      "policy": "llm",
+      "path": "outputs/founderbench-local-open-model.json",
+      "report": "outputs/founderbench-local-open-model-submission-report.md",
+      "repeat_bundle_path": "outputs/founderbench-local-open-model-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-local-open-model-repeats-submission-report.md",
+      "family": "open_source",
+      "status": "missing",
+      "exists": false,
+      "submission_report_exists": false,
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "evidence_path": "",
+      "evidence_kind": "",
+      "runs": 0,
+      "problems": [
+        "Missing outputs/founderbench-local-open-model.json or outputs/founderbench-local-open-model-repeats.json"
+      ]
+    }
+  ],
+  "claim_rules": [
+    "Provider rows are included only after raw run validation passes.",
+    "Hosted LLM comparison claims require at least three valid hosted provider baselines.",
+    "Open-source comparison claims require at least one valid local/OpenAI-compatible run.",
+    "Missing or invalid provider runs are reported in the ledger and excluded from leaderboard claims."
+  ]
+}

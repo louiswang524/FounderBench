@@ -26,7 +26,7 @@ python -m moneybench.submission --input outputs/provider-run.json --report outpu
 export DEEPSEEK_API_KEY="..."
 python -m moneybench.resumable_runner \
   --policy deepseek \
-  --output outputs/acceleratorbench-deepseek-v0.3.json \
+  --output outputs/founderbench-deepseek.json \
   --resume \
   --audit
 ```

@@ -1,0 +1,293 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Claim-evidence guardrail for paper and benchmark-card wording.",
+  "summary": {
+    "claims": 9,
+    "supported": 6,
+    "unsupported_currently": 3,
+    "evidence_complete": 9
+  },
+  "claims": [
+    {
+      "id": "controlled_startup_operator_benchmark",
+      "claim": "FounderBench is a controlled benchmark for evaluating startup-operator agents under bounded resources.",
+      "status": "supported",
+      "permitted_wording": "FounderBench evaluates structured startup-like operating decisions in a controlled simulator.",
+      "avoid_wording": "FounderBench measures real-world startup success.",
+      "evidence_paths": [
+        "work/moneybench/moneybench/env.py",
+        "work/moneybench/SPEC.md",
+        "outputs/founderbench-benchmark-card.md"
+      ],
+      "evidence": [
+        {
+          "path": "work/moneybench/moneybench/env.py",
+          "exists": true
+        },
+        {
+          "path": "work/moneybench/SPEC.md",
+          "exists": true
+        },
+        {
+          "path": "outputs/founderbench-benchmark-card.md",
+          "exists": true
+        }
+      ],
+      "missing": [],
+      "evidence_complete": true,
+      "missing_evidence_present": []
+    },
+    {
+      "id": "expanded_50_task_suite",
+      "claim": "The current release artifact contains 50 fixed public tasks across 10 startup operating families.",
+      "status": "supported",
+      "permitted_wording": "The benchmark contains 50 fixed public tasks across 10 balanced task families.",
+      "avoid_wording": "The benchmark contains a hidden or privately evaluated benchmark suite.",
+      "evidence_paths": [
+        "outputs/founderbench-task-manifest.json",
+        "outputs/founderbench-task-coverage.md"
+      ],
+      "evidence": [
+        {
+          "path": "outputs/founderbench-task-manifest.json",
+          "exists": true
+        },
+        {
+          "path": "outputs/founderbench-task-coverage.md",
+          "exists": true
+        }
+      ],
+      "missing": [],
+      "evidence_complete": true,
+      "missing_evidence_present": []
+    },
+    {
+      "id": "structured_action_space",
+      "claim": "Agents are evaluated through a structured 13-action business interface, and free-form rationale does not directly affect score.",
+      "status": "supported",
+      "permitted_wording": "The simulator executes only structured actions; rationale is retained for auditability but not scored directly.",
+      "avoid_wording": "Models can earn score through persuasive business prose.",
+      "evidence_paths": [
+        "work/moneybench/moneybench/schema.py",
+        "work/moneybench/moneybench/task_runner.py",
+        "outputs/founderbench-task-coverage.md"
+      ],
+      "evidence": [
+        {
+          "path": "work/moneybench/moneybench/schema.py",
+          "exists": true
+        },
+        {
+          "path": "work/moneybench/moneybench/task_runner.py",
+          "exists": true
+        },
+        {
+          "path": "outputs/founderbench-task-coverage.md",
+          "exists": true
+        }
+      ],
+      "missing": [],
+      "evidence_complete": true,
+      "missing_evidence_present": []
+    },
+    {
+      "id": "bounded_normalized_metrics",
+      "claim": "Task scores are bounded from 0 to 100 with a solve threshold of 70 and family-specific scoring rubrics.",
+      "status": "supported",
+      "permitted_wording": "Each task returns a bounded 0-100 score; tasks are solved at score >= 70.",
+      "avoid_wording": "The score is a direct dollar value or external business valuation.",
+      "evidence_paths": [
+        "outputs/founderbench-metrics-and-evaluation.md",
+        "outputs/founderbench-score-rubric.md",
+        "work/moneybench/moneybench/tasks.py"
+      ],
+      "evidence": [
+        {
+          "path": "outputs/founderbench-metrics-and-evaluation.md",
+          "exists": true
+        },
+        {
+          "path": "outputs/founderbench-score-rubric.md",
+          "exists": true
+        },
+        {
+          "path": "work/moneybench/moneybench/tasks.py",
+          "exists": true
+        }
+      ],
+      "missing": [],
+      "evidence_complete": true,
+      "missing_evidence_present": []
+    },
+    {
+      "id": "deterministic_baseline_spread",
+      "claim": "Rule-based baselines show the benchmark is neither solved by random action sampling nor impossible for simple structured policies.",
+      "status": "supported",
+      "permitted_wording": "Deterministic baselines show a wide spread from random to task-aware heuristic on the public current suite.",
+      "avoid_wording": "The benchmark is validated against current frontier LLMs.",
+      "evidence_paths": [
+        "outputs/founderbench-baseline-leaderboard.json",
+        "outputs/founderbench-baseline-analysis.md",
+        "outputs/founderbench-paper-tables.md"
+      ],
+      "evidence": [
+        {
+          "path": "outputs/founderbench-baseline-leaderboard.json",
+          "exists": true
+        },
+        {
+          "path": "outputs/founderbench-baseline-analysis.md",
+          "exists": true
+        },
+        {
+          "path": "outputs/founderbench-paper-tables.md",
+          "exists": true
+        }
+      ],
+      "missing": [],
+      "evidence_complete": true,
+      "missing_evidence_present": []
+    },
+    {
+      "id": "capability_ladder_ablation",
+      "claim": "The deterministic policy ladder gives an ablation-style calibration of business-decision capabilities.",
+      "status": "supported",
+      "permitted_wording": "The deterministic policy ladder is a calibration ablation, not a model architecture ablation.",
+      "avoid_wording": "The ablation proves LLM reasoning mechanisms.",
+      "evidence_paths": [
+        "outputs/founderbench-ablation-report.md",
+        "outputs/founderbench-paper-tables.md"
+      ],
+      "evidence": [
+        {
+          "path": "outputs/founderbench-ablation-report.md",
+          "exists": true
+        },
+        {
+          "path": "outputs/founderbench-paper-tables.md",
+          "exists": true
+        }
+      ],
+      "missing": [],
+      "evidence_complete": true,
+      "missing_evidence_present": []
+    },
+    {
+      "id": "hosted_llm_comparison",
+      "claim": "FounderBench differentiates current hosted LLM providers on current release.",
+      "status": "unsupported_currently",
+      "permitted_wording": "Provider adapters and experiment protocols are included; hosted current release LLM results remain to be run.",
+      "avoid_wording": "DeepSeek, Claude, and Gemini have been fully compared on current release.",
+      "evidence_paths": [
+        "outputs/founderbench-provider-readiness.md",
+        "outputs/founderbench-experiment-matrix.md"
+      ],
+      "missing_evidence": [
+        "outputs/founderbench-deepseek.json",
+        "outputs/founderbench-anthropic.json",
+        "outputs/founderbench-gemini.json"
+      ],
+      "evidence": [
+        {
+          "path": "outputs/founderbench-provider-readiness.md",
+          "exists": true
+        },
+        {
+          "path": "outputs/founderbench-experiment-matrix.md",
+          "exists": true
+        }
+      ],
+      "missing": [
+        {
+          "path": "outputs/founderbench-deepseek.json",
+          "exists": false
+        },
+        {
+          "path": "outputs/founderbench-anthropic.json",
+          "exists": false
+        },
+        {
+          "path": "outputs/founderbench-gemini.json",
+          "exists": false
+        }
+      ],
+      "evidence_complete": true,
+      "missing_evidence_present": []
+    },
+    {
+      "id": "private_holdout_available",
+      "claim": "The benchmark includes an executed private hidden holdout leaderboard.",
+      "status": "unsupported_currently",
+      "permitted_wording": "The benchmark includes a private-holdout blueprint and evaluator protocol, not executed hidden results.",
+      "avoid_wording": "The reported current release leaderboard is hidden or private.",
+      "evidence_paths": [
+        "outputs/founderbench-private-holdout-blueprint.json",
+        "outputs/founderbench-private-holdout-evaluator-protocol.md"
+      ],
+      "missing_evidence": [
+        "outputs/founderbench-private-holdout-results.json"
+      ],
+      "evidence": [
+        {
+          "path": "outputs/founderbench-private-holdout-blueprint.json",
+          "exists": true
+        },
+        {
+          "path": "outputs/founderbench-private-holdout-evaluator-protocol.md",
+          "exists": true
+        }
+      ],
+      "missing": [
+        {
+          "path": "outputs/founderbench-private-holdout-results.json",
+          "exists": false
+        }
+      ],
+      "evidence_complete": true,
+      "missing_evidence_present": []
+    },
+    {
+      "id": "real_world_startup_prediction",
+      "claim": "FounderBench predicts real startup profitability or long-term company success.",
+      "status": "unsupported_currently",
+      "permitted_wording": "FounderBench is a synthetic controlled environment for studying startup-relevant decisions.",
+      "avoid_wording": "High benchmark score means a model can run a successful real company.",
+      "evidence_paths": [
+        "outputs/founderbench-validity-report.md",
+        "outputs/founderbench-human-calibration-protocol.md",
+        "outputs/founderbench-benchmark-card.md"
+      ],
+      "missing_evidence": [
+        "executed human/expert validation study",
+        "real-world outcome correlation study"
+      ],
+      "evidence": [
+        {
+          "path": "outputs/founderbench-validity-report.md",
+          "exists": true
+        },
+        {
+          "path": "outputs/founderbench-human-calibration-protocol.md",
+          "exists": true
+        },
+        {
+          "path": "outputs/founderbench-benchmark-card.md",
+          "exists": true
+        }
+      ],
+      "missing": [
+        {
+          "path": "executed human/expert validation study",
+          "exists": false
+        },
+        {
+          "path": "real-world outcome correlation study",
+          "exists": false
+        }
+      ],
+      "evidence_complete": true,
+      "missing_evidence_present": []
+    }
+  ]
+}

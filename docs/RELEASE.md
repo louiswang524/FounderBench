@@ -8,6 +8,6 @@ Before making the repository public:
 4. Run `python -m moneybench.release validate`.
 5. Run `python -m moneybench.release bundle`.
 6. Run a secret scan over `work/moneybench`, `outputs`, and `release`.
-7. Review `outputs/acceleratorbench-submission-gate-v0.3.md` and `outputs/acceleratorbench-publication-audit-v0.3.md`.
+7. Review `outputs/founderbench-submission-gate.md` and `outputs/founderbench-publication-audit.md`.
 
-Current v0.3.0 limitation: hosted LLM provider comparisons and real private hidden-holdout results must not be claimed until completed and validated.
+Current current release limitation: hosted LLM provider comparisons and real private hidden-holdout results must not be claimed until completed and validated.

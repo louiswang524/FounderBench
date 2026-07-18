@@ -1,0 +1,424 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Reviewer-facing action plan for clearing the remaining FounderBench submission gates.",
+  "submission_gate_status": "not_ready",
+  "summary": {
+    "steps": 18,
+    "required_steps": 17,
+    "owner_action_steps": 4,
+    "provider_environment_steps": 5,
+    "claim_alignment_steps": 3,
+    "ready_for_submission": false
+  },
+  "steps": [
+    {
+      "id": "complete_deepseek_hosted_baseline",
+      "gate": "required_experiments",
+      "owner": "evaluator",
+      "priority": "required",
+      "status": "missing",
+      "action": "Run DeepSeek on the complete 50-task current release suite with submission validation.",
+      "missing_inputs": [
+        "outputs/founderbench-deepseek.json",
+        "outputs/founderbench-deepseek-submission-report.md"
+      ],
+      "commands": [
+        "python -m moneybench.resumable_runner --policy deepseek --output ..\\..\\outputs\\founderbench-deepseek.json --resume",
+        "python -m moneybench.submission --input ..\\..\\outputs\\founderbench-deepseek.json --report ..\\..\\outputs\\founderbench-deepseek-submission-report.md"
+      ],
+      "expected_outputs": [
+        "outputs/founderbench-deepseek.json",
+        "outputs/founderbench-deepseek-submission-report.md"
+      ],
+      "claim_impact": "Provides a representative hosted LLM baseline."
+    },
+    {
+      "id": "complete_anthropic_hosted_baseline",
+      "gate": "required_experiments",
+      "owner": "evaluator",
+      "priority": "required",
+      "status": "missing",
+      "action": "Run Claude/Anthropic on the complete 50-task current release suite with submission validation.",
+      "missing_inputs": [
+        "outputs/founderbench-anthropic.json",
+        "outputs/founderbench-anthropic-submission-report.md"
+      ],
+      "commands": [
+        "python -m moneybench.resumable_runner --policy anthropic --output ..\\..\\outputs\\founderbench-anthropic.json --resume",
+        "python -m moneybench.submission --input ..\\..\\outputs\\founderbench-anthropic.json --report ..\\..\\outputs\\founderbench-anthropic-submission-report.md"
+      ],
+      "expected_outputs": [
+        "outputs/founderbench-anthropic.json",
+        "outputs/founderbench-anthropic-submission-report.md"
+      ],
+      "claim_impact": "Adds a second hosted LLM family for model differentiation."
+    },
+    {
+      "id": "complete_gemini_hosted_baseline",
+      "gate": "required_experiments",
+      "owner": "evaluator",
+      "priority": "required",
+      "status": "missing",
+      "action": "Run Gemini on the complete 50-task current release suite with submission validation.",
+      "missing_inputs": [
+        "outputs/founderbench-gemini.json",
+        "outputs/founderbench-gemini-submission-report.md"
+      ],
+      "commands": [
+        "python -m moneybench.resumable_runner --policy gemini --output ..\\..\\outputs\\founderbench-gemini.json --resume",
+        "python -m moneybench.submission --input ..\\..\\outputs\\founderbench-gemini.json --report ..\\..\\outputs\\founderbench-gemini-submission-report.md"
+      ],
+      "expected_outputs": [
+        "outputs/founderbench-gemini.json",
+        "outputs/founderbench-gemini-submission-report.md"
+      ],
+      "claim_impact": "Adds a third hosted LLM family for model differentiation."
+    },
+    {
+      "id": "complete_local_open_source_baseline",
+      "gate": "required_experiments",
+      "owner": "evaluator",
+      "priority": "required",
+      "status": "missing",
+      "action": "Run at least one local/open-source model via the OpenAI-compatible protocol and validate the submission.",
+      "missing_inputs": [
+        "outputs/founderbench-local-open-model.json",
+        "outputs/founderbench-local-open-model-submission-report.md"
+      ],
+      "commands": [
+        "python -m moneybench.local_model health --output ..\\..\\outputs\\local-health.json",
+        "python -m moneybench.resumable_runner --policy llm --output ..\\..\\outputs\\founderbench-local-open-model.json --resume --audit",
+        "python -m moneybench.submission --input ..\\..\\outputs\\founderbench-local-open-model.json --report ..\\..\\outputs\\founderbench-local-open-model-submission-report.md"
+      ],
+      "expected_outputs": [
+        "outputs/founderbench-local-open-model.json",
+        "outputs/founderbench-local-open-model-submission-report.md"
+      ],
+      "claim_impact": "Makes the comparison accessible beyond closed hosted APIs."
+    },
+    {
+      "id": "complete_hosted_llm_audit_traces",
+      "gate": "required_experiments",
+      "owner": "evaluator",
+      "priority": "required",
+      "status": "missing",
+      "action": "Collect redacted audit traces for representative hosted LLM runs.",
+      "missing_inputs": [
+        "outputs/founderbench-deepseek-audit.json",
+        "outputs/founderbench-anthropic-audit.json",
+        "outputs/founderbench-gemini-audit.json"
+      ],
+      "commands": [
+        "python -m moneybench.resumable_runner --policy <provider> --output ..\\..\\outputs\\<provider>-audit.json --resume --audit"
+      ],
+      "expected_outputs": [
+        "outputs/founderbench-deepseek-audit.json",
+        "outputs/founderbench-anthropic-audit.json",
+        "outputs/founderbench-gemini-audit.json"
+      ],
+      "claim_impact": "Allows qualitative analysis of provider failures without exposing secrets."
+    },
+    {
+      "id": "complete_private_holdout_execution",
+      "gate": "required_experiments",
+      "owner": "evaluator",
+      "priority": "required_for_final_submission",
+      "status": "missing",
+      "action": "Execute the private holdout protocol on an evaluator-controlled host and report aggregate fields only.",
+      "missing_inputs": [
+        "outputs/founderbench-private-holdout-results.json"
+      ],
+      "commands": [
+        "Follow outputs/founderbench-private-holdout-evaluator-protocol.md on evaluator host."
+      ],
+      "expected_outputs": [
+        "outputs/founderbench-private-holdout-results.json"
+      ],
+      "claim_impact": "Prevents optimization against visible public tasks and supports leaderboard credibility."
+    },
+    {
+      "id": "configure_deepseek",
+      "gate": "provider_run_readiness",
+      "owner": "evaluator",
+      "priority": "required",
+      "status": "blocked_on_environment",
+      "action": "Configure provider environment for DeepSeek.",
+      "missing_inputs": [
+        "DEEPSEEK_API_KEY"
+      ],
+      "commands": [
+        "python -m moneybench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek.json --resume",
+        "python -m moneybench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek-audit.json --resume --audit",
+        "python -m moneybench.submission --input outputs/founderbench-deepseek.json --report outputs/founderbench-deepseek-submission-report.md"
+      ],
+      "expected_outputs": [
+        "outputs/founderbench-deepseek.json"
+      ],
+      "claim_impact": "Required before hosted/local LLM comparison claims can be made."
+    },
+    {
+      "id": "configure_deepseek_sc",
+      "gate": "provider_run_readiness",
+      "owner": "evaluator",
+      "priority": "recommended",
+      "status": "blocked_on_environment",
+      "action": "Configure provider environment for DeepSeek self-consistency.",
+      "missing_inputs": [
+        "DEEPSEEK_API_KEY"
+      ],
+      "commands": [
+        "python -m moneybench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3.json --resume",
+        "python -m moneybench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-audit.json --resume --audit",
+        "python -m moneybench.submission --input outputs/founderbench-deepseek-sc-k3.json --report outputs/founderbench-deepseek-sc-k3-submission-report.md"
+      ],
+      "expected_outputs": [
+        "outputs/founderbench-deepseek-sc-k3.json"
+      ],
+      "claim_impact": "Required before hosted/local LLM comparison claims can be made."
+    },
+    {
+      "id": "configure_anthropic",
+      "gate": "provider_run_readiness",
+      "owner": "evaluator",
+      "priority": "required",
+      "status": "blocked_on_environment",
+      "action": "Configure provider environment for Anthropic Claude.",
+      "missing_inputs": [
+        "ANTHROPIC_API_KEY"
+      ],
+      "commands": [
+        "python -m moneybench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic.json --resume",
+        "python -m moneybench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic-audit.json --resume --audit",
+        "python -m moneybench.submission --input outputs/founderbench-anthropic.json --report outputs/founderbench-anthropic-submission-report.md"
+      ],
+      "expected_outputs": [
+        "outputs/founderbench-anthropic.json"
+      ],
+      "claim_impact": "Required before hosted/local LLM comparison claims can be made."
+    },
+    {
+      "id": "configure_gemini",
+      "gate": "provider_run_readiness",
+      "owner": "evaluator",
+      "priority": "required",
+      "status": "blocked_on_environment",
+      "action": "Configure provider environment for Google Gemini.",
+      "missing_inputs": [
+        "GEMINI_API_KEY"
+      ],
+      "commands": [
+        "python -m moneybench.resumable_runner --policy gemini --output outputs/founderbench-gemini.json --resume",
+        "python -m moneybench.resumable_runner --policy gemini --output outputs/founderbench-gemini-audit.json --resume --audit",
+        "python -m moneybench.submission --input outputs/founderbench-gemini.json --report outputs/founderbench-gemini-submission-report.md"
+      ],
+      "expected_outputs": [
+        "outputs/founderbench-gemini.json"
+      ],
+      "claim_impact": "Required before hosted/local LLM comparison claims can be made."
+    },
+    {
+      "id": "configure_llm",
+      "gate": "provider_run_readiness",
+      "owner": "evaluator",
+      "priority": "required",
+      "status": "blocked_on_environment",
+      "action": "Configure provider environment for Local/OpenAI-compatible.",
+      "missing_inputs": [
+        "OPENAI_COMPAT_BASE_URL"
+      ],
+      "commands": [
+        "python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model.json --resume",
+        "python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model-audit.json --resume --audit",
+        "python -m moneybench.submission --input outputs/founderbench-local-open-model.json --report outputs/founderbench-local-open-model-submission-report.md"
+      ],
+      "expected_outputs": [
+        "outputs/founderbench-local-open-model.json"
+      ],
+      "claim_impact": "Required before hosted/local LLM comparison claims can be made."
+    },
+    {
+      "id": "support_claim_hosted_llm_comparison",
+      "gate": "claim_evidence_alignment",
+      "owner": "paper_author",
+      "priority": "required_for_stronger_claim",
+      "status": "unsupported_currently",
+      "action": "Either collect evidence for `hosted_llm_comparison` or keep paper wording conservative.",
+      "missing_inputs": [
+        "outputs/founderbench-deepseek.json",
+        "outputs/founderbench-anthropic.json",
+        "outputs/founderbench-gemini.json"
+      ],
+      "commands": [],
+      "expected_outputs": [
+        "outputs/founderbench-deepseek.json",
+        "outputs/founderbench-anthropic.json",
+        "outputs/founderbench-gemini.json"
+      ],
+      "claim_impact": "Permitted wording now: Provider adapters and experiment protocols are included; hosted current release LLM results remain to be run."
+    },
+    {
+      "id": "support_claim_private_holdout_available",
+      "gate": "claim_evidence_alignment",
+      "owner": "paper_author",
+      "priority": "required_for_stronger_claim",
+      "status": "unsupported_currently",
+      "action": "Either collect evidence for `private_holdout_available` or keep paper wording conservative.",
+      "missing_inputs": [
+        "outputs/founderbench-private-holdout-results.json"
+      ],
+      "commands": [],
+      "expected_outputs": [
+        "outputs/founderbench-private-holdout-results.json"
+      ],
+      "claim_impact": "Permitted wording now: The benchmark includes a private-holdout blueprint and evaluator protocol, not executed hidden results."
+    },
+    {
+      "id": "support_claim_real_world_startup_prediction",
+      "gate": "claim_evidence_alignment",
+      "owner": "paper_author",
+      "priority": "required_for_stronger_claim",
+      "status": "unsupported_currently",
+      "action": "Either collect evidence for `real_world_startup_prediction` or keep paper wording conservative.",
+      "missing_inputs": [
+        "executed human/expert validation study",
+        "real-world outcome correlation study"
+      ],
+      "commands": [],
+      "expected_outputs": [
+        "executed human/expert validation study",
+        "real-world outcome correlation study"
+      ],
+      "claim_impact": "Permitted wording now: FounderBench is a synthetic controlled environment for studying startup-relevant decisions."
+    },
+    {
+      "id": "finalize_license_choice",
+      "gate": "license_and_citation",
+      "owner": "project_owner",
+      "priority": "required",
+      "status": "owner_action_required",
+      "action": "Select a public release license.",
+      "missing_inputs": [
+        "work/moneybench/LICENSE"
+      ],
+      "commands": [
+        "python -m moneybench.release regenerate",
+        "python -m moneybench.release validate"
+      ],
+      "expected_outputs": [
+        "work/moneybench/LICENSE"
+      ],
+      "claim_impact": "External users need explicit reuse, modification, and redistribution terms."
+    },
+    {
+      "id": "finalize_author_metadata",
+      "gate": "license_and_citation",
+      "owner": "project_owner",
+      "priority": "required",
+      "status": "owner_action_required",
+      "action": "Replace placeholder author metadata in CITATION.cff.",
+      "missing_inputs": [
+        "work/moneybench/CITATION.cff"
+      ],
+      "commands": [
+        "python -m moneybench.release regenerate",
+        "python -m moneybench.release validate"
+      ],
+      "expected_outputs": [
+        "work/moneybench/CITATION.cff"
+      ],
+      "claim_impact": "Citation metadata must identify artifact authors before public release."
+    },
+    {
+      "id": "finalize_repository_url",
+      "gate": "license_and_citation",
+      "owner": "project_owner",
+      "priority": "required",
+      "status": "owner_action_required",
+      "action": "Add public repository URL to CITATION.cff.",
+      "missing_inputs": [
+        "work/moneybench/CITATION.cff"
+      ],
+      "commands": [
+        "python -m moneybench.release regenerate",
+        "python -m moneybench.release validate"
+      ],
+      "expected_outputs": [
+        "work/moneybench/CITATION.cff"
+      ],
+      "claim_impact": "Reviewers and users need a stable source-code location."
+    },
+    {
+      "id": "finalize_citation_license_field",
+      "gate": "license_and_citation",
+      "owner": "project_owner",
+      "priority": "required",
+      "status": "owner_action_required",
+      "action": "Set the CITATION.cff license field to the selected license identifier.",
+      "missing_inputs": [
+        "work/moneybench/CITATION.cff"
+      ],
+      "commands": [
+        "python -m moneybench.release regenerate",
+        "python -m moneybench.release validate"
+      ],
+      "expected_outputs": [
+        "work/moneybench/CITATION.cff"
+      ],
+      "claim_impact": "Citation tooling expects machine-readable license metadata."
+    }
+  ],
+  "gate_snapshot": {
+    "failed_gates": [
+      "required_experiments",
+      "provider_run_readiness",
+      "claim_evidence_alignment",
+      "license_and_citation"
+    ],
+    "gates": [
+      {
+        "id": "artifact_and_documentation",
+        "status": "pass",
+        "evidence": [
+          "outputs/founderbench-publication-audit.md",
+          "release/founderbench/SHA256SUMS.json"
+        ],
+        "blocker": ""
+      },
+      {
+        "id": "required_experiments",
+        "status": "fail",
+        "evidence": [
+          "outputs/founderbench-experiment-matrix.md"
+        ],
+        "blocker": "6 required experiment groups are missing."
+      },
+      {
+        "id": "provider_run_readiness",
+        "status": "fail",
+        "evidence": [
+          "outputs/founderbench-provider-readiness.md"
+        ],
+        "blocker": "Only 0/5 provider configurations are ready."
+      },
+      {
+        "id": "claim_evidence_alignment",
+        "status": "fail",
+        "evidence": [
+          "outputs/founderbench-claim-evidence.md"
+        ],
+        "blocker": "3 stronger claims remain unsupported by current evidence."
+      },
+      {
+        "id": "license_and_citation",
+        "status": "fail",
+        "evidence": [
+          "outputs/founderbench-license-readiness.md",
+          "work/moneybench/CITATION.cff",
+          "work/moneybench/LICENSE-TODO.md"
+        ],
+        "blocker": "License/citation metadata is not public-release ready."
+      }
+    ]
+  }
+}

@@ -1,0 +1,230 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Local citation-context audit for the paper draft. It verifies numeric citation order, BibTeX/provenance coverage, and whether each citation is used in a context matching its intended benchmark-literature claim. It does not replace external citation-context peer review.",
+  "paper_path": "outputs\\founderbench-paper-draft.md",
+  "external_status": "local_context_verified_external_spotcheck_required",
+  "summary": {
+    "references": 12,
+    "paper_reference_lines": 12,
+    "contexts_checked": 12,
+    "contiguous_numbering": true,
+    "rows_with_context": 12,
+    "rows_matching_bibtex_order": 12,
+    "context_term_matches": 12,
+    "reference_title_hint_matches": 12
+  },
+  "checks": [
+    {
+      "number": 1,
+      "key": "yao2023react",
+      "expected_key_at_position": "yao2023react",
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "url": "https://arxiv.org/abs/2210.03629",
+      "source": "https://arxiv.org/bibtex/2210.03629",
+      "reference_line_present": true,
+      "context_count": 1,
+      "context_terms_present": true,
+      "reference_line_matches_title_hint": true,
+      "claim_type": "agent reasoning/action framing",
+      "expected_terms": [
+        "ReAct",
+        "reasoning",
+        "action"
+      ]
+    },
+    {
+      "number": 2,
+      "key": "schick2023toolformer",
+      "expected_key_at_position": "schick2023toolformer",
+      "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+      "url": "https://arxiv.org/abs/2302.04761",
+      "source": "https://arxiv.org/bibtex/2302.04761",
+      "reference_line_present": true,
+      "context_count": 1,
+      "context_terms_present": true,
+      "reference_line_matches_title_hint": true,
+      "claim_type": "tool-use training",
+      "expected_terms": [
+        "Toolformer",
+        "external APIs"
+      ]
+    },
+    {
+      "number": 3,
+      "key": "wang2023voyager",
+      "expected_key_at_position": "wang2023voyager",
+      "title": "Voyager: An Open-Ended Embodied Agent with Large Language Models",
+      "url": "https://arxiv.org/abs/2305.16291",
+      "source": "https://arxiv.org/bibtex/2305.16291",
+      "reference_line_present": true,
+      "context_count": 1,
+      "context_terms_present": true,
+      "reference_line_matches_title_hint": true,
+      "claim_type": "long-horizon embodied agent",
+      "expected_terms": [
+        "Voyager",
+        "Minecraft"
+      ]
+    },
+    {
+      "number": 4,
+      "key": "liu2025agentbench",
+      "expected_key_at_position": "liu2025agentbench",
+      "title": "AgentBench: Evaluating LLMs as Agents",
+      "url": "https://arxiv.org/abs/2308.03688",
+      "source": "https://arxiv.org/bibtex/2308.03688",
+      "reference_line_present": true,
+      "context_count": 2,
+      "context_terms_present": true,
+      "reference_line_matches_title_hint": true,
+      "claim_type": "general agent benchmark",
+      "expected_terms": [
+        "AgentBench",
+        "interactive environments"
+      ]
+    },
+    {
+      "number": 5,
+      "key": "mialon2023gaia",
+      "expected_key_at_position": "mialon2023gaia",
+      "title": "GAIA: a benchmark for General AI Assistants",
+      "url": "https://arxiv.org/abs/2311.12983",
+      "source": "https://arxiv.org/bibtex/2311.12983",
+      "reference_line_present": true,
+      "context_count": 2,
+      "context_terms_present": true,
+      "reference_line_matches_title_hint": true,
+      "claim_type": "general assistant benchmark",
+      "expected_terms": [
+        "GAIA",
+        "general assistants"
+      ]
+    },
+    {
+      "number": 6,
+      "key": "jimenez2024swebench",
+      "expected_key_at_position": "jimenez2024swebench",
+      "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+      "url": "https://arxiv.org/abs/2310.06770",
+      "source": "https://arxiv.org/bibtex/2310.06770",
+      "reference_line_present": true,
+      "context_count": 2,
+      "context_terms_present": true,
+      "reference_line_matches_title_hint": true,
+      "claim_type": "software engineering benchmark",
+      "expected_terms": [
+        "SWE-bench",
+        "GitHub issues"
+      ]
+    },
+    {
+      "number": 7,
+      "key": "zhou2024webarena",
+      "expected_key_at_position": "zhou2024webarena",
+      "title": "WebArena: A Realistic Web Environment for Building Autonomous Agents",
+      "url": "https://arxiv.org/abs/2307.13854",
+      "source": "https://arxiv.org/bibtex/2307.13854",
+      "reference_line_present": true,
+      "context_count": 2,
+      "context_terms_present": true,
+      "reference_line_matches_title_hint": true,
+      "claim_type": "web-agent environment benchmark",
+      "expected_terms": [
+        "WebArena",
+        "web environments"
+      ]
+    },
+    {
+      "number": 8,
+      "key": "yao2024taubench",
+      "expected_key_at_position": "yao2024taubench",
+      "title": "{$\\tau$",
+      "url": "https://arxiv.org/abs/2406.12045",
+      "source": "https://arxiv.org/bibtex/2406.12045",
+      "reference_line_present": true,
+      "context_count": 2,
+      "context_terms_present": true,
+      "reference_line_matches_title_hint": true,
+      "claim_type": "tool-agent-user interaction benchmark",
+      "expected_terms": [
+        "tau-bench",
+        "tool",
+        "user"
+      ]
+    },
+    {
+      "number": 9,
+      "key": "xu2025theagentcompany",
+      "expected_key_at_position": "xu2025theagentcompany",
+      "title": "TheAgentCompany: Benchmarking LLM Agents on Consequential Real World Tasks",
+      "url": "https://arxiv.org/abs/2412.14161",
+      "source": "https://arxiv.org/bibtex/2412.14161",
+      "reference_line_present": true,
+      "context_count": 2,
+      "context_terms_present": true,
+      "reference_line_matches_title_hint": true,
+      "claim_type": "workplace/company agent benchmark",
+      "expected_terms": [
+        "TheAgentCompany",
+        "software-company"
+      ]
+    },
+    {
+      "number": 10,
+      "key": "drouin2024workarena",
+      "expected_key_at_position": "drouin2024workarena",
+      "title": "WorkArena: How Capable Are Web Agents at Solving Common Knowledge Work Tasks?",
+      "url": "https://servicenow.github.io/WorkArena/",
+      "source": "https://servicenow.github.io/WorkArena/",
+      "reference_line_present": true,
+      "context_count": 1,
+      "context_terms_present": true,
+      "reference_line_matches_title_hint": true,
+      "claim_type": "enterprise web-agent benchmark",
+      "expected_terms": [
+        "WorkArena",
+        "enterprise web-agent"
+      ]
+    },
+    {
+      "number": 11,
+      "key": "liu2026econwebarena",
+      "expected_key_at_position": "liu2026econwebarena",
+      "title": "EconWebArena: Benchmarking Autonomous Agents on Economic Tasks in Realistic Web Environments",
+      "url": "https://arxiv.org/abs/2506.08136",
+      "source": "https://arxiv.org/bibtex/2506.08136",
+      "reference_line_present": true,
+      "context_count": 1,
+      "context_terms_present": true,
+      "reference_line_matches_title_hint": true,
+      "claim_type": "economic web-agent benchmark",
+      "expected_terms": [
+        "EconWebArena",
+        "economic"
+      ]
+    },
+    {
+      "number": 12,
+      "key": "han2026enterprisearena",
+      "expected_key_at_position": "han2026enterprisearena",
+      "title": "Can LLM Agents Be CFOs? Benchmarking Long-Horizon Resource Allocation in an Uncertain Enterprise Environment",
+      "url": "https://arxiv.org/abs/2603.23638",
+      "source": "https://arxiv.org/bibtex/2603.23638",
+      "reference_line_present": true,
+      "context_count": 1,
+      "context_terms_present": true,
+      "reference_line_matches_title_hint": true,
+      "claim_type": "long-horizon enterprise allocation benchmark",
+      "expected_terms": [
+        "EnterpriseArena",
+        "CFO"
+      ]
+    }
+  ],
+  "limitations": [
+    "This audit checks local consistency between the paper draft, BibTeX entries, and recorded provenance.",
+    "It does not prove that every cited paper supports every sentence in the surrounding paragraph.",
+    "A final submission should still run external citation-context verification against primary paper pages or PDFs."
+  ]
+}

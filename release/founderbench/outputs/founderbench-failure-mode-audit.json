@@ -1,0 +1,260 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "AI research failure-mode audit adapted to benchmark artifact integrity. It checks for seven failure classes: code bugs, citation hallucination, result hallucination, shortcut reliance, bug-as-insight, methodology fabrication, and frame-lock.",
+  "submission_gate": "not_ready",
+  "checks": [
+    {
+      "mode": 1,
+      "id": "implementation_bug_passing_self_review",
+      "risk": "Analysis or simulator code has a plausible-looking bug that is accepted into the paper as a valid result.",
+      "status": "mitigated_not_closed",
+      "gate_effect": "blocking_warning",
+      "status_rationale": "The deterministic artifact path has tests, smoke checks, determinism audit, and bundle integrity, but independent hosted-run logs remain absent.",
+      "evidence": [
+        {
+          "path": "work/moneybench/tests/test_moneybench.py",
+          "exists": true,
+          "bytes": 68904,
+          "sha256": "bd6fced254d0676536fdc04b14c0a8308bb0ac2707660d4d38019946079bbfc6"
+        },
+        {
+          "path": "outputs/founderbench-determinism-audit.md",
+          "exists": true,
+          "bytes": 1298,
+          "sha256": "ee4b8bc9a92ce669d97f0369ab712115cfeec9089d9f8ced2ddf8a9d629dc32d"
+        },
+        {
+          "path": "outputs/founderbench-reviewer-smoke.md",
+          "exists": true,
+          "bytes": 1315,
+          "sha256": "7614c5cdf39ebcc2c3eb227769118222eb7e9ddb3b62ccddeadf1570cefadba5"
+        },
+        {
+          "path": "release/founderbench/BUNDLE-INTEGRITY.md",
+          "exists": true,
+          "bytes": 662,
+          "sha256": "5632ed0abffe5da6a999b7a1ea019b1a980c7ab91589081b339c3812d031fb13"
+        }
+      ],
+      "required_response": "Keep deterministic replay, bundle integrity, and full test validation in the release loop; add independent hosted-run logs before model-result claims."
+    },
+    {
+      "mode": 2,
+      "id": "hallucinated_citation",
+      "risk": "A cited reference may not exist, may be miscited, or may be used for a claim it does not support.",
+      "status": "local_context_verified_external_spotcheck_required",
+      "gate_effect": "blocking_warning",
+      "status_rationale": "References, provenance, and a local citation-context audit are present; final submission still needs external citation-context spot checks against primary pages or PDFs.",
+      "evidence": [
+        {
+          "path": "outputs/founderbench-references.bib",
+          "exists": true,
+          "bytes": 5246,
+          "sha256": "124ea8dc1cf44747e5348dd8bf21d137767001832470a26135ad384234c6c6a9"
+        },
+        {
+          "path": "outputs/founderbench-reference-provenance.json",
+          "exists": true,
+          "bytes": 2102,
+          "sha256": "57badd1c93ae58a9ca18ef2174ff1449773fbe5bc67b682282dd0929862fb077"
+        },
+        {
+          "path": "outputs/founderbench-citation-audit.md",
+          "exists": true,
+          "bytes": 2651,
+          "sha256": "46ab5552ddf6460b39f618f456334f09fdb7d233d437cc65c0a27889ce3b56f8"
+        },
+        {
+          "path": "outputs/founderbench-paper-draft.md",
+          "exists": true,
+          "bytes": 27853,
+          "sha256": "4ff55274776eb64cb8890ec6abde3e316065daaab8296c1eddd19f21c85e2c25"
+        }
+      ],
+      "required_response": "Before submission, run an external citation verification pass over all BibTeX entries and citation contexts."
+    },
+    {
+      "mode": 3,
+      "id": "hallucinated_experimental_result",
+      "risk": "A result table or model-comparison claim could report a number that no executed run produced.",
+      "status": "mitigated_for_reported_deterministic_results",
+      "gate_effect": "blocks_stronger_llm_claims",
+      "status_rationale": "Deterministic results are traceable to raw runs, but 6 required experiment groups remain missing.",
+      "evidence": [
+        {
+          "path": "outputs/founderbench-baseline-raw.json",
+          "exists": true,
+          "bytes": 342096,
+          "sha256": "ec31a2cd2c626eba0f279a2806355dfc1abec14bd210f79f6a95ca3b81e7730b"
+        },
+        {
+          "path": "outputs/founderbench-paper-tables.md",
+          "exists": true,
+          "bytes": 4510,
+          "sha256": "6a40391f561000485c65044b34cbdb6e8921472e4e5f80dcf020c3fac3b163a0"
+        },
+        {
+          "path": "outputs/founderbench-model-comparison.md",
+          "exists": true,
+          "bytes": 4523,
+          "sha256": "a5313b086efd8bd73639db5a14cd83ceca532b25f051b81dfd1ff27ad1955105"
+        },
+        {
+          "path": "outputs/founderbench-claim-evidence.md",
+          "exists": true,
+          "bytes": 5750,
+          "sha256": "22640a523cfce8e61afe806938e0247f6ace629ea8b9e516d5be23860fd9a7ce"
+        }
+      ],
+      "required_response": "Only report deterministic baseline numbers generated from raw output; keep hosted/local LLM result claims excluded until validated provider run files exist."
+    },
+    {
+      "mode": 4,
+      "id": "shortcut_reliance",
+      "risk": "Agents or task-aware baselines may exploit public task templates or scoring shortcuts rather than robust startup decision ability.",
+      "status": "warning_open",
+      "gate_effect": "blocks_robustness_claims",
+      "status_rationale": "Public-suite ablations exist, but hidden-holdout execution is still required to rule out public-template shortcuts.",
+      "evidence": [
+        {
+          "path": "outputs/founderbench-action-ablation.md",
+          "exists": true,
+          "bytes": 2372,
+          "sha256": "f0439186b7f1ba3d7ef0fac8f6617ad03484ca54db16044bc58d212d3b9f45af"
+        },
+        {
+          "path": "outputs/founderbench-difficulty-calibration.md",
+          "exists": true,
+          "bytes": 5566,
+          "sha256": "5af63bf2fef26099f4115ce67a4932817f551acef489ae997846fea201f6f884"
+        },
+        {
+          "path": "outputs/founderbench-private-holdout-evaluator-protocol.md",
+          "exists": true,
+          "bytes": 2163,
+          "sha256": "cc495a0ce9ace32bf8dd9fa7763013d367d8401c34649cfaa3f1f029a65e262f"
+        },
+        {
+          "path": "outputs/founderbench-reviewer-risk-audit.md",
+          "exists": true,
+          "bytes": 9847,
+          "sha256": "852be3312720871302cedb0d06dcf231d1e9e5bb09b667a30ff95ce226efb62a"
+        }
+      ],
+      "required_response": "Use private holdout execution and model submissions before interpreting high public-suite scores as robust agent ability."
+    },
+    {
+      "mode": 5,
+      "id": "bug_reframed_as_novel_insight",
+      "risk": "Unexpected artifacts from implementation or scoring could be narrated as scientific findings.",
+      "status": "mitigated_by_claim_guardrail",
+      "gate_effect": "not_blocking_for_current_claims",
+      "status_rationale": "3 stronger claims are explicitly excluded until evidence exists.",
+      "evidence": [
+        {
+          "path": "outputs/founderbench-claim-evidence.md",
+          "exists": true,
+          "bytes": 5750,
+          "sha256": "22640a523cfce8e61afe806938e0247f6ace629ea8b9e516d5be23860fd9a7ce"
+        },
+        {
+          "path": "outputs/founderbench-paper-evidence-map.md",
+          "exists": true,
+          "bytes": 8112,
+          "sha256": "dcdce617d8c230c19731018a0f3c434fad1d9c9e3eca4f3795a762e34ea906d6"
+        },
+        {
+          "path": "outputs/founderbench-validity-report.md",
+          "exists": true,
+          "bytes": 5808,
+          "sha256": "35eac7492acaeee2527dff4a35e1265a6b90351b9dc784092604e9f6fd3f19ee"
+        }
+      ],
+      "required_response": "Do not frame surprising heuristic/provider behavior as a substantive insight unless raw logs, ablations, and independent reruns support it."
+    },
+    {
+      "mode": 6,
+      "id": "methodology_fabrication",
+      "risk": "The paper's methods could describe tasks, actions, experiments, or provider runs that were planned but not actually executed.",
+      "status": "mitigated_by_artifact_labels",
+      "gate_effect": "blocks_submission_ready_claim",
+      "status_rationale": "The submission gate is not_ready; planned provider runs remain labeled as missing or planned in generated artifacts.",
+      "evidence": [
+        {
+          "path": "work/moneybench/SPEC.md",
+          "exists": true,
+          "bytes": 9414,
+          "sha256": "ef964d25562ddb994a90085169d79cec6e336785233f2d32e3f769caa50aec89"
+        },
+        {
+          "path": "outputs/founderbench-task-manifest.json",
+          "exists": true,
+          "bytes": 33747,
+          "sha256": "8b5a4abb4452d30a1fca05e626693c890561ecd67987cf2e691448e0bb95b07e"
+        },
+        {
+          "path": "outputs/founderbench-action-semantics.md",
+          "exists": true,
+          "bytes": 8403,
+          "sha256": "c5901daef43abe62c4b412985bdee4364dd3836495f6d9740a1f18cbfbc1019c"
+        },
+        {
+          "path": "outputs/founderbench-experiment-matrix.md",
+          "exists": true,
+          "bytes": 5398,
+          "sha256": "80c7bf6983a1c7ff540188df1e385fbb662e2605ab2343db624b9a4bac54783e"
+        },
+        {
+          "path": "outputs/founderbench-provider-run-status.md",
+          "exists": true,
+          "bytes": 4474,
+          "sha256": "a729b962a19fb29cc28d3220c669ad0cbf50003afd7bf211608d6360e2c332ab"
+        }
+      ],
+      "required_response": "Keep planned experiments explicitly labeled as planned or missing, and update Methods only after generated artifacts prove execution."
+    },
+    {
+      "mode": 7,
+      "id": "frame_lock",
+      "risk": "The benchmark could stay locked into the early startup-profit framing even if evidence supports only a narrower controlled-decision benchmark.",
+      "status": "frame_guarded_but_open",
+      "gate_effect": "blocks_external_validity_claims",
+      "status_rationale": "Validity, calibration, and submission-manifest artifacts keep the benchmark framed as controlled simulation, not real startup prediction.",
+      "evidence": [
+        {
+          "path": "outputs/founderbench-validity-report.md",
+          "exists": true,
+          "bytes": 5808,
+          "sha256": "35eac7492acaeee2527dff4a35e1265a6b90351b9dc784092604e9f6fd3f19ee"
+        },
+        {
+          "path": "outputs/founderbench-human-calibration-protocol.md",
+          "exists": true,
+          "bytes": 3803,
+          "sha256": "5302fff34764c754063ac2e8569f4db65ac440745adb6e5a7f776831506cc3c3"
+        },
+        {
+          "path": "outputs/founderbench-human-calibration-analysis.md",
+          "exists": true,
+          "bytes": 988,
+          "sha256": "3c6f2ec7edc1cc090f9bb21464ca7dfbaf503ad0c5d8581a7e41b64c85405f44"
+        },
+        {
+          "path": "outputs/founderbench-submission-manifest.md",
+          "exists": true,
+          "bytes": 5821,
+          "sha256": "9e2a9954199a835bfb9f8657575db3386a8106627f91983b2ee8599d441299c5"
+        }
+      ],
+      "required_response": "Use conservative benchmark framing until human/expert calibration and hidden holdout evidence justify broader claims."
+    }
+  ],
+  "summary": {
+    "modes": 7,
+    "clear": 0,
+    "mitigated_or_guarded": 5,
+    "warnings_or_blockers": 6,
+    "stronger_claims_blocked": 4
+  }
+}

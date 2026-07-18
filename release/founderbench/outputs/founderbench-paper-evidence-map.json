@@ -1,0 +1,446 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Section-by-section evidence map for the current paper draft.",
+  "submission_gate": "not_ready",
+  "sections": [
+    {
+      "section": "Abstract and Introduction",
+      "paper_claim": "FounderBench evaluates structured startup-like operating decisions in a controlled simulator, not real-world company success.",
+      "status": "qualified",
+      "rationale": "FounderBench is a synthetic controlled environment for studying startup-relevant decisions.",
+      "evidence": [
+        {
+          "path": "outputs/founderbench-benchmark-card.md",
+          "exists": true,
+          "bytes": 6843,
+          "sha256": "b1ddce4f2db574f185728bf96feb894c74945e50f1a86df17b004779ad701bf4"
+        },
+        {
+          "path": "outputs/founderbench-datasheet.md",
+          "exists": true,
+          "bytes": 5208,
+          "sha256": "c30333e5db0ef57eb7708d9bd06e3bc1c1c79cf7d23800b321195316b38089d1"
+        },
+        {
+          "path": "outputs/founderbench-responsible-use.md",
+          "exists": true,
+          "bytes": 4094,
+          "sha256": "d4d97a03a5f262f77857b2080e62283d0af9f80e0d0177dcc48bb13b72a553be"
+        },
+        {
+          "path": "work/moneybench/SPEC.md",
+          "exists": true,
+          "bytes": 9414,
+          "sha256": "ef964d25562ddb994a90085169d79cec6e336785233f2d32e3f769caa50aec89"
+        },
+        {
+          "path": "outputs/founderbench-claim-evidence.md",
+          "exists": true,
+          "bytes": 5750,
+          "sha256": "22640a523cfce8e61afe806938e0247f6ace629ea8b9e516d5be23860fd9a7ce"
+        }
+      ],
+      "claim_ids": [
+        "controlled_startup_operator_benchmark",
+        "real_world_startup_prediction"
+      ]
+    },
+    {
+      "section": "Benchmark Design",
+      "paper_claim": "The current release artifact contains 50 fixed public tasks across 10 families, 13 structured actions, and a fixed simulated market catalog.",
+      "status": "supported",
+      "rationale": "All section evidence paths are present.",
+      "evidence": [
+        {
+          "path": "outputs/founderbench-task-manifest.json",
+          "exists": true,
+          "bytes": 33747,
+          "sha256": "8b5a4abb4452d30a1fca05e626693c890561ecd67987cf2e691448e0bb95b07e"
+        },
+        {
+          "path": "outputs/founderbench-task-coverage.md",
+          "exists": true,
+          "bytes": 3566,
+          "sha256": "245976e316d20abdb0691210a730f1ac72ba26645b6a86736718d4e8d9396a3f"
+        },
+        {
+          "path": "outputs/founderbench-simulator-invariant-audit.md",
+          "exists": true,
+          "bytes": 1905,
+          "sha256": "9e1c49db8b543b73e67107364c2fead3a4e5805e817c16e8aebaa837636f51dd"
+        },
+        {
+          "path": "outputs/founderbench-contamination-leakage-audit.md",
+          "exists": true,
+          "bytes": 4315,
+          "sha256": "3aca44ef8e48a38d86b30ef560d52daf180223ce55a16c09b58fcc310a3ddb31"
+        },
+        {
+          "path": "outputs/founderbench-action-semantics.md",
+          "exists": true,
+          "bytes": 8403,
+          "sha256": "c5901daef43abe62c4b412985bdee4364dd3836495f6d9740a1f18cbfbc1019c"
+        },
+        {
+          "path": "outputs/founderbench-market-catalog.md",
+          "exists": true,
+          "bytes": 5295,
+          "sha256": "c39ff61695e7bd41c272b690ad022a82c8415eeb92263d04de637347ae3fa7c7"
+        }
+      ],
+      "claim_ids": [
+        "expanded_50_task_suite",
+        "structured_action_space"
+      ]
+    },
+    {
+      "section": "Metrics",
+      "paper_claim": "Scores are bounded 0-100 task outcomes with solve threshold, diagnostics, sensitivity checks, and paired comparison protocol.",
+      "status": "supported",
+      "rationale": "All section evidence paths are present.",
+      "evidence": [
+        {
+          "path": "outputs/founderbench-metrics-and-evaluation.md",
+          "exists": true,
+          "bytes": 7625,
+          "sha256": "f0973a0c7629c1736943255ead269b5b5cc0ffa57c5af1d580c75f44d7799c2b"
+        },
+        {
+          "path": "outputs/founderbench-score-rubric.md",
+          "exists": true,
+          "bytes": 7092,
+          "sha256": "e96e5291dc4fb63df751120f29de761e3dc6f81fc82f85df8b601b0452f40869"
+        },
+        {
+          "path": "outputs/founderbench-scoring-consistency-audit.md",
+          "exists": true,
+          "bytes": 3807,
+          "sha256": "4770e332fc1e116732d17ffa16be899dda2dc641bbbb03c9ef689de6b6945143"
+        },
+        {
+          "path": "outputs/founderbench-metric-sensitivity.md",
+          "exists": true,
+          "bytes": 3113,
+          "sha256": "8eccfaa7eb6d48d331e50540584969ed006e9a30ffb8559c21ebc98159004407"
+        },
+        {
+          "path": "outputs/founderbench-statistical-protocol.md",
+          "exists": true,
+          "bytes": 3578,
+          "sha256": "9b15ebead486d8885fa9c485cce4c64fe1192bef490200ea90e9edd982e2bb36"
+        },
+        {
+          "path": "outputs/founderbench-paired-statistics.md",
+          "exists": true,
+          "bytes": 2169,
+          "sha256": "7fe7f9a94b1061d41f84344c828578a248c9207cfb2efbcae288c85f3511b686"
+        },
+        {
+          "path": "outputs/founderbench-power-analysis.md",
+          "exists": true,
+          "bytes": 3049,
+          "sha256": "4df606a39d60dc538ca4ae3e9c77c6e6602120b12dc597795814c598bf26a644"
+        }
+      ],
+      "claim_ids": [
+        "bounded_normalized_metrics"
+      ]
+    },
+    {
+      "section": "Baselines",
+      "paper_claim": "The paper currently reports deterministic random, conservative, heuristic, and task-aware heuristic baselines on all 50 tasks.",
+      "status": "supported",
+      "rationale": "Deterministic baseline evidence is present; provider rows are correctly excluded.",
+      "evidence": [
+        {
+          "path": "outputs/founderbench-baseline-raw.json",
+          "exists": true,
+          "bytes": 342096,
+          "sha256": "ec31a2cd2c626eba0f279a2806355dfc1abec14bd210f79f6a95ca3b81e7730b"
+        },
+        {
+          "path": "outputs/founderbench-baseline-leaderboard.json",
+          "exists": true,
+          "bytes": 2653,
+          "sha256": "5a4cccccf4df13f6c9b90d8b1b95927bee1fd373e3419b73429b843bfcc1c4ed"
+        },
+        {
+          "path": "outputs/founderbench-leaderboard-policy.md",
+          "exists": true,
+          "bytes": 3514,
+          "sha256": "d42a4e1e418e8a0b778a0186d93d79415a4e1930826f70aca7f2c17771475757"
+        },
+        {
+          "path": "outputs/founderbench-leaderboard-stability.md",
+          "exists": true,
+          "bytes": 3181,
+          "sha256": "dc9a94adb6cd36d440c85720757fff8ea8a174a97f0c697d6b124db16b081f7a"
+        },
+        {
+          "path": "outputs/founderbench-baseline-analysis.md",
+          "exists": true,
+          "bytes": 4380,
+          "sha256": "ac32eeb85d6ef3d99ce300f6acf81fd66a4007120f22665864795512166045ae"
+        },
+        {
+          "path": "outputs/founderbench-result-integrity-audit.md",
+          "exists": true,
+          "bytes": 1582,
+          "sha256": "5775845487070b74036712353911ec7f97efeb221601cc7afedd262fa818830c"
+        },
+        {
+          "path": "outputs/founderbench-paper-tables.md",
+          "exists": true,
+          "bytes": 4510,
+          "sha256": "6a40391f561000485c65044b34cbdb6e8921472e4e5f80dcf020c3fac3b163a0"
+        },
+        {
+          "path": "outputs/founderbench-model-result-cards.md",
+          "exists": true,
+          "bytes": 3069,
+          "sha256": "0c3ae2237ba83563aba56a9c9dc50bebbf64dffd372171a7e08a8d7b8dec6084"
+        }
+      ],
+      "claim_ids": [
+        "deterministic_baseline_spread"
+      ]
+    },
+    {
+      "section": "Ablations and Difficulty Calibration",
+      "paper_claim": "Capability-ladder, action-space, task-difficulty, and qualitative trace artifacts support deterministic calibration claims.",
+      "status": "supported",
+      "rationale": "All section evidence paths are present.",
+      "evidence": [
+        {
+          "path": "outputs/founderbench-ablation-report.md",
+          "exists": true,
+          "bytes": 2444,
+          "sha256": "7ca23db2ffa0ac21a917349eac06a9297147f28afb3cecd7d9ee008205c47fb2"
+        },
+        {
+          "path": "outputs/founderbench-action-ablation.md",
+          "exists": true,
+          "bytes": 2372,
+          "sha256": "f0439186b7f1ba3d7ef0fac8f6617ad03484ca54db16044bc58d212d3b9f45af"
+        },
+        {
+          "path": "outputs/founderbench-difficulty-calibration.md",
+          "exists": true,
+          "bytes": 5566,
+          "sha256": "5af63bf2fef26099f4115ce67a4932817f551acef489ae997846fea201f6f884"
+        },
+        {
+          "path": "outputs/founderbench-task-revision-ledger.md",
+          "exists": true,
+          "bytes": 8781,
+          "sha256": "0b3297fd84e727861cec3a167878dd30e55ad99f57a6a9ea00c53becc6ffaaa9"
+        },
+        {
+          "path": "outputs/founderbench-qualitative-traces.md",
+          "exists": true,
+          "bytes": 5229,
+          "sha256": "326e987524ee2b5877a4fab14a04e890e9296b8ad6c209518a96c0dd7fbc4eb1"
+        }
+      ],
+      "claim_ids": [
+        "capability_ladder_ablation"
+      ]
+    },
+    {
+      "section": "Hosted and Local LLM Results",
+      "paper_claim": "Hosted/local provider comparison is planned but not yet supported by current evidence.",
+      "status": "excluded_until_evidence",
+      "rationale": "Provider adapters and experiment protocols are included; hosted current release LLM results remain to be run.",
+      "evidence": [
+        {
+          "path": "outputs/founderbench-experiment-matrix.md",
+          "exists": true,
+          "bytes": 5398,
+          "sha256": "80c7bf6983a1c7ff540188df1e385fbb662e2605ab2343db624b9a4bac54783e"
+        },
+        {
+          "path": "outputs/founderbench-experiment-runbook.md",
+          "exists": true,
+          "bytes": 14798,
+          "sha256": "355d5b4b0f38d6c2203d47d71140901becf8ea69a117b6c0c29df8a05ecf34c7"
+        },
+        {
+          "path": "outputs/founderbench-provider-run-status.md",
+          "exists": true,
+          "bytes": 4474,
+          "sha256": "a729b962a19fb29cc28d3220c669ad0cbf50003afd7bf211608d6360e2c332ab"
+        },
+        {
+          "path": "outputs/founderbench-provider-comparability-audit.md",
+          "exists": true,
+          "bytes": 3246,
+          "sha256": "07d5e68f940a5d2ea53a1f142f2511d4c028fc152979d7c5f539f7ac54c69dbc"
+        },
+        {
+          "path": "outputs/founderbench-provider-contract-audit.md",
+          "exists": true,
+          "bytes": 2165,
+          "sha256": "e49002ca67a018004037ce87f06accc6fa77fea8118cad051b96739d7bdafcfd"
+        },
+        {
+          "path": "outputs/founderbench-leaderboard-policy.md",
+          "exists": true,
+          "bytes": 3514,
+          "sha256": "d42a4e1e418e8a0b778a0186d93d79415a4e1930826f70aca7f2c17771475757"
+        },
+        {
+          "path": "outputs/founderbench-model-result-cards.md",
+          "exists": true,
+          "bytes": 3069,
+          "sha256": "0c3ae2237ba83563aba56a9c9dc50bebbf64dffd372171a7e08a8d7b8dec6084"
+        },
+        {
+          "path": "outputs/founderbench-submission-manifest.md",
+          "exists": true,
+          "bytes": 5821,
+          "sha256": "9e2a9954199a835bfb9f8657575db3386a8106627f91983b2ee8599d441299c5"
+        }
+      ],
+      "claim_ids": [
+        "hosted_llm_comparison"
+      ]
+    },
+    {
+      "section": "Reproducibility and Auditability",
+      "paper_claim": "The package includes reproduction commands, source/output hashes, environment report, reviewer smoke test, deterministic replay audit, and release-bundle integrity report.",
+      "status": "supported",
+      "rationale": "All section evidence paths are present.",
+      "evidence": [
+        {
+          "path": "outputs/founderbench-reproduction-guide.md",
+          "exists": true,
+          "bytes": 7259,
+          "sha256": "d4e14983452e17086d8a2c8ccbf99e9e6f725b254a6590c7122df3001bff5f32"
+        },
+        {
+          "path": "outputs/founderbench-reproducibility-manifest.md",
+          "exists": true,
+          "bytes": 24544,
+          "sha256": "a03cb42fd8c30f99c7bf3c1c7dfd2c43ff72f7fff698c847431b9f54e50898f4"
+        },
+        {
+          "path": "outputs/founderbench-result-integrity-audit.md",
+          "exists": true,
+          "bytes": 1582,
+          "sha256": "5775845487070b74036712353911ec7f97efeb221601cc7afedd262fa818830c"
+        },
+        {
+          "path": "outputs/founderbench-environment-report.md",
+          "exists": true,
+          "bytes": 2189,
+          "sha256": "9035ff5406d5bd6f836ca5d22b29c52c295ea5ff29b96fc98d850eebab4e03ee"
+        },
+        {
+          "path": "outputs/founderbench-reviewer-smoke.md",
+          "exists": true,
+          "bytes": 1315,
+          "sha256": "7614c5cdf39ebcc2c3eb227769118222eb7e9ddb3b62ccddeadf1570cefadba5"
+        },
+        {
+          "path": "outputs/founderbench-simulator-invariant-audit.md",
+          "exists": true,
+          "bytes": 1905,
+          "sha256": "9e1c49db8b543b73e67107364c2fead3a4e5805e817c16e8aebaa837636f51dd"
+        },
+        {
+          "path": "outputs/founderbench-determinism-audit.md",
+          "exists": true,
+          "bytes": 1298,
+          "sha256": "ee4b8bc9a92ce669d97f0369ab712115cfeec9089d9f8ced2ddf8a9d629dc32d"
+        },
+        {
+          "path": "outputs/founderbench-provider-contract-audit.md",
+          "exists": true,
+          "bytes": 2165,
+          "sha256": "e49002ca67a018004037ce87f06accc6fa77fea8118cad051b96739d7bdafcfd"
+        },
+        {
+          "path": "outputs/founderbench-contamination-leakage-audit.md",
+          "exists": true,
+          "bytes": 4315,
+          "sha256": "3aca44ef8e48a38d86b30ef560d52daf180223ce55a16c09b58fcc310a3ddb31"
+        },
+        {
+          "path": "release/founderbench/BUNDLE-INTEGRITY.md",
+          "exists": true,
+          "bytes": 662,
+          "sha256": "5632ed0abffe5da6a999b7a1ea019b1a980c7ab91589081b339c3812d031fb13"
+        }
+      ],
+      "claim_ids": []
+    },
+    {
+      "section": "Limitations",
+      "paper_claim": "Limitations are documented for synthetic simulator validity, missing hosted LLM evidence, missing human calibration, missing private holdout execution, and release metadata.",
+      "status": "qualified",
+      "rationale": "The benchmark includes a private-holdout blueprint and evaluator protocol, not executed hidden results.; FounderBench is a synthetic controlled environment for studying startup-relevant decisions.",
+      "evidence": [
+        {
+          "path": "outputs/founderbench-validity-report.md",
+          "exists": true,
+          "bytes": 5808,
+          "sha256": "35eac7492acaeee2527dff4a35e1265a6b90351b9dc784092604e9f6fd3f19ee"
+        },
+        {
+          "path": "outputs/founderbench-datasheet.md",
+          "exists": true,
+          "bytes": 5208,
+          "sha256": "c30333e5db0ef57eb7708d9bd06e3bc1c1c79cf7d23800b321195316b38089d1"
+        },
+        {
+          "path": "outputs/founderbench-responsible-use.md",
+          "exists": true,
+          "bytes": 4094,
+          "sha256": "d4d97a03a5f262f77857b2080e62283d0af9f80e0d0177dcc48bb13b72a553be"
+        },
+        {
+          "path": "outputs/founderbench-contamination-leakage-audit.md",
+          "exists": true,
+          "bytes": 4315,
+          "sha256": "3aca44ef8e48a38d86b30ef560d52daf180223ce55a16c09b58fcc310a3ddb31"
+        },
+        {
+          "path": "outputs/founderbench-human-calibration-analysis.md",
+          "exists": true,
+          "bytes": 988,
+          "sha256": "3c6f2ec7edc1cc090f9bb21464ca7dfbaf503ad0c5d8581a7e41b64c85405f44"
+        },
+        {
+          "path": "outputs/founderbench-task-revision-ledger.md",
+          "exists": true,
+          "bytes": 8781,
+          "sha256": "0b3297fd84e727861cec3a167878dd30e55ad99f57a6a9ea00c53becc6ffaaa9"
+        },
+        {
+          "path": "outputs/founderbench-completion-audit.md",
+          "exists": true,
+          "bytes": 8166,
+          "sha256": "3e9db8cbc5f9c1ff271e81efabf3f184072ede879eefca19ca2d69e60ce9ea8d"
+        },
+        {
+          "path": "outputs/founderbench-submission-gate.md",
+          "exists": true,
+          "bytes": 1492,
+          "sha256": "6927b208047e4273aa9d7beccd2317c90f02ee96ce766f04dae6ad5e693d8669"
+        }
+      ],
+      "claim_ids": [
+        "private_holdout_available",
+        "real_world_startup_prediction"
+      ]
+    }
+  ],
+  "summary": {
+    "sections": 8,
+    "supported": 5,
+    "qualified": 2,
+    "excluded_until_evidence": 1,
+    "incomplete": 0
+  }
+}

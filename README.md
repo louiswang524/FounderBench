@@ -30,7 +30,7 @@ The Python package is still named `moneybench` internally for compatibility, but
 ├── work/moneybench/          # Source package, tests, benchmark spec
 │   ├── moneybench/           # Simulator, tasks, provider adapters, validators
 │   └── tests/                # Unit and artifact validation tests
-├── outputs/                  # Generated v0.3.0 benchmark artifacts
+├── outputs/                  # Generated current release benchmark artifacts
 ├── release/                  # Supplementary release bundle with checksums
 ├── docs/                     # GitHub-facing usage guides
 ├── .env.example              # Provider environment variable template
@@ -89,12 +89,12 @@ Set the relevant API key as an environment variable. Do not put keys in code or 
 export DEEPSEEK_API_KEY="..."
 python -m moneybench.resumable_runner \
   --policy deepseek \
-  --output outputs/acceleratorbench-deepseek-v0.3.json \
+  --output outputs/founderbench-deepseek.json \
   --resume \
   --audit
 python -m moneybench.submission \
-  --input outputs/acceleratorbench-deepseek-v0.3.json \
-  --report outputs/acceleratorbench-deepseek-v0.3-submission-report.md
+  --input outputs/founderbench-deepseek.json \
+  --report outputs/founderbench-deepseek-submission-report.md
 ```
 
 Supported provider policies:
@@ -122,17 +122,17 @@ A valid model submission must cover all 50 public task IDs, include task-level s
 python -m moneybench.submission --input outputs/provider-run.json --report outputs/provider-run-report.md
 ```
 
-See [docs/SUBMISSIONS.md](docs/SUBMISSIONS.md) and [outputs/acceleratorbench-model-submission-schema-v0.3.md](outputs/acceleratorbench-model-submission-schema-v0.3.md).
+See [docs/SUBMISSIONS.md](docs/SUBMISSIONS.md) and [outputs/founderbench-model-submission-schema.md](outputs/founderbench-model-submission-schema.md).
 
 ## Important Artifacts
 
-- Task manifest: [outputs/acceleratorbench-task-manifest-v0.3.json](outputs/acceleratorbench-task-manifest-v0.3.json)
-- Benchmark card: [outputs/acceleratorbench-benchmark-card.md](outputs/acceleratorbench-benchmark-card.md)
-- Metrics and evaluation: [outputs/acceleratorbench-metrics-and-evaluation.md](outputs/acceleratorbench-metrics-and-evaluation.md)
-- Prompt protocol: [outputs/acceleratorbench-prompt-protocol-v0.3.md](outputs/acceleratorbench-prompt-protocol-v0.3.md)
-- Model submission schema: [outputs/acceleratorbench-model-submission-schema-v0.3.md](outputs/acceleratorbench-model-submission-schema-v0.3.md)
-- Paper draft: [outputs/acceleratorbench-paper-draft-v0.1.md](outputs/acceleratorbench-paper-draft-v0.1.md)
-- Reviewer index: [outputs/acceleratorbench-reviewer-index-v0.3.md](outputs/acceleratorbench-reviewer-index-v0.3.md)
+- Task manifest: [outputs/founderbench-task-manifest.json](outputs/founderbench-task-manifest.json)
+- Benchmark card: [outputs/founderbench-benchmark-card.md](outputs/founderbench-benchmark-card.md)
+- Metrics and evaluation: [outputs/founderbench-metrics-and-evaluation.md](outputs/founderbench-metrics-and-evaluation.md)
+- Prompt protocol: [outputs/founderbench-prompt-protocol.md](outputs/founderbench-prompt-protocol.md)
+- Model submission schema: [outputs/founderbench-model-submission-schema.md](outputs/founderbench-model-submission-schema.md)
+- Paper draft: [outputs/founderbench-paper-draft.md](outputs/founderbench-paper-draft.md)
+- Reviewer index: [outputs/founderbench-reviewer-index.md](outputs/founderbench-reviewer-index.md)
 
 ## Reporting Guardrails
 

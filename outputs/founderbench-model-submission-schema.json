@@ -1,0 +1,740 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://FounderBench.local/schemas/model-submission.schema.json",
+  "title": "FounderBench Model Submission",
+  "description": "Machine-readable schema for raw model run submissions. The authoritative validator remains python -m moneybench.submission, which also checks task-id set equality and diagnostic consistency.",
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "accepted_payload_shapes": [
+    "single run object",
+    "array of run objects",
+    "object with runs array"
+  ],
+  "required_task_ids": [
+    "FND-001",
+    "FND-002",
+    "FND-003",
+    "FND-004",
+    "FND-005",
+    "FND-006",
+    "FND-007",
+    "FND-008",
+    "FND-009",
+    "FND-010",
+    "FND-011",
+    "FND-012",
+    "FND-013",
+    "FND-014",
+    "FND-015",
+    "FND-016",
+    "FND-017",
+    "FND-018",
+    "FND-019",
+    "FND-020",
+    "FND-021",
+    "FND-022",
+    "FND-023",
+    "FND-024",
+    "FND-025",
+    "FND-026",
+    "FND-027",
+    "FND-028",
+    "FND-029",
+    "FND-030",
+    "FND-031",
+    "FND-032",
+    "FND-033",
+    "FND-034",
+    "FND-035",
+    "FND-036",
+    "FND-037",
+    "FND-038",
+    "FND-039",
+    "FND-040",
+    "FND-041",
+    "FND-042",
+    "FND-043",
+    "FND-044",
+    "FND-045",
+    "FND-046",
+    "FND-047",
+    "FND-048",
+    "FND-049",
+    "FND-050"
+  ],
+  "required_diagnostics": [
+    "decision_latency_s",
+    "estimated_provider_cost_usd",
+    "invalid_actions",
+    "over_budget_decisions",
+    "provider_completion_tokens",
+    "provider_error_categories",
+    "provider_errors",
+    "provider_prompt_tokens",
+    "provider_total_tokens",
+    "simulated_api_cost",
+    "total_actions"
+  ],
+  "oneOf": [
+    {
+      "$ref": "#/$defs/run"
+    },
+    {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/run"
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "runs"
+      ],
+      "properties": {
+        "runs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/run"
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "run": {
+      "type": "object",
+      "required": [
+        "policy",
+        "benchmark_version",
+        "tasks",
+        "solved",
+        "solve_rate",
+        "average_task_score",
+        "results",
+        "diagnostics",
+        "splits"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "policy": {
+          "type": "string"
+        },
+        "benchmark_version": {
+          "const": "0.3.0"
+        },
+        "tasks": {
+          "const": 50
+        },
+        "solved": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 50
+        },
+        "solve_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "average_task_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "public_dev_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "public_test_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "shutdown_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "average_final_cash": {
+          "type": "number"
+        },
+        "average_risk_penalty": {
+          "type": "number",
+          "minimum": 0
+        },
+        "results": {
+          "type": "array",
+          "minItems": 50,
+          "maxItems": 50,
+          "items": {
+            "type": "object",
+            "required": [
+              "task_id",
+              "family",
+              "split",
+              "score",
+              "summary",
+              "diagnostics"
+            ],
+            "additionalProperties": true,
+            "properties": {
+              "task_id": {
+                "type": "string",
+                "enum": [
+                  "FND-001",
+                  "FND-002",
+                  "FND-003",
+                  "FND-004",
+                  "FND-005",
+                  "FND-006",
+                  "FND-007",
+                  "FND-008",
+                  "FND-009",
+                  "FND-010",
+                  "FND-011",
+                  "FND-012",
+                  "FND-013",
+                  "FND-014",
+                  "FND-015",
+                  "FND-016",
+                  "FND-017",
+                  "FND-018",
+                  "FND-019",
+                  "FND-020",
+                  "FND-021",
+                  "FND-022",
+                  "FND-023",
+                  "FND-024",
+                  "FND-025",
+                  "FND-026",
+                  "FND-027",
+                  "FND-028",
+                  "FND-029",
+                  "FND-030",
+                  "FND-031",
+                  "FND-032",
+                  "FND-033",
+                  "FND-034",
+                  "FND-035",
+                  "FND-036",
+                  "FND-037",
+                  "FND-038",
+                  "FND-039",
+                  "FND-040",
+                  "FND-041",
+                  "FND-042",
+                  "FND-043",
+                  "FND-044",
+                  "FND-045",
+                  "FND-046",
+                  "FND-047",
+                  "FND-048",
+                  "FND-049",
+                  "FND-050"
+                ]
+              },
+              "family": {
+                "type": "string"
+              },
+              "split": {
+                "type": "string",
+                "enum": [
+                  "public_dev",
+                  "public_test"
+                ]
+              },
+              "score": {
+                "type": "object",
+                "required": [
+                  "task_id",
+                  "name",
+                  "score",
+                  "passed",
+                  "components",
+                  "notes"
+                ],
+                "additionalProperties": true,
+                "properties": {
+                  "task_id": {
+                    "type": "string",
+                    "enum": [
+                      "FND-001",
+                      "FND-002",
+                      "FND-003",
+                      "FND-004",
+                      "FND-005",
+                      "FND-006",
+                      "FND-007",
+                      "FND-008",
+                      "FND-009",
+                      "FND-010",
+                      "FND-011",
+                      "FND-012",
+                      "FND-013",
+                      "FND-014",
+                      "FND-015",
+                      "FND-016",
+                      "FND-017",
+                      "FND-018",
+                      "FND-019",
+                      "FND-020",
+                      "FND-021",
+                      "FND-022",
+                      "FND-023",
+                      "FND-024",
+                      "FND-025",
+                      "FND-026",
+                      "FND-027",
+                      "FND-028",
+                      "FND-029",
+                      "FND-030",
+                      "FND-031",
+                      "FND-032",
+                      "FND-033",
+                      "FND-034",
+                      "FND-035",
+                      "FND-036",
+                      "FND-037",
+                      "FND-038",
+                      "FND-039",
+                      "FND-040",
+                      "FND-041",
+                      "FND-042",
+                      "FND-043",
+                      "FND-044",
+                      "FND-045",
+                      "FND-046",
+                      "FND-047",
+                      "FND-048",
+                      "FND-049",
+                      "FND-050"
+                    ]
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "score": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 100
+                  },
+                  "passed": {
+                    "type": "boolean"
+                  },
+                  "components": {
+                    "type": "object"
+                  },
+                  "notes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "summary": {
+                "type": "object",
+                "required": [
+                  "cash",
+                  "reputation",
+                  "customers",
+                  "recurring_revenue",
+                  "risk_penalty",
+                  "bankrupt"
+                ],
+                "additionalProperties": true
+              },
+              "diagnostics": {
+                "type": "object",
+                "required": [
+                  "decision_latency_s",
+                  "estimated_provider_cost_usd",
+                  "invalid_actions",
+                  "over_budget_decisions",
+                  "provider_completion_tokens",
+                  "provider_error_categories",
+                  "provider_errors",
+                  "provider_prompt_tokens",
+                  "provider_total_tokens",
+                  "simulated_api_cost",
+                  "total_actions"
+                ],
+                "additionalProperties": true,
+                "properties": {
+                  "invalid_actions": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "over_budget_decisions": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "provider_errors": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "provider_error_categories": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  },
+                  "total_actions": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "decision_latency_s": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "simulated_api_cost": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "provider_prompt_tokens": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "provider_completion_tokens": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "provider_total_tokens": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "estimated_provider_cost_usd": {
+                    "type": "number",
+                    "minimum": 0
+                  }
+                }
+              }
+            }
+          }
+        },
+        "diagnostics": {
+          "type": "object",
+          "required": [
+            "decision_latency_s",
+            "estimated_provider_cost_usd",
+            "invalid_actions",
+            "over_budget_decisions",
+            "provider_completion_tokens",
+            "provider_error_categories",
+            "provider_errors",
+            "provider_prompt_tokens",
+            "provider_total_tokens",
+            "simulated_api_cost",
+            "total_actions"
+          ],
+          "additionalProperties": true,
+          "properties": {
+            "invalid_actions": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "over_budget_decisions": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "provider_errors": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "provider_error_categories": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "total_actions": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "decision_latency_s": {
+              "type": "number",
+              "minimum": 0
+            },
+            "simulated_api_cost": {
+              "type": "number",
+              "minimum": 0
+            },
+            "provider_prompt_tokens": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "provider_completion_tokens": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "provider_total_tokens": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "estimated_provider_cost_usd": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "splits": {
+          "type": "object",
+          "required": [
+            "public_dev",
+            "public_test"
+          ],
+          "additionalProperties": true
+        }
+      }
+    },
+    "task_result": {
+      "type": "object",
+      "required": [
+        "task_id",
+        "family",
+        "split",
+        "score",
+        "summary",
+        "diagnostics"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "enum": [
+            "FND-001",
+            "FND-002",
+            "FND-003",
+            "FND-004",
+            "FND-005",
+            "FND-006",
+            "FND-007",
+            "FND-008",
+            "FND-009",
+            "FND-010",
+            "FND-011",
+            "FND-012",
+            "FND-013",
+            "FND-014",
+            "FND-015",
+            "FND-016",
+            "FND-017",
+            "FND-018",
+            "FND-019",
+            "FND-020",
+            "FND-021",
+            "FND-022",
+            "FND-023",
+            "FND-024",
+            "FND-025",
+            "FND-026",
+            "FND-027",
+            "FND-028",
+            "FND-029",
+            "FND-030",
+            "FND-031",
+            "FND-032",
+            "FND-033",
+            "FND-034",
+            "FND-035",
+            "FND-036",
+            "FND-037",
+            "FND-038",
+            "FND-039",
+            "FND-040",
+            "FND-041",
+            "FND-042",
+            "FND-043",
+            "FND-044",
+            "FND-045",
+            "FND-046",
+            "FND-047",
+            "FND-048",
+            "FND-049",
+            "FND-050"
+          ]
+        },
+        "family": {
+          "type": "string"
+        },
+        "split": {
+          "type": "string",
+          "enum": [
+            "public_dev",
+            "public_test"
+          ]
+        },
+        "score": {
+          "type": "object",
+          "required": [
+            "task_id",
+            "name",
+            "score",
+            "passed",
+            "components",
+            "notes"
+          ],
+          "additionalProperties": true,
+          "properties": {
+            "task_id": {
+              "type": "string",
+              "enum": [
+                "FND-001",
+                "FND-002",
+                "FND-003",
+                "FND-004",
+                "FND-005",
+                "FND-006",
+                "FND-007",
+                "FND-008",
+                "FND-009",
+                "FND-010",
+                "FND-011",
+                "FND-012",
+                "FND-013",
+                "FND-014",
+                "FND-015",
+                "FND-016",
+                "FND-017",
+                "FND-018",
+                "FND-019",
+                "FND-020",
+                "FND-021",
+                "FND-022",
+                "FND-023",
+                "FND-024",
+                "FND-025",
+                "FND-026",
+                "FND-027",
+                "FND-028",
+                "FND-029",
+                "FND-030",
+                "FND-031",
+                "FND-032",
+                "FND-033",
+                "FND-034",
+                "FND-035",
+                "FND-036",
+                "FND-037",
+                "FND-038",
+                "FND-039",
+                "FND-040",
+                "FND-041",
+                "FND-042",
+                "FND-043",
+                "FND-044",
+                "FND-045",
+                "FND-046",
+                "FND-047",
+                "FND-048",
+                "FND-049",
+                "FND-050"
+              ]
+            },
+            "name": {
+              "type": "string"
+            },
+            "score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "passed": {
+              "type": "boolean"
+            },
+            "components": {
+              "type": "object"
+            },
+            "notes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "summary": {
+          "type": "object",
+          "required": [
+            "cash",
+            "reputation",
+            "customers",
+            "recurring_revenue",
+            "risk_penalty",
+            "bankrupt"
+          ],
+          "additionalProperties": true
+        },
+        "diagnostics": {
+          "type": "object",
+          "required": [
+            "decision_latency_s",
+            "estimated_provider_cost_usd",
+            "invalid_actions",
+            "over_budget_decisions",
+            "provider_completion_tokens",
+            "provider_error_categories",
+            "provider_errors",
+            "provider_prompt_tokens",
+            "provider_total_tokens",
+            "simulated_api_cost",
+            "total_actions"
+          ],
+          "additionalProperties": true,
+          "properties": {
+            "invalid_actions": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "over_budget_decisions": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "provider_errors": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "provider_error_categories": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "total_actions": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "decision_latency_s": {
+              "type": "number",
+              "minimum": 0
+            },
+            "simulated_api_cost": {
+              "type": "number",
+              "minimum": 0
+            },
+            "provider_prompt_tokens": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "provider_completion_tokens": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "provider_total_tokens": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "estimated_provider_cost_usd": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    }
+  },
+  "validator_command": "python -m moneybench.submission --input outputs/provider-run.json --report outputs/provider-run-submission-report.md"
+}

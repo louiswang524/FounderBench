@@ -1,0 +1,875 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Runtime and dependency report for the current release supplementary artifact.",
+  "environment": {
+    "python_version": "3.12.10",
+    "python_executable": "C:\\Users\\louis\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\python.exe",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "working_directory": "C:\\Users\\louis\\Documents\\Codex\\2026-07-14\\use\\work\\moneybench"
+  },
+  "dependency_policy": {
+    "core_benchmark_dependencies": "Python standard library plus the local moneybench package.",
+    "hosted_provider_runs": "Use stdlib urllib/json plus provider API keys in environment variables.",
+    "local_open_source_runs": "Require a separately managed OpenAI-compatible inference server; the benchmark client itself does not vendor that server.",
+    "recommended_python": "3.11+",
+    "validated_python": "3.12.10"
+  },
+  "imports_by_file": {
+    "moneybench\\__init__.py": [],
+    "moneybench\\ablation.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "statistics",
+      "typing"
+    ],
+    "moneybench\\action_ablation.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "statistics",
+      "typing"
+    ],
+    "moneybench\\action_semantics.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\analysis.py": [
+      "__future__",
+      "argparse",
+      "collections",
+      "json",
+      "pathlib",
+      "random",
+      "statistics",
+      "typing"
+    ],
+    "moneybench\\baseline_execution_plan.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\benchmark_datasheet.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\bundle_integrity.py": [
+      "__future__",
+      "argparse",
+      "hashlib",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\citation_audit.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "re",
+      "typing"
+    ],
+    "moneybench\\claim_evidence.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\cli.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench"
+    ],
+    "moneybench\\completion_audit.py": [
+      "__future__",
+      "argparse",
+      "hashlib",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\contamination_leakage_audit.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\cost_accounting.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "os",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\determinism_audit.py": [
+      "__future__",
+      "argparse",
+      "copy",
+      "hashlib",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\difficulty_calibration.py": [
+      "__future__",
+      "argparse",
+      "collections",
+      "json",
+      "moneybench",
+      "pathlib",
+      "statistics",
+      "typing"
+    ],
+    "moneybench\\env.py": [
+      "__future__",
+      "dataclasses",
+      "math",
+      "moneybench",
+      "random"
+    ],
+    "moneybench\\environment_report.py": [
+      "__future__",
+      "argparse",
+      "ast",
+      "importlib",
+      "json",
+      "moneybench",
+      "pathlib",
+      "platform",
+      "sys",
+      "typing"
+    ],
+    "moneybench\\experiment_matrix.py": [
+      "__future__",
+      "argparse",
+      "hashlib",
+      "json",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\experiment_runbook.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\export_tasks.py": [
+      "__future__",
+      "argparse",
+      "dataclasses",
+      "json",
+      "moneybench",
+      "pathlib"
+    ],
+    "moneybench\\failure_mode_audit.py": [
+      "__future__",
+      "argparse",
+      "hashlib",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\holdout.py": [
+      "__future__",
+      "argparse",
+      "hashlib",
+      "hmac",
+      "json",
+      "os",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\holdout_smoke.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\human_calibration.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\human_calibration_analysis.py": [
+      "__future__",
+      "argparse",
+      "collections",
+      "json",
+      "moneybench",
+      "pathlib",
+      "statistics",
+      "typing"
+    ],
+    "moneybench\\human_calibration_packet.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\human_calibration_schema.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\leaderboard.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib"
+    ],
+    "moneybench\\leaderboard_policy.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\leaderboard_stability.py": [
+      "__future__",
+      "argparse",
+      "collections",
+      "json",
+      "moneybench",
+      "pathlib",
+      "random",
+      "statistics",
+      "typing"
+    ],
+    "moneybench\\license_readiness.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\llm_policy.py": [
+      "__future__",
+      "dataclasses",
+      "hashlib",
+      "json",
+      "moneybench",
+      "os",
+      "re",
+      "time",
+      "typing",
+      "urllib"
+    ],
+    "moneybench\\local_model.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "os",
+      "pathlib",
+      "typing",
+      "urllib"
+    ],
+    "moneybench\\market_catalog.py": [
+      "__future__",
+      "argparse",
+      "dataclasses",
+      "json",
+      "moneybench",
+      "pathlib",
+      "statistics",
+      "typing"
+    ],
+    "moneybench\\metric_sensitivity.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "statistics",
+      "typing"
+    ],
+    "moneybench\\model_comparison.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\model_result_cards.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\paired_statistics.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "math",
+      "moneybench",
+      "pathlib",
+      "random",
+      "statistics",
+      "typing"
+    ],
+    "moneybench\\paper_claim_lint.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "re",
+      "typing"
+    ],
+    "moneybench\\paper_evidence_map.py": [
+      "__future__",
+      "argparse",
+      "hashlib",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\paper_figures.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\paper_tables.py": [
+      "__future__",
+      "argparse",
+      "hashlib",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\policies.py": [
+      "__future__",
+      "abc",
+      "moneybench",
+      "random"
+    ],
+    "moneybench\\power_analysis.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "math",
+      "moneybench",
+      "pathlib",
+      "statistics",
+      "typing"
+    ],
+    "moneybench\\private_holdout_evaluator.py": [
+      "__future__",
+      "argparse",
+      "dataclasses",
+      "hashlib",
+      "hmac",
+      "json",
+      "moneybench",
+      "os",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\prompt_protocol.py": [
+      "__future__",
+      "argparse",
+      "hashlib",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\provider_adapter.py": [
+      "__future__",
+      "abc",
+      "json",
+      "moneybench"
+    ],
+    "moneybench\\provider_comparability_audit.py": [
+      "__future__",
+      "argparse",
+      "collections",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\provider_contract_audit.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\provider_readiness.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "os",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\provider_run_status.py": [
+      "__future__",
+      "argparse",
+      "hashlib",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\publication_audit.py": [
+      "__future__",
+      "argparse",
+      "hashlib",
+      "json",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\qualitative.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\references.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "pathlib",
+      "re",
+      "typing"
+    ],
+    "moneybench\\release.py": [
+      "__future__",
+      "argparse",
+      "hashlib",
+      "json",
+      "moneybench",
+      "os",
+      "pathlib",
+      "shutil",
+      "subprocess",
+      "sys"
+    ],
+    "moneybench\\release_metadata.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\repeats.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "statistics",
+      "typing"
+    ],
+    "moneybench\\reproducibility_manifest.py": [
+      "__future__",
+      "argparse",
+      "hashlib",
+      "json",
+      "moneybench",
+      "pathlib",
+      "platform",
+      "re",
+      "subprocess",
+      "sys",
+      "typing"
+    ],
+    "moneybench\\responsible_use.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\result_integrity_audit.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\resumable_runner.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib"
+    ],
+    "moneybench\\reviewer_index.py": [
+      "__future__",
+      "argparse",
+      "hashlib",
+      "json",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\reviewer_risk_audit.py": [
+      "__future__",
+      "argparse",
+      "hashlib",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\reviewer_smoke.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "sys",
+      "typing"
+    ],
+    "moneybench\\schema.py": [
+      "__future__",
+      "dataclasses",
+      "typing"
+    ],
+    "moneybench\\score_rubric.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\scoring_consistency_audit.py": [
+      "__future__",
+      "argparse",
+      "collections",
+      "json",
+      "moneybench",
+      "pathlib",
+      "statistics",
+      "typing"
+    ],
+    "moneybench\\simulator_invariant_audit.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "math",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\statistical_protocol.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\submission.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "statistics",
+      "typing"
+    ],
+    "moneybench\\submission_action_plan.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\submission_bundle.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\submission_gate.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\submission_manifest.py": [
+      "__future__",
+      "argparse",
+      "hashlib",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\submission_schema.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\task_cards.py": [
+      "__future__",
+      "argparse",
+      "dataclasses",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\task_cli.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench"
+    ],
+    "moneybench\\task_coverage.py": [
+      "__future__",
+      "argparse",
+      "collections",
+      "json",
+      "moneybench",
+      "pathlib",
+      "statistics",
+      "typing"
+    ],
+    "moneybench\\task_feasibility_audit.py": [
+      "__future__",
+      "argparse",
+      "collections",
+      "json",
+      "moneybench",
+      "pathlib",
+      "statistics",
+      "typing"
+    ],
+    "moneybench\\task_provenance.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\task_revision_ledger.py": [
+      "__future__",
+      "argparse",
+      "collections",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ],
+    "moneybench\\task_runner.py": [
+      "__future__",
+      "dataclasses",
+      "moneybench",
+      "time"
+    ],
+    "moneybench\\tasks.py": [
+      "__future__",
+      "dataclasses",
+      "moneybench",
+      "typing"
+    ],
+    "moneybench\\validity_report.py": [
+      "__future__",
+      "argparse",
+      "json",
+      "moneybench",
+      "pathlib",
+      "typing"
+    ]
+  },
+  "import_classification": [
+    {
+      "module": "__future__",
+      "classification": "stdlib"
+    },
+    {
+      "module": "abc",
+      "classification": "stdlib"
+    },
+    {
+      "module": "argparse",
+      "classification": "stdlib"
+    },
+    {
+      "module": "ast",
+      "classification": "stdlib"
+    },
+    {
+      "module": "collections",
+      "classification": "stdlib"
+    },
+    {
+      "module": "copy",
+      "classification": "stdlib"
+    },
+    {
+      "module": "dataclasses",
+      "classification": "stdlib"
+    },
+    {
+      "module": "hashlib",
+      "classification": "stdlib"
+    },
+    {
+      "module": "hmac",
+      "classification": "stdlib"
+    },
+    {
+      "module": "importlib",
+      "classification": "stdlib"
+    },
+    {
+      "module": "json",
+      "classification": "stdlib"
+    },
+    {
+      "module": "math",
+      "classification": "stdlib"
+    },
+    {
+      "module": "moneybench",
+      "classification": "local_package"
+    },
+    {
+      "module": "os",
+      "classification": "stdlib"
+    },
+    {
+      "module": "pathlib",
+      "classification": "stdlib"
+    },
+    {
+      "module": "platform",
+      "classification": "stdlib"
+    },
+    {
+      "module": "random",
+      "classification": "stdlib"
+    },
+    {
+      "module": "re",
+      "classification": "stdlib"
+    },
+    {
+      "module": "shutil",
+      "classification": "stdlib"
+    },
+    {
+      "module": "statistics",
+      "classification": "stdlib"
+    },
+    {
+      "module": "subprocess",
+      "classification": "stdlib"
+    },
+    {
+      "module": "sys",
+      "classification": "stdlib"
+    },
+    {
+      "module": "time",
+      "classification": "stdlib"
+    },
+    {
+      "module": "typing",
+      "classification": "stdlib"
+    },
+    {
+      "module": "urllib",
+      "classification": "stdlib"
+    }
+  ],
+  "import_checks": [
+    {
+      "module": "moneybench",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "module": "moneybench.release",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "module": "moneybench.task_runner",
+      "ok": true,
+      "error": ""
+    }
+  ],
+  "summary": {
+    "source_files": 85,
+    "imported_modules": 25,
+    "stdlib_modules": 24,
+    "local_package_modules": 1,
+    "external_or_missing_modules": 0,
+    "import_checks_passed": 3,
+    "import_checks_failed": 0,
+    "core_has_external_runtime_dependencies": false
+  }
+}

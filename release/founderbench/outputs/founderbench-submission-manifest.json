@@ -1,0 +1,258 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Compact submission manifest for reviewers: included evidence, excluded claims, reproduction commands, and readiness status.",
+  "readiness": {
+    "submission_gate": "not_ready",
+    "completion_claim": "not_complete",
+    "ready_for_publication": false,
+    "failed_gates": [
+      "required_experiments",
+      "provider_run_readiness",
+      "claim_evidence_alignment",
+      "license_and_citation"
+    ],
+    "required_experiments_missing": 6
+  },
+  "included_evidence_summary": {
+    "task_suite": "50 fixed public current release startup tasks across 10 families.",
+    "simulator": "Deterministic seeded startup simulator with 13 structured business actions and an 8-market catalog.",
+    "metrics": "Bounded 0-100 task score, solve rate, diagnostics, sensitivity analysis, paired statistics, and pre-specified comparison protocol.",
+    "baselines": "Random, conservative, heuristic, and task-aware heuristic baselines on all 50 tasks with ablations.",
+    "reproducibility": "Reviewer smoke test, reproducibility manifest, determinism audit, release checksum manifest, and bundle integrity report."
+  },
+  "core_review_files": [
+    {
+      "path": "outputs/founderbench-benchmark-card.md",
+      "exists": true,
+      "bytes": 6843,
+      "sha256": "b1ddce4f2db574f185728bf96feb894c74945e50f1a86df17b004779ad701bf4"
+    },
+    {
+      "path": "outputs/founderbench-task-manifest.json",
+      "exists": true,
+      "bytes": 33747,
+      "sha256": "8b5a4abb4452d30a1fca05e626693c890561ecd67987cf2e691448e0bb95b07e"
+    },
+    {
+      "path": "outputs/founderbench-task-coverage.md",
+      "exists": true,
+      "bytes": 3566,
+      "sha256": "245976e316d20abdb0691210a730f1ac72ba26645b6a86736718d4e8d9396a3f"
+    },
+    {
+      "path": "outputs/founderbench-metrics-and-evaluation.md",
+      "exists": true,
+      "bytes": 7625,
+      "sha256": "f0973a0c7629c1736943255ead269b5b5cc0ffa57c5af1d580c75f44d7799c2b"
+    },
+    {
+      "path": "outputs/founderbench-baseline-analysis.md",
+      "exists": true,
+      "bytes": 4380,
+      "sha256": "ac32eeb85d6ef3d99ce300f6acf81fd66a4007120f22665864795512166045ae"
+    },
+    {
+      "path": "outputs/founderbench-model-comparison.md",
+      "exists": true,
+      "bytes": 4523,
+      "sha256": "a5313b086efd8bd73639db5a14cd83ceca532b25f051b81dfd1ff27ad1955105"
+    },
+    {
+      "path": "outputs/founderbench-paper-tables.md",
+      "exists": true,
+      "bytes": 4510,
+      "sha256": "6a40391f561000485c65044b34cbdb6e8921472e4e5f80dcf020c3fac3b163a0"
+    },
+    {
+      "path": "outputs/founderbench-validity-report.md",
+      "exists": true,
+      "bytes": 5808,
+      "sha256": "35eac7492acaeee2527dff4a35e1265a6b90351b9dc784092604e9f6fd3f19ee"
+    },
+    {
+      "path": "outputs/founderbench-claim-evidence.md",
+      "exists": true,
+      "bytes": 5750,
+      "sha256": "22640a523cfce8e61afe806938e0247f6ace629ea8b9e516d5be23860fd9a7ce"
+    },
+    {
+      "path": "outputs/founderbench-submission-gate.md",
+      "exists": true,
+      "bytes": 1492,
+      "sha256": "6927b208047e4273aa9d7beccd2317c90f02ee96ce766f04dae6ad5e693d8669"
+    },
+    {
+      "path": "outputs/founderbench-completion-audit.md",
+      "exists": true,
+      "bytes": 8166,
+      "sha256": "3e9db8cbc5f9c1ff271e81efabf3f184072ede879eefca19ca2d69e60ce9ea8d"
+    },
+    {
+      "path": "outputs/founderbench-reviewer-index.md",
+      "exists": true,
+      "bytes": 20471,
+      "sha256": "2ce4bc2f265efa98201d7b4b5b3285c5cb8f3cc468a4cbf2d39ad076b8c62e99"
+    },
+    {
+      "path": "release/founderbench/SHA256SUMS.json",
+      "exists": true,
+      "bytes": 40818,
+      "sha256": "63db7dd1c4044aa3cd8ea8b4a7260625ad259edbb07ed0eac47bbd856c3eb652"
+    },
+    {
+      "path": "release/founderbench/BUNDLE-INTEGRITY.md",
+      "exists": true,
+      "bytes": 662,
+      "sha256": "5632ed0abffe5da6a999b7a1ea019b1a980c7ab91589081b339c3812d031fb13"
+    }
+  ],
+  "supported_claims": [
+    {
+      "id": "controlled_startup_operator_benchmark",
+      "status": "supported",
+      "permitted_wording": "FounderBench evaluates structured startup-like operating decisions in a controlled simulator.",
+      "evidence_paths": [
+        "work/moneybench/moneybench/env.py",
+        "work/moneybench/SPEC.md",
+        "outputs/founderbench-benchmark-card.md"
+      ]
+    },
+    {
+      "id": "expanded_50_task_suite",
+      "status": "supported",
+      "permitted_wording": "The benchmark contains 50 fixed public tasks across 10 balanced task families.",
+      "evidence_paths": [
+        "outputs/founderbench-task-manifest.json",
+        "outputs/founderbench-task-coverage.md"
+      ]
+    },
+    {
+      "id": "structured_action_space",
+      "status": "supported",
+      "permitted_wording": "The simulator executes only structured actions; rationale is retained for auditability but not scored directly.",
+      "evidence_paths": [
+        "work/moneybench/moneybench/schema.py",
+        "work/moneybench/moneybench/task_runner.py",
+        "outputs/founderbench-task-coverage.md"
+      ]
+    },
+    {
+      "id": "bounded_normalized_metrics",
+      "status": "supported",
+      "permitted_wording": "Each task returns a bounded 0-100 score; tasks are solved at score >= 70.",
+      "evidence_paths": [
+        "outputs/founderbench-metrics-and-evaluation.md",
+        "outputs/founderbench-score-rubric.md",
+        "work/moneybench/moneybench/tasks.py"
+      ]
+    },
+    {
+      "id": "deterministic_baseline_spread",
+      "status": "supported",
+      "permitted_wording": "Deterministic baselines show a wide spread from random to task-aware heuristic on the public current suite.",
+      "evidence_paths": [
+        "outputs/founderbench-baseline-leaderboard.json",
+        "outputs/founderbench-baseline-analysis.md",
+        "outputs/founderbench-paper-tables.md"
+      ]
+    },
+    {
+      "id": "capability_ladder_ablation",
+      "status": "supported",
+      "permitted_wording": "The deterministic policy ladder is a calibration ablation, not a model architecture ablation.",
+      "evidence_paths": [
+        "outputs/founderbench-ablation-report.md",
+        "outputs/founderbench-paper-tables.md"
+      ]
+    }
+  ],
+  "excluded_or_not_yet_supported_claims": [
+    {
+      "id": "hosted_llm_comparison",
+      "status": "unsupported_currently",
+      "current_wording": "Provider adapters and experiment protocols are included; hosted current release LLM results remain to be run.",
+      "avoid_wording": "DeepSeek, Claude, and Gemini have been fully compared on current release.",
+      "missing_evidence": [
+        "outputs/founderbench-deepseek.json",
+        "outputs/founderbench-anthropic.json",
+        "outputs/founderbench-gemini.json"
+      ]
+    },
+    {
+      "id": "private_holdout_available",
+      "status": "unsupported_currently",
+      "current_wording": "The benchmark includes a private-holdout blueprint and evaluator protocol, not executed hidden results.",
+      "avoid_wording": "The reported current release leaderboard is hidden or private.",
+      "missing_evidence": [
+        "outputs/founderbench-private-holdout-results.json"
+      ]
+    },
+    {
+      "id": "real_world_startup_prediction",
+      "status": "unsupported_currently",
+      "current_wording": "FounderBench is a synthetic controlled environment for studying startup-relevant decisions.",
+      "avoid_wording": "High benchmark score means a model can run a successful real company.",
+      "missing_evidence": [
+        "executed human/expert validation study",
+        "real-world outcome correlation study"
+      ]
+    }
+  ],
+  "reproduction_commands": [
+    {
+      "purpose": "Regenerate generated artifacts",
+      "cwd": "work/moneybench",
+      "command": "python -m moneybench.release regenerate"
+    },
+    {
+      "purpose": "Validate generated artifacts and tests",
+      "cwd": "work/moneybench",
+      "command": "python -m moneybench.release validate"
+    },
+    {
+      "purpose": "Build supplementary release bundle",
+      "cwd": "work/moneybench",
+      "command": "python -m moneybench.release bundle"
+    }
+  ],
+  "remaining_work": [
+    {
+      "gate": "required_experiments",
+      "blocker": "6 required experiment groups are missing.",
+      "evidence": [
+        "outputs/founderbench-experiment-matrix.md"
+      ]
+    },
+    {
+      "gate": "provider_run_readiness",
+      "blocker": "Only 0/5 provider configurations are ready.",
+      "evidence": [
+        "outputs/founderbench-provider-readiness.md"
+      ]
+    },
+    {
+      "gate": "claim_evidence_alignment",
+      "blocker": "3 stronger claims remain unsupported by current evidence.",
+      "evidence": [
+        "outputs/founderbench-claim-evidence.md"
+      ]
+    },
+    {
+      "gate": "license_and_citation",
+      "blocker": "License/citation metadata is not public-release ready.",
+      "evidence": [
+        "outputs/founderbench-license-readiness.md",
+        "work/moneybench/CITATION.cff",
+        "work/moneybench/LICENSE-TODO.md"
+      ]
+    }
+  ],
+  "summary": {
+    "core_review_files": 14,
+    "core_review_files_present": 14,
+    "supported_claims": 6,
+    "excluded_or_not_yet_supported_claims": 3,
+    "failed_gates": 4
+  }
+}

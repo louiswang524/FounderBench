@@ -1,0 +1,140 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "prompt_version": "founderbench-task-agent",
+  "task_count": 50,
+  "action_types": [
+    "research_market",
+    "build_offer",
+    "run_campaign",
+    "improve_offer",
+    "hire_agent",
+    "support_customers",
+    "change_price",
+    "interview_customers",
+    "cut_cost",
+    "pivot_market",
+    "raise_funding",
+    "partner_channel",
+    "do_nothing"
+  ],
+  "max_actions_per_week": 4,
+  "response_contract": {
+    "format": "JSON object only",
+    "required_keys": [
+      "rationale",
+      "actions"
+    ],
+    "action_fields": [
+      "type",
+      "market_id",
+      "offer_id",
+      "budget",
+      "price",
+      "message_quality"
+    ],
+    "parser": "moneybench.provider_adapter.parse_provider_response"
+  },
+  "prompt_template": {
+    "benchmark": "FounderBench",
+    "prompt_version": "founderbench-task-agent",
+    "task": {
+      "task_id": "<FND-###>",
+      "name": "<task name>",
+      "description": "<task objective and startup situation>",
+      "weeks_remaining": "<integer>",
+      "pass_threshold": 70
+    },
+    "objective": "Choose actions that maximize the bounded 0-100 task score. Preserve runway, avoid unsafe/spammy behavior, and satisfy the task objective.",
+    "allowed_actions": "<sorted subset of action_types allowed by this task>",
+    "observation": {
+      "week": "<integer>",
+      "cash": "<float>",
+      "reputation": "<float>",
+      "agent_capacity": "<float>",
+      "markets": "<list of visible market records>",
+      "offers": "<list of active offer records>",
+      "memory": "<simulator notes from prior weeks>"
+    },
+    "response_schema": {
+      "rationale": "brief reason",
+      "actions": [
+        {
+          "type": "research_market | build_offer | run_campaign | improve_offer | hire_agent | support_customers | change_price | interview_customers | cut_cost | pivot_market | raise_funding | partner_channel | do_nothing",
+          "market_id": "required for research_market/build_offer/pivot_market; optional for interview_customers",
+          "offer_id": "required for run_campaign/improve_offer/change_price/pivot_market/partner_channel; optional for interview_customers",
+          "budget": 0,
+          "price": "used for build_offer/change_price; used as funding ask for raise_funding",
+          "message_quality": 0.8
+        }
+      ]
+    },
+    "rules": [
+      "Return only JSON with keys rationale and actions.",
+      "Use at most 4 actions per week.",
+      "Do not spend more cash than available.",
+      "If an action needs market_id or offer_id, use one from the observation.",
+      "Use do_nothing only when no useful action remains.",
+      "Do not make unsupported claims; the simulator only executes structured actions."
+    ]
+  },
+  "prompt_template_sha256": "21cfb19c6ce46b4f74d6d92dc994fca10237b86e166e5b886b5220bb4da15e8b",
+  "provider_message_wrappers": [
+    {
+      "policy": "deepseek",
+      "provider": "DeepSeek",
+      "default_model": "deepseek-chat",
+      "system_prompt_sha256": "4464f7e398df3b5cc605ce515c39babc9e643706adc3a1e47df256134a55a37a",
+      "user_prompt": "render_task_prompt(task, observation)",
+      "temperature": 0.2,
+      "self_consistency_k": 1
+    },
+    {
+      "policy": "deepseek_sc",
+      "provider": "DeepSeek self-consistency",
+      "default_model": "deepseek-chat",
+      "system_prompt_sha256": "4464f7e398df3b5cc605ce515c39babc9e643706adc3a1e47df256134a55a37a",
+      "user_prompt": "render_task_prompt(task, observation)",
+      "temperature": 0.7,
+      "self_consistency_k": 3
+    },
+    {
+      "policy": "anthropic",
+      "provider": "Anthropic Claude",
+      "default_model": "claude-sonnet-4-5",
+      "system_prompt_sha256": "f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91",
+      "user_prompt": "render_task_prompt(task, observation)",
+      "temperature": 0.2,
+      "self_consistency_k": 1
+    },
+    {
+      "policy": "gemini",
+      "provider": "Google Gemini",
+      "default_model": "gemini-2.5-flash",
+      "system_prompt_sha256": "f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91",
+      "user_prompt": "render_task_prompt(task, observation)",
+      "temperature": 0.2,
+      "self_consistency_k": 1
+    },
+    {
+      "policy": "llm",
+      "provider": "Local/OpenAI-compatible",
+      "default_model": "Qwen/Qwen2.5-7B-Instruct",
+      "system_prompt_sha256": "f6c7d18e41cb6b313f5951290d1d7aad5220334d073e1f4b54089ff5246ddf91",
+      "user_prompt": "render_task_prompt(task, observation)",
+      "temperature": 0.2,
+      "self_consistency_k": 1
+    }
+  ],
+  "run_trace_requirements": [
+    "Record prompt_sha256 for every provider call.",
+    "Record raw_response_redacted, parse/error category, token usage, estimated cost, and latency when available.",
+    "Validate each complete suite with python -m moneybench.submission before comparing scores."
+  ],
+  "anti_gaming_controls": [
+    "Models receive only the current task observation and allowed actions.",
+    "The simulator executes structured actions only; natural-language business claims do not affect score.",
+    "Public runs report prompt hashes, while hidden-holdout evaluation withholds private task definitions."
+  ],
+  "protocol_sha256": "47e02c45953eac9b8a96b5d532d4ce8fd196d216d7acd07c602a08c6490e44b0"
+}

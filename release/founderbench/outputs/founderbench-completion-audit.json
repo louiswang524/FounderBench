@@ -1,0 +1,401 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Goal-level completion audit for the active publishable-benchmark objective.",
+  "completion_claim": "not_complete",
+  "summary": {
+    "requirements": 8,
+    "complete": 5,
+    "partial": 1,
+    "incomplete": 1,
+    "missing": 1,
+    "submission_gate": "not_ready"
+  },
+  "items": [
+    {
+      "id": "scaled_task_suite",
+      "goal_clause": "scale the startup-agent task suite beyond the current 25 tasks",
+      "completion_standard": "A fixed current task manifest contains more than 25 tasks and task coverage/provenance artifacts explain families, splits, curation, and cards.",
+      "status": "complete",
+      "rationale": "Task manifest reports 50 tasks.",
+      "evidence": [
+        {
+          "path": "outputs/founderbench-task-manifest.json",
+          "exists": true,
+          "bytes": 33747,
+          "sha256": "8b5a4abb4452d30a1fca05e626693c890561ecd67987cf2e691448e0bb95b07e"
+        },
+        {
+          "path": "outputs/founderbench-task-coverage.md",
+          "exists": true,
+          "bytes": 3566,
+          "sha256": "245976e316d20abdb0691210a730f1ac72ba26645b6a86736718d4e8d9396a3f"
+        },
+        {
+          "path": "outputs/founderbench-task-provenance.md",
+          "exists": true,
+          "bytes": 3763,
+          "sha256": "af572f0dc9ce61731a5c72a4d79a15fb7a7301096689d3edad36d5cbd4b67237"
+        },
+        {
+          "path": "outputs/founderbench-task-cards.md",
+          "exists": true,
+          "bytes": 38555,
+          "sha256": "4c19b815b7c0fba1c699792ca28e773df0298074d0886830f8e0f148ff7f745b"
+        }
+      ],
+      "missing_paths": []
+    },
+    {
+      "id": "simulator_and_action_space",
+      "goal_clause": "strengthen the controlled simulator and action space",
+      "completion_standard": "Simulator, market catalog, action semantics, and action ablation artifacts exist and document/exercise structured startup actions.",
+      "status": "complete",
+      "rationale": "Action semantics catalog documents 13 structured actions.",
+      "evidence": [
+        {
+          "path": "work/moneybench/moneybench/env.py",
+          "exists": true,
+          "bytes": 17663,
+          "sha256": "fc60baf74776cbe02503554b759ee85793bbb541fa6c733d402a0bd3d975b320"
+        },
+        {
+          "path": "work/moneybench/moneybench/schema.py",
+          "exists": true,
+          "bytes": 1975,
+          "sha256": "d62b498ed5231897d21dae2aec7af2178871f3449a1bc2078ced494ff7b2750f"
+        },
+        {
+          "path": "outputs/founderbench-action-semantics.md",
+          "exists": true,
+          "bytes": 8403,
+          "sha256": "c5901daef43abe62c4b412985bdee4364dd3836495f6d9740a1f18cbfbc1019c"
+        },
+        {
+          "path": "outputs/founderbench-market-catalog.md",
+          "exists": true,
+          "bytes": 5295,
+          "sha256": "c39ff61695e7bd41c272b690ad022a82c8415eeb92263d04de637347ae3fa7c7"
+        },
+        {
+          "path": "outputs/founderbench-action-ablation.md",
+          "exists": true,
+          "bytes": 2372,
+          "sha256": "f0439186b7f1ba3d7ef0fac8f6617ad03484ca54db16044bc58d212d3b9f45af"
+        }
+      ],
+      "missing_paths": []
+    },
+    {
+      "id": "normalized_business_metrics",
+      "goal_clause": "define rigorous normalized business metrics",
+      "completion_standard": "Primary bounded score, diagnostics, score rubric, sensitivity analysis, and statistical protocol are generated and internally validated.",
+      "status": "complete",
+      "rationale": "Metric, rubric, sensitivity, and statistical-protocol artifacts are present.",
+      "evidence": [
+        {
+          "path": "outputs/founderbench-metrics-and-evaluation.md",
+          "exists": true,
+          "bytes": 7625,
+          "sha256": "f0973a0c7629c1736943255ead269b5b5cc0ffa57c5af1d580c75f44d7799c2b"
+        },
+        {
+          "path": "outputs/founderbench-score-rubric.md",
+          "exists": true,
+          "bytes": 7092,
+          "sha256": "e96e5291dc4fb63df751120f29de761e3dc6f81fc82f85df8b601b0452f40869"
+        },
+        {
+          "path": "outputs/founderbench-metric-sensitivity.md",
+          "exists": true,
+          "bytes": 3113,
+          "sha256": "8eccfaa7eb6d48d331e50540584969ed006e9a30ffb8559c21ebc98159004407"
+        },
+        {
+          "path": "outputs/founderbench-statistical-protocol.md",
+          "exists": true,
+          "bytes": 3578,
+          "sha256": "9b15ebead486d8885fa9c485cce4c64fe1192bef490200ea90e9edd982e2bb36"
+        },
+        {
+          "path": "outputs/founderbench-paired-statistics.md",
+          "exists": true,
+          "bytes": 2169,
+          "sha256": "7fe7f9a94b1061d41f84344c828578a248c9207cfb2efbcae288c85f3511b686"
+        }
+      ],
+      "missing_paths": []
+    },
+    {
+      "id": "heuristic_baselines_and_ablations",
+      "goal_clause": "run representative heuristic baselines with ablations",
+      "completion_standard": "Deterministic non-LLM baselines cover all 50 tasks and ablation/statistical/difficulty artifacts exist.",
+      "status": "complete",
+      "rationale": "Four deterministic baselines each report 50 tasks.",
+      "evidence": [
+        {
+          "path": "outputs/founderbench-baseline-raw.json",
+          "exists": true,
+          "bytes": 342096,
+          "sha256": "ec31a2cd2c626eba0f279a2806355dfc1abec14bd210f79f6a95ca3b81e7730b"
+        },
+        {
+          "path": "outputs/founderbench-baseline-leaderboard.json",
+          "exists": true,
+          "bytes": 2653,
+          "sha256": "5a4cccccf4df13f6c9b90d8b1b95927bee1fd373e3419b73429b843bfcc1c4ed"
+        },
+        {
+          "path": "outputs/founderbench-baseline-analysis.md",
+          "exists": true,
+          "bytes": 4380,
+          "sha256": "ac32eeb85d6ef3d99ce300f6acf81fd66a4007120f22665864795512166045ae"
+        },
+        {
+          "path": "outputs/founderbench-ablation-report.md",
+          "exists": true,
+          "bytes": 2444,
+          "sha256": "7ca23db2ffa0ac21a917349eac06a9297147f28afb3cecd7d9ee008205c47fb2"
+        },
+        {
+          "path": "outputs/founderbench-action-ablation.md",
+          "exists": true,
+          "bytes": 2372,
+          "sha256": "f0439186b7f1ba3d7ef0fac8f6617ad03484ca54db16044bc58d212d3b9f45af"
+        },
+        {
+          "path": "outputs/founderbench-difficulty-calibration.md",
+          "exists": true,
+          "bytes": 5566,
+          "sha256": "5af63bf2fef26099f4115ce67a4932817f551acef489ae997846fea201f6f884"
+        }
+      ],
+      "missing_paths": []
+    },
+    {
+      "id": "representative_llm_baselines",
+      "goal_clause": "run representative LLM baselines",
+      "completion_standard": "Required DeepSeek, Anthropic, Gemini, and local/open-source current release outputs exist and pass submission validation.",
+      "status": "missing",
+      "rationale": "6 required experiment groups are missing and 0/5 providers are ready.",
+      "evidence": [
+        {
+          "path": "outputs/founderbench-deepseek.json",
+          "exists": false
+        },
+        {
+          "path": "outputs/founderbench-deepseek-submission-report.md",
+          "exists": false
+        },
+        {
+          "path": "outputs/founderbench-anthropic.json",
+          "exists": false
+        },
+        {
+          "path": "outputs/founderbench-anthropic-submission-report.md",
+          "exists": false
+        },
+        {
+          "path": "outputs/founderbench-gemini.json",
+          "exists": false
+        },
+        {
+          "path": "outputs/founderbench-gemini-submission-report.md",
+          "exists": false
+        },
+        {
+          "path": "outputs/founderbench-local-open-model.json",
+          "exists": false
+        },
+        {
+          "path": "outputs/founderbench-local-open-model-submission-report.md",
+          "exists": false
+        },
+        {
+          "path": "outputs/founderbench-provider-run-status.md",
+          "exists": true,
+          "bytes": 4474,
+          "sha256": "a729b962a19fb29cc28d3220c669ad0cbf50003afd7bf211608d6360e2c332ab"
+        },
+        {
+          "path": "outputs/founderbench-experiment-runbook.md",
+          "exists": true,
+          "bytes": 14798,
+          "sha256": "355d5b4b0f38d6c2203d47d71140901becf8ea69a117b6c0c29df8a05ecf34c7"
+        }
+      ],
+      "missing_paths": [
+        "outputs/founderbench-deepseek.json",
+        "outputs/founderbench-deepseek-submission-report.md",
+        "outputs/founderbench-anthropic.json",
+        "outputs/founderbench-anthropic-submission-report.md",
+        "outputs/founderbench-gemini.json",
+        "outputs/founderbench-gemini-submission-report.md",
+        "outputs/founderbench-local-open-model.json",
+        "outputs/founderbench-local-open-model-submission-report.md"
+      ]
+    },
+    {
+      "id": "documentation_and_accessibility",
+      "goal_clause": "document reproducibility and limitations",
+      "completion_standard": "README, spec, reproduction guide, reviewer index, environment/determinism manifests, validity report, and submission schemas are present.",
+      "status": "complete",
+      "rationale": "Documentation, reproduction, audit, and schema artifacts are present.",
+      "evidence": [
+        {
+          "path": "work/moneybench/README.md",
+          "exists": true,
+          "bytes": 20160,
+          "sha256": "b5c1bd5bb9a070688f866c9e6339df22b46a17295411eadc7222556464e0c227"
+        },
+        {
+          "path": "work/moneybench/SPEC.md",
+          "exists": true,
+          "bytes": 9414,
+          "sha256": "ef964d25562ddb994a90085169d79cec6e336785233f2d32e3f769caa50aec89"
+        },
+        {
+          "path": "outputs/founderbench-reproduction-guide.md",
+          "exists": true,
+          "bytes": 7259,
+          "sha256": "d4e14983452e17086d8a2c8ccbf99e9e6f725b254a6590c7122df3001bff5f32"
+        },
+        {
+          "path": "outputs/founderbench-reviewer-index.md",
+          "exists": true,
+          "bytes": 20471,
+          "sha256": "2ce4bc2f265efa98201d7b4b5b3285c5cb8f3cc468a4cbf2d39ad076b8c62e99"
+        },
+        {
+          "path": "outputs/founderbench-reproducibility-manifest.md",
+          "exists": true,
+          "bytes": 24544,
+          "sha256": "a03cb42fd8c30f99c7bf3c1c7dfd2c43ff72f7fff698c847431b9f54e50898f4"
+        },
+        {
+          "path": "outputs/founderbench-environment-report.md",
+          "exists": true,
+          "bytes": 2189,
+          "sha256": "9035ff5406d5bd6f836ca5d22b29c52c295ea5ff29b96fc98d850eebab4e03ee"
+        },
+        {
+          "path": "outputs/founderbench-determinism-audit.md",
+          "exists": true,
+          "bytes": 1298,
+          "sha256": "ee4b8bc9a92ce669d97f0369ab712115cfeec9089d9f8ced2ddf8a9d629dc32d"
+        },
+        {
+          "path": "outputs/founderbench-validity-report.md",
+          "exists": true,
+          "bytes": 5808,
+          "sha256": "35eac7492acaeee2527dff4a35e1265a6b90351b9dc784092604e9f6fd3f19ee"
+        },
+        {
+          "path": "outputs/founderbench-model-submission-schema.md",
+          "exists": true,
+          "bytes": 1512,
+          "sha256": "2de298cf1b7e03be276f624a36a890341e0755a00e8f70e8f4d7f7854ef4ade9"
+        }
+      ],
+      "missing_paths": []
+    },
+    {
+      "id": "benchmark_card_and_paper_artifacts",
+      "goal_clause": "prepare the benchmark card plus paper-ready experimental evidence",
+      "completion_standard": "Benchmark card, paper draft, paper tables/figure data, references, claim-evidence report, submission gate, and release bundle exist.",
+      "status": "partial",
+      "rationale": "Paper artifacts are present, but 3 stronger claims remain unsupported.",
+      "evidence": [
+        {
+          "path": "outputs/founderbench-benchmark-card.md",
+          "exists": true,
+          "bytes": 6843,
+          "sha256": "b1ddce4f2db574f185728bf96feb894c74945e50f1a86df17b004779ad701bf4"
+        },
+        {
+          "path": "outputs/founderbench-paper-draft.md",
+          "exists": true,
+          "bytes": 27853,
+          "sha256": "4ff55274776eb64cb8890ec6abde3e316065daaab8296c1eddd19f21c85e2c25"
+        },
+        {
+          "path": "outputs/founderbench-paper-tables.md",
+          "exists": true,
+          "bytes": 4510,
+          "sha256": "6a40391f561000485c65044b34cbdb6e8921472e4e5f80dcf020c3fac3b163a0"
+        },
+        {
+          "path": "outputs/founderbench-paper-figure-data.md",
+          "exists": true,
+          "bytes": 1628,
+          "sha256": "045386e39beec6bb40748ee699f81bdd780713ea7ce7d181f17cb722396fd130"
+        },
+        {
+          "path": "outputs/founderbench-references.bib",
+          "exists": true,
+          "bytes": 5246,
+          "sha256": "124ea8dc1cf44747e5348dd8bf21d137767001832470a26135ad384234c6c6a9"
+        },
+        {
+          "path": "outputs/founderbench-claim-evidence.md",
+          "exists": true,
+          "bytes": 5750,
+          "sha256": "22640a523cfce8e61afe806938e0247f6ace629ea8b9e516d5be23860fd9a7ce"
+        },
+        {
+          "path": "outputs/founderbench-submission-gate.md",
+          "exists": true,
+          "bytes": 1492,
+          "sha256": "6927b208047e4273aa9d7beccd2317c90f02ee96ce766f04dae6ad5e693d8669"
+        },
+        {
+          "path": "release/founderbench/SHA256SUMS.json",
+          "exists": true,
+          "bytes": 40818,
+          "sha256": "63db7dd1c4044aa3cd8ea8b4a7260625ad259edbb07ed0eac47bbd856c3eb652"
+        },
+        {
+          "path": "release/founderbench/BUNDLE-INTEGRITY.md",
+          "exists": true,
+          "bytes": 662,
+          "sha256": "5632ed0abffe5da6a999b7a1ea019b1a980c7ab91589081b339c3812d031fb13"
+        }
+      ],
+      "missing_paths": []
+    },
+    {
+      "id": "public_release_metadata",
+      "goal_clause": "publishable benchmark paper artifact",
+      "completion_standard": "Final public LICENSE and CITATION metadata are selected by the project owner.",
+      "status": "incomplete",
+      "rationale": "License/citation metadata is not public-release ready.",
+      "evidence": [
+        {
+          "path": "work/moneybench/LICENSE",
+          "exists": false
+        },
+        {
+          "path": "work/moneybench/CITATION.cff",
+          "exists": true,
+          "bytes": 554,
+          "sha256": "c89452bacf9e1273d9c4cb2fef691b1f6e95af6e9b96e3c316dcec398c44582c"
+        },
+        {
+          "path": "outputs/founderbench-license-readiness.md",
+          "exists": true,
+          "bytes": 2406,
+          "sha256": "111f8bf8d906e06a6c32e1882620c62c4afe057b26c664338ea784a0913d2986"
+        },
+        {
+          "path": "outputs/founderbench-release-metadata-checklist.md",
+          "exists": true,
+          "bytes": 3569,
+          "sha256": "936a71ec8a2cf9ad5e6887b9932c8779dd1e4dc8185e8e5836523e17ae4d70e5"
+        }
+      ],
+      "missing_paths": [
+        "work/moneybench/LICENSE"
+      ]
+    }
+  ]
+}

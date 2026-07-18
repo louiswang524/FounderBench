@@ -26,8 +26,8 @@ python -m moneybench.release validate
 ## Inspect Tasks
 
 ```bash
-python -m moneybench.export_tasks --output outputs/acceleratorbench-task-manifest-v0.3.json
-python -m moneybench.task_cards --json-output outputs/acceleratorbench-task-cards-v0.3.json --markdown-output outputs/acceleratorbench-task-cards-v0.3.md
+python -m moneybench.export_tasks --output outputs/founderbench-task-manifest.json
+python -m moneybench.task_cards --json-output outputs/founderbench-task-cards.json --markdown-output outputs/founderbench-task-cards.md
 ```
 
 ## Run A Single Task

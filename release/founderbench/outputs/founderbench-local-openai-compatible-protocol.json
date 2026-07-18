@@ -1,0 +1,38 @@
+{
+  "benchmark": "FounderBench",
+  "benchmark_version": "0.3.0",
+  "purpose": "Run a local/open-source model through an OpenAI-compatible chat-completions server.",
+  "recommended_models": [
+    "Qwen/Qwen2.5-7B-Instruct",
+    "Qwen/Qwen2.5-14B-Instruct",
+    "meta-llama/Llama-3.1-8B-Instruct",
+    "mistralai/Mistral-7B-Instruct"
+  ],
+  "config": {
+    "endpoint_type": "local-openai-compatible",
+    "base_url": "http://localhost:8000/v1",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "api_key_configured": false,
+    "timeout_s": 60
+  },
+  "environment": {
+    "OPENAI_COMPAT_BASE_URL": "http://localhost:8000/v1",
+    "OPENAI_COMPAT_MODEL": "Qwen/Qwen2.5-7B-Instruct",
+    "OPENAI_COMPAT_API_KEY": "optional for local servers; do not commit real keys"
+  },
+  "commands": [
+    "python -m moneybench.local_model protocol --output outputs/founderbench-local-openai-compatible-protocol.json",
+    "python -m moneybench.local_model health --output outputs/local-health.json",
+    "python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model.json --resume --audit",
+    "python -m moneybench.submission --input outputs/founderbench-local-open-model.json --report outputs/founderbench-local-open-model-submission-report.md"
+  ],
+  "reporting_requirements": [
+    "model id and exact checkpoint or quantization",
+    "inference server and version",
+    "hardware",
+    "decoding settings",
+    "raw run JSON",
+    "submission validation report",
+    "representative redacted audit traces"
+  ]
+}

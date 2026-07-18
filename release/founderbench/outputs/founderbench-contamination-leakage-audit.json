@@ -1,0 +1,90 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Contamination and leakage audit for public benchmark release, provider submissions, and private-holdout claim discipline.",
+  "status": "public_suite_visible_private_holdout_not_executed",
+  "summary": {
+    "public_tasks": 50,
+    "public_dev": 30,
+    "public_test": 20,
+    "private_holdout_protocol_exists": true,
+    "official_private_leaderboard": false,
+    "contamination_free_claim_supported": false,
+    "leakage_surfaces": 5,
+    "claim_guardrails": 5,
+    "required_reviewer_checks": 6
+  },
+  "split_controls": [
+    {
+      "split": "public_dev",
+      "tasks": 30,
+      "visibility": "released",
+      "allowed_use": "prompt development, adapter debugging, task calibration, and ablation design",
+      "hidden": false,
+      "claim_rule": "Development evidence only; not an unseen generalization estimate."
+    },
+    {
+      "split": "public_test",
+      "tasks": 20,
+      "visibility": "released",
+      "allowed_use": "reported open evaluation with overfitting and contamination caveats",
+      "hidden": false,
+      "claim_rule": "Public benchmark score; not a private holdout or contamination-free score."
+    },
+    {
+      "split": "private_holdout",
+      "tasks": 20,
+      "visibility": "evaluator_controlled_protocol_only",
+      "allowed_use": "future evaluator-hosted hidden evaluation",
+      "hidden": true,
+      "claim_rule": "Hidden-suite claims require official evaluator aggregate results; current release has no official private leaderboard."
+    }
+  ],
+  "leakage_surfaces": [
+    {
+      "id": "released_public_task_definitions",
+      "surface": "Public task definitions, task cards, coverage reports, seeds, allowed actions, and scoring metadata are included in the repository and supplementary package.",
+      "status": "known_visible",
+      "mitigation": "Treat public_dev and public_test as visible public splits; require disclosure for tuned agents and use a private evaluator-hosted holdout for hidden-suite claims."
+    },
+    {
+      "id": "prompt_contains_current_task_context",
+      "surface": "Provider prompts include the current task id, task description, observation, allowed actions, and response schema.",
+      "status": "intended_task_context",
+      "mitigation": "Freeze prompt hashes and action schema so providers receive comparable task context without hidden evaluator metadata."
+    },
+    {
+      "id": "audit_traces_can_contain_prompts_or_responses",
+      "surface": "Provider audit logs may contain prompts, redacted raw responses, parser failures, token usage, and latency metadata.",
+      "status": "redaction_and_review_required",
+      "mitigation": "Redact secrets and review traces before release; never publish private-holdout prompts or raw private task definitions during an active cycle."
+    },
+    {
+      "id": "older_provider_like_outputs",
+      "surface": "Older exploratory provider-like files may exist in local workspaces and can have mismatched prompts, task counts, or benchmark versions.",
+      "status": "excluded_until_validated",
+      "mitigation": "Use provider-run-status, model-result-card, and submission-validation artifacts to exclude invalid or stale provider rows from paper claims."
+    },
+    {
+      "id": "task_aware_heuristic_family_knowledge",
+      "surface": "The task-aware heuristic encodes task-family knowledge and can overfit the released public suite.",
+      "status": "calibration_ceiling_not_agent_baseline",
+      "mitigation": "Report it as a calibration ceiling and ablation target, not as evidence that LLM agents can operate startups."
+    }
+  ],
+  "claim_guardrails": [
+    "Do not call public_test hidden, unseen, secret, private, or contamination-free.",
+    "Do not claim the benchmark is free from pretraining or post-release contamination; public tasks are intentionally visible.",
+    "Do not treat the aggregate-only private holdout smoke report as an official hidden leaderboard.",
+    "Require model submitters to disclose prompt tuning, agent tuning, self-consistency selection, or training on public tasks.",
+    "Use only evaluator-hosted private tasks for hidden-suite claims, and report aggregate private fields without private task definitions during an active cycle."
+  ],
+  "required_reviewer_checks": [
+    "Confirm submitted model cards disclose whether public tasks were used for prompt, agent, or training development.",
+    "Verify public reports do not describe public_test as hidden or contamination-free.",
+    "Run the evaluator-hosted private holdout before accepting hidden-suite or anti-gaming claims.",
+    "Compare public and private score deltas when official private results become available.",
+    "Check prompt/protocol hashes and exclude runs whose prompts or task counts do not match current release.",
+    "Review released audit traces for secret leakage and keep active private traces aggregate-only."
+  ]
+}

@@ -1,0 +1,1002 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "source_raw": "C:\\Users\\louis\\Documents\\Codex\\2026-07-14\\use\\outputs\\founderbench-baseline-raw.json",
+  "examples": [
+    {
+      "label": "task_heuristic_representative_success",
+      "policy": "task_heuristic",
+      "task_id": "FND-011",
+      "reason": "Highest-scoring solved task for the strongest deterministic baseline.",
+      "task_name": "Improve retention v1",
+      "task_family": "Retention improvement",
+      "description": "Start with weak quality and existing customers; improve retention and reputation.",
+      "score": {
+        "task_id": "FND-011",
+        "name": "Improve retention v1",
+        "score": 100.0,
+        "passed": true,
+        "metrics": {
+          "customers": 7,
+          "quality": 0.84,
+          "reputation": 0.929,
+          "churned": 0,
+          "extra_offers": 0
+        },
+        "notes": [
+          "The task starts with customers and a weak product; good agents improve quality and support."
+        ]
+      },
+      "summary": {
+        "seed": 30,
+        "weeks": 8,
+        "cash": 8936.8,
+        "score": 18915.68,
+        "reputation": 0.929,
+        "offers": 1,
+        "customers": 7,
+        "cumulative_revenue": 6975.0,
+        "cumulative_cost": 6038.2,
+        "cumulative_api_cost": 3.85,
+        "funding_raised": 0.0,
+        "risk_penalty": 0.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 11,
+        "avg_actions_per_week": 1.375,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 0.0,
+        "simulated_api_cost": 3.85,
+        "provider_prompt_tokens": 0,
+        "provider_completion_tokens": 0,
+        "provider_total_tokens": 0,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": [
+        {
+          "week": 1,
+          "cash": 8000.0,
+          "reputation": 0.72,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "improve_offer",
+              "offer_id": "offer_1",
+              "budget": 800,
+              "message_quality": 0.6
+            },
+            {
+              "type": "support_customers",
+              "budget": 500,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 775.0,
+          "cost": 1319.8,
+          "customers": null,
+          "notes": [
+            "Improved offer_1.",
+            "Invested in customer support."
+          ]
+        },
+        {
+          "week": 2,
+          "cash": 7455.2,
+          "reputation": 0.748,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "improve_offer",
+              "offer_id": "offer_1",
+              "budget": 800,
+              "message_quality": 0.6
+            },
+            {
+              "type": "support_customers",
+              "budget": 500,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 775.0,
+          "cost": 1319.8,
+          "customers": null,
+          "notes": [
+            "Improved offer_1.",
+            "Invested in customer support."
+          ]
+        },
+        {
+          "week": 3,
+          "cash": 6910.4,
+          "reputation": 0.777,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "improve_offer",
+              "offer_id": "offer_1",
+              "budget": 800,
+              "message_quality": 0.6
+            },
+            {
+              "type": "support_customers",
+              "budget": 500,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 775.0,
+          "cost": 1319.8,
+          "customers": null,
+          "notes": [
+            "Improved offer_1.",
+            "Invested in customer support."
+          ]
+        },
+        {
+          "week": 4,
+          "cash": 6365.6,
+          "reputation": 0.805,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "support_customers",
+              "budget": 500,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 775.0,
+          "cost": 519.8,
+          "customers": null,
+          "notes": [
+            "Invested in customer support."
+          ]
+        },
+        {
+          "week": 5,
+          "cash": 6620.8,
+          "reputation": 0.833,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "support_customers",
+              "budget": 500,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 930.0,
+          "cost": 523.76,
+          "customers": null,
+          "notes": [
+            "Invested in customer support.",
+            "offer_1 acquired 1 customers."
+          ]
+        },
+        {
+          "week": 6,
+          "cash": 7027.04,
+          "reputation": 0.861,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "support_customers",
+              "budget": 320,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 930.0,
+          "cost": 343.76,
+          "customers": null,
+          "notes": [
+            "Invested in customer support."
+          ]
+        },
+        {
+          "week": 7,
+          "cash": 7613.28,
+          "reputation": 0.884,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "support_customers",
+              "budget": 320,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 930.0,
+          "cost": 343.76,
+          "customers": null,
+          "notes": [
+            "Invested in customer support."
+          ]
+        },
+        {
+          "week": 8,
+          "cash": 8199.52,
+          "reputation": 0.907,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "support_customers",
+              "budget": 320,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 1085.0,
+          "cost": 347.72,
+          "customers": null,
+          "notes": [
+            "Invested in customer support.",
+            "offer_1 acquired 1 customers."
+          ]
+        }
+      ]
+    },
+    {
+      "label": "task_heuristic_representative_failure",
+      "policy": "task_heuristic",
+      "task_id": "FND-002",
+      "reason": "Lowest-scoring failed task for the strongest deterministic baseline.",
+      "task_name": "Select a viable market v2",
+      "task_family": "Market selection",
+      "description": "Research noisy market options and commit to a viable first offer.",
+      "score": {
+        "task_id": "FND-002",
+        "name": "Select a viable market v2",
+        "score": 37.77,
+        "passed": false,
+        "metrics": {
+          "researched_markets": 7,
+          "chose_good_market": false,
+          "cash": 5428.54
+        },
+        "notes": [
+          "Good markets are defined by low competition, adequate demand, and workable support load."
+        ]
+      },
+      "summary": {
+        "seed": 41,
+        "weeks": 10,
+        "cash": 5428.54,
+        "score": 5719.01,
+        "reputation": 0.594,
+        "offers": 1,
+        "customers": 0,
+        "cumulative_revenue": 0.0,
+        "cumulative_cost": 4571.46,
+        "cumulative_api_cost": 4.2,
+        "funding_raised": 0.0,
+        "risk_penalty": 0.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 10,
+        "total_actions": 12,
+        "avg_actions_per_week": 1.2,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 0.0002,
+        "simulated_api_cost": 4.2,
+        "provider_prompt_tokens": 0,
+        "provider_completion_tokens": 0,
+        "provider_total_tokens": 0,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": [
+        {
+          "week": 1,
+          "cash": 10000.0,
+          "reputation": 0.55,
+          "offers": 0,
+          "actions": [
+            {
+              "type": "research_market",
+              "market_id": "saas_churn",
+              "budget": 150,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 0.0,
+          "cost": 150.0,
+          "customers": null,
+          "notes": [
+            "Researched Indie SaaS."
+          ]
+        },
+        {
+          "week": 2,
+          "cash": 9850.0,
+          "reputation": 0.55,
+          "offers": 0,
+          "actions": [
+            {
+              "type": "research_market",
+              "market_id": "data_cleanup",
+              "budget": 150,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 0.0,
+          "cost": 150.0,
+          "customers": null,
+          "notes": [
+            "Researched Ops Teams."
+          ]
+        },
+        {
+          "week": 3,
+          "cash": 9700.0,
+          "reputation": 0.55,
+          "offers": 0,
+          "actions": [
+            {
+              "type": "research_market",
+              "market_id": "grant_scan",
+              "budget": 150,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 0.0,
+          "cost": 150.0,
+          "customers": null,
+          "notes": [
+            "Researched Research Labs."
+          ]
+        },
+        {
+          "week": 4,
+          "cash": 9550.0,
+          "reputation": 0.55,
+          "offers": 0,
+          "actions": [
+            {
+              "type": "build_offer",
+              "market_id": "grant_scan",
+              "budget": 1900,
+              "price": 288.6,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 0.0,
+          "cost": 1900.0,
+          "customers": null,
+          "notes": [
+            "Built offer for Research Labs."
+          ]
+        },
+        {
+          "week": 5,
+          "cash": 7650.0,
+          "reputation": 0.55,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "research_market",
+              "market_id": "support_triage",
+              "budget": 160,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 0.0,
+          "cost": 160.0,
+          "customers": null,
+          "notes": [
+            "Researched B2B Support."
+          ]
+        },
+        {
+          "week": 6,
+          "cash": 7490.0,
+          "reputation": 0.55,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "research_market",
+              "market_id": "sales_intel",
+              "budget": 160,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 0.0,
+          "cost": 160.0,
+          "customers": null,
+          "notes": [
+            "Researched Sales Teams."
+          ]
+        },
+        {
+          "week": 7,
+          "cash": 7330.0,
+          "reputation": 0.55,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "research_market",
+              "market_id": "recruiting_brief",
+              "budget": 160,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 0.0,
+          "cost": 160.0,
+          "customers": null,
+          "notes": [
+            "Researched Recruiters."
+          ]
+        },
+        {
+          "week": 8,
+          "cash": 7170.0,
+          "reputation": 0.55,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "research_market",
+              "market_id": "legal_summary",
+              "budget": 160,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 0.0,
+          "cost": 160.0,
+          "customers": null,
+          "notes": [
+            "Researched Small Law Firms."
+          ]
+        },
+        {
+          "week": 9,
+          "cash": 7010.0,
+          "reputation": 0.55,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "run_campaign",
+              "offer_id": "offer_1",
+              "budget": 525.75,
+              "message_quality": 0.9
+            },
+            {
+              "type": "support_customers",
+              "budget": 315.45,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 0.0,
+          "cost": 841.2,
+          "customers": null,
+          "notes": [
+            "Ran campaign for offer_1.",
+            "Invested in customer support."
+          ]
+        },
+        {
+          "week": 10,
+          "cash": 6168.8,
+          "reputation": 0.572,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "run_campaign",
+              "offer_id": "offer_1",
+              "budget": 462.65999999999997,
+              "message_quality": 0.9
+            },
+            {
+              "type": "support_customers",
+              "budget": 277.596,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 0.0,
+          "cost": 740.26,
+          "customers": null,
+          "notes": [
+            "Ran campaign for offer_1.",
+            "Invested in customer support."
+          ]
+        }
+      ]
+    },
+    {
+      "label": "heuristic_pivot_failure",
+      "policy": "heuristic",
+      "task_id": "FND-040",
+      "reason": "Generic heuristic failure in a family where task conditioning creates a large gain.",
+      "task_name": "Decide whether to pivot v5",
+      "task_family": "Pivot decision",
+      "description": "Recover from a stalled offer by diagnosing whether to pivot into a better market.",
+      "score": {
+        "task_id": "FND-040",
+        "name": "Decide whether to pivot v5",
+        "score": 19.51,
+        "passed": false,
+        "metrics": {
+          "market_id": "support_triage",
+          "chose_target_market": false,
+          "customers": 0,
+          "recurring_revenue": 0,
+          "cash": 4539.63
+        },
+        "notes": [
+          "The task starts with a stalled offer; good agents diagnose and pivot rather than over-investing in a dead path."
+        ]
+      },
+      "summary": {
+        "seed": 83,
+        "weeks": 10,
+        "cash": 4539.63,
+        "score": 4884.21,
+        "reputation": 0.704,
+        "offers": 1,
+        "customers": 0,
+        "cumulative_revenue": 0.0,
+        "cumulative_cost": 4260.37,
+        "cumulative_api_cost": 4.9,
+        "funding_raised": 0.0,
+        "risk_penalty": 0.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 10,
+        "total_actions": 14,
+        "avg_actions_per_week": 1.4,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 0.0001,
+        "simulated_api_cost": 4.9,
+        "provider_prompt_tokens": 0,
+        "provider_completion_tokens": 0,
+        "provider_total_tokens": 0,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": [
+        {
+          "week": 1,
+          "cash": 8800.0,
+          "reputation": 0.64,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "research_market",
+              "market_id": "saas_churn",
+              "budget": 160,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 0.0,
+          "cost": 160.0,
+          "customers": null,
+          "notes": [
+            "Researched Indie SaaS."
+          ]
+        },
+        {
+          "week": 2,
+          "cash": 8640.0,
+          "reputation": 0.64,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "research_market",
+              "market_id": "grant_scan",
+              "budget": 160,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 0.0,
+          "cost": 160.0,
+          "customers": null,
+          "notes": [
+            "Researched Research Labs."
+          ]
+        },
+        {
+          "week": 3,
+          "cash": 8480.0,
+          "reputation": 0.64,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "research_market",
+              "market_id": "data_cleanup",
+              "budget": 160,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 0.0,
+          "cost": 160.0,
+          "customers": null,
+          "notes": [
+            "Researched Ops Teams."
+          ]
+        },
+        {
+          "week": 4,
+          "cash": 8320.0,
+          "reputation": 0.64,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "research_market",
+              "market_id": "legal_summary",
+              "budget": 160,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 0.0,
+          "cost": 160.0,
+          "customers": null,
+          "notes": [
+            "Researched Small Law Firms."
+          ]
+        },
+        {
+          "week": 5,
+          "cash": 8160.0,
+          "reputation": 0.64,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "research_market",
+              "market_id": "recruiting_brief",
+              "budget": 160,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 0.0,
+          "cost": 160.0,
+          "customers": null,
+          "notes": [
+            "Researched Recruiters."
+          ]
+        },
+        {
+          "week": 6,
+          "cash": 8000.0,
+          "reputation": 0.64,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "research_market",
+              "market_id": "sales_intel",
+              "budget": 160,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 0.0,
+          "cost": 160.0,
+          "customers": null,
+          "notes": [
+            "Researched Sales Teams."
+          ]
+        },
+        {
+          "week": 7,
+          "cash": 7840.0,
+          "reputation": 0.64,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "research_market",
+              "market_id": "shopify_seo",
+              "budget": 160,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 0.0,
+          "cost": 160.0,
+          "customers": null,
+          "notes": [
+            "Researched Shopify Stores."
+          ]
+        },
+        {
+          "week": 8,
+          "cash": 7680.0,
+          "reputation": 0.64,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "improve_offer",
+              "offer_id": "offer_1",
+              "budget": 691.1999999999999,
+              "message_quality": 0.6
+            },
+            {
+              "type": "run_campaign",
+              "offer_id": "offer_1",
+              "budget": 576.0,
+              "message_quality": 0.9
+            },
+            {
+              "type": "support_customers",
+              "budget": 345.59999999999997,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 0.0,
+          "cost": 1612.8,
+          "customers": null,
+          "notes": [
+            "Improved offer_1.",
+            "Ran campaign for offer_1.",
+            "Invested in customer support."
+          ]
+        },
+        {
+          "week": 9,
+          "cash": 6067.2,
+          "reputation": 0.664,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "improve_offer",
+              "offer_id": "offer_1",
+              "budget": 546.048,
+              "message_quality": 0.6
+            },
+            {
+              "type": "support_customers",
+              "budget": 273.024,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 0.0,
+          "cost": 819.07,
+          "customers": null,
+          "notes": [
+            "Improved offer_1.",
+            "Invested in customer support."
+          ]
+        },
+        {
+          "week": 10,
+          "cash": 5248.13,
+          "reputation": 0.684,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "improve_offer",
+              "offer_id": "offer_1",
+              "budget": 472.3317,
+              "message_quality": 0.6
+            },
+            {
+              "type": "support_customers",
+              "budget": 236.16585,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 0.0,
+          "cost": 708.5,
+          "customers": null,
+          "notes": [
+            "Improved offer_1.",
+            "Invested in customer support."
+          ]
+        }
+      ]
+    },
+    {
+      "label": "random_representative_failure",
+      "policy": "random",
+      "task_id": "FND-012",
+      "reason": "Lowest-scoring random-policy failure, illustrating why blind action sampling is insufficient.",
+      "task_name": "Improve retention v2",
+      "task_family": "Retention improvement",
+      "description": "Start with weak quality and existing customers; improve retention and reputation.",
+      "score": {
+        "task_id": "FND-012",
+        "name": "Improve retention v2",
+        "score": 46.22,
+        "passed": false,
+        "metrics": {
+          "customers": 4,
+          "quality": 0.602,
+          "reputation": 0.694,
+          "churned": 0,
+          "extra_offers": 0
+        },
+        "notes": [
+          "The task starts with customers and a weak product; good agents improve quality and support."
+        ]
+      },
+      "summary": {
+        "seed": 31,
+        "weeks": 8,
+        "cash": 13935.41,
+        "score": 25286.4,
+        "reputation": 0.694,
+        "offers": 1,
+        "customers": 4,
+        "cumulative_revenue": 8896.0,
+        "cumulative_cost": 3960.59,
+        "cumulative_api_cost": 2.8,
+        "funding_raised": 0.0,
+        "risk_penalty": 80.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 8,
+        "avg_actions_per_week": 1.0,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 0.0,
+        "simulated_api_cost": 2.8,
+        "provider_prompt_tokens": 0,
+        "provider_completion_tokens": 0,
+        "provider_total_tokens": 0,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": [
+        {
+          "week": 1,
+          "cash": 9000.0,
+          "reputation": 0.68,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "change_price",
+              "offer_id": "offer_1",
+              "price": 110,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 440.0,
+          "cost": 64.48,
+          "customers": null,
+          "notes": [
+            "Price cut may anchor the offer as low-value.",
+            "Changed offer_1 price from 185.00 to 110.00."
+          ]
+        },
+        {
+          "week": 2,
+          "cash": 9375.52,
+          "reputation": 0.664,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "support_customers",
+              "budget": 577,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 440.0,
+          "cost": 601.48,
+          "customers": null,
+          "notes": [
+            "Invested in customer support."
+          ]
+        },
+        {
+          "week": 3,
+          "cash": 9214.04,
+          "reputation": 0.694,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "change_price",
+              "offer_id": "offer_1",
+              "price": 334,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 1336.0,
+          "cost": 64.48,
+          "customers": null,
+          "notes": [
+            "Changed offer_1 price from 110.00 to 334.00."
+          ]
+        },
+        {
+          "week": 4,
+          "cash": 10485.56,
+          "reputation": 0.694,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "hire_agent",
+              "budget": 1497,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 1336.0,
+          "cost": 1521.48,
+          "customers": null,
+          "notes": [
+            "Hired an additional agent worker."
+          ]
+        },
+        {
+          "week": 5,
+          "cash": 10300.08,
+          "reputation": 0.694,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "improve_offer",
+              "offer_id": "offer_1",
+              "budget": 777,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 1336.0,
+          "cost": 801.48,
+          "customers": null,
+          "notes": [
+            "Improved offer_1."
+          ]
+        },
+        {
+          "week": 6,
+          "cash": 10834.6,
+          "reputation": 0.694,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "run_campaign",
+              "offer_id": "offer_1",
+              "budget": 1176,
+              "message_quality": 0.9872592010330129
+            }
+          ],
+          "revenue": 1336.0,
+          "cost": 1200.48,
+          "customers": null,
+          "notes": [
+            "Ran campaign for offer_1."
+          ]
+        },
+        {
+          "week": 7,
+          "cash": 10970.12,
+          "reputation": 0.694,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "cut_cost",
+              "budget": 361,
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 1336.0,
+          "cost": -317.77,
+          "customers": null,
+          "notes": [
+            "Reduced operating costs."
+          ]
+        },
+        {
+          "week": 8,
+          "cash": 12623.89,
+          "reputation": 0.694,
+          "offers": 1,
+          "actions": [
+            {
+              "type": "do_nothing",
+              "message_quality": 0.6
+            }
+          ],
+          "revenue": 1336.0,
+          "cost": 24.48,
+          "customers": null,
+          "notes": [
+            "Held position."
+          ]
+        }
+      ]
+    }
+  ]
+}

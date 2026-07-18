@@ -1,0 +1,59 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Paper and benchmark-card claim lint for unsupported hosted-LLM, hidden-holdout, and real-world startup-success wording.",
+  "targets": [
+    {
+      "id": "paper_draft",
+      "path": "outputs/founderbench-paper-draft.md",
+      "exists": true,
+      "required_disclosures": [
+        {
+          "phrase": "not yet a comparison of hosted LLM providers",
+          "present": true
+        },
+        {
+          "phrase": "does not include private task definitions or hidden-suite scores",
+          "present": true
+        },
+        {
+          "phrase": "real-world startup-prediction claims as unsupported",
+          "present": true
+        }
+      ],
+      "missing_required_disclosures": [],
+      "forbidden_hits": [],
+      "status": "pass"
+    },
+    {
+      "id": "benchmark_card",
+      "path": "outputs/founderbench-benchmark-card.md",
+      "exists": true,
+      "required_disclosures": [
+        {
+          "phrase": "hosted LLM submissions still need repeated-sampling reports",
+          "present": true
+        },
+        {
+          "phrase": "full publishable-artifact goal as `not_complete`",
+          "present": true
+        },
+        {
+          "phrase": "required hosted/local LLM evidence",
+          "present": true
+        }
+      ],
+      "missing_required_disclosures": [],
+      "forbidden_hits": [],
+      "status": "pass"
+    }
+  ],
+  "summary": {
+    "targets": 2,
+    "passed": 2,
+    "failed": 0,
+    "forbidden_hits": 0,
+    "missing_required_disclosures": 0
+  },
+  "claim_guardrail": "This lint is a conservative text check. Passing it does not prove the paper is publication-ready; it only checks that key current-draft overclaiming guardrails are present and selected unsupported positive claims are absent."
+}

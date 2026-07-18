@@ -1,0 +1,41 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "status": "smoke_test_only_not_official_holdout",
+  "purpose": "Aggregate-only smoke test proving the private-holdout evaluator harness can generate and execute 20 hidden-format tasks without publishing task definitions.",
+  "official_claim_guardrail": "Do not report this smoke result as an official private leaderboard, hidden holdout score, or model-comparison result.",
+  "policy": "conservative",
+  "run_seed": 0,
+  "public_smoke_secret_disclosed": true,
+  "secret_values_recorded": false,
+  "private_report": {
+    "benchmark": "FounderBench",
+    "benchmark_version": "0.3.0",
+    "holdout_protocol_version": "0.1",
+    "policy": "conservative",
+    "run_seed": 0,
+    "private_tasks": 20,
+    "private_solved": 6,
+    "private_solve_rate": 0.3,
+    "private_average_task_score": 53.02,
+    "private_provider_errors": 0,
+    "private_invalid_actions": 0,
+    "private_over_budget_decisions": 0,
+    "private_estimated_provider_cost_usd": 0.0,
+    "private_decision_latency_s": 0.0003,
+    "provider_error_categories": {},
+    "fingerprint_manifest_sha256": "79ccf170547cfb8e1a7c9f181e2a3498fc29c3b76fd1ef1ea941bb2d88fb9047",
+    "secret_values_recorded": false,
+    "public_report_note": "This file intentionally excludes private task initial states, selected public-family template ids, hidden seeds, and raw traces unless audit mode is explicitly enabled on the evaluator host."
+  },
+  "summary": {
+    "private_tasks": 20,
+    "private_solved": 6,
+    "private_solve_rate": 0.3,
+    "private_average_task_score": 53.02,
+    "private_invalid_actions": 0,
+    "private_over_budget_decisions": 0,
+    "private_provider_errors": 0,
+    "contains_raw_private_results": false
+  }
+}

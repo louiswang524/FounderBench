@@ -1,0 +1,77 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "note": "This report records whether required environment variables are configured. It never stores secret values.",
+  "providers": [
+    {
+      "provider": "DeepSeek",
+      "policy": "deepseek",
+      "model": "deepseek-chat",
+      "ready_without_secrets_exposed": false,
+      "env_status": {
+        "DEEPSEEK_API_KEY": "missing",
+        "DEEPSEEK_MODEL": "default:deepseek-chat"
+      },
+      "run_command": "python -m moneybench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek.json --resume",
+      "audit_command": "python -m moneybench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek-audit.json --resume --audit",
+      "validation_command": "python -m moneybench.submission --input outputs/founderbench-deepseek.json --report outputs/founderbench-deepseek-submission-report.md"
+    },
+    {
+      "provider": "DeepSeek self-consistency",
+      "policy": "deepseek_sc",
+      "model": "deepseek-chat",
+      "ready_without_secrets_exposed": false,
+      "env_status": {
+        "DEEPSEEK_API_KEY": "missing",
+        "DEEPSEEK_MODEL": "default:deepseek-chat",
+        "SC_K": "default:3",
+        "SC_TEMPERATURE": "default:0.7"
+      },
+      "run_command": "python -m moneybench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3.json --resume",
+      "audit_command": "python -m moneybench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-audit.json --resume --audit",
+      "validation_command": "python -m moneybench.submission --input outputs/founderbench-deepseek-sc-k3.json --report outputs/founderbench-deepseek-sc-k3-submission-report.md"
+    },
+    {
+      "provider": "Anthropic Claude",
+      "policy": "anthropic",
+      "model": "claude-sonnet-4-5",
+      "ready_without_secrets_exposed": false,
+      "env_status": {
+        "ANTHROPIC_API_KEY": "missing",
+        "ANTHROPIC_MODEL": "default:claude-sonnet-4-5"
+      },
+      "run_command": "python -m moneybench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic.json --resume",
+      "audit_command": "python -m moneybench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic-audit.json --resume --audit",
+      "validation_command": "python -m moneybench.submission --input outputs/founderbench-anthropic.json --report outputs/founderbench-anthropic-submission-report.md"
+    },
+    {
+      "provider": "Google Gemini",
+      "policy": "gemini",
+      "model": "gemini-2.5-flash",
+      "ready_without_secrets_exposed": false,
+      "env_status": {
+        "GEMINI_API_KEY": "missing",
+        "GEMINI_MODEL": "default:gemini-2.5-flash"
+      },
+      "run_command": "python -m moneybench.resumable_runner --policy gemini --output outputs/founderbench-gemini.json --resume",
+      "audit_command": "python -m moneybench.resumable_runner --policy gemini --output outputs/founderbench-gemini-audit.json --resume --audit",
+      "validation_command": "python -m moneybench.submission --input outputs/founderbench-gemini.json --report outputs/founderbench-gemini-submission-report.md"
+    },
+    {
+      "provider": "Local/OpenAI-compatible",
+      "policy": "llm",
+      "model": "Qwen/Qwen2.5-7B-Instruct",
+      "ready_without_secrets_exposed": false,
+      "env_status": {
+        "OPENAI_COMPAT_API_KEY": "optional",
+        "OPENAI_COMPAT_MODEL": "default:Qwen/Qwen2.5-7B-Instruct",
+        "OPENAI_COMPAT_BASE_URL": "missing"
+      },
+      "run_command": "python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model.json --resume",
+      "audit_command": "python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model-audit.json --resume --audit",
+      "validation_command": "python -m moneybench.submission --input outputs/founderbench-local-open-model.json --report outputs/founderbench-local-open-model-submission-report.md"
+    }
+  ],
+  "ready_count": 0,
+  "provider_count": 5
+}

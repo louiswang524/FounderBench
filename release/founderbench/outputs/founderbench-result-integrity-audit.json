@@ -1,0 +1,67 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Raw-to-report integrity audit for deterministic baseline results.",
+  "source_files": {
+    "raw": "outputs\\founderbench-baseline-raw.json",
+    "leaderboard": "outputs\\founderbench-baseline-leaderboard.json",
+    "paper_tables": "outputs\\founderbench-paper-tables.json",
+    "model_comparison": "outputs\\founderbench-model-comparison.json"
+  },
+  "summary": {
+    "raw_runs": 4,
+    "policies_checked": 4,
+    "policies_passed": 4,
+    "policies_failed": 0,
+    "all_ordering_checks_passed": true,
+    "all_integrity_checks_passed": true
+  },
+  "ordering_checks": {
+    "leaderboard_order_matches_raw": true,
+    "paper_table_order_matches_raw": true,
+    "model_comparison_order_matches_raw": true
+  },
+  "policy_checks": [
+    {
+      "policy": "task_heuristic",
+      "status": "pass",
+      "raw_tasks": 50,
+      "average_task_score": 80.9,
+      "leaderboard_score": 80.9,
+      "paper_table_score": "80.90",
+      "model_comparison_score": "80.90",
+      "problems": []
+    },
+    {
+      "policy": "heuristic",
+      "status": "pass",
+      "raw_tasks": 50,
+      "average_task_score": 61.01,
+      "leaderboard_score": 61.01,
+      "paper_table_score": "61.01",
+      "model_comparison_score": "61.01",
+      "problems": []
+    },
+    {
+      "policy": "conservative",
+      "status": "pass",
+      "raw_tasks": 50,
+      "average_task_score": 54.04,
+      "leaderboard_score": 54.04,
+      "paper_table_score": "54.04",
+      "model_comparison_score": "54.04",
+      "problems": []
+    },
+    {
+      "policy": "random",
+      "status": "pass",
+      "raw_tasks": 50,
+      "average_task_score": 33.3,
+      "leaderboard_score": 33.3,
+      "paper_table_score": "33.30",
+      "model_comparison_score": "33.30",
+      "problems": []
+    }
+  ],
+  "claim_guardrail": "Deterministic baseline tables are paper-eligible only while this audit passes; hosted/local provider rows require separate submission validation before inclusion."
+}

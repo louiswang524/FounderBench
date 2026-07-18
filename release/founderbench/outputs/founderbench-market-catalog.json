@@ -1,0 +1,212 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Human-readable catalog of the fixed simulated markets used in current release.",
+  "summary": {
+    "markets": 8,
+    "mean_base_demand": 0.674,
+    "mean_competition": 0.495,
+    "mean_willingness_to_pay": 271.88,
+    "mean_support_load": 0.351
+  },
+  "observation_rules": [
+    "Unresearched markets expose noisy demand, competition, and willingness-to-pay signals.",
+    "research_market or interview_customers with a market_id marks that market as researched.",
+    "Researched markets expose exact current demand, exact competition, and exact willingness-to-pay signals.",
+    "Current demand equals base_demand plus seed-dependent market momentum, clamped to [0.05, 1.2].",
+    "Market momentum evolves each week using volatility-scaled shocks and decay."
+  ],
+  "settlement_rules": [
+    "Customer acquisition increases with demand, awareness, quality, price fit, and reputation.",
+    "Competition subtracts from conversion.",
+    "Churn depends on support load, offer quality, and reputation.",
+    "Weekly support cost scales with customers and support load.",
+    "Support overload can reduce reputation when support_required exceeds agent_capacity * 30."
+  ],
+  "markets": [
+    {
+      "market_id": "saas_churn",
+      "name": "Indie SaaS",
+      "need": "weekly churn-risk reports",
+      "base_demand": 0.76,
+      "competition": 0.38,
+      "willingness_to_pay": 260,
+      "build_complexity": 0.45,
+      "support_load": 0.34,
+      "volatility": 0.11,
+      "demand_band": "high",
+      "competition_band": "low",
+      "build_complexity_band": "medium",
+      "support_load_band": "medium",
+      "volatility_band": "medium",
+      "opportunity_notes": [
+        "Higher demand helps acquisition.",
+        "Higher competition reduces conversion.",
+        "Higher willingness_to_pay supports higher prices.",
+        "Higher support_load increases weekly support cost and churn pressure.",
+        "Higher build_complexity requires more build_offer budget for quality."
+      ]
+    },
+    {
+      "market_id": "legal_summary",
+      "name": "Small Law Firms",
+      "need": "document summary packs",
+      "base_demand": 0.82,
+      "competition": 0.78,
+      "willingness_to_pay": 420,
+      "build_complexity": 0.58,
+      "support_load": 0.52,
+      "volatility": 0.08,
+      "demand_band": "high",
+      "competition_band": "high",
+      "build_complexity_band": "high",
+      "support_load_band": "high",
+      "volatility_band": "low",
+      "opportunity_notes": [
+        "Higher demand helps acquisition.",
+        "Higher competition reduces conversion.",
+        "Higher willingness_to_pay supports higher prices.",
+        "Higher support_load increases weekly support cost and churn pressure.",
+        "Higher build_complexity requires more build_offer budget for quality."
+      ]
+    },
+    {
+      "market_id": "shopify_seo",
+      "name": "Shopify Stores",
+      "need": "SEO product page refresh",
+      "base_demand": 0.68,
+      "competition": 0.61,
+      "willingness_to_pay": 180,
+      "build_complexity": 0.32,
+      "support_load": 0.28,
+      "volatility": 0.17,
+      "demand_band": "medium",
+      "competition_band": "medium",
+      "build_complexity_band": "low",
+      "support_load_band": "low",
+      "volatility_band": "high",
+      "opportunity_notes": [
+        "Higher demand helps acquisition.",
+        "Higher competition reduces conversion.",
+        "Higher willingness_to_pay supports higher prices.",
+        "Higher support_load increases weekly support cost and churn pressure.",
+        "Higher build_complexity requires more build_offer budget for quality."
+      ]
+    },
+    {
+      "market_id": "recruiting_brief",
+      "name": "Recruiters",
+      "need": "candidate briefing notes",
+      "base_demand": 0.62,
+      "competition": 0.44,
+      "willingness_to_pay": 145,
+      "build_complexity": 0.25,
+      "support_load": 0.31,
+      "volatility": 0.13,
+      "demand_band": "medium",
+      "competition_band": "medium",
+      "build_complexity_band": "low",
+      "support_load_band": "medium",
+      "volatility_band": "medium",
+      "opportunity_notes": [
+        "Higher demand helps acquisition.",
+        "Higher competition reduces conversion.",
+        "Higher willingness_to_pay supports higher prices.",
+        "Higher support_load increases weekly support cost and churn pressure.",
+        "Higher build_complexity requires more build_offer budget for quality."
+      ]
+    },
+    {
+      "market_id": "data_cleanup",
+      "name": "Ops Teams",
+      "need": "spreadsheet cleanup automation",
+      "base_demand": 0.58,
+      "competition": 0.32,
+      "willingness_to_pay": 210,
+      "build_complexity": 0.4,
+      "support_load": 0.22,
+      "volatility": 0.1,
+      "demand_band": "medium",
+      "competition_band": "low",
+      "build_complexity_band": "medium",
+      "support_load_band": "low",
+      "volatility_band": "medium",
+      "opportunity_notes": [
+        "Higher demand helps acquisition.",
+        "Higher competition reduces conversion.",
+        "Higher willingness_to_pay supports higher prices.",
+        "Higher support_load increases weekly support cost and churn pressure.",
+        "Higher build_complexity requires more build_offer budget for quality."
+      ]
+    },
+    {
+      "market_id": "support_triage",
+      "name": "B2B Support",
+      "need": "ticket triage workflow",
+      "base_demand": 0.72,
+      "competition": 0.52,
+      "willingness_to_pay": 330,
+      "build_complexity": 0.55,
+      "support_load": 0.47,
+      "volatility": 0.12,
+      "demand_band": "medium",
+      "competition_band": "medium",
+      "build_complexity_band": "high",
+      "support_load_band": "high",
+      "volatility_band": "medium",
+      "opportunity_notes": [
+        "Higher demand helps acquisition.",
+        "Higher competition reduces conversion.",
+        "Higher willingness_to_pay supports higher prices.",
+        "Higher support_load increases weekly support cost and churn pressure.",
+        "Higher build_complexity requires more build_offer budget for quality."
+      ]
+    },
+    {
+      "market_id": "grant_scan",
+      "name": "Research Labs",
+      "need": "grant opportunity scans",
+      "base_demand": 0.47,
+      "competition": 0.25,
+      "willingness_to_pay": 390,
+      "build_complexity": 0.36,
+      "support_load": 0.29,
+      "volatility": 0.18,
+      "demand_band": "low",
+      "competition_band": "low",
+      "build_complexity_band": "medium",
+      "support_load_band": "low",
+      "volatility_band": "high",
+      "opportunity_notes": [
+        "Higher demand helps acquisition.",
+        "Higher competition reduces conversion.",
+        "Higher willingness_to_pay supports higher prices.",
+        "Higher support_load increases weekly support cost and churn pressure.",
+        "Higher build_complexity requires more build_offer budget for quality."
+      ]
+    },
+    {
+      "market_id": "sales_intel",
+      "name": "Sales Teams",
+      "need": "account intelligence briefs",
+      "base_demand": 0.74,
+      "competition": 0.66,
+      "willingness_to_pay": 240,
+      "build_complexity": 0.42,
+      "support_load": 0.38,
+      "volatility": 0.15,
+      "demand_band": "high",
+      "competition_band": "high",
+      "build_complexity_band": "medium",
+      "support_load_band": "medium",
+      "volatility_band": "medium",
+      "opportunity_notes": [
+        "Higher demand helps acquisition.",
+        "Higher competition reduces conversion.",
+        "Higher willingness_to_pay supports higher prices.",
+        "Higher support_load increases weekly support cost and churn pressure.",
+        "Higher build_complexity requires more build_offer budget for quality."
+      ]
+    }
+  ]
+}

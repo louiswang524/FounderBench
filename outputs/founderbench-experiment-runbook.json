@@ -1,0 +1,265 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "material_passport": {
+    "artifact_type": "experiment_runbook",
+    "data_access_level": "no_raw_secret_values",
+    "verification_status": "planned_not_executed",
+    "scope": "operator instructions for producing missing current release hosted/local model evidence"
+  },
+  "purpose": "Runnable experiment runbook for clearing the missing hosted/local baseline evidence gate.",
+  "provider_environment": [
+    {
+      "provider": "DeepSeek",
+      "policy": "deepseek",
+      "priority": "required",
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "model_env": "DEEPSEEK_MODEL",
+      "base_url_env": "",
+      "default_model": "deepseek-chat"
+    },
+    {
+      "provider": "DeepSeek self-consistency",
+      "policy": "deepseek_sc",
+      "priority": "recommended",
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "model_env": "DEEPSEEK_MODEL",
+      "base_url_env": "",
+      "default_model": "deepseek-chat"
+    },
+    {
+      "provider": "Anthropic Claude",
+      "policy": "anthropic",
+      "priority": "required",
+      "api_key_env": "ANTHROPIC_API_KEY",
+      "model_env": "ANTHROPIC_MODEL",
+      "base_url_env": "",
+      "default_model": "claude-sonnet-4-5"
+    },
+    {
+      "provider": "Google Gemini",
+      "policy": "gemini",
+      "priority": "required",
+      "api_key_env": "GEMINI_API_KEY",
+      "model_env": "GEMINI_MODEL",
+      "base_url_env": "",
+      "default_model": "gemini-2.5-flash"
+    },
+    {
+      "provider": "Local/OpenAI-compatible",
+      "policy": "llm",
+      "priority": "required",
+      "api_key_env": "OPENAI_COMPAT_API_KEY",
+      "model_env": "OPENAI_COMPAT_MODEL",
+      "base_url_env": "OPENAI_COMPAT_BASE_URL",
+      "default_model": "Qwen/Qwen2.5-7B-Instruct"
+    }
+  ],
+  "phases": [
+    {
+      "id": "preflight",
+      "owner": "evaluator",
+      "purpose": "Confirm provider configuration, clean output target names, and record the exact model ids.",
+      "entry_condition": "Provider keys and model choices are available in environment variables; no secrets are written to files.",
+      "exit_condition": "Provider readiness report is regenerated and reviewed.",
+      "commands": [
+        "python -m moneybench.provider_readiness --json-output ..\\..\\outputs\\founderbench-provider-readiness.json --markdown-output ..\\..\\outputs\\founderbench-provider-readiness.md"
+      ],
+      "outputs": [
+        "outputs/founderbench-provider-readiness.json",
+        "outputs/founderbench-provider-readiness.md"
+      ]
+    },
+    {
+      "id": "single_required_runs",
+      "owner": "evaluator",
+      "purpose": "Run each required hosted/local model once on the complete 50-task suite.",
+      "entry_condition": "Preflight passes for the provider being executed.",
+      "exit_condition": "Every required single-run output exists and passes submission validation.",
+      "commands": [
+        "python -m moneybench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek.json --resume --seed 0",
+        "python -m moneybench.submission --input outputs/founderbench-deepseek.json --report outputs/founderbench-deepseek-submission-report.md",
+        "python -m moneybench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic.json --resume --seed 0",
+        "python -m moneybench.submission --input outputs/founderbench-anthropic.json --report outputs/founderbench-anthropic-submission-report.md",
+        "python -m moneybench.resumable_runner --policy gemini --output outputs/founderbench-gemini.json --resume --seed 0",
+        "python -m moneybench.submission --input outputs/founderbench-gemini.json --report outputs/founderbench-gemini-submission-report.md",
+        "python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model.json --resume --seed 0",
+        "python -m moneybench.submission --input outputs/founderbench-local-open-model.json --report outputs/founderbench-local-open-model-submission-report.md"
+      ],
+      "outputs": [
+        "outputs/founderbench-deepseek.json",
+        "outputs/founderbench-deepseek-submission-report.md",
+        "outputs/founderbench-anthropic.json",
+        "outputs/founderbench-anthropic-submission-report.md",
+        "outputs/founderbench-gemini.json",
+        "outputs/founderbench-gemini-submission-report.md",
+        "outputs/founderbench-local-open-model.json",
+        "outputs/founderbench-local-open-model-submission-report.md"
+      ]
+    },
+    {
+      "id": "audit_traces",
+      "owner": "evaluator",
+      "purpose": "Collect redacted audit traces for hosted/local runs so qualitative failures can be inspected.",
+      "entry_condition": "At least the corresponding single run has completed or is intentionally being repeated with audit enabled.",
+      "exit_condition": "Audit outputs and their submission reports exist for required runs.",
+      "commands": [
+        "python -m moneybench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek-audit.json --resume --seed 0 --audit",
+        "python -m moneybench.submission --input outputs/founderbench-deepseek-audit.json --report outputs/founderbench-deepseek-audit-submission-report.md",
+        "python -m moneybench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic-audit.json --resume --seed 0 --audit",
+        "python -m moneybench.submission --input outputs/founderbench-anthropic-audit.json --report outputs/founderbench-anthropic-audit-submission-report.md",
+        "python -m moneybench.resumable_runner --policy gemini --output outputs/founderbench-gemini-audit.json --resume --seed 0 --audit",
+        "python -m moneybench.submission --input outputs/founderbench-gemini-audit.json --report outputs/founderbench-gemini-audit-submission-report.md",
+        "python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model-audit.json --resume --seed 0 --audit",
+        "python -m moneybench.submission --input outputs/founderbench-local-open-model-audit.json --report outputs/founderbench-local-open-model-audit-submission-report.md"
+      ],
+      "outputs": [
+        "outputs/founderbench-deepseek-audit.json",
+        "outputs/founderbench-deepseek-audit-submission-report.md",
+        "outputs/founderbench-anthropic-audit.json",
+        "outputs/founderbench-anthropic-audit-submission-report.md",
+        "outputs/founderbench-gemini-audit.json",
+        "outputs/founderbench-gemini-audit-submission-report.md",
+        "outputs/founderbench-local-open-model-audit.json",
+        "outputs/founderbench-local-open-model-audit-submission-report.md"
+      ]
+    },
+    {
+      "id": "repeat_bundles",
+      "owner": "evaluator",
+      "purpose": "Run 3 seeds per provider before stochastic confidence claims.",
+      "entry_condition": "Single-run execution is stable enough to justify repeated API spend.",
+      "exit_condition": "Repeated seed files are combined into validated repeat bundles.",
+      "commands": [
+        "python -m moneybench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek-seed0.json --resume --seed 0",
+        "python -m moneybench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek-seed1.json --resume --seed 1",
+        "python -m moneybench.resumable_runner --policy deepseek --output outputs/founderbench-deepseek-seed2.json --resume --seed 2",
+        "python -m moneybench.submission_bundle --input outputs/founderbench-deepseek-seed0.json --input outputs/founderbench-deepseek-seed1.json --input outputs/founderbench-deepseek-seed2.json --output outputs/founderbench-deepseek-repeats.json --report outputs/founderbench-deepseek-repeats-submission-report.md",
+        "python -m moneybench.submission --input outputs/founderbench-deepseek-repeats.json --report outputs/founderbench-deepseek-repeats-submission-report.md",
+        "python -m moneybench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-seed0.json --resume --seed 0",
+        "python -m moneybench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-seed1.json --resume --seed 1",
+        "python -m moneybench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3-seed2.json --resume --seed 2",
+        "python -m moneybench.submission_bundle --input outputs/founderbench-deepseek-sc-k3-seed0.json --input outputs/founderbench-deepseek-sc-k3-seed1.json --input outputs/founderbench-deepseek-sc-k3-seed2.json --output outputs/founderbench-deepseek-sc-k3-repeats.json --report outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md",
+        "python -m moneybench.submission --input outputs/founderbench-deepseek-sc-k3-repeats.json --report outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md",
+        "python -m moneybench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic-seed0.json --resume --seed 0",
+        "python -m moneybench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic-seed1.json --resume --seed 1",
+        "python -m moneybench.resumable_runner --policy anthropic --output outputs/founderbench-anthropic-seed2.json --resume --seed 2",
+        "python -m moneybench.submission_bundle --input outputs/founderbench-anthropic-seed0.json --input outputs/founderbench-anthropic-seed1.json --input outputs/founderbench-anthropic-seed2.json --output outputs/founderbench-anthropic-repeats.json --report outputs/founderbench-anthropic-repeats-submission-report.md",
+        "python -m moneybench.submission --input outputs/founderbench-anthropic-repeats.json --report outputs/founderbench-anthropic-repeats-submission-report.md",
+        "python -m moneybench.resumable_runner --policy gemini --output outputs/founderbench-gemini-seed0.json --resume --seed 0",
+        "python -m moneybench.resumable_runner --policy gemini --output outputs/founderbench-gemini-seed1.json --resume --seed 1",
+        "python -m moneybench.resumable_runner --policy gemini --output outputs/founderbench-gemini-seed2.json --resume --seed 2",
+        "python -m moneybench.submission_bundle --input outputs/founderbench-gemini-seed0.json --input outputs/founderbench-gemini-seed1.json --input outputs/founderbench-gemini-seed2.json --output outputs/founderbench-gemini-repeats.json --report outputs/founderbench-gemini-repeats-submission-report.md",
+        "python -m moneybench.submission --input outputs/founderbench-gemini-repeats.json --report outputs/founderbench-gemini-repeats-submission-report.md",
+        "python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model-seed0.json --resume --seed 0",
+        "python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model-seed1.json --resume --seed 1",
+        "python -m moneybench.resumable_runner --policy llm --output outputs/founderbench-local-open-model-seed2.json --resume --seed 2",
+        "python -m moneybench.submission_bundle --input outputs/founderbench-local-open-model-seed0.json --input outputs/founderbench-local-open-model-seed1.json --input outputs/founderbench-local-open-model-seed2.json --output outputs/founderbench-local-open-model-repeats.json --report outputs/founderbench-local-open-model-repeats-submission-report.md",
+        "python -m moneybench.submission --input outputs/founderbench-local-open-model-repeats.json --report outputs/founderbench-local-open-model-repeats-submission-report.md"
+      ],
+      "outputs": [
+        "outputs/founderbench-deepseek-seed0.json",
+        "outputs/founderbench-deepseek-seed1.json",
+        "outputs/founderbench-deepseek-seed2.json",
+        "outputs/founderbench-deepseek-repeats.json",
+        "outputs/founderbench-deepseek-repeats-submission-report.md",
+        "outputs/founderbench-deepseek-sc-k3-seed0.json",
+        "outputs/founderbench-deepseek-sc-k3-seed1.json",
+        "outputs/founderbench-deepseek-sc-k3-seed2.json",
+        "outputs/founderbench-deepseek-sc-k3-repeats.json",
+        "outputs/founderbench-deepseek-sc-k3-repeats-submission-report.md",
+        "outputs/founderbench-anthropic-seed0.json",
+        "outputs/founderbench-anthropic-seed1.json",
+        "outputs/founderbench-anthropic-seed2.json",
+        "outputs/founderbench-anthropic-repeats.json",
+        "outputs/founderbench-anthropic-repeats-submission-report.md",
+        "outputs/founderbench-gemini-seed0.json",
+        "outputs/founderbench-gemini-seed1.json",
+        "outputs/founderbench-gemini-seed2.json",
+        "outputs/founderbench-gemini-repeats.json",
+        "outputs/founderbench-gemini-repeats-submission-report.md",
+        "outputs/founderbench-local-open-model-seed0.json",
+        "outputs/founderbench-local-open-model-seed1.json",
+        "outputs/founderbench-local-open-model-seed2.json",
+        "outputs/founderbench-local-open-model-repeats.json",
+        "outputs/founderbench-local-open-model-repeats-submission-report.md"
+      ]
+    },
+    {
+      "id": "recommended_ablation",
+      "owner": "evaluator",
+      "purpose": "Run the recommended self-consistency ablation as a separate comparison, not as a replacement for the naive provider baseline.",
+      "entry_condition": "The matching naive provider baseline exists or is scheduled.",
+      "exit_condition": "Recommended ablation output exists and is clearly labeled in model-comparison artifacts.",
+      "commands": [
+        "python -m moneybench.resumable_runner --policy deepseek_sc --output outputs/founderbench-deepseek-sc-k3.json --resume --seed 0",
+        "python -m moneybench.submission --input outputs/founderbench-deepseek-sc-k3.json --report outputs/founderbench-deepseek-sc-k3-submission-report.md"
+      ],
+      "outputs": [
+        "outputs/founderbench-deepseek-sc-k3.json",
+        "outputs/founderbench-deepseek-sc-k3-submission-report.md"
+      ]
+    },
+    {
+      "id": "postprocess_and_claim_gate",
+      "owner": "paper_author",
+      "purpose": "Regenerate paper tables, model comparison, provider status, claim evidence, and submission gate after runs are present.",
+      "entry_condition": "Required run outputs and validation reports exist.",
+      "exit_condition": "Submission gate no longer reports missing required experiment evidence; claim wording is updated only where evidence supports it.",
+      "commands": [
+        "python -m moneybench.release regenerate",
+        "python -m moneybench.release validate",
+        "python -m moneybench.release bundle"
+      ],
+      "outputs": [
+        "outputs/founderbench-model-comparison.md",
+        "outputs/founderbench-paper-tables.md",
+        "outputs/founderbench-provider-run-status.md",
+        "outputs/founderbench-claim-evidence.md",
+        "outputs/founderbench-submission-gate.md",
+        "release/founderbench"
+      ]
+    }
+  ],
+  "required_evidence_before_llm_claims": [
+    "outputs/founderbench-anthropic-submission-report.md",
+    "outputs/founderbench-anthropic.json",
+    "outputs/founderbench-deepseek-submission-report.md",
+    "outputs/founderbench-deepseek.json",
+    "outputs/founderbench-gemini-submission-report.md",
+    "outputs/founderbench-gemini.json",
+    "outputs/founderbench-local-open-model-submission-report.md",
+    "outputs/founderbench-local-open-model.json"
+  ],
+  "quality_gates": [
+    "Never paste API keys into commands, run logs, JSON outputs, Markdown reports, or paper text.",
+    "Each included model run must contain exactly 50 task results and pass moneybench.submission validation.",
+    "Provider errors, invalid actions, over-budget decisions, bankruptcies, and timeouts remain in the denominator.",
+    "Hosted/local model-comparison claims require all required provider/local runs to be valid.",
+    "Stochastic confidence claims require validated repeat bundles, not only single-run outputs.",
+    "Audit traces must be inspected for accidental sensitive text before release."
+  ],
+  "claim_unlock_rules": [
+    {
+      "claim": "hosted_llm_comparison",
+      "unlock_condition": "DeepSeek, Anthropic, Gemini, and local/open-source required runs validate on all 50 tasks.",
+      "otherwise": "Keep wording to planned/infrastructure-ready provider comparison."
+    },
+    {
+      "claim": "self_consistency_improves_metrics",
+      "unlock_condition": "Validated DeepSeek naive and DeepSeek self-consistency repeat bundles exist and are compared by the statistical protocol.",
+      "otherwise": "Describe self-consistency as a planned or preliminary ablation only."
+    },
+    {
+      "claim": "private_holdout_leaderboard",
+      "unlock_condition": "Evaluator-controlled private holdout aggregate report exists.",
+      "otherwise": "Describe only the private holdout protocol, not private holdout results."
+    }
+  ],
+  "summary": {
+    "providers": 5,
+    "phases": 6,
+    "required_single_run_evidence_files": 8,
+    "minimum_repeats_for_stochastic_claims": 3
+  }
+}

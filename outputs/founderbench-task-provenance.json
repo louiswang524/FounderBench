@@ -1,0 +1,1218 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Task curation and provenance record for the fixed current release public suite.",
+  "curation_method": {
+    "source": "Hand-designed synthetic startup templates encoded in work/moneybench/moneybench/tasks.py.",
+    "template_count": 10,
+    "variants_per_template": 5,
+    "public_split_rule": "FND-001..FND-030 are public_dev; FND-031..FND-050 are public_test.",
+    "private_holdout_status": "Blueprint/protocol only; private task definitions are not included in current release.",
+    "real_world_data_used": false,
+    "human_subject_data_used": false,
+    "external_private_data_used": false
+  },
+  "templates": [
+    {
+      "family": "Market selection",
+      "task_range": "FND-001..FND-005",
+      "task_ids": [
+        "FND-001",
+        "FND-002",
+        "FND-003",
+        "FND-004",
+        "FND-005"
+      ],
+      "split_counts": {
+        "public_dev": 5,
+        "public_test": 0
+      },
+      "construction": "hand-authored viable-market target sets over no_setup initial states",
+      "seed_rule": "literal seed list [11, 41, 43, 47, 53]",
+      "setup_source": "no_setup",
+      "score_source": "make_market_selection_score",
+      "expected_actions": [
+        "build_offer",
+        "research_market"
+      ],
+      "capabilities": [
+        "market research",
+        "opportunity selection",
+        "early commitment under uncertainty"
+      ],
+      "primary_variation": [
+        "good market set",
+        "simulator seed"
+      ]
+    },
+    {
+      "family": "First revenue",
+      "task_range": "FND-006..FND-010",
+      "task_ids": [
+        "FND-006",
+        "FND-007",
+        "FND-008",
+        "FND-009",
+        "FND-010"
+      ],
+      "split_counts": {
+        "public_dev": 5,
+        "public_test": 0
+      },
+      "construction": "template loop over no_setup initial states with customer/revenue/cash targets",
+      "seed_rule": "literal seed list [7, 59, 61, 67, 71]",
+      "setup_source": "no_setup",
+      "score_source": "make_first_revenue_score",
+      "expected_actions": [
+        "build_offer",
+        "change_price",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "offer building",
+        "campaign execution",
+        "cash-efficient customer acquisition"
+      ],
+      "primary_variation": [
+        "target_customers",
+        "target_revenue",
+        "target_cash",
+        "simulator seed"
+      ]
+    },
+    {
+      "family": "Retention improvement",
+      "task_range": "FND-011..FND-015",
+      "task_ids": [
+        "FND-011",
+        "FND-012",
+        "FND-013",
+        "FND-014",
+        "FND-015"
+      ],
+      "split_counts": {
+        "public_dev": 5,
+        "public_test": 0
+      },
+      "construction": "five hand-authored existing-offer startup states",
+      "seed_rule": "19 + task_number",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_retention_score",
+      "expected_actions": [
+        "improve_offer",
+        "support_customers"
+      ],
+      "capabilities": [
+        "product quality improvement",
+        "support",
+        "churn prevention"
+      ],
+      "primary_variation": [
+        "market",
+        "cash",
+        "reputation",
+        "capacity",
+        "quality",
+        "customers"
+      ]
+    },
+    {
+      "family": "Churn shock recovery",
+      "task_range": "FND-016..FND-020",
+      "task_ids": [
+        "FND-016",
+        "FND-017",
+        "FND-018",
+        "FND-019",
+        "FND-020"
+      ],
+      "split_counts": {
+        "public_dev": 5,
+        "public_test": 0
+      },
+      "construction": "five overloaded existing-offer states with support/retention pressure",
+      "seed_rule": "23 + task_number",
+      "setup_source": "setup_churn_shock",
+      "score_source": "make_churn_shock_score",
+      "expected_actions": [
+        "hire_agent",
+        "improve_offer",
+        "support_customers"
+      ],
+      "capabilities": [
+        "triage after customer loss",
+        "support scaling",
+        "reputation recovery"
+      ],
+      "primary_variation": [
+        "market",
+        "cash",
+        "reputation",
+        "capacity",
+        "customer pressure"
+      ]
+    },
+    {
+      "family": "Demo Day traction",
+      "task_range": "FND-021..FND-025",
+      "task_ids": [
+        "FND-021",
+        "FND-022",
+        "FND-023",
+        "FND-024",
+        "FND-025"
+      ],
+      "split_counts": {
+        "public_dev": 5,
+        "public_test": 0
+      },
+      "construction": "five demo-day growth states with existing traction",
+      "seed_rule": "31 + task_number",
+      "setup_source": "setup_demo_day",
+      "score_source": "make_demo_day_score",
+      "expected_actions": [
+        "improve_offer",
+        "raise_funding",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "traction building",
+        "growth pacing",
+        "credible fundraising preparation"
+      ],
+      "primary_variation": [
+        "market",
+        "cash",
+        "existing customers",
+        "growth target",
+        "revenue target"
+      ]
+    },
+    {
+      "family": "Pricing",
+      "task_range": "FND-026..FND-030",
+      "task_ids": [
+        "FND-026",
+        "FND-027",
+        "FND-028",
+        "FND-029",
+        "FND-030"
+      ],
+      "split_counts": {
+        "public_dev": 5,
+        "public_test": 0
+      },
+      "construction": "five existing-offer states with intentionally weak starting prices",
+      "seed_rule": "37 + task_number",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_pricing_score",
+      "expected_actions": [
+        "change_price",
+        "interview_customers",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "price correction",
+        "willingness-to-pay inference",
+        "revenue/customer tradeoff"
+      ],
+      "primary_variation": [
+        "market",
+        "starting price",
+        "acceptable price band",
+        "revenue target"
+      ]
+    },
+    {
+      "family": "Runway preservation",
+      "task_range": "FND-031..FND-035",
+      "task_ids": [
+        "FND-031",
+        "FND-032",
+        "FND-033",
+        "FND-034",
+        "FND-035"
+      ],
+      "split_counts": {
+        "public_dev": 0,
+        "public_test": 5
+      },
+      "construction": "five low-cash existing-offer states requiring tradeoff-aware operations",
+      "seed_rule": "41 + task_number",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_runway_score",
+      "expected_actions": [
+        "cut_cost",
+        "do_nothing",
+        "support_customers"
+      ],
+      "capabilities": [
+        "cost control",
+        "survival under limited cash",
+        "tradeoff-aware operations"
+      ],
+      "primary_variation": [
+        "market",
+        "cash pressure",
+        "customer floor",
+        "cash target"
+      ]
+    },
+    {
+      "family": "Pivot decision",
+      "task_range": "FND-036..FND-040",
+      "task_ids": [
+        "FND-036",
+        "FND-037",
+        "FND-038",
+        "FND-039",
+        "FND-040"
+      ],
+      "split_counts": {
+        "public_dev": 0,
+        "public_test": 5
+      },
+      "construction": "five stalled-offer states with target market sets",
+      "seed_rule": "43 + task_number",
+      "setup_source": "setup_existing_offer with current market pre-researched",
+      "score_source": "make_pivot_score",
+      "expected_actions": [
+        "interview_customers",
+        "pivot_market",
+        "research_market"
+      ],
+      "capabilities": [
+        "recognizing stalled markets",
+        "customer discovery",
+        "market switching"
+      ],
+      "primary_variation": [
+        "stalled market",
+        "target markets",
+        "cash",
+        "starting customers"
+      ]
+    },
+    {
+      "family": "Fundraising",
+      "task_range": "FND-041..FND-045",
+      "task_ids": [
+        "FND-041",
+        "FND-042",
+        "FND-043",
+        "FND-044",
+        "FND-045"
+      ],
+      "split_counts": {
+        "public_dev": 0,
+        "public_test": 5
+      },
+      "construction": "five traction states where credible fundraising depends on operations",
+      "seed_rule": "47 + task_number",
+      "setup_source": "setup_demo_day",
+      "score_source": "make_fundraising_score",
+      "expected_actions": [
+        "raise_funding",
+        "run_campaign",
+        "support_customers"
+      ],
+      "capabilities": [
+        "capital raising",
+        "traction signaling",
+        "reputation and risk management"
+      ],
+      "primary_variation": [
+        "market",
+        "cash target",
+        "revenue target",
+        "reputation target"
+      ]
+    },
+    {
+      "family": "Channel expansion",
+      "task_range": "FND-046..FND-050",
+      "task_ids": [
+        "FND-046",
+        "FND-047",
+        "FND-048",
+        "FND-049",
+        "FND-050"
+      ],
+      "split_counts": {
+        "public_dev": 0,
+        "public_test": 5
+      },
+      "construction": "five under-distributed working-offer states",
+      "seed_rule": "53 + task_number",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_channel_score",
+      "expected_actions": [
+        "hire_agent",
+        "partner_channel",
+        "run_campaign"
+      ],
+      "capabilities": [
+        "partnerships",
+        "scaling working offers",
+        "channel-risk control"
+      ],
+      "primary_variation": [
+        "market",
+        "awareness",
+        "customer target",
+        "revenue target"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "FND-001",
+      "family": "Market selection",
+      "split": "public_dev",
+      "name": "Select a viable market v1",
+      "seed": 11,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "template_range": "FND-001..FND-005",
+      "setup_source": "no_setup",
+      "score_source": "make_market_selection_score",
+      "expected_actions": [
+        "build_offer",
+        "research_market"
+      ]
+    },
+    {
+      "task_id": "FND-002",
+      "family": "Market selection",
+      "split": "public_dev",
+      "name": "Select a viable market v2",
+      "seed": 41,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "template_range": "FND-001..FND-005",
+      "setup_source": "no_setup",
+      "score_source": "make_market_selection_score",
+      "expected_actions": [
+        "build_offer",
+        "research_market"
+      ]
+    },
+    {
+      "task_id": "FND-003",
+      "family": "Market selection",
+      "split": "public_dev",
+      "name": "Select a viable market v3",
+      "seed": 43,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "template_range": "FND-001..FND-005",
+      "setup_source": "no_setup",
+      "score_source": "make_market_selection_score",
+      "expected_actions": [
+        "build_offer",
+        "research_market"
+      ]
+    },
+    {
+      "task_id": "FND-004",
+      "family": "Market selection",
+      "split": "public_dev",
+      "name": "Select a viable market v4",
+      "seed": 47,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "template_range": "FND-001..FND-005",
+      "setup_source": "no_setup",
+      "score_source": "make_market_selection_score",
+      "expected_actions": [
+        "build_offer",
+        "research_market"
+      ]
+    },
+    {
+      "task_id": "FND-005",
+      "family": "Market selection",
+      "split": "public_dev",
+      "name": "Select a viable market v5",
+      "seed": 53,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "template_range": "FND-001..FND-005",
+      "setup_source": "no_setup",
+      "score_source": "make_market_selection_score",
+      "expected_actions": [
+        "build_offer",
+        "research_market"
+      ]
+    },
+    {
+      "task_id": "FND-006",
+      "family": "First revenue",
+      "split": "public_dev",
+      "name": "Reach first revenue v1",
+      "seed": 7,
+      "weeks": 14,
+      "pass_threshold": 70,
+      "template_range": "FND-006..FND-010",
+      "setup_source": "no_setup",
+      "score_source": "make_first_revenue_score",
+      "expected_actions": [
+        "build_offer",
+        "change_price",
+        "run_campaign"
+      ]
+    },
+    {
+      "task_id": "FND-007",
+      "family": "First revenue",
+      "split": "public_dev",
+      "name": "Reach first revenue v2",
+      "seed": 59,
+      "weeks": 14,
+      "pass_threshold": 70,
+      "template_range": "FND-006..FND-010",
+      "setup_source": "no_setup",
+      "score_source": "make_first_revenue_score",
+      "expected_actions": [
+        "build_offer",
+        "change_price",
+        "run_campaign"
+      ]
+    },
+    {
+      "task_id": "FND-008",
+      "family": "First revenue",
+      "split": "public_dev",
+      "name": "Reach first revenue v3",
+      "seed": 61,
+      "weeks": 14,
+      "pass_threshold": 70,
+      "template_range": "FND-006..FND-010",
+      "setup_source": "no_setup",
+      "score_source": "make_first_revenue_score",
+      "expected_actions": [
+        "build_offer",
+        "change_price",
+        "run_campaign"
+      ]
+    },
+    {
+      "task_id": "FND-009",
+      "family": "First revenue",
+      "split": "public_dev",
+      "name": "Reach first revenue v4",
+      "seed": 67,
+      "weeks": 14,
+      "pass_threshold": 70,
+      "template_range": "FND-006..FND-010",
+      "setup_source": "no_setup",
+      "score_source": "make_first_revenue_score",
+      "expected_actions": [
+        "build_offer",
+        "change_price",
+        "run_campaign"
+      ]
+    },
+    {
+      "task_id": "FND-010",
+      "family": "First revenue",
+      "split": "public_dev",
+      "name": "Reach first revenue v5",
+      "seed": 71,
+      "weeks": 14,
+      "pass_threshold": 70,
+      "template_range": "FND-006..FND-010",
+      "setup_source": "no_setup",
+      "score_source": "make_first_revenue_score",
+      "expected_actions": [
+        "build_offer",
+        "change_price",
+        "run_campaign"
+      ]
+    },
+    {
+      "task_id": "FND-011",
+      "family": "Retention improvement",
+      "split": "public_dev",
+      "name": "Improve retention v1",
+      "seed": 30,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "template_range": "FND-011..FND-015",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_retention_score",
+      "expected_actions": [
+        "improve_offer",
+        "support_customers"
+      ]
+    },
+    {
+      "task_id": "FND-012",
+      "family": "Retention improvement",
+      "split": "public_dev",
+      "name": "Improve retention v2",
+      "seed": 31,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "template_range": "FND-011..FND-015",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_retention_score",
+      "expected_actions": [
+        "improve_offer",
+        "support_customers"
+      ]
+    },
+    {
+      "task_id": "FND-013",
+      "family": "Retention improvement",
+      "split": "public_dev",
+      "name": "Improve retention v3",
+      "seed": 32,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "template_range": "FND-011..FND-015",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_retention_score",
+      "expected_actions": [
+        "improve_offer",
+        "support_customers"
+      ]
+    },
+    {
+      "task_id": "FND-014",
+      "family": "Retention improvement",
+      "split": "public_dev",
+      "name": "Improve retention v4",
+      "seed": 33,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "template_range": "FND-011..FND-015",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_retention_score",
+      "expected_actions": [
+        "improve_offer",
+        "support_customers"
+      ]
+    },
+    {
+      "task_id": "FND-015",
+      "family": "Retention improvement",
+      "split": "public_dev",
+      "name": "Improve retention v5",
+      "seed": 34,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "template_range": "FND-011..FND-015",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_retention_score",
+      "expected_actions": [
+        "improve_offer",
+        "support_customers"
+      ]
+    },
+    {
+      "task_id": "FND-016",
+      "family": "Churn shock recovery",
+      "split": "public_dev",
+      "name": "Survive churn shock v1",
+      "seed": 39,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "template_range": "FND-016..FND-020",
+      "setup_source": "setup_churn_shock",
+      "score_source": "make_churn_shock_score",
+      "expected_actions": [
+        "hire_agent",
+        "improve_offer",
+        "support_customers"
+      ]
+    },
+    {
+      "task_id": "FND-017",
+      "family": "Churn shock recovery",
+      "split": "public_dev",
+      "name": "Survive churn shock v2",
+      "seed": 40,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "template_range": "FND-016..FND-020",
+      "setup_source": "setup_churn_shock",
+      "score_source": "make_churn_shock_score",
+      "expected_actions": [
+        "hire_agent",
+        "improve_offer",
+        "support_customers"
+      ]
+    },
+    {
+      "task_id": "FND-018",
+      "family": "Churn shock recovery",
+      "split": "public_dev",
+      "name": "Survive churn shock v3",
+      "seed": 41,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "template_range": "FND-016..FND-020",
+      "setup_source": "setup_churn_shock",
+      "score_source": "make_churn_shock_score",
+      "expected_actions": [
+        "hire_agent",
+        "improve_offer",
+        "support_customers"
+      ]
+    },
+    {
+      "task_id": "FND-019",
+      "family": "Churn shock recovery",
+      "split": "public_dev",
+      "name": "Survive churn shock v4",
+      "seed": 42,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "template_range": "FND-016..FND-020",
+      "setup_source": "setup_churn_shock",
+      "score_source": "make_churn_shock_score",
+      "expected_actions": [
+        "hire_agent",
+        "improve_offer",
+        "support_customers"
+      ]
+    },
+    {
+      "task_id": "FND-020",
+      "family": "Churn shock recovery",
+      "split": "public_dev",
+      "name": "Survive churn shock v5",
+      "seed": 43,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "template_range": "FND-016..FND-020",
+      "setup_source": "setup_churn_shock",
+      "score_source": "make_churn_shock_score",
+      "expected_actions": [
+        "hire_agent",
+        "improve_offer",
+        "support_customers"
+      ]
+    },
+    {
+      "task_id": "FND-021",
+      "family": "Demo Day traction",
+      "split": "public_dev",
+      "name": "Prepare Demo Day traction v1",
+      "seed": 52,
+      "weeks": 12,
+      "pass_threshold": 70,
+      "template_range": "FND-021..FND-025",
+      "setup_source": "setup_demo_day",
+      "score_source": "make_demo_day_score",
+      "expected_actions": [
+        "improve_offer",
+        "raise_funding",
+        "run_campaign"
+      ]
+    },
+    {
+      "task_id": "FND-022",
+      "family": "Demo Day traction",
+      "split": "public_dev",
+      "name": "Prepare Demo Day traction v2",
+      "seed": 53,
+      "weeks": 12,
+      "pass_threshold": 70,
+      "template_range": "FND-021..FND-025",
+      "setup_source": "setup_demo_day",
+      "score_source": "make_demo_day_score",
+      "expected_actions": [
+        "improve_offer",
+        "raise_funding",
+        "run_campaign"
+      ]
+    },
+    {
+      "task_id": "FND-023",
+      "family": "Demo Day traction",
+      "split": "public_dev",
+      "name": "Prepare Demo Day traction v3",
+      "seed": 54,
+      "weeks": 12,
+      "pass_threshold": 70,
+      "template_range": "FND-021..FND-025",
+      "setup_source": "setup_demo_day",
+      "score_source": "make_demo_day_score",
+      "expected_actions": [
+        "improve_offer",
+        "raise_funding",
+        "run_campaign"
+      ]
+    },
+    {
+      "task_id": "FND-024",
+      "family": "Demo Day traction",
+      "split": "public_dev",
+      "name": "Prepare Demo Day traction v4",
+      "seed": 55,
+      "weeks": 12,
+      "pass_threshold": 70,
+      "template_range": "FND-021..FND-025",
+      "setup_source": "setup_demo_day",
+      "score_source": "make_demo_day_score",
+      "expected_actions": [
+        "improve_offer",
+        "raise_funding",
+        "run_campaign"
+      ]
+    },
+    {
+      "task_id": "FND-025",
+      "family": "Demo Day traction",
+      "split": "public_dev",
+      "name": "Prepare Demo Day traction v5",
+      "seed": 56,
+      "weeks": 12,
+      "pass_threshold": 70,
+      "template_range": "FND-021..FND-025",
+      "setup_source": "setup_demo_day",
+      "score_source": "make_demo_day_score",
+      "expected_actions": [
+        "improve_offer",
+        "raise_funding",
+        "run_campaign"
+      ]
+    },
+    {
+      "task_id": "FND-026",
+      "family": "Pricing",
+      "split": "public_dev",
+      "name": "Find sustainable pricing v1",
+      "seed": 63,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "template_range": "FND-026..FND-030",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_pricing_score",
+      "expected_actions": [
+        "change_price",
+        "interview_customers",
+        "run_campaign"
+      ]
+    },
+    {
+      "task_id": "FND-027",
+      "family": "Pricing",
+      "split": "public_dev",
+      "name": "Find sustainable pricing v2",
+      "seed": 64,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "template_range": "FND-026..FND-030",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_pricing_score",
+      "expected_actions": [
+        "change_price",
+        "interview_customers",
+        "run_campaign"
+      ]
+    },
+    {
+      "task_id": "FND-028",
+      "family": "Pricing",
+      "split": "public_dev",
+      "name": "Find sustainable pricing v3",
+      "seed": 65,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "template_range": "FND-026..FND-030",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_pricing_score",
+      "expected_actions": [
+        "change_price",
+        "interview_customers",
+        "run_campaign"
+      ]
+    },
+    {
+      "task_id": "FND-029",
+      "family": "Pricing",
+      "split": "public_dev",
+      "name": "Find sustainable pricing v4",
+      "seed": 66,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "template_range": "FND-026..FND-030",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_pricing_score",
+      "expected_actions": [
+        "change_price",
+        "interview_customers",
+        "run_campaign"
+      ]
+    },
+    {
+      "task_id": "FND-030",
+      "family": "Pricing",
+      "split": "public_dev",
+      "name": "Find sustainable pricing v5",
+      "seed": 67,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "template_range": "FND-026..FND-030",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_pricing_score",
+      "expected_actions": [
+        "change_price",
+        "interview_customers",
+        "run_campaign"
+      ]
+    },
+    {
+      "task_id": "FND-031",
+      "family": "Runway preservation",
+      "split": "public_test",
+      "name": "Preserve runway v1",
+      "seed": 72,
+      "weeks": 7,
+      "pass_threshold": 70,
+      "template_range": "FND-031..FND-035",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_runway_score",
+      "expected_actions": [
+        "cut_cost",
+        "do_nothing",
+        "support_customers"
+      ]
+    },
+    {
+      "task_id": "FND-032",
+      "family": "Runway preservation",
+      "split": "public_test",
+      "name": "Preserve runway v2",
+      "seed": 73,
+      "weeks": 7,
+      "pass_threshold": 70,
+      "template_range": "FND-031..FND-035",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_runway_score",
+      "expected_actions": [
+        "cut_cost",
+        "do_nothing",
+        "support_customers"
+      ]
+    },
+    {
+      "task_id": "FND-033",
+      "family": "Runway preservation",
+      "split": "public_test",
+      "name": "Preserve runway v3",
+      "seed": 74,
+      "weeks": 7,
+      "pass_threshold": 70,
+      "template_range": "FND-031..FND-035",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_runway_score",
+      "expected_actions": [
+        "cut_cost",
+        "do_nothing",
+        "support_customers"
+      ]
+    },
+    {
+      "task_id": "FND-034",
+      "family": "Runway preservation",
+      "split": "public_test",
+      "name": "Preserve runway v4",
+      "seed": 75,
+      "weeks": 7,
+      "pass_threshold": 70,
+      "template_range": "FND-031..FND-035",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_runway_score",
+      "expected_actions": [
+        "cut_cost",
+        "do_nothing",
+        "support_customers"
+      ]
+    },
+    {
+      "task_id": "FND-035",
+      "family": "Runway preservation",
+      "split": "public_test",
+      "name": "Preserve runway v5",
+      "seed": 76,
+      "weeks": 7,
+      "pass_threshold": 70,
+      "template_range": "FND-031..FND-035",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_runway_score",
+      "expected_actions": [
+        "cut_cost",
+        "do_nothing",
+        "support_customers"
+      ]
+    },
+    {
+      "task_id": "FND-036",
+      "family": "Pivot decision",
+      "split": "public_test",
+      "name": "Decide whether to pivot v1",
+      "seed": 79,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "template_range": "FND-036..FND-040",
+      "setup_source": "setup_existing_offer with current market pre-researched",
+      "score_source": "make_pivot_score",
+      "expected_actions": [
+        "interview_customers",
+        "pivot_market",
+        "research_market"
+      ]
+    },
+    {
+      "task_id": "FND-037",
+      "family": "Pivot decision",
+      "split": "public_test",
+      "name": "Decide whether to pivot v2",
+      "seed": 80,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "template_range": "FND-036..FND-040",
+      "setup_source": "setup_existing_offer with current market pre-researched",
+      "score_source": "make_pivot_score",
+      "expected_actions": [
+        "interview_customers",
+        "pivot_market",
+        "research_market"
+      ]
+    },
+    {
+      "task_id": "FND-038",
+      "family": "Pivot decision",
+      "split": "public_test",
+      "name": "Decide whether to pivot v3",
+      "seed": 81,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "template_range": "FND-036..FND-040",
+      "setup_source": "setup_existing_offer with current market pre-researched",
+      "score_source": "make_pivot_score",
+      "expected_actions": [
+        "interview_customers",
+        "pivot_market",
+        "research_market"
+      ]
+    },
+    {
+      "task_id": "FND-039",
+      "family": "Pivot decision",
+      "split": "public_test",
+      "name": "Decide whether to pivot v4",
+      "seed": 82,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "template_range": "FND-036..FND-040",
+      "setup_source": "setup_existing_offer with current market pre-researched",
+      "score_source": "make_pivot_score",
+      "expected_actions": [
+        "interview_customers",
+        "pivot_market",
+        "research_market"
+      ]
+    },
+    {
+      "task_id": "FND-040",
+      "family": "Pivot decision",
+      "split": "public_test",
+      "name": "Decide whether to pivot v5",
+      "seed": 83,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "template_range": "FND-036..FND-040",
+      "setup_source": "setup_existing_offer with current market pre-researched",
+      "score_source": "make_pivot_score",
+      "expected_actions": [
+        "interview_customers",
+        "pivot_market",
+        "research_market"
+      ]
+    },
+    {
+      "task_id": "FND-041",
+      "family": "Fundraising",
+      "split": "public_test",
+      "name": "Raise a credible seed round v1",
+      "seed": 88,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "template_range": "FND-041..FND-045",
+      "setup_source": "setup_demo_day",
+      "score_source": "make_fundraising_score",
+      "expected_actions": [
+        "raise_funding",
+        "run_campaign",
+        "support_customers"
+      ]
+    },
+    {
+      "task_id": "FND-042",
+      "family": "Fundraising",
+      "split": "public_test",
+      "name": "Raise a credible seed round v2",
+      "seed": 89,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "template_range": "FND-041..FND-045",
+      "setup_source": "setup_demo_day",
+      "score_source": "make_fundraising_score",
+      "expected_actions": [
+        "raise_funding",
+        "run_campaign",
+        "support_customers"
+      ]
+    },
+    {
+      "task_id": "FND-043",
+      "family": "Fundraising",
+      "split": "public_test",
+      "name": "Raise a credible seed round v3",
+      "seed": 90,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "template_range": "FND-041..FND-045",
+      "setup_source": "setup_demo_day",
+      "score_source": "make_fundraising_score",
+      "expected_actions": [
+        "raise_funding",
+        "run_campaign",
+        "support_customers"
+      ]
+    },
+    {
+      "task_id": "FND-044",
+      "family": "Fundraising",
+      "split": "public_test",
+      "name": "Raise a credible seed round v4",
+      "seed": 91,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "template_range": "FND-041..FND-045",
+      "setup_source": "setup_demo_day",
+      "score_source": "make_fundraising_score",
+      "expected_actions": [
+        "raise_funding",
+        "run_campaign",
+        "support_customers"
+      ]
+    },
+    {
+      "task_id": "FND-045",
+      "family": "Fundraising",
+      "split": "public_test",
+      "name": "Raise a credible seed round v5",
+      "seed": 92,
+      "weeks": 8,
+      "pass_threshold": 70,
+      "template_range": "FND-041..FND-045",
+      "setup_source": "setup_demo_day",
+      "score_source": "make_fundraising_score",
+      "expected_actions": [
+        "raise_funding",
+        "run_campaign",
+        "support_customers"
+      ]
+    },
+    {
+      "task_id": "FND-046",
+      "family": "Channel expansion",
+      "split": "public_test",
+      "name": "Scale acquisition channel v1",
+      "seed": 99,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "template_range": "FND-046..FND-050",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_channel_score",
+      "expected_actions": [
+        "hire_agent",
+        "partner_channel",
+        "run_campaign"
+      ]
+    },
+    {
+      "task_id": "FND-047",
+      "family": "Channel expansion",
+      "split": "public_test",
+      "name": "Scale acquisition channel v2",
+      "seed": 100,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "template_range": "FND-046..FND-050",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_channel_score",
+      "expected_actions": [
+        "hire_agent",
+        "partner_channel",
+        "run_campaign"
+      ]
+    },
+    {
+      "task_id": "FND-048",
+      "family": "Channel expansion",
+      "split": "public_test",
+      "name": "Scale acquisition channel v3",
+      "seed": 101,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "template_range": "FND-046..FND-050",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_channel_score",
+      "expected_actions": [
+        "hire_agent",
+        "partner_channel",
+        "run_campaign"
+      ]
+    },
+    {
+      "task_id": "FND-049",
+      "family": "Channel expansion",
+      "split": "public_test",
+      "name": "Scale acquisition channel v4",
+      "seed": 102,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "template_range": "FND-046..FND-050",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_channel_score",
+      "expected_actions": [
+        "hire_agent",
+        "partner_channel",
+        "run_campaign"
+      ]
+    },
+    {
+      "task_id": "FND-050",
+      "family": "Channel expansion",
+      "split": "public_test",
+      "name": "Scale acquisition channel v5",
+      "seed": 103,
+      "weeks": 10,
+      "pass_threshold": 70,
+      "template_range": "FND-046..FND-050",
+      "setup_source": "setup_existing_offer",
+      "score_source": "make_channel_score",
+      "expected_actions": [
+        "hire_agent",
+        "partner_channel",
+        "run_campaign"
+      ]
+    }
+  ],
+  "summary": {
+    "tasks": 50,
+    "templates": 10,
+    "public_dev": 30,
+    "public_test": 20,
+    "real_world_data_used": false,
+    "human_subject_data_used": false,
+    "all_templates_have_five_tasks": true
+  }
+}

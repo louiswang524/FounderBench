@@ -1,0 +1,88 @@
+{
+  "benchmark": "FounderBench",
+  "version": "0.3.0",
+  "purpose": "Paired statistical comparison of deterministic baselines over matched task episodes.",
+  "source_file": "outputs\\founderbench-baseline-raw.json",
+  "method": {
+    "paired_unit": "task episode",
+    "score_gap": "top_policy_score_i - baseline_policy_score_i on the same task id",
+    "bootstrap_ci": "nonparametric bootstrap over paired task gaps",
+    "permutation_test": "two-sided random sign-flip test over paired task gaps",
+    "permutation_samples": 20000,
+    "multiple_comparison_adjustment": "Holm-Bonferroni over reported paired permutation p-values for the primary endpoint.",
+    "effect_size": "Cohen dz = mean paired gap / population standard deviation of paired gaps"
+  },
+  "summary": {
+    "comparisons": 3,
+    "significant_at_0_05": 3,
+    "significant_after_holm_0_05": 3,
+    "all_score_gap_cis_positive": true,
+    "max_p_value": 5e-05,
+    "max_holm_adjusted_p": 0.00015
+  },
+  "comparisons": [
+    {
+      "comparison": "task_heuristic - heuristic",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "heuristic",
+      "tasks": 50,
+      "mean_score_gap": 19.9,
+      "score_gap_bootstrap_ci": [
+        13.8,
+        26.19
+      ],
+      "paired_permutation_p": 5e-05,
+      "cohen_dz": 0.8848,
+      "task_wins": 42,
+      "task_losses": 8,
+      "task_ties": 0,
+      "solve_gap": 0.36,
+      "solve_wins": 20,
+      "solve_losses": 2,
+      "holm_adjusted_p": 0.00015,
+      "significant_after_holm_0_05": true
+    },
+    {
+      "comparison": "task_heuristic - conservative",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "conservative",
+      "tasks": 50,
+      "mean_score_gap": 26.87,
+      "score_gap_bootstrap_ci": [
+        21.67,
+        32.45
+      ],
+      "paired_permutation_p": 5e-05,
+      "cohen_dz": 1.3433,
+      "task_wins": 43,
+      "task_losses": 7,
+      "task_ties": 0,
+      "solve_gap": 0.48,
+      "solve_wins": 24,
+      "solve_losses": 0,
+      "holm_adjusted_p": 0.00015,
+      "significant_after_holm_0_05": true
+    },
+    {
+      "comparison": "task_heuristic - random",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "random",
+      "tasks": 50,
+      "mean_score_gap": 47.61,
+      "score_gap_bootstrap_ci": [
+        40.24,
+        54.64
+      ],
+      "paired_permutation_p": 5e-05,
+      "cohen_dz": 1.892,
+      "task_wins": 49,
+      "task_losses": 1,
+      "task_ties": 0,
+      "solve_gap": 0.66,
+      "solve_wins": 33,
+      "solve_losses": 0,
+      "holm_adjusted_p": 0.00015,
+      "significant_after_holm_0_05": true
+    }
+  ]
+}
