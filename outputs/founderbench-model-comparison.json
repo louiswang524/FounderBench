@@ -20,14 +20,14 @@
   },
   "summary": {
     "deterministic_runs": 4,
-    "valid_provider_runs": 0,
-    "valid_provider_policies": 0,
+    "valid_provider_runs": 2,
+    "valid_provider_policies": 2,
     "valid_repeated_provider_bundles": 0,
     "provider_candidates": 11,
-    "provider_missing_or_invalid": 11,
-    "all_valid_runs": 4,
-    "paired_comparisons": 3,
-    "provider_paired_comparisons": 0,
+    "provider_missing_or_invalid": 9,
+    "all_valid_runs": 6,
+    "paired_comparisons": 5,
+    "provider_paired_comparisons": 2,
     "hosted_llm_claims_ready": false,
     "open_source_claim_ready": false
   },
@@ -55,6 +55,17 @@
       0
     ],
     [
+      "deepseek",
+      50,
+      23,
+      "0.46",
+      "56.59",
+      "54.51",
+      "59.70",
+      0,
+      0
+    ],
+    [
       "conservative",
       50,
       13,
@@ -64,6 +75,17 @@
       "52.13",
       0,
       0
+    ],
+    [
+      "gemini",
+      50,
+      13,
+      "0.26",
+      "52.69",
+      "53.99",
+      "50.75",
+      0,
+      340
     ],
     [
       "random",
@@ -93,11 +115,25 @@
       "[0.26, 0.52]"
     ],
     [
+      "deepseek",
+      "56.59",
+      "[47.39, 65.78]",
+      "0.46",
+      "[0.32, 0.60]"
+    ],
+    [
       "conservative",
       "54.04",
       "[48.20, 60.14]",
       "0.26",
       "[0.14, 0.38]"
+    ],
+    [
+      "gemini",
+      "52.69",
+      "[46.10, 59.68]",
+      "0.26",
+      "[0.14, 0.40]"
     ],
     [
       "random",
@@ -112,61 +148,79 @@
       "Market selection",
       "2/5 (59.8)",
       "2/5 (61.1)",
+      "3/5 (57.4)",
       "2/5 (63.2)",
+      "2/5 (47.3)",
       "0/5 (31.6)"
     ],
     [
       "First revenue",
       "2/5 (69.2)",
       "2/5 (65.7)",
+      "0/5 (10.7)",
       "1/5 (45.3)",
+      "1/5 (61.1)",
       "0/5 (20.4)"
     ],
     [
       "Retention improvement",
       "5/5 (95.8)",
       "2/5 (63.5)",
+      "5/5 (93.5)",
       "0/5 (47.5)",
+      "3/5 (70.8)",
       "0/5 (10.4)"
     ],
     [
       "Churn shock recovery",
       "5/5 (91.2)",
       "1/5 (48.1)",
+      "1/5 (39.3)",
       "0/5 (38.3)",
+      "0/5 (37.4)",
       "0/5 (34.3)"
     ],
     [
       "Demo Day traction",
       "4/5 (88.8)",
       "3/5 (67.0)",
+      "1/5 (57.0)",
       "2/5 (60.3)",
+      "2/5 (58.4)",
       "0/5 (20.2)"
     ],
     [
       "Pricing",
       "5/5 (85.6)",
       "4/5 (85.2)",
+      "2/5 (69.2)",
       "3/5 (77.3)",
+      "0/5 (48.9)",
       "0/5 (39.7)"
     ],
     [
       "Runway preservation",
       "5/5 (95.6)",
       "5/5 (82.5)",
+      "5/5 (91.1)",
       "5/5 (79.1)",
+      "5/5 (77.9)",
       "2/5 (68.3)"
     ],
     [
       "Pivot decision",
       "2/5 (65.5)",
       "0/5 (26.8)",
+      "0/5 (12.6)",
       "0/5 (23.9)",
+      "0/5 (21.8)",
       "0/5 (11.7)"
     ],
     [
       "Fundraising",
       "5/5 (99.6)",
+      "0/5 (68.0)",
+      "5/5 (86.3)",
       "0/5 (68.0)",
       "0/5 (68.0)",
       "2/5 (72.6)"
@@ -175,7 +229,9 @@
       "Channel expansion",
       "2/5 (58.0)",
       "0/5 (42.1)",
+      "1/5 (48.8)",
       "0/5 (37.6)",
+      "0/5 (35.3)",
       "0/5 (23.7)"
     ]
   ],
@@ -200,6 +256,25 @@
       "solve_losses": 2
     },
     {
+      "comparison": "task_heuristic - deepseek",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "deepseek",
+      "tasks": 50,
+      "mean_score_gap": 24.32,
+      "score_gap_bootstrap_ci": [
+        16.35,
+        32.67
+      ],
+      "paired_permutation_p": 5e-05,
+      "cohen_dz": 0.8294,
+      "task_wins": 42,
+      "task_losses": 7,
+      "task_ties": 1,
+      "solve_gap": 0.28,
+      "solve_wins": 16,
+      "solve_losses": 2
+    },
+    {
       "comparison": "task_heuristic - conservative",
       "top_policy": "task_heuristic",
       "baseline_policy": "conservative",
@@ -217,6 +292,25 @@
       "solve_gap": 0.48,
       "solve_wins": 24,
       "solve_losses": 0
+    },
+    {
+      "comparison": "task_heuristic - gemini",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "gemini",
+      "tasks": 50,
+      "mean_score_gap": 28.21,
+      "score_gap_bootstrap_ci": [
+        20.83,
+        35.09
+      ],
+      "paired_permutation_p": 5e-05,
+      "cohen_dz": 1.0672,
+      "task_wins": 43,
+      "task_losses": 5,
+      "task_ties": 2,
+      "solve_gap": 0.48,
+      "solve_wins": 26,
+      "solve_losses": 2
     },
     {
       "comparison": "task_heuristic - random",
@@ -238,7 +332,46 @@
       "solve_losses": 0
     }
   ],
-  "provider_paired_comparisons": [],
+  "provider_paired_comparisons": [
+    {
+      "comparison": "task_heuristic - deepseek",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "deepseek",
+      "tasks": 50,
+      "mean_score_gap": 24.32,
+      "score_gap_bootstrap_ci": [
+        16.35,
+        32.67
+      ],
+      "paired_permutation_p": 5e-05,
+      "cohen_dz": 0.8294,
+      "task_wins": 42,
+      "task_losses": 7,
+      "task_ties": 1,
+      "solve_gap": 0.28,
+      "solve_wins": 16,
+      "solve_losses": 2
+    },
+    {
+      "comparison": "task_heuristic - gemini",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "gemini",
+      "tasks": 50,
+      "mean_score_gap": 28.21,
+      "score_gap_bootstrap_ci": [
+        20.83,
+        35.09
+      ],
+      "paired_permutation_p": 5e-05,
+      "cohen_dz": 1.0672,
+      "task_wins": 43,
+      "task_losses": 5,
+      "task_ties": 2,
+      "solve_gap": 0.48,
+      "solve_wins": 26,
+      "solve_losses": 2
+    }
+  ],
   "provider_status": [
     {
       "id": "openai_hosted_baseline",
@@ -268,17 +401,21 @@
       "repeat_bundle_path": "outputs/founderbench-deepseek-repeats.json",
       "repeat_bundle_report": "outputs/founderbench-deepseek-repeats-submission-report.md",
       "family": "hosted_llm",
-      "status": "missing",
-      "exists": false,
-      "submission_report_exists": false,
+      "status": "valid",
+      "exists": true,
+      "submission_report_exists": true,
       "repeat_bundle_exists": false,
       "repeat_bundle_report_exists": false,
-      "evidence_path": "",
-      "evidence_kind": "",
-      "runs": 0,
-      "problems": [
-        "Missing outputs/founderbench-deepseek.json or outputs/founderbench-deepseek-repeats.json"
-      ]
+      "evidence_path": "outputs/founderbench-deepseek.json",
+      "evidence_kind": "single_run",
+      "runs": 1,
+      "problems": [],
+      "bytes": 81296,
+      "sha256": "2c8e50c654e3dfec4c6c4b5c5e8b22c33db15af3f7dcb7027c14c8bd15ced252",
+      "average_task_score": 56.59,
+      "solve_rate": 0.46,
+      "solved": 23,
+      "tasks": 50
     },
     {
       "id": "anthropic_hosted_baseline",
@@ -308,17 +445,21 @@
       "repeat_bundle_path": "outputs/founderbench-gemini-repeats.json",
       "repeat_bundle_report": "outputs/founderbench-gemini-repeats-submission-report.md",
       "family": "hosted_llm",
-      "status": "missing",
-      "exists": false,
-      "submission_report_exists": false,
+      "status": "valid",
+      "exists": true,
+      "submission_report_exists": true,
       "repeat_bundle_exists": false,
       "repeat_bundle_report_exists": false,
-      "evidence_path": "",
-      "evidence_kind": "",
-      "runs": 0,
-      "problems": [
-        "Missing outputs/founderbench-gemini.json or outputs/founderbench-gemini-repeats.json"
-      ]
+      "evidence_path": "outputs/founderbench-gemini.json",
+      "evidence_kind": "single_run",
+      "runs": 1,
+      "problems": [],
+      "bytes": 82357,
+      "sha256": "e3ed80cf922e8a89f6764a11409440f3139b2d2fc7834f067b25061620d77a9e",
+      "average_task_score": 52.69,
+      "solve_rate": 0.26,
+      "solved": 13,
+      "tasks": 50
     },
     {
       "id": "kimi_hosted_baseline",
@@ -388,8 +529,8 @@
       "repeat_bundle_path": "outputs/founderbench-glm-repeats.json",
       "repeat_bundle_report": "outputs/founderbench-glm-repeats-submission-report.md",
       "family": "hosted_llm_optional",
-      "status": "missing",
-      "exists": false,
+      "status": "invalid",
+      "exists": true,
       "submission_report_exists": false,
       "repeat_bundle_exists": false,
       "repeat_bundle_report_exists": false,
@@ -397,7 +538,7 @@
       "evidence_kind": "",
       "runs": 0,
       "problems": [
-        "Missing outputs/founderbench-glm.json or outputs/founderbench-glm-repeats.json"
+        "outputs/founderbench-glm.json: Missing validation report outputs/founderbench-glm-submission-report.md"
       ]
     },
     {

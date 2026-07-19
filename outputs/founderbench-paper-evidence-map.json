@@ -151,7 +151,7 @@
       "section": "Baselines",
       "paper_claim": "The paper currently reports deterministic random, conservative, heuristic, and task-aware heuristic baselines on all 50 tasks.",
       "status": "supported",
-      "rationale": "Deterministic baseline evidence is present; provider rows are correctly excluded.",
+      "rationale": "Deterministic baseline evidence is present; validated provider rows are tracked separately with diagnostics.",
       "evidence": [
         {
           "path": "outputs/founderbench-baseline-raw.json",
@@ -192,14 +192,14 @@
         {
           "path": "outputs/founderbench-paper-tables.md",
           "exists": true,
-          "bytes": 5429,
-          "sha256": "6ec602030fc3d9cb51c9e429df32bc14ee2d69d1601b4357df52817773d076f3"
+          "bytes": 5998,
+          "sha256": "1dfd0992c76b4eed20f7e03a71adf93a31669b2ffba72f41dd585b5e6411db72"
         },
         {
           "path": "outputs/founderbench-model-result-cards.md",
           "exists": true,
-          "bytes": 4209,
-          "sha256": "2037d912af5c527631eeada3504ebe99502541e6ee7d18d421f08871945da343"
+          "bytes": 4083,
+          "sha256": "6fa4d180f3087c2b48374032b17e8ae8c275b26960b0e80511a0696648cb9e60"
         }
       ],
       "claim_ids": [
@@ -268,8 +268,8 @@
         {
           "path": "outputs/founderbench-provider-run-status.md",
           "exists": true,
-          "bytes": 5434,
-          "sha256": "af8bb990d879fc13fb0a53628b59edc54758b77ff883608da3ea053dafc59167"
+          "bytes": 9053,
+          "sha256": "0a4f39375a13c389ed53b21431af04b85e67206d057f77cd907d26a0bae8350a"
         },
         {
           "path": "outputs/founderbench-provider-comparability-audit.md",
@@ -292,8 +292,8 @@
         {
           "path": "outputs/founderbench-model-result-cards.md",
           "exists": true,
-          "bytes": 4209,
-          "sha256": "2037d912af5c527631eeada3504ebe99502541e6ee7d18d421f08871945da343"
+          "bytes": 4083,
+          "sha256": "6fa4d180f3087c2b48374032b17e8ae8c275b26960b0e80511a0696648cb9e60"
         },
         {
           "path": "outputs/founderbench-submission-manifest.md",
@@ -322,7 +322,7 @@
           "path": "outputs/founderbench-reproducibility-manifest.md",
           "exists": true,
           "bytes": 24840,
-          "sha256": "d1fc243cc8825cb8f2cfda6251d36636cc0b7d653c098501a0014fc5f3107e0f"
+          "sha256": "1b3dc7e23a7c8487bca6106fc4722405fd995e3de94aa8df5ff56b17f899627e"
         },
         {
           "path": "outputs/founderbench-result-integrity-audit.md",

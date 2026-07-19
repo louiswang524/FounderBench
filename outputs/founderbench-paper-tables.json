@@ -7,10 +7,10 @@
   },
   "summary": {
     "deterministic_runs": 4,
-    "valid_provider_runs": 0,
+    "valid_provider_runs": 2,
     "provider_candidates": 11,
-    "provider_missing_or_invalid": 11,
-    "valid_provider_policies": 0,
+    "provider_missing_or_invalid": 9,
+    "valid_provider_policies": 2,
     "valid_repeated_provider_bundles": 0
   },
   "deterministic_policy_rows": [
@@ -83,6 +83,17 @@
       0
     ],
     [
+      "deepseek",
+      50,
+      23,
+      "0.46",
+      "56.59",
+      "54.51",
+      "59.70",
+      0,
+      0
+    ],
+    [
       "conservative",
       50,
       13,
@@ -92,6 +103,17 @@
       "52.13",
       0,
       0
+    ],
+    [
+      "gemini",
+      50,
+      13,
+      "0.26",
+      "52.69",
+      "53.99",
+      "50.75",
+      0,
+      340
     ],
     [
       "random",
@@ -121,11 +143,25 @@
       "[0.26, 0.52]"
     ],
     [
+      "deepseek",
+      "56.59",
+      "[47.39, 65.78]",
+      "0.46",
+      "[0.32, 0.60]"
+    ],
+    [
       "conservative",
       "54.04",
       "[48.20, 60.14]",
       "0.26",
       "[0.14, 0.38]"
+    ],
+    [
+      "gemini",
+      "52.69",
+      "[46.10, 59.68]",
+      "0.26",
+      "[0.14, 0.40]"
     ],
     [
       "random",
@@ -143,9 +179,21 @@
       50
     ],
     [
+      "task_heuristic - deepseek",
+      "24.32",
+      "[16.35, 32.67]",
+      50
+    ],
+    [
       "task_heuristic - conservative",
       "26.87",
       "[21.67, 32.45]",
+      50
+    ],
+    [
+      "task_heuristic - gemini",
+      "28.21",
+      "[20.83, 35.09]",
       50
     ],
     [
@@ -160,61 +208,79 @@
       "Market selection",
       "2/5 (59.8)",
       "2/5 (61.1)",
+      "3/5 (57.4)",
       "2/5 (63.2)",
+      "2/5 (47.3)",
       "0/5 (31.6)"
     ],
     [
       "First revenue",
       "2/5 (69.2)",
       "2/5 (65.7)",
+      "0/5 (10.7)",
       "1/5 (45.3)",
+      "1/5 (61.1)",
       "0/5 (20.4)"
     ],
     [
       "Retention improvement",
       "5/5 (95.8)",
       "2/5 (63.5)",
+      "5/5 (93.5)",
       "0/5 (47.5)",
+      "3/5 (70.8)",
       "0/5 (10.4)"
     ],
     [
       "Churn shock recovery",
       "5/5 (91.2)",
       "1/5 (48.1)",
+      "1/5 (39.3)",
       "0/5 (38.3)",
+      "0/5 (37.4)",
       "0/5 (34.3)"
     ],
     [
       "Demo Day traction",
       "4/5 (88.8)",
       "3/5 (67.0)",
+      "1/5 (57.0)",
       "2/5 (60.3)",
+      "2/5 (58.4)",
       "0/5 (20.2)"
     ],
     [
       "Pricing",
       "5/5 (85.6)",
       "4/5 (85.2)",
+      "2/5 (69.2)",
       "3/5 (77.3)",
+      "0/5 (48.9)",
       "0/5 (39.7)"
     ],
     [
       "Runway preservation",
       "5/5 (95.6)",
       "5/5 (82.5)",
+      "5/5 (91.1)",
       "5/5 (79.1)",
+      "5/5 (77.9)",
       "2/5 (68.3)"
     ],
     [
       "Pivot decision",
       "2/5 (65.5)",
       "0/5 (26.8)",
+      "0/5 (12.6)",
       "0/5 (23.9)",
+      "0/5 (21.8)",
       "0/5 (11.7)"
     ],
     [
       "Fundraising",
       "5/5 (99.6)",
+      "0/5 (68.0)",
+      "5/5 (86.3)",
       "0/5 (68.0)",
       "0/5 (68.0)",
       "2/5 (72.6)"
@@ -223,7 +289,9 @@
       "Channel expansion",
       "2/5 (58.0)",
       "0/5 (42.1)",
+      "1/5 (48.8)",
       "0/5 (37.6)",
+      "0/5 (35.3)",
       "0/5 (23.7)"
     ]
   ],
@@ -231,74 +299,74 @@
     [
       "FND-036",
       "Pivot decision",
-      "25.38",
-      "0/4"
+      "20.11",
+      "0/6"
     ],
     [
       "FND-037",
       "Pivot decision",
-      "27.30",
-      "0/4"
-    ],
-    [
-      "FND-047",
-      "Channel expansion",
-      "32.17",
-      "0/4"
-    ],
-    [
-      "FND-038",
-      "Pivot decision",
-      "32.50",
-      "1/4"
-    ],
-    [
-      "FND-050",
-      "Channel expansion",
-      "34.16",
-      "0/4"
-    ],
-    [
-      "FND-005",
-      "Market selection",
-      "34.27",
-      "0/4"
-    ],
-    [
-      "FND-046",
-      "Channel expansion",
-      "34.46",
-      "0/4"
+      "26.07",
+      "0/6"
     ],
     [
       "FND-040",
       "Pivot decision",
-      "35.33",
-      "1/4"
+      "26.74",
+      "1/6"
     ],
     [
-      "FND-010",
-      "First revenue",
-      "36.56",
-      "0/4"
+      "FND-038",
+      "Pivot decision",
+      "28.64",
+      "1/6"
     ],
     [
-      "FND-004",
+      "FND-005",
       "Market selection",
-      "36.78",
-      "0/4"
+      "30.69",
+      "0/6"
+    ],
+    [
+      "FND-050",
+      "Channel expansion",
+      "32.48",
+      "0/6"
     ],
     [
       "FND-039",
       "Pivot decision",
-      "39.35",
-      "0/4"
+      "33.66",
+      "0/6"
+    ],
+    [
+      "FND-047",
+      "Channel expansion",
+      "34.15",
+      "0/6"
+    ],
+    [
+      "FND-046",
+      "Channel expansion",
+      "37.36",
+      "0/6"
+    ],
+    [
+      "FND-010",
+      "First revenue",
+      "37.44",
+      "0/6"
+    ],
+    [
+      "FND-017",
+      "Churn shock recovery",
+      "41.58",
+      "1/6"
     ],
     [
       "FND-048",
       "Channel expansion",
-      "41.77",
-      "1/4"
+      "42.14",
+      "1/6"
     ]
   ],
   "provider_status": [
@@ -330,17 +398,21 @@
       "repeat_bundle_path": "outputs/founderbench-deepseek-repeats.json",
       "repeat_bundle_report": "outputs/founderbench-deepseek-repeats-submission-report.md",
       "family": "hosted_llm",
-      "status": "missing",
-      "exists": false,
-      "submission_report_exists": false,
+      "status": "valid",
+      "exists": true,
+      "submission_report_exists": true,
       "repeat_bundle_exists": false,
       "repeat_bundle_report_exists": false,
-      "evidence_path": "",
-      "evidence_kind": "",
-      "runs": 0,
-      "problems": [
-        "Missing outputs/founderbench-deepseek.json or outputs/founderbench-deepseek-repeats.json"
-      ]
+      "evidence_path": "outputs/founderbench-deepseek.json",
+      "evidence_kind": "single_run",
+      "runs": 1,
+      "problems": [],
+      "bytes": 81296,
+      "sha256": "2c8e50c654e3dfec4c6c4b5c5e8b22c33db15af3f7dcb7027c14c8bd15ced252",
+      "average_task_score": 56.59,
+      "solve_rate": 0.46,
+      "solved": 23,
+      "tasks": 50
     },
     {
       "id": "anthropic_hosted_baseline",
@@ -370,17 +442,21 @@
       "repeat_bundle_path": "outputs/founderbench-gemini-repeats.json",
       "repeat_bundle_report": "outputs/founderbench-gemini-repeats-submission-report.md",
       "family": "hosted_llm",
-      "status": "missing",
-      "exists": false,
-      "submission_report_exists": false,
+      "status": "valid",
+      "exists": true,
+      "submission_report_exists": true,
       "repeat_bundle_exists": false,
       "repeat_bundle_report_exists": false,
-      "evidence_path": "",
-      "evidence_kind": "",
-      "runs": 0,
-      "problems": [
-        "Missing outputs/founderbench-gemini.json or outputs/founderbench-gemini-repeats.json"
-      ]
+      "evidence_path": "outputs/founderbench-gemini.json",
+      "evidence_kind": "single_run",
+      "runs": 1,
+      "problems": [],
+      "bytes": 82357,
+      "sha256": "e3ed80cf922e8a89f6764a11409440f3139b2d2fc7834f067b25061620d77a9e",
+      "average_task_score": 52.69,
+      "solve_rate": 0.26,
+      "solved": 13,
+      "tasks": 50
     },
     {
       "id": "kimi_hosted_baseline",
@@ -450,8 +526,8 @@
       "repeat_bundle_path": "outputs/founderbench-glm-repeats.json",
       "repeat_bundle_report": "outputs/founderbench-glm-repeats-submission-report.md",
       "family": "hosted_llm_optional",
-      "status": "missing",
-      "exists": false,
+      "status": "invalid",
+      "exists": true,
       "submission_report_exists": false,
       "repeat_bundle_exists": false,
       "repeat_bundle_report_exists": false,
@@ -459,7 +535,7 @@
       "evidence_kind": "",
       "runs": 0,
       "problems": [
-        "Missing outputs/founderbench-glm.json or outputs/founderbench-glm-repeats.json"
+        "outputs/founderbench-glm.json: Missing validation report outputs/founderbench-glm-submission-report.md"
       ]
     },
     {

@@ -8,7 +8,7 @@ Reviewer-facing result cards for deterministic baselines and planned provider su
 | --- | --- |
 | deterministic_cards | 4 |
 | provider_candidate_cards | 11 |
-| valid_provider_cards | 0 |
+| valid_provider_cards | 2 |
 | hosted_llm_claims_ready | False |
 | open_source_claim_ready | False |
 
@@ -33,13 +33,13 @@ Reviewer-facing result cards for deterministic baselines and planned provider su
 | ID | Policy | Family | Status | Runs | Evidence | Report | Repeat Report | Claim Eligibility | Problems |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | openai_hosted_baseline | openai | hosted_llm | missing | 0 |  | False | False | excluded_until_validated | Missing outputs/founderbench-openai.json or outputs/founderbench-openai-repeats.json |
-| deepseek_hosted_baseline | deepseek | hosted_llm | missing | 0 |  | False | False | excluded_until_validated | Missing outputs/founderbench-deepseek.json or outputs/founderbench-deepseek-repeats.json |
+| deepseek_hosted_baseline | deepseek | hosted_llm | valid | 1 | single_run | True | False | eligible_for_provider_tables |  |
 | anthropic_hosted_baseline | anthropic | hosted_llm | missing | 0 |  | False | False | excluded_until_validated | Missing outputs/founderbench-anthropic.json or outputs/founderbench-anthropic-repeats.json |
-| gemini_hosted_baseline | gemini | hosted_llm | missing | 0 |  | False | False | excluded_until_validated | Missing outputs/founderbench-gemini.json or outputs/founderbench-gemini-repeats.json |
+| gemini_hosted_baseline | gemini | hosted_llm | valid | 1 | single_run | True | False | eligible_for_provider_tables |  |
 | kimi_hosted_baseline | kimi | hosted_llm | missing | 0 |  | False | False | excluded_until_validated | Missing outputs/founderbench-kimi.json or outputs/founderbench-kimi-repeats.json |
 | qwen_hosted_baseline | qwen | hosted_llm | missing | 0 |  | False | False | excluded_until_validated | Missing outputs/founderbench-qwen.json or outputs/founderbench-qwen-repeats.json |
 | mistral_hosted_baseline | mistral | hosted_llm_optional | missing | 0 |  | False | False | excluded_until_validated | Missing outputs/founderbench-mistral.json or outputs/founderbench-mistral-repeats.json |
-| glm_hosted_baseline | glm | hosted_llm_optional | missing | 0 |  | False | False | excluded_until_validated | Missing outputs/founderbench-glm.json or outputs/founderbench-glm-repeats.json |
+| glm_hosted_baseline | glm | hosted_llm_optional | invalid | 0 |  | False | False | excluded_until_validated | outputs/founderbench-glm.json: Missing validation report outputs/founderbench-glm-submission-report.md |
 | xai_hosted_baseline | xai | hosted_llm_optional | missing | 0 |  | False | False | excluded_until_validated | Missing outputs/founderbench-xai.json or outputs/founderbench-xai-repeats.json |
 | llama_open_weight_baseline | llama | open_weight | missing | 0 |  | False | False | excluded_until_validated | Missing outputs/founderbench-llama.json or outputs/founderbench-llama-repeats.json |
 | local_open_source_baseline | llm | open_source | missing | 0 |  | False | False | excluded_until_validated | Missing outputs/founderbench-local-open-model.json or outputs/founderbench-local-open-model-repeats.json |

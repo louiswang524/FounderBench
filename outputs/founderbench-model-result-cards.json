@@ -21,7 +21,7 @@
   "summary": {
     "deterministic_cards": 4,
     "provider_candidate_cards": 11,
-    "valid_provider_cards": 0,
+    "valid_provider_cards": 2,
     "hosted_llm_claims_ready": false,
     "open_source_claim_ready": false
   },
@@ -144,17 +144,20 @@
       "id": "deepseek_hosted_baseline",
       "policy": "deepseek",
       "family": "hosted_llm",
-      "status": "missing",
-      "claim_eligibility": "excluded_until_validated",
-      "evidence_path": "",
-      "evidence_kind": "",
-      "runs": 0,
-      "submission_report_exists": false,
+      "status": "valid",
+      "claim_eligibility": "eligible_for_provider_tables",
+      "evidence_path": "outputs/founderbench-deepseek.json",
+      "evidence_kind": "single_run",
+      "runs": 1,
+      "submission_report_exists": true,
       "repeat_bundle_report_exists": false,
-      "validation_problems": [
-        "Missing outputs/founderbench-deepseek.json or outputs/founderbench-deepseek-repeats.json"
-      ],
-      "paper_use": "Excluded from model-performance claims until raw run or repeat bundle exists and the submission report passes."
+      "validation_problems": [],
+      "paper_use": "Eligible for provider-result tables, subject to the statistical protocol and claim-evidence gates.",
+      "tasks": 50,
+      "solved": 23,
+      "solve_rate": 0.46,
+      "average_task_score": 56.59,
+      "repeat_summary": {}
     },
     {
       "card_type": "planned_provider_run",
@@ -178,17 +181,20 @@
       "id": "gemini_hosted_baseline",
       "policy": "gemini",
       "family": "hosted_llm",
-      "status": "missing",
-      "claim_eligibility": "excluded_until_validated",
-      "evidence_path": "",
-      "evidence_kind": "",
-      "runs": 0,
-      "submission_report_exists": false,
+      "status": "valid",
+      "claim_eligibility": "eligible_for_provider_tables",
+      "evidence_path": "outputs/founderbench-gemini.json",
+      "evidence_kind": "single_run",
+      "runs": 1,
+      "submission_report_exists": true,
       "repeat_bundle_report_exists": false,
-      "validation_problems": [
-        "Missing outputs/founderbench-gemini.json or outputs/founderbench-gemini-repeats.json"
-      ],
-      "paper_use": "Excluded from model-performance claims until raw run or repeat bundle exists and the submission report passes."
+      "validation_problems": [],
+      "paper_use": "Eligible for provider-result tables, subject to the statistical protocol and claim-evidence gates.",
+      "tasks": 50,
+      "solved": 13,
+      "solve_rate": 0.26,
+      "average_task_score": 52.69,
+      "repeat_summary": {}
     },
     {
       "card_type": "planned_provider_run",
@@ -246,7 +252,7 @@
       "id": "glm_hosted_baseline",
       "policy": "glm",
       "family": "hosted_llm_optional",
-      "status": "missing",
+      "status": "invalid",
       "claim_eligibility": "excluded_until_validated",
       "evidence_path": "",
       "evidence_kind": "",
@@ -254,7 +260,7 @@
       "submission_report_exists": false,
       "repeat_bundle_report_exists": false,
       "validation_problems": [
-        "Missing outputs/founderbench-glm.json or outputs/founderbench-glm-repeats.json"
+        "outputs/founderbench-glm.json: Missing validation report outputs/founderbench-glm-submission-report.md"
       ],
       "paper_use": "Excluded from model-performance claims until raw run or repeat bundle exists and the submission report passes."
     },

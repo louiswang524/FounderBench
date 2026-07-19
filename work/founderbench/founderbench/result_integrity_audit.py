@@ -30,6 +30,10 @@ def _table_policy_map(rows: list[list[Any]]) -> dict[str, list[Any]]:
     return {str(row[0]): row for row in rows}
 
 
+def _select_rows(rows: list[list[Any]], policies: set[str]) -> list[list[Any]]:
+    return [row for row in rows if str(row[0]) in policies]
+
+
 def _compare_dict_rows(expected: dict[str, Any], actual: dict[str, Any], keys: list[str]) -> list[str]:
     problems: list[str] = []
     for key in keys:
@@ -51,6 +55,7 @@ def build_audit(
 
     recomputed_rows = sorted([summarize(run) for run in raw], key=lambda row: row["average_task_score"], reverse=True)
     expected_table_rows = policy_rows(raw)
+    deterministic_policies = {str(row[0]) for row in expected_table_rows}
     recomputed_by_policy = _as_policy_map(recomputed_rows)
     leaderboard_by_policy = _as_policy_map(leaderboard.get("rows", []))
     paper_table_by_policy = _table_policy_map(paper_tables.get("all_valid_policy_rows", []))
@@ -99,8 +104,10 @@ def build_audit(
 
     ordering_checks = {
         "leaderboard_order_matches_raw": _policy_order(recomputed_rows) == _policy_order(leaderboard.get("rows", [])),
-        "paper_table_order_matches_raw": [row[0] for row in expected_table_rows] == [row[0] for row in paper_tables.get("all_valid_policy_rows", [])],
-        "model_comparison_order_matches_raw": [row[0] for row in expected_table_rows] == [row[0] for row in model_comparison.get("leaderboard_rows", [])],
+        "paper_table_order_matches_raw": [row[0] for row in expected_table_rows]
+        == [row[0] for row in _select_rows(paper_tables.get("all_valid_policy_rows", []), deterministic_policies)],
+        "model_comparison_order_matches_raw": [row[0] for row in expected_table_rows]
+        == [row[0] for row in _select_rows(model_comparison.get("leaderboard_rows", []), deterministic_policies)],
     }
     return {
         "benchmark": "FounderBench",

@@ -167,9 +167,11 @@ def _status_for(section: dict[str, Any], evidence: list[dict[str, Any]], claims:
         return "incomplete", "One or more evidence paths are missing."
     if section["status_rule"] == "deterministic_tables_only":
         tables = build_tables()
-        if tables["summary"]["valid_provider_runs"] == 0 and tables["summary"]["deterministic_runs"] >= 4:
-            return "supported", "Deterministic baseline evidence is present; provider rows are correctly excluded."
-        return "incomplete", "Paper tables do not match the expected deterministic-only evidence state."
+        if tables["summary"]["deterministic_runs"] >= 4:
+            if tables["summary"]["valid_provider_runs"] == 0:
+                return "supported", "Deterministic baseline evidence is present; provider rows are correctly excluded."
+            return "supported", "Deterministic baseline evidence is present; validated provider rows are tracked separately with diagnostics."
+        return "incomplete", "Paper tables do not contain the expected deterministic evidence state."
     if section["status_rule"] == "intentionally_excluded":
         claim = claims["hosted_llm_comparison"]
         if claim["status"] == "unsupported_currently":
