@@ -7,16 +7,16 @@ Provider-run status report for current release paper evidence, generated from pl
 | Metric | Value |
 | --- | --- |
 | planned_runs | 11 |
-| valid_runs | 2 |
+| valid_runs | 3 |
 | invalid_runs | 1 |
-| missing_runs | 8 |
+| missing_runs | 7 |
 | required_runs | 7 |
-| required_valid | 2 |
-| required_missing_or_invalid | 5 |
+| required_valid | 3 |
+| required_missing_or_invalid | 4 |
 | audit_outputs_present | 0 |
 | repeat_bundles_present | 0 |
 | repeat_outputs_present | 0 |
-| excluded_provider_like_files | 30 |
+| excluded_provider_like_files | 33 |
 | ready_for_llm_claims | False |
 
 ## Planned current release Runs
@@ -25,7 +25,7 @@ Provider-run status report for current release paper evidence, generated from pl
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | openai_single | openai | required | missing | 0 | 0 |  | 0 | False | False | Missing outputs/founderbench-openai.json or outputs/founderbench-openai-repeats.json |
 | deepseek_single | deepseek | required | valid | 1 | 50 | single_run | 0 | True | False |  |
-| anthropic_single | anthropic | required | missing | 0 | 0 |  | 0 | False | False | Missing outputs/founderbench-anthropic.json or outputs/founderbench-anthropic-repeats.json |
+| anthropic_single | anthropic | required | valid | 1 | 50 | single_run | 0 | True | False |  |
 | gemini_single | gemini | required | valid | 1 | 50 | single_run | 0 | True | False |  |
 | kimi_single | kimi | required | missing | 0 | 0 |  | 0 | False | False | Missing outputs/founderbench-kimi.json or outputs/founderbench-kimi-repeats.json |
 | qwen_single | qwen | required | missing | 0 | 0 |  | 0 | False | False | Missing outputs/founderbench-qwen.json or outputs/founderbench-qwen-repeats.json |
@@ -40,6 +40,9 @@ Provider-run status report for current release paper evidence, generated from pl
 | Path | Bytes | Reason Excluded |
 | --- | --- | --- |
 | outputs/founderbench-anthropic-results.json | 5068 | Not a planned current release provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims. |
+| outputs/founderbench-anthropic-sonnet-4.5-full.log | 82937 | Not a planned current release provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims. |
+| outputs/founderbench-anthropic-sonnet-4.5-smoke.json | 2302 | Not a planned current release provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims. |
+| outputs/founderbench-anthropic-sonnet-4.5-smoke.log | 2337 | Not a planned current release provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims. |
 | outputs/founderbench-deepseek-acc006-trace.json | 48767 | Not a planned current release provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims. |
 | outputs/founderbench-deepseek-chat-sc-k3-v0.2-report.md | 1563 | Not a planned current release provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims. |
 | outputs/founderbench-deepseek-chat-sc-k3-v0.2.json | 24944 | Not a planned current release provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims. |

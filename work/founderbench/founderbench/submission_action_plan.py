@@ -73,6 +73,8 @@ def _claim_steps(claims: dict[str, Any]) -> list[dict[str, Any]]:
         if row["status"] != "unsupported_currently":
             continue
         missing = [item["path"] for item in row.get("missing", []) if not item["exists"]]
+        if not missing:
+            continue
         steps.append(
             {
                 "id": f"support_claim_{row['id']}",

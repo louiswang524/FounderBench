@@ -4,77 +4,14 @@
   "purpose": "Reviewer-facing action plan for clearing the remaining FounderBench submission gates.",
   "submission_gate_status": "not_ready",
   "summary": {
-    "steps": 24,
-    "required_steps": 17,
+    "steps": 20,
+    "required_steps": 13,
     "owner_action_steps": 4,
     "provider_environment_steps": 11,
-    "claim_alignment_steps": 3,
+    "claim_alignment_steps": 2,
     "ready_for_submission": false
   },
   "steps": [
-    {
-      "id": "complete_deepseek_hosted_baseline",
-      "gate": "required_experiments",
-      "owner": "evaluator",
-      "priority": "required",
-      "status": "missing",
-      "action": "Run DeepSeek on the complete 50-task current release suite with submission validation.",
-      "missing_inputs": [
-        "outputs/founderbench-deepseek.json",
-        "outputs/founderbench-deepseek-submission-report.md"
-      ],
-      "commands": [
-        "python -m founderbench.resumable_runner --policy deepseek --output ..\\..\\outputs\\founderbench-deepseek.json --resume",
-        "python -m founderbench.submission --input ..\\..\\outputs\\founderbench-deepseek.json --report ..\\..\\outputs\\founderbench-deepseek-submission-report.md"
-      ],
-      "expected_outputs": [
-        "outputs/founderbench-deepseek.json",
-        "outputs/founderbench-deepseek-submission-report.md"
-      ],
-      "claim_impact": "Provides a representative hosted LLM baseline."
-    },
-    {
-      "id": "complete_anthropic_hosted_baseline",
-      "gate": "required_experiments",
-      "owner": "evaluator",
-      "priority": "required",
-      "status": "missing",
-      "action": "Run Claude/Anthropic on the complete 50-task current release suite with submission validation.",
-      "missing_inputs": [
-        "outputs/founderbench-anthropic.json",
-        "outputs/founderbench-anthropic-submission-report.md"
-      ],
-      "commands": [
-        "python -m founderbench.resumable_runner --policy anthropic --output ..\\..\\outputs\\founderbench-anthropic.json --resume",
-        "python -m founderbench.submission --input ..\\..\\outputs\\founderbench-anthropic.json --report ..\\..\\outputs\\founderbench-anthropic-submission-report.md"
-      ],
-      "expected_outputs": [
-        "outputs/founderbench-anthropic.json",
-        "outputs/founderbench-anthropic-submission-report.md"
-      ],
-      "claim_impact": "Adds a second hosted LLM family for model differentiation."
-    },
-    {
-      "id": "complete_gemini_hosted_baseline",
-      "gate": "required_experiments",
-      "owner": "evaluator",
-      "priority": "required",
-      "status": "missing",
-      "action": "Run Gemini on the complete 50-task current release suite with submission validation.",
-      "missing_inputs": [
-        "outputs/founderbench-gemini.json",
-        "outputs/founderbench-gemini-submission-report.md"
-      ],
-      "commands": [
-        "python -m founderbench.resumable_runner --policy gemini --output ..\\..\\outputs\\founderbench-gemini.json --resume",
-        "python -m founderbench.submission --input ..\\..\\outputs\\founderbench-gemini.json --report ..\\..\\outputs\\founderbench-gemini-submission-report.md"
-      ],
-      "expected_outputs": [
-        "outputs/founderbench-gemini.json",
-        "outputs/founderbench-gemini-submission-report.md"
-      ],
-      "claim_impact": "Adds a third hosted LLM family for model differentiation."
-    },
     {
       "id": "complete_local_open_source_baseline",
       "gate": "required_experiments",
@@ -354,26 +291,6 @@
       "claim_impact": "Required before hosted/local LLM comparison claims can be made."
     },
     {
-      "id": "support_claim_hosted_llm_comparison",
-      "gate": "claim_evidence_alignment",
-      "owner": "paper_author",
-      "priority": "required_for_stronger_claim",
-      "status": "unsupported_currently",
-      "action": "Either collect evidence for `hosted_llm_comparison` or keep paper wording conservative.",
-      "missing_inputs": [
-        "outputs/founderbench-deepseek.json",
-        "outputs/founderbench-anthropic.json",
-        "outputs/founderbench-gemini.json"
-      ],
-      "commands": [],
-      "expected_outputs": [
-        "outputs/founderbench-deepseek.json",
-        "outputs/founderbench-anthropic.json",
-        "outputs/founderbench-gemini.json"
-      ],
-      "claim_impact": "Permitted wording now: Provider adapters and experiment protocols are included; hosted current release LLM results remain to be run."
-    },
-    {
       "id": "support_claim_private_holdout_available",
       "gate": "claim_evidence_alignment",
       "owner": "paper_author",
@@ -507,7 +424,7 @@
         "evidence": [
           "outputs/founderbench-experiment-matrix.md"
         ],
-        "blocker": "6 required experiment groups are missing."
+        "blocker": "3 required experiment groups are missing."
       },
       {
         "id": "provider_run_readiness",

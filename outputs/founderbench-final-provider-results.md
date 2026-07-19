@@ -6,6 +6,7 @@ This table summarizes the validated hosted-provider runs available in this works
 | --- | ---: | ---: | ---: | --- | ---: |
 | Gemini 3.5 Flash | 67.69 | 32/50 | 59 | `invalid_json=29`, `provider_rate_limit=30` | 1,356,532 |
 | DeepSeek V4 Reasoner | 62.43 | 27/50 | 3 | `invalid_numeric_field=1`, `invalid_json=2` | 1,467,535 |
+| Claude Sonnet 4.5 | 61.09 | 24/50 | 0 | none | 774,427 |
 | DeepSeek Chat | 56.59 | 23/50 | 0 | none | 750,075 |
 | GLM 4.5 Air | 54.78 | 23/50 | 0 | none | 698,110 |
 | Gemini 2.5 Flash | 52.69 | 13/50 | 340 | `invalid_json=8`, `provider_io_error=332` | 560,539 |

@@ -509,12 +509,13 @@ class FounderBenchTests(unittest.TestCase):
     def test_paper_tables_exclude_missing_provider_runs(self):
         payload = build_tables()
         self.assertEqual(payload["summary"]["deterministic_runs"], 4)
-        self.assertEqual(payload["summary"]["valid_provider_runs"], 2)
-        self.assertEqual(payload["summary"]["valid_provider_policies"], 2)
+        self.assertEqual(payload["summary"]["valid_provider_runs"], 3)
+        self.assertEqual(payload["summary"]["valid_provider_policies"], 3)
         self.assertEqual(payload["summary"]["valid_repeated_provider_bundles"], 0)
-        self.assertEqual(len(payload["all_valid_policy_rows"]), 6)
+        self.assertEqual(len(payload["all_valid_policy_rows"]), 7)
         self.assertTrue(all(row["status"] in {"missing", "invalid", "valid"} for row in payload["provider_status"]))
         self.assertTrue(any(row["id"] == "deepseek_hosted_baseline" for row in payload["provider_status"]))
+        self.assertTrue(any(row["id"] == "anthropic_hosted_baseline" and row["status"] == "valid" for row in payload["provider_status"]))
         self.assertTrue(any(row["id"] == "gemini_hosted_baseline" and row["status"] == "valid" for row in payload["provider_status"]))
 
     def test_provider_status_accepts_valid_repeat_bundle(self):
@@ -601,12 +602,13 @@ class FounderBenchTests(unittest.TestCase):
         payload = build_model_comparison_report()
         self.assertEqual(validate_model_comparison_report(payload), [])
         self.assertEqual(payload["summary"]["deterministic_runs"], 4)
-        self.assertEqual(payload["summary"]["valid_provider_runs"], 2)
-        self.assertFalse(payload["summary"]["hosted_llm_claims_ready"])
-        self.assertEqual(len(payload["leaderboard_rows"]), 6)
+        self.assertEqual(payload["summary"]["valid_provider_runs"], 3)
+        self.assertTrue(payload["summary"]["hosted_llm_claims_ready"])
+        self.assertEqual(len(payload["leaderboard_rows"]), 7)
         self.assertGreaterEqual(payload["summary"]["paired_comparisons"], 3)
         self.assertGreaterEqual(len(payload["provider_status"]), 11)
         provider_rows = {row["id"]: row for row in payload["provider_status"]}
+        self.assertEqual(provider_rows["anthropic_hosted_baseline"]["status"], "valid")
         self.assertEqual(provider_rows["gemini_hosted_baseline"]["status"], "valid")
         self.assertEqual(provider_rows["gemini_hosted_baseline"]["average_task_score"], 52.69)
 
@@ -615,10 +617,11 @@ class FounderBenchTests(unittest.TestCase):
         self.assertEqual(validate_model_result_cards(payload), [])
         self.assertEqual(payload["summary"]["deterministic_cards"], 4)
         self.assertGreaterEqual(payload["summary"]["provider_candidate_cards"], 11)
-        self.assertEqual(payload["summary"]["valid_provider_cards"], 2)
-        self.assertFalse(payload["summary"]["hosted_llm_claims_ready"])
+        self.assertEqual(payload["summary"]["valid_provider_cards"], 3)
+        self.assertTrue(payload["summary"]["hosted_llm_claims_ready"])
         self.assertTrue(all(card["status"] == "valid" for card in payload["deterministic_cards"]))
         self.assertTrue(all(card["claim_eligibility"] == "excluded_until_validated" for card in payload["provider_cards"] if card["status"] != "valid"))
+        self.assertTrue(any(card["id"] == "anthropic_hosted_baseline" and card["claim_eligibility"] == "eligible_for_provider_tables" for card in payload["provider_cards"]))
         self.assertTrue(any(card["id"] == "gemini_hosted_baseline" and card["claim_eligibility"] == "eligible_for_provider_tables" for card in payload["provider_cards"]))
 
     def test_task_coverage_validates_public_suite_balance(self):

@@ -8,8 +8,8 @@ Reviewer-facing result cards for deterministic baselines and planned provider su
 | --- | --- |
 | deterministic_cards | 4 |
 | provider_candidate_cards | 11 |
-| valid_provider_cards | 2 |
-| hosted_llm_claims_ready | False |
+| valid_provider_cards | 3 |
+| hosted_llm_claims_ready | True |
 | open_source_claim_ready | False |
 
 ## Claim Guardrails
@@ -34,7 +34,7 @@ Reviewer-facing result cards for deterministic baselines and planned provider su
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | openai_hosted_baseline | openai | hosted_llm | missing | 0 |  | False | False | excluded_until_validated | Missing outputs/founderbench-openai.json or outputs/founderbench-openai-repeats.json |
 | deepseek_hosted_baseline | deepseek | hosted_llm | valid | 1 | single_run | True | False | eligible_for_provider_tables |  |
-| anthropic_hosted_baseline | anthropic | hosted_llm | missing | 0 |  | False | False | excluded_until_validated | Missing outputs/founderbench-anthropic.json or outputs/founderbench-anthropic-repeats.json |
+| anthropic_hosted_baseline | anthropic | hosted_llm | valid | 1 | single_run | True | False | eligible_for_provider_tables |  |
 | gemini_hosted_baseline | gemini | hosted_llm | valid | 1 | single_run | True | False | eligible_for_provider_tables |  |
 | kimi_hosted_baseline | kimi | hosted_llm | missing | 0 |  | False | False | excluded_until_validated | Missing outputs/founderbench-kimi.json or outputs/founderbench-kimi-repeats.json |
 | qwen_hosted_baseline | qwen | hosted_llm | missing | 0 |  | False | False | excluded_until_validated | Missing outputs/founderbench-qwen.json or outputs/founderbench-qwen-repeats.json |

@@ -8,20 +8,17 @@ Submission gate status: `not_ready`
 
 | Metric | Value |
 | --- | --- |
-| steps | 24 |
-| required_steps | 17 |
+| steps | 20 |
+| required_steps | 13 |
 | owner_action_steps | 4 |
 | provider_environment_steps | 11 |
-| claim_alignment_steps | 3 |
+| claim_alignment_steps | 2 |
 | ready_for_submission | False |
 
 ## Action Steps
 
 | ID | Gate | Owner | Priority | Status | Action |
 | --- | --- | --- | --- | --- | --- |
-| complete_deepseek_hosted_baseline | required_experiments | evaluator | required | missing | Run DeepSeek on the complete 50-task current release suite with submission validation. |
-| complete_anthropic_hosted_baseline | required_experiments | evaluator | required | missing | Run Claude/Anthropic on the complete 50-task current release suite with submission validation. |
-| complete_gemini_hosted_baseline | required_experiments | evaluator | required | missing | Run Gemini on the complete 50-task current release suite with submission validation. |
 | complete_local_open_source_baseline | required_experiments | evaluator | required | missing | Run at least one local/open-source model via the OpenAI-compatible protocol and validate the submission. |
 | complete_hosted_llm_audit_traces | required_experiments | evaluator | required | missing | Collect redacted audit traces for representative hosted LLM runs. |
 | complete_private_holdout_execution | required_experiments | evaluator | required_for_final_submission | missing | Execute the private holdout protocol on an evaluator-controlled host and report aggregate fields only. |
@@ -36,7 +33,6 @@ Submission gate status: `not_ready`
 | configure_xai | provider_run_readiness | evaluator | recommended | blocked_on_environment | Configure provider environment for xAI Grok. |
 | configure_llama | provider_run_readiness | evaluator | recommended | blocked_on_environment | Configure provider environment for Llama/Open-weight endpoint. |
 | configure_llm | provider_run_readiness | evaluator | required | blocked_on_environment | Configure provider environment for Local/OpenAI-compatible. |
-| support_claim_hosted_llm_comparison | claim_evidence_alignment | paper_author | required_for_stronger_claim | unsupported_currently | Either collect evidence for `hosted_llm_comparison` or keep paper wording conservative. |
 | support_claim_private_holdout_available | claim_evidence_alignment | paper_author | required_for_stronger_claim | unsupported_currently | Either collect evidence for `private_holdout_available` or keep paper wording conservative. |
 | support_claim_real_world_startup_prediction | claim_evidence_alignment | paper_author | required_for_stronger_claim | unsupported_currently | Either collect evidence for `real_world_startup_prediction` or keep paper wording conservative. |
 | finalize_license_choice | license_and_citation | project_owner | required | owner_action_required | Select a public release license. |
@@ -45,48 +41,6 @@ Submission gate status: `not_ready`
 | finalize_citation_license_field | license_and_citation | project_owner | required | owner_action_required | Set the CITATION.cff license field to the selected license identifier. |
 
 ## Step Details
-
-### complete_deepseek_hosted_baseline
-
-- Gate: `required_experiments`
-- Owner: `evaluator`
-- Claim impact: Provides a representative hosted LLM baseline.
-- Missing inputs/outputs:
-  - `outputs/founderbench-deepseek.json`
-  - `outputs/founderbench-deepseek-submission-report.md`
-- Commands:
-```powershell
-python -m founderbench.resumable_runner --policy deepseek --output ..\..\outputs\founderbench-deepseek.json --resume
-python -m founderbench.submission --input ..\..\outputs\founderbench-deepseek.json --report ..\..\outputs\founderbench-deepseek-submission-report.md
-```
-
-### complete_anthropic_hosted_baseline
-
-- Gate: `required_experiments`
-- Owner: `evaluator`
-- Claim impact: Adds a second hosted LLM family for model differentiation.
-- Missing inputs/outputs:
-  - `outputs/founderbench-anthropic.json`
-  - `outputs/founderbench-anthropic-submission-report.md`
-- Commands:
-```powershell
-python -m founderbench.resumable_runner --policy anthropic --output ..\..\outputs\founderbench-anthropic.json --resume
-python -m founderbench.submission --input ..\..\outputs\founderbench-anthropic.json --report ..\..\outputs\founderbench-anthropic-submission-report.md
-```
-
-### complete_gemini_hosted_baseline
-
-- Gate: `required_experiments`
-- Owner: `evaluator`
-- Claim impact: Adds a third hosted LLM family for model differentiation.
-- Missing inputs/outputs:
-  - `outputs/founderbench-gemini.json`
-  - `outputs/founderbench-gemini-submission-report.md`
-- Commands:
-```powershell
-python -m founderbench.resumable_runner --policy gemini --output ..\..\outputs\founderbench-gemini.json --resume
-python -m founderbench.submission --input ..\..\outputs\founderbench-gemini.json --report ..\..\outputs\founderbench-gemini-submission-report.md
-```
 
 ### complete_local_open_source_baseline
 
@@ -280,16 +234,6 @@ python -m founderbench.resumable_runner --policy llm --output outputs/founderben
 python -m founderbench.resumable_runner --policy llm --output outputs/founderbench-local-open-model-audit.json --resume --audit
 python -m founderbench.submission --input outputs/founderbench-local-open-model.json --report outputs/founderbench-local-open-model-submission-report.md
 ```
-
-### support_claim_hosted_llm_comparison
-
-- Gate: `claim_evidence_alignment`
-- Owner: `paper_author`
-- Claim impact: Permitted wording now: Provider adapters and experiment protocols are included; hosted current release LLM results remain to be run.
-- Missing inputs/outputs:
-  - `outputs/founderbench-deepseek.json`
-  - `outputs/founderbench-anthropic.json`
-  - `outputs/founderbench-gemini.json`
 
 ### support_claim_private_holdout_available
 

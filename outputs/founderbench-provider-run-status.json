@@ -72,8 +72,8 @@
       "output": "outputs/founderbench-anthropic.json",
       "submission_report": "outputs/founderbench-anthropic-submission-report.md",
       "audit_output": "outputs/founderbench-anthropic-audit.json",
-      "exists": false,
-      "submission_report_exists": false,
+      "exists": true,
+      "submission_report_exists": true,
       "audit_exists": false,
       "audit_submission_report_exists": false,
       "repeat_bundle_output": "outputs/founderbench-anthropic-repeats.json",
@@ -86,13 +86,14 @@
         "outputs/founderbench-anthropic-seed2.json"
       ],
       "repeat_outputs_present": 0,
-      "evidence_kind": "",
-      "status": "missing",
-      "runs": 0,
-      "tasks": 0,
-      "problems": [
-        "Missing outputs/founderbench-anthropic.json or outputs/founderbench-anthropic-repeats.json"
-      ]
+      "evidence_kind": "single_run",
+      "status": "valid",
+      "runs": 1,
+      "tasks": 50,
+      "problems": [],
+      "bytes": 81275,
+      "sha256": "bdf9090c454a0a2cb42be936d52717add3df18375b9823b5bd7b0a536a06f364",
+      "evidence_path": "outputs/founderbench-anthropic.json"
     },
     {
       "id": "gemini_single",
@@ -343,6 +344,21 @@
       "reason_excluded": "Not a planned current release provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims."
     },
     {
+      "path": "outputs/founderbench-anthropic-sonnet-4.5-full.log",
+      "bytes": 82937,
+      "reason_excluded": "Not a planned current release provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims."
+    },
+    {
+      "path": "outputs/founderbench-anthropic-sonnet-4.5-smoke.json",
+      "bytes": 2302,
+      "reason_excluded": "Not a planned current release provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims."
+    },
+    {
+      "path": "outputs/founderbench-anthropic-sonnet-4.5-smoke.log",
+      "bytes": 2337,
+      "reason_excluded": "Not a planned current release provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims."
+    },
+    {
       "path": "outputs/founderbench-deepseek-acc006-trace.json",
       "bytes": 48767,
       "reason_excluded": "Not a planned current release provider evidence path; older, smoke, trace, or differently named provider artifacts are excluded from paper claims."
@@ -490,16 +506,16 @@
   ],
   "summary": {
     "planned_runs": 11,
-    "valid_runs": 2,
+    "valid_runs": 3,
     "invalid_runs": 1,
-    "missing_runs": 8,
+    "missing_runs": 7,
     "required_runs": 7,
-    "required_valid": 2,
-    "required_missing_or_invalid": 5,
+    "required_valid": 3,
+    "required_missing_or_invalid": 4,
     "audit_outputs_present": 0,
     "repeat_bundles_present": 0,
     "repeat_outputs_present": 0,
-    "excluded_provider_like_files": 30,
+    "excluded_provider_like_files": 33,
     "ready_for_llm_claims": false
   }
 }

@@ -192,14 +192,14 @@
         {
           "path": "outputs/founderbench-paper-tables.md",
           "exists": true,
-          "bytes": 5998,
-          "sha256": "1dfd0992c76b4eed20f7e03a71adf93a31669b2ffba72f41dd585b5e6411db72"
+          "bytes": 6263,
+          "sha256": "55e5defcbe1d808167c4f08b56b3e110cdcca419b05efe61e7de5c11c571eb8a"
         },
         {
           "path": "outputs/founderbench-model-result-cards.md",
           "exists": true,
-          "bytes": 4083,
-          "sha256": "6fa4d180f3087c2b48374032b17e8ae8c275b26960b0e80511a0696648cb9e60"
+          "bytes": 4003,
+          "sha256": "a738d34a0aa302c8025f7771f86d18b9054b7dc6fc815465848870f2e0ca203c"
         }
       ],
       "claim_ids": [
@@ -268,8 +268,8 @@
         {
           "path": "outputs/founderbench-provider-run-status.md",
           "exists": true,
-          "bytes": 9053,
-          "sha256": "0a4f39375a13c389ed53b21431af04b85e67206d057f77cd907d26a0bae8350a"
+          "bytes": 9611,
+          "sha256": "892938be05f332b3bb473823f10f9f9bc478aad7fa27017436ad06bb304ddc16"
         },
         {
           "path": "outputs/founderbench-provider-comparability-audit.md",
@@ -292,8 +292,8 @@
         {
           "path": "outputs/founderbench-model-result-cards.md",
           "exists": true,
-          "bytes": 4083,
-          "sha256": "6fa4d180f3087c2b48374032b17e8ae8c275b26960b0e80511a0696648cb9e60"
+          "bytes": 4003,
+          "sha256": "a738d34a0aa302c8025f7771f86d18b9054b7dc6fc815465848870f2e0ca203c"
         },
         {
           "path": "outputs/founderbench-submission-manifest.md",

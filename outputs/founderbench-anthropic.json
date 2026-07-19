@@ -1,0 +1,2634 @@
+{
+  "benchmark": "FounderBench",
+  "benchmark_version": "0.3.0",
+  "policy": "anthropic",
+  "run_seed": 0,
+  "tasks": 50,
+  "solved": 24,
+  "solve_rate": 0.48,
+  "average_task_score": 61.09,
+  "diagnostics": {
+    "invalid_actions": 0,
+    "over_budget_decisions": 0,
+    "provider_errors": 0,
+    "provider_error_categories": {},
+    "total_actions": 1497,
+    "decision_latency_s": 3098.809,
+    "simulated_api_cost": 523.95,
+    "provider_prompt_tokens": 657838,
+    "provider_completion_tokens": 116589,
+    "provider_total_tokens": 774427,
+    "estimated_provider_cost_usd": 0.0
+  },
+  "splits": {
+    "public_dev": {
+      "tasks": 30,
+      "solved": 12,
+      "solve_rate": 0.4,
+      "average_task_score": 62.09
+    },
+    "public_test": {
+      "tasks": 20,
+      "solved": 12,
+      "solve_rate": 0.6,
+      "average_task_score": 59.58
+    }
+  },
+  "results": [
+    {
+      "task_id": "FND-001",
+      "name": "Select a viable market v1",
+      "description": "Research noisy market options and commit to a viable first offer.",
+      "score": {
+        "task_id": "FND-001",
+        "name": "Select a viable market v1",
+        "score": 26.46,
+        "passed": false,
+        "metrics": {
+          "researched_markets": 6,
+          "chose_good_market": false,
+          "cash": 619.24
+        },
+        "notes": [
+          "Good markets are defined by low competition, adequate demand, and workable support load."
+        ]
+      },
+      "summary": {
+        "seed": 11,
+        "weeks": 10,
+        "cash": 619.24,
+        "score": 6083.8,
+        "reputation": 0.597,
+        "offers": 2,
+        "customers": 3,
+        "cumulative_revenue": 1320.0,
+        "cumulative_cost": 10700.76,
+        "cumulative_api_cost": 11.9,
+        "funding_raised": 0.0,
+        "risk_penalty": 228.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 10,
+        "total_actions": 34,
+        "avg_actions_per_week": 3.4,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 72.0671,
+        "simulated_api_cost": 11.9,
+        "provider_prompt_tokens": 15025,
+        "provider_completion_tokens": 2759,
+        "provider_total_tokens": 17784,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-002",
+      "name": "Select a viable market v2",
+      "description": "Research noisy market options and commit to a viable first offer.",
+      "score": {
+        "task_id": "FND-002",
+        "name": "Select a viable market v2",
+        "score": 79.95,
+        "passed": true,
+        "metrics": {
+          "researched_markets": 5,
+          "chose_good_market": true,
+          "cash": -20.0
+        },
+        "notes": [
+          "Good markets are defined by low competition, adequate demand, and workable support load."
+        ]
+      },
+      "summary": {
+        "seed": 41,
+        "weeks": 6,
+        "cash": -20.0,
+        "score": -5496.31,
+        "reputation": 0.508,
+        "offers": 2,
+        "customers": 0,
+        "cumulative_revenue": 0.0,
+        "cumulative_cost": 10020.0,
+        "cumulative_api_cost": 7.0,
+        "funding_raised": 0.0,
+        "risk_penalty": 360.0,
+        "bankrupt": true
+      },
+      "diagnostics": {
+        "weeks_run": 6,
+        "total_actions": 20,
+        "avg_actions_per_week": 3.333,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 43.3041,
+        "simulated_api_cost": 7.0,
+        "provider_prompt_tokens": 8888,
+        "provider_completion_tokens": 1732,
+        "provider_total_tokens": 10620,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-003",
+      "name": "Select a viable market v3",
+      "description": "Research noisy market options and commit to a viable first offer.",
+      "score": {
+        "task_id": "FND-003",
+        "name": "Select a viable market v3",
+        "score": 24.85,
+        "passed": false,
+        "metrics": {
+          "researched_markets": 8,
+          "chose_good_market": false,
+          "cash": -65.0
+        },
+        "notes": [
+          "Good markets are defined by low competition, adequate demand, and workable support load."
+        ]
+      },
+      "summary": {
+        "seed": 43,
+        "weeks": 7,
+        "cash": -65.0,
+        "score": -5382.58,
+        "reputation": 0.537,
+        "offers": 1,
+        "customers": 0,
+        "cumulative_revenue": 0.0,
+        "cumulative_cost": 10065.0,
+        "cumulative_api_cost": 6.65,
+        "funding_raised": 0.0,
+        "risk_penalty": 288.0,
+        "bankrupt": true
+      },
+      "diagnostics": {
+        "weeks_run": 7,
+        "total_actions": 19,
+        "avg_actions_per_week": 2.714,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 43.8386,
+        "simulated_api_cost": 6.65,
+        "provider_prompt_tokens": 10110,
+        "provider_completion_tokens": 1652,
+        "provider_total_tokens": 11762,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-004",
+      "name": "Select a viable market v4",
+      "description": "Research noisy market options and commit to a viable first offer.",
+      "score": {
+        "task_id": "FND-004",
+        "name": "Select a viable market v4",
+        "score": 79.11,
+        "passed": true,
+        "metrics": {
+          "researched_markets": 7,
+          "chose_good_market": true,
+          "cash": -380.0
+        },
+        "notes": [
+          "Good markets are defined by low competition, adequate demand, and workable support load."
+        ]
+      },
+      "summary": {
+        "seed": 47,
+        "weeks": 6,
+        "cash": -380.0,
+        "score": -5775.52,
+        "reputation": 0.508,
+        "offers": 1,
+        "customers": 0,
+        "cumulative_revenue": 0.0,
+        "cumulative_cost": 10380.0,
+        "cumulative_api_cost": 6.3,
+        "funding_raised": 0.0,
+        "risk_penalty": 320.0,
+        "bankrupt": true
+      },
+      "diagnostics": {
+        "weeks_run": 6,
+        "total_actions": 18,
+        "avg_actions_per_week": 3.0,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 40.2134,
+        "simulated_api_cost": 6.3,
+        "provider_prompt_tokens": 8729,
+        "provider_completion_tokens": 1541,
+        "provider_total_tokens": 10270,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-005",
+      "name": "Select a viable market v5",
+      "description": "Research noisy market options and commit to a viable first offer.",
+      "score": {
+        "task_id": "FND-005",
+        "name": "Select a viable market v5",
+        "score": 26.41,
+        "passed": false,
+        "metrics": {
+          "researched_markets": 5,
+          "chose_good_market": false,
+          "cash": 597.16
+        },
+        "notes": [
+          "Good markets are defined by low competition, adequate demand, and workable support load."
+        ]
+      },
+      "summary": {
+        "seed": 53,
+        "weeks": 10,
+        "cash": 597.16,
+        "score": 5106.47,
+        "reputation": 0.634,
+        "offers": 1,
+        "customers": 2,
+        "cumulative_revenue": 1820.0,
+        "cumulative_cost": 11222.84,
+        "cumulative_api_cost": 10.5,
+        "funding_raised": 0.0,
+        "risk_penalty": 96.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 10,
+        "total_actions": 30,
+        "avg_actions_per_week": 3.0,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 66.9094,
+        "simulated_api_cost": 10.5,
+        "provider_prompt_tokens": 14850,
+        "provider_completion_tokens": 2449,
+        "provider_total_tokens": 17299,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-006",
+      "name": "Reach first revenue v1",
+      "description": "Build and sell enough to reach early paying customers while preserving cash.",
+      "score": {
+        "task_id": "FND-006",
+        "name": "Reach first revenue v1",
+        "score": 6.82,
+        "passed": false,
+        "metrics": {
+          "customers": 0,
+          "max_weekly_revenue": 0.0,
+          "cash": -39.9,
+          "reputation": 0.453
+        },
+        "notes": [
+          "The task rewards early paying customers without exhausting runway."
+        ]
+      },
+      "summary": {
+        "seed": 7,
+        "weeks": 8,
+        "cash": -39.9,
+        "score": -6163.58,
+        "reputation": 0.453,
+        "offers": 2,
+        "customers": 0,
+        "cumulative_revenue": 0.0,
+        "cumulative_cost": 10039.9,
+        "cumulative_api_cost": 9.45,
+        "funding_raised": 0.0,
+        "risk_penalty": 668.0,
+        "bankrupt": true
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 27,
+        "avg_actions_per_week": 3.375,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 55.9837,
+        "simulated_api_cost": 9.45,
+        "provider_prompt_tokens": 12186,
+        "provider_completion_tokens": 2198,
+        "provider_total_tokens": 14384,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-007",
+      "name": "Reach first revenue v2",
+      "description": "Build and sell enough to reach early paying customers while preserving cash.",
+      "score": {
+        "task_id": "FND-007",
+        "name": "Reach first revenue v2",
+        "score": 74.53,
+        "passed": true,
+        "metrics": {
+          "customers": 4,
+          "max_weekly_revenue": 1120.0,
+          "cash": 1164.58,
+          "reputation": 0.604
+        },
+        "notes": [
+          "The task rewards early paying customers without exhausting runway."
+        ]
+      },
+      "summary": {
+        "seed": 59,
+        "weeks": 14,
+        "cash": 1164.58,
+        "score": 9942.93,
+        "reputation": 0.604,
+        "offers": 2,
+        "customers": 4,
+        "cumulative_revenue": 7343.0,
+        "cumulative_cost": 16178.42,
+        "cumulative_api_cost": 18.55,
+        "funding_raised": 0.0,
+        "risk_penalty": 468.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 14,
+        "total_actions": 53,
+        "avg_actions_per_week": 3.786,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 100.0512,
+        "simulated_api_cost": 18.55,
+        "provider_prompt_tokens": 21706,
+        "provider_completion_tokens": 3995,
+        "provider_total_tokens": 25701,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-008",
+      "name": "Reach first revenue v3",
+      "description": "Build and sell enough to reach early paying customers while preserving cash.",
+      "score": {
+        "task_id": "FND-008",
+        "name": "Reach first revenue v3",
+        "score": 50.98,
+        "passed": false,
+        "metrics": {
+          "customers": 2,
+          "max_weekly_revenue": 660.0,
+          "cash": 461.18,
+          "reputation": 0.61
+        },
+        "notes": [
+          "The task rewards early paying customers without exhausting runway."
+        ]
+      },
+      "summary": {
+        "seed": 61,
+        "weeks": 14,
+        "cash": 461.18,
+        "score": 3684.66,
+        "reputation": 0.61,
+        "offers": 2,
+        "customers": 2,
+        "cumulative_revenue": 3635.0,
+        "cumulative_cost": 13173.82,
+        "cumulative_api_cost": 17.15,
+        "funding_raised": 0.0,
+        "risk_penalty": 408.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 14,
+        "total_actions": 49,
+        "avg_actions_per_week": 3.5,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 96.1439,
+        "simulated_api_cost": 17.15,
+        "provider_prompt_tokens": 21349,
+        "provider_completion_tokens": 3749,
+        "provider_total_tokens": 25098,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-009",
+      "name": "Reach first revenue v4",
+      "description": "Build and sell enough to reach early paying customers while preserving cash.",
+      "score": {
+        "task_id": "FND-009",
+        "name": "Reach first revenue v4",
+        "score": 7.52,
+        "passed": false,
+        "metrics": {
+          "customers": 0,
+          "max_weekly_revenue": 0.0,
+          "cash": -95.0,
+          "reputation": 0.512
+        },
+        "notes": [
+          "The task rewards early paying customers without exhausting runway."
+        ]
+      },
+      "summary": {
+        "seed": 67,
+        "weeks": 8,
+        "cash": -95.0,
+        "score": -5572.42,
+        "reputation": 0.512,
+        "offers": 2,
+        "customers": 0,
+        "cumulative_revenue": 0.0,
+        "cumulative_cost": 10095.0,
+        "cumulative_api_cost": 9.1,
+        "funding_raised": 0.0,
+        "risk_penalty": 360.0,
+        "bankrupt": true
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 26,
+        "avg_actions_per_week": 3.25,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 53.9774,
+        "simulated_api_cost": 9.1,
+        "provider_prompt_tokens": 11874,
+        "provider_completion_tokens": 2024,
+        "provider_total_tokens": 13898,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-010",
+      "name": "Reach first revenue v5",
+      "description": "Build and sell enough to reach early paying customers while preserving cash.",
+      "score": {
+        "task_id": "FND-010",
+        "name": "Reach first revenue v5",
+        "score": 8.02,
+        "passed": false,
+        "metrics": {
+          "customers": 0,
+          "max_weekly_revenue": 0.0,
+          "cash": -110.0,
+          "reputation": 0.547
+        },
+        "notes": [
+          "The task rewards early paying customers without exhausting runway."
+        ]
+      },
+      "summary": {
+        "seed": 71,
+        "weeks": 6,
+        "cash": -110.0,
+        "score": -5302.41,
+        "reputation": 0.547,
+        "offers": 1,
+        "customers": 0,
+        "cumulative_revenue": 0.0,
+        "cumulative_cost": 10110.0,
+        "cumulative_api_cost": 6.65,
+        "funding_raised": 0.0,
+        "risk_penalty": 228.0,
+        "bankrupt": true
+      },
+      "diagnostics": {
+        "weeks_run": 6,
+        "total_actions": 19,
+        "avg_actions_per_week": 3.167,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 40.98,
+        "simulated_api_cost": 6.65,
+        "provider_prompt_tokens": 8886,
+        "provider_completion_tokens": 1543,
+        "provider_total_tokens": 10429,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-011",
+      "name": "Improve retention v1",
+      "description": "Start with weak quality and existing customers; improve retention and reputation.",
+      "score": {
+        "task_id": "FND-011",
+        "name": "Improve retention v1",
+        "score": 86.67,
+        "passed": true,
+        "metrics": {
+          "customers": 11,
+          "quality": 0.98,
+          "reputation": 1.0,
+          "churned": 2,
+          "extra_offers": 0
+        },
+        "notes": [
+          "The task starts with customers and a weak product; good agents improve quality and support."
+        ]
+      },
+      "summary": {
+        "seed": 30,
+        "weeks": 8,
+        "cash": 2414.48,
+        "score": 17861.35,
+        "reputation": 1.0,
+        "offers": 1,
+        "customers": 11,
+        "cumulative_revenue": 9610.0,
+        "cumulative_cost": 15195.52,
+        "cumulative_api_cost": 8.75,
+        "funding_raised": 0.0,
+        "risk_penalty": 0.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 25,
+        "avg_actions_per_week": 3.125,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 51.2585,
+        "simulated_api_cost": 8.75,
+        "provider_prompt_tokens": 12003,
+        "provider_completion_tokens": 1848,
+        "provider_total_tokens": 13851,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-012",
+      "name": "Improve retention v2",
+      "description": "Start with weak quality and existing customers; improve retention and reputation.",
+      "score": {
+        "task_id": "FND-012",
+        "name": "Improve retention v2",
+        "score": 100.0,
+        "passed": true,
+        "metrics": {
+          "customers": 12,
+          "quality": 0.98,
+          "reputation": 0.998,
+          "churned": 0,
+          "extra_offers": 0
+        },
+        "notes": [
+          "The task starts with customers and a weak product; good agents improve quality and support."
+        ]
+      },
+      "summary": {
+        "seed": 31,
+        "weeks": 8,
+        "cash": 2530.64,
+        "score": 22216.64,
+        "reputation": 0.998,
+        "offers": 1,
+        "customers": 12,
+        "cumulative_revenue": 9805.0,
+        "cumulative_cost": 16274.36,
+        "cumulative_api_cost": 8.75,
+        "funding_raised": 0.0,
+        "risk_penalty": 0.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 25,
+        "avg_actions_per_week": 3.125,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 47.9717,
+        "simulated_api_cost": 8.75,
+        "provider_prompt_tokens": 12022,
+        "provider_completion_tokens": 1715,
+        "provider_total_tokens": 13737,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-013",
+      "name": "Improve retention v3",
+      "description": "Start with weak quality and existing customers; improve retention and reputation.",
+      "score": {
+        "task_id": "FND-013",
+        "name": "Improve retention v3",
+        "score": 86.67,
+        "passed": true,
+        "metrics": {
+          "customers": 14,
+          "quality": 0.98,
+          "reputation": 1.0,
+          "churned": 2,
+          "extra_offers": 0
+        },
+        "notes": [
+          "The task starts with customers and a weak product; good agents improve quality and support."
+        ]
+      },
+      "summary": {
+        "seed": 32,
+        "weeks": 8,
+        "cash": 3956.28,
+        "score": 31323.15,
+        "reputation": 1.0,
+        "offers": 1,
+        "customers": 14,
+        "cumulative_revenue": 18450.0,
+        "cumulative_cost": 23993.72,
+        "cumulative_api_cost": 8.75,
+        "funding_raised": 0.0,
+        "risk_penalty": 0.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 25,
+        "avg_actions_per_week": 3.125,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 55.379,
+        "simulated_api_cost": 8.75,
+        "provider_prompt_tokens": 11997,
+        "provider_completion_tokens": 1970,
+        "provider_total_tokens": 13967,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-014",
+      "name": "Improve retention v4",
+      "description": "Start with weak quality and existing customers; improve retention and reputation.",
+      "score": {
+        "task_id": "FND-014",
+        "name": "Improve retention v4",
+        "score": 100.0,
+        "passed": true,
+        "metrics": {
+          "customers": 8,
+          "quality": 0.98,
+          "reputation": 0.964,
+          "churned": 0,
+          "extra_offers": 0
+        },
+        "notes": [
+          "The task starts with customers and a weak product; good agents improve quality and support."
+        ]
+      },
+      "summary": {
+        "seed": 33,
+        "weeks": 8,
+        "cash": 1139.94,
+        "score": 11207.91,
+        "reputation": 0.964,
+        "offers": 1,
+        "customers": 8,
+        "cumulative_revenue": 7695.0,
+        "cumulative_cost": 13055.06,
+        "cumulative_api_cost": 9.45,
+        "funding_raised": 0.0,
+        "risk_penalty": 0.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 27,
+        "avg_actions_per_week": 3.375,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 50.6599,
+        "simulated_api_cost": 9.45,
+        "provider_prompt_tokens": 12000,
+        "provider_completion_tokens": 1866,
+        "provider_total_tokens": 13866,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-015",
+      "name": "Improve retention v5",
+      "description": "Start with weak quality and existing customers; improve retention and reputation.",
+      "score": {
+        "task_id": "FND-015",
+        "name": "Improve retention v5",
+        "score": 100.0,
+        "passed": true,
+        "metrics": {
+          "customers": 10,
+          "quality": 0.98,
+          "reputation": 1.0,
+          "churned": 0,
+          "extra_offers": 0
+        },
+        "notes": [
+          "The task starts with customers and a weak product; good agents improve quality and support."
+        ]
+      },
+      "summary": {
+        "seed": 34,
+        "weeks": 8,
+        "cash": 3058.12,
+        "score": 28744.99,
+        "reputation": 1.0,
+        "offers": 1,
+        "customers": 10,
+        "cumulative_revenue": 16580.0,
+        "cumulative_cost": 24021.88,
+        "cumulative_api_cost": 8.75,
+        "funding_raised": 0.0,
+        "risk_penalty": 0.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 25,
+        "avg_actions_per_week": 3.125,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 51.8949,
+        "simulated_api_cost": 8.75,
+        "provider_prompt_tokens": 11978,
+        "provider_completion_tokens": 1874,
+        "provider_total_tokens": 13852,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-016",
+      "name": "Survive churn shock v1",
+      "description": "Stabilize an overloaded startup after support and retention pressure.",
+      "score": {
+        "task_id": "FND-016",
+        "name": "Survive churn shock v1",
+        "score": 94.4,
+        "passed": true,
+        "metrics": {
+          "customers": 29,
+          "churned": 0,
+          "reputation": 0.99,
+          "agent_capacity": 2.36,
+          "extra_offers": 0
+        },
+        "notes": [
+          "The task rewards stabilizing an overloaded company, not pure acquisition."
+        ]
+      },
+      "summary": {
+        "seed": 39,
+        "weeks": 8,
+        "cash": 12117.52,
+        "score": 82855.07,
+        "reputation": 0.99,
+        "offers": 1,
+        "customers": 29,
+        "cumulative_revenue": 47920.0,
+        "cumulative_cost": 47802.48,
+        "cumulative_api_cost": 9.1,
+        "funding_raised": 0.0,
+        "risk_penalty": 252.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 26,
+        "avg_actions_per_week": 3.25,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 58.9497,
+        "simulated_api_cost": 9.1,
+        "provider_prompt_tokens": 11984,
+        "provider_completion_tokens": 2069,
+        "provider_total_tokens": 14053,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-017",
+      "name": "Survive churn shock v2",
+      "description": "Stabilize an overloaded startup after support and retention pressure.",
+      "score": {
+        "task_id": "FND-017",
+        "name": "Survive churn shock v2",
+        "score": 73.63,
+        "passed": true,
+        "metrics": {
+          "customers": 23,
+          "churned": 2,
+          "reputation": 0.978,
+          "agent_capacity": 1.0,
+          "extra_offers": 0
+        },
+        "notes": [
+          "The task rewards stabilizing an overloaded company, not pure acquisition."
+        ]
+      },
+      "summary": {
+        "seed": 40,
+        "weeks": 8,
+        "cash": 5083.0,
+        "score": 46430.55,
+        "reputation": 0.978,
+        "offers": 1,
+        "customers": 23,
+        "cumulative_revenue": 31500.0,
+        "cumulative_cost": 36417.0,
+        "cumulative_api_cost": 9.1,
+        "funding_raised": 0.0,
+        "risk_penalty": 264.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 26,
+        "avg_actions_per_week": 3.25,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 56.7219,
+        "simulated_api_cost": 9.1,
+        "provider_prompt_tokens": 12046,
+        "provider_completion_tokens": 2000,
+        "provider_total_tokens": 14046,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-018",
+      "name": "Survive churn shock v3",
+      "description": "Stabilize an overloaded startup after support and retention pressure.",
+      "score": {
+        "task_id": "FND-018",
+        "name": "Survive churn shock v3",
+        "score": 66.67,
+        "passed": false,
+        "metrics": {
+          "customers": 21,
+          "churned": 0,
+          "reputation": 0.907,
+          "agent_capacity": 0.97,
+          "extra_offers": 0
+        },
+        "notes": [
+          "The task rewards stabilizing an overloaded company, not pure acquisition."
+        ]
+      },
+      "summary": {
+        "seed": 41,
+        "weeks": 8,
+        "cash": 8683.12,
+        "score": 65882.63,
+        "reputation": 0.907,
+        "offers": 1,
+        "customers": 21,
+        "cumulative_revenue": 35640.0,
+        "cumulative_cost": 41956.88,
+        "cumulative_api_cost": 9.45,
+        "funding_raised": 0.0,
+        "risk_penalty": 600.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 27,
+        "avg_actions_per_week": 3.375,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 56.7363,
+        "simulated_api_cost": 9.45,
+        "provider_prompt_tokens": 11933,
+        "provider_completion_tokens": 1977,
+        "provider_total_tokens": 13910,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-019",
+      "name": "Survive churn shock v4",
+      "description": "Stabilize an overloaded startup after support and retention pressure.",
+      "score": {
+        "task_id": "FND-019",
+        "name": "Survive churn shock v4",
+        "score": 39.07,
+        "passed": false,
+        "metrics": {
+          "customers": 21,
+          "churned": 4,
+          "reputation": 0.968,
+          "agent_capacity": 0.86,
+          "extra_offers": 1
+        },
+        "notes": [
+          "The task rewards stabilizing an overloaded company, not pure acquisition."
+        ]
+      },
+      "summary": {
+        "seed": 42,
+        "weeks": 8,
+        "cash": 5555.44,
+        "score": 44887.09,
+        "reputation": 0.968,
+        "offers": 2,
+        "customers": 21,
+        "cumulative_revenue": 34820.0,
+        "cumulative_cost": 40264.56,
+        "cumulative_api_cost": 10.85,
+        "funding_raised": 0.0,
+        "risk_penalty": 468.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 31,
+        "avg_actions_per_week": 3.875,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 58.1825,
+        "simulated_api_cost": 10.85,
+        "provider_prompt_tokens": 12467,
+        "provider_completion_tokens": 2197,
+        "provider_total_tokens": 14664,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-020",
+      "name": "Survive churn shock v5",
+      "description": "Stabilize an overloaded startup after support and retention pressure.",
+      "score": {
+        "task_id": "FND-020",
+        "name": "Survive churn shock v5",
+        "score": 62.55,
+        "passed": false,
+        "metrics": {
+          "customers": 20,
+          "churned": 2,
+          "reputation": 0.881,
+          "agent_capacity": 0.91,
+          "extra_offers": 1
+        },
+        "notes": [
+          "The task rewards stabilizing an overloaded company, not pure acquisition."
+        ]
+      },
+      "summary": {
+        "seed": 43,
+        "weeks": 8,
+        "cash": 4513.32,
+        "score": 34979.46,
+        "reputation": 0.881,
+        "offers": 2,
+        "customers": 20,
+        "cumulative_revenue": 23275.0,
+        "cumulative_cost": 27261.68,
+        "cumulative_api_cost": 9.45,
+        "funding_raised": 0.0,
+        "risk_penalty": 180.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 27,
+        "avg_actions_per_week": 3.375,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 68.1914,
+        "simulated_api_cost": 9.45,
+        "provider_prompt_tokens": 12240,
+        "provider_completion_tokens": 2436,
+        "provider_total_tokens": 14676,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-021",
+      "name": "Prepare Demo Day traction v1",
+      "description": "Convert an early startup into a credible Demo Day company.",
+      "score": {
+        "task_id": "FND-021",
+        "name": "Prepare Demo Day traction v1",
+        "score": 66.31,
+        "passed": false,
+        "metrics": {
+          "customers": 43,
+          "recurring_revenue": 9940.0,
+          "growth": 36,
+          "cash": 11191.36,
+          "reputation": 0.875,
+          "extra_offers": 1
+        },
+        "notes": [
+          "This is a compact Demo Day proxy: revenue, customers, growth, runway, and reputation."
+        ]
+      },
+      "summary": {
+        "seed": 52,
+        "weeks": 12,
+        "cash": 11191.36,
+        "score": 93357.18,
+        "reputation": 0.875,
+        "offers": 2,
+        "customers": 43,
+        "cumulative_revenue": 67510.0,
+        "cumulative_cost": 74318.64,
+        "cumulative_api_cost": 15.75,
+        "funding_raised": 0.0,
+        "risk_penalty": 1464.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 12,
+        "total_actions": 45,
+        "avg_actions_per_week": 3.75,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 87.0408,
+        "simulated_api_cost": 15.75,
+        "provider_prompt_tokens": 18858,
+        "provider_completion_tokens": 3549,
+        "provider_total_tokens": 22407,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-022",
+      "name": "Prepare Demo Day traction v2",
+      "description": "Convert an early startup into a credible Demo Day company.",
+      "score": {
+        "task_id": "FND-022",
+        "name": "Prepare Demo Day traction v2",
+        "score": 65.65,
+        "passed": false,
+        "metrics": {
+          "customers": 18,
+          "recurring_revenue": 4680.0,
+          "growth": 11,
+          "cash": 8602.52,
+          "reputation": 0.782,
+          "extra_offers": 1
+        },
+        "notes": [
+          "This is a compact Demo Day proxy: revenue, customers, growth, runway, and reputation."
+        ]
+      },
+      "summary": {
+        "seed": 53,
+        "weeks": 12,
+        "cash": 8602.52,
+        "score": 47017.89,
+        "reputation": 0.782,
+        "offers": 2,
+        "customers": 18,
+        "cumulative_revenue": 35880.0,
+        "cumulative_cost": 43277.48,
+        "cumulative_api_cost": 15.75,
+        "funding_raised": 0.0,
+        "risk_penalty": 776.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 12,
+        "total_actions": 45,
+        "avg_actions_per_week": 3.75,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 94.2628,
+        "simulated_api_cost": 15.75,
+        "provider_prompt_tokens": 18833,
+        "provider_completion_tokens": 3570,
+        "provider_total_tokens": 22403,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-023",
+      "name": "Prepare Demo Day traction v3",
+      "description": "Convert an early startup into a credible Demo Day company.",
+      "score": {
+        "task_id": "FND-023",
+        "name": "Prepare Demo Day traction v3",
+        "score": 68.94,
+        "passed": false,
+        "metrics": {
+          "customers": 26,
+          "recurring_revenue": 5095.0,
+          "growth": 16,
+          "cash": 6028.48,
+          "reputation": 1.0,
+          "extra_offers": 2
+        },
+        "notes": [
+          "This is a compact Demo Day proxy: revenue, customers, growth, runway, and reputation."
+        ]
+      },
+      "summary": {
+        "seed": 54,
+        "weeks": 12,
+        "cash": 6028.48,
+        "score": 49472.33,
+        "reputation": 1.0,
+        "offers": 3,
+        "customers": 26,
+        "cumulative_revenue": 36155.0,
+        "cumulative_cost": 44126.52,
+        "cumulative_api_cost": 16.1,
+        "funding_raised": 0.0,
+        "risk_penalty": 456.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 12,
+        "total_actions": 46,
+        "avg_actions_per_week": 3.833,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 91.7791,
+        "simulated_api_cost": 16.1,
+        "provider_prompt_tokens": 19066,
+        "provider_completion_tokens": 3680,
+        "provider_total_tokens": 22746,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-024",
+      "name": "Prepare Demo Day traction v4",
+      "description": "Convert an early startup into a credible Demo Day company.",
+      "score": {
+        "task_id": "FND-024",
+        "name": "Prepare Demo Day traction v4",
+        "score": 60.95,
+        "passed": false,
+        "metrics": {
+          "customers": 18,
+          "recurring_revenue": 5520.0,
+          "growth": 13,
+          "cash": 6356.08,
+          "reputation": 0.965,
+          "extra_offers": 2
+        },
+        "notes": [
+          "This is a compact Demo Day proxy: revenue, customers, growth, runway, and reputation."
+        ]
+      },
+      "summary": {
+        "seed": 55,
+        "weeks": 12,
+        "cash": 6356.08,
+        "score": 51213.66,
+        "reputation": 0.965,
+        "offers": 3,
+        "customers": 18,
+        "cumulative_revenue": 46660.0,
+        "cumulative_cost": 60303.92,
+        "cumulative_api_cost": 16.45,
+        "funding_raised": 0.0,
+        "risk_penalty": 960.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 12,
+        "total_actions": 47,
+        "avg_actions_per_week": 3.917,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 88.5325,
+        "simulated_api_cost": 16.45,
+        "provider_prompt_tokens": 19019,
+        "provider_completion_tokens": 3544,
+        "provider_total_tokens": 22563,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-025",
+      "name": "Prepare Demo Day traction v5",
+      "description": "Convert an early startup into a credible Demo Day company.",
+      "score": {
+        "task_id": "FND-025",
+        "name": "Prepare Demo Day traction v5",
+        "score": 78.14,
+        "passed": true,
+        "metrics": {
+          "customers": 26,
+          "recurring_revenue": 7180.0,
+          "growth": 17,
+          "cash": 8588.08,
+          "reputation": 0.957,
+          "extra_offers": 1
+        },
+        "notes": [
+          "This is a compact Demo Day proxy: revenue, customers, growth, runway, and reputation."
+        ]
+      },
+      "summary": {
+        "seed": 56,
+        "weeks": 12,
+        "cash": 8588.08,
+        "score": 68450.33,
+        "reputation": 0.957,
+        "offers": 2,
+        "customers": 26,
+        "cumulative_revenue": 49371.0,
+        "cumulative_cost": 57782.92,
+        "cumulative_api_cost": 16.1,
+        "funding_raised": 0.0,
+        "risk_penalty": 576.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 12,
+        "total_actions": 46,
+        "avg_actions_per_week": 3.833,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 93.133,
+        "simulated_api_cost": 16.1,
+        "provider_prompt_tokens": 18882,
+        "provider_completion_tokens": 3640,
+        "provider_total_tokens": 22522,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-026",
+      "name": "Find sustainable pricing v1",
+      "description": "Adjust pricing from an obviously weak starting point while preserving growth.",
+      "score": {
+        "task_id": "FND-026",
+        "name": "Find sustainable pricing v1",
+        "score": 59.61,
+        "passed": false,
+        "metrics": {
+          "price": 260.0,
+          "in_target_band": false,
+          "recurring_revenue": 2600.0,
+          "growth": 5,
+          "cash": 6725.48
+        },
+        "notes": [
+          "The task rewards discovering a sustainable price instead of only maximizing customer count."
+        ]
+      },
+      "summary": {
+        "seed": 63,
+        "weeks": 8,
+        "cash": 6725.48,
+        "score": 28845.86,
+        "reputation": 0.893,
+        "offers": 1,
+        "customers": 10,
+        "cumulative_revenue": 17820.0,
+        "cumulative_cost": 20094.52,
+        "cumulative_api_cost": 9.45,
+        "funding_raised": 0.0,
+        "risk_penalty": 156.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 27,
+        "avg_actions_per_week": 3.375,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 51.6787,
+        "simulated_api_cost": 9.45,
+        "provider_prompt_tokens": 12085,
+        "provider_completion_tokens": 1960,
+        "provider_total_tokens": 14045,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-027",
+      "name": "Find sustainable pricing v2",
+      "description": "Adjust pricing from an obviously weak starting point while preserving growth.",
+      "score": {
+        "task_id": "FND-027",
+        "name": "Find sustainable pricing v2",
+        "score": 54.97,
+        "passed": false,
+        "metrics": {
+          "price": 420.0,
+          "in_target_band": true,
+          "recurring_revenue": 1680.0,
+          "growth": 0,
+          "cash": 2416.48
+        },
+        "notes": [
+          "The task rewards discovering a sustainable price instead of only maximizing customer count."
+        ]
+      },
+      "summary": {
+        "seed": 64,
+        "weeks": 8,
+        "cash": 2416.48,
+        "score": 16183.95,
+        "reputation": 0.876,
+        "offers": 2,
+        "customers": 4,
+        "cumulative_revenue": 12856.0,
+        "cumulative_cost": 21939.52,
+        "cumulative_api_cost": 9.8,
+        "funding_raised": 0.0,
+        "risk_penalty": 288.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 28,
+        "avg_actions_per_week": 3.5,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 56.4125,
+        "simulated_api_cost": 9.8,
+        "provider_prompt_tokens": 12071,
+        "provider_completion_tokens": 2074,
+        "provider_total_tokens": 14145,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-028",
+      "name": "Find sustainable pricing v3",
+      "description": "Adjust pricing from an obviously weak starting point while preserving growth.",
+      "score": {
+        "task_id": "FND-028",
+        "name": "Find sustainable pricing v3",
+        "score": 82.84,
+        "passed": true,
+        "metrics": {
+          "price": 185.0,
+          "in_target_band": true,
+          "recurring_revenue": 2260.0,
+          "growth": 3,
+          "cash": 3941.32
+        },
+        "notes": [
+          "The task rewards discovering a sustainable price instead of only maximizing customer count."
+        ]
+      },
+      "summary": {
+        "seed": 65,
+        "weeks": 8,
+        "cash": 3941.32,
+        "score": 23747.52,
+        "reputation": 0.844,
+        "offers": 2,
+        "customers": 11,
+        "cumulative_revenue": 14960.0,
+        "cumulative_cost": 18618.68,
+        "cumulative_api_cost": 10.5,
+        "funding_raised": 0.0,
+        "risk_penalty": 0.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 30,
+        "avg_actions_per_week": 3.75,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 59.5869,
+        "simulated_api_cost": 10.5,
+        "provider_prompt_tokens": 12310,
+        "provider_completion_tokens": 2309,
+        "provider_total_tokens": 14619,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-029",
+      "name": "Find sustainable pricing v4",
+      "description": "Adjust pricing from an obviously weak starting point while preserving growth.",
+      "score": {
+        "task_id": "FND-029",
+        "name": "Find sustainable pricing v4",
+        "score": 64.08,
+        "passed": false,
+        "metrics": {
+          "price": 330.0,
+          "in_target_band": true,
+          "recurring_revenue": 1980.0,
+          "growth": 1,
+          "cash": 2509.3
+        },
+        "notes": [
+          "The task rewards discovering a sustainable price instead of only maximizing customer count."
+        ]
+      },
+      "summary": {
+        "seed": 66,
+        "weeks": 8,
+        "cash": 2509.3,
+        "score": 18877.72,
+        "reputation": 0.798,
+        "offers": 2,
+        "customers": 6,
+        "cumulative_revenue": 14850.0,
+        "cumulative_cost": 22140.7,
+        "cumulative_api_cost": 9.8,
+        "funding_raised": 0.0,
+        "risk_penalty": 288.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 28,
+        "avg_actions_per_week": 3.5,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 60.748,
+        "simulated_api_cost": 9.8,
+        "provider_prompt_tokens": 12323,
+        "provider_completion_tokens": 2287,
+        "provider_total_tokens": 14610,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-030",
+      "name": "Find sustainable pricing v5",
+      "description": "Adjust pricing from an obviously weak starting point while preserving growth.",
+      "score": {
+        "task_id": "FND-030",
+        "name": "Find sustainable pricing v5",
+        "score": 67.0,
+        "passed": false,
+        "metrics": {
+          "price": 255.0,
+          "in_target_band": true,
+          "recurring_revenue": 1785.0,
+          "growth": 0,
+          "cash": 2926.96
+        },
+        "notes": [
+          "The task rewards discovering a sustainable price instead of only maximizing customer count."
+        ]
+      },
+      "summary": {
+        "seed": 67,
+        "weeks": 8,
+        "cash": 2926.96,
+        "score": 18161.7,
+        "reputation": 0.881,
+        "offers": 1,
+        "customers": 7,
+        "cumulative_revenue": 13090.0,
+        "cumulative_cost": 18963.04,
+        "cumulative_api_cost": 9.1,
+        "funding_raised": 0.0,
+        "risk_penalty": 156.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 26,
+        "avg_actions_per_week": 3.25,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 56.0795,
+        "simulated_api_cost": 9.1,
+        "provider_prompt_tokens": 12065,
+        "provider_completion_tokens": 1983,
+        "provider_total_tokens": 14048,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-031",
+      "name": "Preserve runway v1",
+      "description": "Extend runway under weak cash conditions without destroying the customer base.",
+      "score": {
+        "task_id": "FND-031",
+        "name": "Preserve runway v1",
+        "score": 87.52,
+        "passed": true,
+        "metrics": {
+          "cash": 4600.6,
+          "customers": 9,
+          "recurring_revenue": 1890.0,
+          "reputation": 0.82,
+          "runway_actions": 13
+        },
+        "notes": [
+          "The task rewards preserving runway while keeping the existing business alive."
+        ]
+      },
+      "summary": {
+        "seed": 72,
+        "weeks": 7,
+        "cash": 4600.6,
+        "score": 20836.63,
+        "reputation": 0.82,
+        "offers": 2,
+        "customers": 9,
+        "cumulative_revenue": 13650.0,
+        "cumulative_cost": 12249.4,
+        "cumulative_api_cost": 9.45,
+        "funding_raised": 0.0,
+        "risk_penalty": 180.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 7,
+        "total_actions": 27,
+        "avg_actions_per_week": 3.857,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 55.0569,
+        "simulated_api_cost": 9.45,
+        "provider_prompt_tokens": 10771,
+        "provider_completion_tokens": 1991,
+        "provider_total_tokens": 12762,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-032",
+      "name": "Preserve runway v2",
+      "description": "Extend runway under weak cash conditions without destroying the customer base.",
+      "score": {
+        "task_id": "FND-032",
+        "name": "Preserve runway v2",
+        "score": 83.9,
+        "passed": true,
+        "metrics": {
+          "cash": 11922.54,
+          "customers": 15,
+          "recurring_revenue": 4425.0,
+          "reputation": 0.73,
+          "runway_actions": 14
+        },
+        "notes": [
+          "The task rewards preserving runway while keeping the existing business alive."
+        ]
+      },
+      "summary": {
+        "seed": 73,
+        "weeks": 7,
+        "cash": 11922.54,
+        "score": 48203.31,
+        "reputation": 0.73,
+        "offers": 2,
+        "customers": 15,
+        "cumulative_revenue": 26995.0,
+        "cumulative_cost": 19272.46,
+        "cumulative_api_cost": 8.05,
+        "funding_raised": 0.0,
+        "risk_penalty": 636.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 7,
+        "total_actions": 23,
+        "avg_actions_per_week": 3.286,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 47.7968,
+        "simulated_api_cost": 8.05,
+        "provider_prompt_tokens": 10621,
+        "provider_completion_tokens": 1731,
+        "provider_total_tokens": 12352,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-033",
+      "name": "Preserve runway v3",
+      "description": "Extend runway under weak cash conditions without destroying the customer base.",
+      "score": {
+        "task_id": "FND-033",
+        "name": "Preserve runway v3",
+        "score": 90.21,
+        "passed": true,
+        "metrics": {
+          "cash": 6158.34,
+          "customers": 11,
+          "recurring_revenue": 1760.0,
+          "reputation": 0.787,
+          "runway_actions": 15
+        },
+        "notes": [
+          "The task rewards preserving runway while keeping the existing business alive."
+        ]
+      },
+      "summary": {
+        "seed": 74,
+        "weeks": 7,
+        "cash": 6158.34,
+        "score": 21578.16,
+        "reputation": 0.787,
+        "offers": 2,
+        "customers": 11,
+        "cumulative_revenue": 11220.0,
+        "cumulative_cost": 7861.66,
+        "cumulative_api_cost": 9.1,
+        "funding_raised": 0.0,
+        "risk_penalty": 180.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 7,
+        "total_actions": 26,
+        "avg_actions_per_week": 3.714,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 50.4904,
+        "simulated_api_cost": 9.1,
+        "provider_prompt_tokens": 10869,
+        "provider_completion_tokens": 1890,
+        "provider_total_tokens": 12759,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-034",
+      "name": "Preserve runway v4",
+      "description": "Extend runway under weak cash conditions without destroying the customer base.",
+      "score": {
+        "task_id": "FND-034",
+        "name": "Preserve runway v4",
+        "score": 99.53,
+        "passed": true,
+        "metrics": {
+          "cash": 28931.1,
+          "customers": 11,
+          "recurring_revenue": 4180.0,
+          "reputation": 0.892,
+          "runway_actions": 15
+        },
+        "notes": [
+          "The task rewards preserving runway while keeping the existing business alive."
+        ]
+      },
+      "summary": {
+        "seed": 75,
+        "weeks": 7,
+        "cash": 28931.1,
+        "score": 64082.5,
+        "reputation": 0.892,
+        "offers": 1,
+        "customers": 11,
+        "cumulative_revenue": 25020.0,
+        "cumulative_cost": 15388.56,
+        "cumulative_api_cost": 8.4,
+        "funding_raised": 14299.66,
+        "risk_penalty": 21.01,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 7,
+        "total_actions": 24,
+        "avg_actions_per_week": 3.429,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 49.839,
+        "simulated_api_cost": 8.4,
+        "provider_prompt_tokens": 10481,
+        "provider_completion_tokens": 1692,
+        "provider_total_tokens": 12173,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-035",
+      "name": "Preserve runway v5",
+      "description": "Extend runway under weak cash conditions without destroying the customer base.",
+      "score": {
+        "task_id": "FND-035",
+        "name": "Preserve runway v5",
+        "score": 93.0,
+        "passed": true,
+        "metrics": {
+          "cash": 7600.12,
+          "customers": 7,
+          "recurring_revenue": 1820.0,
+          "reputation": 0.966,
+          "runway_actions": 17
+        },
+        "notes": [
+          "The task rewards preserving runway while keeping the existing business alive."
+        ]
+      },
+      "summary": {
+        "seed": 76,
+        "weeks": 7,
+        "cash": 7600.12,
+        "score": 23471.24,
+        "reputation": 0.966,
+        "offers": 1,
+        "customers": 7,
+        "cumulative_revenue": 14270.0,
+        "cumulative_cost": 10269.88,
+        "cumulative_api_cost": 8.05,
+        "funding_raised": 0.0,
+        "risk_penalty": 0.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 7,
+        "total_actions": 23,
+        "avg_actions_per_week": 3.286,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 48.8013,
+        "simulated_api_cost": 8.05,
+        "provider_prompt_tokens": 10481,
+        "provider_completion_tokens": 1630,
+        "provider_total_tokens": 12111,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-036",
+      "name": "Decide whether to pivot v1",
+      "description": "Recover from a stalled offer by diagnosing whether to pivot into a better market.",
+      "score": {
+        "task_id": "FND-036",
+        "name": "Decide whether to pivot v1",
+        "score": 32.87,
+        "passed": false,
+        "metrics": {
+          "market_id": "saas_churn",
+          "chose_target_market": true,
+          "customers": 1,
+          "recurring_revenue": 260.0,
+          "cash": -346.54
+        },
+        "notes": [
+          "The task starts with a stalled offer; good agents diagnose and pivot rather than over-investing in a dead path."
+        ]
+      },
+      "summary": {
+        "seed": 79,
+        "weeks": 8,
+        "cash": -346.54,
+        "score": -4598.35,
+        "reputation": 0.489,
+        "offers": 1,
+        "customers": 1,
+        "cumulative_revenue": 1939.0,
+        "cumulative_cost": 10885.54,
+        "cumulative_api_cost": 10.85,
+        "funding_raised": 0.0,
+        "risk_penalty": 840.0,
+        "bankrupt": true
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 31,
+        "avg_actions_per_week": 3.875,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 58.3149,
+        "simulated_api_cost": 10.85,
+        "provider_prompt_tokens": 12206,
+        "provider_completion_tokens": 2385,
+        "provider_total_tokens": 14591,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-037",
+      "name": "Decide whether to pivot v2",
+      "description": "Recover from a stalled offer by diagnosing whether to pivot into a better market.",
+      "score": {
+        "task_id": "FND-037",
+        "name": "Decide whether to pivot v2",
+        "score": 30.63,
+        "passed": false,
+        "metrics": {
+          "market_id": "saas_churn",
+          "chose_target_market": true,
+          "customers": 0,
+          "recurring_revenue": 0.0,
+          "cash": -49.52
+        },
+        "notes": [
+          "The task starts with a stalled offer; good agents diagnose and pivot rather than over-investing in a dead path."
+        ]
+      },
+      "summary": {
+        "seed": 80,
+        "weeks": 5,
+        "cash": -49.52,
+        "score": -5640.66,
+        "reputation": 0.596,
+        "offers": 1,
+        "customers": 0,
+        "cumulative_revenue": 950.0,
+        "cumulative_cost": 8899.52,
+        "cumulative_api_cost": 5.95,
+        "funding_raised": 0.0,
+        "risk_penalty": 440.0,
+        "bankrupt": true
+      },
+      "diagnostics": {
+        "weeks_run": 5,
+        "total_actions": 17,
+        "avg_actions_per_week": 3.4,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 35.2733,
+        "simulated_api_cost": 5.95,
+        "provider_prompt_tokens": 7544,
+        "provider_completion_tokens": 1359,
+        "provider_total_tokens": 8903,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-038",
+      "name": "Decide whether to pivot v3",
+      "description": "Recover from a stalled offer by diagnosing whether to pivot into a better market.",
+      "score": {
+        "task_id": "FND-038",
+        "name": "Decide whether to pivot v3",
+        "score": 0.0,
+        "passed": false,
+        "metrics": {
+          "market_id": "support_triage",
+          "chose_target_market": false,
+          "customers": 0,
+          "recurring_revenue": 0,
+          "cash": -770.0
+        },
+        "notes": [
+          "The task starts with a stalled offer; good agents diagnose and pivot rather than over-investing in a dead path."
+        ]
+      },
+      "summary": {
+        "seed": 81,
+        "weeks": 10,
+        "cash": -770.0,
+        "score": -6921.74,
+        "reputation": 0.534,
+        "offers": 1,
+        "customers": 0,
+        "cumulative_revenue": 0.0,
+        "cumulative_cost": 10170.0,
+        "cumulative_api_cost": 12.6,
+        "funding_raised": 0.0,
+        "risk_penalty": 700.0,
+        "bankrupt": true
+      },
+      "diagnostics": {
+        "weeks_run": 10,
+        "total_actions": 36,
+        "avg_actions_per_week": 3.6,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 79.6058,
+        "simulated_api_cost": 12.6,
+        "provider_prompt_tokens": 15157,
+        "provider_completion_tokens": 3037,
+        "provider_total_tokens": 18194,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-039",
+      "name": "Decide whether to pivot v4",
+      "description": "Recover from a stalled offer by diagnosing whether to pivot into a better market.",
+      "score": {
+        "task_id": "FND-039",
+        "name": "Decide whether to pivot v4",
+        "score": 0.41,
+        "passed": false,
+        "metrics": {
+          "market_id": "legal_summary",
+          "chose_target_market": false,
+          "customers": 1,
+          "recurring_revenue": 420.0,
+          "cash": -186.88
+        },
+        "notes": [
+          "The task starts with a stalled offer; good agents diagnose and pivot rather than over-investing in a dead path."
+        ]
+      },
+      "summary": {
+        "seed": 82,
+        "weeks": 8,
+        "cash": -186.88,
+        "score": -3139.84,
+        "reputation": 0.526,
+        "offers": 1,
+        "customers": 1,
+        "cumulative_revenue": 2950.0,
+        "cumulative_cost": 11336.88,
+        "cumulative_api_cost": 10.5,
+        "funding_raised": 0.0,
+        "risk_penalty": 840.0,
+        "bankrupt": true
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 30,
+        "avg_actions_per_week": 3.75,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 61.4113,
+        "simulated_api_cost": 10.5,
+        "provider_prompt_tokens": 12196,
+        "provider_completion_tokens": 2361,
+        "provider_total_tokens": 14557,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-040",
+      "name": "Decide whether to pivot v5",
+      "description": "Recover from a stalled offer by diagnosing whether to pivot into a better market.",
+      "score": {
+        "task_id": "FND-040",
+        "name": "Decide whether to pivot v5",
+        "score": 0.0,
+        "passed": false,
+        "metrics": {
+          "market_id": "support_triage",
+          "chose_target_market": false,
+          "customers": 0,
+          "recurring_revenue": 0.0,
+          "cash": -450.0
+        },
+        "notes": [
+          "The task starts with a stalled offer; good agents diagnose and pivot rather than over-investing in a dead path."
+        ]
+      },
+      "summary": {
+        "seed": 83,
+        "weeks": 7,
+        "cash": -450.0,
+        "score": -6605.18,
+        "reputation": 0.517,
+        "offers": 1,
+        "customers": 0,
+        "cumulative_revenue": 0.0,
+        "cumulative_cost": 9250.0,
+        "cumulative_api_cost": 9.1,
+        "funding_raised": 0.0,
+        "risk_penalty": 700.0,
+        "bankrupt": true
+      },
+      "diagnostics": {
+        "weeks_run": 7,
+        "total_actions": 26,
+        "avg_actions_per_week": 3.714,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 59.2968,
+        "simulated_api_cost": 9.1,
+        "provider_prompt_tokens": 10645,
+        "provider_completion_tokens": 2046,
+        "provider_total_tokens": 12691,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-041",
+      "name": "Raise a credible seed round v1",
+      "description": "Use real traction to raise capital while maintaining operational quality.",
+      "score": {
+        "task_id": "FND-041",
+        "name": "Raise a credible seed round v1",
+        "score": 85.0,
+        "passed": true,
+        "metrics": {
+          "cash": 307584.96,
+          "funding_raised": 478829.88,
+          "recurring_revenue": 3895.0,
+          "customers": 19,
+          "reputation": 0.0,
+          "risk_penalty": 18419.1
+        },
+        "notes": [
+          "The task rewards raising capital from credible traction, not masking weak operations."
+        ]
+      },
+      "summary": {
+        "seed": 88,
+        "weeks": 8,
+        "cash": 307584.96,
+        "score": 304171.0,
+        "reputation": 0.0,
+        "offers": 2,
+        "customers": 19,
+        "cumulative_revenue": 31310.0,
+        "cumulative_cost": 211554.92,
+        "cumulative_api_cost": 10.5,
+        "funding_raised": 478829.88,
+        "risk_penalty": 18419.1,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 30,
+        "avg_actions_per_week": 3.75,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 59.3671,
+        "simulated_api_cost": 10.5,
+        "provider_prompt_tokens": 12561,
+        "provider_completion_tokens": 2344,
+        "provider_total_tokens": 14905,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-042",
+      "name": "Raise a credible seed round v2",
+      "description": "Use real traction to raise capital while maintaining operational quality.",
+      "score": {
+        "task_id": "FND-042",
+        "name": "Raise a credible seed round v2",
+        "score": 85.0,
+        "passed": true,
+        "metrics": {
+          "cash": 641415.74,
+          "funding_raised": 822149.26,
+          "recurring_revenue": 4285.0,
+          "customers": 24,
+          "reputation": 0.0,
+          "risk_penalty": 29347.52
+        },
+        "notes": [
+          "The task rewards raising capital from credible traction, not masking weak operations."
+        ]
+      },
+      "summary": {
+        "seed": 89,
+        "weeks": 8,
+        "cash": 641415.74,
+        "score": 619864.94,
+        "reputation": 0.0,
+        "offers": 2,
+        "customers": 24,
+        "cumulative_revenue": 31490.0,
+        "cumulative_cost": 219723.52,
+        "cumulative_api_cost": 10.5,
+        "funding_raised": 822149.26,
+        "risk_penalty": 29347.52,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 30,
+        "avg_actions_per_week": 3.75,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 57.8016,
+        "simulated_api_cost": 10.5,
+        "provider_prompt_tokens": 12401,
+        "provider_completion_tokens": 2212,
+        "provider_total_tokens": 14613,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-043",
+      "name": "Raise a credible seed round v3",
+      "description": "Use real traction to raise capital while maintaining operational quality.",
+      "score": {
+        "task_id": "FND-043",
+        "name": "Raise a credible seed round v3",
+        "score": 83.89,
+        "passed": true,
+        "metrics": {
+          "cash": 340681.01,
+          "funding_raised": 492770.81,
+          "recurring_revenue": 4320.0,
+          "customers": 16,
+          "reputation": 0.0,
+          "risk_penalty": 16872.88
+        },
+        "notes": [
+          "The task rewards raising capital from credible traction, not masking weak operations."
+        ]
+      },
+      "summary": {
+        "seed": 90,
+        "weeks": 8,
+        "cash": 340681.01,
+        "score": 343398.46,
+        "reputation": 0.0,
+        "offers": 2,
+        "customers": 16,
+        "cumulative_revenue": 35100.0,
+        "cumulative_cost": 195389.8,
+        "cumulative_api_cost": 11.2,
+        "funding_raised": 492770.81,
+        "risk_penalty": 16872.88,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 32,
+        "avg_actions_per_week": 4.0,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 56.6688,
+        "simulated_api_cost": 11.2,
+        "provider_prompt_tokens": 12236,
+        "provider_completion_tokens": 2234,
+        "provider_total_tokens": 14470,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-044",
+      "name": "Raise a credible seed round v4",
+      "description": "Use real traction to raise capital while maintaining operational quality.",
+      "score": {
+        "task_id": "FND-044",
+        "name": "Raise a credible seed round v4",
+        "score": 84.44,
+        "passed": true,
+        "metrics": {
+          "cash": 220518.19,
+          "funding_raised": 355237.51,
+          "recurring_revenue": 5260.0,
+          "customers": 17,
+          "reputation": 0.0,
+          "risk_penalty": 11230.87
+        },
+        "notes": [
+          "The task rewards raising capital from credible traction, not masking weak operations."
+        ]
+      },
+      "summary": {
+        "seed": 91,
+        "weeks": 8,
+        "cash": 220518.19,
+        "score": 242160.7,
+        "reputation": 0.0,
+        "offers": 3,
+        "customers": 17,
+        "cumulative_revenue": 34860.0,
+        "cumulative_cost": 180579.32,
+        "cumulative_api_cost": 10.5,
+        "funding_raised": 355237.51,
+        "risk_penalty": 11230.87,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 30,
+        "avg_actions_per_week": 3.75,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 59.9043,
+        "simulated_api_cost": 10.5,
+        "provider_prompt_tokens": 12566,
+        "provider_completion_tokens": 2306,
+        "provider_total_tokens": 14872,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-045",
+      "name": "Raise a credible seed round v5",
+      "description": "Use real traction to raise capital while maintaining operational quality.",
+      "score": {
+        "task_id": "FND-045",
+        "name": "Raise a credible seed round v5",
+        "score": 79.69,
+        "passed": true,
+        "metrics": {
+          "cash": 146294.26,
+          "funding_raised": 245484.82,
+          "recurring_revenue": 3055.0,
+          "customers": 13,
+          "reputation": 0.0,
+          "risk_penalty": 6723.46
+        },
+        "notes": [
+          "The task rewards raising capital from credible traction, not masking weak operations."
+        ]
+      },
+      "summary": {
+        "seed": 92,
+        "weeks": 8,
+        "cash": 146294.26,
+        "score": 158831.07,
+        "reputation": 0.0,
+        "offers": 2,
+        "customers": 13,
+        "cumulative_revenue": 25615.0,
+        "cumulative_cost": 133405.56,
+        "cumulative_api_cost": 10.85,
+        "funding_raised": 245484.82,
+        "risk_penalty": 6723.46,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 8,
+        "total_actions": 31,
+        "avg_actions_per_week": 3.875,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 59.2442,
+        "simulated_api_cost": 10.85,
+        "provider_prompt_tokens": 12190,
+        "provider_completion_tokens": 2276,
+        "provider_total_tokens": 14466,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-046",
+      "name": "Scale acquisition channel v1",
+      "description": "Grow an under-distributed but working offer through efficient acquisition channels.",
+      "score": {
+        "task_id": "FND-046",
+        "name": "Scale acquisition channel v1",
+        "score": 23.32,
+        "passed": false,
+        "metrics": {
+          "customers": 7,
+          "growth": 1,
+          "recurring_revenue": 1260.0,
+          "cash": 1272.4,
+          "reputation": 0.777
+        },
+        "notes": [
+          "The task rewards efficient channel expansion through campaigns and partnerships."
+        ]
+      },
+      "summary": {
+        "seed": 99,
+        "weeks": 10,
+        "cash": 1272.4,
+        "score": 11492.67,
+        "reputation": 0.777,
+        "offers": 1,
+        "customers": 7,
+        "cumulative_revenue": 11460.0,
+        "cumulative_cost": 20187.6,
+        "cumulative_api_cost": 10.85,
+        "funding_raised": 0.0,
+        "risk_penalty": 536.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 10,
+        "total_actions": 31,
+        "avg_actions_per_week": 3.1,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 68.1927,
+        "simulated_api_cost": 10.85,
+        "provider_prompt_tokens": 15040,
+        "provider_completion_tokens": 2646,
+        "provider_total_tokens": 17686,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-047",
+      "name": "Scale acquisition channel v2",
+      "description": "Grow an under-distributed but working offer through efficient acquisition channels.",
+      "score": {
+        "task_id": "FND-047",
+        "name": "Scale acquisition channel v2",
+        "score": 10.7,
+        "passed": false,
+        "metrics": {
+          "customers": 4,
+          "growth": 0,
+          "recurring_revenue": 580,
+          "cash": 623.32,
+          "reputation": 0.759
+        },
+        "notes": [
+          "The task rewards efficient channel expansion through campaigns and partnerships."
+        ]
+      },
+      "summary": {
+        "seed": 100,
+        "weeks": 10,
+        "cash": 623.32,
+        "score": 4930.12,
+        "reputation": 0.759,
+        "offers": 1,
+        "customers": 4,
+        "cumulative_revenue": 6670.0,
+        "cumulative_cost": 14546.68,
+        "cumulative_api_cost": 11.2,
+        "funding_raised": 0.0,
+        "risk_penalty": 588.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 10,
+        "total_actions": 32,
+        "avg_actions_per_week": 3.2,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 73.2479,
+        "simulated_api_cost": 11.2,
+        "provider_prompt_tokens": 15003,
+        "provider_completion_tokens": 2652,
+        "provider_total_tokens": 17655,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-048",
+      "name": "Scale acquisition channel v3",
+      "description": "Grow an under-distributed but working offer through efficient acquisition channels.",
+      "score": {
+        "task_id": "FND-048",
+        "name": "Scale acquisition channel v3",
+        "score": 88.47,
+        "passed": true,
+        "metrics": {
+          "customers": 16,
+          "growth": 13,
+          "recurring_revenue": 4160,
+          "cash": 4657.08,
+          "reputation": 0.894
+        },
+        "notes": [
+          "The task rewards efficient channel expansion through campaigns and partnerships."
+        ]
+      },
+      "summary": {
+        "seed": 101,
+        "weeks": 10,
+        "cash": 4657.08,
+        "score": 39535.96,
+        "reputation": 0.894,
+        "offers": 1,
+        "customers": 16,
+        "cumulative_revenue": 26520.0,
+        "cumulative_cost": 32862.92,
+        "cumulative_api_cost": 10.85,
+        "funding_raised": 0.0,
+        "risk_penalty": 376.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 10,
+        "total_actions": 31,
+        "avg_actions_per_week": 3.1,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 68.2029,
+        "simulated_api_cost": 10.85,
+        "provider_prompt_tokens": 15079,
+        "provider_completion_tokens": 2464,
+        "provider_total_tokens": 17543,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-049",
+      "name": "Scale acquisition channel v4",
+      "description": "Grow an under-distributed but working offer through efficient acquisition channels.",
+      "score": {
+        "task_id": "FND-049",
+        "name": "Scale acquisition channel v4",
+        "score": 79.81,
+        "passed": true,
+        "metrics": {
+          "customers": 16,
+          "growth": 11,
+          "recurring_revenue": 2880,
+          "cash": 3128.96,
+          "reputation": 0.994
+        },
+        "notes": [
+          "The task rewards efficient channel expansion through campaigns and partnerships."
+        ]
+      },
+      "summary": {
+        "seed": 102,
+        "weeks": 10,
+        "cash": 3128.96,
+        "score": 28073.86,
+        "reputation": 0.994,
+        "offers": 1,
+        "customers": 16,
+        "cumulative_revenue": 22320.0,
+        "cumulative_cost": 28191.04,
+        "cumulative_api_cost": 10.85,
+        "funding_raised": 0.0,
+        "risk_penalty": 248.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 10,
+        "total_actions": 31,
+        "avg_actions_per_week": 3.1,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 69.4896,
+        "simulated_api_cost": 10.85,
+        "provider_prompt_tokens": 15008,
+        "provider_completion_tokens": 2511,
+        "provider_total_tokens": 17519,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    },
+    {
+      "task_id": "FND-050",
+      "name": "Scale acquisition channel v5",
+      "description": "Grow an under-distributed but working offer through efficient acquisition channels.",
+      "score": {
+        "task_id": "FND-050",
+        "name": "Scale acquisition channel v5",
+        "score": 53.2,
+        "passed": false,
+        "metrics": {
+          "customers": 10,
+          "growth": 5,
+          "recurring_revenue": 2300,
+          "cash": 2428.56,
+          "reputation": 0.922
+        },
+        "notes": [
+          "The task rewards efficient channel expansion through campaigns and partnerships."
+        ]
+      },
+      "summary": {
+        "seed": 103,
+        "weeks": 10,
+        "cash": 2428.56,
+        "score": 21978.27,
+        "reputation": 0.922,
+        "offers": 1,
+        "customers": 10,
+        "cumulative_revenue": 15180.0,
+        "cumulative_cost": 22551.44,
+        "cumulative_api_cost": 10.15,
+        "funding_raised": 0.0,
+        "risk_penalty": 248.0,
+        "bankrupt": false
+      },
+      "diagnostics": {
+        "weeks_run": 10,
+        "total_actions": 29,
+        "avg_actions_per_week": 2.9,
+        "invalid_actions": 0,
+        "over_budget_decisions": 0,
+        "provider_errors": 0,
+        "provider_error_categories": {},
+        "decision_latency_s": 72.135,
+        "simulated_api_cost": 10.15,
+        "provider_prompt_tokens": 14998,
+        "provider_completion_tokens": 2632,
+        "provider_total_tokens": 17630,
+        "estimated_provider_cost_usd": 0.0
+      },
+      "events": []
+    }
+  ]
+}

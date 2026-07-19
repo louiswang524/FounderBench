@@ -21,8 +21,8 @@
   "summary": {
     "deterministic_cards": 4,
     "provider_candidate_cards": 11,
-    "valid_provider_cards": 2,
-    "hosted_llm_claims_ready": false,
+    "valid_provider_cards": 3,
+    "hosted_llm_claims_ready": true,
     "open_source_claim_ready": false
   },
   "claim_guardrails": [
@@ -164,17 +164,20 @@
       "id": "anthropic_hosted_baseline",
       "policy": "anthropic",
       "family": "hosted_llm",
-      "status": "missing",
-      "claim_eligibility": "excluded_until_validated",
-      "evidence_path": "",
-      "evidence_kind": "",
-      "runs": 0,
-      "submission_report_exists": false,
+      "status": "valid",
+      "claim_eligibility": "eligible_for_provider_tables",
+      "evidence_path": "outputs/founderbench-anthropic.json",
+      "evidence_kind": "single_run",
+      "runs": 1,
+      "submission_report_exists": true,
       "repeat_bundle_report_exists": false,
-      "validation_problems": [
-        "Missing outputs/founderbench-anthropic.json or outputs/founderbench-anthropic-repeats.json"
-      ],
-      "paper_use": "Excluded from model-performance claims until raw run or repeat bundle exists and the submission report passes."
+      "validation_problems": [],
+      "paper_use": "Eligible for provider-result tables, subject to the statistical protocol and claim-evidence gates.",
+      "tasks": 50,
+      "solved": 24,
+      "solve_rate": 0.48,
+      "average_task_score": 61.09,
+      "repeat_summary": {}
     },
     {
       "card_type": "planned_provider_run",
