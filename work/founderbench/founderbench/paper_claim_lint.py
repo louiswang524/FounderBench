@@ -28,6 +28,9 @@ TARGETS: list[dict[str, Any]] = [
     {
         "id": "kdd_latex",
         "path": "paper/kdd2027/main.tex",
+        # Optional: manuscript LaTeX is kept outside the public GitHub tree
+        # (peer pattern). Lint it when present locally; skip when absent in CI.
+        "optional": True,
         "required_disclosures": [
             "all hosted results are one run per configuration",
             "both sets are released and visible",
@@ -82,6 +85,20 @@ def _has_nearby_negation(text: str, index: int) -> bool:
 def scan_target(target: dict[str, Any]) -> dict[str, Any]:
     path = ROOT / target["path"]
     exists = path.exists()
+    optional = bool(target.get("optional"))
+    if not exists and optional:
+        return {
+            "id": target["id"],
+            "path": target["path"],
+            "exists": False,
+            "optional": True,
+            "required_disclosures": [
+                {"phrase": phrase, "present": False} for phrase in target["required_disclosures"]
+            ],
+            "missing_required_disclosures": [],
+            "forbidden_hits": [],
+            "status": "skipped",
+        }
     text = _read_target(target) if exists else ""
     lower_text = text.lower()
     required = [
@@ -108,6 +125,7 @@ def scan_target(target: dict[str, Any]) -> dict[str, Any]:
         "id": target["id"],
         "path": target["path"],
         "exists": exists,
+        "optional": optional,
         "required_disclosures": required,
         "missing_required_disclosures": [row["phrase"] for row in required if not row["present"]],
         "forbidden_hits": forbidden_hits,
@@ -125,6 +143,7 @@ def build_audit() -> dict[str, Any]:
         "summary": {
             "targets": len(targets),
             "passed": sum(1 for target in targets if target["status"] == "pass"),
+            "skipped": sum(1 for target in targets if target["status"] == "skipped"),
             "failed": sum(1 for target in targets if target["status"] == "fail"),
             "forbidden_hits": sum(len(target["forbidden_hits"]) for target in targets),
             "missing_required_disclosures": sum(len(target["missing_required_disclosures"]) for target in targets),
@@ -147,9 +166,12 @@ def validate_audit(payload: dict[str, Any]) -> list[str]:
     if summary.get("missing_required_disclosures") != 0:
         problems.append("Required limitation disclosures are missing.")
     for target in payload.get("targets", []):
-        if target["status"] != "pass":
-            problems.append(f"{target['id']} claim lint status is {target['status']}.")
-        if not target["exists"]:
+        status = target.get("status")
+        if status == "skipped":
+            continue
+        if status != "pass":
+            problems.append(f"{target['id']} claim lint status is {status}.")
+        if not target.get("exists") and not target.get("optional"):
             problems.append(f"{target['path']} is missing.")
     return problems
 

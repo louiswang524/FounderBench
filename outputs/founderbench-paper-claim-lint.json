@@ -7,6 +7,7 @@
       "id": "paper_draft",
       "path": "outputs/founderbench-paper-draft.md",
       "exists": true,
+      "optional": false,
       "required_disclosures": [
         {
           "phrase": "all hosted rows are single runs on visible public tasks",
@@ -33,6 +34,7 @@
       "id": "kdd_latex",
       "path": "paper/kdd2027/main.tex",
       "exists": true,
+      "optional": true,
       "required_disclosures": [
         {
           "phrase": "all hosted results are one run per configuration",
@@ -63,6 +65,7 @@
   "summary": {
     "targets": 2,
     "passed": 2,
+    "skipped": 0,
     "failed": 0,
     "forbidden_hits": 0,
     "missing_required_disclosures": 0

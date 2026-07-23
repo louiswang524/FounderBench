@@ -76,15 +76,14 @@ work/smoke-test.cjs
 work/smoke-test.ps1
 work/no-human-company-script.js
 
-# LaTeX build intermediates (keep generated PDFs)
-paper/kdd2027/*.aux
-paper/kdd2027/*.bbl
-paper/kdd2027/*.blg
-paper/kdd2027/*.fdb_latexmk
-paper/kdd2027/*.fls
-paper/kdd2027/*.log
-paper/kdd2027/*.out
-paper/kdd2027/*.synctex.gz
+# Manuscript LaTeX / Overleaf / arXiv packages live outside the public code repo
+# (peer pattern: SWE-bench, WebArena, Terminal-Bench, LiveCodeBench).
+# Keep outputs/founderbench-paper-draft.md tracked for release/citation audits.
+paper/
+outputs/founderbench-arxiv.pdf
+outputs/founderbench-arxiv-source.zip
+outputs/founderbench-kdd2027-*.pdf
+outputs/founderbench-kdd2027-*.zip
 
 # Editor and OS files
 .DS_Store

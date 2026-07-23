@@ -19,18 +19,24 @@ TARGETS: list[dict[str, Any]] = [
         "id": "paper_draft",
         "path": "outputs/founderbench-paper-draft.md",
         "required_disclosures": [
-            "not yet a comparison of hosted LLM providers",
-            "does not include private task definitions or hidden-suite scores",
-            "real-world startup-prediction claims as unsupported",
+            "all hosted rows are single runs on visible public tasks",
+            "no human-founder calibration",
+            "no official private leaderboard",
+            "scores do not establish real-world startup competence",
         ],
     },
     {
-        "id": "benchmark_card",
-        "path": "outputs/founderbench-benchmark-card.md",
+        "id": "kdd_latex",
+        "path": "paper/kdd2027/main.tex",
+        # Optional: manuscript LaTeX is kept outside the public GitHub tree
+        # (peer pattern). Lint it when present locally; skip when absent in CI.
+        "optional": True,
         "required_disclosures": [
-            "hosted LLM submissions still need repeated-sampling reports",
-            "full publishable-artifact goal as `not_complete`",
-            "required hosted/local LLM evidence",
+            "all hosted results are one run per configuration",
+            "both sets are released and visible",
+            "no human-founder calibration",
+            "no official hidden leaderboard",
+            "not evidence that a model can run a real company",
         ],
     },
 ]
@@ -48,14 +54,14 @@ FORBIDDEN_PATTERNS: list[dict[str, str]] = [
         "why": "The benchmark must not be framed as evidence for autonomous real-company deployment.",
     },
     {
-        "id": "hosted_provider_completed_claim",
-        "pattern": r"\b(?:DeepSeek|Claude|Gemini).{0,80}\b(?:fully\s+compared|validated|evaluated)\s+on\s+v0\.3\.0",
-        "why": "Hosted provider current release runs are not present in the current release.",
+        "id": "hosted_repeated_reliability_claim",
+        "pattern": r"\bhosted.{0,80}\b(?:repeated[- ]run reliability|sampling variance)\s+(?:is|was)\s+(?:measured|established)",
+        "why": "The hosted rows are single runs and cannot establish repeated-run reliability.",
     },
     {
-        "id": "executed_private_holdout_claim",
-        "pattern": r"\b(?:executed|official)\s+(?:private|hidden).{0,40}\b(?:holdout|leaderboard|scores)",
-        "why": "The benchmark includes a holdout protocol and smoke test, not official hidden-suite results.",
+        "id": "hosted_private_leaderboard_claim",
+        "pattern": r"\b(?:official|hosted)\s+(?:private|hidden)\s+(?:holdout\s+)?leaderboard\b",
+        "why": "Private holdout is frozen with calibration baselines; hosted private-leaderboard scores are not yet official.",
     },
 ]
 
@@ -79,6 +85,20 @@ def _has_nearby_negation(text: str, index: int) -> bool:
 def scan_target(target: dict[str, Any]) -> dict[str, Any]:
     path = ROOT / target["path"]
     exists = path.exists()
+    optional = bool(target.get("optional"))
+    if not exists and optional:
+        return {
+            "id": target["id"],
+            "path": target["path"],
+            "exists": False,
+            "optional": True,
+            "required_disclosures": [
+                {"phrase": phrase, "present": False} for phrase in target["required_disclosures"]
+            ],
+            "missing_required_disclosures": [],
+            "forbidden_hits": [],
+            "status": "skipped",
+        }
     text = _read_target(target) if exists else ""
     lower_text = text.lower()
     required = [
@@ -105,6 +125,7 @@ def scan_target(target: dict[str, Any]) -> dict[str, Any]:
         "id": target["id"],
         "path": target["path"],
         "exists": exists,
+        "optional": optional,
         "required_disclosures": required,
         "missing_required_disclosures": [row["phrase"] for row in required if not row["present"]],
         "forbidden_hits": forbidden_hits,
@@ -117,11 +138,12 @@ def build_audit() -> dict[str, Any]:
     return {
         "benchmark": "FounderBench",
         "version": VERSION,
-        "purpose": "Paper and benchmark-card claim lint for unsupported hosted-LLM, hidden-holdout, and real-world startup-success wording.",
+        "purpose": "Markdown and LaTeX paper claim lint for single-run hosted evidence, hidden-holdout boundaries, and real-world startup-success wording.",
         "targets": targets,
         "summary": {
             "targets": len(targets),
             "passed": sum(1 for target in targets if target["status"] == "pass"),
+            "skipped": sum(1 for target in targets if target["status"] == "skipped"),
             "failed": sum(1 for target in targets if target["status"] == "fail"),
             "forbidden_hits": sum(len(target["forbidden_hits"]) for target in targets),
             "missing_required_disclosures": sum(len(target["missing_required_disclosures"]) for target in targets),
@@ -144,9 +166,12 @@ def validate_audit(payload: dict[str, Any]) -> list[str]:
     if summary.get("missing_required_disclosures") != 0:
         problems.append("Required limitation disclosures are missing.")
     for target in payload.get("targets", []):
-        if target["status"] != "pass":
-            problems.append(f"{target['id']} claim lint status is {target['status']}.")
-        if not target["exists"]:
+        status = target.get("status")
+        if status == "skipped":
+            continue
+        if status != "pass":
+            problems.append(f"{target['id']} claim lint status is {status}.")
+        if not target.get("exists") and not target.get("optional"):
             problems.append(f"{target['path']} is missing.")
     return problems
 

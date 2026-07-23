@@ -608,6 +608,10 @@ class FounderBenchTests(unittest.TestCase):
         target_ids = {target["id"] for target in payload["targets"]}
         self.assertIn("paper_draft", target_ids)
         self.assertIn("kdd_latex", target_ids)
+        for target in payload["targets"]:
+            self.assertIn(target["status"], {"pass", "skipped"})
+        latex = next(target for target in payload["targets"] if target["id"] == "kdd_latex")
+        self.assertTrue(latex.get("optional"))
 
     def test_model_comparison_keeps_missing_provider_claims_explicit(self):
         payload = build_model_comparison_report()

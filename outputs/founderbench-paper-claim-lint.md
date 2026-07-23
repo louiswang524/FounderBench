@@ -8,6 +8,7 @@ Markdown and LaTeX paper claim lint for single-run hosted evidence, hidden-holdo
 | --- | --- |
 | targets | 2 |
 | passed | 2 |
+| skipped | 0 |
 | failed | 0 |
 | forbidden_hits | 0 |
 | missing_required_disclosures | 0 |
