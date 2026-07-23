@@ -1,6 +1,6 @@
 # FounderBench Paper Claim Lint
 
-Paper and benchmark-card claim lint for unsupported hosted-LLM, hidden-holdout, and real-world startup-success wording.
+Markdown and LaTeX paper claim lint for single-run hosted evidence, hidden-holdout boundaries, and real-world startup-success wording.
 
 ## Summary
 
@@ -17,7 +17,7 @@ Paper and benchmark-card claim lint for unsupported hosted-LLM, hidden-holdout, 
 | Target | Status | Path | Missing Disclosures | Forbidden Hits |
 | --- | --- | --- | --- | --- |
 | paper_draft | pass | outputs/founderbench-paper-draft.md | 0 | 0 |
-| benchmark_card | pass | outputs/founderbench-benchmark-card.md | 0 | 0 |
+| kdd_latex | pass | paper/kdd2027/main.tex | 0 | 0 |
 
 ## Required Disclosures
 
@@ -25,17 +25,20 @@ Paper and benchmark-card claim lint for unsupported hosted-LLM, hidden-holdout, 
 
 | Phrase | Present |
 | --- | --- |
-| not yet a comparison of hosted LLM providers | True |
-| does not include private task definitions or hidden-suite scores | True |
-| real-world startup-prediction claims as unsupported | True |
+| all hosted rows are single runs on visible public tasks | True |
+| no human-founder calibration | True |
+| no official private leaderboard | True |
+| scores do not establish real-world startup competence | True |
 
-### benchmark_card
+### kdd_latex
 
 | Phrase | Present |
 | --- | --- |
-| hosted LLM submissions still need repeated-sampling reports | True |
-| full publishable-artifact goal as `not_complete` | True |
-| required hosted/local LLM evidence | True |
+| all hosted results are one run per configuration | True |
+| both sets are released and visible | True |
+| no human-founder calibration | True |
+| no official hidden leaderboard | True |
+| not evidence that a model can run a real company | True |
 
 ## Claim Guardrail
 

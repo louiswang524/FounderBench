@@ -3,8 +3,8 @@
   "version": "0.3.0",
   "release_bundle": "release/founderbench",
   "summary": {
-    "complete": 7,
-    "incomplete": 1,
+    "complete": 8,
+    "incomplete": 0,
     "missing": 3
   },
   "items": [
@@ -121,7 +121,7 @@
         },
         {
           "path": "release/founderbench/SHA256SUMS.json",
-          "sha256": "e60272d5b377e86664f41cd30ad512110ed92a28b7530a6f5eb1e9848d9ca7c1",
+          "sha256": "910b2fde164f2411ea903bbb823453b26e495fad667abc2999e4ba51ed144c4b",
           "bytes": 40995
         }
       ],
@@ -195,23 +195,23 @@
         },
         {
           "path": "outputs/founderbench-paper-tables.md",
-          "sha256": "6ec602030fc3d9cb51c9e429df32bc14ee2d69d1601b4357df52817773d076f3",
-          "bytes": 5429
+          "sha256": "39841438869cf23fd580226cbab8840f9199afbee2f497c9b6c53c5f90ef0595",
+          "bytes": 9809
         },
         {
           "path": "outputs/founderbench-paper-tables.json",
-          "sha256": "847146ebb9b35384007cada9cb3a1ca28500d7e977c66e4226e46e3268ffc51d",
-          "bytes": 13476
+          "sha256": "12dfa43a55d21edefbce30e00fcf3bb536ae44b413109f2d2ea5a556eca258b5",
+          "bytes": 25445
         },
         {
           "path": "outputs/founderbench-model-result-cards.md",
-          "sha256": "2037d912af5c527631eeada3504ebe99502541e6ee7d18d421f08871945da343",
-          "bytes": 4209
+          "sha256": "d951e080d40a14c2e597d41b6db7c3c3a47e26c1a378fdfbaff666376452c911",
+          "bytes": 4497
         },
         {
           "path": "outputs/founderbench-model-result-cards.json",
-          "sha256": "a3f0fb2626a4451e1fb7c69427a6660e80a32be0ae7957754bbb4e993fd61e15",
-          "bytes": 12073
+          "sha256": "75d4c07a37df5043239df04206950a951895d49b1eacd382b825759ef16bd258",
+          "bytes": 16232
         },
         {
           "path": "outputs/founderbench-paper-figure-data.md",
@@ -269,13 +269,13 @@
         },
         {
           "path": "outputs/founderbench-model-comparison.md",
-          "sha256": "4aac8e544739e821c9a079149f658f9e715b3b63bd5dadac9307a28d02150449",
-          "bytes": 5442
+          "sha256": "6fc61166712a692b57523d21e546ba0879d4e84f039b0ff468dcf4ddcef64d94",
+          "bytes": 10790
         },
         {
           "path": "outputs/founderbench-model-comparison.json",
-          "sha256": "a6fa7a479d4bc440faa1547b0b6607223204cbb0e924e77cdfa121981171f386",
-          "bytes": 14115
+          "sha256": "633dcfe11a9e1df6ea0cd32b9d76205edf9fed65b1e94b658140ca4f72bf8f3f",
+          "bytes": 35878
         },
         {
           "path": "outputs/founderbench-result-integrity-audit.md",
@@ -289,13 +289,13 @@
         },
         {
           "path": "outputs/founderbench-model-result-cards.md",
-          "sha256": "2037d912af5c527631eeada3504ebe99502541e6ee7d18d421f08871945da343",
-          "bytes": 4209
+          "sha256": "d951e080d40a14c2e597d41b6db7c3c3a47e26c1a378fdfbaff666376452c911",
+          "bytes": 4497
         },
         {
           "path": "outputs/founderbench-model-result-cards.json",
-          "sha256": "a3f0fb2626a4451e1fb7c69427a6660e80a32be0ae7957754bbb4e993fd61e15",
-          "bytes": 12073
+          "sha256": "75d4c07a37df5043239df04206950a951895d49b1eacd382b825759ef16bd258",
+          "bytes": 16232
         },
         {
           "path": "outputs/founderbench-ablation-report.md",
@@ -363,8 +363,8 @@
       "evidence": [
         {
           "path": "work/founderbench/founderbench/llm_policy.py",
-          "sha256": "d833247cd20680a164eaf203fe8807d11e2cbcd2e695362cd42690fa3c1a56b5",
-          "bytes": 18353
+          "sha256": "8cb2d52572e5090358d7abb40d4dd3f27315664016885876ed2d66863c1ac165",
+          "bytes": 21872
         },
         {
           "path": "work/founderbench/founderbench/prompt_protocol.py",
@@ -388,8 +388,8 @@
         },
         {
           "path": "work/founderbench/founderbench/provider_readiness.py",
-          "sha256": "cb2008c121f722eda233189a78d24119ca5bb497c74dc8cb40826908ef3392a0",
-          "bytes": 10508
+          "sha256": "5cb224546233fc58fc92941f9b58c01b95d2e8360421a8909cb5d3dbc2971722",
+          "bytes": 10653
         },
         {
           "path": "work/founderbench/founderbench/provider_run_status.py",
@@ -513,13 +513,13 @@
         },
         {
           "path": "outputs/founderbench-provider-run-status.md",
-          "sha256": "af8bb990d879fc13fb0a53628b59edc54758b77ff883608da3ea053dafc59167",
-          "bytes": 5434
+          "sha256": "892938be05f332b3bb473823f10f9f9bc478aad7fa27017436ad06bb304ddc16",
+          "bytes": 9611
         },
         {
           "path": "outputs/founderbench-provider-run-status.json",
-          "sha256": "69ec990f8352d5074d8a357f4659a0964a5303a75d983c63017f7ed30696ef38",
-          "bytes": 16984
+          "sha256": "901c664e8ae6c7a6952c926b2dbaa8f724e556183f633f740159f1e891ff7059",
+          "bytes": 23055
         },
         {
           "path": "outputs/founderbench-provider-comparability-audit.md",
@@ -557,8 +557,8 @@
       "evidence": [
         {
           "path": "work/founderbench/founderbench/provider_adapter.py",
-          "sha256": "1d3e0afda40d2bb6dae022687964b2eb2ecf51d6235d7f52bc101d449ca65343",
-          "bytes": 4363
+          "sha256": "f61999fc16ab793e790253ec691a66f0c526d014b8e17707c055b4f77c35d39b",
+          "bytes": 4488
         },
         {
           "path": "work/founderbench/founderbench/qualitative.py",
@@ -686,8 +686,8 @@
       "evidence": [
         {
           "path": "work/founderbench/founderbench/holdout.py",
-          "sha256": "cf12206c5e63bbd03ca85c5152d4134e23de6af723a315792e59828c1e483254",
-          "bytes": 10925
+          "sha256": "d617aff5476de255e41640022b75678a2e003070467ad3063988da341a4f8095",
+          "bytes": 10922
         },
         {
           "path": "work/founderbench/founderbench/private_holdout_evaluator.py",
@@ -696,8 +696,8 @@
         },
         {
           "path": "outputs/founderbench-private-holdout-blueprint.json",
-          "sha256": "354b8e2d4785a4fc21314878a1ac6eb8336cd77c3852ae462d1a0bd356991a02",
-          "bytes": 1629
+          "sha256": "48adbd3df041cef1bdeb47d4ad578422ed06e3c3da6dada3f8ed90e15e68753f",
+          "bytes": 1626
         },
         {
           "path": "outputs/founderbench-private-holdout-evaluator-protocol.md",
@@ -740,8 +740,8 @@
       "evidence": [
         {
           "path": "work/founderbench/README.md",
-          "sha256": "e33581112e626d6d9ddbde84a0d16a7734cb8c867592888bbf484a3441480a9f",
-          "bytes": 20930
+          "sha256": "6c9ba8974b50169270898b2a513c109d314c8e414bdbc07cbd85d4f0b9ea7708",
+          "bytes": 583
         },
         {
           "path": "work/founderbench/SPEC.md",
@@ -845,38 +845,38 @@
         },
         {
           "path": "outputs/founderbench-paper-draft.md",
-          "sha256": "5e54834a4d68ec6d435bd8383d3420a22d7cb57ba5c648bc468fa5d273581913",
-          "bytes": 27807
+          "sha256": "2b6c85a24081793cde44be63d5d51d65ce8bb0000784dce5dd164b926e7a64fc",
+          "bytes": 22602
         },
         {
           "path": "outputs/founderbench-citation-audit.md",
-          "sha256": "46ab5552ddf6460b39f618f456334f09fdb7d233d437cc65c0a27889ce3b56f8",
-          "bytes": 2651
+          "sha256": "618d0dd65df9c18c89b525a1ea67fc16d4c7f80aba6edbbb4d5793e5cc77223d",
+          "bytes": 2916
         },
         {
           "path": "outputs/founderbench-citation-audit.json",
-          "sha256": "4fc888f481fcc2c0ed889f4c16c3ed79bbad8d57d96f843a10def84d200d5b64",
-          "bytes": 8482
+          "sha256": "5e3e55d48a8df0b6a168a532e3cac465bf328712b79730a31eaa30dce7865d23",
+          "bytes": 9740
         },
         {
           "path": "outputs/founderbench-paper-evidence-map.md",
-          "sha256": "3b68f9a27005b150c26bd69d1a823ebeab26235e8e963fc454589168699403f0",
-          "bytes": 8114
+          "sha256": "925b04a78496443a30bac034c8abcdb3d24468a663ef13f78b0275a37178be45",
+          "bytes": 8009
         },
         {
           "path": "outputs/founderbench-paper-evidence-map.json",
-          "sha256": "0ff354d6ac6941be01b3966338dd99e59dffa46a51ad8132fd10772a0004de97",
-          "bytes": 17081
+          "sha256": "95b22d6754d930ee839066bea34ca31555d60bb2a56bd031e92d620bb0b4fa64",
+          "bytes": 16429
         },
         {
           "path": "outputs/founderbench-references.bib",
-          "sha256": "124ea8dc1cf44747e5348dd8bf21d137767001832470a26135ad384234c6c6a9",
-          "bytes": 5246
+          "sha256": "675bc7a25785f1778915d9dbc2e70ae42369a0bf6cf28cf59fd61581920a4f27",
+          "bytes": 10955
         },
         {
           "path": "outputs/founderbench-reference-provenance.json",
-          "sha256": "57badd1c93ae58a9ca18ef2174ff1449773fbe5bc67b682282dd0929862fb077",
-          "bytes": 2102
+          "sha256": "7689c55dafa0722e4210cef7f022cbd6825a6b12591b589a620cf2e1d33bd6db",
+          "bytes": 2451
         },
         {
           "path": "outputs/founderbench-validity-report.md",
@@ -910,23 +910,23 @@
         },
         {
           "path": "outputs/founderbench-claim-evidence.md",
-          "sha256": "49d96418f8d5d2da9697d42878cbf688da0aca516331ac3e30175e14d36f3a27",
-          "bytes": 5768
+          "sha256": "dfeeb1a9976c6e27128e58693bc5864b91baabdbfe5853c6d4dc666237711cb1",
+          "bytes": 5756
         },
         {
           "path": "outputs/founderbench-claim-evidence.json",
-          "sha256": "1d7937fd514c09af3dbeae91985c21b6162988ded1b51d536b96ee364c994154",
-          "bytes": 10489
+          "sha256": "340c982c3e659a502c457918af4ad564cca2ef88262999d7c611fc731b324f55",
+          "bytes": 10382
         },
         {
           "path": "outputs/founderbench-paper-claim-lint.md",
-          "sha256": "fda867ae783089d7b24915233e013da0e1093a814bc9164a9cd33e772ae6ec43",
-          "bytes": 1530
+          "sha256": "fb8397532da00f08f060556b724bc9bb3a8a192fdbf53ea33dcebe3666abbcc5",
+          "bytes": 1613
         },
         {
           "path": "outputs/founderbench-paper-claim-lint.json",
-          "sha256": "d76476b488e2c8f2ceb2f1bd3338e89cc815e992057d56802127fe34c0f2be3c",
-          "bytes": 1880
+          "sha256": "0573f7c5f805139c6ebc718603417f2b7a277e8937a8d3ec9775c9d2669b49f3",
+          "bytes": 2154
         },
         {
           "path": "outputs/founderbench-submission-gate.md",
@@ -1000,13 +1000,13 @@
         },
         {
           "path": "outputs/founderbench-submission-action-plan.md",
-          "sha256": "0f025974caef05314dcc520d4428771815539d94619f9b1bb3f35d135b984051",
-          "bytes": 17359
+          "sha256": "2d96f39b07b4d6b22ece267c5f4a1627512ea84c984b181933877a9427f51807",
+          "bytes": 14384
         },
         {
           "path": "outputs/founderbench-submission-action-plan.json",
-          "sha256": "6e067a7071b97378d7eb8a6e6bed33ee6a90996f3207b66a90ca13110c7e42d2",
-          "bytes": 23008
+          "sha256": "e307363457752e0e7a0c64ce4c126d3ba52ea288af7dbb5d15dc79ff30c8e058",
+          "bytes": 19129
         },
         {
           "path": "outputs/founderbench-supplementary-package-checklist.md",
@@ -1030,7 +1030,7 @@
         },
         {
           "path": "outputs/founderbench-reviewer-index.json",
-          "sha256": "5d32c245f95de28e4bc1857d86c2ce3a755f42337bddf4a0d3f3338e934ea811",
+          "sha256": "f35b25d2be697bde32f2e96725d34583340a35e5aeafb4ae5c6d93a20c53394c",
           "bytes": 35692
         }
       ],
@@ -1067,41 +1067,50 @@
       "id": "final_license_metadata",
       "category": "open_blocker",
       "requirement": "Final public license and citation metadata selected by project owner.",
-      "status": "incomplete",
+      "status": "complete",
       "evidence": [
         {
           "path": "work/founderbench/CITATION.cff",
-          "sha256": "c89452bacf9e1273d9c4cb2fef691b1f6e95af6e9b96e3c316dcec398c44582c",
-          "bytes": 554
+          "sha256": "750d926114e11c6d57566bdfea330bc84aef300d4c325a9b8f9bd640a0411217",
+          "bytes": 838
         },
         {
-          "path": "work/founderbench/LICENSE-TODO.md",
-          "sha256": "c14a53909dd6844c3eb87cf091891b87354ab7f269178acd2a4b7ad46f66a718",
-          "bytes": 361
+          "path": "work/founderbench/LICENSE",
+          "sha256": "5269ce3681bf76c2938feed26bb96a3932f075f9b7c0673b3d3f605bfd5bf367",
+          "bytes": 1089
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "5269ce3681bf76c2938feed26bb96a3932f075f9b7c0673b3d3f605bfd5bf367",
+          "bytes": 1089
+        },
+        {
+          "path": "CITATION.cff",
+          "sha256": "750d926114e11c6d57566bdfea330bc84aef300d4c325a9b8f9bd640a0411217",
+          "bytes": 838
         },
         {
           "path": "outputs/founderbench-license-readiness.md",
-          "sha256": "fa4733d818834b0ee9dc80f2b8f2b9e06a20a335a0b5fd4c73b037f904b180ec",
-          "bytes": 2430
+          "sha256": "8057316053a258de24e127883adcc1f50fd7c1396cf0825252acbf7a62f1ff34",
+          "bytes": 2411
         },
         {
           "path": "outputs/founderbench-license-readiness.json",
-          "sha256": "00ff5250fc524ecb4a6fc28eab6af3da18e2698fa000bff1d65f6214a262fc8e",
-          "bytes": 3585
+          "sha256": "d06244f610f12a3aedc59e07e1ee120e1254cfaa5fcf804b3f65cfd916356d5b",
+          "bytes": 3566
         },
         {
           "path": "outputs/founderbench-release-metadata-checklist.md",
-          "sha256": "a85aaa07a9bfb8b4e690d742758583e00c4c129cf2676298a61297a34a0c4df9",
-          "bytes": 3591
+          "sha256": "8d1aba7a376321da73dc04257fe9775907f163098a8d964b1830b2a265f12de1",
+          "bytes": 3575
         },
         {
           "path": "outputs/founderbench-release-metadata-checklist.json",
-          "sha256": "a1071327fee72e92bfb6a5733a9cb60a24fd42749d088884f2aaa4b027b53e61",
-          "bytes": 4688
+          "sha256": "d37cf745073c05170c8ac554c644da9859ba2a47489d99c890c2036f1039ca09",
+          "bytes": 4672
         }
       ],
-      "missing_paths": [],
-      "blocker": "CITATION.cff and LICENSE-TODO.md contain owner-facing placeholders."
+      "missing_paths": []
     }
   ]
 }

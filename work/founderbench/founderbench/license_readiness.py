@@ -102,9 +102,21 @@ def build_report() -> dict[str, Any]:
         },
         {
             "id": "license_todo_present",
-            "status": "incomplete" if "No public release license has been selected" in license_todo_text else "pass",
-            "path": "work/founderbench/LICENSE-TODO.md",
-            "detail": "LICENSE-TODO.md documents the unresolved owner decision.",
+            "status": (
+                "pass"
+                if license_path.exists() and "MIT License" in read_text(license_path) and not license_todo_path.exists()
+                else (
+                    "incomplete"
+                    if "No public release license has been selected" in license_todo_text or not license_path.exists()
+                    else "pass"
+                )
+            ),
+            "path": "work/founderbench/LICENSE",
+            "detail": (
+                "Public MIT LICENSE is present and LICENSE-TODO.md has been removed."
+                if license_path.exists() and not license_todo_path.exists()
+                else "LICENSE-TODO.md documents the unresolved owner decision."
+            ),
         },
     ]
     return {

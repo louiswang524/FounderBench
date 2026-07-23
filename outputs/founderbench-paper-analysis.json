@@ -1,0 +1,717 @@
+{
+  "benchmark": "FounderBench",
+  "benchmark_version": "0.3.0",
+  "generated_from_validated_single_runs": true,
+  "interval_interpretation": "Task-mix uncertainty only; not repeated-run or model-sampling uncertainty.",
+  "validated_model_count": 11,
+  "models": [
+    {
+      "model": "Gemini 3.5 Flash",
+      "average_task_score": 67.69,
+      "solved": 32,
+      "solve_rate": 0.64,
+      "task_mix_score_ci_95": [
+        59.2,
+        75.25
+      ],
+      "provider_error_decisions": 59,
+      "tasks_with_provider_errors": 25,
+      "errored_task_mean": 73.57,
+      "clean_task_mean": 61.8,
+      "families": {
+        "Market selection": {
+          "average_task_score": 58.91,
+          "solved": 3
+        },
+        "First revenue": {
+          "average_task_score": 54.75,
+          "solved": 3
+        },
+        "Retention improvement": {
+          "average_task_score": 95.67,
+          "solved": 5
+        },
+        "Churn shock recovery": {
+          "average_task_score": 91.6,
+          "solved": 5
+        },
+        "Demo Day traction": {
+          "average_task_score": 61.26,
+          "solved": 0
+        },
+        "Pricing": {
+          "average_task_score": 76.13,
+          "solved": 4
+        },
+        "Runway preservation": {
+          "average_task_score": 83.99,
+          "solved": 5
+        },
+        "Pivot decision": {
+          "average_task_score": 17.93,
+          "solved": 0
+        },
+        "Fundraising": {
+          "average_task_score": 83.6,
+          "solved": 5
+        },
+        "Channel expansion": {
+          "average_task_score": 53.04,
+          "solved": 2
+        }
+      }
+    },
+    {
+      "model": "Grok 4.5",
+      "average_task_score": 66.53,
+      "solved": 33,
+      "solve_rate": 0.66,
+      "task_mix_score_ci_95": [
+        57.81,
+        74.62
+      ],
+      "provider_error_decisions": 0,
+      "tasks_with_provider_errors": 0,
+      "errored_task_mean": null,
+      "clean_task_mean": 66.53,
+      "families": {
+        "Market selection": {
+          "average_task_score": 46.32,
+          "solved": 2
+        },
+        "First revenue": {
+          "average_task_score": 59.98,
+          "solved": 3
+        },
+        "Retention improvement": {
+          "average_task_score": 96.67,
+          "solved": 5
+        },
+        "Churn shock recovery": {
+          "average_task_score": 94.4,
+          "solved": 5
+        },
+        "Demo Day traction": {
+          "average_task_score": 67.46,
+          "solved": 3
+        },
+        "Pricing": {
+          "average_task_score": 74.13,
+          "solved": 4
+        },
+        "Runway preservation": {
+          "average_task_score": 81.41,
+          "solved": 4
+        },
+        "Pivot decision": {
+          "average_task_score": 13.67,
+          "solved": 0
+        },
+        "Fundraising": {
+          "average_task_score": 86.54,
+          "solved": 5
+        },
+        "Channel expansion": {
+          "average_task_score": 44.69,
+          "solved": 2
+        }
+      }
+    },
+    {
+      "model": "GPT-5.6 Sol",
+      "average_task_score": 66.39,
+      "solved": 32,
+      "solve_rate": 0.64,
+      "task_mix_score_ci_95": [
+        57.46,
+        74.89
+      ],
+      "provider_error_decisions": 0,
+      "tasks_with_provider_errors": 0,
+      "errored_task_mean": null,
+      "clean_task_mean": 66.39,
+      "families": {
+        "Market selection": {
+          "average_task_score": 59.38,
+          "solved": 3
+        },
+        "First revenue": {
+          "average_task_score": 53.64,
+          "solved": 2
+        },
+        "Retention improvement": {
+          "average_task_score": 96.17,
+          "solved": 5
+        },
+        "Churn shock recovery": {
+          "average_task_score": 95.2,
+          "solved": 5
+        },
+        "Demo Day traction": {
+          "average_task_score": 51.59,
+          "solved": 1
+        },
+        "Pricing": {
+          "average_task_score": 74.25,
+          "solved": 4
+        },
+        "Runway preservation": {
+          "average_task_score": 87.16,
+          "solved": 5
+        },
+        "Pivot decision": {
+          "average_task_score": 5.31,
+          "solved": 0
+        },
+        "Fundraising": {
+          "average_task_score": 83.42,
+          "solved": 5
+        },
+        "Channel expansion": {
+          "average_task_score": 57.77,
+          "solved": 2
+        }
+      }
+    },
+    {
+      "model": "Kimi K3",
+      "average_task_score": 65.63,
+      "solved": 28,
+      "solve_rate": 0.56,
+      "task_mix_score_ci_95": [
+        57.89,
+        72.67
+      ],
+      "provider_error_decisions": 70,
+      "tasks_with_provider_errors": 11,
+      "errored_task_mean": 46.47,
+      "clean_task_mean": 71.04,
+      "families": {
+        "Market selection": {
+          "average_task_score": 59.32,
+          "solved": 3
+        },
+        "First revenue": {
+          "average_task_score": 34.81,
+          "solved": 0
+        },
+        "Retention improvement": {
+          "average_task_score": 95.5,
+          "solved": 5
+        },
+        "Churn shock recovery": {
+          "average_task_score": 93.76,
+          "solved": 5
+        },
+        "Demo Day traction": {
+          "average_task_score": 63.89,
+          "solved": 2
+        },
+        "Pricing": {
+          "average_task_score": 73.43,
+          "solved": 4
+        },
+        "Runway preservation": {
+          "average_task_score": 84.31,
+          "solved": 5
+        },
+        "Pivot decision": {
+          "average_task_score": 31.49,
+          "solved": 0
+        },
+        "Fundraising": {
+          "average_task_score": 84.49,
+          "solved": 4
+        },
+        "Channel expansion": {
+          "average_task_score": 35.3,
+          "solved": 0
+        }
+      }
+    },
+    {
+      "model": "Claude Sonnet 5",
+      "average_task_score": 63.9,
+      "solved": 25,
+      "solve_rate": 0.5,
+      "task_mix_score_ci_95": [
+        56.34,
+        71.41
+      ],
+      "provider_error_decisions": 0,
+      "tasks_with_provider_errors": 0,
+      "errored_task_mean": null,
+      "clean_task_mean": 63.9,
+      "families": {
+        "Market selection": {
+          "average_task_score": 36.3,
+          "solved": 1
+        },
+        "First revenue": {
+          "average_task_score": 68.93,
+          "solved": 2
+        },
+        "Retention improvement": {
+          "average_task_score": 94.33,
+          "solved": 5
+        },
+        "Churn shock recovery": {
+          "average_task_score": 53.5,
+          "solved": 0
+        },
+        "Demo Day traction": {
+          "average_task_score": 35.58,
+          "solved": 1
+        },
+        "Pricing": {
+          "average_task_score": 75.9,
+          "solved": 3
+        },
+        "Runway preservation": {
+          "average_task_score": 87.49,
+          "solved": 5
+        },
+        "Pivot decision": {
+          "average_task_score": 47.05,
+          "solved": 1
+        },
+        "Fundraising": {
+          "average_task_score": 83.19,
+          "solved": 5
+        },
+        "Channel expansion": {
+          "average_task_score": 56.71,
+          "solved": 2
+        }
+      }
+    },
+    {
+      "model": "DeepSeek V4 Reasoner",
+      "average_task_score": 62.43,
+      "solved": 27,
+      "solve_rate": 0.54,
+      "task_mix_score_ci_95": [
+        53.97,
+        70.48
+      ],
+      "provider_error_decisions": 3,
+      "tasks_with_provider_errors": 3,
+      "errored_task_mean": 60.66,
+      "clean_task_mean": 62.55,
+      "families": {
+        "Market selection": {
+          "average_task_score": 59.01,
+          "solved": 3
+        },
+        "First revenue": {
+          "average_task_score": 50.67,
+          "solved": 2
+        },
+        "Retention improvement": {
+          "average_task_score": 91.65,
+          "solved": 5
+        },
+        "Churn shock recovery": {
+          "average_task_score": 78.95,
+          "solved": 4
+        },
+        "Demo Day traction": {
+          "average_task_score": 41.03,
+          "solved": 1
+        },
+        "Pricing": {
+          "average_task_score": 70.96,
+          "solved": 2
+        },
+        "Runway preservation": {
+          "average_task_score": 90.57,
+          "solved": 5
+        },
+        "Pivot decision": {
+          "average_task_score": 17.79,
+          "solved": 0
+        },
+        "Fundraising": {
+          "average_task_score": 83.77,
+          "solved": 5
+        },
+        "Channel expansion": {
+          "average_task_score": 39.96,
+          "solved": 0
+        }
+      }
+    },
+    {
+      "model": "Claude Sonnet 4.5",
+      "average_task_score": 61.09,
+      "solved": 24,
+      "solve_rate": 0.48,
+      "task_mix_score_ci_95": [
+        52.24,
+        69.79
+      ],
+      "provider_error_decisions": 0,
+      "tasks_with_provider_errors": 0,
+      "errored_task_mean": null,
+      "clean_task_mean": 61.09,
+      "families": {
+        "Market selection": {
+          "average_task_score": 47.36,
+          "solved": 2
+        },
+        "First revenue": {
+          "average_task_score": 29.57,
+          "solved": 1
+        },
+        "Retention improvement": {
+          "average_task_score": 94.67,
+          "solved": 5
+        },
+        "Churn shock recovery": {
+          "average_task_score": 67.26,
+          "solved": 2
+        },
+        "Demo Day traction": {
+          "average_task_score": 68.0,
+          "solved": 1
+        },
+        "Pricing": {
+          "average_task_score": 65.7,
+          "solved": 1
+        },
+        "Runway preservation": {
+          "average_task_score": 90.83,
+          "solved": 5
+        },
+        "Pivot decision": {
+          "average_task_score": 12.78,
+          "solved": 0
+        },
+        "Fundraising": {
+          "average_task_score": 83.6,
+          "solved": 5
+        },
+        "Channel expansion": {
+          "average_task_score": 51.1,
+          "solved": 2
+        }
+      }
+    },
+    {
+      "model": "DeepSeek Chat",
+      "average_task_score": 56.59,
+      "solved": 23,
+      "solve_rate": 0.46,
+      "task_mix_score_ci_95": [
+        47.39,
+        65.78
+      ],
+      "provider_error_decisions": 0,
+      "tasks_with_provider_errors": 0,
+      "errored_task_mean": null,
+      "clean_task_mean": 56.59,
+      "families": {
+        "Market selection": {
+          "average_task_score": 57.41,
+          "solved": 3
+        },
+        "First revenue": {
+          "average_task_score": 10.71,
+          "solved": 0
+        },
+        "Retention improvement": {
+          "average_task_score": 93.48,
+          "solved": 5
+        },
+        "Churn shock recovery": {
+          "average_task_score": 39.32,
+          "solved": 1
+        },
+        "Demo Day traction": {
+          "average_task_score": 56.98,
+          "solved": 1
+        },
+        "Pricing": {
+          "average_task_score": 69.19,
+          "solved": 2
+        },
+        "Runway preservation": {
+          "average_task_score": 91.13,
+          "solved": 5
+        },
+        "Pivot decision": {
+          "average_task_score": 12.58,
+          "solved": 0
+        },
+        "Fundraising": {
+          "average_task_score": 86.3,
+          "solved": 5
+        },
+        "Channel expansion": {
+          "average_task_score": 48.79,
+          "solved": 1
+        }
+      }
+    },
+    {
+      "model": "GLM 4.5 Air",
+      "average_task_score": 54.78,
+      "solved": 23,
+      "solve_rate": 0.46,
+      "task_mix_score_ci_95": [
+        46.01,
+        63.53
+      ],
+      "provider_error_decisions": 0,
+      "tasks_with_provider_errors": 0,
+      "errored_task_mean": null,
+      "clean_task_mean": 54.78,
+      "families": {
+        "Market selection": {
+          "average_task_score": 25.11,
+          "solved": 0
+        },
+        "First revenue": {
+          "average_task_score": 9.99,
+          "solved": 0
+        },
+        "Retention improvement": {
+          "average_task_score": 90.19,
+          "solved": 5
+        },
+        "Churn shock recovery": {
+          "average_task_score": 74.63,
+          "solved": 4
+        },
+        "Demo Day traction": {
+          "average_task_score": 51.63,
+          "solved": 1
+        },
+        "Pricing": {
+          "average_task_score": 71.45,
+          "solved": 4
+        },
+        "Runway preservation": {
+          "average_task_score": 87.49,
+          "solved": 4
+        },
+        "Pivot decision": {
+          "average_task_score": 10.82,
+          "solved": 0
+        },
+        "Fundraising": {
+          "average_task_score": 83.99,
+          "solved": 5
+        },
+        "Channel expansion": {
+          "average_task_score": 42.49,
+          "solved": 0
+        }
+      }
+    },
+    {
+      "model": "Gemini 2.5 Flash",
+      "average_task_score": 52.69,
+      "solved": 13,
+      "solve_rate": 0.26,
+      "task_mix_score_ci_95": [
+        46.1,
+        59.68
+      ],
+      "provider_error_decisions": 340,
+      "tasks_with_provider_errors": 44,
+      "errored_task_mean": 50.33,
+      "clean_task_mean": 70.03,
+      "families": {
+        "Market selection": {
+          "average_task_score": 47.3,
+          "solved": 2
+        },
+        "First revenue": {
+          "average_task_score": 61.11,
+          "solved": 1
+        },
+        "Retention improvement": {
+          "average_task_score": 70.79,
+          "solved": 3
+        },
+        "Churn shock recovery": {
+          "average_task_score": 37.35,
+          "solved": 0
+        },
+        "Demo Day traction": {
+          "average_task_score": 58.42,
+          "solved": 2
+        },
+        "Pricing": {
+          "average_task_score": 48.94,
+          "solved": 0
+        },
+        "Runway preservation": {
+          "average_task_score": 77.91,
+          "solved": 5
+        },
+        "Pivot decision": {
+          "average_task_score": 21.79,
+          "solved": 0
+        },
+        "Fundraising": {
+          "average_task_score": 68.0,
+          "solved": 0
+        },
+        "Channel expansion": {
+          "average_task_score": 35.3,
+          "solved": 0
+        }
+      }
+    },
+    {
+      "model": "Grok 4.3",
+      "average_task_score": 52.59,
+      "solved": 16,
+      "solve_rate": 0.32,
+      "task_mix_score_ci_95": [
+        45.16,
+        60.21
+      ],
+      "provider_error_decisions": 3,
+      "tasks_with_provider_errors": 3,
+      "errored_task_mean": 44.23,
+      "clean_task_mean": 53.12,
+      "families": {
+        "Market selection": {
+          "average_task_score": 57.05,
+          "solved": 2
+        },
+        "First revenue": {
+          "average_task_score": 22.14,
+          "solved": 0
+        },
+        "Retention improvement": {
+          "average_task_score": 41.07,
+          "solved": 0
+        },
+        "Churn shock recovery": {
+          "average_task_score": 54.0,
+          "solved": 0
+        },
+        "Demo Day traction": {
+          "average_task_score": 47.11,
+          "solved": 1
+        },
+        "Pricing": {
+          "average_task_score": 66.78,
+          "solved": 2
+        },
+        "Runway preservation": {
+          "average_task_score": 94.36,
+          "solved": 5
+        },
+        "Pivot decision": {
+          "average_task_score": 18.91,
+          "solved": 0
+        },
+        "Fundraising": {
+          "average_task_score": 83.47,
+          "solved": 5
+        },
+        "Channel expansion": {
+          "average_task_score": 40.96,
+          "solved": 1
+        }
+      }
+    }
+  ],
+  "solved_average_rank_reversals": [
+    {
+      "higher_average": "Gemini 3.5 Flash",
+      "higher_solved": "Grok 4.5",
+      "average_gap": 1.16,
+      "solved_gap": 1
+    },
+    {
+      "higher_average": "Claude Sonnet 5",
+      "higher_solved": "DeepSeek V4 Reasoner",
+      "average_gap": 1.47,
+      "solved_gap": 2
+    },
+    {
+      "higher_average": "Gemini 2.5 Flash",
+      "higher_solved": "Grok 4.3",
+      "average_gap": 0.1,
+      "solved_gap": 3
+    }
+  ],
+  "task_aware_family_comparison": [
+    {
+      "family": "Market selection",
+      "task_aware_score": 59.77,
+      "best_hosted_model": "GPT-5.6 Sol",
+      "best_hosted_score": 59.38,
+      "task_aware_leads_all_hosted": true
+    },
+    {
+      "family": "First revenue",
+      "task_aware_score": 69.25,
+      "best_hosted_model": "Claude Sonnet 5",
+      "best_hosted_score": 68.93,
+      "task_aware_leads_all_hosted": true
+    },
+    {
+      "family": "Retention improvement",
+      "task_aware_score": 95.78,
+      "best_hosted_model": "Grok 4.5",
+      "best_hosted_score": 96.67,
+      "task_aware_leads_all_hosted": false
+    },
+    {
+      "family": "Churn shock recovery",
+      "task_aware_score": 91.18,
+      "best_hosted_model": "GPT-5.6 Sol",
+      "best_hosted_score": 95.2,
+      "task_aware_leads_all_hosted": false
+    },
+    {
+      "family": "Demo Day traction",
+      "task_aware_score": 88.82,
+      "best_hosted_model": "Claude Sonnet 4.5",
+      "best_hosted_score": 68.0,
+      "task_aware_leads_all_hosted": true
+    },
+    {
+      "family": "Pricing",
+      "task_aware_score": 85.59,
+      "best_hosted_model": "Gemini 3.5 Flash",
+      "best_hosted_score": 76.13,
+      "task_aware_leads_all_hosted": true
+    },
+    {
+      "family": "Runway preservation",
+      "task_aware_score": 95.58,
+      "best_hosted_model": "Grok 4.3",
+      "best_hosted_score": 94.36,
+      "task_aware_leads_all_hosted": true
+    },
+    {
+      "family": "Pivot decision",
+      "task_aware_score": 65.48,
+      "best_hosted_model": "Claude Sonnet 5",
+      "best_hosted_score": 47.05,
+      "task_aware_leads_all_hosted": true
+    },
+    {
+      "family": "Fundraising",
+      "task_aware_score": 99.61,
+      "best_hosted_model": "Grok 4.5",
+      "best_hosted_score": 86.54,
+      "task_aware_leads_all_hosted": true
+    },
+    {
+      "family": "Channel expansion",
+      "task_aware_score": 57.97,
+      "best_hosted_model": "GPT-5.6 Sol",
+      "best_hosted_score": 57.77,
+      "task_aware_leads_all_hosted": true
+    }
+  ]
+}

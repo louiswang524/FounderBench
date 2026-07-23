@@ -286,14 +286,14 @@ REQUIREMENTS: list[dict[str, Any]] = [
         "requirement": "Final public license and citation metadata selected by project owner.",
         "required_paths": [
             "work/founderbench/CITATION.cff",
-            "work/founderbench/LICENSE-TODO.md",
+            "work/founderbench/LICENSE",
+            "LICENSE",
+            "CITATION.cff",
             "outputs/founderbench-license-readiness.md",
             "outputs/founderbench-license-readiness.json",
             "outputs/founderbench-release-metadata-checklist.md",
             "outputs/founderbench-release-metadata-checklist.json",
         ],
-        "status_override": "incomplete",
-        "blocker": "CITATION.cff and LICENSE-TODO.md contain owner-facing placeholders.",
     },
 ]
 

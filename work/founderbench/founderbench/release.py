@@ -627,8 +627,10 @@ def build_bundle() -> Path:
 
     copy_tree(PACKAGE_ROOT / "founderbench", bundle / "code" / "founderbench")
     copy_tree(PACKAGE_ROOT / "tests", bundle / "code" / "tests")
-    for name in ["README.md", "SPEC.md", "CITATION.cff", "CITATION.cff.template", "LICENSE-TODO.md", "LICENSE.template"]:
-        shutil.copy2(PACKAGE_ROOT / name, bundle / "code" / name)
+    for name in ["README.md", "SPEC.md", "CITATION.cff", "CITATION.cff.template", "LICENSE", "LICENSE.template"]:
+        src = PACKAGE_ROOT / name
+        if src.exists():
+            shutil.copy2(src, bundle / "code" / name)
 
     for name in REQUIRED_OUTPUTS:
         src = OUTPUTS / name

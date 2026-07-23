@@ -6,8 +6,8 @@ This audit maps benchmark/dataset submission expectations to concrete release ar
 
 | Status | Count |
 | --- | --- |
-| complete | 7 |
-| incomplete | 1 |
+| complete | 8 |
+| incomplete | 0 |
 | missing | 3 |
 
 ## Requirement Matrix
@@ -24,7 +24,7 @@ This audit maps benchmark/dataset submission expectations to concrete release ar
 | hosted_llm_baselines | open_blocker | missing | 0 | Needs fresh DeepSeek/Claude/Gemini current release runs with audit logs and submission validation. |
 | local_open_source_baseline | open_blocker | missing | 0 | Needs local OpenAI-compatible inference server/model run or uploaded raw result. |
 | executed_private_holdout | open_blocker | missing | 0 | Protocol exists, but private task definitions and hidden leaderboard are intentionally not included in current release. |
-| final_license_metadata | open_blocker | incomplete | 6 | CITATION.cff and LICENSE-TODO.md contain owner-facing placeholders. |
+| final_license_metadata | open_blocker | complete | 8 |  |
 
 ## Complete Evidence Items
 
@@ -71,10 +71,10 @@ Defined primary, secondary, diagnostic, family-specific, and uncertainty metrics
 - `outputs/founderbench-scoring-consistency-audit.md` (3807 bytes)
 - `outputs/founderbench-scoring-consistency-audit.json` (6412 bytes)
 - `outputs/founderbench-baseline-analysis.md` (4380 bytes)
-- `outputs/founderbench-paper-tables.md` (5429 bytes)
-- `outputs/founderbench-paper-tables.json` (13476 bytes)
-- `outputs/founderbench-model-result-cards.md` (4209 bytes)
-- `outputs/founderbench-model-result-cards.json` (12073 bytes)
+- `outputs/founderbench-paper-tables.md` (9809 bytes)
+- `outputs/founderbench-paper-tables.json` (25445 bytes)
+- `outputs/founderbench-model-result-cards.md` (4497 bytes)
+- `outputs/founderbench-model-result-cards.json` (16232 bytes)
 - `outputs/founderbench-paper-figure-data.md` (1628 bytes)
 - `outputs/founderbench-paper-figure-data.json` (15206 bytes)
 - `outputs/founderbench-random-repeats.md` (795 bytes)
@@ -89,12 +89,12 @@ Representative non-LLM baseline leaderboard and raw results on all 50 current ta
 - `outputs/founderbench-leaderboard-stability.md` (3181 bytes)
 - `outputs/founderbench-leaderboard-stability.json` (7593 bytes)
 - `outputs/founderbench-baseline-raw.json` (342083 bytes)
-- `outputs/founderbench-model-comparison.md` (5442 bytes)
-- `outputs/founderbench-model-comparison.json` (14115 bytes)
+- `outputs/founderbench-model-comparison.md` (10790 bytes)
+- `outputs/founderbench-model-comparison.json` (35878 bytes)
 - `outputs/founderbench-result-integrity-audit.md` (1582 bytes)
 - `outputs/founderbench-result-integrity-audit.json` (2081 bytes)
-- `outputs/founderbench-model-result-cards.md` (4209 bytes)
-- `outputs/founderbench-model-result-cards.json` (12073 bytes)
+- `outputs/founderbench-model-result-cards.md` (4497 bytes)
+- `outputs/founderbench-model-result-cards.json` (16232 bytes)
 - `outputs/founderbench-ablation-report.md` (2444 bytes)
 - `outputs/founderbench-action-ablation.md` (2372 bytes)
 - `outputs/founderbench-action-ablation.json` (643447 bytes)
@@ -111,12 +111,12 @@ Representative non-LLM baseline leaderboard and raw results on all 50 current ta
 
 Hosted/local provider adapters and model submission validation tooling.
 
-- `work/founderbench/founderbench/llm_policy.py` (18353 bytes)
+- `work/founderbench/founderbench/llm_policy.py` (21872 bytes)
 - `work/founderbench/founderbench/prompt_protocol.py` (8150 bytes)
 - `work/founderbench/founderbench/local_model.py` (7219 bytes)
 - `work/founderbench/founderbench/baseline_execution_plan.py` (16257 bytes)
 - `work/founderbench/founderbench/experiment_runbook.py` (14085 bytes)
-- `work/founderbench/founderbench/provider_readiness.py` (10508 bytes)
+- `work/founderbench/founderbench/provider_readiness.py` (10653 bytes)
 - `work/founderbench/founderbench/provider_run_status.py` (11070 bytes)
 - `work/founderbench/founderbench/cost_accounting.py` (8483 bytes)
 - `work/founderbench/founderbench/submission.py` (8913 bytes)
@@ -141,8 +141,8 @@ Hosted/local provider adapters and model submission validation tooling.
 - `outputs/founderbench-baseline-execution-plan.json` (27956 bytes)
 - `outputs/founderbench-experiment-runbook.md` (24376 bytes)
 - `outputs/founderbench-experiment-runbook.json` (28944 bytes)
-- `outputs/founderbench-provider-run-status.md` (5434 bytes)
-- `outputs/founderbench-provider-run-status.json` (16984 bytes)
+- `outputs/founderbench-provider-run-status.md` (9611 bytes)
+- `outputs/founderbench-provider-run-status.json` (23055 bytes)
 - `outputs/founderbench-provider-comparability-audit.md` (3847 bytes)
 - `outputs/founderbench-provider-comparability-audit.json` (9594 bytes)
 - `outputs/founderbench-provider-contract-audit.md` (2167 bytes)
@@ -153,7 +153,7 @@ Hosted/local provider adapters and model submission validation tooling.
 
 Trace, parse-failure, redaction, and qualitative analysis support.
 
-- `work/founderbench/founderbench/provider_adapter.py` (4363 bytes)
+- `work/founderbench/founderbench/provider_adapter.py` (4488 bytes)
 - `work/founderbench/founderbench/qualitative.py` (8492 bytes)
 - `outputs/founderbench-qualitative-traces.md` (5229 bytes)
 - `outputs/founderbench-qualitative-traces.json` (27313 bytes)
@@ -182,9 +182,9 @@ Trace, parse-failure, redaction, and qualitative analysis support.
 
 Private holdout blueprint, fingerprint generator, and evaluator protocol.
 
-- `work/founderbench/founderbench/holdout.py` (10925 bytes)
+- `work/founderbench/founderbench/holdout.py` (10922 bytes)
 - `work/founderbench/founderbench/private_holdout_evaluator.py` (7766 bytes)
-- `outputs/founderbench-private-holdout-blueprint.json` (1629 bytes)
+- `outputs/founderbench-private-holdout-blueprint.json` (1626 bytes)
 - `outputs/founderbench-private-holdout-evaluator-protocol.md` (2167 bytes)
 - `outputs/founderbench-private-holdout-evaluator-protocol.json` (2180 bytes)
 - `outputs/founderbench-private-holdout-smoke.md` (1334 bytes)
@@ -196,7 +196,7 @@ Private holdout blueprint, fingerprint generator, and evaluator protocol.
 
 Benchmark card, reproduction guide, specification, paper draft, references, and checklist.
 
-- `work/founderbench/README.md` (20930 bytes)
+- `work/founderbench/README.md` (583 bytes)
 - `work/founderbench/SPEC.md` (9647 bytes)
 - `work/founderbench/CITATION.cff.template` (582 bytes)
 - `work/founderbench/LICENSE.template` (468 bytes)
@@ -217,23 +217,23 @@ Benchmark card, reproduction guide, specification, paper draft, references, and 
 - `outputs/founderbench-human-calibration-packet.json` (5426 bytes)
 - `outputs/founderbench-task-revision-ledger.md` (8781 bytes)
 - `outputs/founderbench-task-revision-ledger.json` (16203 bytes)
-- `outputs/founderbench-paper-draft.md` (27807 bytes)
-- `outputs/founderbench-citation-audit.md` (2651 bytes)
-- `outputs/founderbench-citation-audit.json` (8482 bytes)
-- `outputs/founderbench-paper-evidence-map.md` (8114 bytes)
-- `outputs/founderbench-paper-evidence-map.json` (17081 bytes)
-- `outputs/founderbench-references.bib` (5246 bytes)
-- `outputs/founderbench-reference-provenance.json` (2102 bytes)
+- `outputs/founderbench-paper-draft.md` (22602 bytes)
+- `outputs/founderbench-citation-audit.md` (2916 bytes)
+- `outputs/founderbench-citation-audit.json` (9740 bytes)
+- `outputs/founderbench-paper-evidence-map.md` (8009 bytes)
+- `outputs/founderbench-paper-evidence-map.json` (16429 bytes)
+- `outputs/founderbench-references.bib` (10955 bytes)
+- `outputs/founderbench-reference-provenance.json` (2451 bytes)
 - `outputs/founderbench-validity-report.md` (5782 bytes)
 - `outputs/founderbench-validity-report.json` (10130 bytes)
 - `outputs/founderbench-responsible-use.md` (4057 bytes)
 - `outputs/founderbench-responsible-use.json` (4471 bytes)
 - `outputs/founderbench-simulator-invariant-audit.md` (1905 bytes)
 - `outputs/founderbench-simulator-invariant-audit.json` (8236 bytes)
-- `outputs/founderbench-claim-evidence.md` (5768 bytes)
-- `outputs/founderbench-claim-evidence.json` (10489 bytes)
-- `outputs/founderbench-paper-claim-lint.md` (1530 bytes)
-- `outputs/founderbench-paper-claim-lint.json` (1880 bytes)
+- `outputs/founderbench-claim-evidence.md` (5756 bytes)
+- `outputs/founderbench-claim-evidence.json` (10382 bytes)
+- `outputs/founderbench-paper-claim-lint.md` (1613 bytes)
+- `outputs/founderbench-paper-claim-lint.json` (2154 bytes)
 - `outputs/founderbench-submission-gate.md` (1498 bytes)
 - `outputs/founderbench-submission-gate.json` (2223 bytes)
 - `outputs/founderbench-submission-manifest.md` (5856 bytes)
@@ -248,13 +248,26 @@ Benchmark card, reproduction guide, specification, paper draft, references, and 
 - `outputs/founderbench-contamination-leakage-audit.json` (5009 bytes)
 - `outputs/founderbench-failure-mode-audit.md` (8556 bytes)
 - `outputs/founderbench-failure-mode-audit.json` (11463 bytes)
-- `outputs/founderbench-submission-action-plan.md` (17359 bytes)
-- `outputs/founderbench-submission-action-plan.json` (23008 bytes)
+- `outputs/founderbench-submission-action-plan.md` (14384 bytes)
+- `outputs/founderbench-submission-action-plan.json` (19129 bytes)
 - `outputs/founderbench-supplementary-package-checklist.md` (12137 bytes)
 - `outputs/founderbench-experiment-matrix.md` (5249 bytes)
 - `outputs/founderbench-experiment-matrix.json` (14076 bytes)
 - `outputs/founderbench-reviewer-index.md` (20469 bytes)
 - `outputs/founderbench-reviewer-index.json` (35692 bytes)
+
+### final_license_metadata
+
+Final public license and citation metadata selected by project owner.
+
+- `work/founderbench/CITATION.cff` (838 bytes)
+- `work/founderbench/LICENSE` (1089 bytes)
+- `LICENSE` (1089 bytes)
+- `CITATION.cff` (838 bytes)
+- `outputs/founderbench-license-readiness.md` (2411 bytes)
+- `outputs/founderbench-license-readiness.json` (3566 bytes)
+- `outputs/founderbench-release-metadata-checklist.md` (3575 bytes)
+- `outputs/founderbench-release-metadata-checklist.json` (4672 bytes)
 
 ## Open Blockers
 
@@ -264,5 +277,3 @@ Benchmark card, reproduction guide, specification, paper draft, references, and 
   Blocker: Needs local OpenAI-compatible inference server/model run or uploaded raw result.
 - `executed_private_holdout`: Executed hidden-suite leaderboard on evaluator host.
   Blocker: Protocol exists, but private task definitions and hidden leaderboard are intentionally not included in current release.
-- `final_license_metadata`: Final public license and citation metadata selected by project owner.
-  Blocker: CITATION.cff and LICENSE-TODO.md contain owner-facing placeholders.

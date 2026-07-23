@@ -18,6 +18,28 @@ dist/
 *.key
 *.pem
 secrets/
+.local/
+**/FounderBench_HOLDOUT_SECRET*
+**/holdout_secret*
+outputs/founderbench-private-holdout-*-raw.json
+outputs/founderbench-private-holdout-audit*
+
+# Staging / local build clutter (do not publish)
+outputs/_founderbench_remote/
+outputs/arxiv-founderbench/
+outputs/overleaf-founderbench-*/
+outputs/arxiv-p1.txt
+outputs/bench-writing-extract.txt
+outputs/extract_bench_writing.py
+outputs/*-partial.json
+outputs/*-partial.log
+outputs/*-full.log
+outputs/*-run.log
+outputs/founderbench-glm.json
+outputs/founderbench-glm-4.5-flash.json
+outputs/founderbench-glm-4.7-flash.json
+outputs/founderbench-glm-5-partial.json
+outputs/founderbench-glm-5-partial.log
 
 # Local run scratch files
 outputs/tmp-*
@@ -29,6 +51,13 @@ outputs/*v0.2*
 outputs/*-results.json
 outputs/*-runlog.md
 outputs/*-trace.json
+outputs/*-full.log
+outputs/*-run.log
+outputs/*-smoke.log
+outputs/*-smoke.json
+outputs/*-smoke*.log
+outputs/*-smoke*.json
+outputs/founderbench-run-pids.json
 outputs/founderbench-baseline-results.json
 outputs/founderbench-benchmark-proposal.md
 outputs/founderbench-demo-trace.json
@@ -46,6 +75,16 @@ work/pnpm-lock.yaml
 work/smoke-test.cjs
 work/smoke-test.ps1
 work/no-human-company-script.js
+
+# LaTeX build intermediates (keep generated PDFs)
+paper/kdd2027/*.aux
+paper/kdd2027/*.bbl
+paper/kdd2027/*.blg
+paper/kdd2027/*.fdb_latexmk
+paper/kdd2027/*.fls
+paper/kdd2027/*.log
+paper/kdd2027/*.out
+paper/kdd2027/*.synctex.gz
 
 # Editor and OS files
 .DS_Store

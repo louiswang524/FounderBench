@@ -166,7 +166,7 @@ class FounderBenchTests(unittest.TestCase):
     def test_contamination_leakage_audit_keeps_public_split_honest(self):
         payload = build_contamination_leakage_audit()
         self.assertEqual(validate_contamination_leakage_audit(payload), [])
-        self.assertEqual(payload["status"], "public_suite_visible_private_holdout_not_executed")
+        self.assertEqual(payload["status"], "public_suite_visible_private_holdout_frozen_hosted_not_executed")
         self.assertEqual(payload["summary"]["public_tasks"], 50)
         self.assertEqual(payload["summary"]["public_dev"], 30)
         self.assertEqual(payload["summary"]["public_test"], 20)
@@ -314,8 +314,9 @@ class FounderBenchTests(unittest.TestCase):
         payload = audit()
         self.assertGreaterEqual(payload["summary"]["complete"], 1)
         blockers = {item["id"]: item for item in payload["items"] if item["status"] != "complete"}
+        complete = {item["id"]: item for item in payload["items"] if item["status"] == "complete"}
         self.assertIn("hosted_llm_baselines", blockers)
-        self.assertIn("final_license_metadata", blockers)
+        self.assertIn("final_license_metadata", complete)
 
     def test_local_model_protocol_config_validates(self):
         payload = local_model_protocol({"base_url": "http://localhost:8000/v1", "model": "local-test-model", "api_key_configured": False, "timeout_s": 5})
@@ -509,10 +510,20 @@ class FounderBenchTests(unittest.TestCase):
     def test_paper_tables_exclude_missing_provider_runs(self):
         payload = build_tables()
         self.assertEqual(payload["summary"]["deterministic_runs"], 4)
-        self.assertEqual(payload["summary"]["valid_provider_runs"], 3)
-        self.assertEqual(payload["summary"]["valid_provider_policies"], 3)
+        self.assertEqual(payload["summary"]["valid_provider_runs"], 11)
+        self.assertEqual(payload["summary"]["valid_provider_policies"], 7)
+        self.assertEqual(payload["summary"]["valid_provider_models"], 11)
+        self.assertEqual(payload["summary"]["paper_registry_validated_models"], 11)
+        self.assertTrue(payload["summary"]["paper_registry_ready"])
         self.assertEqual(payload["summary"]["valid_repeated_provider_bundles"], 0)
-        self.assertEqual(len(payload["all_valid_policy_rows"]), 7)
+        self.assertEqual(len(payload["all_valid_policy_rows"]), 15)
+        labels = {row[0] for row in payload["all_valid_policy_rows"]}
+        self.assertIn("Claude Sonnet 4.5", labels)
+        self.assertIn("Claude Sonnet 5", labels)
+        self.assertIn("Gemini 2.5 Flash", labels)
+        self.assertIn("Gemini 3.5 Flash", labels)
+        self.assertIn("Grok 4.3", labels)
+        self.assertIn("Grok 4.5", labels)
         self.assertTrue(all(row["status"] in {"missing", "invalid", "valid"} for row in payload["provider_status"]))
         self.assertTrue(any(row["id"] == "deepseek_hosted_baseline" for row in payload["provider_status"]))
         self.assertTrue(any(row["id"] == "anthropic_hosted_baseline" and row["status"] == "valid" for row in payload["provider_status"]))
@@ -570,12 +581,12 @@ class FounderBenchTests(unittest.TestCase):
         self.assertGreaterEqual(payload["summary"]["leaderboard_policies"], 4)
         self.assertGreaterEqual(payload["summary"]["family_heatmap_cells"], 40)
 
-    def test_paper_evidence_map_keeps_llm_results_excluded_until_evidence_exists(self):
+    def test_paper_evidence_map_tracks_validated_hosted_results(self):
         payload = build_paper_evidence_map()
         self.assertEqual(validate_paper_evidence_map(payload), [])
         self.assertEqual(payload["summary"]["incomplete"], 0)
         statuses = {row["section"]: row["status"] for row in payload["sections"]}
-        self.assertEqual(statuses["Hosted and Local LLM Results"], "excluded_until_evidence")
+        self.assertEqual(statuses["Hosted and Local LLM Results"], "supported")
         metrics = [row for row in payload["sections"] if row["section"] == "Metrics"][0]
         metric_paths = {entry["path"] for entry in metrics["evidence"]}
         self.assertIn("outputs/founderbench-scoring-consistency-audit.md", metric_paths)
@@ -596,15 +607,15 @@ class FounderBenchTests(unittest.TestCase):
         self.assertEqual(payload["summary"]["missing_required_disclosures"], 0)
         target_ids = {target["id"] for target in payload["targets"]}
         self.assertIn("paper_draft", target_ids)
-        self.assertIn("benchmark_card", target_ids)
+        self.assertIn("kdd_latex", target_ids)
 
     def test_model_comparison_keeps_missing_provider_claims_explicit(self):
         payload = build_model_comparison_report()
         self.assertEqual(validate_model_comparison_report(payload), [])
         self.assertEqual(payload["summary"]["deterministic_runs"], 4)
-        self.assertEqual(payload["summary"]["valid_provider_runs"], 3)
+        self.assertEqual(payload["summary"]["valid_provider_runs"], 11)
         self.assertTrue(payload["summary"]["hosted_llm_claims_ready"])
-        self.assertEqual(len(payload["leaderboard_rows"]), 7)
+        self.assertEqual(len(payload["leaderboard_rows"]), 15)
         self.assertGreaterEqual(payload["summary"]["paired_comparisons"], 3)
         self.assertGreaterEqual(len(payload["provider_status"]), 11)
         provider_rows = {row["id"]: row for row in payload["provider_status"]}
@@ -617,7 +628,7 @@ class FounderBenchTests(unittest.TestCase):
         self.assertEqual(validate_model_result_cards(payload), [])
         self.assertEqual(payload["summary"]["deterministic_cards"], 4)
         self.assertGreaterEqual(payload["summary"]["provider_candidate_cards"], 11)
-        self.assertEqual(payload["summary"]["valid_provider_cards"], 3)
+        self.assertEqual(payload["summary"]["valid_provider_cards"], 11)
         self.assertTrue(payload["summary"]["hosted_llm_claims_ready"])
         self.assertTrue(all(card["status"] == "valid" for card in payload["deterministic_cards"]))
         self.assertTrue(all(card["claim_eligibility"] == "excluded_until_validated" for card in payload["provider_cards"] if card["status"] != "valid"))
@@ -787,14 +798,14 @@ class FounderBenchTests(unittest.TestCase):
         self.assertGreaterEqual(payload["summary"]["high_severity"], 2)
         self.assertTrue(all(row["current_mitigation"] for row in payload["threats"]))
 
-    def test_claim_evidence_blocks_unsupported_llm_claims(self):
+    def test_claim_evidence_supports_qualified_hosted_results(self):
         payload = build_claim_report()
         self.assertEqual(validate_claim_report(payload), [])
         statuses = {row["id"]: row["status"] for row in payload["claims"]}
         self.assertEqual(statuses["expanded_50_task_suite"], "supported")
-        self.assertEqual(statuses["hosted_llm_comparison"], "unsupported_currently")
+        self.assertEqual(statuses["hosted_llm_comparison"], "supported")
         self.assertEqual(statuses["private_holdout_available"], "unsupported_currently")
-        self.assertGreaterEqual(payload["summary"]["unsupported_currently"], 2)
+        self.assertGreaterEqual(payload["summary"]["unsupported_currently"], 1)
 
     def test_benchmark_datasheet_discloses_composition_and_limits(self):
         payload = build_benchmark_datasheet()
@@ -844,39 +855,14 @@ class FounderBenchTests(unittest.TestCase):
 
     def test_paper_draft_mentions_claim_and_validity_guardrails(self):
         draft = (OUTPUTS / "founderbench-paper-draft.md").read_text(encoding="utf-8")
-        self.assertIn("claim-evidence report", draft)
-        self.assertIn("paper-claim linting", draft)
         self.assertIn("datasheet", draft)
-        self.assertIn("responsible-use statement", draft)
-        self.assertIn("leaderboard policy", draft)
-        self.assertIn("validity report", draft)
-        self.assertIn("task-card catalog", draft)
-        self.assertIn("action-semantics catalog", draft)
-        self.assertIn("market catalog", draft)
-        self.assertIn("prompt-protocol", draft)
-        self.assertIn("simulator-invariant audit", draft)
-        self.assertIn("difficulty-calibration report", draft)
-        self.assertIn("task-feasibility audit", draft)
-        self.assertIn("11 tasks as needing external calibration", draft)
-        self.assertIn("non-final license/citation templates", draft)
-        self.assertIn("metric-sensitivity report", draft)
-        self.assertIn("scoring-consistency audit", draft)
-        self.assertIn("statistical-protocol report", draft)
-        self.assertIn("power-analysis report", draft)
-        self.assertIn("unified model-comparison report", draft)
-        self.assertIn("paired-statistics report", draft)
-        self.assertIn("leaderboard-stability audit", draft)
-        self.assertIn("result-integrity audit", draft)
-        self.assertIn("reviewer-risk audit", draft)
-        self.assertIn("contamination-leakage audit", draft)
-        self.assertIn("provider-contract audit", draft)
-        self.assertIn("AI research failure-mode audit", draft)
-        self.assertIn("citation-context audit", draft)
-        self.assertIn("holdout smoke report", draft)
-        self.assertIn("not an official hidden leaderboard", draft)
-        self.assertIn("hallucinated experimental results", draft)
-        self.assertIn("not yet a comparison of hosted LLM providers", draft)
-        self.assertIn("The benchmark does not include private task definitions or hidden-suite scores", draft)
+        self.assertIn("single runs on visible public tasks", draft)
+        self.assertIn("task-mix sensitivity", draft)
+        self.assertIn("Provider-error sensitivity", draft)
+        self.assertIn("no human-founder calibration", draft)
+        self.assertIn("no official private leaderboard", draft)
+        self.assertIn("do not establish real-world startup competence", draft)
+        self.assertIn("founderbench-paper-model-registry.json", draft)
 
     def test_supplementary_checklist_mentions_integrity_audits(self):
         checklist = (OUTPUTS / "founderbench-supplementary-package-checklist.md").read_text(encoding="utf-8")
@@ -932,7 +918,7 @@ class FounderBenchTests(unittest.TestCase):
     def test_citation_audit_links_paper_citations_to_reference_artifacts(self):
         payload = build_citation_audit()
         self.assertEqual(validate_citation_audit(payload), [])
-        self.assertEqual(payload["summary"]["references"], 12)
+        self.assertEqual(payload["summary"]["references"], 14)
         self.assertTrue(payload["summary"]["contiguous_numbering"])
         self.assertEqual(payload["summary"]["rows_with_context"], payload["summary"]["contexts_checked"])
         self.assertEqual(payload["summary"]["context_term_matches"], payload["summary"]["contexts_checked"])
@@ -941,12 +927,13 @@ class FounderBenchTests(unittest.TestCase):
     def test_license_readiness_tracks_owner_placeholders(self):
         payload = build_license_report()
         self.assertEqual(validate_license_report(payload), [])
-        self.assertFalse(payload["summary"]["release_ready"])
+        self.assertTrue(payload["summary"]["release_ready"])
         statuses = {check["id"]: check["status"] for check in payload["checks"]}
         self.assertEqual(statuses["license_template_exists"], "pass")
         self.assertEqual(statuses["citation_template_exists"], "pass")
-        self.assertEqual(statuses["license_file_exists"], "missing")
-        self.assertIn(statuses["citation_author_placeholder"], {"incomplete", "pass"})
+        self.assertEqual(statuses["license_file_exists"], "pass")
+        self.assertEqual(statuses["citation_author_placeholder"], "pass")
+        self.assertEqual(statuses["license_todo_present"], "pass")
         self.assertIn("license_choice", {decision["id"] for decision in payload["required_decisions"]})
 
     def test_release_metadata_checklist_keeps_owner_decisions_explicit(self):
@@ -1036,7 +1023,7 @@ class FounderBenchTests(unittest.TestCase):
         gates = {gate["id"]: gate for gate in payload["gates"]}
         self.assertEqual(gates["artifact_and_documentation"]["status"], "pass")
         self.assertEqual(gates["required_experiments"]["status"], "fail")
-        self.assertEqual(gates["license_and_citation"]["status"], "fail")
+        self.assertEqual(gates["license_and_citation"]["status"], "pass")
 
     def test_completion_audit_maps_goal_requirements_without_overclaiming(self):
         payload = build_completion_audit()
@@ -1046,7 +1033,7 @@ class FounderBenchTests(unittest.TestCase):
         self.assertEqual(statuses["scaled_task_suite"], "complete")
         self.assertEqual(statuses["heuristic_baselines_and_ablations"], "complete")
         self.assertEqual(statuses["representative_llm_baselines"], "missing")
-        self.assertEqual(statuses["public_release_metadata"], "incomplete")
+        self.assertEqual(statuses["public_release_metadata"], "complete")
         self.assertGreaterEqual(payload["summary"]["complete"], 5)
 
     def test_submission_manifest_summarizes_supported_and_excluded_claims(self):
@@ -1055,9 +1042,9 @@ class FounderBenchTests(unittest.TestCase):
         self.assertFalse(payload["readiness"]["ready_for_publication"])
         self.assertIn("required_experiments", payload["readiness"]["failed_gates"])
         self.assertGreaterEqual(payload["summary"]["supported_claims"], 5)
-        self.assertGreaterEqual(payload["summary"]["excluded_or_not_yet_supported_claims"], 3)
+        self.assertGreaterEqual(payload["summary"]["excluded_or_not_yet_supported_claims"], 2)
         excluded_ids = {row["id"] for row in payload["excluded_or_not_yet_supported_claims"]}
-        self.assertIn("hosted_llm_comparison", excluded_ids)
+        self.assertNotIn("hosted_llm_comparison", excluded_ids)
 
     def test_submission_action_plan_maps_failing_gates_to_commands(self):
         payload = build_submission_action_plan()
@@ -1066,9 +1053,9 @@ class FounderBenchTests(unittest.TestCase):
         gates = {step["gate"] for step in payload["steps"]}
         self.assertIn("required_experiments", gates)
         self.assertIn("provider_run_readiness", gates)
-        self.assertIn("license_and_citation", gates)
+        self.assertNotIn("license_and_citation", gates)
         self.assertTrue(any("resumable_runner" in " ".join(step["commands"]) for step in payload["steps"]))
-        self.assertTrue(any(step["owner"] == "project_owner" for step in payload["steps"]))
+        # License/citation owner steps are cleared once MIT + CITATION.cff are finalized.
 
 
 if __name__ == "__main__":

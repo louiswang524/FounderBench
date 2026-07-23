@@ -171,7 +171,11 @@ class OpenAICompatibleTaskPolicy(ProviderAuditMixin):
             or default_model
         )
         self.temperature = temperature
-        self.timeout_s = timeout_s
+        self.timeout_s = int(
+            os.environ.get(f"{env_prefix}_TIMEOUT_S")
+            or os.environ.get("PROVIDER_TIMEOUT_S")
+            or timeout_s
+        )
         self.max_tokens = int(os.environ.get(f"{env_prefix}_MAX_TOKENS") or os.environ.get("PROVIDER_MAX_TOKENS", "900") or 900)
         self.request_delay_s = float(os.environ.get(f"{env_prefix}_REQUEST_DELAY_S") or os.environ.get("PROVIDER_REQUEST_DELAY_S", "0") or 0)
         if not self.base_url:
@@ -186,20 +190,7 @@ class OpenAICompatibleTaskPolicy(ProviderAuditMixin):
         prompt = self._prompt(task, observation)
         if self.provider_name == "glm":
             prompt = f"{prompt}\n\n/nothink"
-        payload = {
-            "model": self.model,
-            "temperature": self.temperature,
-            "max_tokens": self.max_tokens,
-            "messages": [
-                {
-                    "role": "system",
-                    "content": SYSTEM_PROMPT,
-                },
-                {"role": "user", "content": prompt},
-            ],
-        }
-        if self.provider_name == "glm":
-            payload["thinking"] = {"type": "disabled"}
+        payload = self._chat_payload(prompt)
         data = json.dumps(payload).encode("utf-8")
         request = urllib.request.Request(
             f"{self.base_url}/chat/completions",
@@ -220,6 +211,33 @@ class OpenAICompatibleTaskPolicy(ProviderAuditMixin):
         self._record_provider_call(task=task, observation=observation, prompt=prompt, body=body, content=content, latency_s=latency_s)
         return parse_provider_response(_extract_json_object(content))
 
+    def _chat_payload(self, prompt: str) -> dict[str, Any]:
+        """Build a provider-compatible Chat Completions request."""
+        payload: dict[str, Any] = {
+            "model": self.model,
+            "messages": [
+                {
+                    "role": "system",
+                    "content": SYSTEM_PROMPT,
+                },
+                {"role": "user", "content": prompt},
+            ],
+        }
+        if self.provider_name == "kimi" and self.model == "kimi-k3":
+            # Kimi K3 fixes sampling parameters server-side and rejects custom
+            # temperature/top-p values. Its completion limit includes reasoning.
+            payload["reasoning_effort"] = "max"
+            payload["max_completion_tokens"] = self.max_tokens
+        elif self.provider_name == "openai" and self.model == "gpt-5.6-sol":
+            # GPT-5.6 Sol rejects max_tokens and non-default temperature values.
+            payload["max_completion_tokens"] = self.max_tokens
+        else:
+            payload["temperature"] = self.temperature
+            payload["max_tokens"] = self.max_tokens
+        if self.provider_name == "glm":
+            payload["thinking"] = {"type": "disabled"}
+        return payload
+
     def _prompt(self, task: StartupTask, observation: Observation) -> str:
         return render_task_prompt(task, observation)
 
@@ -232,9 +250,12 @@ class OpenAIHostedTaskPolicy(OpenAICompatibleTaskPolicy):
             provider_name="openai",
             env_prefix="OPENAI",
             default_base_url=os.environ.get("OPENAI_BASE_URL") or "https://api.openai.com/v1",
-            default_model="gpt-4.1-mini",
+            default_model="gpt-5.6-sol",
             api_key_optional=False,
         )
+        if self.model == "gpt-5.6-sol" and not (os.environ.get("OPENAI_MAX_TOKENS") or os.environ.get("PROVIDER_MAX_TOKENS")):
+            # Sol uses completion tokens for both reasoning and final output.
+            self.max_tokens = 4096
 
 
 class KimiTaskPolicy(OpenAICompatibleTaskPolicy):
@@ -245,10 +266,14 @@ class KimiTaskPolicy(OpenAICompatibleTaskPolicy):
             provider_name="kimi",
             env_prefix="KIMI",
             default_base_url=os.environ.get("MOONSHOT_BASE_URL") or "https://api.moonshot.ai/v1",
-            default_model=os.environ.get("MOONSHOT_MODEL") or "kimi-latest",
+            default_model=os.environ.get("MOONSHOT_MODEL") or "kimi-k3",
             api_key=os.environ.get("KIMI_API_KEY") or os.environ.get("MOONSHOT_API_KEY"),
             api_key_optional=False,
         )
+        if self.model == "kimi-k3" and not (os.environ.get("KIMI_MAX_TOKENS") or os.environ.get("PROVIDER_MAX_TOKENS")):
+            # K3's limit includes hidden reasoning tokens, so the generic 900
+            # token budget can truncate the final structured action response.
+            self.max_tokens = 4096
 
 
 class QwenTaskPolicy(OpenAICompatibleTaskPolicy):
@@ -405,8 +430,18 @@ class AnthropicTaskPolicy(BaseHostedTaskPolicy):
 
     def __init__(self, api_key: str | None = None, model: str | None = None, timeout_s: int = 60):
         self.api_key = api_key or os.environ.get("ANTHROPIC_API_KEY")
-        self.model = model or os.environ.get("ANTHROPIC_MODEL") or "claude-sonnet-4-5"
-        self.timeout_s = int(os.environ.get("PROVIDER_TIMEOUT_S", timeout_s))
+        self.model = model or os.environ.get("ANTHROPIC_MODEL") or "claude-sonnet-5"
+        self.timeout_s = int(
+            os.environ.get("ANTHROPIC_TIMEOUT_S")
+            or os.environ.get("PROVIDER_TIMEOUT_S")
+            or timeout_s
+        )
+        default_max_tokens = 4096 if self.model == "claude-sonnet-5" else 900
+        self.max_tokens = int(
+            os.environ.get("ANTHROPIC_MAX_TOKENS")
+            or os.environ.get("PROVIDER_MAX_TOKENS")
+            or default_max_tokens
+        )
         if not self.api_key:
             raise ValueError("Set ANTHROPIC_API_KEY.")
 
@@ -417,13 +452,7 @@ class AnthropicTaskPolicy(BaseHostedTaskPolicy):
         started = time.perf_counter()
         body = _request_json(
             "https://api.anthropic.com/v1/messages",
-            {
-                "model": self.model,
-                "max_tokens": 900,
-                "temperature": 0.2,
-                "system": SYSTEM_PROMPT,
-                "messages": [{"role": "user", "content": prompt}],
-            },
+            self._message_payload(prompt),
             {
                 "Content-Type": "application/json",
                 "x-api-key": self.api_key,
@@ -436,6 +465,17 @@ class AnthropicTaskPolicy(BaseHostedTaskPolicy):
         content = "\n".join(text_blocks)
         self._record_provider_call(task=task, observation=observation, prompt=prompt, body=body, content=content, latency_s=latency_s)
         return parse_provider_response(_extract_json_object(content))
+
+    def _message_payload(self, prompt: str) -> dict[str, Any]:
+        payload: dict[str, Any] = {
+            "model": self.model,
+            "max_tokens": self.max_tokens,
+            "system": SYSTEM_PROMPT,
+            "messages": [{"role": "user", "content": prompt}],
+        }
+        if self.model != "claude-sonnet-5":
+            payload["temperature"] = 0.2
+        return payload
 
 
 class GeminiTaskPolicy(BaseHostedTaskPolicy):

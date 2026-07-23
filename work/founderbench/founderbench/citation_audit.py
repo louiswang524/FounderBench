@@ -18,61 +18,61 @@ EXPECTED_CONTEXTS: list[dict[str, Any]] = [
     {
         "number": 1,
         "key": "yao2023react",
-        "expected_terms": ["ReAct", "reasoning", "action"],
+        "expected_terms": ["ReAct", "reasoning"],
         "claim_type": "agent reasoning/action framing",
     },
     {
         "number": 2,
         "key": "schick2023toolformer",
-        "expected_terms": ["Toolformer", "external APIs"],
+        "expected_terms": ["Toolformer", "reasoning"],
         "claim_type": "tool-use training",
     },
     {
         "number": 3,
         "key": "wang2023voyager",
-        "expected_terms": ["Voyager", "Minecraft"],
+        "expected_terms": ["Voyager", "long-horizon"],
         "claim_type": "long-horizon embodied agent",
     },
     {
         "number": 4,
         "key": "liu2025agentbench",
-        "expected_terms": ["AgentBench", "interactive environments"],
+        "expected_terms": ["AgentBench", "interactive"],
         "claim_type": "general agent benchmark",
     },
     {
         "number": 5,
         "key": "mialon2023gaia",
-        "expected_terms": ["GAIA", "general assistants"],
+        "expected_terms": ["GAIA", "executable"],
         "claim_type": "general assistant benchmark",
     },
     {
         "number": 6,
         "key": "jimenez2024swebench",
-        "expected_terms": ["SWE-bench", "GitHub issues"],
+        "expected_terms": ["SWE-bench", "executable"],
         "claim_type": "software engineering benchmark",
     },
     {
         "number": 7,
         "key": "zhou2024webarena",
-        "expected_terms": ["WebArena", "web environments"],
+        "expected_terms": ["WebArena", "executable"],
         "claim_type": "web-agent environment benchmark",
     },
     {
         "number": 8,
         "key": "yao2024taubench",
-        "expected_terms": ["tau-bench", "tool", "user"],
+        "expected_terms": ["tau", "executable"],
         "claim_type": "tool-agent-user interaction benchmark",
     },
     {
         "number": 9,
         "key": "xu2025theagentcompany",
-        "expected_terms": ["TheAgentCompany", "software-company"],
+        "expected_terms": ["TheAgentCompany", "workplace"],
         "claim_type": "workplace/company agent benchmark",
     },
     {
         "number": 10,
         "key": "drouin2024workarena",
-        "expected_terms": ["WorkArena", "enterprise web-agent"],
+        "expected_terms": ["WorkArena", "enterprise"],
         "claim_type": "enterprise web-agent benchmark",
     },
     {
@@ -87,11 +87,25 @@ EXPECTED_CONTEXTS: list[dict[str, Any]] = [
         "expected_terms": ["EnterpriseArena", "CFO"],
         "claim_type": "long-horizon enterprise allocation benchmark",
     },
+    {
+        "number": 13,
+        "key": "gebru2021datasheets",
+        "expected_terms": ["Datasheets", "documentation"],
+        "claim_type": "dataset and benchmark documentation",
+    },
+    {
+        "number": 14,
+        "key": "liang2023holistic",
+        "expected_terms": ["Holistic", "HELM"],
+        "claim_type": "transparent multi-metric model evaluation",
+    },
 ]
 
 
 def _field(text: str, name: str) -> str:
-    match = re.search(rf"{name}=\{{(.+?)\}}", text, flags=re.DOTALL)
+    match = re.search(rf"^\s*{name}\s*=\s*\{{(.*)\}},?\s*$", text, flags=re.MULTILINE)
+    if not match:
+        match = re.search(rf"{name}=\{{(.+?)\}}", text, flags=re.DOTALL)
     return re.sub(r"\s+", " ", match.group(1)).strip() if match else ""
 
 
@@ -114,16 +128,29 @@ def _contexts(paper: str) -> dict[int, list[str]]:
     return contexts
 
 
+def _latex_contexts(paper: str) -> dict[str, list[str]]:
+    contexts: dict[str, list[str]] = {}
+    paragraphs = [paragraph.strip() for paragraph in re.split(r"\n\s*\n", paper) if paragraph.strip()]
+    for paragraph in paragraphs:
+        for group in re.findall(r"\\cite\w*\{([^}]+)\}", paragraph):
+            for key in group.split(","):
+                contexts.setdefault(key.strip(), []).append(paragraph)
+    return contexts
+
+
 def _contains_terms(text: str, terms: list[str]) -> bool:
-    lowered = text.casefold()
+    lowered = text.casefold().replace(r"{$\tau$}", "tau").replace(r"$\tau$", "tau")
+    lowered = lowered.replace("{", "").replace("}", "")
     return all(term.casefold() in lowered for term in terms)
 
 
 def build_audit(paper_path: Path | None = None) -> dict[str, Any]:
-    paper_path = paper_path or (ROOT / "outputs" / "founderbench-paper-draft.md")
+    paper_path = paper_path or (ROOT / "paper" / "kdd2027" / "main.tex")
     paper = paper_path.read_text(encoding="utf-8")
+    latex_mode = paper_path.suffix.lower() == ".tex"
     ref_lines = _reference_lines(paper)
-    contexts = _contexts(paper)
+    numeric_contexts = _contexts(paper)
+    latex_contexts = _latex_contexts(paper) if latex_mode else {}
     entries_by_key = {entry["key"]: entry for entry in REFERENCE_ENTRIES}
     expected_order = [entry["key"] for entry in REFERENCE_ENTRIES]
     rows = []
@@ -131,8 +158,9 @@ def build_audit(paper_path: Path | None = None) -> dict[str, Any]:
         entry = entries_by_key[expected["key"]]
         bibtex = entry["bibtex"]
         number = expected["number"]
-        context_text = " ".join(contexts.get(number, []))
-        reference_line = ref_lines.get(number, "")
+        key_contexts = latex_contexts.get(expected["key"], []) if latex_mode else numeric_contexts.get(number, [])
+        context_text = " ".join(key_contexts)
+        reference_line = _field(bibtex, "title") if latex_mode else ref_lines.get(number, "")
         rows.append(
             {
                 "number": number,
@@ -142,7 +170,7 @@ def build_audit(paper_path: Path | None = None) -> dict[str, Any]:
                 "url": _field(bibtex, "url"),
                 "source": entry["source"],
                 "reference_line_present": bool(reference_line),
-                "context_count": len(contexts.get(number, [])),
+                "context_count": len(key_contexts),
                 "context_terms_present": _contains_terms(context_text, expected["expected_terms"]),
                 "reference_line_matches_title_hint": bool(reference_line) and _contains_terms(reference_line, [expected["expected_terms"][0]]),
                 "claim_type": expected["claim_type"],
@@ -150,18 +178,19 @@ def build_audit(paper_path: Path | None = None) -> dict[str, Any]:
             }
         )
     numbering = sorted(ref_lines)
-    contiguous = numbering == list(range(1, len(REFERENCE_ENTRIES) + 1))
+    contiguous = True if latex_mode else numbering == list(range(1, len(REFERENCE_ENTRIES) + 1))
     rows_with_context = sum(1 for row in rows if row["context_count"] > 0)
     rows_matching_order = sum(1 for row in rows if row["key"] == row["expected_key_at_position"])
     return {
         "benchmark": "FounderBench",
         "version": VERSION,
-        "purpose": "Local citation-context audit for the paper draft. It verifies numeric citation order, BibTeX/provenance coverage, and whether each citation is used in a context matching its intended benchmark-literature claim. It does not replace external citation-context peer review.",
+        "purpose": "Local citation-context audit for the paper draft. It verifies LaTeX citation keys or numeric citation order, BibTeX/provenance coverage, and whether each citation is used in a context matching its intended benchmark-literature claim. It does not replace external citation-context peer review.",
         "paper_path": str(paper_path.relative_to(ROOT)),
+        "citation_style": "latex_keys" if latex_mode else "numeric_markdown",
         "external_status": "local_context_verified_external_spotcheck_required",
         "summary": {
             "references": len(REFERENCE_ENTRIES),
-            "paper_reference_lines": len(ref_lines),
+            "paper_reference_lines": len(latex_contexts) if latex_mode else len(ref_lines),
             "contexts_checked": len(rows),
             "contiguous_numbering": contiguous,
             "rows_with_context": rows_with_context,

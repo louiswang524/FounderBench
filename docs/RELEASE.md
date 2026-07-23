@@ -1,13 +1,23 @@
 # Release And Publication Checklist
 
-Before making the repository public:
+Public repository: https://github.com/louiswang524/FounderBench
 
-1. Choose an open-source license and add a root `LICENSE` file.
-2. Replace placeholder fields in `work/founderbench/CITATION.cff`.
-3. Verify the repository links in `pyproject.toml`, `README.md`, and `CITATION.cff`.
-4. Run `python -m founderbench.release validate`.
-5. Run `python -m founderbench.release bundle`.
-6. Run a secret scan over `work/founderbench`, `outputs`, and `release`.
-7. Review `outputs/founderbench-submission-gate.md` and `outputs/founderbench-publication-audit.md`.
+## Done for v0.3.0 public polish
 
-Current current release limitation: hosted LLM provider comparisons and real private hidden-holdout results must not be claimed until completed and validated.
+1. Root `LICENSE` and `work/founderbench/LICENSE` set to **MIT**.
+2. `CITATION.cff` (root + package) filled with author, title, license, and repo URL.
+3. `pyproject.toml` license/author/description updated.
+4. Top-level `README.md` rewritten for GitHub users.
+
+## Before each public push
+
+1. Run `python -m founderbench.release validate` (from repo root with editable install).
+2. Run `python -m founderbench.release bundle` if shipping the supplementary bundle.
+3. Confirm `.env` and holdout secrets are not staged (`git status`).
+4. Review `outputs/founderbench-submission-gate.md` and `outputs/founderbench-publication-audit.md` after regenerating audits.
+
+## Still out of scope / intentional
+
+- Private holdout task definitions and evaluator secret remain unpublished.
+- Hosted private-holdout model leaderboard is not claimed until run on an evaluator host.
+- Do not claim real-world company competence from FounderBench scores.

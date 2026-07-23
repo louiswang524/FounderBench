@@ -90,19 +90,16 @@ SECTION_MAP: list[dict[str, Any]] = [
     },
     {
         "section": "Hosted and Local LLM Results",
-        "paper_claim": "Hosted/local provider comparison is planned but not yet supported by current evidence.",
+        "paper_claim": "The paper reports validated single-run hosted-model outcomes with task-level evidence and provider-error diagnostics.",
         "evidence_paths": [
-            "outputs/founderbench-experiment-matrix.md",
-            "outputs/founderbench-experiment-runbook.md",
-            "outputs/founderbench-provider-run-status.md",
-            "outputs/founderbench-provider-comparability-audit.md",
-            "outputs/founderbench-provider-contract-audit.md",
-            "outputs/founderbench-leaderboard-policy.md",
-            "outputs/founderbench-model-result-cards.md",
-            "outputs/founderbench-submission-manifest.md",
+            "outputs/founderbench-paper-model-registry.json",
+            "outputs/founderbench-paper-analysis.json",
+            "outputs/founderbench-paper-analysis.md",
+            "outputs/founderbench-paper-tables.md",
+            "outputs/founderbench-model-comparison.json",
         ],
         "allowed_claim_ids": ["hosted_llm_comparison"],
-        "status_rule": "intentionally_excluded",
+        "status_rule": "hosted_validated",
     },
     {
         "section": "Reproducibility and Auditability",
@@ -124,7 +121,7 @@ SECTION_MAP: list[dict[str, Any]] = [
     },
     {
         "section": "Limitations",
-        "paper_claim": "Limitations are documented for synthetic simulator validity, missing hosted LLM evidence, missing human calibration, missing private holdout execution, and release metadata.",
+        "paper_claim": "Limitations are documented for synthetic validity, single-run hosted evidence, missing human calibration, missing private holdout execution, and release metadata.",
         "evidence_paths": [
             "outputs/founderbench-validity-report.md",
             "outputs/founderbench-datasheet.md",
@@ -172,11 +169,12 @@ def _status_for(section: dict[str, Any], evidence: list[dict[str, Any]], claims:
                 return "supported", "Deterministic baseline evidence is present; provider rows are correctly excluded."
             return "supported", "Deterministic baseline evidence is present; validated provider rows are tracked separately with diagnostics."
         return "incomplete", "Paper tables do not contain the expected deterministic evidence state."
-    if section["status_rule"] == "intentionally_excluded":
+    if section["status_rule"] == "hosted_validated":
         claim = claims["hosted_llm_comparison"]
-        if claim["status"] == "unsupported_currently":
-            return "excluded_until_evidence", claim["permitted_wording"]
-        return "supported", "Hosted/local LLM claim is now supported."
+        tables = build_tables()
+        if claim["status"] == "supported" and tables["summary"].get("paper_registry_ready", False):
+            return "supported", claim["permitted_wording"]
+        return "incomplete", "Hosted-model evidence has not reached the paper's validated registry threshold."
     if section["status_rule"] == "claim_guarded":
         guarded = [claims[claim_id] for claim_id in section["allowed_claim_ids"] if claim_id in claims]
         unsupported = [row for row in guarded if row["status"] == "unsupported_currently"]
@@ -227,8 +225,9 @@ def validate_map(payload: dict[str, Any]) -> list[str]:
         problems.append("Paper evidence map should cover the major draft sections.")
     if payload["summary"]["incomplete"]:
         problems.append("Paper evidence map has incomplete sections.")
-    if payload["submission_gate"] != "ready" and payload["summary"]["excluded_until_evidence"] <= 0:
-        problems.append("A not-ready paper should explicitly exclude unsupported LLM/private evidence claims.")
+    guarded_sections = payload["summary"]["excluded_until_evidence"] + payload["summary"]["qualified"]
+    if payload["submission_gate"] != "ready" and guarded_sections <= 0:
+        problems.append("A not-ready paper should explicitly qualify or exclude unsupported evidence claims.")
     return problems
 
 
@@ -240,7 +239,7 @@ def write_markdown(payload: dict[str, Any], output: Path) -> None:
     lines = [
         "# FounderBench Paper Evidence Map",
         "",
-        "This generated map links paper-draft sections to the artifacts that support them. It keeps planned hosted/local LLM comparisons separate from currently supported deterministic evidence.",
+        "This generated map links paper-draft sections to supporting artifacts. It admits validated hosted single-run evidence while keeping private-holdout, human-calibration, and real-world claims qualified or excluded.",
         "",
         f"Submission gate: `{payload['submission_gate']}`",
         "",

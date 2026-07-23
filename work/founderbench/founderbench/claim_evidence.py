@@ -85,31 +85,34 @@ CLAIMS: list[dict[str, Any]] = [
     },
     {
         "id": "hosted_llm_comparison",
-        "claim": "FounderBench differentiates current hosted LLM providers on current release.",
-        "status": "unsupported_currently",
-        "permitted_wording": "Provider adapters and experiment protocols are included; hosted current release LLM results remain to be run.",
-        "avoid_wording": "DeepSeek, Claude, and Gemini have been fully compared on current release.",
+        "claim": "FounderBench reports validated single-run outcomes for current hosted model configurations on current release.",
+        "status": "supported",
+        "permitted_wording": "Validated hosted rows are single runs on 50 visible public tasks; report provider errors and avoid close-ranking significance claims.",
+        "avoid_wording": "The hosted leaderboard measures repeated-run reliability or performance on a hidden test set.",
         "evidence_paths": [
-            "outputs/founderbench-provider-readiness.md",
-            "outputs/founderbench-experiment-matrix.md",
-        ],
-        "missing_evidence": [
-            "outputs/founderbench-deepseek.json",
-            "outputs/founderbench-anthropic.json",
-            "outputs/founderbench-gemini.json",
+            "outputs/founderbench-paper-model-registry.json",
+            "outputs/founderbench-paper-analysis.json",
+            "outputs/founderbench-paper-tables.md",
+            "outputs/founderbench-model-comparison.json",
         ],
     },
     {
         "id": "private_holdout_available",
-        "claim": "The benchmark includes an executed private hidden holdout leaderboard.",
+        "claim": "The benchmark includes an executed private hidden holdout leaderboard for hosted models.",
         "status": "unsupported_currently",
-        "permitted_wording": "The benchmark includes a private-holdout blueprint and evaluator protocol, not executed hidden results.",
-        "avoid_wording": "The reported current release leaderboard is hidden or private.",
+        "permitted_wording": (
+            "A frozen 20-task private holdout exists with public fingerprint commitments and "
+            "aggregate-only deterministic calibration; hosted private-holdout leaderboard scores are not yet executed."
+        ),
+        "avoid_wording": "The reported hosted leaderboard is a hidden/private evaluation.",
         "evidence_paths": [
             "outputs/founderbench-private-holdout-blueprint.json",
             "outputs/founderbench-private-holdout-evaluator-protocol.md",
+            "outputs/founderbench-private-holdout-fingerprints.json",
+            "outputs/founderbench-private-holdout-freeze.json",
+            "outputs/founderbench-private-holdout-calibration.md",
         ],
-        "missing_evidence": ["outputs/founderbench-private-holdout-results.json"],
+        "missing_evidence": ["outputs/founderbench-private-holdout-hosted-leaderboard.json"],
     },
     {
         "id": "real_world_startup_prediction",

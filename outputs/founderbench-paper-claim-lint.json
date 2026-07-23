@@ -1,7 +1,7 @@
 {
   "benchmark": "FounderBench",
   "version": "0.3.0",
-  "purpose": "Paper and benchmark-card claim lint for unsupported hosted-LLM, hidden-holdout, and real-world startup-success wording.",
+  "purpose": "Markdown and LaTeX paper claim lint for single-run hosted evidence, hidden-holdout boundaries, and real-world startup-success wording.",
   "targets": [
     {
       "id": "paper_draft",
@@ -9,15 +9,19 @@
       "exists": true,
       "required_disclosures": [
         {
-          "phrase": "not yet a comparison of hosted LLM providers",
+          "phrase": "all hosted rows are single runs on visible public tasks",
           "present": true
         },
         {
-          "phrase": "does not include private task definitions or hidden-suite scores",
+          "phrase": "no human-founder calibration",
           "present": true
         },
         {
-          "phrase": "real-world startup-prediction claims as unsupported",
+          "phrase": "no official private leaderboard",
+          "present": true
+        },
+        {
+          "phrase": "scores do not establish real-world startup competence",
           "present": true
         }
       ],
@@ -26,20 +30,28 @@
       "status": "pass"
     },
     {
-      "id": "benchmark_card",
-      "path": "outputs/founderbench-benchmark-card.md",
+      "id": "kdd_latex",
+      "path": "paper/kdd2027/main.tex",
       "exists": true,
       "required_disclosures": [
         {
-          "phrase": "hosted LLM submissions still need repeated-sampling reports",
+          "phrase": "all hosted results are one run per configuration",
           "present": true
         },
         {
-          "phrase": "full publishable-artifact goal as `not_complete`",
+          "phrase": "both sets are released and visible",
           "present": true
         },
         {
-          "phrase": "required hosted/local LLM evidence",
+          "phrase": "no human-founder calibration",
+          "present": true
+        },
+        {
+          "phrase": "no official hidden leaderboard",
+          "present": true
+        },
+        {
+          "phrase": "not evidence that a model can run a real company",
           "present": true
         }
       ],

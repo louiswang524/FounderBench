@@ -92,12 +92,13 @@ def build_audit() -> dict[str, Any]:
         "benchmark": "FounderBench",
         "version": VERSION,
         "purpose": "Contamination and leakage audit for public benchmark release, provider submissions, and private-holdout claim discipline.",
-        "status": "public_suite_visible_private_holdout_not_executed",
+        "status": "public_suite_visible_private_holdout_frozen_hosted_not_executed",
         "summary": {
             "public_tasks": split_counts.get("public_dev", 0) + split_counts.get("public_test", 0),
             "public_dev": split_counts.get("public_dev", 0),
             "public_test": split_counts.get("public_test", 0),
             "private_holdout_protocol_exists": True,
+            "private_holdout_frozen": True,
             "official_private_leaderboard": False,
             "contamination_free_claim_supported": False,
             "leakage_surfaces": len(leakage_surfaces),
@@ -117,8 +118,8 @@ def validate_audit(payload: dict[str, Any]) -> list[str]:
         problems.append("benchmark must be FounderBench.")
     if payload.get("version") != VERSION:
         problems.append(f"Expected version {VERSION}, found {payload.get('version')}.")
-    if payload.get("status") != "public_suite_visible_private_holdout_not_executed":
-        problems.append("status must keep public visibility and missing private holdout explicit.")
+    if payload.get("status") != "public_suite_visible_private_holdout_frozen_hosted_not_executed":
+        problems.append("status must keep public visibility and frozen-but-not-hosted private holdout explicit.")
     summary = payload.get("summary", {})
     if summary.get("public_tasks") != 50:
         problems.append("public_tasks must be 50.")

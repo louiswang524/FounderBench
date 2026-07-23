@@ -49,15 +49,15 @@ REFERENCE_ENTRIES: list[dict[str, Any]] = [
     },
     {
         "key": "liu2025agentbench",
-        "source": "https://arxiv.org/bibtex/2308.03688",
-        "bibtex": """@misc{liu2025agentbench,
+        "source": "https://openreview.net/forum?id=zAdUB0aCTQ",
+        "bibtex": """@inproceedings{liu2025agentbench,
   title={AgentBench: Evaluating LLMs as Agents},
   author={Liu, Xiao and Yu, Hao and Zhang, Hanchen and Xu, Yifan and Lei, Xuanyu and Lai, Hanyu and Gu, Yu and Ding, Hangliang and Men, Kaiwen and Yang, Kejuan and Zhang, Shudan and Deng, Xiang and Zeng, Aohan and Du, Zhengxiao and Zhang, Chenhui and Shen, Sheng and Zhang, Tianjun and Su, Yu and Sun, Huan and Huang, Minlie and Dong, Yuxiao and Tang, Jie},
-  year={2025},
-  eprint={2308.03688},
-  archivePrefix={arXiv},
-  primaryClass={cs.AI},
-  url={https://arxiv.org/abs/2308.03688}
+  booktitle={International Conference on Learning Representations},
+  publisher={OpenReview.net},
+  address={Vienna, Austria},
+  year={2024},
+  url={https://openreview.net/forum?id=zAdUB0aCTQ}
 }""",
     },
     {
@@ -155,13 +155,40 @@ REFERENCE_ENTRIES: list[dict[str, Any]] = [
         "key": "han2026enterprisearena",
         "source": "https://arxiv.org/bibtex/2603.23638",
         "bibtex": """@misc{han2026enterprisearena,
-  title={Can LLM Agents Be CFOs? Benchmarking Long-Horizon Resource Allocation in an Uncertain Enterprise Environment},
+  title={EnterpriseArena: Can LLM Agents Be CFOs? Benchmarking Long-Horizon Resource Allocation in an Uncertain Enterprise Environment},
   author={Han, Yi and Wang, Yan and Qian, Lingfei and Li, Haohang and Cao, Yupeng and He, Yueru and Peng, Xueqing and Shen, Nanhan and Xu, Yitao and Chen, Yankai and Feng, Dongji and Huang, Jimin and Liu, Xue and Nie, Jian-Yun and Ananiadou, Sophia},
   year={2026},
   eprint={2603.23638},
   archivePrefix={arXiv},
   primaryClass={cs.AI},
   url={https://arxiv.org/abs/2603.23638}
+}""",
+    },
+    {
+        "key": "gebru2021datasheets",
+        "source": "https://dl.acm.org/doi/10.1145/3458723",
+        "bibtex": """@article{gebru2021datasheets,
+  title={Datasheets for Datasets},
+  author={Gebru, Timnit and Morgenstern, Jamie and Vecchione, Briana and Wortman Vaughan, Jennifer and Wallach, Hanna and Daum{\\'e} III, Hal and Crawford, Kate},
+  journal={Communications of the ACM},
+  volume={64},
+  number={12},
+  pages={86--92},
+  year={2021},
+  doi={10.1145/3458723},
+  url={https://dl.acm.org/doi/10.1145/3458723}
+}""",
+    },
+    {
+        "key": "liang2023holistic",
+        "source": "https://openreview.net/forum?id=iO4LZibEqW",
+        "bibtex": """@article{liang2023holistic,
+  title={Holistic Evaluation of Language Models},
+  author={Liang, Percy and Bommasani, Rishi and Lee, Tony and Tsipras, Dimitris and Soylu, Dilara and Yasunaga, Michihiro and Zhang, Yian and Narayanan, Deepak and Wu, Yuhuai and Kumar, Ananya and others},
+  journal={Transactions on Machine Learning Research},
+  year={2023},
+  issn={2835-8856},
+  url={https://openreview.net/forum?id=iO4LZibEqW}
 }""",
     },
 ]
@@ -175,7 +202,7 @@ def provenance() -> dict[str, Any]:
     return {
         "benchmark": "FounderBench",
         "version": "0.3.0",
-        "verified_date": "2026-07-15",
+        "verified_date": "2026-07-19",
         "entries": [
             {"key": entry["key"], "source": entry["source"], "status": "verified_from_primary_or_project_source"}
             for entry in REFERENCE_ENTRIES

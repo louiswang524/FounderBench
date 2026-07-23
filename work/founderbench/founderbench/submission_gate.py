@@ -80,7 +80,7 @@ def build_gate() -> dict[str, Any]:
         gate_status(
             "license_and_citation",
             license_ready,
-            ["outputs/founderbench-license-readiness.md", "work/founderbench/CITATION.cff", "work/founderbench/LICENSE-TODO.md"],
+            ["outputs/founderbench-license-readiness.md", "work/founderbench/CITATION.cff", "work/founderbench/LICENSE"],
             "" if license_ready else "License/citation metadata is not public-release ready.",
         ),
     ]

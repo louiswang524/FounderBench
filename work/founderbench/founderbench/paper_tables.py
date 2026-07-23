@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import hashlib
 import json
 from pathlib import Path
@@ -19,6 +20,7 @@ PROVIDER_RUNS = [
     {
         "id": "openai_hosted_baseline",
         "policy": "openai",
+        "label": "GPT-5.6 Sol",
         "path": "outputs/founderbench-openai.json",
         "report": "outputs/founderbench-openai-submission-report.md",
         "repeat_bundle_path": "outputs/founderbench-openai-repeats.json",
@@ -28,6 +30,7 @@ PROVIDER_RUNS = [
     {
         "id": "deepseek_hosted_baseline",
         "policy": "deepseek",
+        "label": "DeepSeek Chat",
         "path": "outputs/founderbench-deepseek.json",
         "report": "outputs/founderbench-deepseek-submission-report.md",
         "repeat_bundle_path": "outputs/founderbench-deepseek-repeats.json",
@@ -35,8 +38,19 @@ PROVIDER_RUNS = [
         "family": "hosted_llm",
     },
     {
+        "id": "deepseek_v4_reasoner_hosted_baseline",
+        "policy": "deepseek",
+        "label": "DeepSeek V4 Reasoner",
+        "path": "outputs/founderbench-deepseek-v4-reasoner.json",
+        "report": "outputs/founderbench-deepseek-v4-reasoner-submission-report.md",
+        "repeat_bundle_path": "outputs/founderbench-deepseek-v4-reasoner-repeats.json",
+        "repeat_bundle_report": "outputs/founderbench-deepseek-v4-reasoner-repeats-submission-report.md",
+        "family": "hosted_llm",
+    },
+    {
         "id": "anthropic_hosted_baseline",
         "policy": "anthropic",
+        "label": "Claude Sonnet 4.5",
         "path": "outputs/founderbench-anthropic.json",
         "report": "outputs/founderbench-anthropic-submission-report.md",
         "repeat_bundle_path": "outputs/founderbench-anthropic-repeats.json",
@@ -44,8 +58,19 @@ PROVIDER_RUNS = [
         "family": "hosted_llm",
     },
     {
+        "id": "anthropic_sonnet_5_hosted_baseline",
+        "policy": "anthropic",
+        "label": "Claude Sonnet 5",
+        "path": "outputs/founderbench-anthropic-sonnet-5.json",
+        "report": "outputs/founderbench-anthropic-sonnet-5-submission-report.md",
+        "repeat_bundle_path": "outputs/founderbench-anthropic-sonnet-5-repeats.json",
+        "repeat_bundle_report": "outputs/founderbench-anthropic-sonnet-5-repeats-submission-report.md",
+        "family": "hosted_llm",
+    },
+    {
         "id": "gemini_hosted_baseline",
         "policy": "gemini",
+        "label": "Gemini 2.5 Flash",
         "path": "outputs/founderbench-gemini.json",
         "report": "outputs/founderbench-gemini-submission-report.md",
         "repeat_bundle_path": "outputs/founderbench-gemini-repeats.json",
@@ -53,8 +78,19 @@ PROVIDER_RUNS = [
         "family": "hosted_llm",
     },
     {
+        "id": "gemini_3_5_flash_hosted_baseline",
+        "policy": "gemini",
+        "label": "Gemini 3.5 Flash",
+        "path": "outputs/founderbench-gemini-3.5-flash.json",
+        "report": "outputs/founderbench-gemini-3.5-flash-submission-report.md",
+        "repeat_bundle_path": "outputs/founderbench-gemini-3.5-flash-repeats.json",
+        "repeat_bundle_report": "outputs/founderbench-gemini-3.5-flash-repeats-submission-report.md",
+        "family": "hosted_llm",
+    },
+    {
         "id": "kimi_hosted_baseline",
         "policy": "kimi",
+        "label": "Kimi K3",
         "path": "outputs/founderbench-kimi.json",
         "report": "outputs/founderbench-kimi-submission-report.md",
         "repeat_bundle_path": "outputs/founderbench-kimi-repeats.json",
@@ -64,6 +100,7 @@ PROVIDER_RUNS = [
     {
         "id": "qwen_hosted_baseline",
         "policy": "qwen",
+        "label": "Qwen",
         "path": "outputs/founderbench-qwen.json",
         "report": "outputs/founderbench-qwen-submission-report.md",
         "repeat_bundle_path": "outputs/founderbench-qwen-repeats.json",
@@ -73,6 +110,7 @@ PROVIDER_RUNS = [
     {
         "id": "mistral_hosted_baseline",
         "policy": "mistral",
+        "label": "Mistral",
         "path": "outputs/founderbench-mistral.json",
         "report": "outputs/founderbench-mistral-submission-report.md",
         "repeat_bundle_path": "outputs/founderbench-mistral-repeats.json",
@@ -82,15 +120,17 @@ PROVIDER_RUNS = [
     {
         "id": "glm_hosted_baseline",
         "policy": "glm",
-        "path": "outputs/founderbench-glm.json",
-        "report": "outputs/founderbench-glm-submission-report.md",
-        "repeat_bundle_path": "outputs/founderbench-glm-repeats.json",
-        "repeat_bundle_report": "outputs/founderbench-glm-repeats-submission-report.md",
+        "label": "GLM 4.5 Air",
+        "path": "outputs/founderbench-glm-4.5-air.json",
+        "report": "outputs/founderbench-glm-4.5-air-submission-report.md",
+        "repeat_bundle_path": "outputs/founderbench-glm-4.5-air-repeats.json",
+        "repeat_bundle_report": "outputs/founderbench-glm-4.5-air-repeats-submission-report.md",
         "family": "hosted_llm_optional",
     },
     {
         "id": "xai_hosted_baseline",
         "policy": "xai",
+        "label": "Grok 4.5",
         "path": "outputs/founderbench-xai.json",
         "report": "outputs/founderbench-xai-submission-report.md",
         "repeat_bundle_path": "outputs/founderbench-xai-repeats.json",
@@ -98,8 +138,19 @@ PROVIDER_RUNS = [
         "family": "hosted_llm_optional",
     },
     {
+        "id": "xai_grok_4_3_hosted_baseline",
+        "policy": "xai",
+        "label": "Grok 4.3",
+        "path": "outputs/founderbench-xai-grok-4.3.json",
+        "report": "outputs/founderbench-xai-grok-4.3-submission-report.md",
+        "repeat_bundle_path": "outputs/founderbench-xai-grok-4.3-repeats.json",
+        "repeat_bundle_report": "outputs/founderbench-xai-grok-4.3-repeats-submission-report.md",
+        "family": "hosted_llm_optional",
+    },
+    {
         "id": "llama_open_weight_baseline",
         "policy": "llama",
+        "label": "Llama/Open-weight",
         "path": "outputs/founderbench-llama.json",
         "report": "outputs/founderbench-llama-submission-report.md",
         "repeat_bundle_path": "outputs/founderbench-llama-repeats.json",
@@ -109,6 +160,7 @@ PROVIDER_RUNS = [
     {
         "id": "local_open_source_baseline",
         "policy": "llm",
+        "label": "Local open-source model",
         "path": "outputs/founderbench-local-open-model.json",
         "report": "outputs/founderbench-local-open-model-submission-report.md",
         "repeat_bundle_path": "outputs/founderbench-local-open-model-repeats.json",
@@ -116,6 +168,20 @@ PROVIDER_RUNS = [
         "family": "open_source",
     },
 ]
+
+PAPER_MODEL_IDS = {
+    "openai_hosted_baseline",
+    "deepseek_hosted_baseline",
+    "deepseek_v4_reasoner_hosted_baseline",
+    "anthropic_hosted_baseline",
+    "anthropic_sonnet_5_hosted_baseline",
+    "gemini_hosted_baseline",
+    "gemini_3_5_flash_hosted_baseline",
+    "kimi_hosted_baseline",
+    "glm_hosted_baseline",
+    "xai_hosted_baseline",
+    "xai_grok_4_3_hosted_baseline",
+}
 
 
 def sha256(path: Path) -> str:
@@ -225,14 +291,24 @@ def provider_status(spec: dict[str, str]) -> dict[str, Any]:
     return row
 
 
+def paper_labeled_runs(spec: dict[str, str], evidence_path: str) -> list[dict[str, Any]]:
+    """Return independent run objects with unique paper-facing model labels."""
+    runs = copy.deepcopy(load_runs(ROOT / evidence_path))
+    for run in runs:
+        run["provider_policy"] = run["policy"]
+        run["policy"] = spec.get("label", run["policy"])
+    return runs
+
+
 def build_tables(raw_path: Path = OUTPUTS / "founderbench-baseline-raw.json") -> dict[str, Any]:
     deterministic_runs = load_runs(raw_path)
     provider_rows = [provider_status(spec) for spec in PROVIDER_RUNS]
+    valid_provider_ids = {row["id"] for row in provider_rows if row["status"] == "valid"}
     valid_provider_runs: list[dict[str, Any]] = []
     for row in provider_rows:
         if row["status"] != "valid":
             continue
-        valid_provider_runs.extend(load_runs(ROOT / row["evidence_path"]))
+        valid_provider_runs.extend(paper_labeled_runs(row, row["evidence_path"]))
     all_valid_runs = deterministic_runs + valid_provider_runs
     return {
         "benchmark": "FounderBench",
@@ -247,6 +323,9 @@ def build_tables(raw_path: Path = OUTPUTS / "founderbench-baseline-raw.json") ->
             "provider_candidates": len(provider_rows),
             "provider_missing_or_invalid": sum(1 for row in provider_rows if row["status"] != "valid"),
             "valid_provider_policies": len({row["policy"] for row in provider_rows if row["status"] == "valid"}),
+            "valid_provider_models": sum(1 for row in provider_rows if row["status"] == "valid"),
+            "paper_registry_validated_models": len(PAPER_MODEL_IDS & valid_provider_ids),
+            "paper_registry_ready": PAPER_MODEL_IDS <= valid_provider_ids,
             "valid_repeated_provider_bundles": sum(1 for row in provider_rows if row.get("evidence_kind") == "repeat_bundle"),
         },
         "deterministic_policy_rows": policy_rows(deterministic_runs),
@@ -265,6 +344,7 @@ def write_markdown(payload: dict[str, Any], output: Path) -> None:
         [
             row["id"],
             row["policy"],
+            row["label"],
             row["family"],
             row["status"],
             row["runs"],
@@ -308,7 +388,7 @@ def write_markdown(payload: dict[str, Any], output: Path) -> None:
         "",
         "## Provider Evidence Status",
         "",
-        markdown_table(["ID", "Policy", "Family", "Status", "Runs", "Evidence", "Avg Score", "Solve Rate", "Problems"], provider_rows),
+        markdown_table(["ID", "Policy", "Model", "Family", "Status", "Runs", "Evidence", "Avg Score", "Solve Rate", "Problems"], provider_rows),
         "",
         "Provider runs marked `missing` or `invalid` are excluded from the main leaderboard and tables. This avoids mixing older or partial provider outputs into the current release paper evidence.",
         "",

@@ -39,7 +39,7 @@ LICENSE_OPTIONS = [
 def citation_template() -> dict[str, Any]:
     return {
         "cff-version": "1.2.0",
-        "title": "FounderBench: Evaluating LLM Agents as Startup Operators Under Controlled Resources",
+        "title": "FounderBench: Evaluating LLM Agents on Sequential Startup Decisions",
         "message": "If you use FounderBench, please cite the associated paper or this software artifact.",
         "type": "software",
         "authors": [{"name": "<replace with author name or ORCID-aware author object>"}],

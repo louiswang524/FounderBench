@@ -83,7 +83,8 @@ CORE_SOURCE_PATHS = [
     "work/founderbench/SPEC.md",
     "work/founderbench/CITATION.cff",
     "work/founderbench/CITATION.cff.template",
-    "work/founderbench/LICENSE-TODO.md",
+    "work/founderbench/LICENSE",
+    "work/founderbench/LICENSE.template",
     "work/founderbench/LICENSE.template",
 ]
 

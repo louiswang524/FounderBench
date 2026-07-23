@@ -19,18 +19,21 @@ TARGETS: list[dict[str, Any]] = [
         "id": "paper_draft",
         "path": "outputs/founderbench-paper-draft.md",
         "required_disclosures": [
-            "not yet a comparison of hosted LLM providers",
-            "does not include private task definitions or hidden-suite scores",
-            "real-world startup-prediction claims as unsupported",
+            "all hosted rows are single runs on visible public tasks",
+            "no human-founder calibration",
+            "no official private leaderboard",
+            "scores do not establish real-world startup competence",
         ],
     },
     {
-        "id": "benchmark_card",
-        "path": "outputs/founderbench-benchmark-card.md",
+        "id": "kdd_latex",
+        "path": "paper/kdd2027/main.tex",
         "required_disclosures": [
-            "hosted LLM submissions still need repeated-sampling reports",
-            "full publishable-artifact goal as `not_complete`",
-            "required hosted/local LLM evidence",
+            "all hosted results are one run per configuration",
+            "both sets are released and visible",
+            "no human-founder calibration",
+            "no official hidden leaderboard",
+            "not evidence that a model can run a real company",
         ],
     },
 ]
@@ -48,14 +51,14 @@ FORBIDDEN_PATTERNS: list[dict[str, str]] = [
         "why": "The benchmark must not be framed as evidence for autonomous real-company deployment.",
     },
     {
-        "id": "hosted_provider_completed_claim",
-        "pattern": r"\b(?:DeepSeek|Claude|Gemini).{0,80}\b(?:fully\s+compared|validated|evaluated)\s+on\s+v0\.3\.0",
-        "why": "Hosted provider current release runs are not present in the current release.",
+        "id": "hosted_repeated_reliability_claim",
+        "pattern": r"\bhosted.{0,80}\b(?:repeated[- ]run reliability|sampling variance)\s+(?:is|was)\s+(?:measured|established)",
+        "why": "The hosted rows are single runs and cannot establish repeated-run reliability.",
     },
     {
-        "id": "executed_private_holdout_claim",
-        "pattern": r"\b(?:executed|official)\s+(?:private|hidden).{0,40}\b(?:holdout|leaderboard|scores)",
-        "why": "The benchmark includes a holdout protocol and smoke test, not official hidden-suite results.",
+        "id": "hosted_private_leaderboard_claim",
+        "pattern": r"\b(?:official|hosted)\s+(?:private|hidden)\s+(?:holdout\s+)?leaderboard\b",
+        "why": "Private holdout is frozen with calibration baselines; hosted private-leaderboard scores are not yet official.",
     },
 ]
 
@@ -117,7 +120,7 @@ def build_audit() -> dict[str, Any]:
     return {
         "benchmark": "FounderBench",
         "version": VERSION,
-        "purpose": "Paper and benchmark-card claim lint for unsupported hosted-LLM, hidden-holdout, and real-world startup-success wording.",
+        "purpose": "Markdown and LaTeX paper claim lint for single-run hosted evidence, hidden-holdout boundaries, and real-world startup-success wording.",
         "targets": targets,
         "summary": {
             "targets": len(targets),

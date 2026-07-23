@@ -1,0 +1,44 @@
+{
+  "benchmark": "FounderBench",
+  "benchmark_version": "0.3.0",
+  "holdout_protocol_version": "0.1",
+  "status": "frozen_private_calibration_only",
+  "purpose": "Aggregate-only deterministic baseline scores on the frozen 20-task private holdout.",
+  "official_claim_guardrail": "These are deterministic calibration rows on the frozen private holdout. They are not an official hosted private leaderboard.",
+  "fingerprint_manifest_sha256": "ef730c722de6e555b02a46f2aae913eba847fe338aab74b5a7d8b0fefb34d9d9",
+  "secret_commitment": "8d75465b105f4ace28659ea904b55d47cb75d1668bb1fc48e25769bc10253814",
+  "baselines": [
+    {
+      "policy": "random",
+      "private_average_task_score": 33.33,
+      "private_solved": 3,
+      "private_solve_rate": 0.15,
+      "private_tasks": 20,
+      "fingerprint_manifest_sha256": "ef730c722de6e555b02a46f2aae913eba847fe338aab74b5a7d8b0fefb34d9d9"
+    },
+    {
+      "policy": "conservative",
+      "private_average_task_score": 50.53,
+      "private_solved": 5,
+      "private_solve_rate": 0.25,
+      "private_tasks": 20,
+      "fingerprint_manifest_sha256": "ef730c722de6e555b02a46f2aae913eba847fe338aab74b5a7d8b0fefb34d9d9"
+    },
+    {
+      "policy": "heuristic",
+      "private_average_task_score": 57.49,
+      "private_solved": 6,
+      "private_solve_rate": 0.3,
+      "private_tasks": 20,
+      "fingerprint_manifest_sha256": "ef730c722de6e555b02a46f2aae913eba847fe338aab74b5a7d8b0fefb34d9d9"
+    },
+    {
+      "policy": "task_heuristic",
+      "private_average_task_score": 54.81,
+      "private_solved": 4,
+      "private_solve_rate": 0.2,
+      "private_tasks": 20,
+      "fingerprint_manifest_sha256": "ef730c722de6e555b02a46f2aae913eba847fe338aab74b5a7d8b0fefb34d9d9"
+    }
+  ]
+}

@@ -7,7 +7,7 @@ from typing import Any
 
 from .analysis import ci_rows, family_rows, markdown_table, policy_rows
 from .paired_statistics import comparison_rows
-from .paper_tables import OUTPUTS, PROVIDER_RUNS, ROOT, load_runs, provider_status
+from .paper_tables import OUTPUTS, PROVIDER_RUNS, ROOT, load_runs, paper_labeled_runs, provider_status
 
 
 VERSION = "0.3.0"
@@ -19,14 +19,15 @@ def build_report(raw_path: Path = OUTPUTS / "founderbench-baseline-raw.json") ->
     valid_provider_runs: list[dict[str, Any]] = []
     for row in provider_rows:
         if row["status"] == "valid":
-            valid_provider_runs.extend(load_runs(ROOT / row["evidence_path"]))
+            valid_provider_runs.extend(paper_labeled_runs(row, row["evidence_path"]))
     all_valid_runs = deterministic_runs + valid_provider_runs
-    valid_provider_policies = {run["policy"] for run in valid_provider_runs}
+    valid_provider_models = {run["policy"] for run in valid_provider_runs}
+    valid_provider_policies = {run["provider_policy"] for run in valid_provider_runs}
     paired_rows = comparison_rows(all_valid_runs) if len(all_valid_runs) >= 2 else []
     provider_paired_rows = [
         row
         for row in paired_rows
-        if row["top_policy"] in valid_provider_policies or row["baseline_policy"] in valid_provider_policies
+        if row["top_policy"] in valid_provider_models or row["baseline_policy"] in valid_provider_models
     ]
     valid_hosted_policies = {
         row["policy"]
@@ -45,6 +46,7 @@ def build_report(raw_path: Path = OUTPUTS / "founderbench-baseline-raw.json") ->
             "deterministic_runs": len(deterministic_runs),
             "valid_provider_runs": len(valid_provider_runs),
             "valid_provider_policies": len(valid_provider_policies),
+            "valid_provider_models": len(valid_provider_models),
             "valid_repeated_provider_bundles": sum(1 for row in provider_rows if row.get("evidence_kind") == "repeat_bundle"),
             "provider_candidates": len(provider_rows),
             "provider_missing_or_invalid": sum(1 for row in provider_rows if row["status"] != "valid"),
@@ -92,6 +94,7 @@ def write_markdown(payload: dict[str, Any], output: Path) -> None:
         [
             row["id"],
             row["policy"],
+            row["label"],
             row["family"],
             row["status"],
             row["runs"],
@@ -164,7 +167,7 @@ def write_markdown(payload: dict[str, Any], output: Path) -> None:
             "",
             "## Provider Evidence Ledger",
             "",
-            markdown_table(["ID", "Policy", "Family", "Status", "Runs", "Evidence", "Avg Score", "Solve Rate", "Problems"], provider_rows),
+        markdown_table(["ID", "Policy", "Model", "Family", "Status", "Runs", "Evidence", "Avg Score", "Solve Rate", "Problems"], provider_rows),
             "",
             "## Claim Rules",
             "",
@@ -179,7 +182,7 @@ def write_markdown(payload: dict[str, Any], output: Path) -> None:
     else:
         lines.append("Status: PASS")
         lines.append("")
-        lines.append("The report is internally consistent. Provider comparison sections remain empty until validated provider runs exist.")
+        lines.append("The report is internally consistent. Only validated provider evidence is included; missing or invalid candidates remain explicit in the status ledger.")
     lines.append("")
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text("\n".join(lines), encoding="utf-8")

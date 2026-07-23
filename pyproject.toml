@@ -5,14 +5,14 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "founderbench"
 version = "0.3.0"
-description = "A controlled benchmark for evaluating LLM agents as startup operators under bounded resources."
+description = "FounderBench: evaluating LLM agents on sequential startup decisions under bounded resources."
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
-  { name = "FounderBench contributors" }
+  { name = "Yufeng Wang", email = "louiswang524@gmail.com" }
 ]
-license = { text = "License not selected yet. See work/founderbench/LICENSE-TODO.md." }
-keywords = ["llm", "agents", "benchmark", "startup", "evaluation", "simulator"]
+license = { text = "MIT" }
+keywords = ["llm", "agents", "benchmark", "startup", "evaluation", "simulator", "sequential-decision-making"]
 classifiers = [
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3 :: Only",

@@ -27,7 +27,7 @@ Status: `owner_action_required`
 ```json
 {
   "cff-version": "1.2.0",
-  "title": "FounderBench: Evaluating LLM Agents as Startup Operators Under Controlled Resources",
+  "title": "FounderBench: Evaluating LLM Agents on Sequential Startup Decisions",
   "message": "If you use FounderBench, please cite the associated paper or this software artifact.",
   "type": "software",
   "authors": [

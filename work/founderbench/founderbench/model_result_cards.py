@@ -47,6 +47,7 @@ def _provider_card(status: dict[str, Any]) -> dict[str, Any]:
         "card_type": "planned_provider_run",
         "id": status["id"],
         "policy": status["policy"],
+        "model": status.get("label", status["policy"]),
         "family": status["family"],
         "status": status["status"],
         "claim_eligibility": "excluded_until_validated",
@@ -81,7 +82,7 @@ def build_cards(raw_path: Path = OUTPUTS / "founderbench-baseline-raw.json") -> 
     return {
         "benchmark": "FounderBench",
         "version": VERSION,
-        "purpose": "Reviewer-facing result cards for deterministic baselines and planned provider submissions. Cards summarize validity, task coverage, diagnostics, cost fields, and paper-claim eligibility.",
+        "purpose": "Reviewer-facing result cards for deterministic baselines and provider submissions. Cards summarize validity, task coverage, diagnostics, cost fields, and paper-claim eligibility.",
         "source_files": {
             "deterministic_raw": str(raw_path.relative_to(ROOT)),
             "planned_provider_specs": [row["path"] for row in PROVIDER_RUNS],
@@ -153,6 +154,7 @@ def write_markdown(payload: dict[str, Any], output: Path) -> None:
         [
             card["id"],
             card["policy"],
+            card["model"],
             card["family"],
             card["status"],
             card["runs"],
@@ -208,6 +210,7 @@ def write_markdown(payload: dict[str, Any], output: Path) -> None:
                 [
                     "ID",
                     "Policy",
+                    "Model",
                     "Family",
                     "Status",
                     "Runs",

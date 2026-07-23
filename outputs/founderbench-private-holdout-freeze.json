@@ -1,0 +1,19 @@
+{
+  "benchmark": "FounderBench",
+  "benchmark_version": "0.3.0",
+  "holdout_protocol_version": "0.1",
+  "status": "frozen",
+  "private_tasks": 20,
+  "secret_location": ".local/FounderBench_HOLDOUT_SECRET",
+  "secret_committed_not_published": true,
+  "secret_commitment": "8d75465b105f4ace28659ea904b55d47cb75d1668bb1fc48e25769bc10253814",
+  "fingerprint_manifest": "outputs/founderbench-private-holdout-fingerprints.json",
+  "fingerprint_manifest_sha256": "ef730c722de6e555b02a46f2aae913eba847fe338aab74b5a7d8b0fefb34d9d9",
+  "hosted_models_evaluated": false,
+  "deterministic_baselines_evaluated": true,
+  "public_disclosure": [
+    "Publish fingerprints and aggregate calibration metrics only.",
+    "Do not publish private task templates, seeds, or raw private results.",
+    "Hosted private-holdout leaderboard remains future work until models are run on the evaluator host."
+  ]
+}

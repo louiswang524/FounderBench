@@ -1,0 +1,170 @@
+{
+  "benchmark": "FounderBench",
+  "benchmark_version": "0.3.0",
+  "holdout_protocol_version": "0.1",
+  "secret_commitment": "8d75465b105f4ace28659ea904b55d47cb75d1668bb1fc48e25769bc10253814",
+  "task_count": 20,
+  "tasks": [
+    {
+      "task_id": "PRIV-001",
+      "family": "Market selection",
+      "variant": 1,
+      "split": "private_holdout",
+      "seed_commitment": "cec39766c9b64378",
+      "task_fingerprint": "733a2b3924d9d9f22edd29311515654985807bc083640204cb6bf9e408458b64"
+    },
+    {
+      "task_id": "PRIV-002",
+      "family": "Market selection",
+      "variant": 2,
+      "split": "private_holdout",
+      "seed_commitment": "36d436cad0aa9eed",
+      "task_fingerprint": "f21201a0ba6f9c8f38527a944bd0410bdd29ae57ca32207572a6d10303661f86"
+    },
+    {
+      "task_id": "PRIV-003",
+      "family": "First revenue",
+      "variant": 1,
+      "split": "private_holdout",
+      "seed_commitment": "1431cb5013a903f9",
+      "task_fingerprint": "2d6b99663d32f6e7c77b9d47d959be8e025aed6900f52fc627656a99606184f0"
+    },
+    {
+      "task_id": "PRIV-004",
+      "family": "First revenue",
+      "variant": 2,
+      "split": "private_holdout",
+      "seed_commitment": "76f162004ce0acbc",
+      "task_fingerprint": "deea93b7de1a95573c149b7592eacc327b26cd4d0e0a3c815f5edef7c5465aee"
+    },
+    {
+      "task_id": "PRIV-005",
+      "family": "Retention improvement",
+      "variant": 1,
+      "split": "private_holdout",
+      "seed_commitment": "e0c21fd1e85d1a06",
+      "task_fingerprint": "c4865b4815fbaa9649397b043fac205a9bec0d93071202103676425308b287c1"
+    },
+    {
+      "task_id": "PRIV-006",
+      "family": "Retention improvement",
+      "variant": 2,
+      "split": "private_holdout",
+      "seed_commitment": "79cbe546d509e548",
+      "task_fingerprint": "8582646f1edc58801b35cc4782220fb313c5011224a32509cfb328cdbfe402d1"
+    },
+    {
+      "task_id": "PRIV-007",
+      "family": "Churn shock recovery",
+      "variant": 1,
+      "split": "private_holdout",
+      "seed_commitment": "79be9bc34a489761",
+      "task_fingerprint": "b08ea6cfb5a08e4baa0744a186bb6761a8b2687d5b421644e18897d53dee1ccb"
+    },
+    {
+      "task_id": "PRIV-008",
+      "family": "Churn shock recovery",
+      "variant": 2,
+      "split": "private_holdout",
+      "seed_commitment": "eb15246c635f1eec",
+      "task_fingerprint": "85652cfbfb1bce9a34030c3810e2b22fb0154c93c747bcc575c5764d91aff476"
+    },
+    {
+      "task_id": "PRIV-009",
+      "family": "Demo Day traction",
+      "variant": 1,
+      "split": "private_holdout",
+      "seed_commitment": "63aec5ba53af13b5",
+      "task_fingerprint": "ee5871497554539943952a8b9e427a74892c36e18416381f82996845b5d04deb"
+    },
+    {
+      "task_id": "PRIV-010",
+      "family": "Demo Day traction",
+      "variant": 2,
+      "split": "private_holdout",
+      "seed_commitment": "428dada9a5eaf23f",
+      "task_fingerprint": "d3c2d61f64214c75aa2603bdf56909a9efae5ecfebc6ffa3ec56edc818004773"
+    },
+    {
+      "task_id": "PRIV-011",
+      "family": "Pricing",
+      "variant": 1,
+      "split": "private_holdout",
+      "seed_commitment": "9272b1a5d1de0cf7",
+      "task_fingerprint": "e4bae8e79b9f48e41487a7dba93ec363e739557f1780cc5548621fb737ba7300"
+    },
+    {
+      "task_id": "PRIV-012",
+      "family": "Pricing",
+      "variant": 2,
+      "split": "private_holdout",
+      "seed_commitment": "3692e7e3f5b01c42",
+      "task_fingerprint": "76612011c2a4002fda8c8ef78d0e3049f35fe0fe606c8499b79e4c1da354e989"
+    },
+    {
+      "task_id": "PRIV-013",
+      "family": "Runway preservation",
+      "variant": 1,
+      "split": "private_holdout",
+      "seed_commitment": "25c44c2812410681",
+      "task_fingerprint": "3eed8c7cf720f8b7ed8d04c12efe59e9254467a51186998373b0003bc55d1c1b"
+    },
+    {
+      "task_id": "PRIV-014",
+      "family": "Runway preservation",
+      "variant": 2,
+      "split": "private_holdout",
+      "seed_commitment": "d13641be209d61af",
+      "task_fingerprint": "7f14c41264fead86b43eaef5bec5475ff5c52ccd05c514abe2291720e25f2e62"
+    },
+    {
+      "task_id": "PRIV-015",
+      "family": "Pivot decision",
+      "variant": 1,
+      "split": "private_holdout",
+      "seed_commitment": "3161a665a9a48dbf",
+      "task_fingerprint": "e981121491adcbfa77c51aad0d616b1dc1cfe58efffa41df5a70e315f1fcc20c"
+    },
+    {
+      "task_id": "PRIV-016",
+      "family": "Pivot decision",
+      "variant": 2,
+      "split": "private_holdout",
+      "seed_commitment": "ad1fba05008a96ff",
+      "task_fingerprint": "5b4fa5b9a3e17466ccff0f60e001684ca7bf82feae56fe70aa6eee0d0f0e840a"
+    },
+    {
+      "task_id": "PRIV-017",
+      "family": "Fundraising",
+      "variant": 1,
+      "split": "private_holdout",
+      "seed_commitment": "62f1cb89ddab3cd3",
+      "task_fingerprint": "ea451ed14a6fbf99dc1799abb6716187a40c75b0d7f02362bfb6910c53f65479"
+    },
+    {
+      "task_id": "PRIV-018",
+      "family": "Fundraising",
+      "variant": 2,
+      "split": "private_holdout",
+      "seed_commitment": "6fe21d644c8a76b6",
+      "task_fingerprint": "19f1e3a9cac5f5b38823376ff39c6b5c8ea5e89cca804b25ca9ea1482bd536a0"
+    },
+    {
+      "task_id": "PRIV-019",
+      "family": "Channel expansion",
+      "variant": 1,
+      "split": "private_holdout",
+      "seed_commitment": "22a8ac2c8a9e8b19",
+      "task_fingerprint": "843c7d08bc0520ef5e35c24a1442dc355bf009f9cee4c2dd89e21ac8105d162f"
+    },
+    {
+      "task_id": "PRIV-020",
+      "family": "Channel expansion",
+      "variant": 2,
+      "split": "private_holdout",
+      "seed_commitment": "9a4f16e5dc31d241",
+      "task_fingerprint": "5900cd96e9a0a57f0bc3a39d4a233a88c1dfa83eb2baa6e13838b99de8fa1b55"
+    }
+  ],
+  "disclosure": "This file commits to hidden task identities/fingerprints but does not disclose private task definitions."
+}

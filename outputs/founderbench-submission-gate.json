@@ -5,37 +5,37 @@
   "final_status": "not_ready",
   "summary": {
     "gates": 5,
-    "pass": 1,
-    "fail": 4,
+    "pass": 3,
+    "fail": 2,
     "publication_audit": {
-      "complete": 7,
-      "incomplete": 1,
+      "complete": 8,
+      "incomplete": 0,
       "missing": 3
     },
     "experiment_matrix": {
       "experiments": 11,
-      "complete": 5,
+      "complete": 8,
       "partial": 0,
-      "missing": 6,
-      "required_missing": 6
+      "missing": 3,
+      "required_missing": 3
     },
     "provider_readiness": {
-      "ready_count": 0,
+      "ready_count": 4,
       "provider_count": 11
     },
     "claim_evidence": {
       "claims": 9,
-      "supported": 6,
-      "unsupported_currently": 3,
+      "supported": 7,
+      "unsupported_currently": 2,
       "evidence_complete": 9
     },
     "license_readiness": {
       "checks": 8,
-      "pass": 4,
-      "incomplete": 3,
-      "missing": 1,
+      "pass": 8,
+      "incomplete": 0,
+      "missing": 0,
       "owner_decisions_required": 4,
-      "release_ready": false
+      "release_ready": true
     }
   },
   "gates": [
@@ -54,15 +54,15 @@
       "evidence": [
         "outputs/founderbench-experiment-matrix.md"
       ],
-      "blocker": "6 required experiment groups are missing."
+      "blocker": "3 required experiment groups are missing."
     },
     {
       "id": "provider_run_readiness",
-      "status": "fail",
+      "status": "pass",
       "evidence": [
         "outputs/founderbench-provider-readiness.md"
       ],
-      "blocker": "Only 0/11 provider configurations are ready."
+      "blocker": ""
     },
     {
       "id": "claim_evidence_alignment",
@@ -70,17 +70,17 @@
       "evidence": [
         "outputs/founderbench-claim-evidence.md"
       ],
-      "blocker": "3 stronger claims remain unsupported by current evidence."
+      "blocker": "2 stronger claims remain unsupported by current evidence."
     },
     {
       "id": "license_and_citation",
-      "status": "fail",
+      "status": "pass",
       "evidence": [
         "outputs/founderbench-license-readiness.md",
         "work/founderbench/CITATION.cff",
-        "work/founderbench/LICENSE-TODO.md"
+        "work/founderbench/LICENSE"
       ],
-      "blocker": "License/citation metadata is not public-release ready."
+      "blocker": ""
     }
   ]
 }

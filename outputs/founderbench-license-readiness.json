@@ -4,11 +4,11 @@
   "purpose": "License and citation metadata readiness report for public benchmark release.",
   "summary": {
     "checks": 8,
-    "pass": 4,
-    "incomplete": 3,
-    "missing": 1,
+    "pass": 8,
+    "incomplete": 0,
+    "missing": 0,
     "owner_decisions_required": 4,
-    "release_ready": false
+    "release_ready": true
   },
   "checks": [
     {
@@ -19,7 +19,7 @@
     },
     {
       "id": "citation_author_placeholder",
-      "status": "incomplete",
+      "status": "pass",
       "path": "work/founderbench/CITATION.cff",
       "detail": "Author metadata must be finalized."
     },
@@ -31,13 +31,13 @@
     },
     {
       "id": "citation_license_placeholder",
-      "status": "incomplete",
+      "status": "pass",
       "path": "work/founderbench/CITATION.cff",
       "detail": "License metadata must match the selected release license."
     },
     {
       "id": "license_file_exists",
-      "status": "missing",
+      "status": "pass",
       "path": "work/founderbench/LICENSE",
       "detail": "A final LICENSE file should exist for public release."
     },
@@ -55,9 +55,9 @@
     },
     {
       "id": "license_todo_present",
-      "status": "incomplete",
-      "path": "work/founderbench/LICENSE-TODO.md",
-      "detail": "LICENSE-TODO.md documents the unresolved owner decision."
+      "status": "pass",
+      "path": "work/founderbench/LICENSE",
+      "detail": "Public MIT LICENSE is present and LICENSE-TODO.md has been removed."
     }
   ],
   "required_decisions": [

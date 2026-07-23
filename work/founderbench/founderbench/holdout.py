@@ -34,7 +34,7 @@ def public_blueprint() -> dict[str, Any]:
         "benchmark": "FounderBench",
         "benchmark_version": VERSION,
         "holdout_protocol_version": HOLDOUT_VERSION,
-        "status": "proposal_for_private_evaluator",
+        "status": "frozen_private_holdout_v0.1",
         "private_holdout_size": 20,
         "family_distribution": {family: 2 for family in FAMILIES},
         "public_release_policy": [
