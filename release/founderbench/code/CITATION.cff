@@ -1,11 +1,23 @@
 cff-version: 1.2.0
-title: "FounderBench: Evaluating LLM Agents as Startup Operators Under Controlled Resources"
-message: "If you use FounderBench, please cite the associated paper or this software artifact."
+title: "FounderBench: Evaluating LLM Agents on Sequential Startup Decisions"
+message: "If you use FounderBench, please cite this software and the associated paper."
 type: software
 authors:
-  - name: "TODO: Add author names before release"
-version: "0.3.0"
-date-released: "2026-07-15"
-abstract: "FounderBench is a controlled startup-agent benchmark for evaluating LLM agents on repeated business decisions under bounded resources."
+  - family-names: Wang
+    given-names: Yufeng
+    email: louiswang524@gmail.com
+date-released: "2026-07-23"
+abstract: >-
+  FounderBench is a controlled benchmark for evaluating LLM agents on sequential
+  startup-like decisions under bounded resources. Agents choose structured business
+  actions in a deterministic simulator; task-specific scorers map final state to a
+  0-100 outcome. Free-form rationale is logged but never scored.
 repository-code: "https://github.com/louiswang524/FounderBench"
-license: "TODO"
+license: MIT
+keywords:
+  - llm
+  - agents
+  - benchmark
+  - startup
+  - sequential-decision-making
+  - simulation

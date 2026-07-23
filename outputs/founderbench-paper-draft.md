@@ -2,7 +2,7 @@
 
 ## Abstract
 
-Existing agent benchmarks emphasize tool use, web navigation, and software editing, but rarely isolate repeated operating decisions under scarce resources and delayed consequences. We introduce **FounderBench**, a controlled benchmark for startup-like sequential decision making. Given a simulated company state and noisy market information, an agent must choose from 13 structured business actions over a fixed horizon; a deterministic simulator updates cash, demand, quality, and risk, and task-specific code maps final outcomes to a 0–100 score. Free-form rationale is logged for audit but never scored. The suite contains 50 synthetic public tasks balanced across 10 operating families. **Headline gap:** a task-aware calibration policy averages 80.90 (37/50 solved), while the best hosted single run reaches only 67.69 (32/50); no human-founder baseline is reported. Rankings reverse between average score and solved count, and family profiles expose distinct operating failures. We release tasks, simulator and scoring code, adapters, validated task-level results, and generation scripts. All hosted rows are single runs on visible public tasks. There is no human-founder calibration and no official private leaderboard. Scores do not establish real-world startup competence.
+Existing agent benchmarks emphasize tool use, web navigation, and software editing, but rarely isolate repeated operating decisions under scarce resources and delayed consequences. We introduce **FounderBench**, a controlled benchmark for startup-like sequential decision making. Given a simulated company state and noisy market information, an agent must choose from 13 structured business actions over a fixed horizon; a deterministic simulator updates cash, demand, quality, and risk, and task-specific code maps final outcomes to a 0–100 score. Free-form rationale is logged for audit but never scored. The suite contains 50 synthetic public tasks balanced across 10 operating families. **Headline gap:** a task-aware calibration policy averages 80.90 (37/50 solved), while the best hosted single run reaches only 67.69 (32/50); no human-founder baseline is reported. Rankings reverse between average score and solved count, and family profiles expose distinct operating failures. We release the suite, simulator and scoring code, adapters, validated task-level results, and regeneration scripts at https://github.com/louiswang524/FounderBench. All hosted rows are single runs on visible public tasks; scores do not establish real-world startup competence.
 
 ## 1. Introduction
 
@@ -42,7 +42,7 @@ FounderBench is a controlled synthetic test of sequential decisions. It is not e
 
 **Documentation and evaluation practice.** Datasheets and HELM motivate transparent documentation and multi-metric reporting.
 
-**Executable judging versus LLM judges.** Outcome-only scoring is a deliberate alternative to rubric or LLM-as-a-judge pipelines. RULERS shows that even structured rubrics need locked criteria and evidence anchoring; FounderBench sidesteps that fragility by never grading free-form text. Complementary work (e.g., One Token to Fool LLM-as-a-Judge) shows LLM judges can be manipulated by short adversarial strings, reinforcing why persuasive rationales are logged for audit but excluded from scores. Hybrid designs—proxy state checks, partial human review, or stochastic market noise—can trade determinism for realism; v0.3 prioritizes full re-executable determinism.
+**Executable judging versus LLM judges.** Outcome-only scoring is a deliberate alternative to rubric or LLM-as-a-judge pipelines. RULERS shows that even structured rubrics need locked criteria and evidence anchoring; FounderBench sidesteps that fragility by never grading free-form text. Complementary work (e.g., One Token to Fool LLM-as-a-Judge) shows LLM judges can be manipulated by short adversarial strings, reinforcing why persuasive rationales are logged for audit but excluded from scores. Hybrid designs—proxy state checks, partial human review, or stochastic market noise—can trade determinism for realism; the present release prioritizes full re-executable determinism.
 
 ## 3. Benchmark Design
 
@@ -72,7 +72,7 @@ Eight synthetic markets differ in demand, competition, willingness to pay, build
 
 ### 3.5 Design properties
 
-The desiderata above place FounderBench as a domain-specialized, deterministic-outcome suite. A natural alternative is hybrid verification (executable hard constraints plus locked rubrics or limited expert review). We prioritize full determinism for v0.3 so every published score is re-executable; the cost is reduced ecological validity under market shocks and adversarial conditions.
+The desiderata above place FounderBench as a domain-specialized, deterministic-outcome suite. A natural alternative is hybrid verification (executable hard constraints plus locked rubrics or limited expert review). We prioritize full determinism in the present release so every published score is re-executable; the cost is reduced ecological validity under market shocks and adversarial conditions.
 
 ## 4. Evaluation Protocol
 
@@ -169,4 +169,4 @@ The release also freezes a 20-task private holdout (two tasks per family), with 
 
 FounderBench asks whether agents can turn noisy observations into consequential startup-like actions under bounded resources. Its central design choice is to score deterministic simulated outcomes rather than persuasive prose. Eleven hosted configurations show substantial capability but remain below a task-aware calibration policy, with heterogeneous family behavior and solved-versus-average rank reversals. The release ties every reported number to executable evidence. FounderBench should be read as a controlled synthetic sequential-decision test—not a predictor of company success. Priority upgrades are repeated hosted runs, private hosted evaluation, interface-retry and environment-sensitivity ablations, and expert/founder calibration.
 
-Also see `outputs/founderbench-paper-model-registry.json` for validated hosted evidence digests used by the paper tables.
+Validated hosted evidence digests used by the paper tables are included in the public release.

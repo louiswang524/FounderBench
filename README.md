@@ -230,7 +230,6 @@ A **20-task private holdout** (2 per family) is frozen with public fingerprint c
   author       = {Wang, Yufeng},
   title        = {FounderBench: Evaluating LLM Agents on Sequential Startup Decisions},
   year         = {2026},
-  version      = {0.3.0},
   url          = {https://github.com/louiswang524/FounderBench},
   license      = {MIT}
 }

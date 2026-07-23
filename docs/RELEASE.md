@@ -2,7 +2,7 @@
 
 Public repository: https://github.com/louiswang524/FounderBench
 
-## Done for v0.3.0 public polish
+## Done for public polish
 
 1. Root `LICENSE` and `work/founderbench/LICENSE` set to **MIT**.
 2. `CITATION.cff` (root + package) filled with author, title, license, and repo URL.

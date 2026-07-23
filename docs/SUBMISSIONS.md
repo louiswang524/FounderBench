@@ -7,7 +7,6 @@ FounderBench submissions are JSON files produced by `founderbench.resumable_runn
 A valid public submission must include:
 
 - benchmark name `FounderBench`
-- version `0.3.0`
 - one run covering all 50 public tasks, `FND-001` through `FND-050`
 - task-level score objects
 - split summaries for `public_dev` and `public_test`
