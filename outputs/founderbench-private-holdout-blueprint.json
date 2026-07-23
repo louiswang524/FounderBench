@@ -2,7 +2,7 @@
   "benchmark": "FounderBench",
   "benchmark_version": "0.3.0",
   "holdout_protocol_version": "0.1",
-  "status": "proposal_for_private_evaluator",
+  "status": "frozen_private_holdout_v0.1",
   "private_holdout_size": 20,
   "family_distribution": {
     "Market selection": 2,

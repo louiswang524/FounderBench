@@ -91,3 +91,7 @@ paper/kdd2027/*.synctex.gz
 Thumbs.db
 .idea/
 .vscode/
+
+# Package-local scratch outputs
+work/founderbench/outputs/
+

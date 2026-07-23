@@ -7,8 +7,8 @@ This generated report maps major paper/benchmark-card claims to current evidence
 | Metric | Value |
 | --- | --- |
 | claims | 9 |
-| supported | 6 |
-| unsupported_currently | 3 |
+| supported | 7 |
+| unsupported_currently | 2 |
 | evidence_complete | 9 |
 
 ## Claim Matrix
@@ -21,7 +21,7 @@ This generated report maps major paper/benchmark-card claims to current evidence
 | bounded_normalized_metrics | supported | yes | Each task returns a bounded 0-100 score; tasks are solved at score >= 70. | The score is a direct dollar value or external business valuation. |
 | deterministic_baseline_spread | supported | yes | Deterministic baselines show a wide spread from random to task-aware heuristic on the public current suite. | The benchmark is validated against current frontier LLMs. |
 | capability_ladder_ablation | supported | yes | The deterministic policy ladder is a calibration ablation, not a model architecture ablation. | The ablation proves LLM reasoning mechanisms. |
-| hosted_llm_comparison | unsupported_currently | yes | Provider adapters and experiment protocols are included; hosted current release LLM results remain to be run. | DeepSeek, Claude, and Gemini have been fully compared on current release. |
+| hosted_llm_comparison | supported | yes | Validated hosted rows are single runs on 50 visible public tasks; report provider errors and avoid close-ranking significance claims. | The hosted leaderboard measures repeated-run reliability or performance on a hidden test set. |
 | private_holdout_available | unsupported_currently | yes | The benchmark includes a private-holdout blueprint and evaluator protocol, not executed hidden results. | The reported current release leaderboard is hidden or private. |
 | real_world_startup_prediction | unsupported_currently | yes | FounderBench is a synthetic controlled environment for studying startup-relevant decisions. | High benchmark score means a model can run a successful real company. |
 
@@ -81,16 +81,13 @@ Evidence:
 
 ### hosted_llm_comparison
 
-FounderBench differentiates current hosted LLM providers on current release.
+FounderBench reports validated single-run outcomes for current hosted model configurations on current release.
 
 Evidence:
-- `outputs/founderbench-provider-readiness.md`: present
-- `outputs/founderbench-experiment-matrix.md`: present
-
-Missing evidence before stronger claim:
-- `outputs/founderbench-deepseek.json`: missing
-- `outputs/founderbench-anthropic.json`: missing
-- `outputs/founderbench-gemini.json`: missing
+- `outputs/founderbench-paper-model-registry.json`: present
+- `outputs/founderbench-paper-analysis.json`: present
+- `outputs/founderbench-paper-tables.md`: present
+- `outputs/founderbench-model-comparison.json`: present
 
 ### private_holdout_available
 

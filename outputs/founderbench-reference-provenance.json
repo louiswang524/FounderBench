@@ -1,7 +1,7 @@
 {
   "benchmark": "FounderBench",
   "version": "0.3.0",
-  "verified_date": "2026-07-15",
+  "verified_date": "2026-07-19",
   "entries": [
     {
       "key": "yao2023react",
@@ -20,7 +20,7 @@
     },
     {
       "key": "liu2025agentbench",
-      "source": "https://arxiv.org/bibtex/2308.03688",
+      "source": "https://openreview.net/forum?id=zAdUB0aCTQ",
       "status": "verified_from_primary_or_project_source"
     },
     {
@@ -61,6 +61,16 @@
     {
       "key": "han2026enterprisearena",
       "source": "https://arxiv.org/bibtex/2603.23638",
+      "status": "verified_from_primary_or_project_source"
+    },
+    {
+      "key": "gebru2021datasheets",
+      "source": "https://dl.acm.org/doi/10.1145/3458723",
+      "status": "verified_from_primary_or_project_source"
+    },
+    {
+      "key": "liang2023holistic",
+      "source": "https://openreview.net/forum?id=iO4LZibEqW",
       "status": "verified_from_primary_or_project_source"
     }
   ]

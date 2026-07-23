@@ -7,27 +7,32 @@
     "provider_candidates": [
       "outputs/founderbench-openai.json",
       "outputs/founderbench-deepseek.json",
+      "outputs/founderbench-deepseek-v4-reasoner.json",
       "outputs/founderbench-anthropic.json",
+      "outputs/founderbench-anthropic-sonnet-5.json",
       "outputs/founderbench-gemini.json",
+      "outputs/founderbench-gemini-3.5-flash.json",
       "outputs/founderbench-kimi.json",
       "outputs/founderbench-qwen.json",
       "outputs/founderbench-mistral.json",
-      "outputs/founderbench-glm.json",
+      "outputs/founderbench-glm-4.5-air.json",
       "outputs/founderbench-xai.json",
+      "outputs/founderbench-xai-grok-4.3.json",
       "outputs/founderbench-llama.json",
       "outputs/founderbench-local-open-model.json"
     ]
   },
   "summary": {
     "deterministic_runs": 4,
-    "valid_provider_runs": 3,
-    "valid_provider_policies": 3,
+    "valid_provider_runs": 11,
+    "valid_provider_policies": 7,
+    "valid_provider_models": 11,
     "valid_repeated_provider_bundles": 0,
-    "provider_candidates": 11,
-    "provider_missing_or_invalid": 8,
-    "all_valid_runs": 7,
-    "paired_comparisons": 6,
-    "provider_paired_comparisons": 3,
+    "provider_candidates": 15,
+    "provider_missing_or_invalid": 4,
+    "all_valid_runs": 15,
+    "paired_comparisons": 14,
+    "provider_paired_comparisons": 11,
     "hosted_llm_claims_ready": true,
     "open_source_claim_ready": false
   },
@@ -44,7 +49,73 @@
       0
     ],
     [
-      "anthropic",
+      "Gemini 3.5 Flash",
+      50,
+      32,
+      "0.64",
+      "67.69",
+      "73.05",
+      "59.64",
+      0,
+      59
+    ],
+    [
+      "Grok 4.5",
+      50,
+      33,
+      "0.66",
+      "66.53",
+      "73.16",
+      "56.57",
+      0,
+      0
+    ],
+    [
+      "GPT-5.6 Sol",
+      50,
+      32,
+      "0.64",
+      "66.39",
+      "71.70",
+      "58.42",
+      0,
+      0
+    ],
+    [
+      "Kimi K3",
+      50,
+      28,
+      "0.56",
+      "65.63",
+      "70.12",
+      "58.90",
+      0,
+      70
+    ],
+    [
+      "Claude Sonnet 5",
+      50,
+      25,
+      "0.50",
+      "63.90",
+      "60.76",
+      "68.61",
+      0,
+      0
+    ],
+    [
+      "DeepSeek V4 Reasoner",
+      50,
+      27,
+      "0.54",
+      "62.43",
+      "65.38",
+      "58.02",
+      0,
+      3
+    ],
+    [
+      "Claude Sonnet 4.5",
       50,
       24,
       "0.48",
@@ -66,13 +137,24 @@
       0
     ],
     [
-      "deepseek",
+      "DeepSeek Chat",
       50,
       23,
       "0.46",
       "56.59",
       "54.51",
       "59.70",
+      0,
+      0
+    ],
+    [
+      "GLM 4.5 Air",
+      50,
+      23,
+      "0.46",
+      "54.78",
+      "53.83",
+      "56.20",
       0,
       0
     ],
@@ -88,7 +170,7 @@
       0
     ],
     [
-      "gemini",
+      "Gemini 2.5 Flash",
       50,
       13,
       "0.26",
@@ -97,6 +179,17 @@
       "50.75",
       0,
       340
+    ],
+    [
+      "Grok 4.3",
+      50,
+      16,
+      "0.32",
+      "52.59",
+      "48.03",
+      "59.43",
+      0,
+      3
     ],
     [
       "random",
@@ -119,7 +212,49 @@
       "[0.62, 0.86]"
     ],
     [
-      "anthropic",
+      "Gemini 3.5 Flash",
+      "67.69",
+      "[59.20, 75.25]",
+      "0.64",
+      "[0.50, 0.76]"
+    ],
+    [
+      "Grok 4.5",
+      "66.53",
+      "[57.81, 74.62]",
+      "0.66",
+      "[0.52, 0.78]"
+    ],
+    [
+      "GPT-5.6 Sol",
+      "66.39",
+      "[57.46, 74.89]",
+      "0.64",
+      "[0.50, 0.76]"
+    ],
+    [
+      "Kimi K3",
+      "65.63",
+      "[57.89, 72.67]",
+      "0.56",
+      "[0.42, 0.70]"
+    ],
+    [
+      "Claude Sonnet 5",
+      "63.90",
+      "[56.34, 71.41]",
+      "0.50",
+      "[0.36, 0.64]"
+    ],
+    [
+      "DeepSeek V4 Reasoner",
+      "62.43",
+      "[53.97, 70.48]",
+      "0.54",
+      "[0.40, 0.68]"
+    ],
+    [
+      "Claude Sonnet 4.5",
       "61.09",
       "[52.24, 69.79]",
       "0.48",
@@ -133,9 +268,16 @@
       "[0.26, 0.52]"
     ],
     [
-      "deepseek",
+      "DeepSeek Chat",
       "56.59",
       "[47.39, 65.78]",
+      "0.46",
+      "[0.32, 0.60]"
+    ],
+    [
+      "GLM 4.5 Air",
+      "54.78",
+      "[46.01, 63.53]",
       "0.46",
       "[0.32, 0.60]"
     ],
@@ -147,11 +289,18 @@
       "[0.14, 0.38]"
     ],
     [
-      "gemini",
+      "Gemini 2.5 Flash",
       "52.69",
       "[46.10, 59.68]",
       "0.26",
       "[0.14, 0.40]"
+    ],
+    [
+      "Grok 4.3",
+      "52.59",
+      "[45.16, 60.21]",
+      "0.32",
+      "[0.20, 0.46]"
     ],
     [
       "random",
@@ -165,114 +314,308 @@
     [
       "Market selection",
       "2/5 (59.8)",
+      "3/5 (58.9)",
+      "2/5 (46.3)",
+      "3/5 (59.4)",
+      "3/5 (59.3)",
+      "1/5 (36.3)",
+      "3/5 (59.0)",
       "2/5 (47.4)",
       "2/5 (61.1)",
       "3/5 (57.4)",
+      "0/5 (25.1)",
       "2/5 (63.2)",
       "2/5 (47.3)",
+      "2/5 (57.1)",
       "0/5 (31.6)"
     ],
     [
       "First revenue",
       "2/5 (69.2)",
+      "3/5 (54.8)",
+      "3/5 (60.0)",
+      "2/5 (53.6)",
+      "0/5 (34.8)",
+      "2/5 (68.9)",
+      "2/5 (50.7)",
       "1/5 (29.6)",
       "2/5 (65.7)",
       "0/5 (10.7)",
+      "0/5 (10.0)",
       "1/5 (45.3)",
       "1/5 (61.1)",
+      "0/5 (22.1)",
       "0/5 (20.4)"
     ],
     [
       "Retention improvement",
       "5/5 (95.8)",
+      "5/5 (95.7)",
+      "5/5 (96.7)",
+      "5/5 (96.2)",
+      "5/5 (95.5)",
+      "5/5 (94.3)",
+      "5/5 (91.6)",
       "5/5 (94.7)",
       "2/5 (63.5)",
       "5/5 (93.5)",
+      "5/5 (90.2)",
       "0/5 (47.5)",
       "3/5 (70.8)",
+      "0/5 (41.1)",
       "0/5 (10.4)"
     ],
     [
       "Churn shock recovery",
       "5/5 (91.2)",
+      "5/5 (91.6)",
+      "5/5 (94.4)",
+      "5/5 (95.2)",
+      "5/5 (93.8)",
+      "0/5 (53.5)",
+      "4/5 (79.0)",
       "2/5 (67.3)",
       "1/5 (48.1)",
       "1/5 (39.3)",
+      "4/5 (74.6)",
       "0/5 (38.3)",
       "0/5 (37.4)",
+      "0/5 (54.0)",
       "0/5 (34.3)"
     ],
     [
       "Demo Day traction",
       "4/5 (88.8)",
+      "0/5 (61.3)",
+      "3/5 (67.5)",
+      "1/5 (51.6)",
+      "2/5 (63.9)",
+      "1/5 (35.6)",
+      "1/5 (41.0)",
       "1/5 (68.0)",
       "3/5 (67.0)",
       "1/5 (57.0)",
+      "1/5 (51.6)",
       "2/5 (60.3)",
       "2/5 (58.4)",
+      "1/5 (47.1)",
       "0/5 (20.2)"
     ],
     [
       "Pricing",
       "5/5 (85.6)",
+      "4/5 (76.1)",
+      "4/5 (74.1)",
+      "4/5 (74.2)",
+      "4/5 (73.4)",
+      "3/5 (75.9)",
+      "2/5 (71.0)",
       "1/5 (65.7)",
       "4/5 (85.2)",
       "2/5 (69.2)",
+      "4/5 (71.4)",
       "3/5 (77.3)",
       "0/5 (48.9)",
+      "2/5 (66.8)",
       "0/5 (39.7)"
     ],
     [
       "Runway preservation",
       "5/5 (95.6)",
+      "5/5 (84.0)",
+      "4/5 (81.4)",
+      "5/5 (87.2)",
+      "5/5 (84.3)",
+      "5/5 (87.5)",
+      "5/5 (90.6)",
       "5/5 (90.8)",
       "5/5 (82.5)",
       "5/5 (91.1)",
+      "4/5 (87.5)",
       "5/5 (79.1)",
       "5/5 (77.9)",
+      "5/5 (94.4)",
       "2/5 (68.3)"
     ],
     [
       "Pivot decision",
       "2/5 (65.5)",
+      "0/5 (17.9)",
+      "0/5 (13.7)",
+      "0/5 (5.3)",
+      "0/5 (31.5)",
+      "1/5 (47.1)",
+      "0/5 (17.8)",
       "0/5 (12.8)",
       "0/5 (26.8)",
       "0/5 (12.6)",
+      "0/5 (10.8)",
       "0/5 (23.9)",
       "0/5 (21.8)",
+      "0/5 (18.9)",
       "0/5 (11.7)"
     ],
     [
       "Fundraising",
       "5/5 (99.6)",
       "5/5 (83.6)",
+      "5/5 (86.5)",
+      "5/5 (83.4)",
+      "4/5 (84.5)",
+      "5/5 (83.2)",
+      "5/5 (83.8)",
+      "5/5 (83.6)",
       "0/5 (68.0)",
       "5/5 (86.3)",
+      "5/5 (84.0)",
       "0/5 (68.0)",
       "0/5 (68.0)",
+      "5/5 (83.5)",
       "2/5 (72.6)"
     ],
     [
       "Channel expansion",
       "2/5 (58.0)",
+      "2/5 (53.0)",
+      "2/5 (44.7)",
+      "2/5 (57.8)",
+      "0/5 (35.3)",
+      "2/5 (56.7)",
+      "0/5 (40.0)",
       "2/5 (51.1)",
       "0/5 (42.1)",
       "1/5 (48.8)",
+      "0/5 (42.5)",
       "0/5 (37.6)",
       "0/5 (35.3)",
+      "1/5 (41.0)",
       "0/5 (23.7)"
     ]
   ],
   "paired_comparisons": [
     {
-      "comparison": "task_heuristic - anthropic",
+      "comparison": "task_heuristic - Gemini 3.5 Flash",
       "top_policy": "task_heuristic",
-      "baseline_policy": "anthropic",
+      "baseline_policy": "Gemini 3.5 Flash",
+      "tasks": 50,
+      "mean_score_gap": 13.22,
+      "score_gap_bootstrap_ci": [
+        6.07,
+        20.93
+      ],
+      "paired_permutation_p": 0.0008,
+      "cohen_dz": 0.4806,
+      "task_wins": 36,
+      "task_losses": 9,
+      "task_ties": 5,
+      "solve_gap": 0.1,
+      "solve_wins": 9,
+      "solve_losses": 4
+    },
+    {
+      "comparison": "task_heuristic - Grok 4.5",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "Grok 4.5",
+      "tasks": 50,
+      "mean_score_gap": 14.38,
+      "score_gap_bootstrap_ci": [
+        8.53,
+        20.75
+      ],
+      "paired_permutation_p": 5e-05,
+      "cohen_dz": 0.6426,
+      "task_wins": 34,
+      "task_losses": 9,
+      "task_ties": 7,
+      "solve_gap": 0.08,
+      "solve_wins": 7,
+      "solve_losses": 3
+    },
+    {
+      "comparison": "task_heuristic - GPT-5.6 Sol",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "GPT-5.6 Sol",
+      "tasks": 50,
+      "mean_score_gap": 14.52,
+      "score_gap_bootstrap_ci": [
+        6.93,
+        22.44
+      ],
+      "paired_permutation_p": 0.00055,
+      "cohen_dz": 0.5234,
+      "task_wins": 34,
+      "task_losses": 10,
+      "task_ties": 6,
+      "solve_gap": 0.1,
+      "solve_wins": 8,
+      "solve_losses": 3
+    },
+    {
+      "comparison": "task_heuristic - Kimi K3",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "Kimi K3",
+      "tasks": 50,
+      "mean_score_gap": 15.27,
+      "score_gap_bootstrap_ci": [
+        8.6,
+        22.12
+      ],
+      "paired_permutation_p": 0.00015,
+      "cohen_dz": 0.6305,
+      "task_wins": 37,
+      "task_losses": 9,
+      "task_ties": 4,
+      "solve_gap": 0.18,
+      "solve_wins": 12,
+      "solve_losses": 3
+    },
+    {
+      "comparison": "task_heuristic - Claude Sonnet 5",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "Claude Sonnet 5",
+      "tasks": 50,
+      "mean_score_gap": 17.0,
+      "score_gap_bootstrap_ci": [
+        10.56,
+        24.23
+      ],
+      "paired_permutation_p": 5e-05,
+      "cohen_dz": 0.7093,
+      "task_wins": 38,
+      "task_losses": 9,
+      "task_ties": 3,
+      "solve_gap": 0.24,
+      "solve_wins": 14,
+      "solve_losses": 2
+    },
+    {
+      "comparison": "task_heuristic - DeepSeek V4 Reasoner",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "DeepSeek V4 Reasoner",
+      "tasks": 50,
+      "mean_score_gap": 18.47,
+      "score_gap_bootstrap_ci": [
+        11.85,
+        25.49
+      ],
+      "paired_permutation_p": 5e-05,
+      "cohen_dz": 0.7208,
+      "task_wins": 41,
+      "task_losses": 7,
+      "task_ties": 2,
+      "solve_gap": 0.2,
+      "solve_wins": 13,
+      "solve_losses": 3
+    },
+    {
+      "comparison": "task_heuristic - Claude Sonnet 4.5",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "Claude Sonnet 4.5",
       "tasks": 50,
       "mean_score_gap": 19.82,
       "score_gap_bootstrap_ci": [
-        12.42,
-        27.55
+        12.59,
+        27.79
       ],
       "paired_permutation_p": 5e-05,
       "cohen_dz": 0.7105,
@@ -303,14 +646,14 @@
       "solve_losses": 2
     },
     {
-      "comparison": "task_heuristic - deepseek",
+      "comparison": "task_heuristic - DeepSeek Chat",
       "top_policy": "task_heuristic",
-      "baseline_policy": "deepseek",
+      "baseline_policy": "DeepSeek Chat",
       "tasks": 50,
       "mean_score_gap": 24.32,
       "score_gap_bootstrap_ci": [
-        16.35,
-        32.67
+        15.98,
+        32.44
       ],
       "paired_permutation_p": 5e-05,
       "cohen_dz": 0.8294,
@@ -320,6 +663,25 @@
       "solve_gap": 0.28,
       "solve_wins": 16,
       "solve_losses": 2
+    },
+    {
+      "comparison": "task_heuristic - GLM 4.5 Air",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "GLM 4.5 Air",
+      "tasks": 50,
+      "mean_score_gap": 26.12,
+      "score_gap_bootstrap_ci": [
+        19.7,
+        32.83
+      ],
+      "paired_permutation_p": 5e-05,
+      "cohen_dz": 1.086,
+      "task_wins": 45,
+      "task_losses": 4,
+      "task_ties": 1,
+      "solve_gap": 0.28,
+      "solve_wins": 14,
+      "solve_losses": 0
     },
     {
       "comparison": "task_heuristic - conservative",
@@ -341,14 +703,14 @@
       "solve_losses": 0
     },
     {
-      "comparison": "task_heuristic - gemini",
+      "comparison": "task_heuristic - Gemini 2.5 Flash",
       "top_policy": "task_heuristic",
-      "baseline_policy": "gemini",
+      "baseline_policy": "Gemini 2.5 Flash",
       "tasks": 50,
       "mean_score_gap": 28.21,
       "score_gap_bootstrap_ci": [
-        20.83,
-        35.09
+        20.81,
+        35.1
       ],
       "paired_permutation_p": 5e-05,
       "cohen_dz": 1.0672,
@@ -358,6 +720,25 @@
       "solve_gap": 0.48,
       "solve_wins": 26,
       "solve_losses": 2
+    },
+    {
+      "comparison": "task_heuristic - Grok 4.3",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "Grok 4.3",
+      "tasks": 50,
+      "mean_score_gap": 28.32,
+      "score_gap_bootstrap_ci": [
+        21.32,
+        35.05
+      ],
+      "paired_permutation_p": 5e-05,
+      "cohen_dz": 1.1003,
+      "task_wins": 49,
+      "task_losses": 1,
+      "task_ties": 0,
+      "solve_gap": 0.42,
+      "solve_wins": 22,
+      "solve_losses": 1
     },
     {
       "comparison": "task_heuristic - random",
@@ -381,14 +762,128 @@
   ],
   "provider_paired_comparisons": [
     {
-      "comparison": "task_heuristic - anthropic",
+      "comparison": "task_heuristic - Gemini 3.5 Flash",
       "top_policy": "task_heuristic",
-      "baseline_policy": "anthropic",
+      "baseline_policy": "Gemini 3.5 Flash",
+      "tasks": 50,
+      "mean_score_gap": 13.22,
+      "score_gap_bootstrap_ci": [
+        6.07,
+        20.93
+      ],
+      "paired_permutation_p": 0.0008,
+      "cohen_dz": 0.4806,
+      "task_wins": 36,
+      "task_losses": 9,
+      "task_ties": 5,
+      "solve_gap": 0.1,
+      "solve_wins": 9,
+      "solve_losses": 4
+    },
+    {
+      "comparison": "task_heuristic - Grok 4.5",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "Grok 4.5",
+      "tasks": 50,
+      "mean_score_gap": 14.38,
+      "score_gap_bootstrap_ci": [
+        8.53,
+        20.75
+      ],
+      "paired_permutation_p": 5e-05,
+      "cohen_dz": 0.6426,
+      "task_wins": 34,
+      "task_losses": 9,
+      "task_ties": 7,
+      "solve_gap": 0.08,
+      "solve_wins": 7,
+      "solve_losses": 3
+    },
+    {
+      "comparison": "task_heuristic - GPT-5.6 Sol",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "GPT-5.6 Sol",
+      "tasks": 50,
+      "mean_score_gap": 14.52,
+      "score_gap_bootstrap_ci": [
+        6.93,
+        22.44
+      ],
+      "paired_permutation_p": 0.00055,
+      "cohen_dz": 0.5234,
+      "task_wins": 34,
+      "task_losses": 10,
+      "task_ties": 6,
+      "solve_gap": 0.1,
+      "solve_wins": 8,
+      "solve_losses": 3
+    },
+    {
+      "comparison": "task_heuristic - Kimi K3",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "Kimi K3",
+      "tasks": 50,
+      "mean_score_gap": 15.27,
+      "score_gap_bootstrap_ci": [
+        8.6,
+        22.12
+      ],
+      "paired_permutation_p": 0.00015,
+      "cohen_dz": 0.6305,
+      "task_wins": 37,
+      "task_losses": 9,
+      "task_ties": 4,
+      "solve_gap": 0.18,
+      "solve_wins": 12,
+      "solve_losses": 3
+    },
+    {
+      "comparison": "task_heuristic - Claude Sonnet 5",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "Claude Sonnet 5",
+      "tasks": 50,
+      "mean_score_gap": 17.0,
+      "score_gap_bootstrap_ci": [
+        10.56,
+        24.23
+      ],
+      "paired_permutation_p": 5e-05,
+      "cohen_dz": 0.7093,
+      "task_wins": 38,
+      "task_losses": 9,
+      "task_ties": 3,
+      "solve_gap": 0.24,
+      "solve_wins": 14,
+      "solve_losses": 2
+    },
+    {
+      "comparison": "task_heuristic - DeepSeek V4 Reasoner",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "DeepSeek V4 Reasoner",
+      "tasks": 50,
+      "mean_score_gap": 18.47,
+      "score_gap_bootstrap_ci": [
+        11.85,
+        25.49
+      ],
+      "paired_permutation_p": 5e-05,
+      "cohen_dz": 0.7208,
+      "task_wins": 41,
+      "task_losses": 7,
+      "task_ties": 2,
+      "solve_gap": 0.2,
+      "solve_wins": 13,
+      "solve_losses": 3
+    },
+    {
+      "comparison": "task_heuristic - Claude Sonnet 4.5",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "Claude Sonnet 4.5",
       "tasks": 50,
       "mean_score_gap": 19.82,
       "score_gap_bootstrap_ci": [
-        12.42,
-        27.55
+        12.59,
+        27.79
       ],
       "paired_permutation_p": 5e-05,
       "cohen_dz": 0.7105,
@@ -400,14 +895,14 @@
       "solve_losses": 4
     },
     {
-      "comparison": "task_heuristic - deepseek",
+      "comparison": "task_heuristic - DeepSeek Chat",
       "top_policy": "task_heuristic",
-      "baseline_policy": "deepseek",
+      "baseline_policy": "DeepSeek Chat",
       "tasks": 50,
       "mean_score_gap": 24.32,
       "score_gap_bootstrap_ci": [
-        16.35,
-        32.67
+        15.98,
+        32.44
       ],
       "paired_permutation_p": 5e-05,
       "cohen_dz": 0.8294,
@@ -419,14 +914,33 @@
       "solve_losses": 2
     },
     {
-      "comparison": "task_heuristic - gemini",
+      "comparison": "task_heuristic - GLM 4.5 Air",
       "top_policy": "task_heuristic",
-      "baseline_policy": "gemini",
+      "baseline_policy": "GLM 4.5 Air",
+      "tasks": 50,
+      "mean_score_gap": 26.12,
+      "score_gap_bootstrap_ci": [
+        19.7,
+        32.83
+      ],
+      "paired_permutation_p": 5e-05,
+      "cohen_dz": 1.086,
+      "task_wins": 45,
+      "task_losses": 4,
+      "task_ties": 1,
+      "solve_gap": 0.28,
+      "solve_wins": 14,
+      "solve_losses": 0
+    },
+    {
+      "comparison": "task_heuristic - Gemini 2.5 Flash",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "Gemini 2.5 Flash",
       "tasks": 50,
       "mean_score_gap": 28.21,
       "score_gap_bootstrap_ci": [
-        20.83,
-        35.09
+        20.81,
+        35.1
       ],
       "paired_permutation_p": 5e-05,
       "cohen_dz": 1.0672,
@@ -436,32 +950,57 @@
       "solve_gap": 0.48,
       "solve_wins": 26,
       "solve_losses": 2
+    },
+    {
+      "comparison": "task_heuristic - Grok 4.3",
+      "top_policy": "task_heuristic",
+      "baseline_policy": "Grok 4.3",
+      "tasks": 50,
+      "mean_score_gap": 28.32,
+      "score_gap_bootstrap_ci": [
+        21.32,
+        35.05
+      ],
+      "paired_permutation_p": 5e-05,
+      "cohen_dz": 1.1003,
+      "task_wins": 49,
+      "task_losses": 1,
+      "task_ties": 0,
+      "solve_gap": 0.42,
+      "solve_wins": 22,
+      "solve_losses": 1
     }
   ],
   "provider_status": [
     {
       "id": "openai_hosted_baseline",
       "policy": "openai",
+      "label": "GPT-5.6 Sol",
       "path": "outputs/founderbench-openai.json",
       "report": "outputs/founderbench-openai-submission-report.md",
       "repeat_bundle_path": "outputs/founderbench-openai-repeats.json",
       "repeat_bundle_report": "outputs/founderbench-openai-repeats-submission-report.md",
       "family": "hosted_llm",
-      "status": "missing",
-      "exists": false,
-      "submission_report_exists": false,
+      "status": "valid",
+      "exists": true,
+      "submission_report_exists": true,
       "repeat_bundle_exists": false,
       "repeat_bundle_report_exists": false,
-      "evidence_path": "",
-      "evidence_kind": "",
-      "runs": 0,
-      "problems": [
-        "Missing outputs/founderbench-openai.json or outputs/founderbench-openai-repeats.json"
-      ]
+      "evidence_path": "outputs/founderbench-openai.json",
+      "evidence_kind": "single_run",
+      "runs": 1,
+      "problems": [],
+      "bytes": 2995360,
+      "sha256": "55a021a120a83c27ec2c4621c2e4a3030e3746844e92499498b2ecc190aea04d",
+      "average_task_score": 66.39,
+      "solve_rate": 0.64,
+      "solved": 32,
+      "tasks": 50
     },
     {
       "id": "deepseek_hosted_baseline",
       "policy": "deepseek",
+      "label": "DeepSeek Chat",
       "path": "outputs/founderbench-deepseek.json",
       "report": "outputs/founderbench-deepseek-submission-report.md",
       "repeat_bundle_path": "outputs/founderbench-deepseek-repeats.json",
@@ -484,8 +1023,34 @@
       "tasks": 50
     },
     {
+      "id": "deepseek_v4_reasoner_hosted_baseline",
+      "policy": "deepseek",
+      "label": "DeepSeek V4 Reasoner",
+      "path": "outputs/founderbench-deepseek-v4-reasoner.json",
+      "report": "outputs/founderbench-deepseek-v4-reasoner-submission-report.md",
+      "repeat_bundle_path": "outputs/founderbench-deepseek-v4-reasoner-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-deepseek-v4-reasoner-repeats-submission-report.md",
+      "family": "hosted_llm",
+      "status": "valid",
+      "exists": true,
+      "submission_report_exists": true,
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "evidence_path": "outputs/founderbench-deepseek-v4-reasoner.json",
+      "evidence_kind": "single_run",
+      "runs": 1,
+      "problems": [],
+      "bytes": 81629,
+      "sha256": "212f7ef5324b210c0da7294eefd0b45443136d7c98d0781360b1a9e785877167",
+      "average_task_score": 62.43,
+      "solve_rate": 0.54,
+      "solved": 27,
+      "tasks": 50
+    },
+    {
       "id": "anthropic_hosted_baseline",
       "policy": "anthropic",
+      "label": "Claude Sonnet 4.5",
       "path": "outputs/founderbench-anthropic.json",
       "report": "outputs/founderbench-anthropic-submission-report.md",
       "repeat_bundle_path": "outputs/founderbench-anthropic-repeats.json",
@@ -508,8 +1073,34 @@
       "tasks": 50
     },
     {
+      "id": "anthropic_sonnet_5_hosted_baseline",
+      "policy": "anthropic",
+      "label": "Claude Sonnet 5",
+      "path": "outputs/founderbench-anthropic-sonnet-5.json",
+      "report": "outputs/founderbench-anthropic-sonnet-5-submission-report.md",
+      "repeat_bundle_path": "outputs/founderbench-anthropic-sonnet-5-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-anthropic-sonnet-5-repeats-submission-report.md",
+      "family": "hosted_llm",
+      "status": "valid",
+      "exists": true,
+      "submission_report_exists": true,
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "evidence_path": "outputs/founderbench-anthropic-sonnet-5.json",
+      "evidence_kind": "single_run",
+      "runs": 1,
+      "problems": [],
+      "bytes": 3314679,
+      "sha256": "e2b9843ece2a45c8020e52bcfc803b3457978083ebd318b46c3020089a837fb0",
+      "average_task_score": 63.9,
+      "solve_rate": 0.5,
+      "solved": 25,
+      "tasks": 50
+    },
+    {
       "id": "gemini_hosted_baseline",
       "policy": "gemini",
+      "label": "Gemini 2.5 Flash",
       "path": "outputs/founderbench-gemini.json",
       "report": "outputs/founderbench-gemini-submission-report.md",
       "repeat_bundle_path": "outputs/founderbench-gemini-repeats.json",
@@ -532,28 +1123,59 @@
       "tasks": 50
     },
     {
+      "id": "gemini_3_5_flash_hosted_baseline",
+      "policy": "gemini",
+      "label": "Gemini 3.5 Flash",
+      "path": "outputs/founderbench-gemini-3.5-flash.json",
+      "report": "outputs/founderbench-gemini-3.5-flash-submission-report.md",
+      "repeat_bundle_path": "outputs/founderbench-gemini-3.5-flash-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-gemini-3.5-flash-repeats-submission-report.md",
+      "family": "hosted_llm",
+      "status": "valid",
+      "exists": true,
+      "submission_report_exists": true,
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "evidence_path": "outputs/founderbench-gemini-3.5-flash.json",
+      "evidence_kind": "single_run",
+      "runs": 1,
+      "problems": [],
+      "bytes": 82315,
+      "sha256": "1d6f9c81af404cd81d46fe8c1483b435ff6b763f7d763fd6e735545b46abce78",
+      "average_task_score": 67.69,
+      "solve_rate": 0.64,
+      "solved": 32,
+      "tasks": 50
+    },
+    {
       "id": "kimi_hosted_baseline",
       "policy": "kimi",
+      "label": "Kimi K3",
       "path": "outputs/founderbench-kimi.json",
       "report": "outputs/founderbench-kimi-submission-report.md",
       "repeat_bundle_path": "outputs/founderbench-kimi-repeats.json",
       "repeat_bundle_report": "outputs/founderbench-kimi-repeats-submission-report.md",
       "family": "hosted_llm",
-      "status": "missing",
-      "exists": false,
-      "submission_report_exists": false,
+      "status": "valid",
+      "exists": true,
+      "submission_report_exists": true,
       "repeat_bundle_exists": false,
       "repeat_bundle_report_exists": false,
-      "evidence_path": "",
-      "evidence_kind": "",
-      "runs": 0,
-      "problems": [
-        "Missing outputs/founderbench-kimi.json or outputs/founderbench-kimi-repeats.json"
-      ]
+      "evidence_path": "outputs/founderbench-kimi.json",
+      "evidence_kind": "single_run",
+      "runs": 1,
+      "problems": [],
+      "bytes": 3197123,
+      "sha256": "4bb2850b393aa9af8cca301e18b85d1ed6af4575f8ade57e855ee0983ccbc36d",
+      "average_task_score": 65.63,
+      "solve_rate": 0.56,
+      "solved": 28,
+      "tasks": 50
     },
     {
       "id": "qwen_hosted_baseline",
       "policy": "qwen",
+      "label": "Qwen",
       "path": "outputs/founderbench-qwen.json",
       "report": "outputs/founderbench-qwen-submission-report.md",
       "repeat_bundle_path": "outputs/founderbench-qwen-repeats.json",
@@ -574,6 +1196,7 @@
     {
       "id": "mistral_hosted_baseline",
       "policy": "mistral",
+      "label": "Mistral",
       "path": "outputs/founderbench-mistral.json",
       "report": "outputs/founderbench-mistral-submission-report.md",
       "repeat_bundle_path": "outputs/founderbench-mistral-repeats.json",
@@ -594,46 +1217,82 @@
     {
       "id": "glm_hosted_baseline",
       "policy": "glm",
-      "path": "outputs/founderbench-glm.json",
-      "report": "outputs/founderbench-glm-submission-report.md",
-      "repeat_bundle_path": "outputs/founderbench-glm-repeats.json",
-      "repeat_bundle_report": "outputs/founderbench-glm-repeats-submission-report.md",
+      "label": "GLM 4.5 Air",
+      "path": "outputs/founderbench-glm-4.5-air.json",
+      "report": "outputs/founderbench-glm-4.5-air-submission-report.md",
+      "repeat_bundle_path": "outputs/founderbench-glm-4.5-air-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-glm-4.5-air-repeats-submission-report.md",
       "family": "hosted_llm_optional",
-      "status": "invalid",
+      "status": "valid",
       "exists": true,
-      "submission_report_exists": false,
+      "submission_report_exists": true,
       "repeat_bundle_exists": false,
       "repeat_bundle_report_exists": false,
-      "evidence_path": "",
-      "evidence_kind": "",
-      "runs": 0,
-      "problems": [
-        "outputs/founderbench-glm.json: Missing validation report outputs/founderbench-glm-submission-report.md"
-      ]
+      "evidence_path": "outputs/founderbench-glm-4.5-air.json",
+      "evidence_kind": "single_run",
+      "runs": 1,
+      "problems": [],
+      "bytes": 81205,
+      "sha256": "9d9cd78bd67bf965db6a10f0bf591fd2c05f9df2bb746200cf08d642898f6a9c",
+      "average_task_score": 54.78,
+      "solve_rate": 0.46,
+      "solved": 23,
+      "tasks": 50
     },
     {
       "id": "xai_hosted_baseline",
       "policy": "xai",
+      "label": "Grok 4.5",
       "path": "outputs/founderbench-xai.json",
       "report": "outputs/founderbench-xai-submission-report.md",
       "repeat_bundle_path": "outputs/founderbench-xai-repeats.json",
       "repeat_bundle_report": "outputs/founderbench-xai-repeats-submission-report.md",
       "family": "hosted_llm_optional",
-      "status": "missing",
-      "exists": false,
-      "submission_report_exists": false,
+      "status": "valid",
+      "exists": true,
+      "submission_report_exists": true,
       "repeat_bundle_exists": false,
       "repeat_bundle_report_exists": false,
-      "evidence_path": "",
-      "evidence_kind": "",
-      "runs": 0,
-      "problems": [
-        "Missing outputs/founderbench-xai.json or outputs/founderbench-xai-repeats.json"
-      ]
+      "evidence_path": "outputs/founderbench-xai.json",
+      "evidence_kind": "single_run",
+      "runs": 1,
+      "problems": [],
+      "bytes": 3161100,
+      "sha256": "3ed7e30582bfb6413e4dce39067feb288c3a6a92a19be9f654a39afa14fe6684",
+      "average_task_score": 66.53,
+      "solve_rate": 0.66,
+      "solved": 33,
+      "tasks": 50
+    },
+    {
+      "id": "xai_grok_4_3_hosted_baseline",
+      "policy": "xai",
+      "label": "Grok 4.3",
+      "path": "outputs/founderbench-xai-grok-4.3.json",
+      "report": "outputs/founderbench-xai-grok-4.3-submission-report.md",
+      "repeat_bundle_path": "outputs/founderbench-xai-grok-4.3-repeats.json",
+      "repeat_bundle_report": "outputs/founderbench-xai-grok-4.3-repeats-submission-report.md",
+      "family": "hosted_llm_optional",
+      "status": "valid",
+      "exists": true,
+      "submission_report_exists": true,
+      "repeat_bundle_exists": false,
+      "repeat_bundle_report_exists": false,
+      "evidence_path": "outputs/founderbench-xai-grok-4.3.json",
+      "evidence_kind": "single_run",
+      "runs": 1,
+      "problems": [],
+      "bytes": 2910567,
+      "sha256": "9dd14b5699c7cb158defd59f145e177f32a1b371f27ce15a8c99d15267248f57",
+      "average_task_score": 52.59,
+      "solve_rate": 0.32,
+      "solved": 16,
+      "tasks": 50
     },
     {
       "id": "llama_open_weight_baseline",
       "policy": "llama",
+      "label": "Llama/Open-weight",
       "path": "outputs/founderbench-llama.json",
       "report": "outputs/founderbench-llama-submission-report.md",
       "repeat_bundle_path": "outputs/founderbench-llama-repeats.json",
@@ -654,6 +1313,7 @@
     {
       "id": "local_open_source_baseline",
       "policy": "llm",
+      "label": "Local open-source model",
       "path": "outputs/founderbench-local-open-model.json",
       "report": "outputs/founderbench-local-open-model-submission-report.md",
       "repeat_bundle_path": "outputs/founderbench-local-open-model-repeats.json",

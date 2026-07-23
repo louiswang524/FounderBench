@@ -1,0 +1,772 @@
+[
+  {
+    "model": "Gemini 3.5 Flash",
+    "family": "Market selection",
+    "average_score": 58.908,
+    "std": 27.7929,
+    "n": 5
+  },
+  {
+    "model": "Gemini 3.5 Flash",
+    "family": "First revenue",
+    "average_score": 54.754,
+    "std": 39.0237,
+    "n": 5
+  },
+  {
+    "model": "Gemini 3.5 Flash",
+    "family": "Retention improvement",
+    "average_score": 95.666,
+    "std": 3.8877,
+    "n": 5
+  },
+  {
+    "model": "Gemini 3.5 Flash",
+    "family": "Churn shock recovery",
+    "average_score": 91.6,
+    "std": 4.8,
+    "n": 5
+  },
+  {
+    "model": "Gemini 3.5 Flash",
+    "family": "Demo Day traction",
+    "average_score": 61.26,
+    "std": 1.7792,
+    "n": 5
+  },
+  {
+    "model": "Gemini 3.5 Flash",
+    "family": "Pricing",
+    "average_score": 76.126,
+    "std": 8.2473,
+    "n": 5
+  },
+  {
+    "model": "Gemini 3.5 Flash",
+    "family": "Runway preservation",
+    "average_score": 83.986,
+    "std": 8.4723,
+    "n": 5
+  },
+  {
+    "model": "Gemini 3.5 Flash",
+    "family": "Pivot decision",
+    "average_score": 17.93,
+    "std": 22.7302,
+    "n": 5
+  },
+  {
+    "model": "Gemini 3.5 Flash",
+    "family": "Fundraising",
+    "average_score": 83.604,
+    "std": 1.9999,
+    "n": 5
+  },
+  {
+    "model": "Gemini 3.5 Flash",
+    "family": "Channel expansion",
+    "average_score": 53.036,
+    "std": 20.4844,
+    "n": 5
+  },
+  {
+    "model": "Grok 4.5",
+    "family": "Market selection",
+    "average_score": 46.324,
+    "std": 27.3495,
+    "n": 5
+  },
+  {
+    "model": "Grok 4.5",
+    "family": "First revenue",
+    "average_score": 59.984,
+    "std": 32.6444,
+    "n": 5
+  },
+  {
+    "model": "Grok 4.5",
+    "family": "Retention improvement",
+    "average_score": 96.666,
+    "std": 4.2169,
+    "n": 5
+  },
+  {
+    "model": "Grok 4.5",
+    "family": "Churn shock recovery",
+    "average_score": 94.4,
+    "std": 3.2,
+    "n": 5
+  },
+  {
+    "model": "Grok 4.5",
+    "family": "Demo Day traction",
+    "average_score": 67.456,
+    "std": 12.8116,
+    "n": 5
+  },
+  {
+    "model": "Grok 4.5",
+    "family": "Pricing",
+    "average_score": 74.126,
+    "std": 6.046,
+    "n": 5
+  },
+  {
+    "model": "Grok 4.5",
+    "family": "Runway preservation",
+    "average_score": 81.406,
+    "std": 6.9533,
+    "n": 5
+  },
+  {
+    "model": "Grok 4.5",
+    "family": "Pivot decision",
+    "average_score": 13.666,
+    "std": 11.2702,
+    "n": 5
+  },
+  {
+    "model": "Grok 4.5",
+    "family": "Fundraising",
+    "average_score": 86.536,
+    "std": 6.8058,
+    "n": 5
+  },
+  {
+    "model": "Grok 4.5",
+    "family": "Channel expansion",
+    "average_score": 44.69,
+    "std": 32.6614,
+    "n": 5
+  },
+  {
+    "model": "GPT-5.6 Sol",
+    "family": "Market selection",
+    "average_score": 59.376,
+    "std": 27.5547,
+    "n": 5
+  },
+  {
+    "model": "GPT-5.6 Sol",
+    "family": "First revenue",
+    "average_score": 53.642,
+    "std": 32.7129,
+    "n": 5
+  },
+  {
+    "model": "GPT-5.6 Sol",
+    "family": "Retention improvement",
+    "average_score": 96.166,
+    "std": 3.9304,
+    "n": 5
+  },
+  {
+    "model": "GPT-5.6 Sol",
+    "family": "Churn shock recovery",
+    "average_score": 95.2,
+    "std": 3.9192,
+    "n": 5
+  },
+  {
+    "model": "GPT-5.6 Sol",
+    "family": "Demo Day traction",
+    "average_score": 51.586,
+    "std": 18.8306,
+    "n": 5
+  },
+  {
+    "model": "GPT-5.6 Sol",
+    "family": "Pricing",
+    "average_score": 74.25,
+    "std": 5.8856,
+    "n": 5
+  },
+  {
+    "model": "GPT-5.6 Sol",
+    "family": "Runway preservation",
+    "average_score": 87.158,
+    "std": 3.0091,
+    "n": 5
+  },
+  {
+    "model": "GPT-5.6 Sol",
+    "family": "Pivot decision",
+    "average_score": 5.31,
+    "std": 10.62,
+    "n": 5
+  },
+  {
+    "model": "GPT-5.6 Sol",
+    "family": "Fundraising",
+    "average_score": 83.422,
+    "std": 0.7104,
+    "n": 5
+  },
+  {
+    "model": "GPT-5.6 Sol",
+    "family": "Channel expansion",
+    "average_score": 57.772,
+    "std": 28.8311,
+    "n": 5
+  },
+  {
+    "model": "Kimi K3",
+    "family": "Market selection",
+    "average_score": 59.32,
+    "std": 26.3411,
+    "n": 5
+  },
+  {
+    "model": "Kimi K3",
+    "family": "First revenue",
+    "average_score": 34.814,
+    "std": 15.1382,
+    "n": 5
+  },
+  {
+    "model": "Kimi K3",
+    "family": "Retention improvement",
+    "average_score": 95.5,
+    "std": 5.0434,
+    "n": 5
+  },
+  {
+    "model": "Kimi K3",
+    "family": "Churn shock recovery",
+    "average_score": 93.758,
+    "std": 3.2176,
+    "n": 5
+  },
+  {
+    "model": "Kimi K3",
+    "family": "Demo Day traction",
+    "average_score": 63.888,
+    "std": 12.2025,
+    "n": 5
+  },
+  {
+    "model": "Kimi K3",
+    "family": "Pricing",
+    "average_score": 73.434,
+    "std": 9.0885,
+    "n": 5
+  },
+  {
+    "model": "Kimi K3",
+    "family": "Runway preservation",
+    "average_score": 84.308,
+    "std": 4.8669,
+    "n": 5
+  },
+  {
+    "model": "Kimi K3",
+    "family": "Pivot decision",
+    "average_score": 31.494,
+    "std": 18.4874,
+    "n": 5
+  },
+  {
+    "model": "Kimi K3",
+    "family": "Fundraising",
+    "average_score": 84.488,
+    "std": 10.1292,
+    "n": 5
+  },
+  {
+    "model": "Kimi K3",
+    "family": "Channel expansion",
+    "average_score": 35.304,
+    "std": 3.2733,
+    "n": 5
+  },
+  {
+    "model": "Claude Sonnet 5",
+    "family": "Market selection",
+    "average_score": 36.304,
+    "std": 20.5273,
+    "n": 5
+  },
+  {
+    "model": "Claude Sonnet 5",
+    "family": "First revenue",
+    "average_score": 68.934,
+    "std": 16.2887,
+    "n": 5
+  },
+  {
+    "model": "Claude Sonnet 5",
+    "family": "Retention improvement",
+    "average_score": 94.334,
+    "std": 5.3324,
+    "n": 5
+  },
+  {
+    "model": "Claude Sonnet 5",
+    "family": "Churn shock recovery",
+    "average_score": 53.498,
+    "std": 5.6488,
+    "n": 5
+  },
+  {
+    "model": "Claude Sonnet 5",
+    "family": "Demo Day traction",
+    "average_score": 35.584,
+    "std": 32.2165,
+    "n": 5
+  },
+  {
+    "model": "Claude Sonnet 5",
+    "family": "Pricing",
+    "average_score": 75.896,
+    "std": 11.5052,
+    "n": 5
+  },
+  {
+    "model": "Claude Sonnet 5",
+    "family": "Runway preservation",
+    "average_score": 87.494,
+    "std": 7.2757,
+    "n": 5
+  },
+  {
+    "model": "Claude Sonnet 5",
+    "family": "Pivot decision",
+    "average_score": 47.052,
+    "std": 20.7825,
+    "n": 5
+  },
+  {
+    "model": "Claude Sonnet 5",
+    "family": "Fundraising",
+    "average_score": 83.194,
+    "std": 1.1079,
+    "n": 5
+  },
+  {
+    "model": "Claude Sonnet 5",
+    "family": "Channel expansion",
+    "average_score": 56.714,
+    "std": 28.3489,
+    "n": 5
+  },
+  {
+    "model": "DeepSeek V4 Reasoner",
+    "family": "Market selection",
+    "average_score": 59.01,
+    "std": 27.1736,
+    "n": 5
+  },
+  {
+    "model": "DeepSeek V4 Reasoner",
+    "family": "First revenue",
+    "average_score": 50.666,
+    "std": 38.8262,
+    "n": 5
+  },
+  {
+    "model": "DeepSeek V4 Reasoner",
+    "family": "Retention improvement",
+    "average_score": 91.648,
+    "std": 7.7787,
+    "n": 5
+  },
+  {
+    "model": "DeepSeek V4 Reasoner",
+    "family": "Churn shock recovery",
+    "average_score": 78.952,
+    "std": 12.7626,
+    "n": 5
+  },
+  {
+    "model": "DeepSeek V4 Reasoner",
+    "family": "Demo Day traction",
+    "average_score": 41.026,
+    "std": 23.503,
+    "n": 5
+  },
+  {
+    "model": "DeepSeek V4 Reasoner",
+    "family": "Pricing",
+    "average_score": 70.956,
+    "std": 6.0002,
+    "n": 5
+  },
+  {
+    "model": "DeepSeek V4 Reasoner",
+    "family": "Runway preservation",
+    "average_score": 90.574,
+    "std": 4.8342,
+    "n": 5
+  },
+  {
+    "model": "DeepSeek V4 Reasoner",
+    "family": "Pivot decision",
+    "average_score": 17.788,
+    "std": 9.971,
+    "n": 5
+  },
+  {
+    "model": "DeepSeek V4 Reasoner",
+    "family": "Fundraising",
+    "average_score": 83.766,
+    "std": 2.2226,
+    "n": 5
+  },
+  {
+    "model": "DeepSeek V4 Reasoner",
+    "family": "Channel expansion",
+    "average_score": 39.96,
+    "std": 19.2856,
+    "n": 5
+  },
+  {
+    "model": "Claude Sonnet 4.5",
+    "family": "Market selection",
+    "average_score": 47.356,
+    "std": 26.2777,
+    "n": 5
+  },
+  {
+    "model": "Claude Sonnet 4.5",
+    "family": "First revenue",
+    "average_score": 29.574,
+    "std": 28.0997,
+    "n": 5
+  },
+  {
+    "model": "Claude Sonnet 4.5",
+    "family": "Retention improvement",
+    "average_score": 94.668,
+    "std": 6.5303,
+    "n": 5
+  },
+  {
+    "model": "Claude Sonnet 4.5",
+    "family": "Churn shock recovery",
+    "average_score": 67.264,
+    "std": 17.857,
+    "n": 5
+  },
+  {
+    "model": "Claude Sonnet 4.5",
+    "family": "Demo Day traction",
+    "average_score": 67.998,
+    "std": 5.6883,
+    "n": 5
+  },
+  {
+    "model": "Claude Sonnet 4.5",
+    "family": "Pricing",
+    "average_score": 65.7,
+    "std": 9.4902,
+    "n": 5
+  },
+  {
+    "model": "Claude Sonnet 4.5",
+    "family": "Runway preservation",
+    "average_score": 90.832,
+    "std": 5.287,
+    "n": 5
+  },
+  {
+    "model": "Claude Sonnet 4.5",
+    "family": "Pivot decision",
+    "average_score": 12.782,
+    "std": 15.5042,
+    "n": 5
+  },
+  {
+    "model": "Claude Sonnet 4.5",
+    "family": "Fundraising",
+    "average_score": 83.604,
+    "std": 1.9999,
+    "n": 5
+  },
+  {
+    "model": "Claude Sonnet 4.5",
+    "family": "Channel expansion",
+    "average_score": 51.1,
+    "std": 30.4272,
+    "n": 5
+  },
+  {
+    "model": "DeepSeek Chat",
+    "family": "Market selection",
+    "average_score": 57.408,
+    "std": 28.2413,
+    "n": 5
+  },
+  {
+    "model": "DeepSeek Chat",
+    "family": "First revenue",
+    "average_score": 10.706,
+    "std": 0.799,
+    "n": 5
+  },
+  {
+    "model": "DeepSeek Chat",
+    "family": "Retention improvement",
+    "average_score": 93.476,
+    "std": 6.6224,
+    "n": 5
+  },
+  {
+    "model": "DeepSeek Chat",
+    "family": "Churn shock recovery",
+    "average_score": 39.32,
+    "std": 31.5746,
+    "n": 5
+  },
+  {
+    "model": "DeepSeek Chat",
+    "family": "Demo Day traction",
+    "average_score": 56.984,
+    "std": 19.0488,
+    "n": 5
+  },
+  {
+    "model": "DeepSeek Chat",
+    "family": "Pricing",
+    "average_score": 69.188,
+    "std": 6.9776,
+    "n": 5
+  },
+  {
+    "model": "DeepSeek Chat",
+    "family": "Runway preservation",
+    "average_score": 91.126,
+    "std": 4.8974,
+    "n": 5
+  },
+  {
+    "model": "DeepSeek Chat",
+    "family": "Pivot decision",
+    "average_score": 12.582,
+    "std": 11.3928,
+    "n": 5
+  },
+  {
+    "model": "DeepSeek Chat",
+    "family": "Fundraising",
+    "average_score": 86.3,
+    "std": 2.9721,
+    "n": 5
+  },
+  {
+    "model": "DeepSeek Chat",
+    "family": "Channel expansion",
+    "average_score": 48.792,
+    "std": 16.3928,
+    "n": 5
+  },
+  {
+    "model": "GLM 4.5 Air",
+    "family": "Market selection",
+    "average_score": 25.112,
+    "std": 0.5867,
+    "n": 5
+  },
+  {
+    "model": "GLM 4.5 Air",
+    "family": "First revenue",
+    "average_score": 9.992,
+    "std": 6.6168,
+    "n": 5
+  },
+  {
+    "model": "GLM 4.5 Air",
+    "family": "Retention improvement",
+    "average_score": 90.192,
+    "std": 5.1562,
+    "n": 5
+  },
+  {
+    "model": "GLM 4.5 Air",
+    "family": "Churn shock recovery",
+    "average_score": 74.626,
+    "std": 7.3357,
+    "n": 5
+  },
+  {
+    "model": "GLM 4.5 Air",
+    "family": "Demo Day traction",
+    "average_score": 51.632,
+    "std": 15.6756,
+    "n": 5
+  },
+  {
+    "model": "GLM 4.5 Air",
+    "family": "Pricing",
+    "average_score": 71.446,
+    "std": 9.3507,
+    "n": 5
+  },
+  {
+    "model": "GLM 4.5 Air",
+    "family": "Runway preservation",
+    "average_score": 87.494,
+    "std": 10.0612,
+    "n": 5
+  },
+  {
+    "model": "GLM 4.5 Air",
+    "family": "Pivot decision",
+    "average_score": 10.824,
+    "std": 13.5469,
+    "n": 5
+  },
+  {
+    "model": "GLM 4.5 Air",
+    "family": "Fundraising",
+    "average_score": 83.986,
+    "std": 1.2448,
+    "n": 5
+  },
+  {
+    "model": "GLM 4.5 Air",
+    "family": "Channel expansion",
+    "average_score": 42.494,
+    "std": 14.6715,
+    "n": 5
+  },
+  {
+    "model": "Gemini 2.5 Flash",
+    "family": "Market selection",
+    "average_score": 47.296,
+    "std": 27.5224,
+    "n": 5
+  },
+  {
+    "model": "Gemini 2.5 Flash",
+    "family": "First revenue",
+    "average_score": 61.112,
+    "std": 16.276,
+    "n": 5
+  },
+  {
+    "model": "Gemini 2.5 Flash",
+    "family": "Retention improvement",
+    "average_score": 70.788,
+    "std": 33.2645,
+    "n": 5
+  },
+  {
+    "model": "Gemini 2.5 Flash",
+    "family": "Churn shock recovery",
+    "average_score": 37.35,
+    "std": 6.0737,
+    "n": 5
+  },
+  {
+    "model": "Gemini 2.5 Flash",
+    "family": "Demo Day traction",
+    "average_score": 58.424,
+    "std": 20.6086,
+    "n": 5
+  },
+  {
+    "model": "Gemini 2.5 Flash",
+    "family": "Pricing",
+    "average_score": 48.944,
+    "std": 7.2432,
+    "n": 5
+  },
+  {
+    "model": "Gemini 2.5 Flash",
+    "family": "Runway preservation",
+    "average_score": 77.906,
+    "std": 2.3584,
+    "n": 5
+  },
+  {
+    "model": "Gemini 2.5 Flash",
+    "family": "Pivot decision",
+    "average_score": 21.79,
+    "std": 5.1507,
+    "n": 5
+  },
+  {
+    "model": "Gemini 2.5 Flash",
+    "family": "Fundraising",
+    "average_score": 68.0,
+    "std": 0.0,
+    "n": 5
+  },
+  {
+    "model": "Gemini 2.5 Flash",
+    "family": "Channel expansion",
+    "average_score": 35.304,
+    "std": 3.2733,
+    "n": 5
+  },
+  {
+    "model": "Grok 4.3",
+    "family": "Market selection",
+    "average_score": 57.052,
+    "std": 25.848,
+    "n": 5
+  },
+  {
+    "model": "Grok 4.3",
+    "family": "First revenue",
+    "average_score": 22.138,
+    "std": 2.6645,
+    "n": 5
+  },
+  {
+    "model": "Grok 4.3",
+    "family": "Retention improvement",
+    "average_score": 41.072,
+    "std": 7.2444,
+    "n": 5
+  },
+  {
+    "model": "Grok 4.3",
+    "family": "Churn shock recovery",
+    "average_score": 54.002,
+    "std": 7.4409,
+    "n": 5
+  },
+  {
+    "model": "Grok 4.3",
+    "family": "Demo Day traction",
+    "average_score": 47.106,
+    "std": 18.0605,
+    "n": 5
+  },
+  {
+    "model": "Grok 4.3",
+    "family": "Pricing",
+    "average_score": 66.784,
+    "std": 9.1519,
+    "n": 5
+  },
+  {
+    "model": "Grok 4.3",
+    "family": "Runway preservation",
+    "average_score": 94.364,
+    "std": 1.8863,
+    "n": 5
+  },
+  {
+    "model": "Grok 4.3",
+    "family": "Pivot decision",
+    "average_score": 18.914,
+    "std": 17.9277,
+    "n": 5
+  },
+  {
+    "model": "Grok 4.3",
+    "family": "Fundraising",
+    "average_score": 83.47,
+    "std": 0.7985,
+    "n": 5
+  },
+  {
+    "model": "Grok 4.3",
+    "family": "Channel expansion",
+    "average_score": 40.96,
+    "std": 21.6573,
+    "n": 5
+  }
+]

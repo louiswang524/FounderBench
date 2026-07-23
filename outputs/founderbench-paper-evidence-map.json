@@ -37,8 +37,8 @@
         {
           "path": "outputs/founderbench-claim-evidence.md",
           "exists": true,
-          "bytes": 5768,
-          "sha256": "49d96418f8d5d2da9697d42878cbf688da0aca516331ac3e30175e14d36f3a27"
+          "bytes": 5756,
+          "sha256": "dfeeb1a9976c6e27128e58693bc5864b91baabdbfe5853c6d4dc666237711cb1"
         }
       ],
       "claim_ids": [
@@ -192,14 +192,14 @@
         {
           "path": "outputs/founderbench-paper-tables.md",
           "exists": true,
-          "bytes": 6263,
-          "sha256": "55e5defcbe1d808167c4f08b56b3e110cdcca419b05efe61e7de5c11c571eb8a"
+          "bytes": 9809,
+          "sha256": "39841438869cf23fd580226cbab8840f9199afbee2f497c9b6c53c5f90ef0595"
         },
         {
           "path": "outputs/founderbench-model-result-cards.md",
           "exists": true,
-          "bytes": 4003,
-          "sha256": "a738d34a0aa302c8025f7771f86d18b9054b7dc6fc815465848870f2e0ca203c"
+          "bytes": 4497,
+          "sha256": "d951e080d40a14c2e597d41b6db7c3c3a47e26c1a378fdfbaff666376452c911"
         }
       ],
       "claim_ids": [
@@ -249,57 +249,39 @@
     },
     {
       "section": "Hosted and Local LLM Results",
-      "paper_claim": "Hosted/local provider comparison is planned but not yet supported by current evidence.",
-      "status": "excluded_until_evidence",
-      "rationale": "Provider adapters and experiment protocols are included; hosted current release LLM results remain to be run.",
+      "paper_claim": "The paper reports validated single-run hosted-model outcomes with task-level evidence and provider-error diagnostics.",
+      "status": "supported",
+      "rationale": "Validated hosted rows are single runs on 50 visible public tasks; report provider errors and avoid close-ranking significance claims.",
       "evidence": [
         {
-          "path": "outputs/founderbench-experiment-matrix.md",
+          "path": "outputs/founderbench-paper-model-registry.json",
           "exists": true,
-          "bytes": 5249,
-          "sha256": "924f78202a45f6b76351a6d1cbb6669805f4f0d6243fdf336822a5f4642eeb99"
+          "bytes": 10187,
+          "sha256": "bf5106c96e8ba6f653550c480dc36a5768fdb4f7e2ae152eab0cae6d58d5bcb8"
         },
         {
-          "path": "outputs/founderbench-experiment-runbook.md",
+          "path": "outputs/founderbench-paper-analysis.json",
           "exists": true,
-          "bytes": 24376,
-          "sha256": "d8b0fb499cf7bc9379355906f79b8b0d008522b4b73eb477c57fccaf57addef6"
+          "bytes": 18658,
+          "sha256": "ee1973f94aef1d7d930dd281d8dcd17a0a2aae4a08db223e0415ed583024e483"
         },
         {
-          "path": "outputs/founderbench-provider-run-status.md",
+          "path": "outputs/founderbench-paper-analysis.md",
           "exists": true,
-          "bytes": 9611,
-          "sha256": "892938be05f332b3bb473823f10f9f9bc478aad7fa27017436ad06bb304ddc16"
+          "bytes": 3916,
+          "sha256": "45af16e89edcfa7ded72daba19f5a7474bb1171898432cc61f077d8bef291f85"
         },
         {
-          "path": "outputs/founderbench-provider-comparability-audit.md",
+          "path": "outputs/founderbench-paper-tables.md",
           "exists": true,
-          "bytes": 3847,
-          "sha256": "377f68db52d8f4b1c54350486c7e93401dddc2a673f681c40fcb6afb163ad9e8"
+          "bytes": 9809,
+          "sha256": "39841438869cf23fd580226cbab8840f9199afbee2f497c9b6c53c5f90ef0595"
         },
         {
-          "path": "outputs/founderbench-provider-contract-audit.md",
+          "path": "outputs/founderbench-model-comparison.json",
           "exists": true,
-          "bytes": 2167,
-          "sha256": "08f62db81f7fd6671226379e7656946f28e0f58ec68ff15189e6d0d5ea93fae5"
-        },
-        {
-          "path": "outputs/founderbench-leaderboard-policy.md",
-          "exists": true,
-          "bytes": 3389,
-          "sha256": "8b4e662acee660b0c8854735f14216e7e43ea200444a4da68c7bd8e798cb5341"
-        },
-        {
-          "path": "outputs/founderbench-model-result-cards.md",
-          "exists": true,
-          "bytes": 4003,
-          "sha256": "a738d34a0aa302c8025f7771f86d18b9054b7dc6fc815465848870f2e0ca203c"
-        },
-        {
-          "path": "outputs/founderbench-submission-manifest.md",
-          "exists": true,
-          "bytes": 5856,
-          "sha256": "b6e76438326ae4064e56bd37549d903b12635177e55eeb9663aba5dbde78e05b"
+          "bytes": 35878,
+          "sha256": "633dcfe11a9e1df6ea0cd32b9d76205edf9fed65b1e94b658140ca4f72bf8f3f"
         }
       ],
       "claim_ids": [
@@ -377,7 +359,7 @@
     },
     {
       "section": "Limitations",
-      "paper_claim": "Limitations are documented for synthetic simulator validity, missing hosted LLM evidence, missing human calibration, missing private holdout execution, and release metadata.",
+      "paper_claim": "Limitations are documented for synthetic validity, single-run hosted evidence, missing human calibration, missing private holdout execution, and release metadata.",
       "status": "qualified",
       "rationale": "The benchmark includes a private-holdout blueprint and evaluator protocol, not executed hidden results.; FounderBench is a synthetic controlled environment for studying startup-relevant decisions.",
       "evidence": [
@@ -438,9 +420,9 @@
   ],
   "summary": {
     "sections": 8,
-    "supported": 5,
+    "supported": 6,
     "qualified": 2,
-    "excluded_until_evidence": 1,
+    "excluded_until_evidence": 0,
     "incomplete": 0
   }
 }

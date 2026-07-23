@@ -1,6 +1,6 @@
 # FounderBench Paper Evidence Map
 
-This generated map links paper-draft sections to the artifacts that support them. It keeps planned hosted/local LLM comparisons separate from currently supported deterministic evidence.
+This generated map links paper-draft sections to supporting artifacts. It admits validated hosted single-run evidence while keeping private-holdout, human-calibration, and real-world claims qualified or excluded.
 
 Submission gate: `not_ready`
 
@@ -9,9 +9,9 @@ Submission gate: `not_ready`
 | Metric | Value |
 | --- | --- |
 | sections | 8 |
-| supported | 5 |
+| supported | 6 |
 | qualified | 2 |
-| excluded_until_evidence | 1 |
+| excluded_until_evidence | 0 |
 | incomplete | 0 |
 
 ## Section Crosswalk
@@ -23,9 +23,9 @@ Submission gate: `not_ready`
 | Metrics | supported | Scores are bounded 0-100 task outcomes with solve threshold, diagnostics, sensitivity checks, and paired comparison protocol. | All section evidence paths are present. |
 | Baselines | supported | The paper currently reports deterministic random, conservative, heuristic, and task-aware heuristic baselines on all 50 tasks. | Deterministic baseline evidence is present; validated provider rows are tracked separately with diagnostics. |
 | Ablations and Difficulty Calibration | supported | Capability-ladder, action-space, task-difficulty, and qualitative trace artifacts support deterministic calibration claims. | All section evidence paths are present. |
-| Hosted and Local LLM Results | excluded_until_evidence | Hosted/local provider comparison is planned but not yet supported by current evidence. | Provider adapters and experiment protocols are included; hosted current release LLM results remain to be run. |
+| Hosted and Local LLM Results | supported | The paper reports validated single-run hosted-model outcomes with task-level evidence and provider-error diagnostics. | Validated hosted rows are single runs on 50 visible public tasks; report provider errors and avoid close-ranking significance claims. |
 | Reproducibility and Auditability | supported | The package includes reproduction commands, source/output hashes, environment report, reviewer smoke test, deterministic replay audit, and release-bundle integrity report. | All section evidence paths are present. |
-| Limitations | qualified | Limitations are documented for synthetic simulator validity, missing hosted LLM evidence, missing human calibration, missing private holdout execution, and release metadata. | The benchmark includes a private-holdout blueprint and evaluator protocol, not executed hidden results.; FounderBench is a synthetic controlled environment for studying startup-relevant decisions. |
+| Limitations | qualified | Limitations are documented for synthetic validity, single-run hosted evidence, missing human calibration, missing private holdout execution, and release metadata. | The benchmark includes a private-holdout blueprint and evaluator protocol, not executed hidden results.; FounderBench is a synthetic controlled environment for studying startup-relevant decisions. |
 
 ## Evidence Detail
 
@@ -119,19 +119,16 @@ Claim-evidence ids:
 
 ### Hosted and Local LLM Results
 
-Status: `excluded_until_evidence`
+Status: `supported`
 
-Hosted/local provider comparison is planned but not yet supported by current evidence.
+The paper reports validated single-run hosted-model outcomes with task-level evidence and provider-error diagnostics.
 
 Evidence:
-- `outputs/founderbench-experiment-matrix.md`: present
-- `outputs/founderbench-experiment-runbook.md`: present
-- `outputs/founderbench-provider-run-status.md`: present
-- `outputs/founderbench-provider-comparability-audit.md`: present
-- `outputs/founderbench-provider-contract-audit.md`: present
-- `outputs/founderbench-leaderboard-policy.md`: present
-- `outputs/founderbench-model-result-cards.md`: present
-- `outputs/founderbench-submission-manifest.md`: present
+- `outputs/founderbench-paper-model-registry.json`: present
+- `outputs/founderbench-paper-analysis.json`: present
+- `outputs/founderbench-paper-analysis.md`: present
+- `outputs/founderbench-paper-tables.md`: present
+- `outputs/founderbench-model-comparison.json`: present
 
 Claim-evidence ids:
 - `hosted_llm_comparison`
@@ -158,7 +155,7 @@ Evidence:
 
 Status: `qualified`
 
-Limitations are documented for synthetic simulator validity, missing hosted LLM evidence, missing human calibration, missing private holdout execution, and release metadata.
+Limitations are documented for synthetic validity, single-run hosted evidence, missing human calibration, missing private holdout execution, and release metadata.
 
 Evidence:
 - `outputs/founderbench-validity-report.md`: present

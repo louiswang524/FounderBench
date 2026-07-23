@@ -1,4 +1,4 @@
-# FounderBench: Evaluating LLM Agents as Startup Operators Under Controlled Resources
+# FounderBench: Evaluating LLM Agents on Sequential Startup Decisions
 
 ## Abstract
 
